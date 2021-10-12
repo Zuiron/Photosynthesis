@@ -1,3 +1,6 @@
 {
-  "block.photosynthesis.floramelissia": "Floramelissia"
+  "itemGroup.photosynthesis.photosynthesis": "Photosynthesis",
+  "block.photosynthesis.floramelissia": "Floramelissia",
+  "item.photosynthesis.cutting_knife": "Cutting Knife",
+  "item.photosynthesis.blueberry": "Blueberry"
 }

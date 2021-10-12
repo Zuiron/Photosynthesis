@@ -12,11 +12,14 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.zuiron.photosynthesis.Photosynthesis;
+import net.zuiron.photosynthesis.item.ModItemGroup;
 
 public class ModBlocks {
 
     public static final Block FLORAMELISSIA = registerBlock("floramelissia",
             new FlowerBlock(StatusEffect.byRawId(1),1, AbstractBlock.Settings.copy(Blocks.POPPY)));
+
+    //------------------------------------------------------------------------------------------------------------------
 
     private static Block registerBlock(String name, Block block){
         registerBlockItem(name, block);
@@ -25,7 +28,7 @@ public class ModBlocks {
 
     private static Item registerBlockItem(String name, Block block) {
         return Registry.register(Registry.ITEM, new Identifier(Photosynthesis.MOD_ID, name),
-                new BlockItem(block, new FabricItemSettings().group(ItemGroup.MISC)));
+                new BlockItem(block, new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
     }
 
     public static void registerModBlocks() {

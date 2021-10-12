@@ -2,6 +2,7 @@ package net.zuiron.photosynthesis;
 
 import net.fabricmc.api.ModInitializer;
 import net.zuiron.photosynthesis.block.ModBlocks;
+import net.zuiron.photosynthesis.item.ModItems;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -20,6 +21,7 @@ public class Photosynthesis implements ModInitializer {
 		// Proceed with mild caution.
 
 		ModBlocks.registerModBlocks();
+		ModItems.registerModItems();
 
 		LOGGER.info("Hello Fabric world!");
 	}
