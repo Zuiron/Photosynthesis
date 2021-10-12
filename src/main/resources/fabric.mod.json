@@ -19,6 +19,9 @@
   "entrypoints": {
     "main": [
       "net.zuiron.photosynthesis.Photosynthesis"
+    ],
+    "client": [
+      "net.zuiron.photosynthesis.client.PhotosynthesisClient"
     ]
   },
   "mixins": [
