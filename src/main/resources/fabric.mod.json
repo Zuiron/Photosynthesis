@@ -1,29 +1,28 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "photosynthesis",
   "version": "${version}",
 
-  "name": "Example Mod",
+  "name": "Photosynthesis",
   "description": "This is an example description! Tell everyone what your mod is about!",
   "authors": [
-    "Me!"
+    "Zuiron"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/Zuiron/Photosynthesis"
   },
 
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "license": "MIT",
+  "icon": "assets/photosynthesis/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "net.zuiron.photosynthesis.Photosynthesis"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "photosynthesis.mixins.json"
   ],
 
   "depends": {
