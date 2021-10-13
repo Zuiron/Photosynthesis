@@ -1,13 +1,11 @@
 package net.zuiron.photosynthesis.item;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.zuiron.photosynthesis.Photosynthesis;
-import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.mixin.ItemAccessor;
 
 public class ModItems {
@@ -31,16 +29,6 @@ public class ModItems {
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
                     .group(ModItemGroup.PHOTOSYNTHESIS)));
-
-
-
-    // SEEDS -----------------------------------------------------------------------------------------------------------
-    public static final Item CUSTOM_SEEDS = registerItem("custom_seeds",
-            new AliasedBlockItem(ModBlocks.CUSTOM_CROP_BLOCK, new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
-
-    public static final Item TOMATO_SEEDS = registerItem("tomato_seeds",
-            new AliasedBlockItem(ModBlocks.TOMATO_CROP_BLOCK, new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
-
 
 
 
