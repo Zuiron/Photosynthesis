@@ -1,23 +1,29 @@
 package net.zuiron.photosynthesis.block;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.FlowerBlock;
+import net.minecraft.block.*;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.world.BlockView;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.item.ModItemGroup;
+import net.zuiron.photosynthesis.item.ModItems;
 
 public class ModBlocks {
 
     public static final Block FLORAMELISSIA = registerBlock("floramelissia",
             new FlowerBlock(StatusEffect.byRawId(1),1, AbstractBlock.Settings.copy(Blocks.POPPY)));
+
+
+    public static final CropBlock CUSTOM_CROP_BLOCK = new CustomCropBlock(AbstractBlock.Settings.of(Material.PLANT).nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
 
     //------------------------------------------------------------------------------------------------------------------
 
