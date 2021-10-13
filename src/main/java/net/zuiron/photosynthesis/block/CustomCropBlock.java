@@ -9,6 +9,13 @@ import net.minecraft.world.BlockView;
 import net.zuiron.photosynthesis.item.ModItems;
 
 public class CustomCropBlock extends CropBlock {
+    private final Item seedItem;
+
+    public CustomCropBlock(Settings settings, Item seedItem) {
+        super(settings);
+        this.seedItem = seedItem;
+    }
+
     private static final VoxelShape[] AGE_TO_SHAPE = new VoxelShape[]{Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D),
             Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 3.0D, 16.0D),
             Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D),
@@ -19,12 +26,18 @@ public class CustomCropBlock extends CropBlock {
             Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 9.0D, 16.0D)
     };
 
+    /*
     public CustomCropBlock(AbstractBlock.Settings settings) {
         super(settings);
     }
 
     public ItemConvertible getSeedsItem() {
         return ModItems.TOMATO_SEEDS;
+    }
+    */
+
+    public ItemConvertible getSeedsItem() {
+        return seedItem;
     }
 
 
