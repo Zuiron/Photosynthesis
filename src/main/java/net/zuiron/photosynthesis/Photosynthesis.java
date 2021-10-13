@@ -1,8 +1,6 @@
 package net.zuiron.photosynthesis;
 
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.item.ModItems;
 import org.apache.logging.log4j.LogManager;
@@ -23,8 +21,6 @@ public class Photosynthesis implements ModInitializer {
 		// Proceed with mild caution.
 
 		ModBlocks.registerModBlocks();
-		Registry.register(Registry.BLOCK, new Identifier(Photosynthesis.MOD_ID,"custom_crop_block"), ModBlocks.CUSTOM_CROP_BLOCK);
-
 		ModItems.registerModItems();
 
 		LOGGER.info("Hello Fabric world!");
