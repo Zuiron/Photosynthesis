@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/crop",
+  "parent": "minecraft:block/cross",
   "textures": {
     "crop": "photosynthesis:block/tomato_crop_block_stage2"
   }
