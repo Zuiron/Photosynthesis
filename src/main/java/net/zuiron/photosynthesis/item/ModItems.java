@@ -44,8 +44,6 @@ public class ModItems {
 
 
 
-
-
     // END OF ModItems -------------------------------------------------------------------------------------------------
 
     private static Item registerRemainderItem(String name, Item item) {

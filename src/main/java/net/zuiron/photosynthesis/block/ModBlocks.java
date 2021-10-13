@@ -22,11 +22,11 @@ public class ModBlocks {
     // CROPS -----------------------------------------------------------------------------------------------------------
     public static final CropBlock CUSTOM_CROP_BLOCK = registerCropBlock("custom_crop_block",
             new CustomCropBlock(AbstractBlock.Settings.of(Material.PLANT)
-                    .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),ModItems.CUSTOM_SEEDS));
+                    .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),ModItems.PRODUCE_TOMATO));
 
     public static final CropBlock TOMATO_CROP_BLOCK = registerCropBlock("tomato_crop_block",
             new CustomCropBlock(AbstractBlock.Settings.of(Material.PLANT)
-                    .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),ModItems.TOMATO_SEEDS));
+                    .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),ModItems.PRODUCE_TOMATO));
 
 
     // END OF BLOCKS ---------------------------------------------------------------------------------------------------

@@ -27,12 +27,13 @@ public class CustomCropBlock extends CropBlock {
     };
 
     /*
+    //WORKS
     public CustomCropBlock(AbstractBlock.Settings settings) {
         super(settings);
     }
 
     public ItemConvertible getSeedsItem() {
-        return ModItems.TOMATO_SEEDS;
+        return ModItems.TOMATO_SEEDS; //BUT when passing this exact item from item creation = crash???
     }
     */
 
