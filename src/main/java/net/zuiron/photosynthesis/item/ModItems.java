@@ -12,20 +12,41 @@ import net.zuiron.photosynthesis.mixin.ItemAccessor;
 
 public class ModItems {
 
+    // BERRIES ---------------------------------------------------------------------------------------------------------
     public static final Item BLUEBERRY = registerItem("blueberry",
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build())
                     .group(ModItemGroup.PHOTOSYNTHESIS)));
 
+
+
+    // CRAFTING TOOLS --------------------------------------------------------------------------------------------------
     public static final Item CUTTING_KNIFE = registerRemainderItem("cutting_knife",
             new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
 
 
-    //	public static final Item CUSTOM_SEEDS = new AliasedBlockItem(TutorialMod.CUSTOM_CROP_BLOCK, new Item.Settings().group(ItemGroup.MISC));
+
+    // CROP PRODUCE ----------------------------------------------------------------------------------------------------
+    public static final Item PRODUCE_TOMATO = registerItem("produce_tomato",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
+                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+
+
+
+    // SEEDS -----------------------------------------------------------------------------------------------------------
     public static final Item CUSTOM_SEEDS = registerItem("custom_seeds",
             new AliasedBlockItem(ModBlocks.CUSTOM_CROP_BLOCK, new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
 
-    //------------------------------------------------------------------------------------------------------------------
+    public static final Item TOMATO_SEEDS = registerItem("tomato_seeds",
+            new AliasedBlockItem(ModBlocks.TOMATO_CROP_BLOCK, new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
+
+
+
+
+
+
+    // END OF ModItems -------------------------------------------------------------------------------------------------
 
     private static Item registerRemainderItem(String name, Item item) {
         Item remainderItem = registerItem(name, item);
@@ -34,7 +55,6 @@ public class ModItems {
         return remainderItem;
     }
 
-    //register items.
     private static Item registerItem(String name, Item item){
         Photosynthesis.LOGGER.info("Registering item with name: " + name);
         return Registry.register(Registry.ITEM, new Identifier(Photosynthesis.MOD_ID, name), item);

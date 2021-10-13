@@ -1,6 +1,7 @@
 package net.zuiron.photosynthesis.block;
 
 import net.minecraft.block.*;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
@@ -23,7 +24,7 @@ public class CustomCropBlock extends CropBlock {
     }
 
     public ItemConvertible getSeedsItem() {
-        return ModItems.CUSTOM_SEEDS;
+        return ModItems.TOMATO_SEEDS;
     }
 
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {

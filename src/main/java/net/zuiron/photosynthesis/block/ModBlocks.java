@@ -10,6 +10,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.item.ModItemGroup;
+import net.zuiron.photosynthesis.item.ModItems;
 
 public class ModBlocks {
 
@@ -21,9 +22,11 @@ public class ModBlocks {
     // CROPS -----------------------------------------------------------------------------------------------------------
     public static final CropBlock CUSTOM_CROP_BLOCK = registerCropBlock("custom_crop_block",
             new CustomCropBlock(AbstractBlock.Settings.of(Material.PLANT)
-            .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP)));
+                    .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP)));
 
-
+    public static final CropBlock TOMATO_CROP_BLOCK = registerCropBlock("tomato_crop_block",
+            new CustomCropBlock(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP)));
 
 
     // END OF BLOCKS ---------------------------------------------------------------------------------------------------
