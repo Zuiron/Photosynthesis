@@ -26,33 +26,21 @@ public class ModBlocks {
     // CROPS & SEEDS ---------------------------------------------------------------------------------------------------
     public static final CropBlock CUSTOM_CROP_BLOCK = registerCropBlock("custom_crop_block",
             new CustomCropBlock(AbstractBlock.Settings.of(Material.PLANT)
-                    .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP), Items.WHEAT));
-
-    public static final Block CUSTOM_SEEDS = registerSeed("custom_seeds",
-            new Block(FabricBlockSettings.copy(Blocks.WHEAT)), ModBlocks.CUSTOM_CROP_BLOCK);
-
+                    .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),
+                    ModItems.CUSTOM_SEEDS));
 
 
     public static final CropBlock TOMATO_CROP_BLOCK = registerCropBlock("tomato_crop_block",
             new CustomCropBlock(AbstractBlock.Settings.of(Material.PLANT)
-                    .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP), ModItems.PRODUCE_TOMATO));
+                    .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),
+                    ModItems.TOMATO_SEEDS));
 
-
-    public static final Block TOMATO_SEEDS = registerSeed("tomato_seeds",
-            new Block(FabricBlockSettings.copy(Blocks.WHEAT)), ModBlocks.TOMATO_CROP_BLOCK);
+    //ModItems.PRODUCE_TOMATO -> WORKS WHY???
+    //ModItems.TOMATO_SEEDS -> does not work. no icon. WHY???
 
 
 
     // END OF BLOCKS ---------------------------------------------------------------------------------------------------
-
-    private static Block registerSeed(String name, Block block, CropBlock alias){
-        registerSeedItem(name, alias);
-        return Registry.register(Registry.BLOCK, new Identifier(Photosynthesis.MOD_ID, name), block);
-    }
-    private static Item registerSeedItem(String name, CropBlock alias) {
-        return Registry.register(Registry.ITEM, new Identifier(Photosynthesis.MOD_ID, name),
-                new AliasedBlockItem(alias, new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
-    }
 
     private static Block registerBlock(String name, Block block){
         registerBlockItem(name, block);
