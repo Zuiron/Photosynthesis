@@ -1,6 +1,17 @@
 {
   "itemGroup.photosynthesis.photosynthesis": "Photosynthesis",
+
   "block.photosynthesis.floramelissia": "Floramelissia",
-  "item.photosynthesis.cutting_knife": "Cutting Knife",
-  "item.photosynthesis.blueberry": "Blueberry"
+
+  "block.photosynthesis.tomato_crop_block": "Tomatoes",
+
+  "block.photosynthesis.blueberry_bush": "Blueberry Bush",
+
+  "item.photosynthesis.blueberries": "Blueberries",
+
+  "item.photosynthesis.tomato": "Tomato",
+
+  "item.photosynthesis.tomato_seeds": "Tomato Seeds",
+
+  "item.photosynthesis.cutting_knife": "Cutting Knife"
 }
