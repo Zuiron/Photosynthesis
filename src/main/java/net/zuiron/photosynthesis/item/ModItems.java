@@ -16,13 +16,10 @@ import net.zuiron.photosynthesis.mixin.ItemAccessor;
 public class ModItems {
 
     // BERRIES ---------------------------------------------------------------------------------------------------------
-    public static final Item BLUEBERRY = registerBerryItem("blueberry", ModBlocks.BLUEBERRY_BUSH);
+    public static final Item BLUEBERRY = registerBerryItem("blueberry", ModBlocks.BLUEBERRY_BUSH,
+            new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build())
+                    .group(ModItemGroup.PHOTOSYNTHESIS));
 
-    private static Item registerBerryItem(String name, SweetBerryBushBlock alias) {
-        return Registry.register(Registry.ITEM, new Identifier(Photosynthesis.MOD_ID, name),
-                new AliasedBlockItem(alias, new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build())
-                        .group(ModItemGroup.PHOTOSYNTHESIS)));
-    }
 
     // CRAFTING TOOLS --------------------------------------------------------------------------------------------------
     public static final Item CUTTING_KNIFE = registerRemainderItem("cutting_knife",
@@ -43,6 +40,11 @@ public class ModItems {
 
 
     // END OF ModItems -------------------------------------------------------------------------------------------------
+    private static Item registerBerryItem(String name, SweetBerryBushBlock alias, FabricItemSettings settings) {
+        return Registry.register(Registry.ITEM, new Identifier(Photosynthesis.MOD_ID, name),
+                new AliasedBlockItem(alias, settings));
+    }
+
     private static Item registerBlockItem(String name, BlockItem item) {
         return Registry.register(Registry.ITEM, new Identifier(Photosynthesis.MOD_ID, name), item);
     }
