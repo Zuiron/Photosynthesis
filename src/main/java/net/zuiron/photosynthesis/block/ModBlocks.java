@@ -38,6 +38,10 @@ public class ModBlocks {
     //ModItems.PRODUCE_TOMATO -> WORKS WHY???
     //ModItems.TOMATO_SEEDS -> does not work. no icon. WHY???
 
+    public static final SweetBerryBushBlock BLUEBERRY_BUSH = registerBushBlock("blueberry_bush",
+            new customBerryBush(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
 
 
     // END OF BLOCKS ---------------------------------------------------------------------------------------------------
@@ -53,6 +57,10 @@ public class ModBlocks {
     }
 
     private static CropBlock registerCropBlock(String name, CropBlock block){
+        return Registry.register(Registry.BLOCK, new Identifier(Photosynthesis.MOD_ID, name), block);
+    }
+
+    private static SweetBerryBushBlock registerBushBlock(String name, SweetBerryBushBlock block){
         return Registry.register(Registry.BLOCK, new Identifier(Photosynthesis.MOD_ID, name), block);
     }
 
