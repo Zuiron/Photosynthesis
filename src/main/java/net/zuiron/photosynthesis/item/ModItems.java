@@ -16,7 +16,7 @@ import net.zuiron.photosynthesis.mixin.ItemAccessor;
 public class ModItems {
 
     // BERRIES ---------------------------------------------------------------------------------------------------------
-    public static final Item BLUEBERRY = registerBerryItem("blueberry", ModBlocks.BLUEBERRY_BUSH,
+    public static final Item BLUEBERRIES = registerBerryItem("blueberries", ModBlocks.BLUEBERRY_BUSH,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build())
                     .group(ModItemGroup.PHOTOSYNTHESIS));
 
