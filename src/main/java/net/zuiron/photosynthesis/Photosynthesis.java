@@ -1,6 +1,8 @@
 package net.zuiron.photosynthesis;
 
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.block.AbstractBlock;
+import net.zuiron.photosynthesis.block.CustomCropBlock;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.item.ModItems;
 import org.apache.logging.log4j.LogManager;
@@ -20,7 +22,7 @@ public class Photosynthesis implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		ModItems.registerModItems();
+		ModItems.registerModItems(); //Items first otherwise crash.
 		ModBlocks.registerModBlocks();
 
 		LOGGER.info("Hello Fabric world!");

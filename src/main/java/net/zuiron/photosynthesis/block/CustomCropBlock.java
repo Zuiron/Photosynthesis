@@ -9,9 +9,7 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 
 public class CustomCropBlock extends CropBlock {
-    //private final Item seedItem;
-
-    private ItemConvertible seed;
+    public ItemConvertible seed;
 
     public CustomCropBlock(Settings settings, ItemConvertible item) {
         super(settings);
@@ -28,8 +26,15 @@ public class CustomCropBlock extends CropBlock {
             Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 9.0D, 16.0D)
     };
 
+    public void setSeed(ItemConvertible item) {
+        seed = item;
+    }
+
     @Environment(EnvType.CLIENT)
-    protected ItemConvertible getSeedsItem() {
+    @Override
+    protected ItemConvertible getSeedsItem()
+    {
+        LOGGER.info("wtf:!"+seed);
         return seed;
     }
 

@@ -33,10 +33,11 @@ public class ModBlocks {
     public static final CropBlock TOMATO_CROP_BLOCK = registerCropBlock("tomato_crop_block",
             new CustomCropBlock(AbstractBlock.Settings.of(Material.PLANT)
                     .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),
-                    ModItems.PRODUCE_TOMATO));
+                    Items.WHEAT_SEEDS));
 
     //ModItems.PRODUCE_TOMATO -> WORKS WHY???
     //ModItems.TOMATO_SEEDS -> does not work. no icon. WHY???
+    //wait WTF now nothing works again lol
 
     public static final SweetBerryBushBlock BLUEBERRY_BUSH = registerBushBlock("blueberry_bush",
             new customBerryBush(AbstractBlock.Settings.of(Material.PLANT)
