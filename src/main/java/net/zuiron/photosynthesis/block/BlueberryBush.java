@@ -17,9 +17,9 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.item.ModItems;
 
-public class customBerryBush extends SweetBerryBushBlock {
+public class BlueberryBush extends SweetBerryBushBlock {
 
-    public customBerryBush(Settings settings) {
+    public BlueberryBush(Settings settings) {
         super(settings);
     }
 

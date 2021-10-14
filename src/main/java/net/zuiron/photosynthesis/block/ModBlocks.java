@@ -1,13 +1,10 @@
 package net.zuiron.photosynthesis.block;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.Items;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -22,8 +19,7 @@ public class ModBlocks {
             new FlowerBlock(StatusEffect.byRawId(1),1, AbstractBlock.Settings.copy(Blocks.POPPY)));
 
 
-
-    // CROPS & SEEDS ---------------------------------------------------------------------------------------------------
+    // CROP BLOCKS -----------------------------------------------------------------------------------------------------
     public static final CropBlock CUSTOM_CROP_BLOCK = registerCropBlock("custom_crop_block",
             new CustomCropBlock(AbstractBlock.Settings.of(Material.PLANT)
                     .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),
@@ -35,12 +31,10 @@ public class ModBlocks {
                     .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),
                     ModItems.TOMATO_SEEDS));
 
-    //ModItems.PRODUCE_TOMATO -> WORKS WHY???
-    //ModItems.TOMATO_SEEDS -> does not work. no icon. WHY???
-    //wait WTF now nothing works again lol
 
+    // BERRY BUSHES ----------------------------------------------------------------------------------------------------
     public static final SweetBerryBushBlock BLUEBERRY_BUSH = registerBushBlock("blueberry_bush",
-            new customBerryBush(AbstractBlock.Settings.of(Material.PLANT)
+            new BlueberryBush(AbstractBlock.Settings.of(Material.PLANT)
                     .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
 
