@@ -2,6 +2,7 @@ package net.zuiron.photosynthesis.item;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.block.CropBlock;
+import net.minecraft.block.SweetBerryBushBlock;
 import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.FoodComponent;
@@ -15,11 +16,13 @@ import net.zuiron.photosynthesis.mixin.ItemAccessor;
 public class ModItems {
 
     // BERRIES ---------------------------------------------------------------------------------------------------------
-    public static final Item BLUEBERRY = registerBlockItem("blueberry",
-            new BlockItem(ModBlocks.BLUEBERRY_BUSH, new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+    public static final Item BLUEBERRY = registerBerryItem("blueberry", ModBlocks.BLUEBERRY_BUSH);
 
+    private static Item registerBerryItem(String name, SweetBerryBushBlock alias) {
+        return Registry.register(Registry.ITEM, new Identifier(Photosynthesis.MOD_ID, name),
+                new AliasedBlockItem(alias, new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build())
+                        .group(ModItemGroup.PHOTOSYNTHESIS)));
+    }
 
     // CRAFTING TOOLS --------------------------------------------------------------------------------------------------
     public static final Item CUTTING_KNIFE = registerRemainderItem("cutting_knife",
