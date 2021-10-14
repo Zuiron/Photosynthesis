@@ -28,7 +28,7 @@ public class BlueberryBush extends SweetBerryBushBlock {
         return new ItemStack(ModItems.BLUEBERRIES);
     }
 
-    //override so it returns correct item.
+
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         int i = (Integer)state.get(AGE);
@@ -46,7 +46,7 @@ public class BlueberryBush extends SweetBerryBushBlock {
         }
     }
 
-    //FIX so it doesn't deal damage.
+
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
 
