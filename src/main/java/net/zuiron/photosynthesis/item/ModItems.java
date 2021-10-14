@@ -27,7 +27,7 @@ public class ModItems {
 
 
     // CROP PRODUCE ----------------------------------------------------------------------------------------------------
-    public static final Item PRODUCE_TOMATO = registerItem("produce_tomato",
+    public static final Item TOMATO = registerItem("tomato",
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
                     .group(ModItemGroup.PHOTOSYNTHESIS)));

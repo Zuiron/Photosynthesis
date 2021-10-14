@@ -19,7 +19,7 @@
                   }
                 }
               ],
-              "name": "photosynthesis:produce_tomato"
+              "name": "photosynthesis:tomato"
             },
             {
               "type": "minecraft:item",
