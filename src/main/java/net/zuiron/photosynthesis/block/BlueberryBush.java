@@ -46,7 +46,7 @@ public class BlueberryBush extends SweetBerryBushBlock {
         }
     }
 
-    //override so player is not hurt like sweet berry bush does.
+    //FIX so it doesn't deal damage.
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         super.onEntityCollision(state, world, pos, entity);
