@@ -20,12 +20,6 @@ public class ModBlocks {
 
 
     // CROP BLOCKS -----------------------------------------------------------------------------------------------------
-    public static final CropBlock CUSTOM_CROP_BLOCK = registerCropBlock("custom_crop_block",
-            new CustomCropBlock(AbstractBlock.Settings.of(Material.PLANT)
-                    .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),
-                    ModItems.CUSTOM_SEEDS));
-
-
     public static final CropBlock TOMATO_CROP_BLOCK = registerCropBlock("tomato_crop_block",
             new CustomCropBlock(AbstractBlock.Settings.of(Material.PLANT)
                     .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),

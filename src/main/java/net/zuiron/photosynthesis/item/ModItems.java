@@ -35,7 +35,6 @@ public class ModItems {
 
     // CROP SEEDS ----------------------------------------------------------------------------------------------------
     public static final Item TOMATO_SEEDS = registerSeedItem("tomato_seeds", ModBlocks.TOMATO_CROP_BLOCK);
-    public static final Item CUSTOM_SEEDS = registerSeedItem("custom_seeds", ModBlocks.CUSTOM_CROP_BLOCK);
 
 
 

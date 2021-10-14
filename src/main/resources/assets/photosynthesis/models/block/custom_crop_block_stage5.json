@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/crop",
-  "textures": {
-    "crop": "photosynthesis:block/custom_crop_block_stage5"
-  }
-}
