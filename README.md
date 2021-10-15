@@ -1,5 +1,5 @@
 # Photosynthesis
 
-test image ![alt text](https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/blackberries.png?raw=true)
+test image ![alt text](https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/blueberries.png?raw=true)
 
-test two image <img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/blackberries.png?raw=true" width="64" height="64">
+test two image <img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/blueberries.png?raw=true" width="64" height="64">
