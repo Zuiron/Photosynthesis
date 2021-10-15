@@ -51,7 +51,7 @@ public class Photosynthesis implements ModInitializer {
 				"minecraft:plains";
 
 		final String BLUEBERRY_SPAWN_BIOMES = "minecraft:birch_forest,minecraft:tall_birch_forest";
-		final String BLACKBERRY_SPAWN_BIOMES = "minecraft:modified_wooded_badlands_plateau,minecraft:tall_birch_hills";
+		final String BLACKBERRY_SPAWN_BIOMES = "minecraft:modified_wooded_badlands_plateau,minecraft:tall_birch_hills,minecraft:dark_forest";
 		final String RASPBERRY_SPAWN_BIOMES = "minecraft:plains,minecraft:jungle";
 
 		BerryGeneration.registerBerryGeneration(BLUEBERRY_SPAWN_BIOMES, ModBlocks.BLUEBERRY_BUSH, 16, "blueberry");
