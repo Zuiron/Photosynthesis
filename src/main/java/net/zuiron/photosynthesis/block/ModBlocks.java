@@ -36,8 +36,9 @@ public class ModBlocks {
             new BlackberryBush(AbstractBlock.Settings.of(Material.PLANT)
                     .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
+
     public static final SweetBerryBushBlock RASPBERRY_BUSH = registerBushBlock("raspberry_bush",
-            new BlackberryBush(AbstractBlock.Settings.of(Material.PLANT)
+            new RaspberryBush(AbstractBlock.Settings.of(Material.PLANT)
                     .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
 
