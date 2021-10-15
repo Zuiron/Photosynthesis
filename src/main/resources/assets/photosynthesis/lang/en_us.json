@@ -3,9 +3,6 @@
 
   "block.photosynthesis.floramelissia": "Floramelissia",
 
-  "block.photosynthesis.tomato_crop_block": "Tomatoes",
-  "block.photosynthesis.basil_crop_block": "Basil",
-
   "block.photosynthesis.blueberry_bush": "Blueberry Bush",
   "block.photosynthesis.blackberry_bush": "Blackberry Bush",
   "block.photosynthesis.raspberry_bush": "Raspberry Bush",
@@ -18,11 +15,17 @@
   "item.photosynthesis.cloudberries": "Cloudberries",
   "item.photosynthesis.wild_strawberries": "Wild Strawberries",
 
+  "block.photosynthesis.tomato_crop": "Tomatoes",
+  "block.photosynthesis.basil_crop": "Basil",
+  "block.photosynthesis.oregano_crop": "Oregano",
+
   "item.photosynthesis.tomato": "Tomato",
   "item.photosynthesis.basil": "Basil",
+  "item.photosynthesis.oregano": "Oregano",
 
   "item.photosynthesis.tomato_seeds": "Tomato Seeds",
   "item.photosynthesis.basil_seeds": "Basil Seeds",
+  "item.photosynthesis.oregano_seeds": "Oregano Seeds",
 
   "item.photosynthesis.cutting_knife": "Cutting Knife"
 }
