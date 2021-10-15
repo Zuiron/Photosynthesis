@@ -20,10 +20,15 @@ public class ModBlocks {
 
 
     // CROP BLOCKS -----------------------------------------------------------------------------------------------------
-    public static final CropBlock TOMATO_CROP_BLOCK = registerCropBlock("tomato_crop_block",
+    public static final CropBlock TOMATO_CROP = registerCropBlock("tomato_crop",
             new CustomCropBlock(AbstractBlock.Settings.of(Material.PLANT)
                     .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),
                     ModItems.TOMATO_SEEDS));
+
+    public static final CropBlock BASIL_CROP = registerCropBlock("basil_crop",
+            new CustomCropBlock(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),
+                    ModItems.BASIL_SEEDS));
 
 
     // BERRY BUSHES ----------------------------------------------------------------------------------------------------
