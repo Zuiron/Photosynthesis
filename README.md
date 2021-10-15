@@ -1,6 +1,6 @@
 # Photosynthesis
 This is a FABRIC ONLY mod.<br />
-Photosynthesis adds berries, crops, flowers, food and edible items.
+Photosynthesis adds berries, crops, flowers, food, tools and tons of food related recipes. (see below)
 
 # Berries
 <img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/blueberries.png?raw=true" width="32" height="32"> Blueberries
