@@ -24,6 +24,10 @@ public class ModItems {
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build())
                     .group(ModItemGroup.PHOTOSYNTHESIS));
 
+    public static final Item RASPBERRIES = registerBerryItem("raspberries", ModBlocks.RASPBERRY_BUSH,
+            new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build())
+                    .group(ModItemGroup.PHOTOSYNTHESIS));
+
 
     // CRAFTING TOOLS --------------------------------------------------------------------------------------------------
     public static final Item CUTTING_KNIFE = registerRemainderItem("cutting_knife",

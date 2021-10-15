@@ -6,8 +6,12 @@
   "block.photosynthesis.tomato_crop_block": "Tomatoes",
 
   "block.photosynthesis.blueberry_bush": "Blueberry Bush",
+  "block.photosynthesis.blackberry_bush": "Blackberry Bush",
+  "block.photosynthesis.raspberry_bush": "Raspberry Bush",
 
   "item.photosynthesis.blueberries": "Blueberries",
+  "item.photosynthesis.blackberries": "Blackberries",
+  "item.photosynthesis.raspberries": "Raspberries",
 
   "item.photosynthesis.tomato": "Tomato",
 
