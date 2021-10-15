@@ -1,0 +1,6 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "photosynthesis:block/wild_strawberry_bush_stage2"
+  }
+}

@@ -9,11 +9,13 @@
   "block.photosynthesis.blackberry_bush": "Blackberry Bush",
   "block.photosynthesis.raspberry_bush": "Raspberry Bush",
   "block.photosynthesis.cloudberry_bush": "Cloudberry Bush",
+  "block.photosynthesis.wild_strawberry_bush": "Wild Strawberry Bush",
 
   "item.photosynthesis.blueberries": "Blueberries",
   "item.photosynthesis.blackberries": "Blackberries",
   "item.photosynthesis.raspberries": "Raspberries",
   "item.photosynthesis.cloudberries": "Cloudberries",
+  "item.photosynthesis.wild_strawberries": "Wild Strawberries",
 
   "item.photosynthesis.tomato": "Tomato",
 

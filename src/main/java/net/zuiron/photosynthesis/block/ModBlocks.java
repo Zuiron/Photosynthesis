@@ -41,9 +41,15 @@ public class ModBlocks {
             new RaspberryBush(AbstractBlock.Settings.of(Material.PLANT)
                     .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
+
     public static final SweetBerryBushBlock CLOUDBERRY_BUSH = registerBushBlock("cloudberry_bush",
             new CloudberryBush(AbstractBlock.Settings.of(Material.PLANT)
                     .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+    public static final SweetBerryBushBlock WILD_STRAWBERRY_BUSH = registerBushBlock("wild_strawberry_bush",
+            new Wild_StrawberryBush(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
 
 
     // END OF BLOCKS ---------------------------------------------------------------------------------------------------

@@ -50,15 +50,17 @@ public class Photosynthesis implements ModInitializer {
 				"minecraft:wooded_hills," +
 				"minecraft:plains";
 
-		final String BLUEBERRY_SPAWN_BIOMES = "minecraft:birch_forest,minecraft:tall_birch_forest,minecraft:tall_birch_hills";
+		final String BLUEBERRY_SPAWN_BIOMES = "minecraft:birch_forest,minecraft:tall_birch_forest";
 		final String BLACKBERRY_SPAWN_BIOMES = "minecraft:modified_wooded_badlands_plateau,minecraft:tall_birch_hills,minecraft:dark_forest,minecraft:wooded_hills";
 		final String RASPBERRY_SPAWN_BIOMES = "minecraft:plains,minecraft:jungle";
-		final String CLOUDBERRY_SPAWN_BIOMES = "minecraft:mountains,minecraft:snowy_mountains,minecraft:snowy_taiga,minecraft:snowy_taiga_hills,minecraft:snowy_taiga_mountains,minecraft:taiga_mountains,minecraft:wooded_mountains";
+		final String CLOUDBERRY_SPAWN_BIOMES = "minecraft:mountains,minecraft:swamp,minecraft:snowy_mountains,minecraft:snowy_taiga,minecraft:snowy_taiga_hills,minecraft:snowy_taiga_mountains,minecraft:taiga_mountains,minecraft:wooded_mountains";
+		final String WILD_STRAWBERRY_SPAWN_BIOMES = "minecraft:flower_forest,minecraft:forest,minecraft:snowy_mountains,minecraft:taiga_hills,minecraft:tall_birch_hills,minecraft:snowy_mountains,minecraft:wooded_mountains,minecraft:taiga";
 
 		BerryGeneration.registerBerryGeneration(BLUEBERRY_SPAWN_BIOMES, ModBlocks.BLUEBERRY_BUSH, 16, "blueberry");
 		BerryGeneration.registerBerryGeneration(BLACKBERRY_SPAWN_BIOMES, ModBlocks.BLACKBERRY_BUSH, 16, "blackberry");
 		BerryGeneration.registerBerryGeneration(RASPBERRY_SPAWN_BIOMES, ModBlocks.RASPBERRY_BUSH, 16, "raspberry");
-		BerryGeneration.registerBerryGeneration(CLOUDBERRY_SPAWN_BIOMES, ModBlocks.CLOUDBERRY_BUSH, 16, "cloudberry");
+		BerryGeneration.registerBerryGeneration(CLOUDBERRY_SPAWN_BIOMES, ModBlocks.CLOUDBERRY_BUSH, 15, "cloudberry");
+		BerryGeneration.registerBerryGeneration(WILD_STRAWBERRY_SPAWN_BIOMES, ModBlocks.WILD_STRAWBERRY_BUSH, 14, "wild_strawberry");
 
 		LOGGER.info("Hello Fabric world!");
 	}
