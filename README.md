@@ -1,3 +1,5 @@
 # Photosynthesis
 
 test image ![alt text](https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/blackberries.png?raw=true)
+
+test two image <img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/blackberries.png?raw=true" width="64" height="64">
