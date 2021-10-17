@@ -68,7 +68,7 @@ public class ModItems {
     public static final Item TOMATO_SEEDS = registerSeedItem("tomato_seeds", ModBlocks.TOMATO_CROP);
     public static final Item BASIL_SEEDS = registerSeedItem("basil_seeds", ModBlocks.BASIL_CROP);
     public static final Item OREGANO_SEEDS = registerSeedItem("oregano_seeds", ModBlocks.OREGANO_CROP);
-    public static final Item STRAWBERRY_SEEDS = registerSeedItem("oregano_seeds", ModBlocks.STRAWBERRY_CROP);
+    public static final Item STRAWBERRY_SEEDS = registerSeedItem("strawberry_seeds", ModBlocks.STRAWBERRY_CROP);
 
 
 
