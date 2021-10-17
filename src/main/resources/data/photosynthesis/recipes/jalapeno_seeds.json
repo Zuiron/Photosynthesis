@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "photosynthesis:jalapeno"
+    }
+  ],
+  "result": {
+    "item": "photosynthesis:jalapeno_seeds",
+    "count": 1
+  }
+}

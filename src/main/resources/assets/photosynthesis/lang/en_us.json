@@ -20,18 +20,21 @@
   "block.photosynthesis.oregano_crop": "Oregano",
   "block.photosynthesis.strawberry_crop": "Strawberry",
   "block.photosynthesis.oat_crop": "Oat",
+  "block.photosynthesis.jalapeno_crop": "Jalapeno",
 
   "item.photosynthesis.tomato": "Tomato",
   "item.photosynthesis.basil": "Basil",
   "item.photosynthesis.oregano": "Oregano",
   "item.photosynthesis.strawberry": "Strawberry",
   "item.photosynthesis.oat": "Oat",
+  "item.photosynthesis.jalapeno": "Jalapeno",
 
   "item.photosynthesis.tomato_seeds": "Tomato Seeds",
   "item.photosynthesis.basil_seeds": "Basil Seeds",
   "item.photosynthesis.oregano_seeds": "Oregano Seeds",
   "item.photosynthesis.strawberry_seeds": "Strawberry Seeds",
   "item.photosynthesis.oat_seeds": "Oat Seeds",
+  "item.photosynthesis.jalapeno_seeds": "Jalapeno Seeds",
 
   "item.photosynthesis.cutting_knife": "Cutting Knife"
 }
