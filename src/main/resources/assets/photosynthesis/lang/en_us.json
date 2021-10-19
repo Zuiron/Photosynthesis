@@ -23,6 +23,8 @@
   "block.photosynthesis.jalapeno_crop": "Jalapeno",
   "block.photosynthesis.chili_crop": "Chili",
   "block.photosynthesis.cucumber_crop": "Cucumber",
+  "block.photosynthesis.onion_crop": "Onion",
+  "block.photosynthesis.leek_crop": "Leek",
 
   "item.photosynthesis.tomato": "Tomato",
   "item.photosynthesis.basil": "Basil",
@@ -32,6 +34,8 @@
   "item.photosynthesis.jalapeno": "Jalapeno",
   "item.photosynthesis.chili": "Chili",
   "item.photosynthesis.cucumber": "Cucumber",
+  "item.photosynthesis.onion": "Onion",
+  "item.photosynthesis.leek": "Leek",
 
   "item.photosynthesis.tomato_seeds": "Tomato Seeds",
   "item.photosynthesis.basil_seeds": "Basil Seeds",
@@ -41,6 +45,8 @@
   "item.photosynthesis.jalapeno_seeds": "Jalapeno Seeds",
   "item.photosynthesis.chili_seeds": "Chili Seeds",
   "item.photosynthesis.cucumber_seeds": "Cucumber Seeds",
+  "item.photosynthesis.onion_seeds": "Onion Seeds",
+  "item.photosynthesis.leek_seeds": "Leek Seeds",
 
   "item.photosynthesis.cutting_knife": "Cutting Knife"
 }

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "photosynthesis:onion"
+    }
+  ],
+  "result": {
+    "item": "photosynthesis:onion_seeds",
+    "count": 1
+  }
+}
