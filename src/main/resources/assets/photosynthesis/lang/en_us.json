@@ -25,6 +25,7 @@
   "block.photosynthesis.cucumber_crop": "Cucumber",
   "block.photosynthesis.onion_crop": "Onion",
   "block.photosynthesis.leek_crop": "Leek",
+  "block.photosynthesis.celery_crop": "Celery",
 
   "item.photosynthesis.tomato": "Tomato",
   "item.photosynthesis.basil": "Basil",
@@ -36,6 +37,7 @@
   "item.photosynthesis.cucumber": "Cucumber",
   "item.photosynthesis.onion": "Onion",
   "item.photosynthesis.leek": "Leek",
+  "item.photosynthesis.celery": "Celery",
 
   "item.photosynthesis.tomato_seeds": "Tomato Seeds",
   "item.photosynthesis.basil_seeds": "Basil Seeds",
@@ -47,6 +49,7 @@
   "item.photosynthesis.cucumber_seeds": "Cucumber Seeds",
   "item.photosynthesis.onion_seeds": "Onion Seeds",
   "item.photosynthesis.leek_seeds": "Leek Seeds",
+  "item.photosynthesis.celery_seeds": "Celery Seeds",
 
   "item.photosynthesis.cutting_knife": "Cutting Knife"
 }

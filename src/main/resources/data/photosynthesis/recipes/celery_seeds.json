@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "photosynthesis:celery"
+    }
+  ],
+  "result": {
+    "item": "photosynthesis:celery_seeds",
+    "count": 1
+  }
+}
