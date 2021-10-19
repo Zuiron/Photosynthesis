@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "photosynthesis:sweet_potato"
+    }
+  ],
+  "result": {
+    "item": "photosynthesis:sweet_potato_seeds",
+    "count": 1
+  }
+}
