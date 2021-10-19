@@ -28,6 +28,7 @@
   "block.photosynthesis.celery_crop": "Celery",
   "block.photosynthesis.peas_crop": "Peas",
   "block.photosynthesis.sweet_potato_crop": "Sweet Potato",
+  "block.photosynthesis.asparagus_crop": "Asparagus",
 
   "item.photosynthesis.tomato": "Tomato",
   "item.photosynthesis.basil": "Basil",
@@ -42,6 +43,7 @@
   "item.photosynthesis.celery": "Celery",
   "item.photosynthesis.peas": "Peas",
   "item.photosynthesis.sweet_potato": "Sweet Potato",
+  "item.photosynthesis.asparagus": "Asparagus",
 
   "item.photosynthesis.tomato_seeds": "Tomato Seeds",
   "item.photosynthesis.basil_seeds": "Basil Seeds",
@@ -56,6 +58,7 @@
   "item.photosynthesis.celery_seeds": "Celery Seeds",
   "item.photosynthesis.peas_seeds": "Peas Seeds",
   "item.photosynthesis.sweet_potato_seeds": "Sweet Potato Seeds",
+  "item.photosynthesis.asparagus_seeds": "Asparagus Seeds",
 
   "item.photosynthesis.cutting_knife": "Cutting Knife"
 }

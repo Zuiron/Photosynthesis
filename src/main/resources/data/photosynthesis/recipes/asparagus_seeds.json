@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "photosynthesis:asparagus"
+    }
+  ],
+  "result": {
+    "item": "photosynthesis:asparagus_seeds",
+    "count": 1
+  }
+}
