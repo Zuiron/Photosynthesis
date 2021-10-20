@@ -133,6 +133,11 @@ public class ModItems {
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
                     .group(ModItemGroup.PHOTOSYNTHESIS)));
 
+    public static final Item CAULIFLOWER = registerItem("cauliflower",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
+                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+
 
     // CROP SEEDS ----------------------------------------------------------------------------------------------------
     public static final Item TOMATO_SEEDS = registerSeedItem("tomato_seeds", ModBlocks.TOMATO_CROP);
@@ -153,6 +158,7 @@ public class ModItems {
     public static final Item GARLIC_SEEDS = registerSeedItem("garlic_seeds", ModBlocks.GARLIC_CROP);
     public static final Item CHIVE_SEEDS = registerSeedItem("chive_seeds", ModBlocks.CHIVE_CROP);
     public static final Item BROCCOLI_SEEDS = registerSeedItem("broccoli_seeds", ModBlocks.BROCCOLI_CROP);
+    public static final Item CAULIFLOWER_SEEDS = registerSeedItem("cauliflower_seeds", ModBlocks.CAULIFLOWER_CROP);
 
 
 

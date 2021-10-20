@@ -33,6 +33,7 @@
   "block.photosynthesis.garlic_crop": "Garlic",
   "block.photosynthesis.chive_crop": "Chive",
   "block.photosynthesis.broccoli_crop": "Broccoli",
+  "block.photosynthesis.cauliflower_crop": "Cauliflower",
 
   "item.photosynthesis.tomato": "Tomato",
   "item.photosynthesis.basil": "Basil",
@@ -52,6 +53,7 @@
   "item.photosynthesis.garlic": "Garlic",
   "item.photosynthesis.chive": "Chive",
   "item.photosynthesis.broccoli": "Broccoli",
+  "item.photosynthesis.cauliflower": "Cauliflower",
 
   "item.photosynthesis.tomato_seeds": "Tomato Seeds",
   "item.photosynthesis.basil_seeds": "Basil Seeds",
@@ -71,6 +73,7 @@
   "item.photosynthesis.garlic_seeds": "Garlic Seeds",
   "item.photosynthesis.chive_seeds": "Chive Seeds",
   "item.photosynthesis.broccoli_seeds": "Broccoli Seeds",
+  "item.photosynthesis.cauliflower_seeds": "Cauliflower Seeds",
 
   "item.photosynthesis.cutting_knife": "Cutting Knife"
 }
