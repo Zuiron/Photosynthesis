@@ -31,6 +31,7 @@
   "block.photosynthesis.asparagus_crop": "Asparagus",
   "block.photosynthesis.scallion_crop": "Scallion",
   "block.photosynthesis.garlic_crop": "Garlic",
+  "block.photosynthesis.chive_crop": "Chive",
 
   "item.photosynthesis.tomato": "Tomato",
   "item.photosynthesis.basil": "Basil",
@@ -48,6 +49,7 @@
   "item.photosynthesis.asparagus": "Asparagus",
   "item.photosynthesis.scallion": "Scallion",
   "item.photosynthesis.garlic": "Garlic",
+  "item.photosynthesis.chive": "Chive",
 
   "item.photosynthesis.tomato_seeds": "Tomato Seeds",
   "item.photosynthesis.basil_seeds": "Basil Seeds",
@@ -65,6 +67,7 @@
   "item.photosynthesis.asparagus_seeds": "Asparagus Seeds",
   "item.photosynthesis.scallion_seeds": "Scallion Seeds",
   "item.photosynthesis.garlic_seeds": "Garlic Seeds",
+  "item.photosynthesis.chive_seeds": "Chive Seeds",
 
   "item.photosynthesis.cutting_knife": "Cutting Knife"
 }
