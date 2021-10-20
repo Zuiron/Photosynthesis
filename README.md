@@ -9,7 +9,7 @@ Photosynthesis adds berries, crops, flowers, food, tools and tons of food relate
 <img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/cloudberries.png?raw=true" width="32" height="32"> Cloudberries
 <img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/wild_strawberries.png?raw=true" width="32" height="32"> Wild Strawberries
 
-#Crops
+# Crops
 <img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/tomato.png?raw=true" width="32" height="32"> Tomato
 <img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/basil.png?raw=true" width="32" height="32"> Basil
 <img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/oregano.png?raw=true" width="32" height="32"> Oregano
