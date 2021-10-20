@@ -34,6 +34,8 @@
   "block.photosynthesis.chive_crop": "Chive",
   "block.photosynthesis.broccoli_crop": "Broccoli",
   "block.photosynthesis.cauliflower_crop": "Cauliflower",
+  "block.photosynthesis.corn_crop": "Corn",
+  "block.photosynthesis.black_pepper_crop": "Black Pepper",
 
   "item.photosynthesis.tomato": "Tomato",
   "item.photosynthesis.basil": "Basil",
@@ -54,6 +56,8 @@
   "item.photosynthesis.chive": "Chive",
   "item.photosynthesis.broccoli": "Broccoli",
   "item.photosynthesis.cauliflower": "Cauliflower",
+  "item.photosynthesis.corn": "Corn",
+  "item.photosynthesis.black_pepper": "Black Pepper",
 
   "item.photosynthesis.tomato_seeds": "Tomato Seeds",
   "item.photosynthesis.basil_seeds": "Basil Seeds",
@@ -74,6 +78,8 @@
   "item.photosynthesis.chive_seeds": "Chive Seeds",
   "item.photosynthesis.broccoli_seeds": "Broccoli Seeds",
   "item.photosynthesis.cauliflower_seeds": "Cauliflower Seeds",
+  "item.photosynthesis.corn_seeds": "Corn Seeds",
+  "item.photosynthesis.black_pepper_seeds": "Black Pepper Seeds",
 
   "item.photosynthesis.cutting_knife": "Cutting Knife"
 }

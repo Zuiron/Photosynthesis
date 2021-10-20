@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "photosynthesis:block/black_pepper_crop_stage6"
+  }
+}

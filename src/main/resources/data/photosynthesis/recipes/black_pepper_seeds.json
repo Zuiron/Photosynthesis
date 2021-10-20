@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "photosynthesis:black_pepper"
+    }
+  ],
+  "result": {
+    "item": "photosynthesis:black_pepper_seeds",
+    "count": 1
+  }
+}
