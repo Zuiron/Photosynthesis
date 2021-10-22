@@ -36,6 +36,7 @@
   "block.photosynthesis.cauliflower_crop": "Cauliflower",
   "block.photosynthesis.corn_crop": "Corn",
   "block.photosynthesis.black_pepper_crop": "Black Pepper",
+  "block.photosynthesis.cabbage_crop": "Cabbage",
 
   "item.photosynthesis.tomato": "Tomato",
   "item.photosynthesis.basil": "Basil",
@@ -58,6 +59,7 @@
   "item.photosynthesis.cauliflower": "Cauliflower",
   "item.photosynthesis.corn": "Corn",
   "item.photosynthesis.black_pepper": "Black Pepper",
+  "item.photosynthesis.cabbage": "Cabbage",
 
   "item.photosynthesis.tomato_seeds": "Tomato Seeds",
   "item.photosynthesis.basil_seeds": "Basil Seeds",
@@ -80,6 +82,7 @@
   "item.photosynthesis.cauliflower_seeds": "Cauliflower Seeds",
   "item.photosynthesis.corn_seeds": "Corn Seeds",
   "item.photosynthesis.black_pepper_seeds": "Black Pepper Seeds",
+  "item.photosynthesis.cabbage_seeds": "Cabbage Seeds",
 
   "item.photosynthesis.cutting_knife": "Cutting Knife"
 }

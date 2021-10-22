@@ -125,6 +125,11 @@ public class ModBlocks {
                     .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),
                     ModItems.BLACK_PEPPER_SEEDS));
 
+    public static final CropBlock CABBAGE_CROP = registerCropBlock("cabbage_crop",
+            new CustomCropBlock(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),
+                    ModItems.CABBAGE_SEEDS));
+
 
     // BERRY BUSHES ----------------------------------------------------------------------------------------------------
     public static final SweetBerryBushBlock BLUEBERRY_BUSH = registerBushBlock("blueberry_bush",
