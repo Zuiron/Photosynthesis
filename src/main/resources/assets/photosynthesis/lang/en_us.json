@@ -44,6 +44,7 @@
   "block.photosynthesis.barley_crop": "Barley",
   "block.photosynthesis.cotton_crop": "Cotton",
   "block.photosynthesis.sugarbeet_crop": "Sugar Beet",
+  "block.photosynthesis.rice_crop": "Rice",
 
   "item.photosynthesis.tomato": "Tomato",
   "item.photosynthesis.basil": "Basil",
@@ -76,6 +77,7 @@
   "item.photosynthesis.barley": "Barley",
   "item.photosynthesis.cotton": "Cotton",
   "item.photosynthesis.sugarbeet": "Sugar Beet",
+  "item.photosynthesis.rice": "Rice",
 
   "item.photosynthesis.tomato_seeds": "Tomato Seeds",
   "item.photosynthesis.basil_seeds": "Basil Seeds",
@@ -106,6 +108,7 @@
   "item.photosynthesis.barley_seeds": "Barley Seeds",
   "item.photosynthesis.cotton_seeds": "Cotton Seeds",
   "item.photosynthesis.sugarbeet_seeds": "Sugar Beet Seeds",
+  "item.photosynthesis.rice_seeds": "Rice Seeds",
 
   "item.photosynthesis.cutting_knife": "Cutting Knife"
 }

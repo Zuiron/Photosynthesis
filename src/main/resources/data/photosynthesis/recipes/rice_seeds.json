@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "photosynthesis:rice"
+    }
+  ],
+  "result": {
+    "item": "photosynthesis:rice_seeds",
+    "count": 1
+  }
+}
