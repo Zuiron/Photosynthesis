@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "photosynthesis:cotton"
+    }
+  ],
+  "result": {
+    "item": "photosynthesis:cotton_seeds",
+    "count": 1
+  }
+}
