@@ -235,6 +235,7 @@ public class ModItems {
     public static final Item COTTON_SEEDS = registerSeedItem("cotton_seeds", ModBlocks.COTTON_CROP);
     public static final Item SUGARBEET_SEEDS = registerSeedItem("sugarbeet_seeds", ModBlocks.SUGARBEET_CROP);
     public static final Item RICE_SEEDS = registerSeedItem("rice_seeds", ModBlocks.RICE_CROP);
+    public static final Item SUGARCANE_SEEDS = registerSeedItem("sugarcane_seeds", ModBlocks.SUGARCANE_CROP);
 
 
 
