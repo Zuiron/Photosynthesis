@@ -40,6 +40,8 @@
   "block.photosynthesis.bellpepper_crop": "Bellpepper",
   "block.photosynthesis.turnip_crop": "Turnip",
   "block.photosynthesis.rutabaga_crop": "Rutabaga",
+  "block.photosynthesis.canola_crop": "Canola",
+  "block.photosynthesis.barley_crop": "Barley",
 
   "item.photosynthesis.tomato": "Tomato",
   "item.photosynthesis.basil": "Basil",
@@ -68,6 +70,8 @@
   "item.photosynthesis.yellow_bellpepper": "Yellow Bellpepper",
   "item.photosynthesis.turnip": "Turnip",
   "item.photosynthesis.rutabaga": "Rutabaga",
+  "item.photosynthesis.canola": "Canola",
+  "item.photosynthesis.barley": "Barley",
 
   "item.photosynthesis.tomato_seeds": "Tomato Seeds",
   "item.photosynthesis.basil_seeds": "Basil Seeds",
@@ -94,6 +98,8 @@
   "item.photosynthesis.bellpepper_seeds": "Bellpepper Seeds",
   "item.photosynthesis.turnip_seeds": "Turnip Seeds",
   "item.photosynthesis.rutabaga_seeds": "Rutabaga Seeds",
+  "item.photosynthesis.canola_seeds": "Canola Seeds",
+  "item.photosynthesis.barley_seeds": "Barley Seeds",
 
   "item.photosynthesis.cutting_knife": "Cutting Knife"
 }
