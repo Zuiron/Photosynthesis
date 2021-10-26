@@ -48,3 +48,4 @@ Photosynthesis adds berries, crops, flowers, food, tools and tons of food relate
 <img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/arrowroot.png?raw=true" width="32" height="32"> Arrowroot
 <img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/artichoke.png?raw=true" width="32" height="32"> Artichoke
 <img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/brussels_sprouts.png?raw=true" width="32" height="32"> Brussels Sprouts
+<img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/cassava.png?raw=true" width="32" height="32"> Cassava
