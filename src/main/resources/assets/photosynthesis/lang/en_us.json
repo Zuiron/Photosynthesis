@@ -130,5 +130,6 @@
   "item.photosynthesis.mortar": "Mortar",
   "item.photosynthesis.pestle": "Pestle",
   "item.photosynthesis.rolling_pin_part": "Rolling Pin Part",
-  "item.photosynthesis.rolling_pin_handle": "Rolling Pin Handle"
+  "item.photosynthesis.rolling_pin_handle": "Rolling Pin Handle",
+  "item.photosynthesis.rolling_pin_pin": "Rolling Pin Pin"
 }

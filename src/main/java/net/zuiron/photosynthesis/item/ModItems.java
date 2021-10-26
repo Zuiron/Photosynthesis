@@ -43,6 +43,9 @@ public class ModItems {
     public static final Item ROLLING_PIN_HANDLE = registerItem("rolling_pin_handle",
             new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
 
+    public static final Item ROLLING_PIN_PIN = registerItem("rolling_pin_pin",
+            new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
+
 
 
     // BERRIES ---------------------------------------------------------------------------------------------------------
