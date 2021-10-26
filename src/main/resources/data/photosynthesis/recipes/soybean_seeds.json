@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "photosynthesis:soybean"
+    }
+  ],
+  "result": {
+    "item": "photosynthesis:soybean_seeds",
+    "count": 1
+  }
+}

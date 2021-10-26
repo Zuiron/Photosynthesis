@@ -43,3 +43,5 @@ Photosynthesis adds berries, crops, flowers, food, tools and tons of food relate
 <img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/sugarbeet.png?raw=true" width="32" height="32"> Sugar Beet
 <img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/rice.png?raw=true" width="32" height="32"> Rice
 <img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/block/sugarcane_crop_stage3.png?raw=true" width="32" height="32"> Sugar Cane
+<img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/soybean.png?raw=true" width="32" height="32"> Soybean
+<img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/spinach.png?raw=true" width="32" height="32"> Spinach

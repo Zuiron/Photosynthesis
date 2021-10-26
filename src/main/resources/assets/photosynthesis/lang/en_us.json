@@ -46,6 +46,8 @@
   "block.photosynthesis.sugarbeet_crop": "Sugar Beet",
   "block.photosynthesis.rice_crop": "Rice",
   "block.photosynthesis.sugarcane_crop": "Sugar Cane",
+  "block.photosynthesis.soybean_crop": "Soybean",
+  "block.photosynthesis.spinach_crop": "Spinach",
 
   "item.photosynthesis.tomato": "Tomato",
   "item.photosynthesis.basil": "Basil",
@@ -79,6 +81,8 @@
   "item.photosynthesis.cotton": "Cotton",
   "item.photosynthesis.sugarbeet": "Sugar Beet",
   "item.photosynthesis.rice": "Rice",
+  "item.photosynthesis.soybean": "Soybean",
+  "item.photosynthesis.spinach": "Spinach",
 
   "item.photosynthesis.tomato_seeds": "Tomato Seeds",
   "item.photosynthesis.basil_seeds": "Basil Seeds",
@@ -111,6 +115,8 @@
   "item.photosynthesis.sugarbeet_seeds": "Sugar Beet Seeds",
   "item.photosynthesis.rice_seeds": "Rice Seeds",
   "item.photosynthesis.sugarcane_seeds": "Sugar Cane Seeds",
+  "item.photosynthesis.soybean_seeds": "Soybean Seeds",
+  "item.photosynthesis.spinach_seeds": "Spinach Seeds",
 
   "item.photosynthesis.cutting_knife": "Cutting Knife"
 }
