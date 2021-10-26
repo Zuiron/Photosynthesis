@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "photosynthesis:brussels_sprouts"
+    }
+  ],
+  "result": {
+    "item": "photosynthesis:brussels_sprouts_seeds",
+    "count": 1
+  }
+}
