@@ -14,6 +14,36 @@ import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.mixin.ItemAccessor;
 
 public class ModItems {
+    // CRAFTING TOOLS --------------------------------------------------------------------------------------------------
+
+    // -------------- Remainder Items
+    public static final Item CUTTING_KNIFE = registerRemainderItem("cutting_knife",
+            new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
+
+    public static final Item MORTAR_PESTLE = registerRemainderItem("mortar_pestle",
+            new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
+
+    public static final Item ROLLING_PIN = registerRemainderItem("rolling_pin",
+            new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
+
+    public static final Item PLATE = registerRemainderItem("plate",
+            new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
+
+
+    // -------------- Crafting Items
+    public static final Item MORTAR = registerItem("mortar",
+            new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
+
+    public static final Item PESTLE = registerItem("pestle",
+            new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
+
+    public static final Item ROLLING_PIN_PART = registerItem("rolling_pin_part",
+            new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
+
+    public static final Item ROLLING_PIN_HANDLE = registerItem("rolling_pin_handle",
+            new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
+
+
 
     // BERRIES ---------------------------------------------------------------------------------------------------------
     public static final Item BLUEBERRIES = registerBerryItem("blueberries", ModBlocks.BLUEBERRY_BUSH,
@@ -36,10 +66,6 @@ public class ModItems {
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build())
                     .group(ModItemGroup.PHOTOSYNTHESIS));
 
-
-    // CRAFTING TOOLS --------------------------------------------------------------------------------------------------
-    public static final Item CUTTING_KNIFE = registerRemainderItem("cutting_knife",
-            new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
 
 
     // CROP PRODUCE ----------------------------------------------------------------------------------------------------
