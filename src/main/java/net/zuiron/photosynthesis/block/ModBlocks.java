@@ -185,6 +185,11 @@ public class ModBlocks {
                     .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),
                     ModItems.SPINACH_SEEDS));
 
+    public static final CropBlock ARROWROOT_CROP = registerCropBlock("arrowroot_crop",
+            new CustomCropBlock(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),
+                    ModItems.ARROWROOT_SEEDS));
+
 
     // BERRY BUSHES ----------------------------------------------------------------------------------------------------
     public static final SweetBerryBushBlock BLUEBERRY_BUSH = registerBushBlock("blueberry_bush",
