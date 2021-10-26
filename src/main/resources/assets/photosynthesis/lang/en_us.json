@@ -49,6 +49,7 @@
   "block.photosynthesis.soybean_crop": "Soybean",
   "block.photosynthesis.spinach_crop": "Spinach",
   "block.photosynthesis.arrowroot_crop": "Arrowroot",
+  "block.photosynthesis.artichoke_crop": "Artichoke",
 
   "item.photosynthesis.tomato": "Tomato",
   "item.photosynthesis.basil": "Basil",
@@ -85,6 +86,7 @@
   "item.photosynthesis.soybean": "Soybean",
   "item.photosynthesis.spinach": "Spinach",
   "item.photosynthesis.arrowroot": "Arrowroot",
+  "item.photosynthesis.artichoke": "Artichoke",
 
   "item.photosynthesis.tomato_seeds": "Tomato Seeds",
   "item.photosynthesis.basil_seeds": "Basil Seeds",
@@ -120,6 +122,7 @@
   "item.photosynthesis.soybean_seeds": "Soybean Seeds",
   "item.photosynthesis.spinach_seeds": "Spinach Seeds",
   "item.photosynthesis.arrowroot_seeds": "Arrowroot Seeds",
+  "item.photosynthesis.artichoke_seeds": "Artichoke Seeds",
 
   "item.photosynthesis.cutting_knife": "Cutting Knife",
 
