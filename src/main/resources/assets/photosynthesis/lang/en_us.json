@@ -52,6 +52,7 @@
   "block.photosynthesis.artichoke_crop": "Artichoke",
   "block.photosynthesis.brussels_sprouts_crop": "Brussels Sprouts",
   "block.photosynthesis.cassava_crop": "Cassava",
+  "block.photosynthesis.eggplant_crop": "Eggplant",
 
   "item.photosynthesis.tomato": "Tomato",
   "item.photosynthesis.basil": "Basil",
@@ -91,6 +92,7 @@
   "item.photosynthesis.artichoke": "Artichoke",
   "item.photosynthesis.brussels_sprouts": "Brussels Sprouts",
   "item.photosynthesis.cassava": "Cassava",
+  "item.photosynthesis.eggplant": "Eggplant",
 
   "item.photosynthesis.tomato_seeds": "Tomato Seeds",
   "item.photosynthesis.basil_seeds": "Basil Seeds",
@@ -129,6 +131,7 @@
   "item.photosynthesis.artichoke_seeds": "Artichoke Seeds",
   "item.photosynthesis.brussels_sprouts_seeds": "Brussels Sprouts Seeds",
   "item.photosynthesis.cassava_seeds": "Cassava Seeds",
+  "item.photosynthesis.eggplant_seeds": "Eggplant Seeds",
 
   "item.photosynthesis.cutting_knife": "Cutting Knife",
 
