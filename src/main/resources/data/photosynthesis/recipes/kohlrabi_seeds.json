@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "photosynthesis:kohlrabi"
+    }
+  ],
+  "result": {
+    "item": "photosynthesis:kohlrabi_seeds",
+    "count": 1
+  }
+}
