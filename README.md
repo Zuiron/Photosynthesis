@@ -56,3 +56,4 @@ Photosynthesis adds berries, crops, flowers, food, tools and tons of food relate
 <img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/kohlrabi.png?raw=true" width="32" height="32"> Kohlrabi
 <img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/lettuce.png?raw=true" width="32" height="32"> Lettuce
 <img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/okra.png?raw=true" width="32" height="32"> Okra
+<img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/parsnip.png?raw=true" width="32" height="32"> Parsnip

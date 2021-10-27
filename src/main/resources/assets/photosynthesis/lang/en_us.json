@@ -59,6 +59,7 @@
   "block.photosynthesis.kohlrabi_crop": "Kohlrabi",
   "block.photosynthesis.lettuce_crop": "Lettuce",
   "block.photosynthesis.okra_crop": "Okra",
+  "block.photosynthesis.parsnip_crop": "Parsnip",
 
   "item.photosynthesis.tomato": "Tomato",
   "item.photosynthesis.basil": "Basil",
@@ -105,6 +106,7 @@
   "item.photosynthesis.kohlrabi": "Kohlrabi",
   "item.photosynthesis.lettuce": "Lettuce",
   "item.photosynthesis.okra": "Okra",
+  "item.photosynthesis.parsnip": "Parsnip",
 
   "item.photosynthesis.tomato_seeds": "Tomato Seeds",
   "item.photosynthesis.basil_seeds": "Basil Seeds",
@@ -150,6 +152,7 @@
   "item.photosynthesis.kohlrabi_seeds": "Kohlrabi Seeds",
   "item.photosynthesis.lettuce_seeds": "Lettuce Seeds",
   "item.photosynthesis.okra_seeds": "Okra Seeds",
+  "item.photosynthesis.parsnip_seeds": "Parsnip Seeds",
 
   "item.photosynthesis.cutting_knife": "Cutting Knife",
 
