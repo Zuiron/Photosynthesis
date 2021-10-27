@@ -55,6 +55,7 @@
   "block.photosynthesis.eggplant_crop": "Eggplant",
   "block.photosynthesis.sunflower_crop": "Sunflower",
   "block.photosynthesis.jicama_crop": "Jicama",
+  "block.photosynthesis.kale_crop": "Kale",
 
   "item.photosynthesis.tomato": "Tomato",
   "item.photosynthesis.basil": "Basil",
@@ -97,6 +98,7 @@
   "item.photosynthesis.eggplant": "Eggplant",
   "item.photosynthesis.sunflower": "Sunflower",
   "item.photosynthesis.jicama": "Jicama",
+  "item.photosynthesis.kale": "Kale",
 
   "item.photosynthesis.tomato_seeds": "Tomato Seeds",
   "item.photosynthesis.basil_seeds": "Basil Seeds",
@@ -138,6 +140,7 @@
   "item.photosynthesis.eggplant_seeds": "Eggplant Seeds",
   "item.photosynthesis.sunflower_seeds": "Sunflower Seeds",
   "item.photosynthesis.jicama_seeds": "Jicama Seeds",
+  "item.photosynthesis.kale_seeds": "Kale Seeds",
 
   "item.photosynthesis.cutting_knife": "Cutting Knife",
 
