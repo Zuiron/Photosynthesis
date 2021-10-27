@@ -58,6 +58,7 @@
   "block.photosynthesis.kale_crop": "Kale",
   "block.photosynthesis.kohlrabi_crop": "Kohlrabi",
   "block.photosynthesis.lettuce_crop": "Lettuce",
+  "block.photosynthesis.okra_crop": "Okra",
 
   "item.photosynthesis.tomato": "Tomato",
   "item.photosynthesis.basil": "Basil",
@@ -103,6 +104,7 @@
   "item.photosynthesis.kale": "Kale",
   "item.photosynthesis.kohlrabi": "Kohlrabi",
   "item.photosynthesis.lettuce": "Lettuce",
+  "item.photosynthesis.okra": "Okra",
 
   "item.photosynthesis.tomato_seeds": "Tomato Seeds",
   "item.photosynthesis.basil_seeds": "Basil Seeds",
@@ -147,6 +149,7 @@
   "item.photosynthesis.kale_seeds": "Kale Seeds",
   "item.photosynthesis.kohlrabi_seeds": "Kohlrabi Seeds",
   "item.photosynthesis.lettuce_seeds": "Lettuce Seeds",
+  "item.photosynthesis.okra_seeds": "Okra Seeds",
 
   "item.photosynthesis.cutting_knife": "Cutting Knife",
 

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "photosynthesis:okra"
+    }
+  ],
+  "result": {
+    "item": "photosynthesis:okra_seeds",
+    "count": 1
+  }
+}
