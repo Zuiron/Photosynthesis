@@ -155,11 +155,13 @@
   "item.photosynthesis.parsnip_seeds": "Parsnip Seeds",
 
   "item.photosynthesis.cutting_knife": "Cutting Knife",
-
+  "item.photosynthesis.whisk": "Whisk",
   "item.photosynthesis.mortar_pestle": "Mortar & Pestle",
   "item.photosynthesis.rolling_pin": "Rolling Pin",
   "item.photosynthesis.plate": "Plate",
 
+  "item.photosynthesis.whisk_handle": "Whisk Handle",
+  "item.photosynthesis.whisk_part": "Whisk Part",
   "item.photosynthesis.mortar": "Mortar",
   "item.photosynthesis.pestle": "Pestle",
   "item.photosynthesis.rolling_pin_part": "Rolling Pin Part",

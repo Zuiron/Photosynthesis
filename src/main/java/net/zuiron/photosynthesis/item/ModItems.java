@@ -29,8 +29,20 @@ public class ModItems {
     public static final Item PLATE = registerRemainderItem("plate",
             new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
 
+    public static final Item WHISK = registerRemainderItem("whisk",
+            new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
+
+    public static final Item CUTTING_BOARD = registerRemainderItem("cutting_board",
+            new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
+
 
     // -------------- Crafting Items
+    public static final Item WHISK_HANDLE = registerItem("whisk_handle",
+            new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
+
+    public static final Item WHISK_PART = registerItem("whisk_part",
+            new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
+
     public static final Item MORTAR = registerItem("mortar",
             new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
 
