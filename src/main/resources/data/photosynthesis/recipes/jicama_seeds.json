@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "photosynthesis:jicama"
+    }
+  ],
+  "result": {
+    "item": "photosynthesis:jicama_seeds",
+    "count": 1
+  }
+}
