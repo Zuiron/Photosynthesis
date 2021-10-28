@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "P"
+  ],
+  "key": {
+    "#": {
+      "item": "photosynthesis.whisk_handle"
+    },
+    "P": {
+      "item": "photosynthesis.whisk_part"
+    }
+  },
+  "result": {
+    "item": "photosynthesis.whisk",
+    "count": 1
+  }
+}
