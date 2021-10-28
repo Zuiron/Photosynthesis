@@ -73,6 +73,15 @@ public class ModItems {
 
 
 
+    // PRODUCED WITH TOOLS
+    public static final Item CANOLA_OIL = registerItem("canola_oil",
+            new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
+
+    public static final Item SUNFLOWER_OIL = registerItem("sunflower_oil",
+            new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
+
+
+
     // CRAFTED ITEMS ---------------------------------------------------------------------------------------------------
     public static final Item SOFT_BOILED_EGG = registerItem("soft_boiled_egg",
             new Item(new FabricItemSettings()

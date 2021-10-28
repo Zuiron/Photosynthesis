@@ -177,5 +177,8 @@
   "item.photosynthesis.hard_boiled_egg": "Hard Boiled Egg",
   "item.photosynthesis.fried_egg": "Fried Egg",
   "item.photosynthesis.cracked_egg": "Cracked Egg",
-  "item.photosynthesis.scrambled_egg": "Scrambled Egg"
+  "item.photosynthesis.scrambled_egg": "Scrambled Egg",
+
+  "item.photosynthesis.canola_oil": "Canola Oil",
+  "item.photosynthesis.sunflower_oil": "Sunflower Oil"
 }
