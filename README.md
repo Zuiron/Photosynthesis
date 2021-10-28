@@ -2,6 +2,14 @@
 This is a FABRIC ONLY mod.<br />
 Photosynthesis adds berries, crops, flowers, food, tools and tons of food related recipes. (see below)
 
+# Tools
+<img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/cutting_knife.png?raw=true" width="32" height="32"> Cutting Knife
+<img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/whisk.png?raw=true" width="32" height="32"> Whisk
+<img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/mortar_pestle.png?raw=true" width="32" height="32"> Mortar Pestle
+<img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/rolling_pin.png?raw=true" width="32" height="32"> Rolling Pin
+<img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/cutting_board.png?raw=true" width="32" height="32"> Cutting Board
+<img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/plate.png?raw=true" width="32" height="32"> Plate
+
 # Berries
 <img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/blueberries.png?raw=true" width="32" height="32"> Blueberries
 <img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/blackberries.png?raw=true" width="32" height="32"> Blackberries
