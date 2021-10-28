@@ -75,6 +75,11 @@ public class ModItems {
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
                     .group(ModItemGroup.PHOTOSYNTHESIS)));
 
+    public static final Item CRACKED_EGG = registerItem("cracked_egg",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
+                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+
     // BERRIES ---------------------------------------------------------------------------------------------------------
     public static final Item BLUEBERRIES = registerBerryItem("blueberries", ModBlocks.BLUEBERRY_BUSH,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build())
