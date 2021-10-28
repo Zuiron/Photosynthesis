@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "P",
+    "T"
+  ],
+  "key": {
+    "#": {
+      "item": "photosynthesis:cutting_knife"
+    },
+    "P": {
+      "item": "photosynthesis:chive"
+    },
+    "T": {
+      "item": "photosynthesis:cutting_board"
+    }
+  },
+  "result": {
+    "item": "photosynthesis:cut_chives",
+    "count": 1
+  }
+}

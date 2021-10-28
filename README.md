@@ -70,6 +70,11 @@ Photosynthesis adds berries, crops, flowers, food, tools and tons of food relate
 # Food & Consumables
 <img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/canola_oil.png?raw=true" width="32" height="32"> Canola Oil
 <img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/sunflower_oil.png?raw=true" width="32" height="32"> Sunflower Oil
+<img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/scrambled_egg_mix.png?raw=true" width="32" height="32"> Scrambled Egg Mix
+<img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/salt.png?raw=true" width="32" height="32"> Salt
+<img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/dried_black_pepper.png?raw=true" width="32" height="32"> Dried Black Pepper
+
+<img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/cut_chives.png?raw=true" width="32" height="32"> Cut Chives
 
 <img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/fried_egg.png?raw=true" width="32" height="32"> Fried Egg
 <img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/soft_boiled_egg.png?raw=true" width="32" height="32"> Soft Boiled Egg

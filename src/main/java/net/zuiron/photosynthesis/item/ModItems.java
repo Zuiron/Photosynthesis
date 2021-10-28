@@ -80,6 +80,18 @@ public class ModItems {
     public static final Item SUNFLOWER_OIL = registerItem("sunflower_oil",
             new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
 
+    public static final Item CUT_CHIVES = registerItem("cut_chives",
+            new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
+
+    public static final Item SCRAMBLED_EGG_MIX = registerItem("scrambled_egg_mix",
+            new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
+
+    public static final Item SALT = registerItem("salt",
+            new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
+
+    public static final Item DRIED_BLACK_PEPPER = registerItem("dried_black_pepper",
+            new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
+
 
 
     // CRAFTED ITEMS ---------------------------------------------------------------------------------------------------

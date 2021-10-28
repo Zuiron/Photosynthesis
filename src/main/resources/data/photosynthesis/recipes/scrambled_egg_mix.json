@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#PQ",
+    " Z ",
+    "JSW"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:milk_bucket"
+    },
+    "P": {
+      "item": "photosynthesis:dried_black_pepper"
+    },
+    "Q": {
+      "item": "photosynthesis:salt"
+    },
+    "Z": {
+      "item": "photosynthesis:whisk"
+    },
+    "J": {
+      "item": "photosynthesis:cracked_egg"
+    },
+    "S": {
+      "item": "photosynthesis:cut_chives"
+    },
+    "W": {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "result": {
+    "item": "photosynthesis:scrambled_egg_mix",
+    "count": 1
+  }
+}
