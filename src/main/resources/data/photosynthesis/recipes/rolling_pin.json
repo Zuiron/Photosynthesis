@@ -10,17 +10,17 @@
       "item": "minecraft:red_dye"
     },
     "P": {
-      "item": "photosynthesis.rolling_pin_handle"
+      "item": "photosynthesis:rolling_pin_handle"
     },
     "H": {
-      "item": "photosynthesis.rolling_pin_part"
+      "item": "photosynthesis:rolling_pin_part"
     },
     "Y": {
-      "item": "photosynthesis.rolling_pin_pin"
+      "item": "photosynthesis:rolling_pin_pin"
     }
   },
   "result": {
-    "item": "photosynthesis.rolling_pin",
+    "item": "photosynthesis:rolling_pin",
     "count": 1
   }
 }

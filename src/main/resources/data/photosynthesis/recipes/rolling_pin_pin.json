@@ -3,6 +3,6 @@
   "ingredient": {
     "item": "minecraft:iron_ingot"
   },
-  "result": "photosynthesis.rolling_pin_pin",
+  "result": "photosynthesis:rolling_pin_pin",
   "count": 1
 }

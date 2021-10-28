@@ -3,6 +3,6 @@
   "ingredient": {
     "item": "minecraft:stick"
   },
-  "result": "photosynthesis.whisk_handle",
+  "result": "photosynthesis:whisk_handle",
   "count": 1
 }

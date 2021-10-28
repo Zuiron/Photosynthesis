@@ -3,6 +3,6 @@
   "ingredient": {
     "item": "minecraft:iron_ingot"
   },
-  "result": "photosynthesis.whisk_part",
+  "result": "photosynthesis:whisk_part",
   "count": 1
 }

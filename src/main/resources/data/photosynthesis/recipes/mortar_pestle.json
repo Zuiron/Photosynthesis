@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "photosynthesis.pestle"
+      "item": "photosynthesis:pestle"
     },
     {
-      "item": "photosynthesis.mortar"
+      "item": "photosynthesis:mortar"
     }
   ],
   "result": {
-    "item": "photosynthesis.mortar_pestle",
+    "item": "photosynthesis:mortar_pestle",
     "count": 1
   }
 }

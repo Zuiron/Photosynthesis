@@ -6,14 +6,14 @@
   ],
   "key": {
     "#": {
-      "item": "photosynthesis.whisk_handle"
+      "item": "photosynthesis:whisk_handle"
     },
     "P": {
-      "item": "photosynthesis.whisk_part"
+      "item": "photosynthesis:whisk_part"
     }
   },
   "result": {
-    "item": "photosynthesis.whisk",
+    "item": "photosynthesis:whisk",
     "count": 1
   }
 }

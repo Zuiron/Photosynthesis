@@ -3,6 +3,6 @@
   "ingredient": {
     "item": "minecraft:birch_slab"
   },
-  "result": "photosynthesis.rolling_pin_part",
+  "result": "photosynthesis:rolling_pin_part",
   "count": 1
 }
