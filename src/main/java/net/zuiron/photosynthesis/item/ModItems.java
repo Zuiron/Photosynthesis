@@ -35,6 +35,9 @@ public class ModItems {
     public static final Item CUTTING_BOARD = registerRemainderItem("cutting_board",
             new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
 
+    public static final Item SQUEEZER = registerRemainderItem("squeezer",
+            new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
+
 
 
     // -------------- Crafting Items
@@ -63,6 +66,9 @@ public class ModItems {
             new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
 
     public static final Item CUTTING_KNIFE_HANDLE = registerItem("cutting_knife_handle",
+            new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
+
+    public static final Item SQUEEZER_PART = registerItem("squeezer_part",
             new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
 
 

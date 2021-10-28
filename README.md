@@ -9,6 +9,7 @@ Photosynthesis adds berries, crops, flowers, food, tools and tons of food relate
 <img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/rolling_pin.png?raw=true" width="32" height="32"> Rolling Pin
 <img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/cutting_board.png?raw=true" width="32" height="32"> Cutting Board
 <img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/plate.png?raw=true" width="32" height="32"> Plate
+<img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/squeezer.png?raw=true" width="32" height="32"> Squeezer
 
 # Berries
 <img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/blueberries.png?raw=true" width="32" height="32"> Blueberries
