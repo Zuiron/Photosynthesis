@@ -36,6 +36,7 @@ public class ModItems {
             new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
 
 
+
     // -------------- Crafting Items
     public static final Item WHISK_HANDLE = registerItem("whisk_handle",
             new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));

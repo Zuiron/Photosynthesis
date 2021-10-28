@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:birch_slab"
+  },
+  "result": "photosynthesis.rolling_pin_part",
+  "count": 1
+}
