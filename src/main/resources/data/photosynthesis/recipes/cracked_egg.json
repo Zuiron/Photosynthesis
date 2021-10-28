@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#E"
+  ],
+  "key": {
+    "#": {
+      "item": "photosynthesis:cutting_knife"
+    },
+    "E": {
+      "item": "minecraft:egg"
+    }
+  },
+  "result": {
+    "item": "photosynthesis:cracked_egg",
+    "count": 1
+  }
+}
