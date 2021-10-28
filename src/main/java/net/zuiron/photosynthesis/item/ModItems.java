@@ -59,7 +59,21 @@ public class ModItems {
     public static final Item ROLLING_PIN_PIN = registerItem("rolling_pin_pin",
             new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
 
+    // CRAFTED ITEMS ---------------------------------------------------------------------------------------------------
+    public static final Item SOFT_BOILED_EGG = registerItem("soft_boiled_egg",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
+                    .group(ModItemGroup.PHOTOSYNTHESIS)));
 
+    public static final Item HARD_BOILED_EGG = registerItem("hard_boiled_egg",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
+                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+
+    public static final Item FRIED_EGG = registerItem("fried_egg",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
+                    .group(ModItemGroup.PHOTOSYNTHESIS)));
 
     // BERRIES ---------------------------------------------------------------------------------------------------------
     public static final Item BLUEBERRIES = registerBerryItem("blueberries", ModBlocks.BLUEBERRY_BUSH,

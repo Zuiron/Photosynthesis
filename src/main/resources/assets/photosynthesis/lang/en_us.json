@@ -168,5 +168,9 @@
   "item.photosynthesis.pestle": "Pestle",
   "item.photosynthesis.rolling_pin_part": "Rolling Pin Part",
   "item.photosynthesis.rolling_pin_handle": "Rolling Pin Handle",
-  "item.photosynthesis.rolling_pin_pin": "Rolling Pin Pin"
+  "item.photosynthesis.rolling_pin_pin": "Rolling Pin Pin",
+
+  "item.photosynthesis.soft_boiled_egg": "Soft Boiled Egg",
+  "item.photosynthesis.hard_boiled_egg": "Hard Boiled Egg",
+  "item.photosynthesis.fried_egg": "Fried Egg"
 }

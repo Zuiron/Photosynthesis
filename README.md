@@ -57,3 +57,8 @@ Photosynthesis adds berries, crops, flowers, food, tools and tons of food relate
 <img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/lettuce.png?raw=true" width="32" height="32"> Lettuce
 <img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/okra.png?raw=true" width="32" height="32"> Okra
 <img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/parsnip.png?raw=true" width="32" height="32"> Parsnip
+
+# Food
+<img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/fried_egg.png?raw=true" width="32" height="32"> Fried Egg
+<img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/soft_boiled_egg.png?raw=true" width="32" height="32"> Soft Boiled Egg
+<img src="https://github.com/Zuiron/Photosynthesis/blob/master/src/main/resources/assets/photosynthesis/textures/item/hard_boiled_egg.png?raw=true" width="32" height="32"> Hard Boiled Egg
