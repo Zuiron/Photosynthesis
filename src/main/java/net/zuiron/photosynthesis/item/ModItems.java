@@ -59,6 +59,14 @@ public class ModItems {
     public static final Item ROLLING_PIN_PIN = registerItem("rolling_pin_pin",
             new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
 
+    public static final Item CUTTING_KNIFE_BLADE = registerItem("cutting_knife_blade",
+            new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
+
+    public static final Item CUTTING_KNIFE_HANDLE = registerItem("cutting_knife_handle",
+            new Item(new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
+
+
+
     // CRAFTED ITEMS ---------------------------------------------------------------------------------------------------
     public static final Item SOFT_BOILED_EGG = registerItem("soft_boiled_egg",
             new Item(new FabricItemSettings()
