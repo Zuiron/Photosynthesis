@@ -60,6 +60,7 @@
   "block.photosynthesis.lettuce_crop": "Lettuce",
   "block.photosynthesis.okra_crop": "Okra",
   "block.photosynthesis.parsnip_crop": "Parsnip",
+  "block.photosynthesis.radish_crop": "Radish",
 
   "item.photosynthesis.tomato": "Tomato",
   "item.photosynthesis.basil": "Basil",
@@ -107,6 +108,7 @@
   "item.photosynthesis.lettuce": "Lettuce",
   "item.photosynthesis.okra": "Okra",
   "item.photosynthesis.parsnip": "Parsnip",
+  "item.photosynthesis.radish": "Radish",
 
   "item.photosynthesis.tomato_seeds": "Tomato Seeds",
   "item.photosynthesis.basil_seeds": "Basil Seeds",
@@ -153,6 +155,7 @@
   "item.photosynthesis.lettuce_seeds": "Lettuce Seeds",
   "item.photosynthesis.okra_seeds": "Okra Seeds",
   "item.photosynthesis.parsnip_seeds": "Parsnip Seeds",
+  "item.photosynthesis.radish_seeds": "Radish Seeds",
 
   "item.photosynthesis.cutting_knife": "Cutting Knife",
   "item.photosynthesis.whisk": "Whisk",
