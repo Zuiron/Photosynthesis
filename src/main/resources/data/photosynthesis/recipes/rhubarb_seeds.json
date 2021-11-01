@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "photosynthesis:rhubarb"
+    }
+  ],
+  "result": {
+    "item": "photosynthesis:rhubarb_seeds",
+    "count": 1
+  }
+}
