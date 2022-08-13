@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "photosynthesis:cabbage"
+    }
+  ],
+  "result": {
+    "item": "photosynthesis:cabbage_seeds",
+    "count": 1
+  }
+}

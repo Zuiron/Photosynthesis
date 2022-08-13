@@ -3,7 +3,6 @@ package net.zuiron.photosynthesis;
 import net.fabricmc.api.ModInitializer;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.item.ModItems;
-import net.zuiron.photosynthesis.worldgen.BerryGeneration;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -56,11 +55,11 @@ public class Photosynthesis implements ModInitializer {
 		final String CLOUDBERRY_SPAWN_BIOMES = "minecraft:mountains,minecraft:swamp,minecraft:snowy_mountains,minecraft:snowy_taiga,minecraft:snowy_taiga_hills,minecraft:snowy_taiga_mountains,minecraft:taiga_mountains,minecraft:wooded_mountains";
 		final String WILD_STRAWBERRY_SPAWN_BIOMES = "minecraft:flower_forest,minecraft:forest,minecraft:snowy_mountains,minecraft:taiga_hills,minecraft:tall_birch_hills,minecraft:snowy_mountains,minecraft:wooded_mountains,minecraft:taiga";
 
-		BerryGeneration.registerBerryGeneration(BLUEBERRY_SPAWN_BIOMES, ModBlocks.BLUEBERRY_BUSH, 16, "blueberry");
-		BerryGeneration.registerBerryGeneration(BLACKBERRY_SPAWN_BIOMES, ModBlocks.BLACKBERRY_BUSH, 16, "blackberry");
-		BerryGeneration.registerBerryGeneration(RASPBERRY_SPAWN_BIOMES, ModBlocks.RASPBERRY_BUSH, 16, "raspberry");
-		BerryGeneration.registerBerryGeneration(CLOUDBERRY_SPAWN_BIOMES, ModBlocks.CLOUDBERRY_BUSH, 15, "cloudberry");
-		BerryGeneration.registerBerryGeneration(WILD_STRAWBERRY_SPAWN_BIOMES, ModBlocks.WILD_STRAWBERRY_BUSH, 14, "wild_strawberry");
+		//BerryGeneration.registerBerryGeneration(BLUEBERRY_SPAWN_BIOMES, ModBlocks.BLUEBERRY_BUSH, 16, "blueberry");
+		//BerryGeneration.registerBerryGeneration(BLACKBERRY_SPAWN_BIOMES, ModBlocks.BLACKBERRY_BUSH, 16, "blackberry");
+		//BerryGeneration.registerBerryGeneration(RASPBERRY_SPAWN_BIOMES, ModBlocks.RASPBERRY_BUSH, 16, "raspberry");
+		//BerryGeneration.registerBerryGeneration(CLOUDBERRY_SPAWN_BIOMES, ModBlocks.CLOUDBERRY_BUSH, 15, "cloudberry");
+		//BerryGeneration.registerBerryGeneration(WILD_STRAWBERRY_SPAWN_BIOMES, ModBlocks.WILD_STRAWBERRY_BUSH, 14, "wild_strawberry");
 
 		LOGGER.info("Hello Fabric world!");
 	}
