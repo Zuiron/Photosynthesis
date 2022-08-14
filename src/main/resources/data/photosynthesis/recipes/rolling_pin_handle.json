@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:birch_planks"
-  },
-  "result": "photosynthesis:rolling_pin_handle",
-  "count": 1
-}
