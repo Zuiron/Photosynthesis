@@ -1,6 +1,7 @@
 # Photosynthesis
->This is a FABRIC mod. Minecraft 1.19.2
+<img src="https://i.imgur.com/Ol1Tcf8.png" height="32">
 
+>This is a FABRIC mod. Minecraft 1.19.2
 **Photosynthesis adds berries and crops.**
 
 <sub>Seperate mod for edibles and crafts "Photosynthesis Foods" not yet under development.</sub>
