@@ -27,56 +27,55 @@ public class CustomCropBlock extends CropBlock {
     @Override
     protected ItemConvertible getSeedsItem() {
 
-        if(seed == "tomato_crop") { return ModItems.TOMATO; }
-        else if(seed == "basil_crop") { return ModItems.BASIL; }
-        else if(seed == "oregano_crop") { return ModItems.OREGANO; }
-        else if(seed == "strawberry_crop") { return ModItems.STRAWBERRY; }
-        else if(seed == "oat_crop") { return ModItems.OAT; }
-        else if(seed == "jalapeno_crop") { return ModItems.JALAPENO; }
-        else if(seed == "chili_crop") { return ModItems.CHILI; }
-        else if(seed == "cucumber_crop") { return ModItems.CUCUMBER; }
-        else if(seed == "onion_crop") { return ModItems.ONION; }
-        else if(seed == "leek_crop") { return ModItems.LEEK; }
-        else if(seed == "celery_crop") { return ModItems.CELERY; }
-        else if(seed == "peas_crop") { return ModItems.PEAS; }
-        else if(seed == "sweet_potato_crop") { return ModItems.SWEET_POTATO; }
-        else if(seed == "asparagus_crop") { return ModItems.ASPARAGUS; }
-        else if(seed == "scallion_crop") { return ModItems.SCALLION; }
-        else if(seed == "garlic_crop") { return ModItems.GARLIC; }
-        else if(seed == "chive_crop") { return ModItems.CHIVE; }
-        else if(seed == "broccoli_crop") { return ModItems.BROCCOLI; }
-        else if(seed == "cauliflower_crop") { return ModItems.CAULIFLOWER; }
-        else if(seed == "corn_crop") { return ModItems.CORN; }
-        else if(seed == "black_pepper_crop") { return ModItems.BLACK_PEPPER; }
-        else if(seed == "cabbage_crop") { return ModItems.CABBAGE; }
-        else if(seed == "bellpepper_crop") { return ModItems.RED_BELLPEPPER; }
-        else if(seed == "turnip_crop") { return ModItems.TURNIP; }
-        else if(seed == "rutabaga_crop") { return ModItems.RUTABAGA; }
-        else if(seed == "canola_crop") { return ModItems.CANOLA; }
-        else if(seed == "barley_crop") { return ModItems.BARLEY; }
-        else if(seed == "cotton_crop") { return ModItems.COTTON; }
-        else if(seed == "sugarbeet_crop") { return ModItems.SUGARBEET; }
-        else if(seed == "rice_crop") { return ModItems.RICE; }
-        else if(seed == "sugarcane_crop") { return Items.SUGAR_CANE; }
-        else if(seed == "soybean_crop") { return ModItems.SOYBEAN; }
-        else if(seed == "spinach_crop") { return ModItems.SPINACH; }
-        else if(seed == "arrowroot_crop") { return ModItems.ARROWROOT; }
-        else if(seed == "artichoke_crop") { return ModItems.ARTICHOKE; }
-        else if(seed == "brussels_sprouts_crop") { return ModItems.BRUSSELS_SPROUTS; }
-        else if(seed == "cassava_crop") { return ModItems.CASSAVA; }
-        else if(seed == "eggplant_crop") { return ModItems.EGGPLANT; }
-        else if(seed == "sunflower_crop") { return ModItems.SUNFLOWER; }
-        else if(seed == "jicama_crop") { return ModItems.JICAMA; }
-        else if(seed == "kale_crop") { return ModItems.KALE; }
-        else if(seed == "kohlrabi_crop") { return ModItems.KOHLRABI; }
-        else if(seed == "lettuce_crop") { return ModItems.LETTUCE; }
-        else if(seed == "okra_crop") { return ModItems.OKRA; }
-        else if(seed == "parsnip_crop") { return ModItems.PARSNIP; }
-        else if(seed == "radish_crop") { return ModItems.RADISH; }
-        else if(seed == "rhubarb_crop") { return ModItems.RHUBARB; }
-
-        else {
-            return Items.AIR;
+        switch (seed) {
+            case "tomato_crop": return ModItems.TOMATO;
+            case "basil_crop": return ModItems.BASIL;
+            case "oregano_crop": return ModItems.OREGANO;
+            case "strawberry_crop": return ModItems.STRAWBERRY;
+            case "oat_crop": return ModItems.OAT;
+            case "jalapeno_crop": return ModItems.JALAPENO;
+            case "chili_crop": return ModItems.CHILI;
+            case "cucumber_crop": return ModItems.CUCUMBER;
+            case "onion_crop": return ModItems.ONION;
+            case "leek_crop": return ModItems.LEEK;
+            case "celery_crop": return ModItems.CELERY;
+            case "peas_crop": return ModItems.PEAS;
+            case "sweet_potato_crop": return ModItems.SWEET_POTATO;
+            case "asparagus_crop": return ModItems.ASPARAGUS;
+            case "scallion_crop": return ModItems.SCALLION;
+            case "garlic_crop": return ModItems.GARLIC;
+            case "chive_crop": return ModItems.CHIVE;
+            case "broccoli_crop": return ModItems.BROCCOLI;
+            case "cauliflower_crop": return ModItems.CAULIFLOWER;
+            case "corn_crop": return ModItems.CORN;
+            case "black_pepper_crop": return ModItems.BLACK_PEPPER;
+            case "cabbage_crop": return ModItems.CABBAGE;
+            case "bellpepper_crop": return ModItems.RED_BELLPEPPER;
+            case "turnip_crop": return ModItems.TURNIP;
+            case "rutabaga_crop": return ModItems.RUTABAGA;
+            case "canola_crop": return ModItems.CANOLA;
+            case "barley_crop": return ModItems.BARLEY;
+            case "cotton_crop": return ModItems.COTTON;
+            case "sugarbeet_crop": return ModItems.SUGARBEET;
+            case "rice_crop": return ModItems.RICE;
+            case "sugarcane_crop": return Items.SUGAR_CANE;
+            case "soybean_crop": return ModItems.SOYBEAN;
+            case "spinach_crop": return ModItems.SPINACH;
+            case "arrowroot_crop": return ModItems.ARROWROOT;
+            case "artichoke_crop": return ModItems.ARTICHOKE;
+            case "brussels_sprouts_crop": return ModItems.BRUSSELS_SPROUTS;
+            case "cassava_crop": return ModItems.CASSAVA;
+            case "eggplant_crop": return ModItems.EGGPLANT;
+            case "sunflower_crop": return ModItems.SUNFLOWER;
+            case "jicama_crop": return ModItems.JICAMA;
+            case "kale_crop": return ModItems.KALE;
+            case "kohlrabi_crop": return ModItems.KOHLRABI;
+            case "lettuce_crop": return ModItems.LETTUCE;
+            case "okra_crop": return ModItems.OKRA;
+            case "parsnip_crop": return ModItems.PARSNIP;
+            case "radish_crop": return ModItems.RADISH;
+            case "rhubarb_crop": return ModItems.RHUBARB;
+            default: return Items.AIR;
         }
     }
 
