@@ -50,7 +50,6 @@ public class ModBlocks {
     public static final CropBlock COTTON_CROP = registerCropBlockSimple("cotton_crop");
     public static final CropBlock SUGARBEET_CROP = registerCropBlockSimple("sugarbeet_crop");
     public static final CropBlock RICE_CROP = registerCropBlockSimple("rice_crop");
-    public static final CropBlock SUGARCANE_CROP = registerCropBlockSimple("sugarcane_crop");
     public static final CropBlock SOYBEAN_CROP = registerCropBlockSimple("soybean_crop");
     public static final CropBlock SPINACH_CROP = registerCropBlockSimple("spinach_crop");
     public static final CropBlock ARROWROOT_CROP = registerCropBlockSimple("arrowroot_crop");
