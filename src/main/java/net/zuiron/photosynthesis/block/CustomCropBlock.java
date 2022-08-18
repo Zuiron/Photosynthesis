@@ -74,6 +74,46 @@ public class CustomCropBlock extends CropBlock {
             case "parsnip_crop": return ModItems.PARSNIP;
             case "radish_crop": return ModItems.RADISH;
             case "rhubarb_crop": return ModItems.RHUBARB;
+
+            case "millet_crop": return ModItems.MILLET;
+            case "rye_crop": return ModItems.RYE;
+            case "squash_crop": return ModItems.SQUASH;
+            case "zucchini_crop": return ModItems.ZUCCHINI;
+            case "coffea_crop": return ModItems.COFFEA;
+            case "grape_crop": return ModItems.GRAPE;
+
+            case "camellia_sinensis_crop": return ModItems.CAMELLIA_SINENSIS;
+            case "nicotiana_rustica_crop": return ModItems.NICOTIANA_RUSTICA;
+            case "papaver_somniferum_crop": return ModItems.PAPAVER_SOMNIFERUM;
+            case "erythroxylum_coca_crop": return ModItems.ERYTHROXYLUM_COCA;
+
+            case "sativa_columbian_crop": return ModItems.SATIVA_COLUMBIAN;
+            case "sativa_sour_diesel_crop": return ModItems.SATIVA_SOUR_DIESEL;
+            case "sativa_nepalese_crop": return ModItems.SATIVA_NEPALESE;
+            case "sativa_thai_crop": return ModItems.SATIVA_THAI;
+            case "sativa_super_silver_haze_crop": return ModItems.SATIVA_SUPER_SILVER_HAZE;
+            case "sativa_oaxacan_crop": return ModItems.SATIVA_OAXACAN;
+
+            case "indica_acapulco_gold_crop": return ModItems.INDICA_ACAPULCO_GOLD;
+            case "indica_purple_kush_crop": return ModItems.INDICA_PURPLE_KUSH;
+            case "indica_afghan_kush_crop": return ModItems.INDICA_AFGHAN_KUSH;
+            case "indica_bubba_kush_crop": return ModItems.INDICA_BUBBA_KUSH;
+            case "indica_la_confidential_crop": return ModItems.INDICA_LA_CONFIDENTIAL;
+            case "indica_northern_lights_crop": return ModItems.INDICA_NORTHERN_LIGHTS;
+
+            case "hybrid_durban_crop": return ModItems.HYBRID_DURBAN;
+            case "hybrid_hindu_kush_crop": return ModItems.HYBRID_HINDU_KUSH;
+            case "hybrid_blue_dream_crop": return ModItems.HYBRID_BLUE_DREAM;
+            case "hybrid_maui_crop": return ModItems.HYBRID_MAUI;
+            case "hybrid_golden_goat_crop": return ModItems.HYBRID_GOLDEN_GOAT;
+            case "hybrid_white_widow_crop": return ModItems.HYBRID_WHITE_WIDOW;
+            case "hybrid_pineapple_express_crop": return ModItems.HYBRID_PINEAPPLE_EXPRESS;
+
+            case "ruderalis_skunk_crop": return ModItems.RUDERALIS_SKUNK;
+            case "ruderalis_do_si_dos_crop": return ModItems.RUDERALIS_DO_SI_DOS;
+            case "ruderalis_membrana_hiper_autoflowering_crop": return ModItems.RUDERALIS_MEMBRANA_HIPER_AUTOFLOWERING;
+            case "ruderalis_auto_mazar_crop": return ModItems.RUDERALIS_AUTO_MAZAR;
+
             default: return Items.AIR;
         }
     }
