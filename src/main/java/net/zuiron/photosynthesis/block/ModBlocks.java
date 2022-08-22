@@ -49,7 +49,7 @@ public class ModBlocks {
     public static final CropBlock BARLEY_CROP = registerCropBlockSimple("barley_crop");
     public static final CropBlock COTTON_CROP = registerCropBlockSimple("cotton_crop");
     public static final CropBlock SUGARBEET_CROP = registerCropBlockSimple("sugarbeet_crop");
-    public static final CropBlock RICE_CROP = registerCropBlockSimple("rice_crop");
+    public static final CropBlock RICE_CROP = registerCropBlockSimpleWL("rice_crop");
     public static final CropBlock SOYBEAN_CROP = registerCropBlockSimple("soybean_crop");
     public static final CropBlock SPINACH_CROP = registerCropBlockSimple("spinach_crop");
     public static final CropBlock ARROWROOT_CROP = registerCropBlockSimple("arrowroot_crop");
@@ -163,6 +163,13 @@ public class ModBlocks {
                 new CustomCropBlock(AbstractBlock.Settings.of(Material.PLANT)
                 .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),
                 name));
+    }
+
+    private static CropBlock registerCropBlockSimpleWL(String name){
+        return Registry.register(Registry.BLOCK, new Identifier(Photosynthesis.MOD_ID, name),
+                new CustomCropBlockWL(AbstractBlock.Settings.of(Material.PLANT)
+                        .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),
+                        name));
     }
 
     private static SweetBerryBushBlock registerBushBlock(String name, SweetBerryBushBlock block){

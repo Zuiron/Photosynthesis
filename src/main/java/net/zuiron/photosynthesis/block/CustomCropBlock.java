@@ -1,11 +1,18 @@
 package net.zuiron.photosynthesis.block;
 
 import net.minecraft.block.*;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.*;
+import net.minecraft.state.StateManager;
+import net.minecraft.state.property.BooleanProperty;
+import net.minecraft.state.property.Properties;
+import net.minecraft.state.property.Property;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
+import net.minecraft.world.WorldAccess;
 import net.zuiron.photosynthesis.item.ModItems;
 
 public class CustomCropBlock extends CropBlock {
@@ -18,7 +25,7 @@ public class CustomCropBlock extends CropBlock {
     @Override
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
         switch (seed) {
-            case "rice_crop_disable_WORKS_TODO": if(world.getFluidState(pos.up(1)).isOf(Fluids.WATER)) { return true; }
+            case "rice_crop_anotherclass": if(world.getFluidState(pos.up(1)).isOf(Fluids.WATER)) { return true; }
             default: return floor.isOf(Blocks.FARMLAND);
         }
     }
