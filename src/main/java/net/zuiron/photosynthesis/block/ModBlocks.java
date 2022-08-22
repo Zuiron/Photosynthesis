@@ -1,6 +1,7 @@
 package net.zuiron.photosynthesis.block;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.item.BlockItem;
@@ -16,7 +17,10 @@ public class ModBlocks {
 
     // FLOWERS ---------------------------------------------------------------------------------------------------------
     public static final Block FLORAMELISSIA = registerBlock("floramelissia",
-            new FlowerBlock(StatusEffect.byRawId(1),1, AbstractBlock.Settings.copy(Blocks.POPPY)));
+            new FlowerBlock(StatusEffect.byRawId(1),1, FabricBlockSettings.copy(Blocks.POTTED_POPPY).nonOpaque()));
+
+    public static final Block POTTED_FLORAMELISSIA = registerBlockWithoutBlockItem("potted_floramelissia",
+            new FlowerPotBlock(ModBlocks.FLORAMELISSIA, FabricBlockSettings.copy(Blocks.POTTED_POPPY).nonOpaque()));
 
 
     // CROP BLOCKS -----------------------------------------------------------------------------------------------------
@@ -144,6 +148,9 @@ public class ModBlocks {
 
     // END OF BLOCKS ---------------------------------------------------------------------------------------------------
 
+    private static Block registerBlockWithoutBlockItem(String name, Block block){
+        return Registry.register(Registry.BLOCK, new Identifier(Photosynthesis.MOD_ID, name), block);
+    }
     private static Block registerBlock(String name, Block block){
         registerBlockItem(name, block);
         return Registry.register(Registry.BLOCK, new Identifier(Photosynthesis.MOD_ID, name), block);
