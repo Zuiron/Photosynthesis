@@ -1,6 +1,7 @@
 package net.zuiron.photosynthesis.block;
 
 import net.minecraft.block.*;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.item.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
@@ -14,7 +15,16 @@ public class CustomCropBlock extends CropBlock {
         seed = itemname;
     }
 
-    private static final VoxelShape[] AGE_TO_SHAPE = new VoxelShape[]{Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D),
+    @Override
+    protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
+        switch (seed) {
+            case "rice_crop_disable_WORKS_TODO": if(world.getFluidState(pos.up(1)).isOf(Fluids.WATER)) { return true; }
+            default: return floor.isOf(Blocks.FARMLAND);
+        }
+    }
+
+    private static final VoxelShape[] AGE_TO_SHAPE = new VoxelShape[]{
+            Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D),
             Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 3.0D, 16.0D),
             Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D),
             Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 5.0D, 16.0D),
