@@ -57,7 +57,7 @@ public class CustomCropBlockWL extends CropBlock implements Waterloggable {
     @Override
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
         switch (seed) {
-            case "rice_crop": if(world.getFluidState(pos.up(1)).isOf(Fluids.WATER)) { return true; }
+            case "rice_crop": if(world.getFluidState(pos.up(1)).isOf(Fluids.WATER) && world.getBlockState(pos.up(2)).isOf(Blocks.AIR)) { return true; }
             default: return floor.isOf(Blocks.FARMLAND);
         }
     }
