@@ -83,32 +83,6 @@ public class ModBlocks {
     public static final CropBlock PAPAVER_SOMNIFERUM_CROP = registerCropBlockSimple("papaver_somniferum_crop");
     public static final CropBlock ERYTHROXYLUM_COCA_CROP = registerCropBlockSimple("erythroxylum_coca_crop");
 
-    public static final CropBlock SATIVA_COLUMBIAN_CROP = registerCropBlockSimple("sativa_columbian_crop");
-    public static final CropBlock SATIVA_SOUR_DIESEL_CROP = registerCropBlockSimple("sativa_sour_diesel_crop");
-    public static final CropBlock SATIVA_NEPALESE_CROP = registerCropBlockSimple("sativa_nepalese_crop");
-    public static final CropBlock SATIVA_THAI_CROP = registerCropBlockSimple("sativa_thai_crop");
-    public static final CropBlock SATIVA_SUPER_SILVER_HAZE_CROP = registerCropBlockSimple("sativa_super_silver_haze_crop");
-    public static final CropBlock SATIVA_OAXACAN_CROP = registerCropBlockSimple("sativa_oaxacan_crop");
-
-    public static final CropBlock INDICA_ACAPULCO_GOLD_CROP = registerCropBlockSimple("indica_acapulco_gold_crop");
-    public static final CropBlock INDICA_PURPLE_KUSH_CROP = registerCropBlockSimple("indica_purple_kush_crop");
-    public static final CropBlock INDICA_AFGHAN_KUSH_CROP = registerCropBlockSimple("indica_afghan_kush_crop");
-    public static final CropBlock INDICA_BUBBA_KUSH_CROP = registerCropBlockSimple("indica_bubba_kush_crop");
-    public static final CropBlock INDICA_LA_CONFIDENTIAL_CROP = registerCropBlockSimple("indica_la_confidential_crop");
-    public static final CropBlock INDICA_NORTHERN_LIGHTS_CROP = registerCropBlockSimple("indica_northern_lights_crop");
-
-    public static final CropBlock HYBRID_DURBAN_CROP = registerCropBlockSimple("hybrid_durban_crop");
-    public static final CropBlock HYBRID_HINDU_KUSH_CROP = registerCropBlockSimple("hybrid_hindu_kush_crop");
-    public static final CropBlock HYBRID_BLUE_DREAM_CROP = registerCropBlockSimple("hybrid_blue_dream_crop");
-    public static final CropBlock HYBRID_MAUI_CROP = registerCropBlockSimple("hybrid_maui_crop");
-    public static final CropBlock HYBRID_GOLDEN_GOAT_CROP = registerCropBlockSimple("hybrid_golden_goat_crop");
-    public static final CropBlock HYBRID_WHITE_WIDOW_CROP = registerCropBlockSimple("hybrid_white_widow_crop");
-    public static final CropBlock HYBRID_PINEAPPLE_EXPRESS_CROP = registerCropBlockSimple("hybrid_pineapple_express_crop");
-
-    public static final CropBlock RUDERALIS_SKUNK_CROP = registerCropBlockSimple("ruderalis_skunk_crop");
-    public static final CropBlock RUDERALIS_DO_SI_DOS_CROP = registerCropBlockSimple("ruderalis_do_si_dos_crop");
-    public static final CropBlock RUDERALIS_MEMBRANA_HIPER_AUTOFLOWERING_CROP = registerCropBlockSimple("ruderalis_membrana_hiper_autoflowering_crop");
-    public static final CropBlock RUDERALIS_AUTO_MAZAR_CROP = registerCropBlockSimple("ruderalis_auto_mazar_crop");
 
 
 
