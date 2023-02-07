@@ -15,6 +15,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
+import net.minecraft.world.WorldView;
 import net.zuiron.photosynthesis.item.ModItems;
 
 public class CustomCropBlockWL extends CropBlock implements Waterloggable {
@@ -59,6 +60,14 @@ public class CustomCropBlockWL extends CropBlock implements Waterloggable {
         switch (seed) {
             case "rice_crop": if(world.getFluidState(pos.up(1)).isOf(Fluids.WATER) && world.getBlockState(pos.up(2)).isOf(Blocks.AIR)) { return true; }
             default: return floor.isOf(Blocks.FARMLAND);
+        }
+    }
+
+    @Override
+    public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
+        switch (seed) {
+            case "rice_crop": if(world.getFluidState(pos.up(0)).isOf(Fluids.WATER) && world.getBlockState(pos.up(1)).isOf(Blocks.AIR)) { return true; }
+            default: return false;
         }
     }
 
