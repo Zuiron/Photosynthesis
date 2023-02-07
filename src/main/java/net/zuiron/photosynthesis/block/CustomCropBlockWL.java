@@ -62,7 +62,7 @@ public class CustomCropBlockWL extends CropBlock implements Waterloggable {
             default: return floor.isOf(Blocks.FARMLAND);
         }
     }
-
+    //add detection to see if there is a block beneath. dirt only?
     @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
         switch (seed) {
