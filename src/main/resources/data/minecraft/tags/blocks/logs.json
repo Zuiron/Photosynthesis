@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "photosynthesis:appletree_log",
+    "photosynthesis:appletree_wood",
+    "photosynthesis:stripped_appletree_log",
+    "photosynthesis:stripped_appletree_wood",
+
+    "photosynthesis:cinnamon_log",
+    "photosynthesis:cinnamon_wood",
+    "photosynthesis:stripped_cinnamon_log",
+    "photosynthesis:stripped_cinnamon_wood"
+  ]
+}

@@ -4,5 +4,6 @@ public class ModWorldGen {
     public static void generateModWorldGen() {
         ModFlowerGeneration.generateFlowers();
         ModBerryBushGeneration.generateBerryBushes();
+        ModTreeGeneration.generateTrees();
     }
 }

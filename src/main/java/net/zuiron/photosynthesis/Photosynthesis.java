@@ -3,6 +3,8 @@ package net.zuiron.photosynthesis;
 import net.fabricmc.api.ModInitializer;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.item.ModItems;
+import net.zuiron.photosynthesis.util.ModFlammableBlocks;
+import net.zuiron.photosynthesis.util.ModStrippableBlocks;
 import net.zuiron.photosynthesis.world.feature.ModConfiguredFeatures;
 import net.zuiron.photosynthesis.world.gen.ModWorldGen;
 import org.apache.logging.log4j.LogManager;
@@ -25,6 +27,9 @@ public class Photosynthesis implements ModInitializer {
 
 		ModItems.registerModItems(); //before blocks
 		ModBlocks.registerModBlocks();
+
+		ModFlammableBlocks.registerFlammableBlocks();
+		ModStrippableBlocks.registerStrippables();
 
 		ModWorldGen.generateModWorldGen(); //last
 

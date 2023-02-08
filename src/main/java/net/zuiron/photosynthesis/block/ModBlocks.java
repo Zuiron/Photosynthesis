@@ -12,6 +12,8 @@ import net.minecraft.util.registry.Registry;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.item.ModItemGroup;
 import net.zuiron.photosynthesis.item.ModItems;
+import net.zuiron.photosynthesis.world.feature.tree.AppletreeSaplingGenerator;
+import net.zuiron.photosynthesis.world.feature.tree.CinnamonSaplingGenerator;
 
 public class ModBlocks {
 
@@ -82,6 +84,52 @@ public class ModBlocks {
     public static final CropBlock NICOTIANA_RUSTICA_CROP = registerCropBlockSimple("nicotiana_rustica_crop");
     public static final CropBlock PAPAVER_SOMNIFERUM_CROP = registerCropBlockSimple("papaver_somniferum_crop");
     public static final CropBlock ERYTHROXYLUM_COCA_CROP = registerCropBlockSimple("erythroxylum_coca_crop");
+
+
+
+
+
+
+
+    // TREE's ----------------------------------------------------------------------------------------------------------
+    public static final Block APPLETREE_LOG = registerBlock("appletree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block APPLETREE_WOOD = registerBlock("appletree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_APPLETREE_LOG = registerBlock("stripped_appletree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_APPLETREE_WOOD = registerBlock("stripped_appletree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block APPLETREE_PLANKS = registerBlock("appletree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block APPLETREE_LEAVES = registerBlock("appletree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block APPLETREE_SAPLING = registerBlock("appletree_sapling",
+            new SaplingBlock(new AppletreeSaplingGenerator(),FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+
+
+
+    public static final Block CINNAMON_LOG = registerBlock("cinnamon_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block CINNAMON_WOOD = registerBlock("cinnamon_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_CINNAMON_LOG = registerBlock("stripped_cinnamon_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_CINNAMON_WOOD = registerBlock("stripped_cinnamon_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block CINNAMON_PLANKS = registerBlock("cinnamon_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block CINNAMON_LEAVES = registerBlock("cinnamon_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block CINNAMON_SAPLING = registerBlock("cinnamon_sapling",
+            new SaplingBlock(new CinnamonSaplingGenerator(),FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+
 
 
 

@@ -3,6 +3,7 @@ package net.zuiron.photosynthesis.world.feature;
 import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.gen.feature.PlacedFeature;
 import net.minecraft.world.gen.feature.PlacedFeatures;
+import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
 import net.minecraft.world.gen.placementmodifier.BiomePlacementModifier;
 import net.minecraft.world.gen.placementmodifier.RarityFilterPlacementModifier;
 import net.minecraft.world.gen.placementmodifier.SquarePlacementModifier;
@@ -32,4 +33,13 @@ public class ModPlacedFeatures {
     public static final RegistryEntry<PlacedFeature> WILD_STRAWBERRY_BUSH_PLACED = PlacedFeatures.register("wild_strawberry_bush_placed",
             ModConfiguredFeatures.WILD_STRAWBERRY_BUSH, RarityFilterPlacementModifier.of(4), SquarePlacementModifier.of(),
             PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
+
+
+    public static final RegistryEntry<PlacedFeature> APPLETREE_PLACED = PlacedFeatures.register("appletree_placed",
+            ModConfiguredFeatures.APPLETREE_SPAWN,
+            VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(1, 0.1f, 2)));
+
+    public static final RegistryEntry<PlacedFeature> CINNAMON_PLACED = PlacedFeatures.register("cinnamon_placed",
+            ModConfiguredFeatures.CINNAMON_SPAWN,
+            VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(1, 0.1f, 2)));
 }

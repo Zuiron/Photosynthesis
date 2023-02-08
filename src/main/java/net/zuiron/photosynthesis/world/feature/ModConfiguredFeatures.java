@@ -1,10 +1,16 @@
 package net.zuiron.photosynthesis.world.feature;
 
+import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
+import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
+import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
+
+import java.util.List;
 
 public class ModConfiguredFeatures {
 
@@ -37,6 +43,43 @@ public class ModConfiguredFeatures {
             ConfiguredFeatures.register("wild_strawberry_bush", Feature.FLOWER,
                     ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                             new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.WILD_STRAWBERRY_BUSH)))));
+
+
+
+
+    public static final RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> APPLETREE_TREE =
+            ConfiguredFeatures.register("appletree_tree", Feature.TREE, new TreeFeatureConfig.Builder(
+                    BlockStateProvider.of(ModBlocks.APPLETREE_LOG),
+                    new StraightTrunkPlacer(5, 6, 3),
+                    BlockStateProvider.of(ModBlocks.APPLETREE_LEAVES),
+                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 4),
+                    new TwoLayersFeatureSize(1, 0, 2)).build());
+
+    public static final RegistryEntry<PlacedFeature> APPLETREE_CHECKED = PlacedFeatures.register("appletree_checked",
+            ModConfiguredFeatures.APPLETREE_TREE, List.of(PlacedFeatures.wouldSurvive(ModBlocks.APPLETREE_SAPLING)));
+
+    public static final RegistryEntry<ConfiguredFeature<RandomFeatureConfig, ?>> APPLETREE_SPAWN =
+            ConfiguredFeatures.register("appletree_spawn", Feature.RANDOM_SELECTOR,
+                    new RandomFeatureConfig(List.of(new RandomFeatureEntry(APPLETREE_CHECKED, 0.5f)),
+                            APPLETREE_CHECKED));
+
+
+
+    public static final RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> CINNAMON_TREE =
+            ConfiguredFeatures.register("cinnamon_tree", Feature.TREE, new TreeFeatureConfig.Builder(
+                    BlockStateProvider.of(ModBlocks.CINNAMON_LOG),
+                    new StraightTrunkPlacer(5, 6, 3),
+                    BlockStateProvider.of(ModBlocks.CINNAMON_LEAVES),
+                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 4),
+                    new TwoLayersFeatureSize(1, 0, 2)).build());
+
+    public static final RegistryEntry<PlacedFeature> CINNAMON_CHECKED = PlacedFeatures.register("cinnamon_checked",
+            ModConfiguredFeatures.CINNAMON_TREE, List.of(PlacedFeatures.wouldSurvive(ModBlocks.CINNAMON_SAPLING)));
+
+    public static final RegistryEntry<ConfiguredFeature<RandomFeatureConfig, ?>> CINNAMON_SPAWN =
+            ConfiguredFeatures.register("cinnamon_spawn", Feature.RANDOM_SELECTOR,
+                    new RandomFeatureConfig(List.of(new RandomFeatureEntry(CINNAMON_CHECKED, 0.5f)),
+                            CINNAMON_CHECKED));
 
 
     public static void registerConfiguredFeatures() {

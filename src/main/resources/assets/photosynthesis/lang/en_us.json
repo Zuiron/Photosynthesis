@@ -9,6 +9,22 @@
   "block.photosynthesis.cloudberry_bush": "Cloudberry Bush",
   "block.photosynthesis.wild_strawberry_bush": "Wild Strawberry Bush",
 
+  "block.photosynthesis.appletree_log": "Appletree Log",
+  "block.photosynthesis.appletree_wood": "Appletree Wood",
+  "block.photosynthesis.stripped_appletree_log": "Stripped Appletree Log",
+  "block.photosynthesis.stripped_appletree_wood": "Stripped Appletree Wood",
+  "block.photosynthesis.appletree_planks": "Appletree Planks",
+  "block.photosynthesis.appletree_leaves": "Appletree Leaves",
+  "block.photosynthesis.appletree_sapling": "Appletree Sapling",
+
+  "block.photosynthesis.cinnamon_log": "Cinnamon Log",
+  "block.photosynthesis.cinnamon_wood": "Cinnamon Wood",
+  "block.photosynthesis.stripped_cinnamon_log": "Stripped Cinnamon Log",
+  "block.photosynthesis.stripped_cinnamon_wood": "Stripped Cinnamon Wood",
+  "block.photosynthesis.cinnamon_planks": "Cinnamon Planks",
+  "block.photosynthesis.cinnamon_leaves": "Cinnamon Leaves",
+  "block.photosynthesis.cinnamon_sapling": "Cinnamon Sapling",
+
   "item.photosynthesis.blueberries": "Blueberries",
   "item.photosynthesis.blackberries": "Blackberries",
   "item.photosynthesis.raspberries": "Raspberries",
