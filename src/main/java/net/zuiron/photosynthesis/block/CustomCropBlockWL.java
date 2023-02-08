@@ -59,14 +59,14 @@ public class CustomCropBlockWL extends CropBlock implements Waterloggable {
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
         switch (seed) {
             case "rice_crop": if(world.getFluidState(pos.up(1)).isOf(Fluids.WATER) && world.getBlockState(pos.up(2)).isOf(Blocks.AIR)) { return true; }
-            default: return floor.isOf(Blocks.FARMLAND);
+            default: return false;
         }
     }
-    //add detection to see if there is a block beneath. dirt only?
+
     @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
         switch (seed) {
-            case "rice_crop": if(world.getFluidState(pos.up(0)).isOf(Fluids.WATER) && world.getBlockState(pos.up(1)).isOf(Blocks.AIR)) { return true; }
+            case "rice_crop": if(world.getBlockState(pos.up(-1)).isOf(Blocks.DIRT) && world.getFluidState(pos.up(0)).isOf(Fluids.WATER) && world.getBlockState(pos.up(1)).isOf(Blocks.AIR)) { return true; }
             default: return false;
         }
     }
