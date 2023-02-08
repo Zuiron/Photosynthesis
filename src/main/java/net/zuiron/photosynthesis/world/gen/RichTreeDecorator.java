@@ -30,7 +30,8 @@ public class RichTreeDecorator extends TreeDecorator {
     @Override
     public void generate(TreeDecorator.Generator generator) {
         // Iterate through block positions
-        generator.getLogPositions().forEach(pos -> {
+        //generator.getLogPositions().forEach(pos -> {
+        generator.getLeavesPositions().forEach(pos -> {
             Random random = generator.getRandom();
             // Pick a value from 0 (inclusive) to 4 (exclusive) and if it's 0, continue
             // This is the chance for spawning the gold block
@@ -47,7 +48,9 @@ public class RichTreeDecorator extends TreeDecorator {
 
                 // Offset the log position by the resulting side
                 //BlockPos targetPosition = logPosition.offset(side, 1);
-                BlockPos targetPosition = generator.getLogPositions().get(0).offset(side, 1);
+                //BlockPos targetPosition = generator.getLeavesPositions().get(0).offset(side, 1);
+                //BlockPos targetPosition = generator.getLeavesPositions().get(0).offset(Direction.DOWN, 1);
+                BlockPos targetPosition = generator.getLeavesPositions().get(0).offset(side, 2).offset(Direction.DOWN, 1);
 
                 // Place the gold block using the replacer BiConsumer
                 // This is the standard way of placing blocks in TrunkPlacers, FoliagePlacers and TreeDecorators
