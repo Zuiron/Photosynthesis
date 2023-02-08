@@ -103,6 +103,7 @@ public class ModBlocks {
 
     public static final Block APPLETREE_PLANKS = registerBlock("appletree_planks",
             new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+
     public static final Block APPLETREE_LEAVES = registerBlock("appletree_leaves",
             new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
 
