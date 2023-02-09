@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "photosynthesis:parsley"
+    }
+  ],
+  "result": {
+    "item": "photosynthesis:parsley_seeds",
+    "count": 1
+  }
+}
