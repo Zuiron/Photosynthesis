@@ -6,7 +6,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
-import net.minecraft.world.TestableWorld;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.gen.treedecorator.TreeDecorator;
 import net.minecraft.world.gen.treedecorator.TreeDecoratorType;
 import net.zuiron.photosynthesis.Photosynthesis;
@@ -31,7 +31,9 @@ public class RichTreeDecorator extends TreeDecorator {
     public void generate(TreeDecorator.Generator generator) {
         // Iterate through block positions
         //generator.getLogPositions().forEach(pos -> {
-        generator.getLeavesPositions().forEach(pos -> {
+
+
+        /*generator.getLeavesPositions().forEach(pos -> {
             Random random = generator.getRandom();
             // Pick a value from 0 (inclusive) to 4 (exclusive) and if it's 0, continue
             // This is the chance for spawning the gold block
@@ -57,7 +59,19 @@ public class RichTreeDecorator extends TreeDecorator {
                 //replacer.accept(targetPosition, Blocks.GOLD_BLOCK.getDefaultState());
                 generator.replace(targetPosition, Blocks.GOLD_BLOCK.getDefaultState());
             }
+        });*/
+
+        generator.getLeavesPositions().forEach(pos -> {
+            //case "rice_crop": if(world.getFluidState(pos.up(1)).isOf(Fluids.WATER) && world.getBlockState(pos.up(2)).isOf(Blocks.AIR)) { return true; }
+            Random random = generator.getRandom();
+            int chance = random.nextInt(10);
+
+            if(generator.isAir(pos.down()) && chance == 0) {
+                generator.replace(pos.offset(Direction.DOWN, 1), Blocks.GOLD_BLOCK.getDefaultState());
+            }
         });
+
+
     }
 
 

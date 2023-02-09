@@ -53,9 +53,9 @@ public class ModConfiguredFeatures {
     public static final RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> APPLETREE_TREE =
             ConfiguredFeatures.register("appletree_tree", Feature.TREE, new TreeFeatureConfig.Builder(
                     BlockStateProvider.of(ModBlocks.APPLETREE_LOG),
-                    new StraightTrunkPlacer(5, 6, 3),
+                    new StraightTrunkPlacer(3, 4, 2), //3,4,2
                     BlockStateProvider.of(ModBlocks.APPLETREE_LEAVES),
-                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 4),
+                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),//3
                     new TwoLayersFeatureSize(1, 0, 2)).decorators(Collections.singletonList(RichTreeDecorator.INSTANCE)).build());
 
     public static final RegistryEntry<PlacedFeature> APPLETREE_CHECKED = PlacedFeatures.register("appletree_checked",
@@ -71,9 +71,9 @@ public class ModConfiguredFeatures {
     public static final RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> CINNAMON_TREE =
             ConfiguredFeatures.register("cinnamon_tree", Feature.TREE, new TreeFeatureConfig.Builder(
                     BlockStateProvider.of(ModBlocks.CINNAMON_LOG),
-                    new StraightTrunkPlacer(3, 4, 2),
+                    new StraightTrunkPlacer(5, 6, 3),//5,6,3
                     BlockStateProvider.of(ModBlocks.CINNAMON_LEAVES),
-                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
+                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 4),//4
                     new TwoLayersFeatureSize(1, 0, 2)).build());
 
     public static final RegistryEntry<PlacedFeature> CINNAMON_CHECKED = PlacedFeatures.register("cinnamon_checked",
