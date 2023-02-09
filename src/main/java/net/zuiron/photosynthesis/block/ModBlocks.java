@@ -110,6 +110,9 @@ public class ModBlocks {
     public static final Block APPLETREE_SAPLING = registerBlock("appletree_sapling",
             new SaplingBlock(new AppletreeSaplingGenerator(),FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
+    public static final SweetBerryBushBlock APPLETREE_BUSHCROP = registerBushBlock("appletree_bushcrop",
+            new AppletreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
 
 

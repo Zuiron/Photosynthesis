@@ -346,6 +346,15 @@ public class ModItems {
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
                     .group(ModItemGroup.PHOTOSYNTHESIS)));
 
+    /*public static final Item GREENAPPLE = registerItem("greenapple",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
+                    .group(ModItemGroup.PHOTOSYNTHESIS)));*/
+
+    public static final Item GREENAPPLE = registerBerryItem("greenapple", ModBlocks.APPLETREE_BUSHCROP,
+            new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build())
+                    .group(ModItemGroup.PHOTOSYNTHESIS));
+
     /*public static final Item CINNAMON_POWDER = registerItem("cinnamon_powder",
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())

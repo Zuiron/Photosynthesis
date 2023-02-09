@@ -76,6 +76,7 @@ public class PhotosynthesisClient implements ClientModInitializer {
         // TREE's ------------------------------------------------------------------------------------------------------
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.APPLETREE_LEAVES);
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.APPLETREE_SAPLING);
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.APPLETREE_BUSHCROP);
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.CINNAMON_LEAVES);
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.CINNAMON_SAPLING);

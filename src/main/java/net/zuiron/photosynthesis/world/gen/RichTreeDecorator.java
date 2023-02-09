@@ -67,7 +67,8 @@ public class RichTreeDecorator extends TreeDecorator {
             int chance = random.nextInt(10);
 
             if(generator.isAir(pos.down()) && chance == 0) {
-                generator.replace(pos.offset(Direction.DOWN, 1), Blocks.GOLD_BLOCK.getDefaultState());
+                //generator.replace(pos.offset(Direction.DOWN, 1), Blocks.GOLD_BLOCK.getDefaultState());
+                generator.replace(pos.offset(Direction.DOWN, 1), ModBlocks.APPLETREE_BUSHCROP.getDefaultState());
             }
         });
 
