@@ -1,26 +1,19 @@
 package net.zuiron.photosynthesis.world.gen;
 
 import com.mojang.serialization.Codec;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
-import net.minecraft.world.BlockView;
 import net.minecraft.world.gen.treedecorator.TreeDecorator;
 import net.minecraft.world.gen.treedecorator.TreeDecoratorType;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
 
-import java.util.List;
-import java.util.function.BiConsumer;
-
-public class RichTreeDecorator extends TreeDecorator {
-    public static final RichTreeDecorator INSTANCE = new RichTreeDecorator();
+public class AppleTreeDecorator extends TreeDecorator {
+    public static final AppleTreeDecorator INSTANCE = new AppleTreeDecorator();
     // Our constructor doesn't have any arguments, so we create a unit codec that returns the singleton instance
-    public static final Codec<RichTreeDecorator> CODEC = Codec.unit(() -> INSTANCE);
+    public static final Codec<AppleTreeDecorator> CODEC = Codec.unit(() -> INSTANCE);
 
-    private RichTreeDecorator() {}
+    private AppleTreeDecorator() {}
 
     @Override
     protected TreeDecoratorType<?> getType() {

@@ -9,7 +9,7 @@ import net.zuiron.photosynthesis.util.ModFlammableBlocks;
 import net.zuiron.photosynthesis.util.ModStrippableBlocks;
 import net.zuiron.photosynthesis.world.feature.ModConfiguredFeatures;
 import net.zuiron.photosynthesis.world.gen.ModWorldGen;
-import net.zuiron.photosynthesis.world.gen.RichTreeDecorator;
+import net.zuiron.photosynthesis.world.gen.AppleTreeDecorator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -20,7 +20,7 @@ public class Photosynthesis implements ModInitializer {
 	// It is considered best practice to use your mod id as the logger's name.
 	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
-	public static final TreeDecoratorType<RichTreeDecorator> RICH_TREE_DECORATOR = TreeDecoratorTypeInvoker.callRegister("photosynthesis:rich_tree_decorator", RichTreeDecorator.CODEC);
+	public static final TreeDecoratorType<AppleTreeDecorator> RICH_TREE_DECORATOR = TreeDecoratorTypeInvoker.callRegister("photosynthesis:rich_tree_decorator", AppleTreeDecorator.CODEC);
 
 	@Override
 	public void onInitialize() {

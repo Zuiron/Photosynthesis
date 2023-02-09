@@ -6,12 +6,10 @@ import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
-import net.minecraft.world.gen.treedecorator.TreeDecoratorType;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
-import net.zuiron.photosynthesis.mixin.TreeDecoratorTypeInvoker;
-import net.zuiron.photosynthesis.world.gen.RichTreeDecorator;
+import net.zuiron.photosynthesis.world.gen.AppleTreeDecorator;
 
 import java.util.Collections;
 import java.util.List;
@@ -56,7 +54,7 @@ public class ModConfiguredFeatures {
                     new StraightTrunkPlacer(3, 4, 2), //3,4,2
                     BlockStateProvider.of(ModBlocks.APPLETREE_LEAVES),
                     new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),//3
-                    new TwoLayersFeatureSize(1, 0, 2)).decorators(Collections.singletonList(RichTreeDecorator.INSTANCE)).build());
+                    new TwoLayersFeatureSize(1, 0, 2)).decorators(Collections.singletonList(AppleTreeDecorator.INSTANCE)).build());
 
     public static final RegistryEntry<PlacedFeature> APPLETREE_CHECKED = PlacedFeatures.register("appletree_checked",
             ModConfiguredFeatures.APPLETREE_TREE, List.of(PlacedFeatures.wouldSurvive(ModBlocks.APPLETREE_SAPLING)));
