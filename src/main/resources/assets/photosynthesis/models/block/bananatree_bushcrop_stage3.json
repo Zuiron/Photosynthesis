@@ -1,6 +1,6 @@
 {
   "parent": "block/cross",
   "textures": {
-    "cross": "photosynthesis:block/bananatree_bushcrop_stage2"
+    "cross": "photosynthesis:block/bananatree_bushcrop_stage3"
   }
 }

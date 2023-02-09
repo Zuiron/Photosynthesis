@@ -1,5 +1,8 @@
 {
   "variants": {
-    "": { "model": "photosynthesis:block/bananatree_leaves" }
+    "": [
+      { "model": "photosynthesis:block/bananatree_leaves" },
+      { "model": "photosynthesis:block/bananatree_leaves_1" }
+      ]
   }
 }

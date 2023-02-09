@@ -1,5 +1,12 @@
 {
   "variants": {
-    "": { "model": "photosynthesis:block/appletree_leaves" }
+    "": [
+      { "model": "photosynthesis:block/appletree_leaves", "weight": 2000 },
+      { "model": "photosynthesis:block/appletree_leaves", "z": 90, "weight": 1000 },
+      { "model": "photosynthesis:block/appletree_leaves_1", "weight": 600 },
+      { "model": "photosynthesis:block/appletree_leaves_1", "z": 90, "weight": 100 },
+      { "model": "photosynthesis:block/appletree_leaves_2", "weight": 600 },
+      { "model": "photosynthesis:block/appletree_leaves_2", "z": 90, "weight": 100 }
+    ]
   }
 }

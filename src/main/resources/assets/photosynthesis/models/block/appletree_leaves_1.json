@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "photosynthesis:block/appletree_leaves_1"
+  }
+}

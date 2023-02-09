@@ -4,10 +4,13 @@ import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
+import net.minecraft.world.gen.foliage.AcaciaFoliagePlacer;
 import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
 import net.minecraft.world.gen.foliage.BushFoliagePlacer;
 import net.minecraft.world.gen.foliage.RandomSpreadFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
+import net.minecraft.world.gen.trunk.BendingTrunkPlacer;
+import net.minecraft.world.gen.trunk.ForkingTrunkPlacer;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
@@ -77,10 +80,10 @@ public class ModConfiguredFeatures {
     public static final RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> BANANATREE_TREE =
             ConfiguredFeatures.register("bananatree_tree", Feature.TREE, new TreeFeatureConfig.Builder(
                     BlockStateProvider.of(ModBlocks.BANANATREE_LOG),
-                    new StraightTrunkPlacer(4, 8, 0), //3,4,2
+                    new ForkingTrunkPlacer(6, 2, 2), //StraightTrunkPlacer(4, 8, 0)
                     BlockStateProvider.of(ModBlocks.BANANATREE_LEAVES),
-                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),//3
-                    new TwoLayersFeatureSize(1, 0, 1)).decorators(Collections.singletonList(BananaTreeDecorator.INSTANCE)).ignoreVines().build());
+                    new AcaciaFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0)),//3
+                    new TwoLayersFeatureSize(1, 0, 2)).decorators(Collections.singletonList(BananaTreeDecorator.INSTANCE)).ignoreVines().build());
 
     public static final RegistryEntry<PlacedFeature> BANANATREE_CHECKED = PlacedFeatures.register("bananatree_checked",
             ModConfiguredFeatures.BANANATREE_TREE, List.of(PlacedFeatures.wouldSurvive(ModBlocks.BANANATREE_SAPLING)));
