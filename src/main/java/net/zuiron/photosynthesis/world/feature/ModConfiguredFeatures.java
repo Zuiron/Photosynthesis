@@ -5,6 +5,8 @@ import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
+import net.minecraft.world.gen.foliage.BushFoliagePlacer;
+import net.minecraft.world.gen.foliage.RandomSpreadFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 import net.zuiron.photosynthesis.Photosynthesis;
@@ -75,10 +77,10 @@ public class ModConfiguredFeatures {
     public static final RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> BANANATREE_TREE =
             ConfiguredFeatures.register("bananatree_tree", Feature.TREE, new TreeFeatureConfig.Builder(
                     BlockStateProvider.of(ModBlocks.BANANATREE_LOG),
-                    new StraightTrunkPlacer(3, 4, 2), //3,4,2
+                    new StraightTrunkPlacer(4, 8, 0), //3,4,2
                     BlockStateProvider.of(ModBlocks.BANANATREE_LEAVES),
                     new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),//3
-                    new TwoLayersFeatureSize(1, 0, 2)).decorators(Collections.singletonList(BananaTreeDecorator.INSTANCE)).build());
+                    new TwoLayersFeatureSize(1, 0, 1)).decorators(Collections.singletonList(BananaTreeDecorator.INSTANCE)).ignoreVines().build());
 
     public static final RegistryEntry<PlacedFeature> BANANATREE_CHECKED = PlacedFeatures.register("bananatree_checked",
             ModConfiguredFeatures.BANANATREE_TREE, List.of(PlacedFeatures.wouldSurvive(ModBlocks.BANANATREE_SAPLING)));
