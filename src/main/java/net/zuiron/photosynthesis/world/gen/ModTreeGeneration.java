@@ -12,6 +12,9 @@ public class ModTreeGeneration {
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.APPLETREE_PLACED.getKey().get());
 
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.SPARSE_JUNGLE),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.BANANATREE_PLACED.getKey().get());
+
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.SPARSE_JUNGLE),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.CINNAMON_PLACED.getKey().get());
     }
 }

@@ -8,20 +8,20 @@ import net.minecraft.world.gen.treedecorator.TreeDecoratorType;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
 
-public class AppleTreeDecorator extends TreeDecorator {
-    public static final AppleTreeDecorator INSTANCE = new AppleTreeDecorator();
+public class BananaTreeDecorator extends TreeDecorator {
+    public static final BananaTreeDecorator INSTANCE = new BananaTreeDecorator();
     // Our constructor doesn't have any arguments, so we create a unit codec that returns the singleton instance
-    public static final Codec<AppleTreeDecorator> CODEC = Codec.unit(() -> INSTANCE);
+    public static final Codec<BananaTreeDecorator> CODEC = Codec.unit(() -> INSTANCE);
 
-    private AppleTreeDecorator() {}
+    private BananaTreeDecorator() {}
 
     @Override
     protected TreeDecoratorType<?> getType() {
-        return Photosynthesis.APPLE_TREE_DECORATOR;
+        return Photosynthesis.BANANA_TREE_DECORATOR;
     }
 
     @Override
-    public void generate(TreeDecorator.Generator generator) {
+    public void generate(Generator generator) {
         // Iterate through block positions
         //generator.getLogPositions().forEach(pos -> {
 
@@ -61,7 +61,7 @@ public class AppleTreeDecorator extends TreeDecorator {
 
             if(generator.isAir(pos.down()) && chance == 0) {
                 //generator.replace(pos.offset(Direction.DOWN, 1), Blocks.GOLD_BLOCK.getDefaultState());
-                generator.replace(pos.offset(Direction.DOWN, 1), ModBlocks.APPLETREE_BUSHCROP.getDefaultState());
+                generator.replace(pos.offset(Direction.DOWN, 1), ModBlocks.BANANATREE_BUSHCROP.getDefaultState());
             }
         });
 

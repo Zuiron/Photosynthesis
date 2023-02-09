@@ -13,6 +13,7 @@ import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.item.ModItemGroup;
 import net.zuiron.photosynthesis.item.ModItems;
 import net.zuiron.photosynthesis.world.feature.tree.AppletreeSaplingGenerator;
+import net.zuiron.photosynthesis.world.feature.tree.BananatreeSaplingGenerator;
 import net.zuiron.photosynthesis.world.feature.tree.CinnamonSaplingGenerator;
 
 public class ModBlocks {
@@ -120,6 +121,33 @@ public class ModBlocks {
     public static final SweetBerryBushBlock APPLETREE_BUSHCROP = registerBushBlock("appletree_bushcrop",
             new AppletreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+
+
+
+
+    public static final Block BANANATREE_LOG = registerBlock("bananatree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block BANANATREE_WOOD = registerBlock("bananatree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_BANANATREE_LOG = registerBlock("stripped_bananatree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_BANANATREE_WOOD = registerBlock("stripped_bananatree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block BANANATREE_PLANKS = registerBlock("bananatree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+
+    public static final Block BANANATREE_LEAVES = registerBlock("bananatree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block BANANATREE_SAPLING = registerBlock("bananatree_sapling",
+            new SaplingBlock(new BananatreeSaplingGenerator(),FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock BANANATREE_BUSHCROP = registerBushBlock("bananatree_bushcrop",
+            new BananatreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
 
 
 

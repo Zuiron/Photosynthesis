@@ -10,6 +10,7 @@ import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.world.gen.AppleTreeDecorator;
+import net.zuiron.photosynthesis.world.gen.BananaTreeDecorator;
 
 import java.util.Collections;
 import java.util.List;
@@ -65,6 +66,29 @@ public class ModConfiguredFeatures {
             ConfiguredFeatures.register("appletree_spawn", Feature.RANDOM_SELECTOR,
                     new RandomFeatureConfig(List.of(new RandomFeatureEntry(APPLETREE_CHECKED, 0.1f)),
                             APPLETREE_CHECKED));
+
+
+
+
+
+
+    public static final RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> BANANATREE_TREE =
+            ConfiguredFeatures.register("bananatree_tree", Feature.TREE, new TreeFeatureConfig.Builder(
+                    BlockStateProvider.of(ModBlocks.BANANATREE_LOG),
+                    new StraightTrunkPlacer(3, 4, 2), //3,4,2
+                    BlockStateProvider.of(ModBlocks.BANANATREE_LEAVES),
+                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),//3
+                    new TwoLayersFeatureSize(1, 0, 2)).decorators(Collections.singletonList(BananaTreeDecorator.INSTANCE)).build());
+
+    public static final RegistryEntry<PlacedFeature> BANANATREE_CHECKED = PlacedFeatures.register("bananatree_checked",
+            ModConfiguredFeatures.BANANATREE_TREE, List.of(PlacedFeatures.wouldSurvive(ModBlocks.BANANATREE_SAPLING)));
+
+    public static final RegistryEntry<ConfiguredFeature<RandomFeatureConfig, ?>> BANANATREE_SPAWN =
+            ConfiguredFeatures.register("bananatree_spawn", Feature.RANDOM_SELECTOR,
+                    new RandomFeatureConfig(List.of(new RandomFeatureEntry(BANANATREE_CHECKED, 0.1f)),
+                            BANANATREE_CHECKED));
+
+
 
 
 

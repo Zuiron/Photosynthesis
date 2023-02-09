@@ -8,6 +8,7 @@ import net.zuiron.photosynthesis.mixin.TreeDecoratorTypeInvoker;
 import net.zuiron.photosynthesis.util.ModFlammableBlocks;
 import net.zuiron.photosynthesis.util.ModStrippableBlocks;
 import net.zuiron.photosynthesis.world.feature.ModConfiguredFeatures;
+import net.zuiron.photosynthesis.world.gen.BananaTreeDecorator;
 import net.zuiron.photosynthesis.world.gen.ModWorldGen;
 import net.zuiron.photosynthesis.world.gen.AppleTreeDecorator;
 import org.apache.logging.log4j.LogManager;
@@ -21,6 +22,7 @@ public class Photosynthesis implements ModInitializer {
 	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
 	public static final TreeDecoratorType<AppleTreeDecorator> APPLE_TREE_DECORATOR = TreeDecoratorTypeInvoker.callRegister("photosynthesis:apple_tree_decorator", AppleTreeDecorator.CODEC);
+	public static final TreeDecoratorType<BananaTreeDecorator> BANANA_TREE_DECORATOR = TreeDecoratorTypeInvoker.callRegister("photosynthesis:banana_tree_decorator", BananaTreeDecorator.CODEC);
 
 	@Override
 	public void onInitialize() {

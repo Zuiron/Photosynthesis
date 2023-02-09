@@ -8,6 +8,8 @@ public class ModStrippableBlocks {
         StrippableBlockRegistry.register(ModBlocks.APPLETREE_LOG, ModBlocks.STRIPPED_APPLETREE_LOG);
         StrippableBlockRegistry.register(ModBlocks.APPLETREE_WOOD, ModBlocks.STRIPPED_APPLETREE_WOOD);
 
+        StrippableBlockRegistry.register(ModBlocks.BANANATREE_LOG, ModBlocks.STRIPPED_BANANATREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.BANANATREE_WOOD, ModBlocks.STRIPPED_BANANATREE_WOOD);
 
         StrippableBlockRegistry.register(ModBlocks.CINNAMON_LOG, ModBlocks.STRIPPED_CINNAMON_LOG);
         StrippableBlockRegistry.register(ModBlocks.CINNAMON_WOOD, ModBlocks.STRIPPED_CINNAMON_WOOD);

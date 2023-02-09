@@ -39,6 +39,10 @@ public class ModPlacedFeatures {
             ModConfiguredFeatures.APPLETREE_SPAWN,
             VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(1, 0.1f, 2)));
 
+    public static final RegistryEntry<PlacedFeature> BANANATREE_PLACED = PlacedFeatures.register("bananatree_placed",
+            ModConfiguredFeatures.BANANATREE_SPAWN,
+            VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(1, 0.1f, 2)));
+
     public static final RegistryEntry<PlacedFeature> CINNAMON_PLACED = PlacedFeatures.register("cinnamon_placed",
             ModConfiguredFeatures.CINNAMON_SPAWN,
             VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(1, 0.1f, 2)));
