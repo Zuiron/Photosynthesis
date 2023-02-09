@@ -48,6 +48,8 @@ public class ModConfiguredFeatures {
 
 
 
+
+    //TREE's -----------------------------------------------------------------------------------------------------------
     public static final RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> APPLETREE_TREE =
             ConfiguredFeatures.register("appletree_tree", Feature.TREE, new TreeFeatureConfig.Builder(
                     BlockStateProvider.of(ModBlocks.APPLETREE_LOG),
@@ -81,6 +83,10 @@ public class ModConfiguredFeatures {
             ConfiguredFeatures.register("cinnamon_spawn", Feature.RANDOM_SELECTOR,
                     new RandomFeatureConfig(List.of(new RandomFeatureEntry(CINNAMON_CHECKED, 0.5f)),
                             CINNAMON_CHECKED));
+
+
+
+
 
 
     public static void registerConfiguredFeatures() {

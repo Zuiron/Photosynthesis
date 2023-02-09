@@ -20,7 +20,7 @@ public class Photosynthesis implements ModInitializer {
 	// It is considered best practice to use your mod id as the logger's name.
 	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
-	public static final TreeDecoratorType<AppleTreeDecorator> RICH_TREE_DECORATOR = TreeDecoratorTypeInvoker.callRegister("photosynthesis:rich_tree_decorator", AppleTreeDecorator.CODEC);
+	public static final TreeDecoratorType<AppleTreeDecorator> APPLE_TREE_DECORATOR = TreeDecoratorTypeInvoker.callRegister("photosynthesis:apple_tree_decorator", AppleTreeDecorator.CODEC);
 
 	@Override
 	public void onInitialize() {

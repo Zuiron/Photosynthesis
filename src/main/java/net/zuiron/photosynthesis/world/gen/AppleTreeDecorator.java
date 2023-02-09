@@ -17,7 +17,7 @@ public class AppleTreeDecorator extends TreeDecorator {
 
     @Override
     protected TreeDecoratorType<?> getType() {
-        return Photosynthesis.RICH_TREE_DECORATOR;
+        return Photosynthesis.APPLE_TREE_DECORATOR;
     }
 
     @Override
