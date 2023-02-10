@@ -12,7 +12,7 @@ public class ModItemGroup {
     public static ItemGroup PHOTOSYNTHESIS;
     public static void registerItemGroup() {
         PHOTOSYNTHESIS = FabricItemGroup.builder(new Identifier(Photosynthesis.MOD_ID, "photosynthesis"))
-                .displayName(Text.literal("Photosynthesis Item Group"))
+                .displayName(Text.literal("Photosynthesis"))
                 .icon(() -> new ItemStack(ModBlocks.FLORAMELISSIA)).build();
     }
 }
