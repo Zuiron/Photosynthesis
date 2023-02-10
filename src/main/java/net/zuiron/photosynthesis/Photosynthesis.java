@@ -16,6 +16,7 @@ import org.apache.logging.log4j.Logger;
 
 public class Photosynthesis implements ModInitializer {
 	public static final String MOD_ID = "photosynthesis";
+	//1.19.3 branch
 
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
