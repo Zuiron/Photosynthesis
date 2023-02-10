@@ -1,11 +1,11 @@
 {
   "type": "minecraft:random_selector",
   "config": {
-    "default": "photosynthesis:bananatree_placed",
+    "default": "photosynthesis:bananatree_checked",
     "features": [
       {
         "chance": 0.5,
-        "feature": "photosynthesis:bananatree_placed"
+        "feature": "photosynthesis:bananatree_checked"
       }
     ]
   }

@@ -72,8 +72,8 @@ public class ModConfiguredFeatures {
                 new TwoLayersFeatureSize(1, 0, 2)).decorators(Collections.singletonList(AppleTreeDecorator.INSTANCE)).build());
 
         register(context, APPLETREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
-                new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.APPLETREE_PLACED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.APPLETREE_PLACED_KEY)));
+                new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.APPLETREE_CHECKED_KEY),
+                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.APPLETREE_CHECKED_KEY)));
 
 
 
@@ -86,8 +86,8 @@ public class ModConfiguredFeatures {
                 new TwoLayersFeatureSize(1, 0, 2)).decorators(Collections.singletonList(BananaTreeDecorator.INSTANCE)).ignoreVines().build());
 
         register(context, BANANATREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
-                new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.BANANATREE_PLACED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.BANANATREE_PLACED_KEY)));
+                new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.BANANATREE_CHECKED_KEY),
+                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.BANANATREE_CHECKED_KEY)));
 
 
 
@@ -100,8 +100,8 @@ public class ModConfiguredFeatures {
                 new TwoLayersFeatureSize(1, 0, 2)).build());
 
         register(context, CINNAMONTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
-                new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.CINNAMONTREE_PLACED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.CINNAMONTREE_PLACED_KEY)));
+                new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.CINNAMONTREE_CHECKED_KEY),
+                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.CINNAMONTREE_CHECKED_KEY)));
 
 
 
