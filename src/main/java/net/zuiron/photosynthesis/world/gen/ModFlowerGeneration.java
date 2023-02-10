@@ -9,6 +9,6 @@ import net.zuiron.photosynthesis.world.feature.ModPlacedFeatures;
 public class ModFlowerGeneration {
     public static void generateFlowers() {
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS),
-                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.FLORAMELISSIA_PLACED.getKey().get());
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.FLORAMELISSIA_PLACED_KEY);
     }
 }

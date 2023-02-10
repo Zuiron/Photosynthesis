@@ -1,7 +1,15 @@
 package net.zuiron.photosynthesis.world.feature;
 
+import net.minecraft.block.Blocks;
+import net.minecraft.registry.Registerable;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.structure.rule.BlockMatchRuleTest;
+import net.minecraft.structure.rule.RuleTest;
+import net.minecraft.structure.rule.TagMatchRuleTest;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
-import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.AcaciaFoliagePlacer;
@@ -22,103 +30,95 @@ import java.util.List;
 
 public class ModConfiguredFeatures {
 
-    public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> FLORAMELISSIA =
-            ConfiguredFeatures.register("floramelissia", Feature.FLOWER,
-                    ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                            new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.FLORAMELISSIA)))));
+    public static final RegistryKey<ConfiguredFeature<?,?>> FLORAMELISSIA_KEY = registerKey("floramelissia");
+    public static final RegistryKey<ConfiguredFeature<?,?>> BLUEBERRYBUSH_KEY = registerKey("blueberry_bush");
+    public static final RegistryKey<ConfiguredFeature<?,?>> BLACKBERRY_KEY = registerKey("blackberry_bush");
+    public static final RegistryKey<ConfiguredFeature<?,?>> RASPBERRY_KEY = registerKey("raspberry_bush");
+    public static final RegistryKey<ConfiguredFeature<?,?>> CLOUDBERRY_KEY = registerKey("cloudberry_bush");
+    public static final RegistryKey<ConfiguredFeature<?,?>> WILDSTRAWBERRY_KEY = registerKey("wild_strawberry_bush");
+    public static final RegistryKey<ConfiguredFeature<?,?>> APPLETREE_KEY = registerKey("appletree_tree");
+    public static final RegistryKey<ConfiguredFeature<?,?>> APPLETREE_SPAWN_KEY = registerKey("appletree_spawn");
 
-    public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> BLUEBERRY_BUSH =
-            ConfiguredFeatures.register("blueberry_bush", Feature.FLOWER,
-                    ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                            new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.BLUEBERRY_BUSH)))));
+    public static final RegistryKey<ConfiguredFeature<?,?>> BANANATREE_KEY = registerKey("bananatree_tree");
+    public static final RegistryKey<ConfiguredFeature<?,?>> BANANATREE_SPAWN_KEY = registerKey("bananatree_spawn");
+    public static final RegistryKey<ConfiguredFeature<?,?>> CINNAMONTREE_KEY = registerKey("cinnamon_tree");
+    public static final RegistryKey<ConfiguredFeature<?,?>> CINNAMONTREE_SPAWN_KEY = registerKey("cinnamon_spawn");
 
-    public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> BLACKBERRY_BUSH =
-            ConfiguredFeatures.register("blackberry_bush", Feature.FLOWER,
-                    ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                            new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.BLACKBERRY_BUSH)))));
+    public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
+        var placedFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.PLACED_FEATURE);
+        //register(context, KEY, );
 
-    public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> RASPBERRY_BUSH =
-            ConfiguredFeatures.register("raspberry_bush", Feature.FLOWER,
-                    ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                            new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.RASPBERRY_BUSH)))));
-
-    public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> CLOUDBERRY_BUSH =
-            ConfiguredFeatures.register("cloudberry_bush", Feature.FLOWER,
-                    ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                            new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.CLOUDBERRY_BUSH)))));
-
-    public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> WILD_STRAWBERRY_BUSH =
-            ConfiguredFeatures.register("wild_strawberry_bush", Feature.FLOWER,
-                    ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                            new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.WILD_STRAWBERRY_BUSH)))));
+        register(context, FLORAMELISSIA_KEY, Feature.FLOWER,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.FLORAMELISSIA)))));
 
 
 
-
-    //TREE's -----------------------------------------------------------------------------------------------------------
-    public static final RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> APPLETREE_TREE =
-            ConfiguredFeatures.register("appletree_tree", Feature.TREE, new TreeFeatureConfig.Builder(
-                    BlockStateProvider.of(ModBlocks.APPLETREE_LOG),
-                    new StraightTrunkPlacer(3, 4, 2), //3,4,2
-                    BlockStateProvider.of(ModBlocks.APPLETREE_LEAVES),
-                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),//3
-                    new TwoLayersFeatureSize(1, 0, 2)).decorators(Collections.singletonList(AppleTreeDecorator.INSTANCE)).build());
-
-    public static final RegistryEntry<PlacedFeature> APPLETREE_CHECKED = PlacedFeatures.register("appletree_checked",
-            ModConfiguredFeatures.APPLETREE_TREE, List.of(PlacedFeatures.wouldSurvive(ModBlocks.APPLETREE_SAPLING)));
-
-    public static final RegistryEntry<ConfiguredFeature<RandomFeatureConfig, ?>> APPLETREE_SPAWN =
-            ConfiguredFeatures.register("appletree_spawn", Feature.RANDOM_SELECTOR,
-                    new RandomFeatureConfig(List.of(new RandomFeatureEntry(APPLETREE_CHECKED, 0.1f)),
-                            APPLETREE_CHECKED));
+        register(context, BLUEBERRYBUSH_KEY, Feature.FLOWER,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.BLUEBERRY_BUSH)))));
+        register(context, BLACKBERRY_KEY, Feature.FLOWER,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.BLACKBERRY_BUSH)))));
+        register(context, RASPBERRY_KEY, Feature.FLOWER,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.RASPBERRY_BUSH)))));
+        register(context, CLOUDBERRY_KEY, Feature.FLOWER,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.CLOUDBERRY_BUSH)))));
+        register(context, WILDSTRAWBERRY_KEY, Feature.FLOWER,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.WILD_STRAWBERRY_BUSH)))));
 
 
 
+        register(context, APPLETREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(ModBlocks.APPLETREE_LOG),
+                new StraightTrunkPlacer(3, 4, 2), //3,4,2
+                BlockStateProvider.of(ModBlocks.APPLETREE_LEAVES),
+                new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),//3
+                new TwoLayersFeatureSize(1, 0, 2)).decorators(Collections.singletonList(AppleTreeDecorator.INSTANCE)).build());
+
+        register(context, APPLETREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
+                new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.APPLETREE_PLACED_KEY),
+                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.APPLETREE_PLACED_KEY)));
 
 
 
-    public static final RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> BANANATREE_TREE =
-            ConfiguredFeatures.register("bananatree_tree", Feature.TREE, new TreeFeatureConfig.Builder(
-                    BlockStateProvider.of(ModBlocks.BANANATREE_LOG),
-                    new ForkingTrunkPlacer(6, 2, 2), //StraightTrunkPlacer(4, 8, 0)
-                    BlockStateProvider.of(ModBlocks.BANANATREE_LEAVES),
-                    new AcaciaFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0)),//3
-                    new TwoLayersFeatureSize(1, 0, 2)).decorators(Collections.singletonList(BananaTreeDecorator.INSTANCE)).ignoreVines().build());
+        register(context, BANANATREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(ModBlocks.BANANATREE_LOG),
+                new ForkingTrunkPlacer(6, 2, 2), //StraightTrunkPlacer(4, 8, 0)
+                BlockStateProvider.of(ModBlocks.BANANATREE_LEAVES),
+                new AcaciaFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0)),//3
+                new TwoLayersFeatureSize(1, 0, 2)).decorators(Collections.singletonList(BananaTreeDecorator.INSTANCE)).ignoreVines().build());
 
-    public static final RegistryEntry<PlacedFeature> BANANATREE_CHECKED = PlacedFeatures.register("bananatree_checked",
-            ModConfiguredFeatures.BANANATREE_TREE, List.of(PlacedFeatures.wouldSurvive(ModBlocks.BANANATREE_SAPLING)));
-
-    public static final RegistryEntry<ConfiguredFeature<RandomFeatureConfig, ?>> BANANATREE_SPAWN =
-            ConfiguredFeatures.register("bananatree_spawn", Feature.RANDOM_SELECTOR,
-                    new RandomFeatureConfig(List.of(new RandomFeatureEntry(BANANATREE_CHECKED, 0.1f)),
-                            BANANATREE_CHECKED));
+        register(context, BANANATREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
+                new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.BANANATREE_PLACED_KEY),
+                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.BANANATREE_PLACED_KEY)));
 
 
 
+        register(context, CINNAMONTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(ModBlocks.CINNAMON_LOG),
+                new StraightTrunkPlacer(5, 6, 3),//5,6,3
+                BlockStateProvider.of(ModBlocks.CINNAMON_LEAVES),
+                new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 4),//4
+                new TwoLayersFeatureSize(1, 0, 2)).build());
 
-
-    public static final RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> CINNAMON_TREE =
-            ConfiguredFeatures.register("cinnamon_tree", Feature.TREE, new TreeFeatureConfig.Builder(
-                    BlockStateProvider.of(ModBlocks.CINNAMON_LOG),
-                    new StraightTrunkPlacer(5, 6, 3),//5,6,3
-                    BlockStateProvider.of(ModBlocks.CINNAMON_LEAVES),
-                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 4),//4
-                    new TwoLayersFeatureSize(1, 0, 2)).build());
-
-    public static final RegistryEntry<PlacedFeature> CINNAMON_CHECKED = PlacedFeatures.register("cinnamon_checked",
-            ModConfiguredFeatures.CINNAMON_TREE, List.of(PlacedFeatures.wouldSurvive(ModBlocks.CINNAMON_SAPLING)));
-
-    public static final RegistryEntry<ConfiguredFeature<RandomFeatureConfig, ?>> CINNAMON_SPAWN =
-            ConfiguredFeatures.register("cinnamon_spawn", Feature.RANDOM_SELECTOR,
-                    new RandomFeatureConfig(List.of(new RandomFeatureEntry(CINNAMON_CHECKED, 0.1f)),
-                            CINNAMON_CHECKED));
+        register(context, CINNAMONTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
+                new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.CINNAMONTREE_PLACED_KEY),
+                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.CINNAMONTREE_PLACED_KEY)));
 
 
 
+    }
 
+    public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {
+        return RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, new Identifier(Photosynthesis.MOD_ID, name));
+    }
 
-
-    public static void registerConfiguredFeatures() {
-        System.out.println("Registering ModConfiguredFeatures for " + Photosynthesis.MOD_ID);
+    private static <FC extends FeatureConfig, F extends Feature<FC>> void register(Registerable<ConfiguredFeature<?, ?>> context,
+                                                                                   RegistryKey<ConfiguredFeature<?, ?>> key, F feature, FC configuration) {
+        context.register(key, new ConfiguredFeature<>(feature, configuration));
     }
 }

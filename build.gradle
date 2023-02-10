@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '0.12-SNAPSHOT'
+	id 'fabric-loom' version '1.1-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -38,6 +38,24 @@ processResources {
 		expand "version": project.version
 	}
 }
+
+def dataOutput = 'src/main/generated'
+
+loom {
+	runs {
+		datagen {
+			server()
+
+			name "Data Generation"
+			vmArg "-Dfabric-api.datagen"
+			vmArg "-Dfabric-api.datagen.output-dir=${file(dataOutput)}"
+
+			runDir "build/datagen"
+		}
+	}
+}
+
+sourceSets { main { resources { srcDirs += dataOutput } } }
 
 tasks.withType(JavaCompile).configureEach {
 	// ensure that the encoding is set to UTF-8, no matter what the system default is

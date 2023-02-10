@@ -22,6 +22,9 @@
     ],
     "client": [
       "net.zuiron.photosynthesis.client.PhotosynthesisClient"
+    ],
+    "fabric-datagen": [
+      "net.zuiron.photosynthesis.datagen.ModDataGeneration"
     ]
   },
   "mixins": [

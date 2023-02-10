@@ -1,14 +1,13 @@
 package net.zuiron.photosynthesis.item;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.CropBlock;
 import net.minecraft.block.SweetBerryBushBlock;
-import net.minecraft.item.AliasedBlockItem;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.FoodComponent;
-import net.minecraft.item.Item;
+import net.minecraft.item.*;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.mixin.ItemAccessor;
@@ -17,267 +16,214 @@ public class ModItems {
 
     // BERRIES ---------------------------------------------------------------------------------------------------------
     public static final Item BLUEBERRIES = registerBerryItem("blueberries", ModBlocks.BLUEBERRY_BUSH,
-            new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS));
+            new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
 
     public static final Item BLACKBERRIES = registerBerryItem("blackberries", ModBlocks.BLACKBERRY_BUSH,
-            new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS));
+            new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
 
     public static final Item RASPBERRIES = registerBerryItem("raspberries", ModBlocks.RASPBERRY_BUSH,
-            new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS));
+            new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
 
     public static final Item CLOUDBERRIES = registerBerryItem("cloudberries", ModBlocks.CLOUDBERRY_BUSH,
-            new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS));
+            new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
 
     public static final Item WILD_STRAWBERRIES = registerBerryItem("wild_strawberries", ModBlocks.WILD_STRAWBERRY_BUSH,
-            new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS));
+            new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
 
 
 
     // CROP PRODUCE ----------------------------------------------------------------------------------------------------
     public static final Item TOMATO = registerItem("tomato",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item BASIL = registerItem("basil",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item OREGANO = registerItem("oregano",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item STRAWBERRY = registerItem("strawberry",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item OAT = registerItem("oat",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item JALAPENO = registerItem("jalapeno",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item CHILI = registerItem("chili",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item CUCUMBER = registerItem("cucumber",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item ONION = registerItem("onion",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item LEEK = registerItem("leek",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item CELERY = registerItem("celery",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item PEAS = registerItem("peas",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item SWEET_POTATO = registerItem("sweet_potato",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item ASPARAGUS = registerItem("asparagus",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item SCALLION = registerItem("scallion",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item GARLIC = registerItem("garlic",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item CHIVE = registerItem("chive",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item BROCCOLI = registerItem("broccoli",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item CAULIFLOWER = registerItem("cauliflower",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item CORN = registerItem("corn",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item BLACK_PEPPER = registerItem("black_pepper",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item CABBAGE = registerItem("cabbage",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item RED_BELLPEPPER = registerItem("red_bellpepper",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item GREEN_BELLPEPPER = registerItem("green_bellpepper",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item YELLOW_BELLPEPPER = registerItem("yellow_bellpepper",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item TURNIP = registerItem("turnip",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item RUTABAGA = registerItem("rutabaga",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item CANOLA = registerItem("canola",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item BARLEY = registerItem("barley",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item COTTON = registerItem("cotton",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item SUGARBEET = registerItem("sugarbeet",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item RICE = registerItem("rice",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item SOYBEAN = registerItem("soybean",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item SPINACH = registerItem("spinach",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item ARROWROOT = registerItem("arrowroot",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item ARTICHOKE = registerItem("artichoke",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item BRUSSELS_SPROUTS = registerItem("brussels_sprouts",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item CASSAVA = registerItem("cassava",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item EGGPLANT = registerItem("eggplant",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item SUNFLOWER = registerItem("sunflower",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item JICAMA = registerItem("jicama",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item KALE = registerItem("kale",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item KOHLRABI = registerItem("kohlrabi",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item LETTUCE = registerItem("lettuce",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item OKRA = registerItem("okra",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item PARSNIP = registerItem("parsnip",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item RADISH = registerItem("radish",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item RHUBARB = registerItem("rhubarb",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
 
 
@@ -285,60 +231,49 @@ public class ModItems {
 
     public static final Item MILLET = registerItem("millet",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item RYE = registerItem("rye",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item SQUASH = registerItem("squash",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item ZUCCHINI = registerItem("zucchini",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item COFFEA = registerItem("coffea",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item GRAPE = registerItem("grape",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item PARSLEY = registerItem("parsley",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
 
 
     public static final Item CAMELLIA_SINENSIS = registerItem("camellia_sinensis",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item NICOTIANA_RUSTICA = registerItem("nicotiana_rustica",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item PAPAVER_SOMNIFERUM = registerItem("papaver_somniferum",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item ERYTHROXYLUM_COCA = registerItem("erythroxylum_coca",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
 
 
@@ -347,8 +282,7 @@ public class ModItems {
 
     public static final Item CINNAMON_RAW = registerItem("cinnamon_raw",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     /*public static final Item GREENAPPLE = registerItem("greenapple",
             new Item(new FabricItemSettings()
@@ -356,12 +290,10 @@ public class ModItems {
                     .group(ModItemGroup.PHOTOSYNTHESIS)));*/
 
     public static final Item GREENAPPLE = registerBerryItem("greenapple", ModBlocks.APPLETREE_BUSHCROP,
-            new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS));
+            new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
 
     public static final Item BANANA = registerBerryItem("banana", ModBlocks.BANANATREE_BUSHCROP,
-            new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS));
+            new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
 
     /*public static final Item CINNAMON_POWDER = registerItem("cinnamon_powder",
             new Item(new FabricItemSettings()
@@ -443,33 +375,27 @@ public class ModItems {
 
     public static final Item TOMATOSOUP = registerItem("tomatosoup",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item BEEFSTEW = registerItem("beefstew",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item MASHEDPOTATOES = registerItem("mashedpotatoes",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item ASPARAGUSBACONDISH = registerItem("asparagusbacondish",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item RICE_PORRIDGE = registerItem("rice_porridge",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item SALAD = registerItem("salad",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
 
 
@@ -478,17 +404,17 @@ public class ModItems {
 
     // END OF ModItems -------------------------------------------------------------------------------------------------
     private static Item registerBerryItem(String name, SweetBerryBushBlock alias, FabricItemSettings settings) {
-        return Registry.register(Registry.ITEM, new Identifier(Photosynthesis.MOD_ID, name),
+        return Registry.register(Registries.ITEM, new Identifier(Photosynthesis.MOD_ID, name),
                 new AliasedBlockItem(alias, settings));
     }
 
     private static Item registerBlockItem(String name, BlockItem item) {
-        return Registry.register(Registry.ITEM, new Identifier(Photosynthesis.MOD_ID, name), item);
+        return Registry.register(Registries.ITEM, new Identifier(Photosynthesis.MOD_ID, name), item);
     }
 
     private static Item registerSeedItem(String name, CropBlock alias) {
-        return Registry.register(Registry.ITEM, new Identifier(Photosynthesis.MOD_ID, name),
-                new AliasedBlockItem(alias, new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
+        return Registry.register(Registries.ITEM, new Identifier(Photosynthesis.MOD_ID, name),
+                new AliasedBlockItem(alias, new FabricItemSettings()));
     }
 
     private static Item registerRemainderItem(String name, Item item) {
@@ -500,10 +426,23 @@ public class ModItems {
 
     private static Item registerItem(String name, Item item){
         Photosynthesis.LOGGER.info("Registering item with name: " + name);
-        return Registry.register(Registry.ITEM, new Identifier(Photosynthesis.MOD_ID, name), item);
+        return Registry.register(Registries.ITEM, new Identifier(Photosynthesis.MOD_ID, name), item);
+    }
+
+    public static void addItemsToItemGroups() {
+        /*addToItemGroup(ItemGroups.INGREDIENTS, RAW_TANZANITE);
+        addToItemGroup(ItemGroups.INGREDIENTS, TANZANITE);*/
+
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, RYE);
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, RYE_SEEDS);
+    }
+    public static void addToItemGroup(ItemGroup group, Item item) {
+        ItemGroupEvents.modifyEntriesEvent(group).register(entries -> entries.add(item));
     }
 
     public static void registerModItems() {
         System.out.println("Registered Mod Items for " + Photosynthesis.MOD_ID);
+
+        addItemsToItemGroups();
     }
 }

@@ -1,17 +1,19 @@
 package net.zuiron.photosynthesis.block;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.item.ModItemGroup;
-import net.zuiron.photosynthesis.item.ModItems;
 import net.zuiron.photosynthesis.world.feature.tree.AppletreeSaplingGenerator;
 import net.zuiron.photosynthesis.world.feature.tree.BananatreeSaplingGenerator;
 import net.zuiron.photosynthesis.world.feature.tree.CinnamonSaplingGenerator;
@@ -20,7 +22,7 @@ public class ModBlocks {
 
     // FLOWERS ---------------------------------------------------------------------------------------------------------
     public static final Block FLORAMELISSIA = registerBlock("floramelissia",
-            new FlowerBlock(StatusEffect.byRawId(1),1, FabricBlockSettings.copy(Blocks.POTTED_POPPY).nonOpaque()));
+            new FlowerBlock(StatusEffect.byRawId(1), 1, FabricBlockSettings.copy(Blocks.POTTED_POPPY).nonOpaque()));
 
     public static final Block POTTED_FLORAMELISSIA = registerBlockWithoutBlockItem("potted_floramelissia",
             new FlowerPotBlock(ModBlocks.FLORAMELISSIA, FabricBlockSettings.copy(Blocks.POTTED_POPPY).nonOpaque()));
@@ -87,16 +89,10 @@ public class ModBlocks {
     public static final CropBlock MINT_CROP = registerCropBlockSimple("mint_crop");
 
 
-
     public static final CropBlock CAMELLIA_SINENSIS_CROP = registerCropBlockSimple("camellia_sinensis_crop");
     public static final CropBlock NICOTIANA_RUSTICA_CROP = registerCropBlockSimple("nicotiana_rustica_crop");
     public static final CropBlock PAPAVER_SOMNIFERUM_CROP = registerCropBlockSimple("papaver_somniferum_crop");
     public static final CropBlock ERYTHROXYLUM_COCA_CROP = registerCropBlockSimple("erythroxylum_coca_crop");
-
-
-
-
-
 
 
     // TREE's ----------------------------------------------------------------------------------------------------------
@@ -116,14 +112,11 @@ public class ModBlocks {
             new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
 
     public static final Block APPLETREE_SAPLING = registerBlock("appletree_sapling",
-            new SaplingBlock(new AppletreeSaplingGenerator(),FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+            new SaplingBlock(new AppletreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock APPLETREE_BUSHCROP = registerBushBlock("appletree_bushcrop",
             new AppletreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
-
-
-
 
 
     public static final Block BANANATREE_LOG = registerBlock("bananatree_log",
@@ -142,13 +135,11 @@ public class ModBlocks {
             new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
 
     public static final Block BANANATREE_SAPLING = registerBlock("bananatree_sapling",
-            new SaplingBlock(new BananatreeSaplingGenerator(),FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+            new SaplingBlock(new BananatreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock BANANATREE_BUSHCROP = registerBushBlock("bananatree_bushcrop",
             new BananatreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
-
-
 
 
     public static final Block CINNAMON_LOG = registerBlock("cinnamon_log",
@@ -166,7 +157,7 @@ public class ModBlocks {
             new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
 
     public static final Block CINNAMON_SAPLING = registerBlock("cinnamon_sapling",
-            new SaplingBlock(new CinnamonSaplingGenerator(),FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+            new SaplingBlock(new CinnamonSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
 
 
@@ -206,42 +197,45 @@ public class ModBlocks {
                     .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
 
-
     // END OF BLOCKS ---------------------------------------------------------------------------------------------------
 
-    private static Block registerBlockWithoutBlockItem(String name, Block block){
-        return Registry.register(Registry.BLOCK, new Identifier(Photosynthesis.MOD_ID, name), block);
-    }
-    private static Block registerBlock(String name, Block block){
-        registerBlockItem(name, block);
-        return Registry.register(Registry.BLOCK, new Identifier(Photosynthesis.MOD_ID, name), block);
+    private static Block registerBlockWithoutBlockItem(String name, Block block) {
+        return Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, name), block);
     }
 
-    private static Item registerBlockItem(String name, Block block) {
-        return Registry.register(Registry.ITEM, new Identifier(Photosynthesis.MOD_ID, name),
-                new BlockItem(block, new FabricItemSettings().group(ModItemGroup.PHOTOSYNTHESIS)));
+    private static Block registerBlock(String name, Block block) {
+        registerBlockItem(name, block, ModItemGroup.PHOTOSYNTHESIS);
+        return Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, name), block);
+    }
+
+
+    private static Item registerBlockItem(String name, Block block, ItemGroup tab) {
+        Item item = Registry.register(Registries.ITEM, new Identifier(Photosynthesis.MOD_ID, name),
+                new BlockItem(block, new FabricItemSettings()));
+        ItemGroupEvents.modifyEntriesEvent(tab).register(entries -> entries.add(item));
+        return item;
     }
 
     private static CropBlock registerCropBlock(String name, CropBlock block){
-        return Registry.register(Registry.BLOCK, new Identifier(Photosynthesis.MOD_ID, name), block);
+        return Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, name), block);
     }
 
     private static CropBlock registerCropBlockSimple(String name){
-        return Registry.register(Registry.BLOCK, new Identifier(Photosynthesis.MOD_ID, name),
+        return Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, name),
                 new CustomCropBlock(AbstractBlock.Settings.of(Material.PLANT)
                 .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),
                 name));
     }
 
     private static CropBlock registerCropBlockSimpleWL(String name){
-        return Registry.register(Registry.BLOCK, new Identifier(Photosynthesis.MOD_ID, name),
+        return Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, name),
                 new CustomCropBlockWL(AbstractBlock.Settings.of(Material.PLANT)
                         .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),
                         name));
     }
 
     private static SweetBerryBushBlock registerBushBlock(String name, SweetBerryBushBlock block){
-        return Registry.register(Registry.BLOCK, new Identifier(Photosynthesis.MOD_ID, name), block);
+        return Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, name), block);
     }
 
     public static void registerModBlocks() {

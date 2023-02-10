@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "photosynthesis:appletree_placed",
+    "features": [
+      {
+        "chance": 0.5,
+        "feature": "photosynthesis:appletree_placed"
+      }
+    ]
+  }
+}
