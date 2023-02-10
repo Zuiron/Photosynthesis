@@ -1,5 +1,5 @@
 {
-  "feature": "photosynthesis:appletree_tree",
+  "feature": "photosynthesis:appletree_spawn",
   "placement": [
     {
       "type": "minecraft:count",

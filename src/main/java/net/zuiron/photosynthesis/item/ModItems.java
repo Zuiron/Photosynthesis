@@ -257,6 +257,10 @@ public class ModItems {
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
+    public static final Item MINT = registerItem("mint",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
 
 
     public static final Item CAMELLIA_SINENSIS = registerItem("camellia_sinensis",
@@ -495,6 +499,7 @@ public class ModItems {
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, COFFEA );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, GRAPE );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, PARSLEY );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, MINT );
 
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CAMELLIA_SINENSIS );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, NICOTIANA_RUSTICA );
