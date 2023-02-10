@@ -84,7 +84,7 @@ public class ModBlocks {
 
     public static final CropBlock PARSLEY_CROP = registerCropBlockSimple("parsley_crop");
 
-
+    public static final CropBlock MINT_CROP = registerCropBlockSimple("mint_crop");
 
 
 

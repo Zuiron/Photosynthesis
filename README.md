@@ -2,7 +2,7 @@
 <img src="https://i.imgur.com/Ol1Tcf8.png" height="32">
 
 >This is a FABRIC mod. Minecraft 1.19.2 <br/>
-**Photosynthesis adds berries and crops.**
+**Photosynthesis adds berries, crops, trees and foods.**
 
 # Berries
 
