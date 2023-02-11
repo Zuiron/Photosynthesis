@@ -225,10 +225,6 @@ public class ModItems {
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
-
-
-
-
     public static final Item MILLET = registerItem("millet",
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
@@ -261,6 +257,10 @@ public class ModItems {
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
+    public static final Item PINEAPPLE = registerItem("pineapple",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
 
 
     public static final Item CAMELLIA_SINENSIS = registerItem("camellia_sinensis",
@@ -287,11 +287,6 @@ public class ModItems {
     public static final Item CINNAMON_RAW = registerItem("cinnamon_raw",
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
-
-    /*public static final Item GREENAPPLE = registerItem("greenapple",
-            new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())
-                    .group(ModItemGroup.PHOTOSYNTHESIS)));*/
 
     public static final Item GREENAPPLE = registerBerryItem("greenapple", ModBlocks.APPLETREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
@@ -363,6 +358,7 @@ public class ModItems {
     public static final Item GRAPE_SEEDS = registerSeedItem("grape_seeds", ModBlocks.GRAPE_CROP);
     public static final Item PARSLEY_SEEDS = registerSeedItem("parsley_seeds", ModBlocks.PARSLEY_CROP);
     public static final Item MINT_SEEDS = registerSeedItem("mint_seeds", ModBlocks.MINT_CROP);
+    public static final Item PINEAPPLE_SEEDS = registerSeedItem("pineapple_seeds", ModBlocks.PINEAPPLE_CROP);
 
 
 
@@ -500,6 +496,7 @@ public class ModItems {
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, GRAPE );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, PARSLEY );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, MINT );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, PINEAPPLE );
 
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CAMELLIA_SINENSIS );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, NICOTIANA_RUSTICA );
@@ -556,7 +553,6 @@ public class ModItems {
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, PARSNIP_SEEDS );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, RADISH_SEEDS );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, RHUBARB_SEEDS );
-
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, MILLET_SEEDS );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, RYE_SEEDS );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, SQUASH_SEEDS );
@@ -565,6 +561,7 @@ public class ModItems {
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, GRAPE_SEEDS );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, PARSLEY_SEEDS );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, MINT_SEEDS );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, PINEAPPLE_SEEDS );
 
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CAMELLIA_SINENSIS_SEEDS );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, NICOTIANA_RUSTICA_SEEDS );

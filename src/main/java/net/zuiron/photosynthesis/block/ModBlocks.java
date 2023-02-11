@@ -75,18 +75,15 @@ public class ModBlocks {
     public static final CropBlock PARSNIP_CROP = registerCropBlockSimple("parsnip_crop");
     public static final CropBlock RADISH_CROP = registerCropBlockSimple("radish_crop");
     public static final CropBlock RHUBARB_CROP = registerCropBlockSimple("rhubarb_crop");
-
-
     public static final CropBlock MILLET_CROP = registerCropBlockSimple("millet_crop");
     public static final CropBlock RYE_CROP = registerCropBlockSimple("rye_crop");
     public static final CropBlock SQUASH_CROP = registerCropBlockSimple("squash_crop");
     public static final CropBlock ZUCCHINI_CROP = registerCropBlockSimple("zucchini_crop");
     public static final CropBlock COFFEA_CROP = registerCropBlockSimple("coffea_crop");
     public static final CropBlock GRAPE_CROP = registerCropBlockSimple("grape_crop");
-
     public static final CropBlock PARSLEY_CROP = registerCropBlockSimple("parsley_crop");
-
     public static final CropBlock MINT_CROP = registerCropBlockSimple("mint_crop");
+    public static final CropBlock PINEAPPLE_CROP = registerCropBlockSimple("pineapple_crop");
 
 
     public static final CropBlock CAMELLIA_SINENSIS_CROP = registerCropBlockSimple("camellia_sinensis_crop");
