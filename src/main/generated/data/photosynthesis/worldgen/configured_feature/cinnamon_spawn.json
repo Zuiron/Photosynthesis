@@ -1,11 +1,11 @@
 {
   "type": "minecraft:random_selector",
   "config": {
-    "default": "photosynthesis:cinnamon_placed",
+    "default": "photosynthesis:cinnamon_checked",
     "features": [
       {
         "chance": 0.5,
-        "feature": "photosynthesis:cinnamon_placed"
+        "feature": "photosynthesis:cinnamon_checked"
       }
     ]
   }
