@@ -25,6 +25,14 @@
   "block.photosynthesis.cinnamon_leaves": "Cinnamon Leaves",
   "block.photosynthesis.cinnamon_sapling": "Cinnamon Sapling",
 
+	"block.photosynthesis.bananatree_log":            "Bananen Tree Log",
+	"block.photosynthesis.bananatree_wood":           "Bananen Tree Wood",
+	"block.photosynthesis.stripped_bananatree_log":   "Stripped Bananen Tree Log",
+	"block.photosynthesis.stripped_bananatree_wood":  "Stripped Bananen Tree Wood",
+	"block.photosynthesis.bananatree_planks":         "Bananen Tree Planks",
+	"block.photosynthesis.bananatree_leaves":         "Bananen Tree Leaves",
+	"block.photosynthesis.bananatree_sapling":        "Bananen Tree Sapling",
+
   "item.photosynthesis.blueberries": "Blueberries",
   "item.photosynthesis.blackberries": "Blackberries",
   "item.photosynthesis.raspberries": "Raspberries",
@@ -77,6 +85,7 @@
   "block.photosynthesis.parsnip_crop": "Parsnip",
   "block.photosynthesis.radish_crop": "Radish",
   "block.photosynthesis.rhubarb_crop": "Rhubarb",
+	"block.photosynthesis.millet_crop": "Millet",
 
   "item.photosynthesis.tomato": "Tomato",
   "item.photosynthesis.basil": "Basil",
@@ -126,6 +135,7 @@
   "item.photosynthesis.parsnip": "Parsnip",
   "item.photosynthesis.radish": "Radish",
   "item.photosynthesis.rhubarb": "Rhubarb",
+	"item.photosynthesis.millet": "Millet",
 
   "item.photosynthesis.tomato_seeds": "Tomato Seeds",
   "item.photosynthesis.basil_seeds": "Basil Seeds",
@@ -173,6 +183,7 @@
   "item.photosynthesis.parsnip_seeds": "Parsnip Seeds",
   "item.photosynthesis.radish_seeds": "Radish Seeds",
   "item.photosynthesis.rhubarb_seeds": "Rhubarb Seeds",
+	"item.photosynthesis.millet_seeds": "Millet Seeds",
 
   "item.photosynthesis.cutting_knife": "Cutting Knife",
   "item.photosynthesis.whisk": "Whisk",
