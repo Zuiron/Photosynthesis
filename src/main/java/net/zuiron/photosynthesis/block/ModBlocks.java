@@ -159,16 +159,6 @@ public class ModBlocks {
 
 
 
-
-
-
-
-    /*public static final CropBlock RHUBARB_CROP = registerCropBlock("rhubarb_crop",
-            new CustomCropBlock(AbstractBlock.Settings.of(Material.PLANT)
-                    .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),
-                    ModItems.RHUBARB_SEEDS));*/
-
-
     // BERRY BUSHES ----------------------------------------------------------------------------------------------------
     public static final SweetBerryBushBlock BLUEBERRY_BUSH = registerBushBlock("blueberry_bush",
             new BlueberryBush(AbstractBlock.Settings.of(Material.PLANT)

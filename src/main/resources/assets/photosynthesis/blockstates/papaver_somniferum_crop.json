@@ -13,7 +13,7 @@
       "model": "photosynthesis:block/papaver_somniferum_crop_stage1"
     },
     "age=4": {
-      "model": "photosynthesis:block/papaver_somniferum_crop_stage1"
+      "model": "photosynthesis:block/papaver_somniferum_crop_stage2"
     },
     "age=5": {
       "model": "photosynthesis:block/papaver_somniferum_crop_stage2"

@@ -97,7 +97,7 @@
 
   "block.photosynthesis.camellia_sinensis_crop": "Camellia Sinensis",
   "block.photosynthesis.nicotiana_rustica_crop": "Nicotiana Rustica",
-  "block.photosynthesis.papaver_somniferum_crop": "Papaver Somniferum",
+  "block.photosynthesis.papaver_somniferum_crop": "Opium Poppy",
   "block.photosynthesis.erythroxylum_coca_crop": "Erythroxylum Coca",
 
   "item.photosynthesis.tomato": "Tomato",
@@ -160,7 +160,7 @@
 
   "item.photosynthesis.camellia_sinensis": "Camellia Sinensis",
   "item.photosynthesis.nicotiana_rustica": "Nicotiana Rustica",
-  "item.photosynthesis.papaver_somniferum": "Papaver Somniferum",
+  "item.photosynthesis.papaver_somniferum": "Opium Poppy",
   "item.photosynthesis.erythroxylum_coca": "Erythroxylum Coca",
 
   "item.photosynthesis.tomato_seeds": "Tomato Seeds",
@@ -222,7 +222,7 @@
 
   "item.photosynthesis.camellia_sinensis_seeds": "Camellia Sinensis Seeds",
   "item.photosynthesis.nicotiana_rustica_seeds": "Nicotiana Rustica Seeds",
-  "item.photosynthesis.papaver_somniferum_seeds": "Papaver Somniferum Seeds",
+  "item.photosynthesis.papaver_somniferum_seeds": "Opium Poppy Seeds",
   "item.photosynthesis.erythroxylum_coca_seeds": "Erythroxylum Coca Seeds",
 
   "item.photosynthesis.cinnamon_raw": "Cinnamon",
