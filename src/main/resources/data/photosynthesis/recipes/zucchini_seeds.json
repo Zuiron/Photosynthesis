@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "photosynthesis:zucchini"
+    }
+  ],
+  "result": {
+    "item": "photosynthesis:zucchini_seeds",
+    "count": 1
+  }
+}

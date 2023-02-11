@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "photosynthesis:coffea"
+    }
+  ],
+  "result": {
+    "item": "photosynthesis:coffea_seeds",
+    "count": 1
+  }
+}

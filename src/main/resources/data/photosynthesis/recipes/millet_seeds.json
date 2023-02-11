@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "photosynthesis:millet"
+    }
+  ],
+  "result": {
+    "item": "photosynthesis:millet_seeds",
+    "count": 1
+  }
+}
