@@ -11,6 +11,7 @@ import net.zuiron.photosynthesis.util.ModStrippableBlocks;
 import net.zuiron.photosynthesis.world.gen.BananaTreeDecorator;
 import net.zuiron.photosynthesis.world.gen.ModWorldGen;
 import net.zuiron.photosynthesis.world.gen.AppleTreeDecorator;
+import net.zuiron.photosynthesis.world.gen.OrangeTreeDecorator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -24,6 +25,7 @@ public class Photosynthesis implements ModInitializer {
 	public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
 	public static final TreeDecoratorType<AppleTreeDecorator> APPLE_TREE_DECORATOR = TreeDecoratorTypeInvoker.callRegister("photosynthesis:apple_tree_decorator", AppleTreeDecorator.CODEC);
 	public static final TreeDecoratorType<BananaTreeDecorator> BANANA_TREE_DECORATOR = TreeDecoratorTypeInvoker.callRegister("photosynthesis:banana_tree_decorator", BananaTreeDecorator.CODEC);
+	public static final TreeDecoratorType<OrangeTreeDecorator> ORANGE_TREE_DECORATOR = TreeDecoratorTypeInvoker.callRegister("photosynthesis:orange_tree_decorator", OrangeTreeDecorator.CODEC);
 
 	@Override
 	public void onInitialize() {

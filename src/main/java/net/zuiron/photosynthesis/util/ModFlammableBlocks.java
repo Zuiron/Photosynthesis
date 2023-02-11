@@ -32,5 +32,13 @@ public class ModFlammableBlocks {
 
         registry.add(ModBlocks.CINNAMON_PLANKS, 5, 20);
         registry.add(ModBlocks.CINNAMON_LEAVES, 30, 60);
+
+        registry.add(ModBlocks.ORANGETREE_LOG, 5, 5);
+        registry.add(ModBlocks.ORANGETREE_WOOD, 5, 5);
+        registry.add(ModBlocks.STRIPPED_ORANGETREE_LOG, 5, 5);
+        registry.add(ModBlocks.STRIPPED_ORANGETREE_WOOD, 5, 5);
+
+        registry.add(ModBlocks.ORANGETREE_PLANKS, 5, 20);
+        registry.add(ModBlocks.ORANGETREE_LEAVES, 30, 60);
     }
 }

@@ -14,6 +14,11 @@
     "photosynthesis:cinnamon_log",
     "photosynthesis:cinnamon_wood",
     "photosynthesis:stripped_cinnamon_log",
-    "photosynthesis:stripped_cinnamon_wood"
+    "photosynthesis:stripped_cinnamon_wood",
+
+    "photosynthesis:orangetree_log",
+    "photosynthesis:orangetree_wood",
+    "photosynthesis:stripped_orangetree_log",
+    "photosynthesis:stripped_orangetree_wood"
   ]
 }

@@ -17,6 +17,7 @@ import net.zuiron.photosynthesis.item.ModItemGroup;
 import net.zuiron.photosynthesis.world.feature.tree.AppletreeSaplingGenerator;
 import net.zuiron.photosynthesis.world.feature.tree.BananatreeSaplingGenerator;
 import net.zuiron.photosynthesis.world.feature.tree.CinnamonSaplingGenerator;
+import net.zuiron.photosynthesis.world.feature.tree.OrangetreeSaplingGenerator;
 
 public class ModBlocks {
 
@@ -116,6 +117,8 @@ public class ModBlocks {
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
 
+
+
     public static final Block BANANATREE_LOG = registerBlock("bananatree_log",
             new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
     public static final Block BANANATREE_WOOD = registerBlock("bananatree_wood",
@@ -139,6 +142,8 @@ public class ModBlocks {
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
 
+
+
     public static final Block CINNAMON_LOG = registerBlock("cinnamon_log",
             new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
     public static final Block CINNAMON_WOOD = registerBlock("cinnamon_wood",
@@ -155,6 +160,33 @@ public class ModBlocks {
 
     public static final Block CINNAMON_SAPLING = registerBlock("cinnamon_sapling",
             new SaplingBlock(new CinnamonSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+
+
+
+
+    public static final Block ORANGETREE_LOG = registerBlock("orangetree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block ORANGETREE_WOOD = registerBlock("orangetree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_ORANGETREE_LOG = registerBlock("stripped_orangetree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_ORANGETREE_WOOD = registerBlock("stripped_orangetree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block ORANGETREE_PLANKS = registerBlock("orangetree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+
+    public static final Block ORANGETREE_LEAVES = registerBlock("orangetree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block ORANGETREE_SAPLING = registerBlock("orangetree_sapling",
+            new SaplingBlock(new OrangetreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock ORANGETREE_BUSHCROP = registerBushBlock("orangetree_bushcrop",
+            new OrangetreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
 
 
 

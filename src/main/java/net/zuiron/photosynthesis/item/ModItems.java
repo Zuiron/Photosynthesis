@@ -294,6 +294,9 @@ public class ModItems {
     public static final Item BANANA = registerBerryItem("banana", ModBlocks.BANANATREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
 
+    public static final Item ORANGE = registerBerryItem("orange", ModBlocks.ORANGETREE_BUSHCROP,
+            new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
+
 
 
 
@@ -500,6 +503,7 @@ public class ModItems {
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CINNAMON_RAW );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, GREENAPPLE );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, BANANA );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, ORANGE );
 
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, TOMATO_SEEDS );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, BASIL_SEEDS );

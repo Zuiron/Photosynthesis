@@ -33,6 +33,19 @@
   "block.photosynthesis.bananatree_leaves":         "Banana Tree Leaves",
   "block.photosynthesis.bananatree_sapling":        "Banana Tree Sapling",
 
+  "block.photosynthesis.orangetree_log": "Orangetree Log",
+  "block.photosynthesis.orangetree_wood": "Orangetree Wood",
+  "block.photosynthesis.stripped_orangetree_log": "Stripped Orangetree Log",
+  "block.photosynthesis.stripped_orangetree_wood": "Stripped Orangetree Wood",
+  "block.photosynthesis.orangetree_planks": "Orangetree Planks",
+  "block.photosynthesis.orangetree_leaves": "Orangetree Leaves",
+  "block.photosynthesis.orangetree_sapling": "Orangetree Sapling",
+
+  "item.photosynthesis.cinnamon_raw": "Cinnamon",
+  "item.photosynthesis.greenapple": "Green Apple",
+  "item.photosynthesis.banana": "Banana",
+  "item.photosynthesis.orange": "Orange",
+
   "item.photosynthesis.blueberries": "Blueberries",
   "item.photosynthesis.blackberries": "Blackberries",
   "item.photosynthesis.raspberries": "Raspberries",
@@ -224,10 +237,6 @@
   "item.photosynthesis.nicotiana_rustica_seeds": "Nicotiana Rustica Seeds",
   "item.photosynthesis.papaver_somniferum_seeds": "Opium Poppy Seeds",
   "item.photosynthesis.erythroxylum_coca_seeds": "Coca Seeds",
-
-  "item.photosynthesis.cinnamon_raw": "Cinnamon",
-  "item.photosynthesis.greenapple": "Green Apple",
-  "item.photosynthesis.banana": "Banana",
 
   "item.photosynthesis.tomatosoup": "Tomato Soup",
   "item.photosynthesis.beefstew": "Beefstew",
