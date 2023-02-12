@@ -9,7 +9,9 @@ import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.AcaciaFoliagePlacer;
 import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
+import net.minecraft.world.gen.foliage.JungleFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
+import net.minecraft.world.gen.trunk.BendingTrunkPlacer;
 import net.minecraft.world.gen.trunk.ForkingTrunkPlacer;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 import net.zuiron.photosynthesis.Photosynthesis;
@@ -83,9 +85,9 @@ public class ModConfiguredFeatures {
 
         register(context, BANANATREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.BANANATREE_LOG),
-                new ForkingTrunkPlacer(6, 2, 2), //StraightTrunkPlacer(4, 8, 0)
+                new BendingTrunkPlacer(4, 1, 1, 7, ConstantIntProvider.create(1)), //4117
                 BlockStateProvider.of(ModBlocks.BANANATREE_LEAVES),
-                new AcaciaFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0)),//3
+                new JungleFoliagePlacer(ConstantIntProvider.create(1), ConstantIntProvider.create(1), 3),//112
                 new TwoLayersFeatureSize(1, 0, 2)).decorators(Collections.singletonList(BananaTreeDecorator.INSTANCE)).ignoreVines().build());
 
         register(context, BANANATREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
