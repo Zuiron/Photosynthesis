@@ -24,6 +24,59 @@ public class ModItems {
                     -3.2F,
                     new FabricItemSettings()));
 
+    public static final Item CUTTING_KNIFE = registerRemainderItem("cutting_knife",
+            new Item(new FabricItemSettings()));
+
+    public static final Item CUTTING_KNIFE_BLADE = registerItem("cutting_knife_blade",
+            new Item(new FabricItemSettings()));
+
+    public static final Item CUTTING_KNIFE_HANDLE = registerItem("cutting_knife_handle",
+            new Item(new FabricItemSettings()));
+
+    public static final Item CUTTING_BOARD = registerRemainderItem("cutting_board",
+            new Item(new FabricItemSettings()));
+
+    public static final Item MORTAR_PESTLE = registerRemainderItem("mortar_pestle",
+            new Item(new FabricItemSettings()));
+
+    public static final Item MORTAR = registerItem("mortar",
+            new Item(new FabricItemSettings()));
+
+    public static final Item PESTLE = registerItem("pestle",
+            new Item(new FabricItemSettings()));
+
+    public static final Item PLATE = registerItem("plate",
+            new Item(new FabricItemSettings()));
+
+    public static final Item ROLLING_PIN = registerRemainderItem("rolling_pin",
+            new Item(new FabricItemSettings()));
+
+    public static final Item ROLLING_PIN_HANDLE = registerItem("rolling_pin_handle",
+            new Item(new FabricItemSettings()));
+
+    public static final Item ROLLING_PIN_PIN = registerItem("rolling_pin_pin",
+            new Item(new FabricItemSettings()));
+
+    public static final Item ROLLING_PIN_PART = registerItem("rolling_pin_part",
+            new Item(new FabricItemSettings()));
+
+    public static final Item SQUEEZER = registerRemainderItem("squeezer",
+            new Item(new FabricItemSettings()));
+
+    public static final Item SQUEEZER_PART = registerItem("squeezer_part",
+            new Item(new FabricItemSettings()));
+
+    public static final Item WHISK = registerRemainderItem("whisk",
+            new Item(new FabricItemSettings()));
+
+    public static final Item WHISK_PART = registerItem("whisk_part",
+            new Item(new FabricItemSettings()));
+
+    public static final Item WHISK_HANDLE = registerItem("whisk_handle",
+            new Item(new FabricItemSettings()));
+
+
+
     // BARK ------------------------------------------------------------------------------------------------------------
     public static final Item BARK_ACACIA = registerItem("bark_acacia",
             new Item(new FabricItemSettings()));
@@ -53,6 +106,11 @@ public class ModItems {
 
     public static final Item WILD_STRAWBERRIES = registerBerryItem("wild_strawberries", ModBlocks.WILD_STRAWBERRY_BUSH,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
+
+
+
+
+
 
 
 
@@ -394,6 +452,54 @@ public class ModItems {
 
     // Food's ----------------------------------------------------------------------------------------------------------
 
+    public static final Item CANOLA_OIL_BOTTLE = registerItem("canola_oil_bottle",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item SUNFLOWER_OIL_BOTTLE = registerItem("sunflower_oil_bottle",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item CINNAMON_POWDER = registerItem("cinnamon_powder",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item CUT_CHIVES = registerItem("cut_chives",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item CRACKED_EGG = registerItem("cracked_egg",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item FRIED_EGG = registerItem("fried_egg",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item SCRAMBLED_EGG = registerItem("scrambled_egg",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item HARD_BOILED_EGG = registerItem("hard_boiled_egg",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item SOFT_BOILED_EGG = registerItem("soft_boiled_egg",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item DRIED_BLACK_PEPPER = registerItem("dried_black_pepper",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+
+
+
+
+
+
+
+
     public static final Item TOMATOSOUP = registerItem("tomatosoup",
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
@@ -417,8 +523,6 @@ public class ModItems {
     public static final Item SALAD = registerItem("salad",
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
-
-
 
 
 
@@ -451,9 +555,26 @@ public class ModItems {
     }
 
     public static void addItemsToItemGroups() {
-        /*addToItemGroup(ItemGroups.INGREDIENTS, RAW_TANZANITE);
-        addToItemGroup(ItemGroups.INGREDIENTS, TANZANITE);*/
+        //ItemGroups.INGREDIENTS
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, BARK_PEELER_SPUD );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CUTTING_KNIFE );
+
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CUTTING_KNIFE_BLADE );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CUTTING_KNIFE_HANDLE );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CUTTING_BOARD );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, MORTAR_PESTLE );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, MORTAR );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, PESTLE );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, PLATE );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, ROLLING_PIN );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, ROLLING_PIN_HANDLE );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, ROLLING_PIN_PIN );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, ROLLING_PIN_PART );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, SQUEEZER );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, SQUEEZER_PART );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, WHISK );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, WHISK_PART );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, WHISK_HANDLE );
 
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, BARK_ACACIA );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, BARK_BIRCH );
@@ -597,6 +718,17 @@ public class ModItems {
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, NICOTIANA_RUSTICA_SEEDS );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, PAPAVER_SOMNIFERUM_SEEDS );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, ERYTHROXYLUM_COCA_SEEDS );
+
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CANOLA_OIL_BOTTLE );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, SUNFLOWER_OIL_BOTTLE );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CINNAMON_POWDER );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CUT_CHIVES );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CRACKED_EGG );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, FRIED_EGG );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, SCRAMBLED_EGG );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, HARD_BOILED_EGG );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, SOFT_BOILED_EGG );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, DRIED_BLACK_PEPPER );
 
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, TOMATOSOUP );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, BEEFSTEW );
