@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.CropBlock;
 import net.minecraft.block.SweetBerryBushBlock;
 import net.minecraft.item.*;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -12,7 +13,30 @@ import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.mixin.ItemAccessor;
 
+
+
+
 public class ModItems {
+    // TOOLS -----------------------------------------------------------------------------------------------------------
+    public static final Item BARK_PEELER_SPUD = registerItem("bark_peeler_spud",
+            new BarkPeelerSpudItem(PrimitiveToolMaterial.INSTANCE,
+                    1,
+                    -3.2F,
+                    new FabricItemSettings()));
+
+    // BARK ------------------------------------------------------------------------------------------------------------
+    public static final Item BARK_ACACIA = registerItem("bark_acacia",
+            new Item(new FabricItemSettings()));
+    public static final Item BARK_BIRCH = registerItem("bark_birch",
+            new Item(new FabricItemSettings()));
+    public static final Item BARK_DARK_OAK = registerItem("bark_dark_oak",
+            new Item(new FabricItemSettings()));
+    public static final Item BARK_JUNGLE = registerItem("bark_jungle",
+            new Item(new FabricItemSettings()));
+    public static final Item BARK_OAK = registerItem("bark_oak",
+            new Item(new FabricItemSettings()));
+    public static final Item BARK_SPRUCE = registerItem("bark_spruce",
+            new Item(new FabricItemSettings()));
 
     // BERRIES ---------------------------------------------------------------------------------------------------------
     public static final Item BLUEBERRIES = registerBerryItem("blueberries", ModBlocks.BLUEBERRY_BUSH,
@@ -429,6 +453,14 @@ public class ModItems {
     public static void addItemsToItemGroups() {
         /*addToItemGroup(ItemGroups.INGREDIENTS, RAW_TANZANITE);
         addToItemGroup(ItemGroups.INGREDIENTS, TANZANITE);*/
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, BARK_PEELER_SPUD );
+
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, BARK_ACACIA );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, BARK_BIRCH );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, BARK_JUNGLE );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, BARK_OAK );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, BARK_DARK_OAK );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, BARK_SPRUCE );
 
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, BLUEBERRIES );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, BLACKBERRIES );
