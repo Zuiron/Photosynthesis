@@ -13,6 +13,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.zuiron.photosynthesis.Photosynthesis;
+import net.zuiron.photosynthesis.block.custom.SkilletBlock;
 import net.zuiron.photosynthesis.item.ModItemGroup;
 import net.zuiron.photosynthesis.world.feature.tree.AppletreeSaplingGenerator;
 import net.zuiron.photosynthesis.world.feature.tree.BananatreeSaplingGenerator;
@@ -28,6 +29,10 @@ public class ModBlocks {
     public static final Block POTTED_FLORAMELISSIA = registerBlockWithoutBlockItem("potted_floramelissia",
             new FlowerPotBlock(ModBlocks.FLORAMELISSIA, FabricBlockSettings.copy(Blocks.POTTED_POPPY).nonOpaque()));
 
+    // TEST
+    public static final Block SKILLET = registerBlock("skillet",
+            new SkilletBlock(FabricBlockSettings.of(Material.METAL)
+                    .strength(4f).requiresTool().nonOpaque()));
 
     // CROP BLOCKS -----------------------------------------------------------------------------------------------------
     public static final CropBlock TOMATO_CROP = registerCropBlockSimple("tomato_crop");

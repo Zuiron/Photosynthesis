@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "photosynthesis:block/skillet"
+    },
+    "facing=south": {
+      "model": "photosynthesis:block/skillet",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "photosynthesis:block/skillet",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "photosynthesis:block/skillet",
+      "y": 90
+    }
+  }
+}
