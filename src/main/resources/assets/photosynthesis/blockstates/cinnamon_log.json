@@ -5,9 +5,19 @@
       "x": 90,
       "y": 90
     },
-    "axis=y": {
-      "model": "photosynthesis:block/cinnamon_log"
-    },
+    "axis=y": [{
+      "model": "photosynthesis:block/cinnamon_log",
+      "weight": 300
+    },{
+      "model": "photosynthesis:block/cinnamon_log",
+      "weight": 300, "x": 180
+    },{
+      "model": "photosynthesis:block/cinnamon_log_1",
+      "weight": 300
+    },{
+      "model": "photosynthesis:block/cinnamon_log_1",
+      "weight": 300, "x": 180
+    }],
     "axis=z": {
       "model": "photosynthesis:block/cinnamon_log_horizontal",
       "x": 90

@@ -1,4 +1,4 @@
-// 1.19.3	2023-02-12T15:54:36.314719	Photosynthesis/photosynthesis
+// 1.19.3	2023-02-13T17:19:31.4011603	Photosynthesis/photosynthesis
 0caa01f1627e4bc68777a6801d6d7b2194622bca data\photosynthesis\worldgen\placed_feature\bananatree_placed.json
 97a36af98a9db645c2d74ecceb2f9f2fecb0b07e data\photosynthesis\worldgen\placed_feature\raspberry_bush_placed.json
 75cfd501651317c481c3791c3faf117b9f5f7ac3 data\photosynthesis\worldgen\placed_feature\cinnamon_placed.json
@@ -18,7 +18,7 @@ aa726e70374c9975caa59f2e27f8c3382b1f5847 data\photosynthesis\worldgen\placed_fea
 8b00068efe3e943ebfbb352d765f03c9b2a714fc data\photosynthesis\worldgen\configured_feature\cloudberry_bush.json
 5257b397cc5e50868023b59ba7218b11efd4a788 data\photosynthesis\worldgen\configured_feature\appletree_spawn.json
 f19120916aa971ddcecefcb49a088b749fb53f39 data\photosynthesis\worldgen\configured_feature\floramelissia.json
-a21b1c6ba844113501a712096329180f9fca0698 data\photosynthesis\worldgen\configured_feature\cinnamon_tree.json
+bc8cecc88b9c897257c5a7fc2b39a7aeedc8844a data\photosynthesis\worldgen\configured_feature\cinnamon_tree.json
 a69f9513d34a1ba63610744fafd071098c64a95c data\photosynthesis\worldgen\configured_feature\wild_strawberry_bush.json
 16b79f427156a52d0b27e903ab9957dbfd5a5710 data\photosynthesis\worldgen\configured_feature\orangetree_tree.json
 5d3159dfff89e154ddb0415bea3c7be2b8fae5c1 data\photosynthesis\worldgen\configured_feature\blackberry_bush.json

@@ -1,5 +1,12 @@
 {
   "variants": {
-    "": { "model": "photosynthesis:block/cinnamon_leaves" }
+    "": [
+      { "model": "photosynthesis:block/cinnamon_leaves" },
+      { "model": "photosynthesis:block/cinnamon_leaves", "x": 90, "y": 90, "weight": 1000 },
+      { "model": "photosynthesis:block/cinnamon_leaves", "x": 180, "y": 180, "weight": 1000 },
+      { "model": "photosynthesis:block/cinnamon_leaves_1" },
+      { "model": "photosynthesis:block/cinnamon_leaves_1", "x": 90, "y": 90, "weight": 400 },
+      { "model": "photosynthesis:block/cinnamon_leaves_1", "x": 180, "y": 180, "weight": 400 }
+    ]
   }
 }
