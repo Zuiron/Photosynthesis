@@ -39,6 +39,7 @@ public class ModBlocks {
             new KegBlock(FabricBlockSettings.of(Material.WOOD)
                     .strength(4f).requiresTool().nonOpaque()));
 
+
     // CROP BLOCKS -----------------------------------------------------------------------------------------------------
     public static final CropBlock TOMATO_CROP = registerCropBlockSimple("tomato_crop");
     public static final CropBlock BASIL_CROP = registerCropBlockSimple("basil_crop");
