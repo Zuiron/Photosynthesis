@@ -13,6 +13,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.zuiron.photosynthesis.Photosynthesis;
+import net.zuiron.photosynthesis.block.custom.KegBlock;
 import net.zuiron.photosynthesis.block.custom.SkilletBlock;
 import net.zuiron.photosynthesis.item.ModItemGroup;
 import net.zuiron.photosynthesis.world.feature.tree.AppletreeSaplingGenerator;
@@ -32,6 +33,10 @@ public class ModBlocks {
     // TEST
     public static final Block SKILLET = registerBlock("skillet",
             new SkilletBlock(FabricBlockSettings.of(Material.METAL)
+                    .strength(4f).requiresTool().nonOpaque()));
+
+    public static final Block KEG = registerBlock("keg",
+            new KegBlock(FabricBlockSettings.of(Material.WOOD)
                     .strength(4f).requiresTool().nonOpaque()));
 
     // CROP BLOCKS -----------------------------------------------------------------------------------------------------

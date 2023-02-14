@@ -15,14 +15,14 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import org.jetbrains.annotations.Nullable;
 
-public class SkilletBlock extends HorizontalFacingBlock {
+public class KegBlock extends HorizontalFacingBlock {
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
 
-    public SkilletBlock(Settings settings) {
+    public KegBlock(Settings settings) {
         super(settings);
     }
 
-    private static VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 3, 16);
+    private static VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 14, 16);
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {

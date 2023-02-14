@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "photosynthesis:block/keg"
+    },
+    "facing=south": {
+      "model": "photosynthesis:block/keg",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "photosynthesis:block/keg",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "photosynthesis:block/keg",
+      "y": 90
+    }
+  }
+}
