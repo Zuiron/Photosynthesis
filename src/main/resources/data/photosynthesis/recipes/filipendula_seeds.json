@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "photosynthesis:filipendula"
+    }
+  ],
+  "result": {
+    "item": "photosynthesis:filipendula_seeds",
+    "count": 1
+  }
+}

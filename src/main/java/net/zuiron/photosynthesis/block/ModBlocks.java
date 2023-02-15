@@ -96,6 +96,8 @@ public class ModBlocks {
     public static final CropBlock PARSLEY_CROP = registerCropBlockSimple("parsley_crop");
     public static final CropBlock MINT_CROP = registerCropBlockSimple("mint_crop");
     public static final CropBlock PINEAPPLE_CROP = registerCropBlockSimple("pineapple_crop");
+    public static final CropBlock HOP_CROP = registerCropBlockSimple("hop_crop");
+    public static final CropBlock FILIPENDULA_CROP = registerCropBlockSimple("filipendula_crop");
 
 
     public static final CropBlock CAMELLIA_SINENSIS_CROP = registerCropBlockSimple("camellia_sinensis_crop");

@@ -343,6 +343,14 @@ public class ModItems {
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
+    public static final Item HOP = registerItem("hop",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item FILIPENDULA = registerItem("filipendula",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
 
 
     public static final Item CAMELLIA_SINENSIS = registerItem("camellia_sinensis",
@@ -438,7 +446,8 @@ public class ModItems {
     public static final Item PARSLEY_SEEDS = registerSeedItem("parsley_seeds", ModBlocks.PARSLEY_CROP);
     public static final Item MINT_SEEDS = registerSeedItem("mint_seeds", ModBlocks.MINT_CROP);
     public static final Item PINEAPPLE_SEEDS = registerSeedItem("pineapple_seeds", ModBlocks.PINEAPPLE_CROP);
-
+    public static final Item HOP_SEEDS = registerSeedItem("hop_seeds", ModBlocks.HOP_CROP);
+    public static final Item FILIPENDULA_SEEDS = registerSeedItem("filipendula_seeds", ModBlocks.FILIPENDULA_CROP);
 
 
 

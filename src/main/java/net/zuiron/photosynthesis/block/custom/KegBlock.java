@@ -22,7 +22,7 @@ public class KegBlock extends HorizontalFacingBlock {
         super(settings);
     }
 
-    private static VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 14, 16);
+    private static VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 16, 16);
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
