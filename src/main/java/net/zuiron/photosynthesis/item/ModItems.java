@@ -33,8 +33,8 @@ public class ModItems {
     public static final Item CUTTING_KNIFE_HANDLE = registerItem("cutting_knife_handle",
             new Item(new FabricItemSettings()));
 
-    public static final Item CUTTING_BOARD = registerRemainderItem("cutting_board",
-            new Item(new FabricItemSettings()));
+    /*public static final Item CUTTING_BOARD = registerRemainderItem("cutting_board",
+            new Item(new FabricItemSettings()));*/
 
     public static final Item MORTAR_PESTLE = registerRemainderItem("mortar_pestle",
             new Item(new FabricItemSettings()));
@@ -570,7 +570,7 @@ public class ModItems {
 
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CUTTING_KNIFE_BLADE );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CUTTING_KNIFE_HANDLE );
-        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CUTTING_BOARD );
+        //addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CUTTING_BOARD );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, MORTAR_PESTLE );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, MORTAR );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, PESTLE );

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "photosynthesis:block/cutting_board"
+    },
+    "facing=south": {
+      "model": "photosynthesis:block/cutting_board",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "photosynthesis:block/cutting_board",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "photosynthesis:block/cutting_board",
+      "y": 90
+    }
+  }
+}

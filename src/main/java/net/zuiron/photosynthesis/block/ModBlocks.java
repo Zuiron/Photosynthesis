@@ -13,6 +13,8 @@ import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.zuiron.photosynthesis.Photosynthesis;
+import net.zuiron.photosynthesis.block.custom.CookingPotBlock;
+import net.zuiron.photosynthesis.block.custom.CuttingBoardBlock;
 import net.zuiron.photosynthesis.block.custom.KegBlock;
 import net.zuiron.photosynthesis.block.custom.SkilletBlock;
 import net.zuiron.photosynthesis.item.ModItemGroup;
@@ -30,13 +32,21 @@ public class ModBlocks {
     public static final Block POTTED_FLORAMELISSIA = registerBlockWithoutBlockItem("potted_floramelissia",
             new FlowerPotBlock(ModBlocks.FLORAMELISSIA, FabricBlockSettings.copy(Blocks.POTTED_POPPY).nonOpaque()));
 
-    // TEST
+    // "Machines"
     public static final Block SKILLET = registerBlock("skillet",
             new SkilletBlock(FabricBlockSettings.of(Material.METAL)
                     .strength(4f).requiresTool().nonOpaque()));
 
     public static final Block KEG = registerBlock("keg",
             new KegBlock(FabricBlockSettings.of(Material.WOOD)
+                    .strength(4f).requiresTool().nonOpaque()));
+
+    public static final Block COOKINGPOT = registerBlock("cooking_pot",
+            new CookingPotBlock(FabricBlockSettings.of(Material.METAL)
+                    .strength(4f).requiresTool().nonOpaque()));
+
+    public static final Block CUTTINGBOARD = registerBlock("cutting_board",
+            new CuttingBoardBlock(FabricBlockSettings.of(Material.WOOD)
                     .strength(4f).requiresTool().nonOpaque()));
 
 
