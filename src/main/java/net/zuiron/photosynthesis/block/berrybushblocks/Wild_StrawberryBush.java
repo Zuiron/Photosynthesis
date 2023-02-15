@@ -1,4 +1,4 @@
-package net.zuiron.photosynthesis.block;
+package net.zuiron.photosynthesis.block.berrybushblocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

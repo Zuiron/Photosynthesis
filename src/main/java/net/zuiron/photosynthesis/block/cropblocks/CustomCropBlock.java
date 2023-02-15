@@ -1,4 +1,4 @@
-package net.zuiron.photosynthesis.block;
+package net.zuiron.photosynthesis.block.cropblocks;
 
 import net.minecraft.block.*;
 import net.minecraft.fluid.FluidState;

@@ -1,4 +1,4 @@
-package net.zuiron.photosynthesis.block;
+package net.zuiron.photosynthesis.block.bushtreecrops;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -17,25 +17,25 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.item.ModItems;
 
-public class AppletreeBushCrop extends SweetBerryBushBlock {
+public class BananatreeBushCrop extends SweetBerryBushBlock {
 
-    public AppletreeBushCrop(Settings settings) {
+    public BananatreeBushCrop(Settings settings) {
         super(settings);
     }
 
     @Override
     public ItemStack getPickStack(BlockView world, BlockPos pos, BlockState state) {
-        return new ItemStack(ModItems.GREENAPPLE);
+        return new ItemStack(ModItems.BANANA);
     }
 
     private static final VoxelShape[] AGE_TO_SHAPE = new VoxelShape[]{
-            //thanks DancerVlt69
-            Block.createCuboidShape(4.0D, 13.0D, 4.0D, 12.0D, 16.0D, 12.0D),
-            Block.createCuboidShape(4.0D, 10.0D, 4.0D, 12.0D, 16.0D, 12.0D),
-            Block.createCuboidShape(4.0D, 7.0D, 4.0D, 12.0D, 16.0D, 12.0D),
-            Block.createCuboidShape(3.0D, 4.0D, 3.0D, 13.0D, 16.0D, 13.0D)
+            Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
+            Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
+            Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
+            Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D)
     };
 
     @Override
@@ -45,7 +45,7 @@ public class AppletreeBushCrop extends SweetBerryBushBlock {
 
     @Override
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-        if(world.getBlockState(pos.up(2)).isOf(ModBlocks.APPLETREE_LEAVES)) {
+        if(world.getBlockState(pos.up(2)).isOf(ModBlocks.BANANATREE_LEAVES)) {
             return true;
         } else { return false; }
     }
@@ -59,7 +59,7 @@ public class AppletreeBushCrop extends SweetBerryBushBlock {
             return ActionResult.PASS;
         } else if (i > 1) {
             int j = 1 + world.random.nextInt(2);
-            dropStack(world, pos, new ItemStack(ModItems.GREENAPPLE, j + (bl ? 1 : 0)));
+            dropStack(world, pos, new ItemStack(ModItems.BANANA, j + (bl ? 1 : 0)));
             world.playSound((PlayerEntity)null, pos, SoundEvents.BLOCK_SWEET_BERRY_BUSH_PICK_BERRIES, SoundCategory.BLOCKS, 1.0F, 0.8F + world.random.nextFloat() * 0.4F);
             world.setBlockState(pos, (BlockState)state.with(AGE, 1), Block.NOTIFY_LISTENERS);
             return ActionResult.success(world.isClient);
