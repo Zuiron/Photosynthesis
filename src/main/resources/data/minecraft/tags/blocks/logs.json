@@ -29,6 +29,11 @@
     "photosynthesis:coconuttree_log",
     "photosynthesis:coconuttree_wood",
     "photosynthesis:stripped_coconuttree_log",
-    "photosynthesis:stripped_coconuttree_wood"
+    "photosynthesis:stripped_coconuttree_wood",
+
+    "photosynthesis:avocadotree_log",
+    "photosynthesis:avocadotree_wood",
+    "photosynthesis:stripped_avocadotree_log",
+    "photosynthesis:stripped_avocadotree_wood"
   ]
 }

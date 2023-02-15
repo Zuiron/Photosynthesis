@@ -393,6 +393,8 @@ public class ModItems {
     public static final Item COCONUT = registerBerryItem("coconut", ModBlocks.COCONUTTREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
 
+    public static final Item AVOCADO = registerBerryItem("avocado", ModBlocks.AVOCADOTREE_BUSHCROP,
+            new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
 
 
     // CROP SEEDS ----------------------------------------------------------------------------------------------------

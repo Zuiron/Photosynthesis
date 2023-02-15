@@ -28,6 +28,9 @@ public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> COCONUTTREE_CHECKED_KEY = registerKey("coconuttree_checked");
     public static final RegistryKey<PlacedFeature> COCONUTTREE_PLACED_KEY = registerKey("coconuttree_placed");
 
+    public static final RegistryKey<PlacedFeature> AVOCADOTREE_CHECKED_KEY = registerKey("avocadotree_checked");
+    public static final RegistryKey<PlacedFeature> AVOCADOTREE_PLACED_KEY = registerKey("avocadotree_placed");
+
 
     public static final RegistryKey<PlacedFeature> FLORAMELISSIA_PLACED_KEY = registerKey("flormelissia_placed");
 
@@ -84,6 +87,13 @@ public class ModPlacedFeatures {
         register(context, COCONUTTREE_CHECKED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.COCONUTTREE_KEY),
                 List.of(PlacedFeatures.wouldSurvive(ModBlocks.COCONUTTREE_SAPLING)));
         register(context, COCONUTTREE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.COCONUTTREE_SPAWN_KEY),
+                VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(1, 0.1f, 2)));
+
+
+
+        register(context, AVOCADOTREE_CHECKED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.AVOCADOTREE_KEY),
+                List.of(PlacedFeatures.wouldSurvive(ModBlocks.AVOCADOTREE_SAPLING)));
+        register(context, AVOCADOTREE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.AVOCADOTREE_SPAWN_KEY),
                 VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(1, 0.1f, 2)));
 
 

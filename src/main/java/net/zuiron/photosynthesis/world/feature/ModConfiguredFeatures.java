@@ -39,6 +39,8 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?,?>> PEARTREE_SPAWN_KEY = registerKey("peartree_spawn");
     public static final RegistryKey<ConfiguredFeature<?,?>> COCONUTTREE_KEY = registerKey("coconuttree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> COCONUTTREE_SPAWN_KEY = registerKey("coconuttree_spawn");
+    public static final RegistryKey<ConfiguredFeature<?,?>> AVOCADOTREE_KEY = registerKey("avocadotree_tree");
+    public static final RegistryKey<ConfiguredFeature<?,?>> AVOCADOTREE_SPAWN_KEY = registerKey("avocadotree_spawn");
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
         var placedFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.PLACED_FEATURE);
@@ -154,6 +156,22 @@ public class ModConfiguredFeatures {
         register(context, COCONUTTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.COCONUTTREE_CHECKED_KEY),
                         0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.COCONUTTREE_CHECKED_KEY)));
+
+
+
+
+
+
+        register(context, AVOCADOTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(ModBlocks.AVOCADOTREE_LOG),
+                new StraightTrunkPlacer(4, 1, 1), //3,4,2
+                BlockStateProvider.of(ModBlocks.AVOCADOTREE_LEAVES),
+                new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 2),//3
+                new TwoLayersFeatureSize(1, 0, 2)).decorators(Collections.singletonList(AvocadoTreeDecorator.INSTANCE)).build());
+
+        register(context, AVOCADOTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
+                new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.AVOCADOTREE_CHECKED_KEY),
+                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.AVOCADOTREE_CHECKED_KEY)));
 
 
 
