@@ -16,5 +16,8 @@ public class ModStrippableBlocks {
 
         StrippableBlockRegistry.register(ModBlocks.ORANGETREE_LOG, ModBlocks.STRIPPED_ORANGETREE_LOG);
         StrippableBlockRegistry.register(ModBlocks.ORANGETREE_WOOD, ModBlocks.STRIPPED_ORANGETREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.PEARTREE_LOG, ModBlocks.STRIPPED_PEARTREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.PEARTREE_WOOD, ModBlocks.STRIPPED_PEARTREE_WOOD);
     }
 }

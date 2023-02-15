@@ -17,6 +17,7 @@ import net.zuiron.photosynthesis.block.berrybushblocks.*;
 import net.zuiron.photosynthesis.block.bushtreecrops.AppletreeBushCrop;
 import net.zuiron.photosynthesis.block.bushtreecrops.BananatreeBushCrop;
 import net.zuiron.photosynthesis.block.bushtreecrops.OrangetreeBushCrop;
+import net.zuiron.photosynthesis.block.bushtreecrops.PeartreeBushCrop;
 import net.zuiron.photosynthesis.block.cropblocks.CustomCropBlock;
 import net.zuiron.photosynthesis.block.cropblocks.CustomCropBlockWL;
 import net.zuiron.photosynthesis.block.custom.CookingPotBlock;
@@ -24,10 +25,7 @@ import net.zuiron.photosynthesis.block.custom.CuttingBoardBlock;
 import net.zuiron.photosynthesis.block.custom.KegBlock;
 import net.zuiron.photosynthesis.block.custom.SkilletBlock;
 import net.zuiron.photosynthesis.item.ModItemGroup;
-import net.zuiron.photosynthesis.world.feature.tree.AppletreeSaplingGenerator;
-import net.zuiron.photosynthesis.world.feature.tree.BananatreeSaplingGenerator;
-import net.zuiron.photosynthesis.world.feature.tree.CinnamonSaplingGenerator;
-import net.zuiron.photosynthesis.world.feature.tree.OrangetreeSaplingGenerator;
+import net.zuiron.photosynthesis.world.feature.tree.*;
 
 public class ModBlocks {
 
@@ -214,6 +212,32 @@ public class ModBlocks {
 
     public static final SweetBerryBushBlock ORANGETREE_BUSHCROP = registerBushBlock("orangetree_bushcrop",
             new OrangetreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+
+
+
+
+    public static final Block PEARTREE_LOG = registerBlock("peartree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block PEARTREE_WOOD = registerBlock("peartree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_PEARTREE_LOG = registerBlock("stripped_peartree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_PEARTREE_WOOD = registerBlock("stripped_peartree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block PEARTREE_PLANKS = registerBlock("peartree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+
+    public static final Block PEARTREE_LEAVES = registerBlock("peartree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block PEARTREE_SAPLING = registerBlock("peartree_sapling",
+            new SaplingBlock(new PeartreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock PEARTREE_BUSHCROP = registerBushBlock("peartree_bushcrop",
+            new PeartreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
 

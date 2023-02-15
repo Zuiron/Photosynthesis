@@ -20,5 +20,8 @@ public class ModTreeGeneration {
 
         BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.ORANGETREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.PEARTREE_PLACED_KEY);
     }
 }

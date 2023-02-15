@@ -19,6 +19,11 @@
     "photosynthesis:orangetree_log",
     "photosynthesis:orangetree_wood",
     "photosynthesis:stripped_orangetree_log",
-    "photosynthesis:stripped_orangetree_wood"
+    "photosynthesis:stripped_orangetree_wood",
+
+    "photosynthesis:peartree_log",
+    "photosynthesis:peartree_wood",
+    "photosynthesis:stripped_peartree_log",
+    "photosynthesis:stripped_peartree_wood"
   ]
 }

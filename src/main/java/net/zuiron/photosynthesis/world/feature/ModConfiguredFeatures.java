@@ -17,6 +17,7 @@ import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.world.gen.AppleTreeDecorator;
 import net.zuiron.photosynthesis.world.gen.BananaTreeDecorator;
 import net.zuiron.photosynthesis.world.gen.OrangeTreeDecorator;
+import net.zuiron.photosynthesis.world.gen.PearTreeDecorator;
 
 import java.util.Collections;
 import java.util.List;
@@ -37,6 +38,8 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?,?>> CINNAMONTREE_SPAWN_KEY = registerKey("cinnamon_spawn");
     public static final RegistryKey<ConfiguredFeature<?,?>> ORANGETREE_KEY = registerKey("orangetree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> ORANGETREE_SPAWN_KEY = registerKey("orangetree_spawn");
+    public static final RegistryKey<ConfiguredFeature<?,?>> PEARTREE_KEY = registerKey("peartree_tree");
+    public static final RegistryKey<ConfiguredFeature<?,?>> PEARTREE_SPAWN_KEY = registerKey("peartree_spawn");
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
         var placedFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.PLACED_FEATURE);
@@ -120,6 +123,21 @@ public class ModConfiguredFeatures {
         register(context, ORANGETREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.ORANGETREE_CHECKED_KEY),
                         0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.ORANGETREE_CHECKED_KEY)));
+
+
+
+
+
+        register(context, PEARTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(ModBlocks.PEARTREE_LOG),
+                new StraightTrunkPlacer(4, 1, 1), //3,4,2
+                BlockStateProvider.of(ModBlocks.PEARTREE_LEAVES),
+                new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 2),//3
+                new TwoLayersFeatureSize(1, 0, 2)).decorators(Collections.singletonList(PearTreeDecorator.INSTANCE)).build());
+
+        register(context, PEARTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
+                new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.PEARTREE_CHECKED_KEY),
+                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.PEARTREE_CHECKED_KEY)));
 
 
 

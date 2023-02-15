@@ -22,6 +22,9 @@ public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> ORANGETREE_CHECKED_KEY = registerKey("orangetree_checked");
     public static final RegistryKey<PlacedFeature> ORANGETREE_PLACED_KEY = registerKey("orangetree_placed");
 
+    public static final RegistryKey<PlacedFeature> PEARTREE_CHECKED_KEY = registerKey("peartree_checked");
+    public static final RegistryKey<PlacedFeature> PEARTREE_PLACED_KEY = registerKey("peartree_placed");
+
 
     public static final RegistryKey<PlacedFeature> FLORAMELISSIA_PLACED_KEY = registerKey("flormelissia_placed");
 
@@ -64,6 +67,13 @@ public class ModPlacedFeatures {
         register(context, ORANGETREE_CHECKED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.ORANGETREE_KEY),
                 List.of(PlacedFeatures.wouldSurvive(ModBlocks.ORANGETREE_SAPLING)));
         register(context, ORANGETREE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.ORANGETREE_SPAWN_KEY),
+                VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(1, 0.1f, 2)));
+
+
+
+        register(context, PEARTREE_CHECKED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PEARTREE_KEY),
+                List.of(PlacedFeatures.wouldSurvive(ModBlocks.PEARTREE_SAPLING)));
+        register(context, PEARTREE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PEARTREE_SPAWN_KEY),
                 VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(1, 0.1f, 2)));
 
 

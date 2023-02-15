@@ -8,10 +8,7 @@ import net.zuiron.photosynthesis.item.ModItems;
 import net.zuiron.photosynthesis.mixin.TreeDecoratorTypeInvoker;
 import net.zuiron.photosynthesis.util.ModFlammableBlocks;
 import net.zuiron.photosynthesis.util.ModStrippableBlocks;
-import net.zuiron.photosynthesis.world.gen.BananaTreeDecorator;
-import net.zuiron.photosynthesis.world.gen.ModWorldGen;
-import net.zuiron.photosynthesis.world.gen.AppleTreeDecorator;
-import net.zuiron.photosynthesis.world.gen.OrangeTreeDecorator;
+import net.zuiron.photosynthesis.world.gen.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -26,7 +23,7 @@ public class Photosynthesis implements ModInitializer {
 	public static final TreeDecoratorType<AppleTreeDecorator> APPLE_TREE_DECORATOR = TreeDecoratorTypeInvoker.callRegister("photosynthesis:apple_tree_decorator", AppleTreeDecorator.CODEC);
 	public static final TreeDecoratorType<BananaTreeDecorator> BANANA_TREE_DECORATOR = TreeDecoratorTypeInvoker.callRegister("photosynthesis:banana_tree_decorator", BananaTreeDecorator.CODEC);
 	public static final TreeDecoratorType<OrangeTreeDecorator> ORANGE_TREE_DECORATOR = TreeDecoratorTypeInvoker.callRegister("photosynthesis:orange_tree_decorator", OrangeTreeDecorator.CODEC);
-
+	public static final TreeDecoratorType<PearTreeDecorator> PEAR_TREE_DECORATOR = TreeDecoratorTypeInvoker.callRegister("photosynthesis:pear_tree_decorator", PearTreeDecorator.CODEC);
 	@Override
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.

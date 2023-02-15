@@ -16,6 +16,9 @@ public class ModFlammableBlocks {
         registry.add(ModBlocks.APPLETREE_LEAVES, 30, 60);
 
 
+
+
+
         registry.add(ModBlocks.BANANATREE_LOG, 5, 5);
         registry.add(ModBlocks.BANANATREE_WOOD, 5, 5);
         registry.add(ModBlocks.STRIPPED_BANANATREE_LOG, 5, 5);
@@ -23,6 +26,9 @@ public class ModFlammableBlocks {
 
         registry.add(ModBlocks.BANANATREE_PLANKS, 5, 20);
         registry.add(ModBlocks.BANANATREE_LEAVES, 30, 60);
+
+
+
 
 
         registry.add(ModBlocks.CINNAMON_LOG, 5, 5);
@@ -33,6 +39,10 @@ public class ModFlammableBlocks {
         registry.add(ModBlocks.CINNAMON_PLANKS, 5, 20);
         registry.add(ModBlocks.CINNAMON_LEAVES, 30, 60);
 
+
+
+
+
         registry.add(ModBlocks.ORANGETREE_LOG, 5, 5);
         registry.add(ModBlocks.ORANGETREE_WOOD, 5, 5);
         registry.add(ModBlocks.STRIPPED_ORANGETREE_LOG, 5, 5);
@@ -40,5 +50,16 @@ public class ModFlammableBlocks {
 
         registry.add(ModBlocks.ORANGETREE_PLANKS, 5, 20);
         registry.add(ModBlocks.ORANGETREE_LEAVES, 30, 60);
+
+
+
+
+        registry.add(ModBlocks.PEARTREE_LOG, 5, 5);
+        registry.add(ModBlocks.PEARTREE_WOOD, 5, 5);
+        registry.add(ModBlocks.STRIPPED_PEARTREE_LOG, 5, 5);
+        registry.add(ModBlocks.STRIPPED_PEARTREE_WOOD, 5, 5);
+
+        registry.add(ModBlocks.PEARTREE_PLANKS, 5, 20);
+        registry.add(ModBlocks.PEARTREE_LEAVES, 30, 60);
     }
 }
