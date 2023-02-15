@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "photosynthesis:block/stripped_coconuttree_top",
+    "side": "photosynthesis:block/stripped_coconuttree_log"
+  }
+}

@@ -61,5 +61,17 @@ public class ModFlammableBlocks {
 
         registry.add(ModBlocks.PEARTREE_PLANKS, 5, 20);
         registry.add(ModBlocks.PEARTREE_LEAVES, 30, 60);
+
+
+
+
+
+        registry.add(ModBlocks.COCONUTTREE_LOG, 5, 5);
+        registry.add(ModBlocks.COCONUTTREE_WOOD, 5, 5);
+        registry.add(ModBlocks.STRIPPED_COCONUTTREE_LOG, 5, 5);
+        registry.add(ModBlocks.STRIPPED_COCONUTTREE_WOOD, 5, 5);
+
+        registry.add(ModBlocks.COCONUTTREE_PLANKS, 5, 20);
+        registry.add(ModBlocks.COCONUTTREE_LEAVES, 30, 60);
     }
 }

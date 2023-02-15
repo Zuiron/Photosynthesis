@@ -14,10 +14,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.berrybushblocks.*;
-import net.zuiron.photosynthesis.block.bushtreecrops.AppletreeBushCrop;
-import net.zuiron.photosynthesis.block.bushtreecrops.BananatreeBushCrop;
-import net.zuiron.photosynthesis.block.bushtreecrops.OrangetreeBushCrop;
-import net.zuiron.photosynthesis.block.bushtreecrops.PeartreeBushCrop;
+import net.zuiron.photosynthesis.block.bushtreecrops.*;
 import net.zuiron.photosynthesis.block.cropblocks.CustomCropBlock;
 import net.zuiron.photosynthesis.block.cropblocks.CustomCropBlockWL;
 import net.zuiron.photosynthesis.block.custom.CookingPotBlock;
@@ -239,6 +236,36 @@ public class ModBlocks {
     public static final SweetBerryBushBlock PEARTREE_BUSHCROP = registerBushBlock("peartree_bushcrop",
             new PeartreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+
+
+
+
+
+
+    public static final Block COCONUTTREE_LOG = registerBlock("coconuttree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block COCONUTTREE_WOOD = registerBlock("coconuttree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_COCONUTTREE_LOG = registerBlock("stripped_coconuttree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_COCONUTTREE_WOOD = registerBlock("stripped_coconuttree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block COCONUTTREE_PLANKS = registerBlock("coconuttree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+
+    public static final Block COCONUTTREE_LEAVES = registerBlock("coconuttree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block COCONUTTREE_SAPLING = registerBlock("coconuttree_sapling",
+            new SaplingBlock(new CoconuttreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock COCONUTTREE_BUSHCROP = registerBushBlock("coconuttree_bushcrop",
+            new CoconuttreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+
 
 
 
