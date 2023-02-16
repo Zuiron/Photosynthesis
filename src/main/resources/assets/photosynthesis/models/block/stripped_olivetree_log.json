@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "photosynthesis:block/stripped_olivetree_top",
+    "side": "photosynthesis:block/stripped_olivetree_log"
+  }
+}

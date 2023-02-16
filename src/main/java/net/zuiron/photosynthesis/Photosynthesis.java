@@ -29,6 +29,7 @@ public class Photosynthesis implements ModInitializer {
 	public static final TreeDecoratorType<CherryTreeDecorator> CHERRY_TREE_DECORATOR = TreeDecoratorTypeInvoker.callRegister("photosynthesis:cherry_tree_decorator", CherryTreeDecorator.CODEC);
 	public static final TreeDecoratorType<LemonTreeDecorator> LEMON_TREE_DECORATOR = TreeDecoratorTypeInvoker.callRegister("photosynthesis:lemon_tree_decorator", LemonTreeDecorator.CODEC);
 	public static final TreeDecoratorType<MangoTreeDecorator> MANGO_TREE_DECORATOR = TreeDecoratorTypeInvoker.callRegister("photosynthesis:mango_tree_decorator", MangoTreeDecorator.CODEC);
+	public static final TreeDecoratorType<OliveTreeDecorator> OLIVE_TREE_DECORATOR = TreeDecoratorTypeInvoker.callRegister("photosynthesis:olive_tree_decorator", OliveTreeDecorator.CODEC);
 
 
 

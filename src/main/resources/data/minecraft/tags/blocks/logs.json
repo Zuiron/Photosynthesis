@@ -49,6 +49,11 @@
     "photosynthesis:mangotree_log",
     "photosynthesis:mangotree_wood",
     "photosynthesis:stripped_mangotree_log",
-    "photosynthesis:stripped_mangotree_wood"
+    "photosynthesis:stripped_mangotree_wood",
+
+    "photosynthesis:olivetree_log",
+    "photosynthesis:olivetree_wood",
+    "photosynthesis:stripped_olivetree_log",
+    "photosynthesis:stripped_olivetree_wood"
   ]
 }
