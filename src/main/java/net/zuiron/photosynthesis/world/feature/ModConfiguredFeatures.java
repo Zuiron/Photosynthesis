@@ -41,6 +41,8 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?,?>> COCONUTTREE_SPAWN_KEY = registerKey("coconuttree_spawn");
     public static final RegistryKey<ConfiguredFeature<?,?>> AVOCADOTREE_KEY = registerKey("avocadotree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> AVOCADOTREE_SPAWN_KEY = registerKey("avocadotree_spawn");
+    public static final RegistryKey<ConfiguredFeature<?,?>> CHERRYTREE_KEY = registerKey("cherrytree_tree");
+    public static final RegistryKey<ConfiguredFeature<?,?>> CHERRYTREE_SPAWN_KEY = registerKey("cherrytree_spawn");
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
         var placedFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.PLACED_FEATURE);
@@ -172,6 +174,26 @@ public class ModConfiguredFeatures {
         register(context, AVOCADOTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.AVOCADOTREE_CHECKED_KEY),
                         0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.AVOCADOTREE_CHECKED_KEY)));
+
+
+
+
+
+
+        register(context, CHERRYTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(ModBlocks.CHERRYTREE_LOG),
+                new StraightTrunkPlacer(4, 1, 1), //3,4,2
+                BlockStateProvider.of(ModBlocks.CHERRYTREE_LEAVES),
+                new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 2),//3
+                new TwoLayersFeatureSize(1, 0, 2)).decorators(Collections.singletonList(CherryTreeDecorator.INSTANCE)).build());
+
+        register(context, CHERRYTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
+                new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.CHERRYTREE_CHECKED_KEY),
+                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.CHERRYTREE_CHECKED_KEY)));
+
+
+
+
 
 
 

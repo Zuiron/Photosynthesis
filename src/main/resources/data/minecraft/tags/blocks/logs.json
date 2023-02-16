@@ -34,6 +34,11 @@
     "photosynthesis:avocadotree_log",
     "photosynthesis:avocadotree_wood",
     "photosynthesis:stripped_avocadotree_log",
-    "photosynthesis:stripped_avocadotree_wood"
+    "photosynthesis:stripped_avocadotree_wood",
+
+    "photosynthesis:cherrytree_log",
+    "photosynthesis:cherrytree_wood",
+    "photosynthesis:stripped_cherrytree_log",
+    "photosynthesis:stripped_cherrytree_wood"
   ]
 }

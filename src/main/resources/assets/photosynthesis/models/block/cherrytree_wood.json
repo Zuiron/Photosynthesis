@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "photosynthesis:block/cherrytree_log",
+    "side": "photosynthesis:block/cherrytree_log"
+  }
+}
