@@ -13,7 +13,9 @@
 | Banana   | <img src="https://github.com/Zuiron/Photosynthesis/blob/1.19.3/src/main/resources/assets/photosynthesis/textures/item/banana.png?raw=true" width="32" height="32">       | <img src="https://github.com/Zuiron/Photosynthesis/blob/1.19.3/screenshots/bananatree.png?raw=true" width="300" height="auto">   |
 | Cinnamon | <img src="https://github.com/Zuiron/Photosynthesis/blob/1.19.3/src/main/resources/assets/photosynthesis/textures/item/cinnamon_raw.png?raw=true" width="32" height="32"> | <img src="https://github.com/Zuiron/Photosynthesis/blob/1.19.3/screenshots/cinnamontree.png?raw=true" width="300" height="auto"> |
 | Orange   | <img src="https://github.com/Zuiron/Photosynthesis/blob/1.19.3/src/main/resources/assets/photosynthesis/textures/item/orange.png?raw=true" width="32" height="32">       | <img src="https://github.com/Zuiron/Photosynthesis/blob/1.19.3/screenshots/orangetree.png?raw=true" width="300" height="auto">   |
-
+| Pear     | <img src="https://github.com/Zuiron/Photosynthesis/blob/1.19.3/src/main/resources/assets/photosynthesis/textures/item/pear.png?raw=true" width="32" height="32">         | <img src="https://github.com/Zuiron/Photosynthesis/blob/1.19.3/screenshots/peartree.png?raw=true" width="300" height="auto">     |
+| Coconut  | <img src="https://github.com/Zuiron/Photosynthesis/blob/1.19.3/src/main/resources/assets/photosynthesis/textures/item/coconut.png?raw=true" width="32" height="32">      | <img src="https://github.com/Zuiron/Photosynthesis/blob/1.19.3/screenshots/coconuttree.png?raw=true" width="300" height="auto">  |
+| Avocado  | <img src="https://github.com/Zuiron/Photosynthesis/blob/1.19.3/src/main/resources/assets/photosynthesis/textures/item/avocado.png?raw=true" width="32" height="32">      | <img src="https://github.com/Zuiron/Photosynthesis/blob/1.19.3/screenshots/avocadotree.png?raw=true" width="300" height="auto">  |
 
 
 # Berries
