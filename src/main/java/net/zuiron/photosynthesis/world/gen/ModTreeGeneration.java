@@ -35,5 +35,8 @@ public class ModTreeGeneration {
 
         BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.LEMONTREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.MANGOTREE_PLACED_KEY);
     }
 }

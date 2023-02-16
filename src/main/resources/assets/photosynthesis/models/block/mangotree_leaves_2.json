@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "photosynthesis:block/mangotree_leaves_2"
+  }
+}

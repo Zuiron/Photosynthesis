@@ -46,6 +46,9 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?,?>> LEMONTREE_KEY = registerKey("lemontree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> LEMONTREE_SPAWN_KEY = registerKey("lemontree_spawn");
 
+    public static final RegistryKey<ConfiguredFeature<?,?>> MANGOTREE_KEY = registerKey("mangotree_tree");
+    public static final RegistryKey<ConfiguredFeature<?,?>> MANGOTREE_SPAWN_KEY = registerKey("mangotree_spawn");
+
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
         var placedFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.PLACED_FEATURE);
         //register(context, KEY, );
@@ -212,6 +215,18 @@ public class ModConfiguredFeatures {
 
 
 
+
+
+        register(context, MANGOTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(ModBlocks.MANGOTREE_LOG),
+                new StraightTrunkPlacer(4, 1, 1), //3,4,2
+                BlockStateProvider.of(ModBlocks.MANGOTREE_LEAVES),
+                new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 2),//3
+                new TwoLayersFeatureSize(1, 0, 2)).decorators(Collections.singletonList(MangoTreeDecorator.INSTANCE)).build());
+
+        register(context, MANGOTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
+                new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.MANGOTREE_CHECKED_KEY),
+                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.MANGOTREE_CHECKED_KEY)));
 
     }
 

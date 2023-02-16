@@ -44,6 +44,11 @@
     "photosynthesis:lemontree_log",
     "photosynthesis:lemontree_wood",
     "photosynthesis:stripped_lemontree_log",
-    "photosynthesis:stripped_lemontree_wood"
+    "photosynthesis:stripped_lemontree_wood",
+
+    "photosynthesis:mangotree_log",
+    "photosynthesis:mangotree_wood",
+    "photosynthesis:stripped_mangotree_log",
+    "photosynthesis:stripped_mangotree_wood"
   ]
 }

@@ -98,6 +98,8 @@ public class ModFlammableBlocks {
         registry.add(ModBlocks.CHERRYTREE_LEAVES, 30, 60);
 
 
+
+
         registry.add(ModBlocks.LEMONTREE_LOG, 5, 5);
         registry.add(ModBlocks.LEMONTREE_WOOD, 5, 5);
         registry.add(ModBlocks.STRIPPED_LEMONTREE_LOG, 5, 5);
@@ -105,5 +107,15 @@ public class ModFlammableBlocks {
 
         registry.add(ModBlocks.LEMONTREE_PLANKS, 5, 20);
         registry.add(ModBlocks.LEMONTREE_LEAVES, 30, 60);
+
+
+
+        registry.add(ModBlocks.MANGOTREE_LOG, 5, 5);
+        registry.add(ModBlocks.MANGOTREE_WOOD, 5, 5);
+        registry.add(ModBlocks.STRIPPED_MANGOTREE_LOG, 5, 5);
+        registry.add(ModBlocks.STRIPPED_MANGOTREE_WOOD, 5, 5);
+
+        registry.add(ModBlocks.MANGOTREE_PLANKS, 5, 20);
+        registry.add(ModBlocks.MANGOTREE_LEAVES, 30, 60);
     }
 }

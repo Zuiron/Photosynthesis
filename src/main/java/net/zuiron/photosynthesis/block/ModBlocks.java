@@ -353,6 +353,34 @@ public class ModBlocks {
 
 
 
+    public static final Block MANGOTREE_LOG = registerBlock("mangotree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block MANGOTREE_WOOD = registerBlock("mangotree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_MANGOTREE_LOG = registerBlock("stripped_mangotree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_MANGOTREE_WOOD = registerBlock("stripped_mangotree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block MANGOTREE_PLANKS = registerBlock("mangotree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+
+    public static final Block MANGOTREE_LEAVES = registerBlock("mangotree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block MANGOTREE_SAPLING = registerBlock("mangotree_sapling",
+            new SaplingBlock(new MangotreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock MANGOTREE_BUSHCROP = registerBushBlock("mangotree_bushcrop",
+            new MangotreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+
+
+
+
+
+
     // BERRY BUSHES ----------------------------------------------------------------------------------------------------
     public static final SweetBerryBushBlock BLUEBERRY_BUSH = registerBushBlock("blueberry_bush",
             new BlueberryBush(AbstractBlock.Settings.of(Material.PLANT)
