@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "photosynthesis:block/stripped_lemontree_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "photosynthesis:block/stripped_lemontree_log"
+    },
+    "axis=z": {
+      "model": "photosynthesis:block/stripped_lemontree_log_horizontal",
+      "x": 90
+    }
+  }
+}

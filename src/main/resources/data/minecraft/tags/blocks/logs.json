@@ -39,6 +39,11 @@
     "photosynthesis:cherrytree_log",
     "photosynthesis:cherrytree_wood",
     "photosynthesis:stripped_cherrytree_log",
-    "photosynthesis:stripped_cherrytree_wood"
+    "photosynthesis:stripped_cherrytree_wood",
+
+    "photosynthesis:lemontree_log",
+    "photosynthesis:lemontree_wood",
+    "photosynthesis:stripped_lemontree_log",
+    "photosynthesis:stripped_lemontree_wood"
   ]
 }

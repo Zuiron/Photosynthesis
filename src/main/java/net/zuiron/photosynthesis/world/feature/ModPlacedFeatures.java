@@ -34,6 +34,18 @@ public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> CHERRYTREE_CHECKED_KEY = registerKey("cherrytree_checked");
     public static final RegistryKey<PlacedFeature> CHERRYTREE_PLACED_KEY = registerKey("cherrytree_placed");
 
+    public static final RegistryKey<PlacedFeature> LEMONTREE_CHECKED_KEY = registerKey("lemontree_checked");
+    public static final RegistryKey<PlacedFeature> LEMONTREE_PLACED_KEY = registerKey("lemontree_placed");
+
+
+
+
+
+
+
+
+
+
 
     public static final RegistryKey<PlacedFeature> FLORAMELISSIA_PLACED_KEY = registerKey("flormelissia_placed");
 
@@ -105,6 +117,14 @@ public class ModPlacedFeatures {
                 List.of(PlacedFeatures.wouldSurvive(ModBlocks.CHERRYTREE_SAPLING)));
         register(context, CHERRYTREE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.CHERRYTREE_SPAWN_KEY),
                 VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(1, 0.1f, 2)));
+
+
+
+        register(context, LEMONTREE_CHECKED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.LEMONTREE_KEY),
+                List.of(PlacedFeatures.wouldSurvive(ModBlocks.LEMONTREE_SAPLING)));
+        register(context, LEMONTREE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.LEMONTREE_SPAWN_KEY),
+                VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(1, 0.1f, 2)));
+
 
 
 

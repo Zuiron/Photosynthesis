@@ -27,6 +27,7 @@ public class Photosynthesis implements ModInitializer {
 	public static final TreeDecoratorType<CoconutTreeDecorator> COCONUT_TREE_DECORATOR = TreeDecoratorTypeInvoker.callRegister("photosynthesis:coconut_tree_decorator", CoconutTreeDecorator.CODEC);
 	public static final TreeDecoratorType<AvocadoTreeDecorator> AVOCADO_TREE_DECORATOR = TreeDecoratorTypeInvoker.callRegister("photosynthesis:avocado_tree_decorator", AvocadoTreeDecorator.CODEC);
 	public static final TreeDecoratorType<CherryTreeDecorator> CHERRY_TREE_DECORATOR = TreeDecoratorTypeInvoker.callRegister("photosynthesis:cherry_tree_decorator", CherryTreeDecorator.CODEC);
+	public static final TreeDecoratorType<LemonTreeDecorator> LEMON_TREE_DECORATOR = TreeDecoratorTypeInvoker.callRegister("photosynthesis:lemon_tree_decorator", LemonTreeDecorator.CODEC);
 	@Override
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.

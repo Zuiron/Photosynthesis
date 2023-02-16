@@ -1,0 +1,6 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "photosynthesis:block/lemontree_bushcrop_stage3"
+  }
+}
