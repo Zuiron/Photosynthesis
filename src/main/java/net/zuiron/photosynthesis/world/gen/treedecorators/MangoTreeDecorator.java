@@ -1,4 +1,4 @@
-package net.zuiron.photosynthesis.world.gen;
+package net.zuiron.photosynthesis.world.gen.treedecorators;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.util.math.Direction;
@@ -8,13 +8,13 @@ import net.minecraft.world.gen.treedecorator.TreeDecoratorType;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
 
-public class PearTreeDecorator extends TreeDecorator {
-    public static final PearTreeDecorator INSTANCE = new PearTreeDecorator();
-    public static final Codec<PearTreeDecorator> CODEC = Codec.unit(() -> INSTANCE);
-    private PearTreeDecorator() {}
+public class MangoTreeDecorator extends TreeDecorator {
+    public static final MangoTreeDecorator INSTANCE = new MangoTreeDecorator();
+    public static final Codec<MangoTreeDecorator> CODEC = Codec.unit(() -> INSTANCE);
+    private MangoTreeDecorator() {}
     @Override
     protected TreeDecoratorType<?> getType() {
-        return Photosynthesis.PEAR_TREE_DECORATOR;
+        return Photosynthesis.MANGO_TREE_DECORATOR;
     }
     @Override
     public void generate(Generator generator) {
@@ -23,7 +23,7 @@ public class PearTreeDecorator extends TreeDecorator {
             int chance = random.nextInt(4);
 
             if(generator.isAir(pos.down()) && chance == 0) {
-                generator.replace(pos.offset(Direction.DOWN, 1), ModBlocks.PEARTREE_BUSHCROP.getDefaultState());
+                generator.replace(pos.offset(Direction.DOWN, 1), ModBlocks.MANGOTREE_BUSHCROP.getDefaultState());
             }
         });
     }

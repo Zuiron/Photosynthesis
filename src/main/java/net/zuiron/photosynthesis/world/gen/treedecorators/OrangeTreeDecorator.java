@@ -1,4 +1,4 @@
-package net.zuiron.photosynthesis.world.gen;
+package net.zuiron.photosynthesis.world.gen.treedecorators;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.util.math.Direction;
@@ -8,13 +8,13 @@ import net.minecraft.world.gen.treedecorator.TreeDecoratorType;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
 
-public class LemonTreeDecorator extends TreeDecorator {
-    public static final LemonTreeDecorator INSTANCE = new LemonTreeDecorator();
-    public static final Codec<LemonTreeDecorator> CODEC = Codec.unit(() -> INSTANCE);
-    private LemonTreeDecorator() {}
+public class OrangeTreeDecorator extends TreeDecorator {
+    public static final OrangeTreeDecorator INSTANCE = new OrangeTreeDecorator();
+    public static final Codec<OrangeTreeDecorator> CODEC = Codec.unit(() -> INSTANCE);
+    private OrangeTreeDecorator() {}
     @Override
     protected TreeDecoratorType<?> getType() {
-        return Photosynthesis.LEMON_TREE_DECORATOR;
+        return Photosynthesis.ORANGE_TREE_DECORATOR;
     }
     @Override
     public void generate(Generator generator) {
@@ -23,7 +23,7 @@ public class LemonTreeDecorator extends TreeDecorator {
             int chance = random.nextInt(4);
 
             if(generator.isAir(pos.down()) && chance == 0) {
-                generator.replace(pos.offset(Direction.DOWN, 1), ModBlocks.LEMONTREE_BUSHCROP.getDefaultState());
+                generator.replace(pos.offset(Direction.DOWN, 1), ModBlocks.ORANGETREE_BUSHCROP.getDefaultState());
             }
         });
     }

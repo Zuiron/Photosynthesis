@@ -10,11 +10,10 @@ import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.*;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.trunk.BendingTrunkPlacer;
-import net.minecraft.world.gen.trunk.ForkingTrunkPlacer;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
-import net.zuiron.photosynthesis.world.gen.*;
+import net.zuiron.photosynthesis.world.gen.treedecorators.*;
 
 import java.util.Collections;
 import java.util.List;

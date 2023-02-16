@@ -1,4 +1,4 @@
-package net.zuiron.photosynthesis.world.gen;
+package net.zuiron.photosynthesis.world.gen.treedecorators;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.util.math.Direction;

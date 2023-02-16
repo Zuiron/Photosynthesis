@@ -9,6 +9,7 @@ import net.zuiron.photosynthesis.mixin.TreeDecoratorTypeInvoker;
 import net.zuiron.photosynthesis.util.ModFlammableBlocks;
 import net.zuiron.photosynthesis.util.ModStrippableBlocks;
 import net.zuiron.photosynthesis.world.gen.*;
+import net.zuiron.photosynthesis.world.gen.treedecorators.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
