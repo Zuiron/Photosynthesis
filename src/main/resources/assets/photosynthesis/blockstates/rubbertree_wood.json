@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "photosynthesis:block/rubbertree_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "photosynthesis:block/rubbertree_wood"
+    },
+    "axis=z": {
+      "model": "photosynthesis:block/rubbertree_wood",
+      "x": 90
+    }
+  }
+}

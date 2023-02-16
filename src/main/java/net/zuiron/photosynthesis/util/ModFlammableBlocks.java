@@ -128,5 +128,16 @@ public class ModFlammableBlocks {
 
         registry.add(ModBlocks.OLIVETREE_PLANKS, 5, 20);
         registry.add(ModBlocks.OLIVETREE_LEAVES, 30, 60);
+
+
+
+
+        registry.add(ModBlocks.RUBBERTREE_LOG, 5, 5);
+        registry.add(ModBlocks.RUBBERTREE_WOOD, 5, 5);
+        registry.add(ModBlocks.STRIPPED_RUBBERTREE_LOG, 5, 5);
+        registry.add(ModBlocks.STRIPPED_RUBBERTREE_WOOD, 5, 5);
+
+        registry.add(ModBlocks.RUBBERTREE_PLANKS, 5, 20);
+        registry.add(ModBlocks.RUBBERTREE_LEAVES, 30, 60);
     }
 }

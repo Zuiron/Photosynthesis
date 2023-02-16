@@ -52,6 +52,9 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?,?>> OLIVETREE_KEY = registerKey("olivetree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> OLIVETREE_SPAWN_KEY = registerKey("olivetree_spawn");
 
+    public static final RegistryKey<ConfiguredFeature<?,?>> RUBBERTREE_KEY = registerKey("rubbertree_tree");
+    public static final RegistryKey<ConfiguredFeature<?,?>> RUBBERTREE_SPAWN_KEY = registerKey("rubbertree_spawn");
+
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
         var placedFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.PLACED_FEATURE);
         //register(context, KEY, );
@@ -246,6 +249,26 @@ public class ModConfiguredFeatures {
         register(context, OLIVETREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.OLIVETREE_CHECKED_KEY),
                         0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.OLIVETREE_CHECKED_KEY)));
+
+
+
+
+
+
+        register(context, RUBBERTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(ModBlocks.RUBBERTREE_LOG),
+                new StraightTrunkPlacer(4, 1, 1),//5,6,3
+                BlockStateProvider.of(ModBlocks.RUBBERTREE_LEAVES),
+                new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 2),//204
+                new TwoLayersFeatureSize(1, 0, 2)).build());
+
+        register(context, RUBBERTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
+                new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.RUBBERTREE_CHECKED_KEY),
+                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.RUBBERTREE_CHECKED_KEY)));
+
+
+
+
 
     }
 

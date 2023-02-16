@@ -37,5 +37,8 @@ public class ModStrippableBlocks {
 
         StrippableBlockRegistry.register(ModBlocks.OLIVETREE_LOG, ModBlocks.STRIPPED_OLIVETREE_LOG);
         StrippableBlockRegistry.register(ModBlocks.OLIVETREE_WOOD, ModBlocks.STRIPPED_OLIVETREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.RUBBERTREE_LOG, ModBlocks.STRIPPED_RUBBERTREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.RUBBERTREE_WOOD, ModBlocks.STRIPPED_RUBBERTREE_WOOD);
     }
 }

@@ -54,6 +54,11 @@
     "photosynthesis:olivetree_log",
     "photosynthesis:olivetree_wood",
     "photosynthesis:stripped_olivetree_log",
-    "photosynthesis:stripped_olivetree_wood"
+    "photosynthesis:stripped_olivetree_wood",
+
+    "photosynthesis:rubbertree_log",
+    "photosynthesis:rubbertree_wood",
+    "photosynthesis:stripped_rubbertree_log",
+    "photosynthesis:stripped_rubbertree_wood"
   ]
 }

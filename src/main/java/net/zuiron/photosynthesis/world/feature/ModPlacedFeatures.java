@@ -43,6 +43,9 @@ public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> OLIVETREE_CHECKED_KEY = registerKey("olivetree_checked");
     public static final RegistryKey<PlacedFeature> OLIVETREE_PLACED_KEY = registerKey("olivetree_placed");
 
+    public static final RegistryKey<PlacedFeature> RUBBERTREE_CHECKED_KEY = registerKey("rubbertree_checked");
+    public static final RegistryKey<PlacedFeature> RUBBERTREE_PLACED_KEY = registerKey("rubbertree_placed");
+
 
 
 
@@ -144,6 +147,17 @@ public class ModPlacedFeatures {
                 List.of(PlacedFeatures.wouldSurvive(ModBlocks.OLIVETREE_SAPLING)));
         register(context, OLIVETREE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.OLIVETREE_SPAWN_KEY),
                 VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(1, 0.1f, 2)));
+
+
+
+        register(context, RUBBERTREE_CHECKED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.RUBBERTREE_KEY),
+                List.of(PlacedFeatures.wouldSurvive(ModBlocks.RUBBERTREE_SAPLING)));
+        register(context, RUBBERTREE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.RUBBERTREE_SPAWN_KEY),
+                VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(1, 0.1f, 2)));
+
+
+
+
 
 
 

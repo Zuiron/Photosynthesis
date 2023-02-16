@@ -409,6 +409,32 @@ public class ModBlocks {
 
 
 
+
+    public static final Block RUBBERTREE_LOG = registerBlock("rubbertree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block RUBBERTREE_WOOD = registerBlock("rubbertree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_RUBBERTREE_LOG = registerBlock("stripped_rubbertree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_RUBBERTREE_WOOD = registerBlock("stripped_rubbertree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block RUBBERTREE_PLANKS = registerBlock("rubbertree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block RUBBERTREE_LEAVES = registerBlock("rubbertree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block RUBBERTREE_SAPLING = registerBlock("rubbertree_sapling",
+            new SaplingBlock(new RubbertreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+
+
+
+
+
+
+
+
     // BERRY BUSHES ----------------------------------------------------------------------------------------------------
     public static final SweetBerryBushBlock BLUEBERRY_BUSH = registerBushBlock("blueberry_bush",
             new BlueberryBush(AbstractBlock.Settings.of(Material.PLANT)
