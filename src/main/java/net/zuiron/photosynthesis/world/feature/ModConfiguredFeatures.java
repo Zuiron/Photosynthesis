@@ -177,7 +177,8 @@ public class ModConfiguredFeatures {
         List<OreFeatureConfig.Target> overworldSaltOres =
                 List.of(OreFeatureConfig.createTarget(stoneReplaceables, ModBlocks.SALT_ORE.getDefaultState()));
 
-        register(context, SALT_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldSaltOres, 12));
+        register(context, SALT_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldSaltOres, 16)); //size: vein size??? default: 9
+        //size is basically, how many ores per started generation?
 
 
 

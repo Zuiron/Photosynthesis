@@ -185,8 +185,16 @@ public class ModPlacedFeatures {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
         register(context, SALT_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.SALT_ORE_KEY),
-                modifiersWithCount(16, // VeinsPerChunk
+                modifiersWithCount(9, // VeinsPerChunk
+                        HeightRangePlacementModifier.trapezoid(YOffset.fixed(0), YOffset.fixed(90))));
+        //from -80 to +80, most in middle, meaning mining level 0.
+
+        /*
+        register(context, SALT_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.SALT_ORE_KEY),
+                modifiersWithCount(32, // VeinsPerChunk
                         HeightRangePlacementModifier.trapezoid(YOffset.aboveBottom(-80), YOffset.aboveBottom(80))));
+        //from -80 to +80, most in middle, meaning mining level 0.
+         */
 
         register(context, FLORAMELISSIA_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.FLORAMELISSIA_KEY),
                 RarityFilterPlacementModifier.of(4), SquarePlacementModifier.of(),

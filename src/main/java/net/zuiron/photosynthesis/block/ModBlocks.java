@@ -36,8 +36,8 @@ public class ModBlocks {
 
     // ORES
     public static final Block SALT_ORE = registerBlock("salt_ore",
-            new ExperienceDroppingBlock(FabricBlockSettings.of(Material.STONE).strength(4f).requiresTool(),
-                    UniformIntProvider.create(3, 7)));
+            new ExperienceDroppingBlock(FabricBlockSettings.of(Material.STONE).strength(2f).requiresTool(),
+                    UniformIntProvider.create(1, 2)));
 
     // "Machines"
     public static final Block SKILLET = registerBlock("skillet",
