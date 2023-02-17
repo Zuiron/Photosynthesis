@@ -1,0 +1,8 @@
+
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "photosynthesis:block/candlenuttree_log_top",
+    "side": "photosynthesis:block/candlenuttree_log"
+  }
+}
