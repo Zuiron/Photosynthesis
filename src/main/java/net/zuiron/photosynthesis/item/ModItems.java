@@ -17,6 +17,11 @@ import net.zuiron.photosynthesis.mixin.ItemAccessor;
 
 
 public class ModItems {
+    // ORES
+    public static final Item RAW_SALT = registerItem("raw_salt",
+            new Item(new FabricItemSettings()));
+    public static final Item SALT = registerItem("salt",
+            new Item(new FabricItemSettings()));
     // TOOLS -----------------------------------------------------------------------------------------------------------
     public static final Item BARK_PEELER_SPUD = registerItem("bark_peeler_spud",
             new BarkPeelerSpudItem(PrimitiveToolMaterial.INSTANCE,

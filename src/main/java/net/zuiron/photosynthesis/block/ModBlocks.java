@@ -12,6 +12,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.berrybushblocks.*;
 import net.zuiron.photosynthesis.block.bushtreecrops.*;
@@ -32,6 +33,11 @@ public class ModBlocks {
 
     public static final Block POTTED_FLORAMELISSIA = registerBlockWithoutBlockItem("potted_floramelissia",
             new FlowerPotBlock(ModBlocks.FLORAMELISSIA, FabricBlockSettings.copy(Blocks.POTTED_POPPY).nonOpaque()));
+
+    // ORES
+    public static final Block SALT_ORE = registerBlock("salt_ore",
+            new ExperienceDroppingBlock(FabricBlockSettings.of(Material.STONE).strength(4f).requiresTool(),
+                    UniformIntProvider.create(3, 7)));
 
     // "Machines"
     public static final Block SKILLET = registerBlock("skillet",
