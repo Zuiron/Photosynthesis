@@ -74,7 +74,7 @@ public class AppletreeBushCrop extends SweetBerryBushBlock {
             int j = 1 + world.random.nextInt(2);
             dropStack(world, pos, new ItemStack(ModItems.GREENAPPLE, j + (bl ? 1 : 0)));
             world.playSound((PlayerEntity)null, pos, SoundEvents.BLOCK_SWEET_BERRY_BUSH_PICK_BERRIES, SoundCategory.BLOCKS, 1.0F, 0.8F + world.random.nextFloat() * 0.4F);
-            world.setBlockState(pos, (BlockState)state.with(AGE, 1), Block.NOTIFY_LISTENERS);
+            world.setBlockState(pos, (BlockState)state.with(AGE, 0), Block.NOTIFY_LISTENERS); //reset to AGE 0
             return ActionResult.success(world.isClient);
         } else {
             return super.onUse(state, world, pos, player, hand, hit);

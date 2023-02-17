@@ -186,7 +186,7 @@ public class ModBlocks {
     public static final Block CINNAMON_PLANKS = registerBlock("cinnamon_planks",
             new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
     public static final Block CINNAMON_LEAVES = registerBlock("cinnamon_leaves",
-            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.AZALEA_LEAVES)));
 
     public static final Block CINNAMON_SAPLING = registerBlock("cinnamon_sapling",
             new SaplingBlock(new CinnamonSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
