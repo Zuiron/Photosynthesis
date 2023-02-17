@@ -410,6 +410,7 @@ public class ModBlocks {
 
 
 
+
     public static final Block RUBBERTREE_LOG = registerBlock("rubbertree_log",
             new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
     public static final Block RUBBERTREE_WOOD = registerBlock("rubbertree_wood",
@@ -431,6 +432,704 @@ public class ModBlocks {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public static final Block CANDLENUTTREE_LOG = registerBlock("candlenuttree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block CANDLENUTTREE_WOOD = registerBlock("candlenuttree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_CANDLENUTTREE_LOG = registerBlock("stripped_candlenuttree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_CANDLENUTTREE_WOOD = registerBlock("stripped_candlenuttree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block CANDLENUTTREE_PLANKS = registerBlock("candlenuttree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block CANDLENUTTREE_LEAVES = registerBlock("candlenuttree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block CANDLENUTTREE_SAPLING = registerBlock("candlenuttree_sapling",
+            new SaplingBlock(new CandlenuttreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock CANDLENUTTREE_BUSHCROP = registerBushBlock("candlenuttree_bushcrop",
+            new CandlenuttreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+    public static final Block CHESTNUTTREE_LOG = registerBlock("chestnuttree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block CHESTNUTTREE_WOOD = registerBlock("chestnuttree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_CHESTNUTTREE_LOG = registerBlock("stripped_chestnuttree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_CHESTNUTTREE_WOOD = registerBlock("stripped_chestnuttree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block CHESTNUTTREE_PLANKS = registerBlock("chestnuttree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block CHESTNUTTREE_LEAVES = registerBlock("chestnuttree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block CHESTNUTTREE_SAPLING = registerBlock("chestnuttree_sapling",
+            new SaplingBlock(new ChestnuttreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock CHESTNUTTREE_BUSHCROP = registerBushBlock("chestnuttree_bushcrop",
+            new ChestnuttreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+    public static final Block NUTMEGTREE_LOG = registerBlock("nutmegtree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block NUTMEGTREE_WOOD = registerBlock("nutmegtree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_NUTMEGTREE_LOG = registerBlock("stripped_nutmegtree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_NUTMEGTREE_WOOD = registerBlock("stripped_nutmegtree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block NUTMEGTREE_PLANKS = registerBlock("nutmegtree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block NUTMEGTREE_LEAVES = registerBlock("nutmegtree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block NUTMEGTREE_SAPLING = registerBlock("nutmegtree_sapling",
+            new SaplingBlock(new NutmegtreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock NUTMEGTREE_BUSHCROP = registerBushBlock("nutmegtree_bushcrop",
+            new NutmegtreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+    public static final Block PEACHTREE_LOG = registerBlock("peachtree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block PEACHTREE_WOOD = registerBlock("peachtree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_PEACHTREE_LOG = registerBlock("stripped_peachtree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_PEACHTREE_WOOD = registerBlock("stripped_peachtree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block PEACHTREE_PLANKS = registerBlock("peachtree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block PEACHTREE_LEAVES = registerBlock("peachtree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block PEACHTREE_SAPLING = registerBlock("peachtree_sapling",
+            new SaplingBlock(new PeachtreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock PEACHTREE_BUSHCROP = registerBushBlock("peachtree_bushcrop",
+            new PeachtreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+    public static final Block PLUMTREE_LOG = registerBlock("plumtree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block PLUMTREE_WOOD = registerBlock("plumtree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_PLUMTREE_LOG = registerBlock("stripped_plumtree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_PLUMTREE_WOOD = registerBlock("stripped_plumtree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block PLUMTREE_PLANKS = registerBlock("plumtree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block PLUMTREE_LEAVES = registerBlock("plumtree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block PLUMTREE_SAPLING = registerBlock("plumtree_sapling",
+            new SaplingBlock(new PlumtreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock PLUMTREE_BUSHCROP = registerBushBlock("plumtree_bushcrop",
+            new PlumtreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+    public static final Block WALNUTTREE_LOG = registerBlock("walnuttree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block WALNUTTREE_WOOD = registerBlock("walnuttree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_WALNUTTREE_LOG = registerBlock("stripped_walnuttree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_WALNUTTREE_WOOD = registerBlock("stripped_walnuttree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block WALNUTTREE_PLANKS = registerBlock("walnuttree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block WALNUTTREE_LEAVES = registerBlock("walnuttree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block WALNUTTREE_SAPLING = registerBlock("walnuttree_sapling",
+            new SaplingBlock(new WalnuttreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock WALNUTTREE_BUSHCROP = registerBushBlock("walnuttree_bushcrop",
+            new WalnuttreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+    public static final Block HAZELNUTTREE_LOG = registerBlock("hazelnuttree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block HAZELNUTTREE_WOOD = registerBlock("hazelnuttree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_HAZELNUTTREE_LOG = registerBlock("stripped_hazelnuttree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_HAZELNUTTREE_WOOD = registerBlock("stripped_hazelnuttree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block HAZELNUTTREE_PLANKS = registerBlock("hazelnuttree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block HAZELNUTTREE_LEAVES = registerBlock("hazelnuttree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block HAZELNUTTREE_SAPLING = registerBlock("hazelnuttree_sapling",
+            new SaplingBlock(new HazelnuttreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock HAZELNUTTREE_BUSHCROP = registerBushBlock("hazelnuttree_bushcrop",
+            new HazelnuttreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+    public static final Block PAWPAWTREE_LOG = registerBlock("pawpawtree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block PAWPAWTREE_WOOD = registerBlock("pawpawtree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_PAWPAWTREE_LOG = registerBlock("stripped_pawpawtree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_PAWPAWTREE_WOOD = registerBlock("stripped_pawpawtree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block PAWPAWTREE_PLANKS = registerBlock("pawpawtree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block PAWPAWTREE_LEAVES = registerBlock("pawpawtree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block PAWPAWTREE_SAPLING = registerBlock("pawpawtree_sapling",
+            new SaplingBlock(new PawpawtreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock PAWPAWTREE_BUSHCROP = registerBushBlock("pawpawtree_bushcrop",
+            new PawpawtreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+    public static final Block SOURSOPTREE_LOG = registerBlock("soursoptree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block SOURSOPTREE_WOOD = registerBlock("soursoptree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_SOURSOPTREE_LOG = registerBlock("stripped_soursoptree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_SOURSOPTREE_WOOD = registerBlock("stripped_soursoptree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block SOURSOPTREE_PLANKS = registerBlock("soursoptree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block SOURSOPTREE_LEAVES = registerBlock("soursoptree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block SOURSOPTREE_SAPLING = registerBlock("soursoptree_sapling",
+            new SaplingBlock(new SoursoptreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock SOURSOPTREE_BUSHCROP = registerBushBlock("soursoptree_bushcrop",
+            new SoursoptreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+    public static final Block ALMONDTREE_LOG = registerBlock("almondtree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block ALMONDTREE_WOOD = registerBlock("almondtree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_ALMONDTREE_LOG = registerBlock("stripped_almondtree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_ALMONDTREE_WOOD = registerBlock("stripped_almondtree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block ALMONDTREE_PLANKS = registerBlock("almondtree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block ALMONDTREE_LEAVES = registerBlock("almondtree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block ALMONDTREE_SAPLING = registerBlock("almondtree_sapling",
+            new SaplingBlock(new AlmondtreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock ALMONDTREE_BUSHCROP = registerBushBlock("almondtree_bushcrop",
+            new AlmondtreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+    public static final Block APRICOTTREE_LOG = registerBlock("apricottree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block APRICOTTREE_WOOD = registerBlock("apricottree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_APRICOTTREE_LOG = registerBlock("stripped_apricottree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_APRICOTTREE_WOOD = registerBlock("stripped_apricottree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block APRICOTTREE_PLANKS = registerBlock("apricottree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block APRICOTTREE_LEAVES = registerBlock("apricottree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block APRICOTTREE_SAPLING = registerBlock("apricottree_sapling",
+            new SaplingBlock(new ApricottreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock APRICOTTREE_BUSHCROP = registerBushBlock("apricottree_bushcrop",
+            new ApricottreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+    public static final Block CASHEWTREE_LOG = registerBlock("cashewtree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block CASHEWTREE_WOOD = registerBlock("cashewtree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_CASHEWTREE_LOG = registerBlock("stripped_cashewtree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_CASHEWTREE_WOOD = registerBlock("stripped_cashewtree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block CASHEWTREE_PLANKS = registerBlock("cashewtree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block CASHEWTREE_LEAVES = registerBlock("cashewtree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block CASHEWTREE_SAPLING = registerBlock("cashewtree_sapling",
+            new SaplingBlock(new CashewtreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock CASHEWTREE_BUSHCROP = registerBushBlock("cashewtree_bushcrop",
+            new CashewtreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+    public static final Block DATETREE_LOG = registerBlock("datetree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block DATETREE_WOOD = registerBlock("datetree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_DATETREE_LOG = registerBlock("stripped_datetree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_DATETREE_WOOD = registerBlock("stripped_datetree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block DATETREE_PLANKS = registerBlock("datetree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block DATETREE_LEAVES = registerBlock("datetree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block DATETREE_SAPLING = registerBlock("datetree_sapling",
+            new SaplingBlock(new DatetreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock DATETREE_BUSHCROP = registerBushBlock("datetree_bushcrop",
+            new DatetreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+    public static final Block DRAGONFRUITTREE_LOG = registerBlock("dragonfruittree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block DRAGONFRUITTREE_WOOD = registerBlock("dragonfruittree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_DRAGONFRUITTREE_LOG = registerBlock("stripped_dragonfruittree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_DRAGONFRUITTREE_WOOD = registerBlock("stripped_dragonfruittree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block DRAGONFRUITTREE_PLANKS = registerBlock("dragonfruittree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block DRAGONFRUITTREE_LEAVES = registerBlock("dragonfruittree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block DRAGONFRUITTREE_SAPLING = registerBlock("dragonfruittree_sapling",
+            new SaplingBlock(new DragonfruittreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock DRAGONFRUITTREE_BUSHCROP = registerBushBlock("dragonfruittree_bushcrop",
+            new DragonfruittreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+    public static final Block DURIANTREE_LOG = registerBlock("duriantree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block DURIANTREE_WOOD = registerBlock("duriantree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_DURIANTREE_LOG = registerBlock("stripped_duriantree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_DURIANTREE_WOOD = registerBlock("stripped_duriantree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block DURIANTREE_PLANKS = registerBlock("duriantree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block DURIANTREE_LEAVES = registerBlock("duriantree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block DURIANTREE_SAPLING = registerBlock("duriantree_sapling",
+            new SaplingBlock(new DuriantreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock DURIANTREE_BUSHCROP = registerBushBlock("duriantree_bushcrop",
+            new DuriantreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+    public static final Block FIGTREE_LOG = registerBlock("figtree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block FIGTREE_WOOD = registerBlock("figtree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_FIGTREE_LOG = registerBlock("stripped_figtree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_FIGTREE_WOOD = registerBlock("stripped_figtree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block FIGTREE_PLANKS = registerBlock("figtree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block FIGTREE_LEAVES = registerBlock("figtree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block FIGTREE_SAPLING = registerBlock("figtree_sapling",
+            new SaplingBlock(new FigtreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock FIGTREE_BUSHCROP = registerBushBlock("figtree_bushcrop",
+            new FigtreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+    public static final Block GRAPEFRUITTREE_LOG = registerBlock("grapefruittree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block GRAPEFRUITTREE_WOOD = registerBlock("grapefruittree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_GRAPEFRUITTREE_LOG = registerBlock("stripped_grapefruittree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_GRAPEFRUITTREE_WOOD = registerBlock("stripped_grapefruittree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block GRAPEFRUITTREE_PLANKS = registerBlock("grapefruittree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block GRAPEFRUITTREE_LEAVES = registerBlock("grapefruittree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block GRAPEFRUITTREE_SAPLING = registerBlock("grapefruittree_sapling",
+            new SaplingBlock(new GrapefruittreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock GRAPEFRUITTREE_BUSHCROP = registerBushBlock("grapefruittree_bushcrop",
+            new GrapefruittreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+    public static final Block LIMETREE_LOG = registerBlock("limetree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block LIMETREE_WOOD = registerBlock("limetree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_LIMETREE_LOG = registerBlock("stripped_limetree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_LIMETREE_WOOD = registerBlock("stripped_limetree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block LIMETREE_PLANKS = registerBlock("limetree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block LIMETREE_LEAVES = registerBlock("limetree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block LIMETREE_SAPLING = registerBlock("limetree_sapling",
+            new SaplingBlock(new LimetreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock LIMETREE_BUSHCROP = registerBushBlock("limetree_bushcrop",
+            new LimetreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+    public static final Block PAPAYATREE_LOG = registerBlock("papayatree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block PAPAYATREE_WOOD = registerBlock("papayatree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_PAPAYATREE_LOG = registerBlock("stripped_papayatree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_PAPAYATREE_WOOD = registerBlock("stripped_papayatree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block PAPAYATREE_PLANKS = registerBlock("papayatree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block PAPAYATREE_LEAVES = registerBlock("papayatree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block PAPAYATREE_SAPLING = registerBlock("papayatree_sapling",
+            new SaplingBlock(new PapayatreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock PAPAYATREE_BUSHCROP = registerBushBlock("papayatree_bushcrop",
+            new PapayatreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+    public static final Block PECANTREE_LOG = registerBlock("pecantree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block PECANTREE_WOOD = registerBlock("pecantree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_PECANTREE_LOG = registerBlock("stripped_pecantree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_PECANTREE_WOOD = registerBlock("stripped_pecantree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block PECANTREE_PLANKS = registerBlock("pecantree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block PECANTREE_LEAVES = registerBlock("pecantree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block PECANTREE_SAPLING = registerBlock("pecantree_sapling",
+            new SaplingBlock(new PecantreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock PECANTREE_BUSHCROP = registerBushBlock("pecantree_bushcrop",
+            new PecantreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+    public static final Block PERSIMMONTREE_LOG = registerBlock("persimmontree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block PERSIMMONTREE_WOOD = registerBlock("persimmontree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_PERSIMMONTREE_LOG = registerBlock("stripped_persimmontree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_PERSIMMONTREE_WOOD = registerBlock("stripped_persimmontree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block PERSIMMONTREE_PLANKS = registerBlock("persimmontree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block PERSIMMONTREE_LEAVES = registerBlock("persimmontree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block PERSIMMONTREE_SAPLING = registerBlock("persimmontree_sapling",
+            new SaplingBlock(new PersimmontreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock PERSIMMONTREE_BUSHCROP = registerBushBlock("persimmontree_bushcrop",
+            new PersimmontreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+    public static final Block PISTACHIOTREE_LOG = registerBlock("pistachiotree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block PISTACHIOTREE_WOOD = registerBlock("pistachiotree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_PISTACHIOTREE_LOG = registerBlock("stripped_pistachiotree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_PISTACHIOTREE_WOOD = registerBlock("stripped_pistachiotree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block PISTACHIOTREE_PLANKS = registerBlock("pistachiotree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block PISTACHIOTREE_LEAVES = registerBlock("pistachiotree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block PISTACHIOTREE_SAPLING = registerBlock("pistachiotree_sapling",
+            new SaplingBlock(new PistachiotreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock PISTACHIOTREE_BUSHCROP = registerBushBlock("pistachiotree_bushcrop",
+            new PistachiotreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+    public static final Block POMEGRANATETREE_LOG = registerBlock("pomegranatetree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block POMEGRANATETREE_WOOD = registerBlock("pomegranatetree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_POMEGRANATETREE_LOG = registerBlock("stripped_pomegranatetree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_POMEGRANATETREE_WOOD = registerBlock("stripped_pomegranatetree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block POMEGRANATETREE_PLANKS = registerBlock("pomegranatetree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block POMEGRANATETREE_LEAVES = registerBlock("pomegranatetree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block POMEGRANATETREE_SAPLING = registerBlock("pomegranatetree_sapling",
+            new SaplingBlock(new PomegranatetreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock POMEGRANATETREE_BUSHCROP = registerBushBlock("pomegranatetree_bushcrop",
+            new PomegranatetreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+    public static final Block STARFRUITTREE_LOG = registerBlock("starfruittree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block STARFRUITTREE_WOOD = registerBlock("starfruittree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_STARFRUITTREE_LOG = registerBlock("stripped_starfruittree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_STARFRUITTREE_WOOD = registerBlock("stripped_starfruittree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block STARFRUITTREE_PLANKS = registerBlock("starfruittree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block STARFRUITTREE_LEAVES = registerBlock("starfruittree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block STARFRUITTREE_SAPLING = registerBlock("starfruittree_sapling",
+            new SaplingBlock(new StarfruittreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock STARFRUITTREE_BUSHCROP = registerBushBlock("starfruittree_bushcrop",
+            new StarfruittreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+    public static final Block BREADFRUITTREE_LOG = registerBlock("breadfruittree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block BREADFRUITTREE_WOOD = registerBlock("breadfruittree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_BREADFRUITTREE_LOG = registerBlock("stripped_breadfruittree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_BREADFRUITTREE_WOOD = registerBlock("stripped_breadfruittree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block BREADFRUITTREE_PLANKS = registerBlock("breadfruittree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block BREADFRUITTREE_LEAVES = registerBlock("breadfruittree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block BREADFRUITTREE_SAPLING = registerBlock("breadfruittree_sapling",
+            new SaplingBlock(new BreadfruittreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock BREADFRUITTREE_BUSHCROP = registerBushBlock("breadfruittree_bushcrop",
+            new BreadfruittreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+    public static final Block GUAVATREE_LOG = registerBlock("guavatree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block GUAVATREE_WOOD = registerBlock("guavatree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_GUAVATREE_LOG = registerBlock("stripped_guavatree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_GUAVATREE_WOOD = registerBlock("stripped_guavatree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block GUAVATREE_PLANKS = registerBlock("guavatree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block GUAVATREE_LEAVES = registerBlock("guavatree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block GUAVATREE_SAPLING = registerBlock("guavatree_sapling",
+            new SaplingBlock(new GuavatreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock GUAVATREE_BUSHCROP = registerBushBlock("guavatree_bushcrop",
+            new GuavatreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+    public static final Block JACKFRUITTREE_LOG = registerBlock("jackfruittree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block JACKFRUITTREE_WOOD = registerBlock("jackfruittree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_JACKFRUITTREE_LOG = registerBlock("stripped_jackfruittree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_JACKFRUITTREE_WOOD = registerBlock("stripped_jackfruittree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block JACKFRUITTREE_PLANKS = registerBlock("jackfruittree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block JACKFRUITTREE_LEAVES = registerBlock("jackfruittree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block JACKFRUITTREE_SAPLING = registerBlock("jackfruittree_sapling",
+            new SaplingBlock(new JackfruittreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock JACKFRUITTREE_BUSHCROP = registerBushBlock("jackfruittree_bushcrop",
+            new JackfruittreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+    public static final Block LYCHEETREE_LOG = registerBlock("lycheetree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block LYCHEETREE_WOOD = registerBlock("lycheetree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_LYCHEETREE_LOG = registerBlock("stripped_lycheetree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_LYCHEETREE_WOOD = registerBlock("stripped_lycheetree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block LYCHEETREE_PLANKS = registerBlock("lycheetree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block LYCHEETREE_LEAVES = registerBlock("lycheetree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block LYCHEETREE_SAPLING = registerBlock("lycheetree_sapling",
+            new SaplingBlock(new LycheetreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock LYCHEETREE_BUSHCROP = registerBushBlock("lycheetree_bushcrop",
+            new LycheetreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+    public static final Block PASSIONFRUITTREE_LOG = registerBlock("passionfruittree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block PASSIONFRUITTREE_WOOD = registerBlock("passionfruittree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_PASSIONFRUITTREE_LOG = registerBlock("stripped_passionfruittree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_PASSIONFRUITTREE_WOOD = registerBlock("stripped_passionfruittree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block PASSIONFRUITTREE_PLANKS = registerBlock("passionfruittree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block PASSIONFRUITTREE_LEAVES = registerBlock("passionfruittree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block PASSIONFRUITTREE_SAPLING = registerBlock("passionfruittree_sapling",
+            new SaplingBlock(new PassionfruittreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock PASSIONFRUITTREE_BUSHCROP = registerBushBlock("passionfruittree_bushcrop",
+            new PassionfruittreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+    public static final Block RAMBUTANTREE_LOG = registerBlock("rambutantree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block RAMBUTANTREE_WOOD = registerBlock("rambutantree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_RAMBUTANTREE_LOG = registerBlock("stripped_rambutantree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_RAMBUTANTREE_WOOD = registerBlock("stripped_rambutantree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block RAMBUTANTREE_PLANKS = registerBlock("rambutantree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block RAMBUTANTREE_LEAVES = registerBlock("rambutantree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block RAMBUTANTREE_SAPLING = registerBlock("rambutantree_sapling",
+            new SaplingBlock(new RambutantreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock RAMBUTANTREE_BUSHCROP = registerBushBlock("rambutantree_bushcrop",
+            new RambutantreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+    public static final Block TAMARINDTREE_LOG = registerBlock("tamarindtree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block TAMARINDTREE_WOOD = registerBlock("tamarindtree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_TAMARINDTREE_LOG = registerBlock("stripped_tamarindtree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_TAMARINDTREE_WOOD = registerBlock("stripped_tamarindtree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block TAMARINDTREE_PLANKS = registerBlock("tamarindtree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block TAMARINDTREE_LEAVES = registerBlock("tamarindtree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block TAMARINDTREE_SAPLING = registerBlock("tamarindtree_sapling",
+            new SaplingBlock(new TamarindtreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock TAMARINDTREE_BUSHCROP = registerBushBlock("tamarindtree_bushcrop",
+            new TamarindtreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //Candlenut, Chestnut, Nutmeg, Peach, Plum, Walnut, Hazelnut, Pawpaw, Soursop, Almond, Apricot, Cashew, Date, Dragonfruit, Durian,
+    //Fig, Grapefruit, Lime, Papaya, Pecan, Persimmon, Pistachio, Pomegranate, Starfruit, Breadfruit, Guava, Jackfruit, Lychee, Passionfruit, Rambutan, Tamarind
+    //
+
+    //Maple, Peppercorn, Vanillabean, Pinenut, Gooseberry
 
 
 

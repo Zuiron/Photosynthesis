@@ -40,5 +40,112 @@ public class ModStrippableBlocks {
 
         StrippableBlockRegistry.register(ModBlocks.RUBBERTREE_LOG, ModBlocks.STRIPPED_RUBBERTREE_LOG);
         StrippableBlockRegistry.register(ModBlocks.RUBBERTREE_WOOD, ModBlocks.STRIPPED_RUBBERTREE_WOOD);
+
+
+
+
+
+
+
+
+        StrippableBlockRegistry.register(ModBlocks.CANDLENUTTREE_LOG, ModBlocks.STRIPPED_CANDLENUTTREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.CANDLENUTTREE_WOOD, ModBlocks.STRIPPED_CANDLENUTTREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.CHESTNUTTREE_LOG, ModBlocks.STRIPPED_CHESTNUTTREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.CHESTNUTTREE_WOOD, ModBlocks.STRIPPED_CHESTNUTTREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.NUTMEGTREE_LOG, ModBlocks.STRIPPED_NUTMEGTREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.NUTMEGTREE_WOOD, ModBlocks.STRIPPED_NUTMEGTREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.PEACHTREE_LOG, ModBlocks.STRIPPED_PEACHTREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.PEACHTREE_WOOD, ModBlocks.STRIPPED_PEACHTREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.PLUMTREE_LOG, ModBlocks.STRIPPED_PLUMTREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.PLUMTREE_WOOD, ModBlocks.STRIPPED_PLUMTREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.WALNUTTREE_LOG, ModBlocks.STRIPPED_WALNUTTREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.WALNUTTREE_WOOD, ModBlocks.STRIPPED_WALNUTTREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.HAZELNUTTREE_LOG, ModBlocks.STRIPPED_HAZELNUTTREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.HAZELNUTTREE_WOOD, ModBlocks.STRIPPED_HAZELNUTTREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.PAWPAWTREE_LOG, ModBlocks.STRIPPED_PAWPAWTREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.PAWPAWTREE_WOOD, ModBlocks.STRIPPED_PAWPAWTREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.SOURSOPTREE_LOG, ModBlocks.STRIPPED_SOURSOPTREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.SOURSOPTREE_WOOD, ModBlocks.STRIPPED_SOURSOPTREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.ALMONDTREE_LOG, ModBlocks.STRIPPED_ALMONDTREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.ALMONDTREE_WOOD, ModBlocks.STRIPPED_ALMONDTREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.APRICOTTREE_LOG, ModBlocks.STRIPPED_APRICOTTREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.APRICOTTREE_WOOD, ModBlocks.STRIPPED_APRICOTTREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.CASHEWTREE_LOG, ModBlocks.STRIPPED_CASHEWTREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.CASHEWTREE_WOOD, ModBlocks.STRIPPED_CASHEWTREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.DATETREE_LOG, ModBlocks.STRIPPED_DATETREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.DATETREE_WOOD, ModBlocks.STRIPPED_DATETREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.DRAGONFRUITTREE_LOG, ModBlocks.STRIPPED_DRAGONFRUITTREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.DRAGONFRUITTREE_WOOD, ModBlocks.STRIPPED_DRAGONFRUITTREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.DURIANTREE_LOG, ModBlocks.STRIPPED_DURIANTREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.DURIANTREE_WOOD, ModBlocks.STRIPPED_DURIANTREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.FIGTREE_LOG, ModBlocks.STRIPPED_FIGTREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.FIGTREE_WOOD, ModBlocks.STRIPPED_FIGTREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.GRAPEFRUITTREE_LOG, ModBlocks.STRIPPED_GRAPEFRUITTREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.GRAPEFRUITTREE_WOOD, ModBlocks.STRIPPED_GRAPEFRUITTREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.LIMETREE_LOG, ModBlocks.STRIPPED_LIMETREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.LIMETREE_WOOD, ModBlocks.STRIPPED_LIMETREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.PAPAYATREE_LOG, ModBlocks.STRIPPED_PAPAYATREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.PAPAYATREE_WOOD, ModBlocks.STRIPPED_PAPAYATREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.PECANTREE_LOG, ModBlocks.STRIPPED_PECANTREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.PECANTREE_WOOD, ModBlocks.STRIPPED_PECANTREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.PERSIMMONTREE_LOG, ModBlocks.STRIPPED_PERSIMMONTREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.PERSIMMONTREE_WOOD, ModBlocks.STRIPPED_PERSIMMONTREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.PISTACHIOTREE_LOG, ModBlocks.STRIPPED_PISTACHIOTREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.PISTACHIOTREE_WOOD, ModBlocks.STRIPPED_PISTACHIOTREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.POMEGRANATETREE_LOG, ModBlocks.STRIPPED_POMEGRANATETREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.POMEGRANATETREE_WOOD, ModBlocks.STRIPPED_POMEGRANATETREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.STARFRUITTREE_LOG, ModBlocks.STRIPPED_STARFRUITTREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.STARFRUITTREE_WOOD, ModBlocks.STRIPPED_STARFRUITTREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.BREADFRUITTREE_LOG, ModBlocks.STRIPPED_BREADFRUITTREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.BREADFRUITTREE_WOOD, ModBlocks.STRIPPED_BREADFRUITTREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.GUAVATREE_LOG, ModBlocks.STRIPPED_GUAVATREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.GUAVATREE_WOOD, ModBlocks.STRIPPED_GUAVATREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.JACKFRUITTREE_LOG, ModBlocks.STRIPPED_JACKFRUITTREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.JACKFRUITTREE_WOOD, ModBlocks.STRIPPED_JACKFRUITTREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.LYCHEETREE_LOG, ModBlocks.STRIPPED_LYCHEETREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.LYCHEETREE_WOOD, ModBlocks.STRIPPED_LYCHEETREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.PASSIONFRUITTREE_LOG, ModBlocks.STRIPPED_PASSIONFRUITTREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.PASSIONFRUITTREE_WOOD, ModBlocks.STRIPPED_PASSIONFRUITTREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.RAMBUTANTREE_LOG, ModBlocks.STRIPPED_RAMBUTANTREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.RAMBUTANTREE_WOOD, ModBlocks.STRIPPED_RAMBUTANTREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.TAMARINDTREE_LOG, ModBlocks.STRIPPED_TAMARINDTREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.TAMARINDTREE_WOOD, ModBlocks.STRIPPED_TAMARINDTREE_WOOD);
+
+
+
+
+
+
+
     }
 }

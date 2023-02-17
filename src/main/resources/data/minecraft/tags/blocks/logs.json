@@ -59,6 +59,174 @@
     "photosynthesis:rubbertree_log",
     "photosynthesis:rubbertree_wood",
     "photosynthesis:stripped_rubbertree_log",
-    "photosynthesis:stripped_rubbertree_wood"
+    "photosynthesis:stripped_rubbertree_wood",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    "photosynthesis:candlenuttree_log",
+    "photosynthesis:candlenuttree_wood",
+    "photosynthesis:stripped_candlenuttree_log",
+    "photosynthesis:stripped_candlenuttree_wood",
+
+    "photosynthesis:chestnuttree_log",
+    "photosynthesis:chestnuttree_wood",
+    "photosynthesis:stripped_chestnuttree_log",
+    "photosynthesis:stripped_chestnuttree_wood",
+
+    "photosynthesis:nutmegtree_log",
+    "photosynthesis:nutmegtree_wood",
+    "photosynthesis:stripped_nutmegtree_log",
+    "photosynthesis:stripped_nutmegtree_wood",
+
+    "photosynthesis:peachtree_log",
+    "photosynthesis:peachtree_wood",
+    "photosynthesis:stripped_peachtree_log",
+    "photosynthesis:stripped_peachtree_wood",
+
+    "photosynthesis:plumtree_log",
+    "photosynthesis:plumtree_wood",
+    "photosynthesis:stripped_plumtree_log",
+    "photosynthesis:stripped_plumtree_wood",
+
+    "photosynthesis:walnuttree_log",
+    "photosynthesis:walnuttree_wood",
+    "photosynthesis:stripped_walnuttree_log",
+    "photosynthesis:stripped_walnuttree_wood",
+
+    "photosynthesis:hazelnuttree_log",
+    "photosynthesis:hazelnuttree_wood",
+    "photosynthesis:stripped_hazelnuttree_log",
+    "photosynthesis:stripped_hazelnuttree_wood",
+
+    "photosynthesis:pawpawtree_log",
+    "photosynthesis:pawpawtree_wood",
+    "photosynthesis:stripped_pawpawtree_log",
+    "photosynthesis:stripped_pawpawtree_wood",
+
+    "photosynthesis:soursoptree_log",
+    "photosynthesis:soursoptree_wood",
+    "photosynthesis:stripped_soursoptree_log",
+    "photosynthesis:stripped_soursoptree_wood",
+
+    "photosynthesis:almondtree_log",
+    "photosynthesis:almondtree_wood",
+    "photosynthesis:stripped_almondtree_log",
+    "photosynthesis:stripped_almondtree_wood",
+
+    "photosynthesis:apricottree_log",
+    "photosynthesis:apricottree_wood",
+    "photosynthesis:stripped_apricottree_log",
+    "photosynthesis:stripped_apricottree_wood",
+
+    "photosynthesis:cashewtree_log",
+    "photosynthesis:cashewtree_wood",
+    "photosynthesis:stripped_cashewtree_log",
+    "photosynthesis:stripped_cashewtree_wood",
+
+    "photosynthesis:datetree_log",
+    "photosynthesis:datetree_wood",
+    "photosynthesis:stripped_datetree_log",
+    "photosynthesis:stripped_datetree_wood",
+
+    "photosynthesis:dragonfruittree_log",
+    "photosynthesis:dragonfruittree_wood",
+    "photosynthesis:stripped_dragonfruittree_log",
+    "photosynthesis:stripped_dragonfruittree_wood",
+
+    "photosynthesis:duriantree_log",
+    "photosynthesis:duriantree_wood",
+    "photosynthesis:stripped_duriantree_log",
+    "photosynthesis:stripped_duriantree_wood",
+
+    "photosynthesis:figtree_log",
+    "photosynthesis:figtree_wood",
+    "photosynthesis:stripped_figtree_log",
+    "photosynthesis:stripped_figtree_wood",
+
+    "photosynthesis:grapefruittree_log",
+    "photosynthesis:grapefruittree_wood",
+    "photosynthesis:stripped_grapefruittree_log",
+    "photosynthesis:stripped_grapefruittree_wood",
+
+    "photosynthesis:limetree_log",
+    "photosynthesis:limetree_wood",
+    "photosynthesis:stripped_limetree_log",
+    "photosynthesis:stripped_limetree_wood",
+
+    "photosynthesis:papayatree_log",
+    "photosynthesis:papayatree_wood",
+    "photosynthesis:stripped_papayatree_log",
+    "photosynthesis:stripped_papayatree_wood",
+
+    "photosynthesis:pecantree_log",
+    "photosynthesis:pecantree_wood",
+    "photosynthesis:stripped_pecantree_log",
+    "photosynthesis:stripped_pecantree_wood",
+
+    "photosynthesis:persimmontree_log",
+    "photosynthesis:persimmontree_wood",
+    "photosynthesis:stripped_persimmontree_log",
+    "photosynthesis:stripped_persimmontree_wood",
+
+    "photosynthesis:pistachiotree_log",
+    "photosynthesis:pistachiotree_wood",
+    "photosynthesis:stripped_pistachiotree_log",
+    "photosynthesis:stripped_pistachiotree_wood",
+
+    "photosynthesis:pomegranatetree_log",
+    "photosynthesis:pomegranatetree_wood",
+    "photosynthesis:stripped_pomegranatetree_log",
+    "photosynthesis:stripped_pomegranatetree_wood",
+
+    "photosynthesis:starfruittree_log",
+    "photosynthesis:starfruittree_wood",
+    "photosynthesis:stripped_starfruittree_log",
+    "photosynthesis:stripped_starfruittree_wood",
+
+    "photosynthesis:breadfruittree_log",
+    "photosynthesis:breadfruittree_wood",
+    "photosynthesis:stripped_breadfruittree_log",
+    "photosynthesis:stripped_breadfruittree_wood",
+
+    "photosynthesis:guavatree_log",
+    "photosynthesis:guavatree_wood",
+    "photosynthesis:stripped_guavatree_log",
+    "photosynthesis:stripped_guavatree_wood",
+
+    "photosynthesis:jackfruittree_log",
+    "photosynthesis:jackfruittree_wood",
+    "photosynthesis:stripped_jackfruittree_log",
+    "photosynthesis:stripped_jackfruittree_wood",
+
+    "photosynthesis:lycheetree_log",
+    "photosynthesis:lycheetree_wood",
+    "photosynthesis:stripped_lycheetree_log",
+    "photosynthesis:stripped_lycheetree_wood",
+
+    "photosynthesis:passionfruittree_log",
+    "photosynthesis:passionfruittree_wood",
+    "photosynthesis:stripped_passionfruittree_log",
+    "photosynthesis:stripped_passionfruittree_wood",
+
+    "photosynthesis:rambutantree_log",
+    "photosynthesis:rambutantree_wood",
+    "photosynthesis:stripped_rambutantree_log",
+    "photosynthesis:stripped_rambutantree_wood",
+
+    "photosynthesis:tamarindtree_log",
+    "photosynthesis:tamarindtree_wood",
+    "photosynthesis:stripped_tamarindtree_log",
+    "photosynthesis:stripped_tamarindtree_wood"
   ]
 }

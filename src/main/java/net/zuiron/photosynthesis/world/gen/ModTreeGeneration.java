@@ -44,5 +44,109 @@ public class ModTreeGeneration {
 
         BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.RUBBERTREE_PLACED_KEY);
+
+
+
+
+
+
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.CANDLENUTTREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.CHESTNUTTREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.NUTMEGTREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.PEACHTREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.PLUMTREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.WALNUTTREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.HAZELNUTTREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.PAWPAWTREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.SOURSOPTREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.ALMONDTREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.APRICOTTREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.CASHEWTREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.DATETREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.DRAGONFRUITTREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.DURIANTREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.FIGTREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.GRAPEFRUITTREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.LIMETREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.PAPAYATREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.PECANTREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.PERSIMMONTREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.PISTACHIOTREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.POMEGRANATETREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.STARFRUITTREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.BREADFRUITTREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.GUAVATREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.JACKFRUITTREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.LYCHEETREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.PASSIONFRUITTREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.RAMBUTANTREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.TAMARINDTREE_PLACED_KEY);
+
+
+
+
+
+
     }
 }
