@@ -1,0 +1,17 @@
+
+{
+  "variants": {
+    "axis=x": {
+      "model": "photosynthesis:block/peachtree_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "photosynthesis:block/peachtree_wood"
+    },
+    "axis=z": {
+      "model": "photosynthesis:block/peachtree_wood",
+      "x": 90
+    }
+  }
+}

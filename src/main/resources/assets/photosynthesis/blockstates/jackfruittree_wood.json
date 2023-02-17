@@ -1,0 +1,17 @@
+
+{
+  "variants": {
+    "axis=x": {
+      "model": "photosynthesis:block/jackfruittree_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "photosynthesis:block/jackfruittree_wood"
+    },
+    "axis=z": {
+      "model": "photosynthesis:block/jackfruittree_wood",
+      "x": 90
+    }
+  }
+}

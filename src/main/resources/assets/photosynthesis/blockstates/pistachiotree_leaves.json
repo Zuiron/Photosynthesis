@@ -1,0 +1,13 @@
+
+{
+  "variants": {
+    "": [
+      { "model": "photosynthesis:block/pistachiotree_leaves", "weight": 2000 },
+      { "model": "photosynthesis:block/pistachiotree_leaves", "x": 90, "weight": 1000 },
+      { "model": "photosynthesis:block/pistachiotree_leaves_1", "weight": 800 },
+      { "model": "photosynthesis:block/pistachiotree_leaves_1", "x": 90, "weight": 200 },
+      { "model": "photosynthesis:block/pistachiotree_leaves_2", "weight": 600 },
+      { "model": "photosynthesis:block/pistachiotree_leaves_2", "x": 90, "weight": 100 }
+    ]
+  }
+}
