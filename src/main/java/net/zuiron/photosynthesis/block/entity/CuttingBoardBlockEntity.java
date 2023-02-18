@@ -33,12 +33,22 @@ import java.util.Optional;
 public class CuttingBoardBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(3, ItemStack.EMPTY); //N#:SLOTS
 
-    public ItemStack getRenderStack() {
+    /*public ItemStack getRenderStack() {
         if(this.getStack(2).isEmpty()) {
             return this.getStack(1);
         } else {
             return this.getStack(2);
         }
+    }*/
+
+    public ItemStack getRenderStack0() {
+        return this.getStack(0);
+    }
+    public ItemStack getRenderStack1() {
+        return this.getStack(1);
+    }
+    public ItemStack getRenderStack2() {
+        return this.getStack(2);
     }
 
     public void setInventory(DefaultedList<ItemStack> inventory) {
