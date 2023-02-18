@@ -18,6 +18,8 @@ import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
@@ -57,8 +59,7 @@ public class CuttingBoardBlockEntity extends BlockEntity implements ExtendedScre
         }
     }
 
-    @Override
-    public void markDirty() {
+    public void syncItems() {
         if(!world.isClient()) {
             PacketByteBuf data = PacketByteBufs.create();
             data.writeInt(inventory.size());
@@ -71,13 +72,18 @@ public class CuttingBoardBlockEntity extends BlockEntity implements ExtendedScre
                 ServerPlayNetworking.send(player, ModMessages.ITEM_SYNC, data);
             }
         }
+    }
+
+    @Override
+    public void markDirty() {
+        syncItems();
 
         super.markDirty();
     }
 
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
-    private int maxProgress = 72;
+    private int maxProgress = 20;
 
     public CuttingBoardBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.CUTTING_BOARD, pos, state);
@@ -141,6 +147,7 @@ public class CuttingBoardBlockEntity extends BlockEntity implements ExtendedScre
 
     private void resetProgress() {
         this.progress = 0;
+        syncItems();
     }
 
     public static void tick(World world, BlockPos blockPos, BlockState state, CuttingBoardBlockEntity entity) {
@@ -153,6 +160,16 @@ public class CuttingBoardBlockEntity extends BlockEntity implements ExtendedScre
             markDirty(world, blockPos, state);
             if(entity.progress >= entity.maxProgress) {
                 craftItem(entity);
+                if (!world.isClient) {
+                    world.playSound(
+                            null, // Player - if non-null, will play sound for every nearby player *except* the specified player
+                            blockPos, // The position of where the sound will come from
+                            SoundEvents.BLOCK_BEEHIVE_SHEAR, // The sound that will play, in this case, the sound the anvil plays when it lands.
+                            SoundCategory.BLOCKS, // This determines which of the volume sliders affect this sound
+                            1f, //Volume multiplier, 1 is normal, 0.5 is half volume, etc
+                            1f // Pitch multiplier, 1 is normal, 0.5 is half pitch, etc
+                    );
+                }
             }
         } else {
             entity.resetProgress();
@@ -198,7 +215,9 @@ public class CuttingBoardBlockEntity extends BlockEntity implements ExtendedScre
     }
 
     private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, Item output) {
-        return inventory.getStack(2).getItem() == output || inventory.getStack(2).isEmpty();
+        //return inventory.getStack(2).getItem() == output || inventory.getStack(2).isEmpty(); //crafts up to a stack.
+        //make it so output has to be empty. (more manual labor) *evil*
+        return inventory.getStack(2).isEmpty();
     }
 
     private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory) {
