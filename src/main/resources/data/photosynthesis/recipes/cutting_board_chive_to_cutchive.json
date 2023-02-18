@@ -1,0 +1,11 @@
+{
+  "type": "photosynthesis:cutting_board",
+  "ingredients": [
+    {
+      "item": "photosynthesis:chive"
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:cut_chives"
+  }
+}
