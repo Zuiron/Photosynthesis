@@ -9,12 +9,12 @@ import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
 
 public class ModBlockEntities {
-    public static BlockEntityType<CuttingBoardEntityBlock> CUTTING_BOARD;
+    public static BlockEntityType<CuttingBoardBlockEntity> CUTTING_BOARD;
 
     public static void registerBlockEntities() {
         CUTTING_BOARD = Registry.register(Registries.BLOCK_ENTITY_TYPE,
                 new Identifier(Photosynthesis.MOD_ID, "cutting_board"),
-                FabricBlockEntityTypeBuilder.create(CuttingBoardEntityBlock::new,
+                FabricBlockEntityTypeBuilder.create(CuttingBoardBlockEntity::new,
                         ModBlocks.CUTTINGBOARD).build(null));
     }
 }

@@ -3,7 +3,6 @@ package net.zuiron.photosynthesis.block.entity;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
@@ -12,7 +11,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
-import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -21,32 +19,35 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.item.ModItems;
+import net.zuiron.photosynthesis.recipe.CuttingBoardRecipe;
 import net.zuiron.photosynthesis.screen.CuttingBoardScreenHandler;
 import org.jetbrains.annotations.Nullable;
 
-public class CuttingBoardEntityBlock extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
+import java.util.Optional;
+
+public class CuttingBoardBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(3, ItemStack.EMPTY); //N#:SLOTS
 
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
     private int maxProgress = 72;
 
-    public CuttingBoardEntityBlock(BlockPos pos, BlockState state) {
+    public CuttingBoardBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.CUTTING_BOARD, pos, state);
 
         this.propertyDelegate = new PropertyDelegate() {
             public int get(int index) {
                 switch (index) {
-                    case 0: return CuttingBoardEntityBlock.this.progress;
-                    case 1: return CuttingBoardEntityBlock.this.maxProgress;
+                    case 0: return CuttingBoardBlockEntity.this.progress;
+                    case 1: return CuttingBoardBlockEntity.this.maxProgress;
                     default: return 0;
                 }
             }
 
             public void set(int index, int value) {
                 switch(index) {
-                    case 0: CuttingBoardEntityBlock.this.progress = value; break;
-                    case 1: CuttingBoardEntityBlock.this.maxProgress = value; break;
+                    case 0: CuttingBoardBlockEntity.this.progress = value; break;
+                    case 1: CuttingBoardBlockEntity.this.maxProgress = value; break;
                 }
             }
 
@@ -95,7 +96,7 @@ public class CuttingBoardEntityBlock extends BlockEntity implements ExtendedScre
         this.progress = 0;
     }
 
-    public static void tick(World world, BlockPos blockPos, BlockState state, CuttingBoardEntityBlock entity) {
+    public static void tick(World world, BlockPos blockPos, BlockState state, CuttingBoardBlockEntity entity) {
         if(world.isClient()) {
             return;
         }
@@ -112,31 +113,41 @@ public class CuttingBoardEntityBlock extends BlockEntity implements ExtendedScre
         }
     }
 
-    private static void craftItem(CuttingBoardEntityBlock entity) {
+    private static void craftItem(CuttingBoardBlockEntity entity) {
         SimpleInventory inventory = new SimpleInventory(entity.size());
         for (int i = 0; i < entity.size(); i++) {
             inventory.setStack(i, entity.getStack(i));
         }
 
+        Optional<CuttingBoardRecipe> recipe = entity.getWorld().getRecipeManager()
+                .getFirstMatch(CuttingBoardRecipe.Type.INSTANCE, inventory, entity.getWorld());
+
         if(hasRecipe(entity)) {
             entity.removeStack(1, 1);
-            entity.setStack(2, new ItemStack(ModItems.SALT,
+            /*entity.setStack(2, new ItemStack(ModItems.SALT,
+                    entity.getStack(2).getCount() + 1));*/
+            entity.setStack(2, new ItemStack(recipe.get().getOutput().getItem(),
                     entity.getStack(2).getCount() + 1));
 
             entity.resetProgress();
         }
     }
 
-    private static boolean hasRecipe(CuttingBoardEntityBlock entity) {
+    private static boolean hasRecipe(CuttingBoardBlockEntity entity) {
         SimpleInventory inventory = new SimpleInventory(entity.size());
         for (int i = 0; i < entity.size(); i++) {
             inventory.setStack(i, entity.getStack(i));
         }
 
-        boolean hasRawSaltInFirstSlot = entity.getStack(1).getItem() == ModItems.RAW_SALT;
-
+        /*boolean hasRawSaltInFirstSlot = entity.getStack(1).getItem() == ModItems.RAW_SALT;
         return hasRawSaltInFirstSlot && canInsertAmountIntoOutputSlot(inventory)
-                && canInsertItemIntoOutputSlot(inventory, ModItems.SALT);
+                && canInsertItemIntoOutputSlot(inventory, ModItems.SALT);*/
+
+        Optional<CuttingBoardRecipe> match = entity.getWorld().getRecipeManager()
+                .getFirstMatch(CuttingBoardRecipe.Type.INSTANCE, inventory, entity.getWorld());
+
+        return match.isPresent() && canInsertAmountIntoOutputSlot(inventory)
+                && canInsertItemIntoOutputSlot(inventory, match.get().getOutput().getItem());
     }
 
     private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, Item output) {

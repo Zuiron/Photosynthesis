@@ -16,7 +16,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.zuiron.photosynthesis.block.entity.CuttingBoardEntityBlock;
+import net.zuiron.photosynthesis.block.entity.CuttingBoardBlockEntity;
 import net.zuiron.photosynthesis.block.entity.ModBlockEntities;
 import org.jetbrains.annotations.Nullable;
 
@@ -67,8 +67,8 @@ public class CuttingBoardBlock extends BlockWithEntity implements BlockEntityPro
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
         if (state.getBlock() != newState.getBlock()) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
-            if (blockEntity instanceof CuttingBoardEntityBlock) {
-                ItemScatterer.spawn(world, pos, (CuttingBoardEntityBlock)blockEntity);
+            if (blockEntity instanceof CuttingBoardBlockEntity) {
+                ItemScatterer.spawn(world, pos, (CuttingBoardBlockEntity)blockEntity);
                 world.updateComparators(pos,this);
             }
             super.onStateReplaced(state, world, pos, newState, moved);
@@ -79,7 +79,7 @@ public class CuttingBoardBlock extends BlockWithEntity implements BlockEntityPro
     public ActionResult onUse(BlockState state, World world, BlockPos pos,
                               PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (!world.isClient) {
-            NamedScreenHandlerFactory screenHandlerFactory = ((CuttingBoardEntityBlock) world.getBlockEntity(pos));
+            NamedScreenHandlerFactory screenHandlerFactory = ((CuttingBoardBlockEntity) world.getBlockEntity(pos));
 
             if (screenHandlerFactory != null) {
                 player.openHandledScreen(screenHandlerFactory);
@@ -92,12 +92,12 @@ public class CuttingBoardBlock extends BlockWithEntity implements BlockEntityPro
     @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new CuttingBoardEntityBlock(pos, state);
+        return new CuttingBoardBlockEntity(pos, state);
     }
 
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return checkType(type, ModBlockEntities.CUTTING_BOARD, CuttingBoardEntityBlock::tick);
+        return checkType(type, ModBlockEntities.CUTTING_BOARD, CuttingBoardBlockEntity::tick);
     }
 }

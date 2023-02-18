@@ -7,6 +7,7 @@ import net.zuiron.photosynthesis.block.entity.ModBlockEntities;
 import net.zuiron.photosynthesis.item.ModItemGroup;
 import net.zuiron.photosynthesis.item.ModItems;
 import net.zuiron.photosynthesis.mixin.TreeDecoratorTypeInvoker;
+import net.zuiron.photosynthesis.recipe.ModRecipes;
 import net.zuiron.photosynthesis.screen.ModScreenHandlers;
 import net.zuiron.photosynthesis.util.ModFlammableBlocks;
 import net.zuiron.photosynthesis.util.ModStrippableBlocks;
@@ -123,6 +124,8 @@ public class Photosynthesis implements ModInitializer {
 
 		ModBlockEntities.registerBlockEntities();
 		ModScreenHandlers.registerAllScreenHandlers();
+
+		ModRecipes.registerRecipes();
 
 		ModWorldGen.generateModWorldGen(); //last
 
