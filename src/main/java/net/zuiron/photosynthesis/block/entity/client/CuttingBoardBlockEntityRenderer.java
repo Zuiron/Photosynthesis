@@ -74,7 +74,7 @@ public class CuttingBoardBlockEntityRenderer implements BlockEntityRenderer<Cutt
                 matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(-90));
             }
             case EAST -> {
-                matrices.translate(1.03f, 0.25f, 1.0f);
+                matrices.translate(2.3f, 0.25f, 2.3f); //DONE
                 matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(-270));
                 matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(-90));
             }
@@ -84,7 +84,7 @@ public class CuttingBoardBlockEntityRenderer implements BlockEntityRenderer<Cutt
                 matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(-90));
             }
             case WEST -> {
-                matrices.translate(2.3f, 0.25f, 1.0f);
+                matrices.translate(1.0f, 0.25f, 1.0f); //DONE
                 matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(270));
                 matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(-90));
             }
