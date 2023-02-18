@@ -3,9 +3,11 @@ package net.zuiron.photosynthesis;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.world.gen.treedecorator.TreeDecoratorType;
 import net.zuiron.photosynthesis.block.ModBlocks;
+import net.zuiron.photosynthesis.block.entity.ModBlockEntities;
 import net.zuiron.photosynthesis.item.ModItemGroup;
 import net.zuiron.photosynthesis.item.ModItems;
 import net.zuiron.photosynthesis.mixin.TreeDecoratorTypeInvoker;
+import net.zuiron.photosynthesis.screen.ModScreenHandlers;
 import net.zuiron.photosynthesis.util.ModFlammableBlocks;
 import net.zuiron.photosynthesis.util.ModStrippableBlocks;
 import net.zuiron.photosynthesis.world.gen.*;
@@ -118,6 +120,9 @@ public class Photosynthesis implements ModInitializer {
 
 		ModFlammableBlocks.registerFlammableBlocks();
 		ModStrippableBlocks.registerStrippables();
+
+		ModBlockEntities.registerBlockEntities();
+		ModScreenHandlers.registerAllScreenHandlers();
 
 		ModWorldGen.generateModWorldGen(); //last
 
