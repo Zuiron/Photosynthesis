@@ -37,22 +37,22 @@ public class CuttingBoardBlockEntityRenderer implements BlockEntityRenderer<Cutt
         matrices.scale(0.3f, 0.3f, 0.3f);
         switch (entity.getCachedState().get(CuttingBoardBlock.FACING)) {
             case NORTH -> {
-                matrices.translate(1.7f, 0.25f, 2.3f);
+                matrices.translate(1.7f, 0.25f, 2.3f); //DONE
                 matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(180));
                 matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(-90));
             }
             case EAST -> {
-                matrices.translate(1.03f, 0.25f, 1.7f);
+                matrices.translate(1.03f, 0.25f, 1.7f); //DONE
                 matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(-270));
                 matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(-90));
             }
             case SOUTH -> {
-                matrices.translate(1.7f, 0.25f, 1.03f);
+                matrices.translate(1.7f, 0.25f, 1.03f); //DONE
                 matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(0));
                 matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(-90));
             }
             case WEST -> {
-                matrices.translate(2.3f, 0.25f, 1.7f);
+                matrices.translate(2.3f, 0.25f, 1.7f); //DONE
                 matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(270));
                 matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(-90));
             }
@@ -95,28 +95,28 @@ public class CuttingBoardBlockEntityRenderer implements BlockEntityRenderer<Cutt
 
 
 
-/*
+
         //OUTPUT
         matrices.push();
         matrices.scale(0.3f, 0.3f, 0.3f);
         switch (entity.getCachedState().get(CuttingBoardBlock.FACING)) {
             case NORTH -> {
-                matrices.translate(1.7f, 0.25f, 2.3f);
+                matrices.translate(1.0f, 0.25f, 1.0f); //DONE
                 matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(180));
                 matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(-90));
             }
             case EAST -> {
-                matrices.translate(1.03f, 0.25f, 1.7f);
+                matrices.translate(2.3f, 0.25f, 1.0f); //
                 matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(-270));
                 matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(-90));
             }
             case SOUTH -> {
-                matrices.translate(1.7f, 0.25f, 1.03f);
+                matrices.translate(2.3f, 0.25f, 2.3f); //DONE
                 matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(0));
                 matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(-90));
             }
             case WEST -> {
-                matrices.translate(2.3f, 0.25f, 1.7f);
+                matrices.translate(1.0f, 0.25f, 2.3f); //
                 matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(270));
                 matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(-90));
             }
@@ -124,7 +124,7 @@ public class CuttingBoardBlockEntityRenderer implements BlockEntityRenderer<Cutt
         itemRenderer.renderItem(itemStack2, ModelTransformation.Mode.GUI, getLightLevel(entity.getWorld(), entity.getPos()),
                 OverlayTexture.DEFAULT_UV, matrices, vertexConsumers, 1);
         matrices.pop();
-*/
+
 
 
     }
