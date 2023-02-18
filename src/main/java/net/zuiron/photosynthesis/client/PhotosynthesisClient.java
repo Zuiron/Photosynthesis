@@ -7,6 +7,7 @@ import net.fabricmc.fabric.impl.blockrenderlayer.BlockRenderLayerMapImpl;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.block.entity.ModBlockEntities;
 import net.zuiron.photosynthesis.block.entity.client.CuttingBoardBlockEntityRenderer;
@@ -283,6 +284,7 @@ public class PhotosynthesisClient implements ClientModInitializer {
         HandledScreens.register(ModScreenHandlers.CUTTING_BOARD_SCREEN_HANDLER, CuttingBoardScreen::new);
         ModMessages.registerS2CPackets();
 
-        BlockEntityRendererRegistry.register(ModBlockEntities.CUTTING_BOARD, CuttingBoardBlockEntityRenderer::new);
+        //BlockEntityRendererRegistry.register(ModBlockEntities.CUTTING_BOARD, CuttingBoardBlockEntityRenderer::new);
+        BlockEntityRendererFactories.register(ModBlockEntities.CUTTING_BOARD, CuttingBoardBlockEntityRenderer::new);
     }
 }

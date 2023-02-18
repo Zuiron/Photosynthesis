@@ -25,6 +25,7 @@ public class CuttingBoardBlockEntityRenderer implements BlockEntityRenderer<Cutt
     @Override
     public void render(CuttingBoardBlockEntity entity, float tickDelta, MatrixStack matrices,
                        VertexConsumerProvider vertexConsumers, int light, int overlay) {
+
         ItemRenderer itemRenderer = MinecraftClient.getInstance().getItemRenderer();
 
         ItemStack itemStack = entity.getRenderStack();
