@@ -27,7 +27,7 @@ public class CuttingBoardBlock extends BlockWithEntity implements BlockEntityPro
         super(settings);
     }
 
-    private static VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 16, 16);
+    private static VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 1, 16);
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
