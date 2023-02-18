@@ -37,7 +37,7 @@ public class CuttingBoardScreen extends HandledScreen<CuttingBoardScreenHandler>
 
     private void renderProgressArrow(MatrixStack matrices, int x, int y) {
         if(handler.isCrafting()) {
-            drawTexture(matrices, x + 105, y + 33, 176, 0, 8, handler.getScaledProgress());
+            drawTexture(matrices, x + 103, y + 27, 176, 0, 8, handler.getScaledProgress());
         }
     }
 

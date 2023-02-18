@@ -28,9 +28,9 @@ public class CuttingBoardScreenHandler extends ScreenHandler {
         inventory.onOpen(playerInventory.player);
         this.propertyDelegate = delegate;
 
-        this.addSlot(new Slot(inventory, 0, 12, 15));
-        this.addSlot(new Slot(inventory, 1, 86, 15));
-        this.addSlot(new Slot(inventory, 2, 86, 60));
+        this.addSlot(new Slot(inventory, 0, 80, 22)); //tool
+        this.addSlot(new Slot(inventory, 1, 62, 58)); //input
+        this.addSlot(new Slot(inventory, 2, 98, 58)); //output
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
