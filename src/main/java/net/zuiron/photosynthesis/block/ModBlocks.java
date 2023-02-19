@@ -18,10 +18,7 @@ import net.zuiron.photosynthesis.block.berrybushblocks.*;
 import net.zuiron.photosynthesis.block.bushtreecrops.*;
 import net.zuiron.photosynthesis.block.cropblocks.CustomCropBlock;
 import net.zuiron.photosynthesis.block.cropblocks.CustomCropBlockWL;
-import net.zuiron.photosynthesis.block.custom.CookingPotBlock;
-import net.zuiron.photosynthesis.block.custom.CuttingBoardBlock;
-import net.zuiron.photosynthesis.block.custom.KegBlock;
-import net.zuiron.photosynthesis.block.custom.SkilletBlock;
+import net.zuiron.photosynthesis.block.custom.*;
 import net.zuiron.photosynthesis.item.ModItemGroup;
 import net.zuiron.photosynthesis.world.feature.tree.*;
 
@@ -54,6 +51,10 @@ public class ModBlocks {
 
     public static final Block CUTTINGBOARD = registerBlock("cutting_board",
             new CuttingBoardBlock(FabricBlockSettings.of(Material.WOOD)
+                    .strength(4f).requiresTool().nonOpaque()));
+
+    public static final Block LATEX_EXTRACTOR = registerBlock("latex_extractor",
+            new LatexExtractorBlock(FabricBlockSettings.of(Material.WOOD)
                     .strength(4f).requiresTool().nonOpaque()));
 
 

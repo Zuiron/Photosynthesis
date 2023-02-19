@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "photosynthesis:block/latex_extractor"
+    },
+    "facing=south": {
+      "model": "photosynthesis:block/latex_extractor",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "photosynthesis:block/latex_extractor",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "photosynthesis:block/latex_extractor",
+      "y": 90
+    }
+  }
+}
