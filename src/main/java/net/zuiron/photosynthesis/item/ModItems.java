@@ -29,8 +29,10 @@ public class ModItems {
                     -3.2F,
                     new FabricItemSettings()));
 
-    public static final Item CUTTING_KNIFE = registerRemainderItem("cutting_knife",
-            new Item(new FabricItemSettings()));
+    /*public static final Item CUTTING_KNIFE = registerItem("cutting_knife",
+            new Item(new FabricItemSettings()));*/
+    public static final Item CUTTING_KNIFE = registerItem("cutting_knife",
+            new SwordItem(ToolMaterials.IRON, 3, -2.4F, new FabricItemSettings()));
 
     public static final Item CUTTING_KNIFE_BLADE = registerItem("cutting_knife_blade",
             new Item(new FabricItemSettings()));
