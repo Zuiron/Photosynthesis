@@ -23,6 +23,7 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.item.ModItems;
 import net.zuiron.photosynthesis.networking.ModMessages;
@@ -187,11 +188,30 @@ public class CuttingBoardBlockEntity extends BlockEntity implements ExtendedScre
                 .getFirstMatch(CuttingBoardRecipe.Type.INSTANCE, inventory, entity.getWorld());
 
         if(hasRecipe(entity)) {
-            entity.removeStack(1, 1);
+            entity.removeStack(1, 1); //remove 1 item from stack in slot 1 (input)
             /*entity.setStack(2, new ItemStack(ModItems.SALT,
                     entity.getStack(2).getCount() + 1));*/
             entity.setStack(2, new ItemStack(recipe.get().getOutput().getItem(),
-                    entity.getStack(2).getCount() + 1));
+                    entity.getStack(2).getCount() + 1)); //add one to output.
+
+            //durability.
+            //check durability. if less then 1, break.
+            if(entity.getStack(0).getMaxDamage() - entity.getStack(0).getDamage() < 1) {
+                entity.setStack(0, ItemStack.EMPTY); //break knife.
+                //play sound.
+                if (!entity.world.isClient) {
+                    entity.world.playSound(
+                            null, // Player - if non-null, will play sound for every nearby player *except* the specified player
+                            entity.pos, // The position of where the sound will come from
+                            SoundEvents.ITEM_SHIELD_BREAK, // The sound that will play, in this case, the sound the anvil plays when it lands.
+                            SoundCategory.BLOCKS, // This determines which of the volume sliders affect this sound
+                            1f, //Volume multiplier, 1 is normal, 0.5 is half volume, etc
+                            1f // Pitch multiplier, 1 is normal, 0.5 is half pitch, etc
+                    );
+                }
+            }
+
+            entity.getStack(0).damage(30, Random.create(0), null); //remove durability from cutting knife.
 
             entity.resetProgress();
         }
