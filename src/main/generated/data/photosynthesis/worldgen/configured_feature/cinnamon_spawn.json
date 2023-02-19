@@ -4,7 +4,7 @@
     "default": "photosynthesis:cinnamon_checked",
     "features": [
       {
-        "chance": 0.5,
+        "chance": 0.05,
         "feature": "photosynthesis:cinnamon_checked"
       }
     ]

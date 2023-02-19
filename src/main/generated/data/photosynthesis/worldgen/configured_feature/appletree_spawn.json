@@ -4,7 +4,7 @@
     "default": "photosynthesis:appletree_checked",
     "features": [
       {
-        "chance": 0.5,
+        "chance": 0.05,
         "feature": "photosynthesis:appletree_checked"
       }
     ]

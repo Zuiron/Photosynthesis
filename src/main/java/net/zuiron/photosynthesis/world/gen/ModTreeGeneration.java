@@ -9,11 +9,23 @@ import net.minecraft.world.gen.GenerationStep;
 
 public class ModTreeGeneration {
     public static void generateTrees() {
-        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
-                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.APPLETREE_PLACED_KEY);
+        /*BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.APPLETREE_PLACED_KEY);*/
 
-        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD), //includeByKey(BiomeKeys.SPARSE_JUNGLE
-                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.BANANATREE_PLACED_KEY);
+        BiomeModifications.addFeature(
+                context -> context.getBiome().getTemperature() >= 0.15 && context.getBiome().getTemperature() <= 0.95,
+                GenerationStep.Feature.VEGETAL_DECORATION,
+                ModPlacedFeatures.APPLETREE_PLACED_KEY
+        );
+
+        /*BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD), //includeByKey(BiomeKeys.SPARSE_JUNGLE
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.BANANATREE_PLACED_KEY);*/
+
+        BiomeModifications.addFeature(
+                context -> context.getBiome().getTemperature() >= 0.2 && context.getBiome().getTemperature() <= 1.5,
+                GenerationStep.Feature.VEGETAL_DECORATION,
+                ModPlacedFeatures.BANANATREE_PLACED_KEY
+        );
 
         BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.CINNAMONTREE_PLACED_KEY);

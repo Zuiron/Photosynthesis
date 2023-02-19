@@ -206,6 +206,8 @@ public class ModConfiguredFeatures {
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.WILD_STRAWBERRY_BUSH)))));
 
 
+        //chance to spawn tree's
+        float spawnChance = 0.05f; //5%
 
 
         register(context, APPLETREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
@@ -217,7 +219,7 @@ public class ModConfiguredFeatures {
 
         register(context, APPLETREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.APPLETREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.APPLETREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.APPLETREE_CHECKED_KEY)));
 
 
 
@@ -231,7 +233,7 @@ public class ModConfiguredFeatures {
 
         register(context, BANANATREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.BANANATREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.BANANATREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.BANANATREE_CHECKED_KEY)));
 
 
 
@@ -245,7 +247,7 @@ public class ModConfiguredFeatures {
 
         register(context, CINNAMONTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.CINNAMONTREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.CINNAMONTREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.CINNAMONTREE_CHECKED_KEY)));
 
 
 
@@ -260,7 +262,7 @@ public class ModConfiguredFeatures {
 
         register(context, ORANGETREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.ORANGETREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.ORANGETREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.ORANGETREE_CHECKED_KEY)));
 
 
 
@@ -275,7 +277,7 @@ public class ModConfiguredFeatures {
 
         register(context, PEARTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.PEARTREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.PEARTREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.PEARTREE_CHECKED_KEY)));
 
 
 
@@ -292,7 +294,7 @@ public class ModConfiguredFeatures {
 
         register(context, COCONUTTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.COCONUTTREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.COCONUTTREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.COCONUTTREE_CHECKED_KEY)));
 
 
 
@@ -308,7 +310,7 @@ public class ModConfiguredFeatures {
 
         register(context, AVOCADOTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.AVOCADOTREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.AVOCADOTREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.AVOCADOTREE_CHECKED_KEY)));
 
 
 
@@ -324,7 +326,7 @@ public class ModConfiguredFeatures {
 
         register(context, CHERRYTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.CHERRYTREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.CHERRYTREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.CHERRYTREE_CHECKED_KEY)));
 
 
 
@@ -339,7 +341,7 @@ public class ModConfiguredFeatures {
 
         register(context, LEMONTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.LEMONTREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.LEMONTREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.LEMONTREE_CHECKED_KEY)));
 
 
 
@@ -356,7 +358,7 @@ public class ModConfiguredFeatures {
 
         register(context, MANGOTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.MANGOTREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.MANGOTREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.MANGOTREE_CHECKED_KEY)));
 
 
 
@@ -372,7 +374,7 @@ public class ModConfiguredFeatures {
 
         register(context, OLIVETREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.OLIVETREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.OLIVETREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.OLIVETREE_CHECKED_KEY)));
 
 
 
@@ -388,7 +390,7 @@ public class ModConfiguredFeatures {
 
         register(context, RUBBERTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.RUBBERTREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.RUBBERTREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.RUBBERTREE_CHECKED_KEY)));
 
 
 
@@ -408,7 +410,7 @@ public class ModConfiguredFeatures {
 
         register(context, CANDLENUTTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.CANDLENUTTREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.CANDLENUTTREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.CANDLENUTTREE_CHECKED_KEY)));
 
         register(context, CHESTNUTTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.CHESTNUTTREE_LOG),
@@ -419,7 +421,7 @@ public class ModConfiguredFeatures {
 
         register(context, CHESTNUTTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.CHESTNUTTREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.CHESTNUTTREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.CHESTNUTTREE_CHECKED_KEY)));
 
         register(context, NUTMEGTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.NUTMEGTREE_LOG),
@@ -430,7 +432,7 @@ public class ModConfiguredFeatures {
 
         register(context, NUTMEGTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.NUTMEGTREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.NUTMEGTREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.NUTMEGTREE_CHECKED_KEY)));
 
         register(context, PEACHTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.PEACHTREE_LOG),
@@ -441,7 +443,7 @@ public class ModConfiguredFeatures {
 
         register(context, PEACHTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.PEACHTREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.PEACHTREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.PEACHTREE_CHECKED_KEY)));
 
         register(context, PLUMTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.PLUMTREE_LOG),
@@ -452,7 +454,7 @@ public class ModConfiguredFeatures {
 
         register(context, PLUMTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.PLUMTREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.PLUMTREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.PLUMTREE_CHECKED_KEY)));
 
         register(context, WALNUTTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.WALNUTTREE_LOG),
@@ -463,7 +465,7 @@ public class ModConfiguredFeatures {
 
         register(context, WALNUTTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.WALNUTTREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.WALNUTTREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.WALNUTTREE_CHECKED_KEY)));
 
         register(context, HAZELNUTTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.HAZELNUTTREE_LOG),
@@ -474,7 +476,7 @@ public class ModConfiguredFeatures {
 
         register(context, HAZELNUTTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.HAZELNUTTREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.HAZELNUTTREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.HAZELNUTTREE_CHECKED_KEY)));
 
         register(context, PAWPAWTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.PAWPAWTREE_LOG),
@@ -485,7 +487,7 @@ public class ModConfiguredFeatures {
 
         register(context, PAWPAWTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.PAWPAWTREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.PAWPAWTREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.PAWPAWTREE_CHECKED_KEY)));
 
         register(context, SOURSOPTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.SOURSOPTREE_LOG),
@@ -496,7 +498,7 @@ public class ModConfiguredFeatures {
 
         register(context, SOURSOPTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.SOURSOPTREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.SOURSOPTREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.SOURSOPTREE_CHECKED_KEY)));
 
         register(context, ALMONDTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.ALMONDTREE_LOG),
@@ -507,7 +509,7 @@ public class ModConfiguredFeatures {
 
         register(context, ALMONDTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.ALMONDTREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.ALMONDTREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.ALMONDTREE_CHECKED_KEY)));
 
         register(context, APRICOTTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.APRICOTTREE_LOG),
@@ -518,7 +520,7 @@ public class ModConfiguredFeatures {
 
         register(context, APRICOTTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.APRICOTTREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.APRICOTTREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.APRICOTTREE_CHECKED_KEY)));
 
         register(context, CASHEWTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.CASHEWTREE_LOG),
@@ -529,7 +531,7 @@ public class ModConfiguredFeatures {
 
         register(context, CASHEWTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.CASHEWTREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.CASHEWTREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.CASHEWTREE_CHECKED_KEY)));
 
         register(context, DATETREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.DATETREE_LOG),
@@ -540,7 +542,7 @@ public class ModConfiguredFeatures {
 
         register(context, DATETREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.DATETREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.DATETREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.DATETREE_CHECKED_KEY)));
 
         register(context, DRAGONFRUITTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.DRAGONFRUITTREE_LOG),
@@ -551,7 +553,7 @@ public class ModConfiguredFeatures {
 
         register(context, DRAGONFRUITTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.DRAGONFRUITTREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.DRAGONFRUITTREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.DRAGONFRUITTREE_CHECKED_KEY)));
 
         register(context, DURIANTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.DURIANTREE_LOG),
@@ -562,7 +564,7 @@ public class ModConfiguredFeatures {
 
         register(context, DURIANTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.DURIANTREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.DURIANTREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.DURIANTREE_CHECKED_KEY)));
 
         register(context, FIGTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.FIGTREE_LOG),
@@ -573,7 +575,7 @@ public class ModConfiguredFeatures {
 
         register(context, FIGTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.FIGTREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.FIGTREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.FIGTREE_CHECKED_KEY)));
 
         register(context, GRAPEFRUITTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.GRAPEFRUITTREE_LOG),
@@ -584,7 +586,7 @@ public class ModConfiguredFeatures {
 
         register(context, GRAPEFRUITTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.GRAPEFRUITTREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.GRAPEFRUITTREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.GRAPEFRUITTREE_CHECKED_KEY)));
 
         register(context, LIMETREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.LIMETREE_LOG),
@@ -595,7 +597,7 @@ public class ModConfiguredFeatures {
 
         register(context, LIMETREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.LIMETREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.LIMETREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.LIMETREE_CHECKED_KEY)));
 
         register(context, PAPAYATREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.PAPAYATREE_LOG),
@@ -606,7 +608,7 @@ public class ModConfiguredFeatures {
 
         register(context, PAPAYATREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.PAPAYATREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.PAPAYATREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.PAPAYATREE_CHECKED_KEY)));
 
         register(context, PECANTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.PECANTREE_LOG),
@@ -617,7 +619,7 @@ public class ModConfiguredFeatures {
 
         register(context, PECANTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.PECANTREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.PECANTREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.PECANTREE_CHECKED_KEY)));
 
         register(context, PERSIMMONTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.PERSIMMONTREE_LOG),
@@ -628,7 +630,7 @@ public class ModConfiguredFeatures {
 
         register(context, PERSIMMONTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.PERSIMMONTREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.PERSIMMONTREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.PERSIMMONTREE_CHECKED_KEY)));
 
         register(context, PISTACHIOTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.PISTACHIOTREE_LOG),
@@ -639,7 +641,7 @@ public class ModConfiguredFeatures {
 
         register(context, PISTACHIOTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.PISTACHIOTREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.PISTACHIOTREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.PISTACHIOTREE_CHECKED_KEY)));
 
         register(context, POMEGRANATETREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.POMEGRANATETREE_LOG),
@@ -650,7 +652,7 @@ public class ModConfiguredFeatures {
 
         register(context, POMEGRANATETREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.POMEGRANATETREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.POMEGRANATETREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.POMEGRANATETREE_CHECKED_KEY)));
 
         register(context, STARFRUITTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.STARFRUITTREE_LOG),
@@ -661,7 +663,7 @@ public class ModConfiguredFeatures {
 
         register(context, STARFRUITTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.STARFRUITTREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.STARFRUITTREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.STARFRUITTREE_CHECKED_KEY)));
 
         register(context, BREADFRUITTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.BREADFRUITTREE_LOG),
@@ -672,7 +674,7 @@ public class ModConfiguredFeatures {
 
         register(context, BREADFRUITTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.BREADFRUITTREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.BREADFRUITTREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.BREADFRUITTREE_CHECKED_KEY)));
 
         register(context, GUAVATREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.GUAVATREE_LOG),
@@ -683,7 +685,7 @@ public class ModConfiguredFeatures {
 
         register(context, GUAVATREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.GUAVATREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.GUAVATREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.GUAVATREE_CHECKED_KEY)));
 
         register(context, JACKFRUITTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.JACKFRUITTREE_LOG),
@@ -694,7 +696,7 @@ public class ModConfiguredFeatures {
 
         register(context, JACKFRUITTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.JACKFRUITTREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.JACKFRUITTREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.JACKFRUITTREE_CHECKED_KEY)));
 
         register(context, LYCHEETREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.LYCHEETREE_LOG),
@@ -705,7 +707,7 @@ public class ModConfiguredFeatures {
 
         register(context, LYCHEETREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.LYCHEETREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.LYCHEETREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.LYCHEETREE_CHECKED_KEY)));
 
         register(context, PASSIONFRUITTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.PASSIONFRUITTREE_LOG),
@@ -716,7 +718,7 @@ public class ModConfiguredFeatures {
 
         register(context, PASSIONFRUITTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.PASSIONFRUITTREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.PASSIONFRUITTREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.PASSIONFRUITTREE_CHECKED_KEY)));
 
         register(context, RAMBUTANTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.RAMBUTANTREE_LOG),
@@ -727,7 +729,7 @@ public class ModConfiguredFeatures {
 
         register(context, RAMBUTANTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.RAMBUTANTREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.RAMBUTANTREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.RAMBUTANTREE_CHECKED_KEY)));
 
         register(context, TAMARINDTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.TAMARINDTREE_LOG),
@@ -738,7 +740,7 @@ public class ModConfiguredFeatures {
 
         register(context, TAMARINDTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.TAMARINDTREE_CHECKED_KEY),
-                        0.5f)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.TAMARINDTREE_CHECKED_KEY)));
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.TAMARINDTREE_CHECKED_KEY)));
 
 
 
