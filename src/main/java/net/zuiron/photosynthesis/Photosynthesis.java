@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer;
 import net.minecraft.world.gen.treedecorator.TreeDecoratorType;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.block.entity.ModBlockEntities;
+import net.zuiron.photosynthesis.fluid.ModFluids;
 import net.zuiron.photosynthesis.item.ModItemGroup;
 import net.zuiron.photosynthesis.item.ModItems;
 import net.zuiron.photosynthesis.mixin.TreeDecoratorTypeInvoker;
@@ -123,6 +124,7 @@ public class Photosynthesis implements ModInitializer {
 		ModFlammableBlocks.registerFlammableBlocks();
 		ModStrippableBlocks.registerStrippables();
 
+		ModFluids.register();
 		ModMessages.registerC2SPackets();
 
 		ModBlockEntities.registerBlockEntities();
