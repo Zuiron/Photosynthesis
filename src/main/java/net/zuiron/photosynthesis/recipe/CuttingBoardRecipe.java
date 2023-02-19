@@ -28,7 +28,9 @@ public class CuttingBoardRecipe implements Recipe<SimpleInventory> {
             return false;
         }
 
+        //get0 is first ingredient in json, getstack1 is slot 1. same item in slot as recipe list = true.
         return recipeItems.get(0).test(inventory.getStack(1));
+        //return recipeItems.get(0).test(inventory.getStack(1)) && recipeItems.get(1).test(inventory.getStack(0));
     }
 
     @Override
@@ -77,7 +79,7 @@ public class CuttingBoardRecipe implements Recipe<SimpleInventory> {
             ItemStack output = ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "output"));
 
             JsonArray ingredients = JsonHelper.getArray(json, "ingredients");
-            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(1, Ingredient.EMPTY);
+            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(1, Ingredient.EMPTY); //size: number of possible input ingredients.
 
             for (int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
