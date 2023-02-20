@@ -10,7 +10,9 @@ import net.fabricmc.fabric.api.transfer.v1.storage.base.SingleVariantStorage;
 import net.fabricmc.fabric.api.transfer.v1.transaction.Transaction;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
@@ -27,6 +29,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Property;
 import net.minecraft.text.Text;
+import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -195,7 +198,7 @@ public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedSc
             return;
         }
 
-        if(hasRecipe(entity) && canHarvestLatex(world, blockPos)) {
+        if(hasRecipe(entity) && canHarvestLatex(world, blockPos, entity)) {
             entity.progress++;
             markDirty(world, blockPos, state);
             if(entity.progress >= entity.maxProgress) {
@@ -215,9 +218,12 @@ public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedSc
         }
     }
 
-    private static boolean canHarvestLatex(World world, BlockPos blockPos) {
+    private static boolean canHarvestLatex(World world, BlockPos blockPos, LatexExtractorBlockEntity entity) {
         Direction localDir = world.getBlockState(blockPos).get(LatexExtractorBlock.FACING);
 
+        if(!world.getBlockState(blockPos.up()).isOf(Blocks.AIR)) {
+            return false;
+        }
         BlockPos relativeSouth = blockPos.offset(localDir, -1);
         BlockState relSouthState = world.getBlockState(relativeSouth);
         //check if block behind and one up is stripped rubber log.
@@ -226,6 +232,15 @@ public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedSc
 
         if (relSouthState.getBlock() == ModBlocks.RUBBERTREE_LOG && relSouthStateUp.getBlock() == ModBlocks.STRIPPED_RUBBERTREE_LOG) {
             return true;
+        } else {
+            //drop contents
+            ItemScatterer.spawn(world, blockPos, entity);
+            //remove block
+            world.setBlockState(blockPos, Blocks.AIR.getDefaultState(), 3);
+            //spawn extractor block as drop.
+            ItemStack itemStack = new ItemStack(ModBlocks.LATEX_EXTRACTOR);
+            ItemEntity itemEntity = new ItemEntity(world, blockPos.getX() + 0.5, blockPos.getY() + 0.5, blockPos.getZ() + 0.5, itemStack);
+            world.spawnEntity(itemEntity);
         }
 
         return false;
