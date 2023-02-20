@@ -1,5 +1,6 @@
 package net.zuiron.photosynthesis.screen;
 
+import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
@@ -10,21 +11,29 @@ import net.minecraft.screen.ArrayPropertyDelegate;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
+import net.zuiron.photosynthesis.block.entity.LatexExtractorBlockEntity;
+import net.zuiron.photosynthesis.util.FluidStack;
 
 public class LatexExtractorScreenHandler extends ScreenHandler {
     private final Inventory inventory;
     private final PropertyDelegate propertyDelegate;
+    public final LatexExtractorBlockEntity blockEntity;
+    public FluidStack fluidStack;
 
     public LatexExtractorScreenHandler(int syncId, PlayerInventory inventory, PacketByteBuf buf) {
-        this(syncId, inventory, new SimpleInventory(2), new ArrayPropertyDelegate(2));
+        //this(syncId, inventory, new SimpleInventory(2), new ArrayPropertyDelegate(2));
+        this(syncId, inventory, inventory.player.getWorld().getBlockEntity(buf.readBlockPos()),
+                new ArrayPropertyDelegate(2));
     }
 
-    public LatexExtractorScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate delegate) {
+    public LatexExtractorScreenHandler(int syncId, PlayerInventory playerInventory, BlockEntity entity, PropertyDelegate delegate) {
         super(ModScreenHandlers.LATEX_EXTRACTOR_SCREEN_HANDLER, syncId);
-        checkSize(inventory, 2);
-        this.inventory = inventory;
+        checkSize(((Inventory) entity), 2);
+        this.inventory = (Inventory)entity;
         inventory.onOpen(playerInventory.player);
         this.propertyDelegate = delegate;
+        this.blockEntity = (LatexExtractorBlockEntity) entity;
+        this.fluidStack = new FluidStack(blockEntity.fluidStorage.variant, blockEntity.fluidStorage.amount);
 
         this.addSlot(new Slot(inventory, 0, 98, 13)); //input
         this.addSlot(new Slot(inventory, 1, 98, 58)); //output
@@ -35,6 +44,9 @@ public class LatexExtractorScreenHandler extends ScreenHandler {
         addProperties(delegate);
     }
 
+    public void setFluid(FluidStack stack) {
+        fluidStack = stack;
+    }
     public boolean isCrafting() {
         return propertyDelegate.get(0) > 0;
     }

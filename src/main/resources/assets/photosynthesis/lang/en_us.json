@@ -1,6 +1,9 @@
 {
   "itemGroup.photosynthesis.photosynthesis": "Photosynthesis",
 
+  "photosynthesis.tooltip.liquid.amount.with.capacity": "%s / %s mB",
+  "photosynthesis.tooltip.liquid.amount": "%s mB",
+
   "block.photosynthesis.floramelissia": "Floramelissia",
 
   "block.photosynthesis.blueberry_bush": "Blueberry Bush",

@@ -1,6 +1,7 @@
 package net.zuiron.photosynthesis.block.entity;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
+import net.fabricmc.fabric.api.transfer.v1.fluid.FluidStorage;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -22,5 +23,7 @@ public class ModBlockEntities {
                 new Identifier(Photosynthesis.MOD_ID, "latex_extractor"),
                 FabricBlockEntityTypeBuilder.create(LatexExtractorBlockEntity::new,
                         ModBlocks.LATEX_EXTRACTOR).build(null));
+
+        FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidStorage, LATEX_EXTRACTOR);
     }
 }

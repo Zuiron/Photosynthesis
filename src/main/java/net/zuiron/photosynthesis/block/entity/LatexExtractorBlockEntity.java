@@ -4,6 +4,9 @@ import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.PlayerLookup;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
+import net.fabricmc.fabric.api.transfer.v1.fluid.FluidConstants;
+import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
+import net.fabricmc.fabric.api.transfer.v1.storage.base.SingleVariantStorage;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -30,6 +33,7 @@ import net.zuiron.photosynthesis.networking.ModMessages;
 import net.zuiron.photosynthesis.recipe.CuttingBoardRecipe;
 import net.zuiron.photosynthesis.screen.CuttingBoardScreenHandler;
 import net.zuiron.photosynthesis.screen.LatexExtractorScreenHandler;
+import net.zuiron.photosynthesis.util.FluidStack;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
@@ -67,6 +71,37 @@ public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedSc
         super.markDirty();
     }
 
+    public final SingleVariantStorage<FluidVariant> fluidStorage = new SingleVariantStorage<FluidVariant>() {
+        @Override
+        protected FluidVariant getBlankVariant() {
+            return FluidVariant.blank();
+        }
+
+        @Override
+        protected long getCapacity(FluidVariant variant) {
+            return FluidStack.convertDropletsToMb(FluidConstants.BUCKET) * 20; // 20k mB
+        }
+
+        @Override
+        protected void onFinalCommit() {
+            markDirty();
+            if(!world.isClient()) {
+                sendFluidPacket();
+            }
+        }
+    };
+
+    private void sendFluidPacket() {
+        PacketByteBuf data = PacketByteBufs.create();
+        fluidStorage.variant.toPacket(data);
+        data.writeLong(fluidStorage.amount);
+        data.writeBlockPos(getPos());
+
+        for (ServerPlayerEntity player : PlayerLookup.tracking((ServerWorld) world, getPos())) {
+            ServerPlayNetworking.send(player, ModMessages.FLUID_SYNC, data);
+        }
+    }
+
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
     private int maxProgress = 20;
@@ -96,6 +131,11 @@ public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedSc
         };
     }
 
+    public void setFluidLevel(FluidVariant fluidVariant, long fluidLevel) {
+        this.fluidStorage.variant = fluidVariant;
+        this.fluidStorage.amount = fluidLevel;
+    }
+
     @Override
     public DefaultedList<ItemStack> getItems() {
         return this.inventory;
@@ -122,6 +162,9 @@ public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedSc
         super.writeNbt(nbt);
         Inventories.writeNbt(nbt, inventory);
         nbt.putInt("latex_extractor.progress", progress);
+
+        nbt.put("latex_extractor.variant", fluidStorage.variant.toNbt());
+        nbt.putLong("latex_extractor.fluid", fluidStorage.amount);
     }
 
     @Override
@@ -129,6 +172,9 @@ public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedSc
         Inventories.readNbt(nbt, inventory);
         super.readNbt(nbt);
         progress = nbt.getInt("latex_extractor.progress");
+
+        fluidStorage.variant = FluidVariant.fromNbt((NbtCompound) nbt.get("latex_extractor.variant"));
+        fluidStorage.amount = nbt.getLong("latex_extractor.fluid");
     }
 
     private void resetProgress() {
