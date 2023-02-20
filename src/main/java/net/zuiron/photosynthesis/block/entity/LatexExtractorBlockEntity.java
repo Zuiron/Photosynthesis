@@ -8,6 +8,7 @@ import net.fabricmc.fabric.api.transfer.v1.fluid.FluidConstants;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
 import net.fabricmc.fabric.api.transfer.v1.storage.base.SingleVariantStorage;
 import net.fabricmc.fabric.api.transfer.v1.transaction.Transaction;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -19,18 +20,20 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
-import net.minecraft.particle.ParticleTypes;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.state.property.EnumProperty;
+import net.minecraft.state.property.Property;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.block.ModBlocks;
+import net.zuiron.photosynthesis.block.custom.LatexExtractorBlock;
 import net.zuiron.photosynthesis.fluid.ModFluids;
-import net.zuiron.photosynthesis.item.ModItems;
 import net.zuiron.photosynthesis.networking.ModMessages;
 import net.zuiron.photosynthesis.screen.LatexExtractorScreenHandler;
 import net.zuiron.photosynthesis.util.FluidStack;
@@ -186,12 +189,13 @@ public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedSc
         syncItems();
     }
 
+
     public static void tick(World world, BlockPos blockPos, BlockState state, LatexExtractorBlockEntity entity) {
         if(world.isClient()) {
             return;
         }
 
-        if(hasRecipe(entity)) {
+        if(hasRecipe(entity) && canHarvestLatex(world, blockPos)) {
             entity.progress++;
             markDirty(world, blockPos, state);
             if(entity.progress >= entity.maxProgress) {
@@ -209,6 +213,22 @@ public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedSc
         if(hasEmptyBucketInSlot(entity)) {
             extractFluidAndMakeBucket(entity);
         }
+    }
+
+    private static boolean canHarvestLatex(World world, BlockPos blockPos) {
+        Direction localDir = world.getBlockState(blockPos).get(LatexExtractorBlock.FACING);
+
+        BlockPos relativeSouth = blockPos.offset(localDir, -1);
+        BlockState relSouthState = world.getBlockState(relativeSouth);
+        //check if block behind and one up is stripped rubber log.
+        BlockPos relativeSouthUp = blockPos.offset(localDir, -1).up();
+        BlockState relSouthStateUp = world.getBlockState(relativeSouthUp);
+
+        if (relSouthState.getBlock() == ModBlocks.RUBBERTREE_LOG && relSouthStateUp.getBlock() == ModBlocks.STRIPPED_RUBBERTREE_LOG) {
+            return true;
+        }
+
+        return false;
     }
 
     private static boolean hasEmptyBucketInSlot(LatexExtractorBlockEntity entity) {
