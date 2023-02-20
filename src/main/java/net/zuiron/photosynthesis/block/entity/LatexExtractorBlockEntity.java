@@ -209,6 +209,7 @@ public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedSc
             markDirty(world, blockPos, state);
         }
 
+        //if we have a latex bucket in input slot TOP.
         if(hasFluidSourceInSlot(entity)) {
             transferFluidToFluidStorage(entity);
         }
@@ -254,9 +255,16 @@ public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedSc
     }
 
     private static void extractFluidAndMakeBucket(LatexExtractorBlockEntity entity) {
-        if(entity.fluidStorage.amount >= 1000) {
+        if(entity.fluidStorage.amount >= 1000 && entity.getStack(1).isEmpty()) {
             if(extractFluid(entity, 1000)) {
-                entity.setStack(0, new ItemStack(Items.AIR));
+                //TODO fix, double buckets in slot 0 or more.
+                int count = entity.getStack(0).getCount();
+                if(count > 1) {
+                    entity.getStack(0).setCount(count - 1);
+                } else {
+                    entity.setStack(0, new ItemStack(Items.AIR));
+                }
+
                 entity.setStack(1, new ItemStack(ModFluids.LATEX_BUCKET));
             }
         }
@@ -274,15 +282,26 @@ public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedSc
         }
     }
 
+    private static boolean insertFluid(LatexExtractorBlockEntity entity, long convertDropletsToMb) {
+        try(Transaction transaction = Transaction.openOuter()) {
+            entity.fluidStorage.insert(FluidVariant.of(ModFluids.STILL_LATEX), convertDropletsToMb, transaction);
+            transaction.commit();
+            return true;
+        }
+        catch (Exception e) {
+            return false;
+        }
+    }
+
     private static void transferFluidToFluidStorage(LatexExtractorBlockEntity entity) {
         //TODO need a check, currently. putting a latex bucket in, while tank is full voids the contents of the bucket. not the bucket itself.
         //TODO also. it overwrites in output slot. fix!
-        try(Transaction transaction = Transaction.openOuter()) {
-            entity.fluidStorage.insert(FluidVariant.of(ModFluids.STILL_LATEX),
-                    FluidStack.convertDropletsToMb(FluidConstants.BUCKET), transaction);
-            transaction.commit();
-            entity.setStack(0, new ItemStack(Items.AIR));
-            entity.setStack(1, new ItemStack(Items.BUCKET));
+
+        if(entity.getStack(1).isEmpty()) {
+            if (insertFluid(entity, FluidStack.convertDropletsToMb(FluidConstants.BUCKET))) {
+                entity.setStack(0, new ItemStack(Items.AIR));
+                entity.setStack(1, new ItemStack(Items.BUCKET));
+            }
         }
     }
 
