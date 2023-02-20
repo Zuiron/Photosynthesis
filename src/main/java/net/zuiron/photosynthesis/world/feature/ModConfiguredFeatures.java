@@ -165,6 +165,36 @@ public class ModConfiguredFeatures {
 
 
 
+
+
+
+
+    public static final RegistryKey<ConfiguredFeature<?,?>> MAPLETREE_KEY = registerKey("mapletree_tree");
+    public static final RegistryKey<ConfiguredFeature<?,?>> MAPLETREE_SPAWN_KEY = registerKey("mapletree_spawn");
+
+    public static final RegistryKey<ConfiguredFeature<?,?>> PEPPERCORNTREE_KEY = registerKey("peppercorntree_tree");
+    public static final RegistryKey<ConfiguredFeature<?,?>> PEPPERCORNTREE_SPAWN_KEY = registerKey("peppercorntree_spawn");
+
+    public static final RegistryKey<ConfiguredFeature<?,?>> VANILLABEANTREE_KEY = registerKey("vanillabeantree_tree");
+    public static final RegistryKey<ConfiguredFeature<?,?>> VANILLABEANTREE_SPAWN_KEY = registerKey("vanillabeantree_spawn");
+
+    public static final RegistryKey<ConfiguredFeature<?,?>> PINENUTTREE_KEY = registerKey("pinenuttree_tree");
+    public static final RegistryKey<ConfiguredFeature<?,?>> PINENUTTREE_SPAWN_KEY = registerKey("pinenuttree_spawn");
+
+    public static final RegistryKey<ConfiguredFeature<?,?>> GOOSEBERRYTREE_KEY = registerKey("gooseberrytree_tree");
+    public static final RegistryKey<ConfiguredFeature<?,?>> GOOSEBERRYTREE_SPAWN_KEY = registerKey("gooseberrytree_spawn");
+
+    public static final RegistryKey<ConfiguredFeature<?,?>> GRAPETREE_KEY = registerKey("grapetree_tree");
+    public static final RegistryKey<ConfiguredFeature<?,?>> GRAPETREE_SPAWN_KEY = registerKey("grapetree_spawn");
+
+
+
+
+
+
+
+
+
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
         var placedFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.PLACED_FEATURE);
         //register(context, KEY, );
@@ -741,6 +771,89 @@ public class ModConfiguredFeatures {
         register(context, TAMARINDTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.TAMARINDTREE_CHECKED_KEY),
                         spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.TAMARINDTREE_CHECKED_KEY)));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        register(context, MAPLETREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(ModBlocks.MAPLETREE_LOG),
+                new StraightTrunkPlacer(4, 1, 1), //3,4,2
+                BlockStateProvider.of(ModBlocks.MAPLETREE_LEAVES),
+                new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 2),//3
+                new TwoLayersFeatureSize(1, 0, 2)).build());
+
+        register(context, MAPLETREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
+                new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.MAPLETREE_CHECKED_KEY),
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.MAPLETREE_CHECKED_KEY)));
+
+        register(context, PEPPERCORNTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(ModBlocks.PEPPERCORNTREE_LOG),
+                new StraightTrunkPlacer(4, 1, 1), //3,4,2
+                BlockStateProvider.of(ModBlocks.PEPPERCORNTREE_LEAVES),
+                new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 2),//3
+                new TwoLayersFeatureSize(1, 0, 2)).decorators(Collections.singletonList(PeppercornTreeDecorator.INSTANCE)).build());
+
+        register(context, PEPPERCORNTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
+                new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.PEPPERCORNTREE_CHECKED_KEY),
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.PEPPERCORNTREE_CHECKED_KEY)));
+
+        register(context, VANILLABEANTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(ModBlocks.VANILLABEANTREE_LOG),
+                new StraightTrunkPlacer(4, 1, 1), //3,4,2
+                BlockStateProvider.of(ModBlocks.VANILLABEANTREE_LEAVES),
+                new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 2),//3
+                new TwoLayersFeatureSize(1, 0, 2)).decorators(Collections.singletonList(VanillabeanTreeDecorator.INSTANCE)).build());
+
+        register(context, VANILLABEANTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
+                new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.VANILLABEANTREE_CHECKED_KEY),
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.VANILLABEANTREE_CHECKED_KEY)));
+
+        register(context, PINENUTTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(ModBlocks.PINENUTTREE_LOG),
+                new StraightTrunkPlacer(4, 1, 1), //3,4,2
+                BlockStateProvider.of(ModBlocks.PINENUTTREE_LEAVES),
+                new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 2),//3
+                new TwoLayersFeatureSize(1, 0, 2)).decorators(Collections.singletonList(PinenutTreeDecorator.INSTANCE)).build());
+
+        register(context, PINENUTTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
+                new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.PINENUTTREE_CHECKED_KEY),
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.PINENUTTREE_CHECKED_KEY)));
+
+        register(context, GOOSEBERRYTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(ModBlocks.GOOSEBERRYTREE_LOG),
+                new StraightTrunkPlacer(4, 1, 1), //3,4,2
+                BlockStateProvider.of(ModBlocks.GOOSEBERRYTREE_LEAVES),
+                new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 2),//3
+                new TwoLayersFeatureSize(1, 0, 2)).decorators(Collections.singletonList(GooseberryTreeDecorator.INSTANCE)).build());
+
+        register(context, GOOSEBERRYTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
+                new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.GOOSEBERRYTREE_CHECKED_KEY),
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.GOOSEBERRYTREE_CHECKED_KEY)));
+
+        register(context, GRAPETREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(ModBlocks.GRAPETREE_LOG),
+                new StraightTrunkPlacer(4, 1, 1), //3,4,2
+                BlockStateProvider.of(ModBlocks.GRAPETREE_LEAVES),
+                new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 2),//3
+                new TwoLayersFeatureSize(1, 0, 2)).decorators(Collections.singletonList(GrapeTreeDecorator.INSTANCE)).build());
+
+        register(context, GRAPETREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
+                new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.GRAPETREE_CHECKED_KEY),
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.GRAPETREE_CHECKED_KEY)));
+
 
 
 

@@ -165,6 +165,24 @@ public class ModPlacedFeatures {
 
 
 
+    public static final RegistryKey<PlacedFeature> MAPLETREE_CHECKED_KEY = registerKey("mapletree_checked");
+    public static final RegistryKey<PlacedFeature> MAPLETREE_PLACED_KEY = registerKey("mapletree_placed");
+
+    public static final RegistryKey<PlacedFeature> PEPPERCORNTREE_CHECKED_KEY = registerKey("peppercorntree_checked");
+    public static final RegistryKey<PlacedFeature> PEPPERCORNTREE_PLACED_KEY = registerKey("peppercorntree_placed");
+
+    public static final RegistryKey<PlacedFeature> VANILLABEANTREE_CHECKED_KEY = registerKey("vanillabeantree_checked");
+    public static final RegistryKey<PlacedFeature> VANILLABEANTREE_PLACED_KEY = registerKey("vanillabeantree_placed");
+
+    public static final RegistryKey<PlacedFeature> PINENUTTREE_CHECKED_KEY = registerKey("pinenuttree_checked");
+    public static final RegistryKey<PlacedFeature> PINENUTTREE_PLACED_KEY = registerKey("pinenuttree_placed");
+
+    public static final RegistryKey<PlacedFeature> GOOSEBERRYTREE_CHECKED_KEY = registerKey("gooseberrytree_checked");
+    public static final RegistryKey<PlacedFeature> GOOSEBERRYTREE_PLACED_KEY = registerKey("gooseberrytree_placed");
+
+    public static final RegistryKey<PlacedFeature> GRAPETREE_CHECKED_KEY = registerKey("grapetree_checked");
+    public static final RegistryKey<PlacedFeature> GRAPETREE_PLACED_KEY = registerKey("grapetree_placed");
+
 
 
 
@@ -467,6 +485,36 @@ public class ModPlacedFeatures {
 
 
 
+
+        register(context, MAPLETREE_CHECKED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.MAPLETREE_KEY),
+                List.of(PlacedFeatures.wouldSurvive(ModBlocks.MAPLETREE_SAPLING)));
+        register(context, MAPLETREE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.MAPLETREE_SPAWN_KEY),
+                VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(count, extraChance, extraCount)));
+
+        register(context, PEPPERCORNTREE_CHECKED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PEPPERCORNTREE_KEY),
+                List.of(PlacedFeatures.wouldSurvive(ModBlocks.PEPPERCORNTREE_SAPLING)));
+        register(context, PEPPERCORNTREE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PEPPERCORNTREE_SPAWN_KEY),
+                VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(count, extraChance, extraCount)));
+
+        register(context, VANILLABEANTREE_CHECKED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.VANILLABEANTREE_KEY),
+                List.of(PlacedFeatures.wouldSurvive(ModBlocks.VANILLABEANTREE_SAPLING)));
+        register(context, VANILLABEANTREE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.VANILLABEANTREE_SPAWN_KEY),
+                VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(count, extraChance, extraCount)));
+
+        register(context, PINENUTTREE_CHECKED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PINENUTTREE_KEY),
+                List.of(PlacedFeatures.wouldSurvive(ModBlocks.PINENUTTREE_SAPLING)));
+        register(context, PINENUTTREE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PINENUTTREE_SPAWN_KEY),
+                VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(count, extraChance, extraCount)));
+
+        register(context, GOOSEBERRYTREE_CHECKED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.GOOSEBERRYTREE_KEY),
+                List.of(PlacedFeatures.wouldSurvive(ModBlocks.GOOSEBERRYTREE_SAPLING)));
+        register(context, GOOSEBERRYTREE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.GOOSEBERRYTREE_SPAWN_KEY),
+                VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(count, extraChance, extraCount)));
+
+        register(context, GRAPETREE_CHECKED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.GRAPETREE_KEY),
+                List.of(PlacedFeatures.wouldSurvive(ModBlocks.GRAPETREE_SAPLING)));
+        register(context, GRAPETREE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.GRAPETREE_SPAWN_KEY),
+                VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(count, extraChance, extraCount)));
 
 
 

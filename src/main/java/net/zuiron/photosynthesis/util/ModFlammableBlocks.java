@@ -404,6 +404,54 @@ public class ModFlammableBlocks {
 
 
 
+        registry.add(ModBlocks.MAPLETREE_LOG, 5, 5);
+        registry.add(ModBlocks.MAPLETREE_WOOD, 5, 5);
+        registry.add(ModBlocks.STRIPPED_MAPLETREE_LOG, 5, 5);
+        registry.add(ModBlocks.STRIPPED_MAPLETREE_WOOD, 5, 5);
+
+        registry.add(ModBlocks.MAPLETREE_PLANKS, 5, 20);
+        registry.add(ModBlocks.MAPLETREE_LEAVES, 30, 60);
+
+        registry.add(ModBlocks.PEPPERCORNTREE_LOG, 5, 5);
+        registry.add(ModBlocks.PEPPERCORNTREE_WOOD, 5, 5);
+        registry.add(ModBlocks.STRIPPED_PEPPERCORNTREE_LOG, 5, 5);
+        registry.add(ModBlocks.STRIPPED_PEPPERCORNTREE_WOOD, 5, 5);
+
+        registry.add(ModBlocks.PEPPERCORNTREE_PLANKS, 5, 20);
+        registry.add(ModBlocks.PEPPERCORNTREE_LEAVES, 30, 60);
+
+        registry.add(ModBlocks.VANILLABEANTREE_LOG, 5, 5);
+        registry.add(ModBlocks.VANILLABEANTREE_WOOD, 5, 5);
+        registry.add(ModBlocks.STRIPPED_VANILLABEANTREE_LOG, 5, 5);
+        registry.add(ModBlocks.STRIPPED_VANILLABEANTREE_WOOD, 5, 5);
+
+        registry.add(ModBlocks.VANILLABEANTREE_PLANKS, 5, 20);
+        registry.add(ModBlocks.VANILLABEANTREE_LEAVES, 30, 60);
+
+        registry.add(ModBlocks.PINENUTTREE_LOG, 5, 5);
+        registry.add(ModBlocks.PINENUTTREE_WOOD, 5, 5);
+        registry.add(ModBlocks.STRIPPED_PINENUTTREE_LOG, 5, 5);
+        registry.add(ModBlocks.STRIPPED_PINENUTTREE_WOOD, 5, 5);
+
+        registry.add(ModBlocks.PINENUTTREE_PLANKS, 5, 20);
+        registry.add(ModBlocks.PINENUTTREE_LEAVES, 30, 60);
+
+        registry.add(ModBlocks.GOOSEBERRYTREE_LOG, 5, 5);
+        registry.add(ModBlocks.GOOSEBERRYTREE_WOOD, 5, 5);
+        registry.add(ModBlocks.STRIPPED_GOOSEBERRYTREE_LOG, 5, 5);
+        registry.add(ModBlocks.STRIPPED_GOOSEBERRYTREE_WOOD, 5, 5);
+
+        registry.add(ModBlocks.GOOSEBERRYTREE_PLANKS, 5, 20);
+        registry.add(ModBlocks.GOOSEBERRYTREE_LEAVES, 30, 60);
+
+        registry.add(ModBlocks.GRAPETREE_LOG, 5, 5);
+        registry.add(ModBlocks.GRAPETREE_WOOD, 5, 5);
+        registry.add(ModBlocks.STRIPPED_GRAPETREE_LOG, 5, 5);
+        registry.add(ModBlocks.STRIPPED_GRAPETREE_WOOD, 5, 5);
+
+        registry.add(ModBlocks.GRAPETREE_PLANKS, 5, 20);
+        registry.add(ModBlocks.GRAPETREE_LEAVES, 30, 60);
+
 
 
 

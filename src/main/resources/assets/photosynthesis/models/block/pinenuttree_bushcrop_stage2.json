@@ -1,0 +1,7 @@
+
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "photosynthesis:block/pinenuttree_bushcrop_stage2"
+  }
+}

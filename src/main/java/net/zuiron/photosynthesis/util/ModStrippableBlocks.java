@@ -146,6 +146,27 @@ public class ModStrippableBlocks {
 
 
 
+        StrippableBlockRegistry.register(ModBlocks.MAPLETREE_LOG, ModBlocks.STRIPPED_MAPLETREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.MAPLETREE_WOOD, ModBlocks.STRIPPED_MAPLETREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.PEPPERCORNTREE_LOG, ModBlocks.STRIPPED_PEPPERCORNTREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.PEPPERCORNTREE_WOOD, ModBlocks.STRIPPED_PEPPERCORNTREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.VANILLABEANTREE_LOG, ModBlocks.STRIPPED_VANILLABEANTREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.VANILLABEANTREE_WOOD, ModBlocks.STRIPPED_VANILLABEANTREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.PINENUTTREE_LOG, ModBlocks.STRIPPED_PINENUTTREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.PINENUTTREE_WOOD, ModBlocks.STRIPPED_PINENUTTREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.GOOSEBERRYTREE_LOG, ModBlocks.STRIPPED_GOOSEBERRYTREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.GOOSEBERRYTREE_WOOD, ModBlocks.STRIPPED_GOOSEBERRYTREE_WOOD);
+
+        StrippableBlockRegistry.register(ModBlocks.GRAPETREE_LOG, ModBlocks.STRIPPED_GRAPETREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.GRAPETREE_WOOD, ModBlocks.STRIPPED_GRAPETREE_WOOD);
+
+
+
+
 
     }
 }

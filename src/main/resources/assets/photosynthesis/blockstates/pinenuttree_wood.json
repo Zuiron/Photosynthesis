@@ -1,0 +1,17 @@
+
+{
+  "variants": {
+    "axis=x": {
+      "model": "photosynthesis:block/pinenuttree_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "photosynthesis:block/pinenuttree_wood"
+    },
+    "axis=z": {
+      "model": "photosynthesis:block/pinenuttree_wood",
+      "x": 90
+    }
+  }
+}

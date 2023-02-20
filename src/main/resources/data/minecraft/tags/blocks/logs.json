@@ -227,6 +227,37 @@
     "photosynthesis:tamarindtree_log",
     "photosynthesis:tamarindtree_wood",
     "photosynthesis:stripped_tamarindtree_log",
-    "photosynthesis:stripped_tamarindtree_wood"
+    "photosynthesis:stripped_tamarindtree_wood",
+
+
+    "photosynthesis:mapletree_log",
+    "photosynthesis:mapletree_wood",
+    "photosynthesis:stripped_mapletree_log",
+    "photosynthesis:stripped_mapletree_wood",
+
+    "photosynthesis:peppercorntree_log",
+    "photosynthesis:peppercorntree_wood",
+    "photosynthesis:stripped_peppercorntree_log",
+    "photosynthesis:stripped_peppercorntree_wood",
+
+    "photosynthesis:vanillabeantree_log",
+    "photosynthesis:vanillabeantree_wood",
+    "photosynthesis:stripped_vanillabeantree_log",
+    "photosynthesis:stripped_vanillabeantree_wood",
+
+    "photosynthesis:pinenuttree_log",
+    "photosynthesis:pinenuttree_wood",
+    "photosynthesis:stripped_pinenuttree_log",
+    "photosynthesis:stripped_pinenuttree_wood",
+
+    "photosynthesis:gooseberrytree_log",
+    "photosynthesis:gooseberrytree_wood",
+    "photosynthesis:stripped_gooseberrytree_log",
+    "photosynthesis:stripped_gooseberrytree_wood",
+
+    "photosynthesis:grapetree_log",
+    "photosynthesis:grapetree_wood",
+    "photosynthesis:stripped_grapetree_log",
+    "photosynthesis:stripped_grapetree_wood"
   ]
 }

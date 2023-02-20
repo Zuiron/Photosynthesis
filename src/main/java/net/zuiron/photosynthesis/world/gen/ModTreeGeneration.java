@@ -152,5 +152,30 @@ public class ModTreeGeneration {
 
 
 
+
+        BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.5 && context.getBiome().getTemperature() <= 1.5,
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.MAPLETREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 1.5 && context.getBiome().getTemperature() <= 2.5,
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.PEPPERCORNTREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 1.5 && context.getBiome().getTemperature() <= 2.5,
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.VANILLABEANTREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.5 && context.getBiome().getTemperature() <= 1.5,
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.PINENUTTREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.5 && context.getBiome().getTemperature() <= 1.5,
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.GOOSEBERRYTREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.5 && context.getBiome().getTemperature() <= 1.5,
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.GRAPETREE_PLACED_KEY);
+
+
+
+
+
+
+
     }
 }
