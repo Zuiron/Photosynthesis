@@ -35,7 +35,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Optional;
 
 public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
-    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(3, ItemStack.EMPTY); //N#:SLOTS
+    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(2, ItemStack.EMPTY); //N#:SLOTS
 
 
 
@@ -146,16 +146,6 @@ public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedSc
             markDirty(world, blockPos, state);
             if(entity.progress >= entity.maxProgress) {
                 craftItem(entity);
-                if (!world.isClient) {
-                    world.playSound(
-                            null, // Player - if non-null, will play sound for every nearby player *except* the specified player
-                            blockPos, // The position of where the sound will come from
-                            SoundEvents.BLOCK_BEEHIVE_SHEAR, // The sound that will play, in this case, the sound the anvil plays when it lands.
-                            SoundCategory.BLOCKS, // This determines which of the volume sliders affect this sound
-                            1f, //Volume multiplier, 1 is normal, 0.5 is half volume, etc
-                            1f // Pitch multiplier, 1 is normal, 0.5 is half pitch, etc
-                    );
-                }
             }
         } else {
             entity.resetProgress();
@@ -169,34 +159,10 @@ public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedSc
             inventory.setStack(i, entity.getStack(i));
         }
 
-        Optional<CuttingBoardRecipe> recipe = entity.getWorld().getRecipeManager()
-                .getFirstMatch(CuttingBoardRecipe.Type.INSTANCE, inventory, entity.getWorld());
-
         if(hasRecipe(entity)) {
-            entity.removeStack(1, 1); //remove 1 item from stack in slot 1 (input)
+            //entity.removeStack(1, 1); //remove 1 item from stack in slot 1 (input)
             /*entity.setStack(2, new ItemStack(ModItems.SALT,
                     entity.getStack(2).getCount() + 1));*/
-            entity.setStack(2, new ItemStack(recipe.get().getOutput().getItem(),
-                    entity.getStack(2).getCount() + 1)); //add one to output.
-
-            //durability.
-            //check durability. if less then 1, break.
-            if(entity.getStack(0).getMaxDamage() - entity.getStack(0).getDamage() < 1) {
-                entity.setStack(0, ItemStack.EMPTY); //break knife.
-                //play sound.
-                if (!entity.world.isClient) {
-                    entity.world.playSound(
-                            null, // Player - if non-null, will play sound for every nearby player *except* the specified player
-                            entity.pos, // The position of where the sound will come from
-                            SoundEvents.ITEM_SHIELD_BREAK, // The sound that will play, in this case, the sound the anvil plays when it lands.
-                            SoundCategory.BLOCKS, // This determines which of the volume sliders affect this sound
-                            1f, //Volume multiplier, 1 is normal, 0.5 is half volume, etc
-                            1f // Pitch multiplier, 1 is normal, 0.5 is half pitch, etc
-                    );
-                }
-            }
-
-            entity.getStack(0).damage(30, Random.create(0), null); //remove durability from cutting knife.
 
             entity.resetProgress();
         }
@@ -211,6 +177,8 @@ public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedSc
         /*boolean hasRawSaltInFirstSlot = entity.getStack(1).getItem() == ModItems.RAW_SALT;
         return hasRawSaltInFirstSlot && canInsertAmountIntoOutputSlot(inventory)
                 && canInsertItemIntoOutputSlot(inventory, ModItems.SALT);*/
+
+        /*
         boolean hasCuttingKnifeInSlot0 = entity.getStack(0).getItem() == ModItems.CUTTING_KNIFE;
 
         Optional<CuttingBoardRecipe> match = entity.getWorld().getRecipeManager()
@@ -218,15 +186,17 @@ public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedSc
 
         return match.isPresent() && canInsertAmountIntoOutputSlot(inventory)
                 && canInsertItemIntoOutputSlot(inventory, match.get().getOutput().getItem()) && hasCuttingKnifeInSlot0;
+         */
+        return false;
     }
 
     private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, Item output) {
         //return inventory.getStack(2).getItem() == output || inventory.getStack(2).isEmpty(); //crafts up to a stack.
         //make it so output has to be empty. (more manual labor) *evil*
-        return inventory.getStack(2).isEmpty();
+        return inventory.getStack(1).isEmpty();
     }
 
     private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory) {
-        return inventory.getStack(2).getMaxCount() > inventory.getStack(2).getCount();
+        return inventory.getStack(1).getMaxCount() > inventory.getStack(1).getCount();
     }
 }

@@ -32,7 +32,7 @@ public class LatexExtractorScreen extends HandledScreen<LatexExtractorScreenHand
         int y = (height - backgroundHeight) / 2;
         drawTexture(matrices, x, y, 0, 0, backgroundWidth, backgroundHeight);
 
-        renderProgressArrow(matrices, x, y);
+        //renderProgressArrow(matrices, x, y);
     }
 
     private void renderProgressArrow(MatrixStack matrices, int x, int y) {

@@ -16,19 +16,18 @@ public class LatexExtractorScreenHandler extends ScreenHandler {
     private final PropertyDelegate propertyDelegate;
 
     public LatexExtractorScreenHandler(int syncId, PlayerInventory inventory, PacketByteBuf buf) {
-        this(syncId, inventory, new SimpleInventory(3), new ArrayPropertyDelegate(2));
+        this(syncId, inventory, new SimpleInventory(2), new ArrayPropertyDelegate(2));
     }
 
     public LatexExtractorScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate delegate) {
         super(ModScreenHandlers.LATEX_EXTRACTOR_SCREEN_HANDLER, syncId);
-        checkSize(inventory, 3);
+        checkSize(inventory, 2);
         this.inventory = inventory;
         inventory.onOpen(playerInventory.player);
         this.propertyDelegate = delegate;
 
-        this.addSlot(new Slot(inventory, 0, 80, 22)); //tool
-        this.addSlot(new Slot(inventory, 1, 62, 58)); //input
-        this.addSlot(new Slot(inventory, 2, 98, 58)); //output
+        this.addSlot(new Slot(inventory, 0, 98, 13)); //input
+        this.addSlot(new Slot(inventory, 1, 98, 58)); //output
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
