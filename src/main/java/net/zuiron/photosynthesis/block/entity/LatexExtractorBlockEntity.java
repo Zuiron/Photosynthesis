@@ -275,6 +275,8 @@ public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedSc
     }
 
     private static void transferFluidToFluidStorage(LatexExtractorBlockEntity entity) {
+        //TODO need a check, currently. putting a latex bucket in, while tank is full voids the contents of the bucket. not the bucket itself.
+        //TODO also. it overwrites in output slot. fix!
         try(Transaction transaction = Transaction.openOuter()) {
             entity.fluidStorage.insert(FluidVariant.of(ModFluids.STILL_LATEX),
                     FluidStack.convertDropletsToMb(FluidConstants.BUCKET), transaction);
