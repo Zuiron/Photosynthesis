@@ -97,7 +97,7 @@ public class CustomCropBlock extends CropBlock {
             case "squash_crop": return ModItems.SQUASH;
             case "zucchini_crop": return ModItems.ZUCCHINI;
             case "coffea_crop": return ModItems.COFFEA;
-            case "grape_crop": return ModItems.GRAPE;
+            //case "grape_crop": return ModItems.GRAPE;
             case "parsley_crop": return ModItems.PARSLEY;
             case "mint_crop": return ModItems.MINT;
             case "pineapple_crop": return ModItems.PINEAPPLE;
