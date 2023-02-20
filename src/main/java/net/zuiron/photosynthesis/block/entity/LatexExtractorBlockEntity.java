@@ -19,6 +19,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -104,7 +105,7 @@ public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedSc
 
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
-    private int maxProgress = 20;
+    private int maxProgress = 60;
 
     public LatexExtractorBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.LATEX_EXTRACTOR, pos, state);
