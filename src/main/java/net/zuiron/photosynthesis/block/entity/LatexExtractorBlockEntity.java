@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidConstants;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
 import net.fabricmc.fabric.api.transfer.v1.storage.base.SingleVariantStorage;
+import net.fabricmc.fabric.api.transfer.v1.transaction.Transaction;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -15,6 +16,7 @@ import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.screen.PropertyDelegate;
@@ -28,6 +30,7 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
+import net.zuiron.photosynthesis.fluid.ModFluids;
 import net.zuiron.photosynthesis.item.ModItems;
 import net.zuiron.photosynthesis.networking.ModMessages;
 import net.zuiron.photosynthesis.recipe.CuttingBoardRecipe;
@@ -67,6 +70,9 @@ public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedSc
     @Override
     public void markDirty() {
         syncItems();
+        if(!world.isClient()) {
+            sendFluidPacket();
+        }
 
         super.markDirty();
     }
@@ -149,6 +155,9 @@ public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedSc
     @Nullable
     @Override
     public ScreenHandler createMenu(int syncId, PlayerInventory inv, PlayerEntity player) {
+        if(!world.isClient()) {
+            sendFluidPacket(); //SYNC when we open gui.
+        }
         return new LatexExtractorScreenHandler(syncId, inv, this, this.propertyDelegate);
     }
 
@@ -197,6 +206,36 @@ public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedSc
             entity.resetProgress();
             markDirty(world, blockPos, state);
         }
+
+        if(hasFluidSourceInSlot(entity)) {
+            transferFluidToFluidStorage(entity);
+        }
+    }
+
+    private static void extractFluid(LatexExtractorBlockEntity entity) {
+        try(Transaction transaction = Transaction.openOuter()) {
+            entity.fluidStorage.extract(FluidVariant.of(ModFluids.STILL_LATEX),
+                    1000, transaction);
+            transaction.commit();
+        }
+    }
+
+    private static void transferFluidToFluidStorage(LatexExtractorBlockEntity entity) {
+        try(Transaction transaction = Transaction.openOuter()) {
+            entity.fluidStorage.insert(FluidVariant.of(ModFluids.STILL_LATEX),
+                    FluidStack.convertDropletsToMb(FluidConstants.BUCKET), transaction);
+            transaction.commit();
+            entity.setStack(0, new ItemStack(Items.AIR));
+            entity.setStack(1, new ItemStack(Items.BUCKET));
+        }
+    }
+
+    private static boolean hasFluidSourceInSlot(LatexExtractorBlockEntity entity) {
+        return entity.getStack(0).getItem() == ModFluids.LATEX_BUCKET;
+    }
+
+    private static boolean hasEnoughFluid(LatexExtractorBlockEntity entity) {
+        return entity.fluidStorage.amount >= 500; // mB amount!
     }
 
     private static void craftItem(LatexExtractorBlockEntity entity) {
@@ -210,6 +249,13 @@ public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedSc
             /*entity.setStack(2, new ItemStack(ModItems.SALT,
                     entity.getStack(2).getCount() + 1));*/
 
+            //TODO we dont actually "craft" anything, but it should generate some latex in the tank.
+            try(Transaction transaction = Transaction.openOuter()) {
+                entity.fluidStorage.insert(FluidVariant.of(ModFluids.STILL_LATEX),
+                        FluidStack.convertDropletsToMb(FluidConstants.NUGGET), transaction);
+                transaction.commit();
+            }
+
             entity.resetProgress();
         }
     }
@@ -220,6 +266,9 @@ public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedSc
             inventory.setStack(i, entity.getStack(i));
         }
 
+
+        //TODO. check if block behind is rubber log and above that is stripped rubber log.
+        return true;
         /*boolean hasRawSaltInFirstSlot = entity.getStack(1).getItem() == ModItems.RAW_SALT;
         return hasRawSaltInFirstSlot && canInsertAmountIntoOutputSlot(inventory)
                 && canInsertItemIntoOutputSlot(inventory, ModItems.SALT);*/
@@ -233,7 +282,6 @@ public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedSc
         return match.isPresent() && canInsertAmountIntoOutputSlot(inventory)
                 && canInsertItemIntoOutputSlot(inventory, match.get().getOutput().getItem()) && hasCuttingKnifeInSlot0;
          */
-        return false;
     }
 
     private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, Item output) {
