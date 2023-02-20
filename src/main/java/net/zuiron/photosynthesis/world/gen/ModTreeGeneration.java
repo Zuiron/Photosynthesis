@@ -114,37 +114,37 @@ public class ModTreeGeneration {
         BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= -0.5 && context.getBiome().getTemperature() <= 0.5,
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.PECANTREE_PLACED_KEY); //------------------------------------------------ ^ DONE
 
-        BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.9 && context.getBiome().getTemperature() <= 2.0,
+        BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.6 && context.getBiome().getTemperature() <= 1.0,
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.PERSIMMONTREE_PLACED_KEY);
 
-        BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.9 && context.getBiome().getTemperature() <= 2.0,
+        BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.6 && context.getBiome().getTemperature() <= 1.2,
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.PISTACHIOTREE_PLACED_KEY);
 
-        BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.9 && context.getBiome().getTemperature() <= 2.0,
+        BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.9 && context.getBiome().getTemperature() <= 1.1,
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.POMEGRANATETREE_PLACED_KEY);
 
-        BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.9 && context.getBiome().getTemperature() <= 2.0,
+        BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.7 && context.getBiome().getTemperature() <= 1.0,
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.STARFRUITTREE_PLACED_KEY);
 
-        BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.9 && context.getBiome().getTemperature() <= 2.0,
+        BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.95 && context.getBiome().getTemperature() <= 1.2,
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.BREADFRUITTREE_PLACED_KEY);
 
-        BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.9 && context.getBiome().getTemperature() <= 2.0,
+        BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.95 && context.getBiome().getTemperature() <= 1.4,
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.GUAVATREE_PLACED_KEY);
 
-        BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.9 && context.getBiome().getTemperature() <= 2.0,
+        BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.95 && context.getBiome().getTemperature() <= 1.5,
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.JACKFRUITTREE_PLACED_KEY);
 
-        BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.9 && context.getBiome().getTemperature() <= 2.0,
+        BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.95 && context.getBiome().getTemperature() <= 1.5,
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.LYCHEETREE_PLACED_KEY);
 
-        BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.9 && context.getBiome().getTemperature() <= 2.0,
+        BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.85 && context.getBiome().getTemperature() <= 1.0,
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.PASSIONFRUITTREE_PLACED_KEY);
 
-        BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.9 && context.getBiome().getTemperature() <= 2.0,
+        BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.9 && context.getBiome().getTemperature() <= 1.2,
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.RAMBUTANTREE_PLACED_KEY);
 
-        BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.9 && context.getBiome().getTemperature() <= 2.0,
+        BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.25 && context.getBiome().getTemperature() <= 1.0,
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.TAMARINDTREE_PLACED_KEY);
 
 
