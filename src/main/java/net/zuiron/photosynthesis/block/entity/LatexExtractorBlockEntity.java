@@ -23,23 +23,17 @@ import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
+import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.fluid.ModFluids;
 import net.zuiron.photosynthesis.item.ModItems;
 import net.zuiron.photosynthesis.networking.ModMessages;
-import net.zuiron.photosynthesis.recipe.CuttingBoardRecipe;
-import net.zuiron.photosynthesis.screen.CuttingBoardScreenHandler;
 import net.zuiron.photosynthesis.screen.LatexExtractorScreenHandler;
 import net.zuiron.photosynthesis.util.FluidStack;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.Optional;
 
 public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(2, ItemStack.EMPTY); //N#:SLOTS
@@ -210,13 +204,37 @@ public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedSc
         if(hasFluidSourceInSlot(entity)) {
             transferFluidToFluidStorage(entity);
         }
+
+        if(hasEmptyBucketInSlot(entity)) {
+            extractFluidAndMakeBucket(entity);
+        }
     }
 
-    private static void extractFluid(LatexExtractorBlockEntity entity) {
+    private static boolean hasEmptyBucketInSlot(LatexExtractorBlockEntity entity) {
+        if(entity.getStack(0).getItem() == Items.BUCKET) {
+            return true;
+        }
+        return false;
+    }
+
+    private static void extractFluidAndMakeBucket(LatexExtractorBlockEntity entity) {
+        if(entity.fluidStorage.amount >= 1000) {
+            if(extractFluid(entity, 1000)) {
+                entity.setStack(0, new ItemStack(Items.AIR));
+                entity.setStack(1, new ItemStack(ModFluids.LATEX_BUCKET));
+            }
+        }
+    }
+
+    private static boolean extractFluid(LatexExtractorBlockEntity entity, int Amount) {
         try(Transaction transaction = Transaction.openOuter()) {
             entity.fluidStorage.extract(FluidVariant.of(ModFluids.STILL_LATEX),
-                    1000, transaction);
+                    Amount, transaction);
             transaction.commit();
+            return true;
+        }
+        catch (Exception e) {
+            return false;
         }
     }
 
