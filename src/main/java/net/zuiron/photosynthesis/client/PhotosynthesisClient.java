@@ -18,6 +18,7 @@ import net.zuiron.photosynthesis.block.entity.client.CuttingBoardBlockEntityRend
 import net.zuiron.photosynthesis.fluid.ModFluids;
 import net.zuiron.photosynthesis.networking.ModMessages;
 import net.zuiron.photosynthesis.screen.CuttingBoardScreen;
+import net.zuiron.photosynthesis.screen.LatexExtractorScreen;
 import net.zuiron.photosynthesis.screen.ModScreenHandlers;
 
 @SuppressWarnings("unused")
@@ -291,6 +292,7 @@ public class PhotosynthesisClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.LATEX_EXTRACTOR);
 
         HandledScreens.register(ModScreenHandlers.CUTTING_BOARD_SCREEN_HANDLER, CuttingBoardScreen::new);
+        HandledScreens.register(ModScreenHandlers.LATEX_EXTRACTOR_SCREEN_HANDLER, LatexExtractorScreen::new);
         ModMessages.registerS2CPackets();
 
         //BlockEntityRendererRegistry.register(ModBlockEntities.CUTTING_BOARD, CuttingBoardBlockEntityRenderer::new);
