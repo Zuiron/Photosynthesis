@@ -383,7 +383,7 @@ public class ModConfiguredFeatures {
 
         register(context, RUBBERTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.RUBBERTREE_LOG),
-                new StraightTrunkPlacer(4, 1, 1),//5,6,3
+                new StraightTrunkPlacer(6, 1, 1),//5,6,3
                 BlockStateProvider.of(ModBlocks.RUBBERTREE_LEAVES),
                 new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 2),//204
                 new TwoLayersFeatureSize(1, 0, 2)).build());
