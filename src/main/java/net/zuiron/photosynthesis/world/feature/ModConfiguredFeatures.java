@@ -1,5 +1,6 @@
 package net.zuiron.photosynthesis.world.feature;
 
+import com.google.common.collect.ImmutableList;
 import net.minecraft.block.Blocks;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
@@ -14,7 +15,11 @@ import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.*;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
+import net.minecraft.world.gen.treedecorator.LeavesVineTreeDecorator;
+import net.minecraft.world.gen.treedecorator.TrunkVineTreeDecorator;
 import net.minecraft.world.gen.trunk.BendingTrunkPlacer;
+import net.minecraft.world.gen.trunk.GiantTrunkPlacer;
+import net.minecraft.world.gen.trunk.LargeOakTrunkPlacer;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
@@ -22,6 +27,7 @@ import net.zuiron.photosynthesis.world.gen.treedecorators.*;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.OptionalInt;
 
 public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?,?>> SALT_ORE_KEY = registerKey("salt_ore");
@@ -259,7 +265,15 @@ public class ModConfiguredFeatures {
                 new BendingTrunkPlacer(4, 1, 1, 7, ConstantIntProvider.create(1)), //4117
                 BlockStateProvider.of(ModBlocks.BANANATREE_LEAVES),
                 new JungleFoliagePlacer(ConstantIntProvider.create(1), ConstantIntProvider.create(1), 3),//112
-                new TwoLayersFeatureSize(1, 0, 2)).decorators(Collections.singletonList(BananaTreeDecorator.INSTANCE)).ignoreVines().build());
+                //new TwoLayersFeatureSize(1, 0, 2)).decorators(Collections.singletonList(BananaTreeDecorator.INSTANCE)).ignoreVines().build());
+                new TwoLayersFeatureSize(1, 0, 2)).decorators(ImmutableList.of(BananaTreeDecorator.INSTANCE, TrunkVineTreeDecorator.INSTANCE, new LeavesVineTreeDecorator(0.25F))).ignoreVines().build());
+
+
+        //.decorators(ImmutableList.of(
+        // new CocoaBeansTreeDecorator(0.2F),
+        // TrunkVineTreeDecorator.INSTANCE,
+        // new LeavesVineTreeDecorator(0.25F)
+        // )).ignoreVines().build());
 
         register(context, BANANATREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.BANANATREE_CHECKED_KEY),
@@ -788,12 +802,19 @@ public class ModConfiguredFeatures {
 
 
 
-        register(context, MAPLETREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+        /*register(context, MAPLETREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.MAPLETREE_LOG),
                 new StraightTrunkPlacer(4, 1, 1), //3,4,2
                 BlockStateProvider.of(ModBlocks.MAPLETREE_LEAVES),
                 new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 2),//3
-                new TwoLayersFeatureSize(1, 0, 2)).build());
+                new TwoLayersFeatureSize(1, 0, 2)).build());*/
+
+        register(context, MAPLETREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(ModBlocks.MAPLETREE_LOG),
+                new LargeOakTrunkPlacer(3, 11, 0), //3,4,2
+                BlockStateProvider.of(ModBlocks.MAPLETREE_LEAVES),
+                new LargeOakFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(4), 4),//3
+                new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4))).ignoreVines().build());
 
         register(context, MAPLETREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.MAPLETREE_CHECKED_KEY),
