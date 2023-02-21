@@ -5,7 +5,9 @@ import net.fabricmc.fabric.api.networking.v1.PlayerLookup;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.FurnaceBlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
@@ -20,6 +22,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.state.property.Properties;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
@@ -139,7 +142,7 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
             return;
         }
 
-        if(hasRecipe(entity)) {
+        if(hasRecipe(entity) && isBlockBelowBurning(world, blockPos, state, entity)) {
             entity.progress++;
             markDirty(world, blockPos, state);
             if(entity.progress >= entity.maxProgress) {
@@ -159,6 +162,24 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
             entity.resetProgress();
             markDirty(world, blockPos, state);
         }
+    }
+
+    private static boolean isBlockBelowBurning(World world, BlockPos blockPos, BlockState state, SkilletBlockEntity entity) {
+        BlockPos blockPosBelow = blockPos.down(); // assuming 'pos' is the BlockPos of your directional block
+        BlockState blockStateBelow = world.getBlockState(blockPosBelow); // assuming 'world' is the World object
+
+        if (blockStateBelow.getBlock() == Blocks.FURNACE || blockStateBelow.getBlock() == Blocks.BLAST_FURNACE || blockStateBelow.getBlock() == Blocks.SMOKER) {
+            // The block below your directional block is a furnace, blast furnace or smoker
+            BlockEntity blockEntity = world.getBlockEntity(blockPosBelow);
+                //if (furnaceBlockEntity.isBurning()) {
+                if(blockStateBelow.get(Properties.LIT) || blockStateBelow.getBlock() == Blocks.CAMPFIRE) {
+                    // The furnace below your directional block is currently smelting
+                    //TODO -- if we decide to allow campfire, which is unlimited LIT. should we decrease cook time? YES!
+                    return true;
+                }
+        }
+
+        return false;
     }
 
     private static void craftItem(SkilletBlockEntity entity) {
