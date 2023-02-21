@@ -1,0 +1,12 @@
+{
+  "type": "photosynthesis:skillet",
+  "ingredients": [
+    {
+      "item": "minecraft:porkchop"
+    }
+  ],
+  "output": {
+    "item": "minecraft:diamond",
+    "count": 3
+  }
+}

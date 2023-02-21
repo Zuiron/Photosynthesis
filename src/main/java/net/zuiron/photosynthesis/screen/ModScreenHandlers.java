@@ -14,10 +14,15 @@ public class ModScreenHandlers {
     public static ScreenHandlerType<LatexExtractorScreenHandler> LATEX_EXTRACTOR_SCREEN_HANDLER =
             new ExtendedScreenHandlerType<>(LatexExtractorScreenHandler::new);
 
+    public static ScreenHandlerType<SkilletScreenHandler> SKILLET_SCREEN_HANDLER =
+            new ExtendedScreenHandlerType<>(SkilletScreenHandler::new);
+
     public static void registerAllScreenHandlers() {
         Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "cutting_board"),
                 CUTTING_BOARD_SCREEN_HANDLER);
         Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "latex_extractor"),
                 LATEX_EXTRACTOR_SCREEN_HANDLER);
+        Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "skillet"),
+                SKILLET_SCREEN_HANDLER);
     }
 }
