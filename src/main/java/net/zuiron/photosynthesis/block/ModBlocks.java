@@ -19,15 +19,15 @@ import net.zuiron.photosynthesis.block.bushtreecrops.*;
 import net.zuiron.photosynthesis.block.cropblocks.CustomCropBlock;
 import net.zuiron.photosynthesis.block.cropblocks.CustomCropBlockWL;
 import net.zuiron.photosynthesis.block.custom.*;
-import net.zuiron.photosynthesis.block.decoration.DecoRockBlock;
+import net.zuiron.photosynthesis.block.decoration.DecoRockStoneBlock;
 import net.zuiron.photosynthesis.item.ModItemGroup;
 import net.zuiron.photosynthesis.world.feature.tree.*;
 
 public class ModBlocks {
 
     // DECORATION ------------------------------------------------------------------------------------------------------
-    public static final Block DECORATION_ROCKS = registerBlockWithoutBlockItem("decoration_rocks",
-            new DecoRockBlock(StatusEffect.byRawId(1), 1,FabricBlockSettings.copy(Blocks.STONE).nonOpaque().noCollision().breakInstantly()));
+    public static final Block DECORATION_ROCKS_STONE = registerBlockWithoutBlockItem("decoration_rocks_stone",
+            new DecoRockStoneBlock(StatusEffect.byRawId(1), 1,FabricBlockSettings.copy(Blocks.STONE).nonOpaque().noCollision().breakInstantly()));
 
     // FLOWERS ---------------------------------------------------------------------------------------------------------
     public static final Block FLORAMELISSIA = registerBlock("floramelissia",

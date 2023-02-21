@@ -1,0 +1,6 @@
+{
+	"parent":"photosynthesis:block/decoration_rocks",
+	"textures": {
+		"0":"minecraft:block/stone"
+	}
+}

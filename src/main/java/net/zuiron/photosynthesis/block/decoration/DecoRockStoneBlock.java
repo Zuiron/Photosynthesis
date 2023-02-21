@@ -1,31 +1,22 @@
 package net.zuiron.photosynthesis.block.decoration;
 
 import net.minecraft.block.*;
-import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.mob.PiglinBrain;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.tag.BlockTags;
-import net.minecraft.screen.NamedScreenHandlerFactory;
-import net.minecraft.state.StateManager;
-import net.minecraft.state.property.DirectionProperty;
-import net.minecraft.state.property.Properties;
-import net.minecraft.util.*;
-import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
-import net.zuiron.photosynthesis.block.ModBlocks;
-import net.zuiron.photosynthesis.block.entity.SkilletBlockEntity;
-import org.jetbrains.annotations.Nullable;
+import net.minecraft.world.event.GameEvent;
 
-public class DecoRockBlock extends FlowerBlock {
+public class DecoRockStoneBlock extends FlowerBlock {
     private final StatusEffect effectInStew;
-    public DecoRockBlock(StatusEffect suspiciousStewEffect, int effectDuration, AbstractBlock.Settings settings) {
+    public DecoRockStoneBlock(StatusEffect suspiciousStewEffect, int effectDuration, AbstractBlock.Settings settings) {
         super(suspiciousStewEffect, effectDuration, settings);
         this.effectInStew = suspiciousStewEffect;
     }
@@ -39,7 +30,7 @@ public class DecoRockBlock extends FlowerBlock {
 
     @Override
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-        return floor.isIn(BlockTags.DIRT) || floor.isOf(Blocks.FARMLAND);
+        return floor.isIn(BlockTags.DIRT) || floor.isIn(BlockTags.BASE_STONE_OVERWORLD);
     }
 
     @Override
@@ -52,12 +43,25 @@ public class DecoRockBlock extends FlowerBlock {
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
         if (state.getBlock() != newState.getBlock()) {
 
-            ItemStack itemStack = new ItemStack(Blocks.STONE, 3);
+            /*ItemStack itemStack = new ItemStack(Blocks.STONE, 3);
             ItemEntity itemEntity = new ItemEntity(world, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, itemStack);
-            world.spawnEntity(itemEntity);
+            world.spawnEntity(itemEntity);*/
 
             super.onStateReplaced(state, world, pos, newState, moved);
         }
+    }
+
+    @Override
+    public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
+        /*this.spawnBreakParticles(world, player, pos, state);
+        if (state.isIn(BlockTags.GUARDED_BY_PIGLINS)) {
+            PiglinBrain.onGuardedBlockInteracted(player, false);
+        }
+
+        world.emitGameEvent(GameEvent.BLOCK_DESTROY, pos, GameEvent.Emitter.of(player, state));*/
+        ItemStack itemStack = new ItemStack(Blocks.STONE, 3);
+        ItemEntity itemEntity = new ItemEntity(world, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, itemStack);
+        world.spawnEntity(itemEntity);
     }
 
     public StatusEffect getEffectInStew() {

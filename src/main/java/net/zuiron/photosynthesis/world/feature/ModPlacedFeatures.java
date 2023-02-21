@@ -187,7 +187,7 @@ public class ModPlacedFeatures {
 
 
 
-    public static final RegistryKey<PlacedFeature> DECO_ROCKS_PLACED_KEY = registerKey("deco_rocks_placed");
+    public static final RegistryKey<PlacedFeature> DECO_ROCKS_STONE_PLACED_KEY = registerKey("deco_rocks_stone_placed");
 
 
 
@@ -214,9 +214,14 @@ public class ModPlacedFeatures {
         //from -80 to +80, most in middle, meaning mining level 0.
          */
 
-        register(context, DECO_ROCKS_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.DECO_ROCKS_KEY),
-                RarityFilterPlacementModifier.of(8), SquarePlacementModifier.of(),
-                PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
+        /*register(context, DECO_ROCKS_STONE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.DECO_ROCKS_STONE_KEY),
+                RarityFilterPlacementModifier.of(100), SquarePlacementModifier.of(),
+                PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());*/
+
+        register(context, DECO_ROCKS_STONE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.DECO_ROCKS_STONE_KEY),
+                VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(0, 0.5f, 3)));
+
+        //PlacedFeatures.register(featureRegisterable, PATCH_GRASS_NORMAL, registryEntry6, modifiers(5));
 
         register(context, FLORAMELISSIA_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.FLORAMELISSIA_KEY),
                 RarityFilterPlacementModifier.of(4), SquarePlacementModifier.of(),
