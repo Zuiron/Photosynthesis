@@ -1,18 +1,33 @@
 {
   "variants": {
-    "facing=north": {
+    "facing=north,lit=false": {
       "model": "photosynthesis:block/skillet"
     },
-    "facing=south": {
+    "facing=north,lit=true": {
+      "model": "photosynthesis:block/skillet_hot"
+    },
+    "facing=south,lit=false": {
       "model": "photosynthesis:block/skillet",
       "y": 180
     },
-    "facing=west": {
+    "facing=south,lit=true": {
+      "model": "photosynthesis:block/skillet_hot",
+      "y": 180
+    },
+    "facing=west,lit=false": {
       "model": "photosynthesis:block/skillet",
       "y": 270
     },
-    "facing=east": {
+    "facing=west,lit=true": {
+      "model": "photosynthesis:block/skillet_hot",
+      "y": 270
+    },
+    "facing=east,lit=false": {
       "model": "photosynthesis:block/skillet",
+      "y": 90
+    },
+    "facing=east,lit=true": {
+      "model": "photosynthesis:block/skillet_hot",
       "y": 90
     }
   }

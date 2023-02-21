@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.PlayerLookup;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
+import net.minecraft.block.AbstractFurnaceBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
@@ -23,12 +24,16 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
+import net.zuiron.photosynthesis.block.custom.LatexExtractorBlock;
+import net.zuiron.photosynthesis.block.custom.SkilletBlock;
 import net.zuiron.photosynthesis.item.ModItems;
 import net.zuiron.photosynthesis.networking.ModMessages;
 import net.zuiron.photosynthesis.recipe.CuttingBoardRecipe;
@@ -40,6 +45,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Optional;
 
 public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
+    //public static boolean LIT = false;
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(3, ItemStack.EMPTY);
 
     public void setInventory(DefaultedList<ItemStack> inventory) {
@@ -167,11 +173,27 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
 
     public static void tick(World world, BlockPos blockPos, BlockState state, SkilletBlockEntity entity) {
         animationTick(world, blockPos);
+        boolean isBelowHeat = isBlockBelowBurning(world, blockPos);
+
+        //TODO IS NOT WORKING WHY NOT??? NO IDEA
+        //state.with(SkilletBlock.LIT, isBelowHeat);
+        //state.getBlock().getDefaultState().with(SkilletBlock.LIT, isBelowHeat);
+        //world.getBlockState(blockPos).with(SkilletBlock.LIT, isBelowHeat);
+        //state = (BlockState)state.with(SkilletBlock.LIT, isBelowHeat);
+        //BooleanProperty booleanProperty (BlockState)SkilletBlock.LIT;
+        //this.world.getBlockState(blockPos).with(SkilletBlock.LIT, isBelowHeat);
+
+        //Direction localDir = world.getBlockState(blockPos).get(LatexExtractorBlock.FACING);
+
         if(world.isClient()) {
             return;
         }
 
-        if(hasRecipe(entity) && isBlockBelowBurning(world, blockPos)) {
+        //SkilletBlockEntity.LIT = isBelowHeat;
+        //state = (BlockState)state.with(SkilletBlock.LIT, isBelowHeat);
+        //state.with(SkilletBlock.LIT, isBelowHeat);
+
+        if(hasRecipe(entity) && isBelowHeat) {
             entity.progress++;
             markDirty(world, blockPos, state);
             if(entity.progress >= entity.maxProgress) {
