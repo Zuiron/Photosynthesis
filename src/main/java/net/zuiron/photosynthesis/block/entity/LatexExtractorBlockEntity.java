@@ -86,7 +86,7 @@ public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedSc
 
         @Override
         protected long getCapacity(FluidVariant variant) {
-            return FluidStack.convertDropletsToMb(FluidConstants.BUCKET) * 20; // 20k mB
+            return FluidStack.convertDropletsToMb(FluidConstants.BUCKET) * 2; // 20k mB
         }
 
         @Override
@@ -282,6 +282,8 @@ public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedSc
         }
     }
 
+
+
     private static boolean insertFluid(LatexExtractorBlockEntity entity, long convertDropletsToMb) {
         try(Transaction transaction = Transaction.openOuter()) {
             entity.fluidStorage.insert(FluidVariant.of(ModFluids.STILL_LATEX), convertDropletsToMb, transaction);
@@ -294,15 +296,21 @@ public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedSc
     }
 
     private static void transferFluidToFluidStorage(LatexExtractorBlockEntity entity) {
-        //TODO need a check, currently. putting a latex bucket in, while tank is full voids the contents of the bucket. not the bucket itself.
-        //TODO also. it overwrites in output slot. fix!
 
-        if(entity.getStack(1).isEmpty()) {
+        if(entity.getStack(1).isEmpty() && canTankAcceptBucketWorth(entity)) {
             if (insertFluid(entity, FluidStack.convertDropletsToMb(FluidConstants.BUCKET))) {
                 entity.setStack(0, new ItemStack(Items.AIR));
                 entity.setStack(1, new ItemStack(Items.BUCKET));
             }
         }
+    }
+
+    private static boolean canTankAcceptBucketWorth(LatexExtractorBlockEntity entity) {
+        long availableSpace = entity.fluidStorage.getCapacity() - entity.fluidStorage.getAmount();
+        if(availableSpace >= FluidStack.convertDropletsToMb(FluidConstants.BUCKET)) {
+            return true;
+        }
+        return false;
     }
 
     private static boolean hasFluidSourceInSlot(LatexExtractorBlockEntity entity) {
@@ -324,7 +332,7 @@ public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedSc
             /*entity.setStack(2, new ItemStack(ModItems.SALT,
                     entity.getStack(2).getCount() + 1));*/
 
-            //TODO we dont actually "craft" anything, but it should generate some latex in the tank.
+
             try(Transaction transaction = Transaction.openOuter()) {
                 entity.fluidStorage.insert(FluidVariant.of(ModFluids.STILL_LATEX),
                         FluidStack.convertDropletsToMb(FluidConstants.NUGGET), transaction);
@@ -342,7 +350,6 @@ public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedSc
         }
 
 
-        //TODO. check if block behind is rubber log and above that is stripped rubber log.
         return true;
         /*boolean hasRawSaltInFirstSlot = entity.getStack(1).getItem() == ModItems.RAW_SALT;
         return hasRawSaltInFirstSlot && canInsertAmountIntoOutputSlot(inventory)

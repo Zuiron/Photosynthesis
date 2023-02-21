@@ -33,7 +33,7 @@ public class LatexExtractorScreen extends HandledScreen<LatexExtractorScreenHand
     }
 
     private void assignFluidStackRenderer() {
-        fluidStackRenderer = new FluidStackRenderer(FluidStack.convertDropletsToMb(FluidConstants.BUCKET) * 20,
+        fluidStackRenderer = new FluidStackRenderer(FluidStack.convertDropletsToMb(FluidConstants.BUCKET) * 2,
                 true, 15, 61);
     }
 
@@ -65,7 +65,7 @@ public class LatexExtractorScreen extends HandledScreen<LatexExtractorScreenHand
 
         //renderProgressArrow(matrices, x, y);
         fluidStackRenderer.drawFluid(matrices, handler.fluidStack, x + 62, y + 13, 16, 61,
-                FluidStack.convertDropletsToMb(FluidConstants.BUCKET) * 20);
+                FluidStack.convertDropletsToMb(FluidConstants.BUCKET) * 2);
     }
 
     private void renderProgressArrow(MatrixStack matrices, int x, int y) {
