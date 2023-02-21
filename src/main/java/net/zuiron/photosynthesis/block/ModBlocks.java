@@ -1330,6 +1330,8 @@ public class ModBlocks {
                 new CustomCropBlockWL(AbstractBlock.Settings.of(Material.PLANT)
                         .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),
                         name));
+
+        //TALL_GRASS = register("tall_grass", new TallPlantBlock(Settings.of(Material.REPLACEABLE_PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offsetType(OffsetType.XZ)));
     }
 
     private static SweetBerryBushBlock registerBushBlock(String name, SweetBerryBushBlock block){
