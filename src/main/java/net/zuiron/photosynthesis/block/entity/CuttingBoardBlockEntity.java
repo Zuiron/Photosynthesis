@@ -191,8 +191,15 @@ public class CuttingBoardBlockEntity extends BlockEntity implements ExtendedScre
             entity.removeStack(1, 1); //remove 1 item from stack in slot 1 (input)
             /*entity.setStack(2, new ItemStack(ModItems.SALT,
                     entity.getStack(2).getCount() + 1));*/
-            entity.setStack(2, new ItemStack(recipe.get().getOutput().getItem(),
+
+            /*entity.setStack(2, new ItemStack(recipe.get().getOutput().getItem(),
                     entity.getStack(2).getCount() + 1)); //add one to output.
+             */
+
+            int recipeOutputCount = recipe.get().getOutput().getCount();
+            int outputSlotCount = entity.getStack(2).getCount();
+
+            entity.setStack(2, new ItemStack(recipe.get().getOutput().getItem(), outputSlotCount + recipeOutputCount));
 
             //durability.
             //check durability. if less then 1, break.
@@ -226,13 +233,12 @@ public class CuttingBoardBlockEntity extends BlockEntity implements ExtendedScre
         /*boolean hasRawSaltInFirstSlot = entity.getStack(1).getItem() == ModItems.RAW_SALT;
         return hasRawSaltInFirstSlot && canInsertAmountIntoOutputSlot(inventory)
                 && canInsertItemIntoOutputSlot(inventory, ModItems.SALT);*/
-        boolean hasCuttingKnifeInSlot0 = entity.getStack(0).getItem() == ModItems.CUTTING_KNIFE;
 
         Optional<CuttingBoardRecipe> match = entity.getWorld().getRecipeManager()
                 .getFirstMatch(CuttingBoardRecipe.Type.INSTANCE, inventory, entity.getWorld());
 
         return match.isPresent() && canInsertAmountIntoOutputSlot(inventory)
-                && canInsertItemIntoOutputSlot(inventory, match.get().getOutput().getItem()) && hasCuttingKnifeInSlot0;
+                && canInsertItemIntoOutputSlot(inventory, match.get().getOutput().getItem());
     }
 
     private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, Item output) {

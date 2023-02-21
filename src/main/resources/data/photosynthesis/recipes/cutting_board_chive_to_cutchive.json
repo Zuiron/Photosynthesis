@@ -2,10 +2,14 @@
   "type": "photosynthesis:cutting_board",
   "ingredients": [
     {
+      "item": "photosynthesis:cutting_knife"
+    },
+    {
       "item": "photosynthesis:chive"
     }
   ],
   "output": {
-    "item": "photosynthesis:cut_chives"
+    "item": "photosynthesis:cut_chives",
+    "count": 2
   }
 }

@@ -2,6 +2,9 @@
   "type": "photosynthesis:cutting_board",
   "ingredients": [
     {
+      "item": "photosynthesis:cutting_knife"
+    },
+    {
       "item": "photosynthesis:raw_salt"
     }
   ],
