@@ -187,7 +187,7 @@ public class ModPlacedFeatures {
 
 
 
-
+    public static final RegistryKey<PlacedFeature> DECO_ROCKS_PLACED_KEY = registerKey("deco_rocks_placed");
 
 
 
@@ -213,6 +213,10 @@ public class ModPlacedFeatures {
                         HeightRangePlacementModifier.trapezoid(YOffset.aboveBottom(-80), YOffset.aboveBottom(80))));
         //from -80 to +80, most in middle, meaning mining level 0.
          */
+
+        register(context, DECO_ROCKS_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.DECO_ROCKS_KEY),
+                RarityFilterPlacementModifier.of(8), SquarePlacementModifier.of(),
+                PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 
         register(context, FLORAMELISSIA_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.FLORAMELISSIA_KEY),
                 RarityFilterPlacementModifier.of(4), SquarePlacementModifier.of(),
