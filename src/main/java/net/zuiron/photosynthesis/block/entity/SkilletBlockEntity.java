@@ -179,21 +179,12 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
         }
         boolean isBelowHeat = isBlockBelowBurning(world, blockPos);
 
-        //TODO IS NOT WORKING WHY NOT??? NO IDEA
-        //state.with(SkilletBlock.LIT, isBelowHeat);
-        //state.getBlock().getDefaultState().with(SkilletBlock.LIT, isBelowHeat);
-        //world.getBlockState(blockPos).with(SkilletBlock.LIT, isBelowHeat);
+        //check see if belowblock is burning, if so. enable hot texture!
         state = (BlockState)state.with(SkilletBlock.LIT, isBelowHeat);
-        //BooleanProperty booleanProperty (BlockState)SkilletBlock.LIT;
-        //this.world.getBlockState(blockPos).with(SkilletBlock.LIT, isBelowHeat);
         world.setBlockState(blockPos, state, 3);
-        //Direction localDir = world.getBlockState(blockPos).get(LatexExtractorBlock.FACING);
         if(isBelowHeat) {
             markDirty(world, blockPos, state);
         }
-        //SkilletBlockEntity.LIT = isBelowHeat;
-        //state = (BlockState)state.with(SkilletBlock.LIT, isBelowHeat);
-        //state.with(SkilletBlock.LIT, isBelowHeat);
 
         if(hasRecipe(entity) && isBelowHeat) {
             entity.progress++;
