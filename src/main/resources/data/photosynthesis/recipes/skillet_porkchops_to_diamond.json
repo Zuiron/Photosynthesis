@@ -3,10 +3,13 @@
   "ingredients": [
     {
       "item": "minecraft:porkchop"
+    },
+    {
+      "item": "minecraft:diamond"
     }
   ],
   "output": {
     "item": "minecraft:diamond",
-    "count": 3
+    "count": 2
   }
 }

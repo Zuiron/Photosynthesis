@@ -171,14 +171,16 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
                 .getFirstMatch(SkilletRecipe.Type.INSTANCE, inventory, entity.getWorld());
 
         if(hasRecipe(entity)) {
-            entity.removeStack(0); //remove 1 item from stack in slot 1 (input)
-            entity.removeStack(1);
+            entity.removeStack(0, 1);
+            entity.removeStack(1, 1);
             /*entity.setStack(2, new ItemStack(ModItems.SALT,
                     entity.getStack(2).getCount() + 1));*/
-            entity.setStack(2, new ItemStack(recipe.get().getOutput().getItem(),
-                    entity.getStack(2).getCount() + recipe.get().getOutput().getCount() - 1)); //add one to output.
 
-            //entity.getStack(0).damage(30, Random.create(0), null); //remove durability from cutting knife.
+
+            int recipeOutputCount = recipe.get().getOutput().getCount();
+            int outputSlotCount = entity.getStack(2).getCount();
+
+            entity.setStack(2, new ItemStack(recipe.get().getOutput().getItem(), outputSlotCount + recipeOutputCount));
 
             entity.resetProgress();
         }
