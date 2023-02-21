@@ -154,10 +154,12 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
                 double x = (double) pos.getX() + 0.5D + (random.nextDouble() * 0.4D - 0.2D);
                 double y = (double) pos.getY() + 0.1D;
                 double z = (double) pos.getZ() + 0.5D + (random.nextDouble() * 0.4D - 0.2D);
-                double motionX = level.random.nextFloat() - 0.5F;
+                /*double motionX = level.random.nextFloat() - 0.5F;
                 double motionY = level.random.nextFloat() * 0.5F + 0.2f;
-                double motionZ = level.random.nextFloat() - 0.5F;
-                level.addParticle(ParticleTypes.BUBBLE_POP, x, y, z, motionX, motionY, motionZ); //ENCHANTED_HIT
+                double motionZ = level.random.nextFloat() - 0.5F;*/
+                //level.addParticle(ParticleTypes.SMOKE, x, y, z, motionX, motionY, motionZ); //ENCHANTED_HIT
+                double motionY = random.nextBoolean() ? 0.015D : 0.005D;
+                level.addParticle(ParticleTypes.SMOKE, x, y, z, 0.0D, motionY, 0.0D); //ENCHANTED_HIT
             }
         }
 
