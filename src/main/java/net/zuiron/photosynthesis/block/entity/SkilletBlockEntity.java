@@ -16,6 +16,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -137,12 +138,38 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
         syncItems();
     }
 
+    public static void animationTick(World level, BlockPos pos) {
+        //level == entity.getWorld()
+        if (isBlockBelowBurning(level, pos) && level.isClient()) {
+            Random random = level.random;
+            if (random.nextFloat() < 0.2F) {
+                double x = (double) pos.getX() + 0.5D + (random.nextDouble() * 0.4D - 0.2D);
+                double y = (double) pos.getY() + 1.1D;
+                double z = (double) pos.getZ() + 0.5D + (random.nextDouble() * 0.4D - 0.2D);
+                double motionY = random.nextBoolean() ? 0.015D : 0.005D;
+                //level.addParticle(ModParticleTypes.STEAM.get(), x, y, z, 0.0D, motionY, 0.0D);
+                level.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, x, y, z, 0.0D, motionY, 0.0D);
+            }
+            if (isBlockBelowBurning(level, pos)) {
+                double x = (double) pos.getX() + 0.5D + (random.nextDouble() * 0.4D - 0.2D);
+                double y = (double) pos.getY() + 0.1D;
+                double z = (double) pos.getZ() + 0.5D + (random.nextDouble() * 0.4D - 0.2D);
+                double motionX = level.random.nextFloat() - 0.5F;
+                double motionY = level.random.nextFloat() * 0.5F + 0.2f;
+                double motionZ = level.random.nextFloat() - 0.5F;
+                level.addParticle(ParticleTypes.BUBBLE_POP, x, y, z, motionX, motionY, motionZ); //ENCHANTED_HIT
+            }
+        }
+
+    }
+
     public static void tick(World world, BlockPos blockPos, BlockState state, SkilletBlockEntity entity) {
+        animationTick(world, blockPos);
         if(world.isClient()) {
             return;
         }
 
-        if(hasRecipe(entity) && isBlockBelowBurning(world, blockPos, state, entity)) {
+        if(hasRecipe(entity) && isBlockBelowBurning(world, blockPos)) {
             entity.progress++;
             markDirty(world, blockPos, state);
             if(entity.progress >= entity.maxProgress) {
@@ -164,11 +191,11 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
         }
     }
 
-    private static boolean isBlockBelowBurning(World world, BlockPos blockPos, BlockState state, SkilletBlockEntity entity) {
+    private static boolean isBlockBelowBurning(World world, BlockPos blockPos) {
         BlockPos blockPosBelow = blockPos.down(); // assuming 'pos' is the BlockPos of your directional block
         BlockState blockStateBelow = world.getBlockState(blockPosBelow); // assuming 'world' is the World object
 
-        if (blockStateBelow.getBlock() == Blocks.FURNACE || blockStateBelow.getBlock() == Blocks.BLAST_FURNACE || blockStateBelow.getBlock() == Blocks.SMOKER) {
+        if (blockStateBelow.getBlock() == Blocks.FURNACE || blockStateBelow.getBlock() == Blocks.BLAST_FURNACE || blockStateBelow.getBlock() == Blocks.SMOKER || blockStateBelow.getBlock() == Blocks.CAMPFIRE) {
             // The block below your directional block is a furnace, blast furnace or smoker
             BlockEntity blockEntity = world.getBlockEntity(blockPosBelow);
                 //if (furnaceBlockEntity.isBurning()) {
