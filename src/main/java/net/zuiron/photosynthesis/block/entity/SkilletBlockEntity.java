@@ -173,22 +173,24 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
 
     public static void tick(World world, BlockPos blockPos, BlockState state, SkilletBlockEntity entity) {
         animationTick(world, blockPos);
+
+        if(world.isClient()) {
+            return;
+        }
         boolean isBelowHeat = isBlockBelowBurning(world, blockPos);
 
         //TODO IS NOT WORKING WHY NOT??? NO IDEA
         //state.with(SkilletBlock.LIT, isBelowHeat);
         //state.getBlock().getDefaultState().with(SkilletBlock.LIT, isBelowHeat);
         //world.getBlockState(blockPos).with(SkilletBlock.LIT, isBelowHeat);
-        //state = (BlockState)state.with(SkilletBlock.LIT, isBelowHeat);
+        state = (BlockState)state.with(SkilletBlock.LIT, isBelowHeat);
         //BooleanProperty booleanProperty (BlockState)SkilletBlock.LIT;
         //this.world.getBlockState(blockPos).with(SkilletBlock.LIT, isBelowHeat);
-
+        world.setBlockState(blockPos, state, 3);
         //Direction localDir = world.getBlockState(blockPos).get(LatexExtractorBlock.FACING);
-
-        if(world.isClient()) {
-            return;
+        if(isBelowHeat) {
+            markDirty(world, blockPos, state);
         }
-
         //SkilletBlockEntity.LIT = isBelowHeat;
         //state = (BlockState)state.with(SkilletBlock.LIT, isBelowHeat);
         //state.with(SkilletBlock.LIT, isBelowHeat);
