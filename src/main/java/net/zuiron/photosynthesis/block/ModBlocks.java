@@ -19,19 +19,19 @@ import net.zuiron.photosynthesis.block.bushtreecrops.*;
 import net.zuiron.photosynthesis.block.cropblocks.CustomCropBlock;
 import net.zuiron.photosynthesis.block.cropblocks.CustomCropBlockWL;
 import net.zuiron.photosynthesis.block.custom.*;
-import net.zuiron.photosynthesis.block.decoration.DecoRockStoneBlock;
-import net.zuiron.photosynthesis.block.decoration.DecoStickOakBlock;
+import net.zuiron.photosynthesis.block.decoration.DecoRocksBlock;
+import net.zuiron.photosynthesis.block.decoration.DecoSticksBlock;
 import net.zuiron.photosynthesis.item.ModItemGroup;
 import net.zuiron.photosynthesis.world.feature.tree.*;
 
 public class ModBlocks {
 
     // DECORATION ------------------------------------------------------------------------------------------------------
-    public static final Block DECORATION_ROCKS_STONE = registerBlockWithoutBlockItem("decoration_rocks_stone",
-            new DecoRockStoneBlock(StatusEffect.byRawId(1), 1,FabricBlockSettings.copy(Blocks.STONE).nonOpaque().noCollision().breakInstantly()));
+    public static final Block DECORATION_ROCKS_RANDOM = registerBlockWithoutBlockItem("decoration_rocks_random",
+            new DecoRocksBlock(StatusEffect.byRawId(1), 1,FabricBlockSettings.copy(Blocks.STONE).nonOpaque().noCollision().breakInstantly()));
 
-    public static final Block DECORATION_STICKS_OAK = registerBlockWithoutBlockItem("decoration_sticks_oak",
-            new DecoStickOakBlock(StatusEffect.byRawId(1), 1,FabricBlockSettings.copy(Blocks.STONE).nonOpaque().noCollision().breakInstantly()));
+    public static final Block DECORATION_STICKS_RANDOM = registerBlockWithoutBlockItem("decoration_sticks_random",
+            new DecoSticksBlock(StatusEffect.byRawId(1), 1,FabricBlockSettings.copy(Blocks.STONE).nonOpaque().noCollision().breakInstantly()));
 
     // FLOWERS ---------------------------------------------------------------------------------------------------------
     public static final Block FLORAMELISSIA = registerBlock("floramelissia",

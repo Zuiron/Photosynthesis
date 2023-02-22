@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "": [
+      { "model": "photosynthesis:block/decoration_rocks_stone", "y": 0 },
+      { "model": "photosynthesis:block/decoration_rocks_stone", "y": 90 },
+      { "model": "photosynthesis:block/decoration_rocks_stone", "y": 180 },
+      { "model": "photosynthesis:block/decoration_rocks_stone", "y": 270 },
+      { "model": "photosynthesis:block/decoration_rocks_cobblestone", "y": 0 },
+      { "model": "photosynthesis:block/decoration_rocks_cobblestone", "y": 90 },
+      { "model": "photosynthesis:block/decoration_rocks_cobblestone", "y": 180 },
+      { "model": "photosynthesis:block/decoration_rocks_cobblestone", "y": 270 },
+      { "model": "photosynthesis:block/decoration_rocks_andesite", "y": 0 },
+      { "model": "photosynthesis:block/decoration_rocks_andesite", "y": 90 },
+      { "model": "photosynthesis:block/decoration_rocks_andesite", "y": 180 },
+      { "model": "photosynthesis:block/decoration_rocks_andesite", "y": 270 },
+      { "model": "photosynthesis:block/decoration_rocks_deepslate", "y": 0 },
+      { "model": "photosynthesis:block/decoration_rocks_deepslate", "y": 90 },
+      { "model": "photosynthesis:block/decoration_rocks_deepslate", "y": 180 },
+      { "model": "photosynthesis:block/decoration_rocks_deepslate", "y": 270 }
+      ]
+  }
+}

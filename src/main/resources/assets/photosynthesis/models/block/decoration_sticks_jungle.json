@@ -1,0 +1,6 @@
+{
+	"parent":"photosynthesis:block/decoration_sticks",
+	"textures": {
+		"0":"minecraft:block/jungle_planks"
+	}
+}

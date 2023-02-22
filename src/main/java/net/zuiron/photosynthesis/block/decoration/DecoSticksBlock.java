@@ -3,20 +3,19 @@ package net.zuiron.photosynthesis.block.decoration;
 import net.minecraft.block.*;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.entity.mob.PiglinBrain;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
-import net.minecraft.world.event.GameEvent;
 
-public class DecoRockStoneBlock extends FlowerBlock {
+public class DecoSticksBlock extends FlowerBlock {
     private final StatusEffect effectInStew;
-    public DecoRockStoneBlock(StatusEffect suspiciousStewEffect, int effectDuration, AbstractBlock.Settings settings) {
+    public DecoSticksBlock(StatusEffect suspiciousStewEffect, int effectDuration, Settings settings) {
         super(suspiciousStewEffect, effectDuration, settings);
         this.effectInStew = suspiciousStewEffect;
     }
@@ -30,7 +29,7 @@ public class DecoRockStoneBlock extends FlowerBlock {
 
     @Override
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-        return floor.isIn(BlockTags.DIRT) || floor.isIn(BlockTags.BASE_STONE_OVERWORLD);
+        return floor.isIn(BlockTags.DIRT);
     }
 
     @Override
@@ -59,7 +58,7 @@ public class DecoRockStoneBlock extends FlowerBlock {
         }
 
         world.emitGameEvent(GameEvent.BLOCK_DESTROY, pos, GameEvent.Emitter.of(player, state));*/
-        ItemStack itemStack = new ItemStack(Blocks.STONE, 3);
+        ItemStack itemStack = new ItemStack(Items.STICK, 3);
         ItemEntity itemEntity = new ItemEntity(world, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, itemStack);
         world.spawnEntity(itemEntity);
     }
