@@ -188,6 +188,7 @@ public class ModPlacedFeatures {
 
 
     public static final RegistryKey<PlacedFeature> DECO_ROCKS_STONE_PLACED_KEY = registerKey("deco_rocks_stone_placed");
+    public static final RegistryKey<PlacedFeature> DECO_STICKS_OAK_PLACED_KEY = registerKey("deco_sticks_oak_placed");
 
 
 
@@ -219,6 +220,9 @@ public class ModPlacedFeatures {
                 PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());*/
 
         register(context, DECO_ROCKS_STONE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.DECO_ROCKS_STONE_KEY),
+                VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(0, 0.5f, 3)));
+
+        register(context, DECO_STICKS_OAK_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.DECO_STICKS_OAK_KEY),
                 VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(0, 0.5f, 3)));
 
         //PlacedFeatures.register(featureRegisterable, PATCH_GRASS_NORMAL, registryEntry6, modifiers(5));

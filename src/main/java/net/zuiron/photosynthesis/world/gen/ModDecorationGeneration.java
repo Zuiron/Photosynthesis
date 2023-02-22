@@ -12,6 +12,9 @@ public class ModDecorationGeneration {
         BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.DECO_ROCKS_STONE_PLACED_KEY);
 
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.DECO_STICKS_OAK_PLACED_KEY);
+
         /*BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.APPLETREE_PLACED_KEY);*/
     }

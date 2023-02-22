@@ -32,6 +32,7 @@ import java.util.OptionalInt;
 public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?,?>> SALT_ORE_KEY = registerKey("salt_ore");
     public static final RegistryKey<ConfiguredFeature<?,?>> DECO_ROCKS_STONE_KEY = registerKey("deco_rocks_stone");
+    public static final RegistryKey<ConfiguredFeature<?,?>> DECO_STICKS_OAK_KEY = registerKey("deco_sticks_oak");
     public static final RegistryKey<ConfiguredFeature<?,?>> FLORAMELISSIA_KEY = registerKey("floramelissia");
     public static final RegistryKey<ConfiguredFeature<?,?>> BLUEBERRYBUSH_KEY = registerKey("blueberry_bush");
     public static final RegistryKey<ConfiguredFeature<?,?>> BLACKBERRY_KEY = registerKey("blackberry_bush");
@@ -228,6 +229,10 @@ public class ModConfiguredFeatures {
         register(context, DECO_ROCKS_STONE_KEY, Feature.FLOWER,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.DECORATION_ROCKS_STONE)))));
+
+        register(context, DECO_STICKS_OAK_KEY, Feature.FLOWER,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.DECORATION_STICKS_OAK)))));
 
         //ConfiguredFeatures.register(featureRegisterable, PATCH_GRASS, Feature.RANDOM_PATCH, createRandomPatchFeatureConfig(BlockStateProvider.of(Blocks.GRASS), 32));
 
