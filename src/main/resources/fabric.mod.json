@@ -23,6 +23,9 @@
     "client": [
       "net.zuiron.photosynthesis.client.PhotosynthesisClient"
     ],
+    "rei_client": [
+      "net.zuiron.photosynthesis.integration.rei.PhotosynthesisREI"
+    ],
     "fabric-datagen": [
       "net.zuiron.photosynthesis.datagen.ModDataGeneration"
     ]

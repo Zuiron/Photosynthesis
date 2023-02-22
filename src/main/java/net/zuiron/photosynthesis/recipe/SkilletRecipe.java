@@ -47,6 +47,11 @@ public class SkilletRecipe implements Recipe<SimpleInventory> {
     }
 
     @Override
+    public DefaultedList<Ingredient> getIngredients() {
+        return recipeItems;
+    } //IMPORTANT FOR REI
+
+    @Override
     public Identifier getId() {
         return id;
     }
