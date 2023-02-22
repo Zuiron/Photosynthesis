@@ -6,12 +6,17 @@ import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
 import net.fabricmc.fabric.impl.blockrenderlayer.BlockRenderLayerMapImpl;
+import net.fabricmc.loader.api.FabricLoader;
+import net.fabricmc.loader.api.ModContainer;
+import net.fabricmc.loader.impl.ModContainerImpl;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.minecraft.fluid.Fluids;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.block.entity.ModBlockEntities;
 import net.zuiron.photosynthesis.block.entity.client.CuttingBoardBlockEntityRenderer;
@@ -21,12 +26,28 @@ import net.zuiron.photosynthesis.screen.CuttingBoardScreen;
 import net.zuiron.photosynthesis.screen.LatexExtractorScreen;
 import net.zuiron.photosynthesis.screen.ModScreenHandlers;
 import net.zuiron.photosynthesis.screen.SkilletScreen;
+import net.fabricmc.fabric.api.resource.*;
+
+import java.util.Optional;
 
 @SuppressWarnings("unused")
 public class PhotosynthesisClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
+
+        // Optional Resource Pack - 3D Models (may cause lag on lower end pc's, So we pack it optionally)
+        FabricLoader.getInstance().getModContainer(Photosynthesis.MOD_ID).ifPresent(modContainer -> {
+            ResourceManagerHelper.registerBuiltinResourcePack(new Identifier(Photosynthesis.MOD_ID,
+                    "photosynthesis3d"),
+                    modContainer,
+                    Text.of("Photosynthesis 3D"),
+                    ResourcePackActivationType.NORMAL);
+        });
+
+
+
+
         // FLOWERS -----------------------------------------------------------------------------------------------------
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.FLORAMELISSIA);
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.POTTED_FLORAMELISSIA);
