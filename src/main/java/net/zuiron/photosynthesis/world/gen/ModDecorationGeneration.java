@@ -9,13 +9,34 @@ import net.zuiron.photosynthesis.world.feature.ModPlacedFeatures;
 
 public class ModDecorationGeneration {
     public static void generateDecorations() {
+        /*
         BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
-                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.DECO_ROCKS_STONE_PLACED_KEY);
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.DECO_ROCKS_STONE_PLACED_KEY);*/
 
+        /*
+        BiomeModifications.addFeature(
+                context -> context.getBiome().getTemperature() >= 0.15 && context.getBiome().getTemperature() <= 0.95
+                        && !BiomeKeys.DESERT.equals(context.getBiomeKey()),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.APPLETREE_PLACED_KEY
+        );*/
+        /*
+        BiomeModifications.addFeature(
+                context -> context.hasTag(BiomeTags.IS_OVERWORLD)
+                        && !BiomeKeys.DESERT.equals(context.getBiomeKey()),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.APPLETREE_PLACED_KEY
+        );*/
+
+        /*
         BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.DECO_STICKS_OAK_PLACED_KEY);
+         */
 
-        /*BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
-                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.APPLETREE_PLACED_KEY);*/
+        BiomeModifications.addFeature(context -> context.hasTag(BiomeTags.IS_OVERWORLD)
+                        && !BiomeKeys.DESERT.equals(context.getBiomeKey()),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.DECO_ROCKS_STONE_PLACED_KEY);
+
+        BiomeModifications.addFeature(context -> context.hasTag(BiomeTags.IS_OVERWORLD)
+                        && !BiomeKeys.DESERT.equals(context.getBiomeKey()),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.DECO_STICKS_OAK_PLACED_KEY);
     }
 }
