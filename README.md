@@ -1,8 +1,11 @@
 # Photosynthesis
 <img src="https://i.imgur.com/Ol1Tcf8.png" height="32">
 
->This is a FABRIC mod. Minecraft 1.19.3 <br/>
-**Photosynthesis adds berries, crops, trees and foods.**
+>This is a FABRIC mod for Minecraft 1.19.3 <br/>
+**Photosynthesis adds berries, crops, trees and foods. and much more!**
+
+> **Warning**
+> This project is still in heavy development! You are free to compile yourself and try it out, but keep in mind that there will be missing blockmodels, textures, features etc... **This mod is not in a playable state!**
 
 # Tree's
 
