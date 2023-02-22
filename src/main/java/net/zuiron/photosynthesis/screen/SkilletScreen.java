@@ -37,7 +37,7 @@ public class SkilletScreen extends HandledScreen<SkilletScreenHandler> {
 
     private void renderProgressArrow(MatrixStack matrices, int x, int y) {
         if(handler.isCrafting()) {
-            drawTexture(matrices, x + 103, y + 27, 176, 0, 8, handler.getScaledProgress());
+            drawTexture(matrices, x + 103, y + 20, 176, 0, 8, handler.getScaledProgress());
         }
     }
 

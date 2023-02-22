@@ -1,0 +1,15 @@
+{
+  "type": "photosynthesis:skillet",
+  "ingredients": [
+    {
+      "item": "minecraft:porkchop"
+    },
+    {
+      "item": "minecraft:porkchop"
+    }
+  ],
+  "output": {
+    "item": "minecraft:cooked_porkchop",
+    "count": 2
+  }
+}
