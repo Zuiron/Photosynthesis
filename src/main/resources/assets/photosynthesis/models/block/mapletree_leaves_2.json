@@ -1,8 +1,6 @@
 {
-  "parent":"photosynthesis:block/better_leaves",
+  "parent": "minecraft:block/leaves",
   "textures": {
-      "0":"photosynthesis:block/mapletree_leaves_2",
-  "top": "photosynthesis:block/mapletree_leaves_inside_top",
-  "bottom": "photosynthesis:block/mapletree_leaves_inside_bottom"
+    "all": "photosynthesis:block/mapletree_leaves_2"
   }
 }
