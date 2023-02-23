@@ -55,7 +55,8 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.WOOL_RAW_PURPLE,
                 ModItems.WOOL_RAW_RED,
                 ModItems.WOOL_RAW_WHITE,
-                ModItems.WOOL_RAW_YELLOW
+                ModItems.WOOL_RAW_YELLOW,
+                ModItems.SEASHELL
         };
         for (Item item : simple_items) {
             itemModelGenerator.register(item, Models.GENERATED);

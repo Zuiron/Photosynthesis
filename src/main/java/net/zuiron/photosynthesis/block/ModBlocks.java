@@ -19,10 +19,7 @@ import net.zuiron.photosynthesis.block.bushtreecrops.*;
 import net.zuiron.photosynthesis.block.cropblocks.CustomCropBlock;
 import net.zuiron.photosynthesis.block.cropblocks.CustomCropBlockWL;
 import net.zuiron.photosynthesis.block.custom.*;
-import net.zuiron.photosynthesis.block.decoration.BeachGrassBlock;
-import net.zuiron.photosynthesis.block.decoration.DecoRocksBlock;
-import net.zuiron.photosynthesis.block.decoration.DecoSticksBlock;
-import net.zuiron.photosynthesis.block.decoration.TallBeachGrassBlock;
+import net.zuiron.photosynthesis.block.decoration.*;
 import net.zuiron.photosynthesis.item.ModItemGroup;
 import net.zuiron.photosynthesis.world.feature.tree.*;
 
@@ -43,6 +40,9 @@ public class ModBlocks {
     //GRASS = register("grass", new FernBlock(Settings.of(Material.REPLACEABLE_PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offsetType(OffsetType.XYZ)));
     public static final Block BEACHGRASS = registerBlock("beachgrass",
             new BeachGrassBlock(AbstractBlock.Settings.of(Material.REPLACEABLE_PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offsetType(AbstractBlock.OffsetType.XYZ)));
+
+    public static final Block DECORATION_SEASHELL = registerBlockWithoutBlockItem("decoration_seashell",
+            new DecoSeaShellBlock(StatusEffect.byRawId(1), 1,FabricBlockSettings.copy(Blocks.SAND).nonOpaque().noCollision().breakInstantly().noBlockBreakParticles()));
 
     // FLOWERS ---------------------------------------------------------------------------------------------------------
     public static final Block FLORAMELISSIA = registerBlock("floramelissia",

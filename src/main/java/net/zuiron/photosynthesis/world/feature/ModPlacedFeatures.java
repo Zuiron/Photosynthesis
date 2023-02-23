@@ -192,6 +192,7 @@ public class ModPlacedFeatures {
 
     public static final RegistryKey<PlacedFeature> DECO_BEACHGRASS_PLACED_KEY = registerKey("deco_beachgrass_placed");
     public static final RegistryKey<PlacedFeature> DECO_TALL_BEACHGRASS_PLACED_KEY = registerKey("deco_tall_beachgrass_placed");
+    public static final RegistryKey<PlacedFeature> DECO_SEASHELL_PLACED_KEY = registerKey("deco_seashell_placed");
 
     public static final RegistryKey<PlacedFeature> FLORAMELISSIA_PLACED_KEY = registerKey("flormelissia_placed");
 
@@ -253,6 +254,9 @@ public class ModPlacedFeatures {
                 NoiseThresholdCountPlacementModifier.of(-0.8, 0, 7),
                 RarityFilterPlacementModifier.of(32), SquarePlacementModifier.of(),
                 PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
+
+        register(context, DECO_SEASHELL_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.DECO_SEASHELL_KEY),
+                VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(0, 0.5f, 2)));
 
 
 

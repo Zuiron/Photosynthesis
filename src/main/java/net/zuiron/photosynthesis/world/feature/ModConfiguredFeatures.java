@@ -34,6 +34,7 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?,?>> DECO_STICKS_RANDOM_KEY = registerKey("deco_sticks_random");
     public static final RegistryKey<ConfiguredFeature<?,?>> DECO_BEACHGRASS_KEY = registerKey("deco_beachgrass");
     public static final RegistryKey<ConfiguredFeature<?,?>> DECO_TALL_BEACHGRASS_KEY = registerKey("deco_tall_beachgrass");
+    public static final RegistryKey<ConfiguredFeature<?,?>> DECO_SEASHELL_KEY = registerKey("deco_seashell");
     public static final RegistryKey<ConfiguredFeature<?,?>> FLORAMELISSIA_KEY = registerKey("floramelissia");
     public static final RegistryKey<ConfiguredFeature<?,?>> BLUEBERRYBUSH_KEY = registerKey("blueberry_bush");
     public static final RegistryKey<ConfiguredFeature<?,?>> BLACKBERRY_KEY = registerKey("blackberry_bush");
@@ -254,6 +255,10 @@ public class ModConfiguredFeatures {
         register(context, DECO_TALL_BEACHGRASS_KEY, Feature.RANDOM_PATCH,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(25, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.TALL_BEACHGRASS)))));
+
+        register(context, DECO_SEASHELL_KEY, Feature.FLOWER,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.DECORATION_SEASHELL)))));
 
 
 

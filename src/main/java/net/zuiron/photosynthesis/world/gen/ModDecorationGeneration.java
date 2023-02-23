@@ -50,5 +50,9 @@ public class ModDecorationGeneration {
                         && BiomeKeys.BEACH.equals(context.getBiomeKey()),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.DECO_TALL_BEACHGRASS_PLACED_KEY);
 
+        BiomeModifications.addFeature(context -> context.hasTag(BiomeTags.IS_OVERWORLD)
+                        && BiomeKeys.BEACH.equals(context.getBiomeKey()),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.DECO_SEASHELL_PLACED_KEY);
+
     }
 }

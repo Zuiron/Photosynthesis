@@ -126,6 +126,9 @@ public class ModItems {
     public static final Item WOOL_RAW_YELLOW = registerItem("wool_raw_yellow",
             new Item(new FabricItemSettings()));
 
+    public static final Item SEASHELL = registerItem("seashell",
+            new Item(new FabricItemSettings()));
+
     // TOOLS -----------------------------------------------------------------------------------------------------------
     public static final Item BARK_PEELER_SPUD = registerItem("bark_peeler_spud",
             new BarkPeelerSpudItem(PrimitiveToolMaterial.INSTANCE,

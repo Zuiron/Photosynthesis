@@ -17,5 +17,6 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
 
         addDrop(ModBlocks.DECORATION_ROCKS_RANDOM, ModItems.STONE_SMALL);
         addDrop(ModBlocks.DECORATION_STICKS_RANDOM, Items.STICK);
+        addDrop(ModBlocks.DECORATION_SEASHELL, ModItems.SEASHELL);
     }
 }
