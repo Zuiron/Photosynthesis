@@ -19,6 +19,7 @@ public class BeachGrassBlock extends PlantBlock implements Fertilizable {
         super(settings);
     }
 
+    @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return SHAPE;
     }
@@ -27,15 +28,15 @@ public class BeachGrassBlock extends PlantBlock implements Fertilizable {
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
         return floor.isIn(BlockTags.SAND);
     }
-
+    @Override
     public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state, boolean isClient) {
         return true;
     }
-
+    @Override
     public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
         return true;
     }
-
+    @Override
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
         TallBeachGrassBlock tallPlantBlock = (TallBeachGrassBlock)(ModBlocks.TALL_BEACHGRASS);
         if (tallPlantBlock.getDefaultState().canPlaceAt(world, pos) && world.isAir(pos.up())) {

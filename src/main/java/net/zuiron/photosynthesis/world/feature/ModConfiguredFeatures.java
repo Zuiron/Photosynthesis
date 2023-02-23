@@ -30,8 +30,10 @@ import java.util.OptionalInt;
 
 public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?,?>> SALT_ORE_KEY = registerKey("salt_ore");
-    public static final RegistryKey<ConfiguredFeature<?,?>> DECO_ROCKS_RANDOM_KEY = registerKey("deco_rocks_stone");
-    public static final RegistryKey<ConfiguredFeature<?,?>> DECO_STICKS_RANDOM_KEY = registerKey("deco_sticks_oak");
+    public static final RegistryKey<ConfiguredFeature<?,?>> DECO_ROCKS_RANDOM_KEY = registerKey("deco_rocks_random");
+    public static final RegistryKey<ConfiguredFeature<?,?>> DECO_STICKS_RANDOM_KEY = registerKey("deco_sticks_random");
+    public static final RegistryKey<ConfiguredFeature<?,?>> DECO_BEACHGRASS_KEY = registerKey("deco_beachgrass");
+    public static final RegistryKey<ConfiguredFeature<?,?>> DECO_TALL_BEACHGRASS_KEY = registerKey("deco_tall_beachgrass");
     public static final RegistryKey<ConfiguredFeature<?,?>> FLORAMELISSIA_KEY = registerKey("floramelissia");
     public static final RegistryKey<ConfiguredFeature<?,?>> BLUEBERRYBUSH_KEY = registerKey("blueberry_bush");
     public static final RegistryKey<ConfiguredFeature<?,?>> BLACKBERRY_KEY = registerKey("blackberry_bush");
@@ -234,6 +236,24 @@ public class ModConfiguredFeatures {
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.DECORATION_STICKS_RANDOM)))));
 
         //ConfiguredFeatures.register(featureRegisterable, PATCH_GRASS, Feature.RANDOM_PATCH, createRandomPatchFeatureConfig(BlockStateProvider.of(Blocks.GRASS), 32));
+
+        /*
+        ConfiguredFeatures.register(featureRegisterable, PATCH_TALL_GRASS, Feature.RANDOM_PATCH,
+        ConfiguredFeatures.createRandomPatchFeatureConfig(
+        Feature.SIMPLE_BLOCK,
+        new SimpleBlockFeatureConfig(BlockStateProvider.of(Blocks.TALL_GRASS))));
+
+         ConfiguredFeatures.register(featureRegisterable, PATCH_GRASS, Feature.RANDOM_PATCH, createRandomPatchFeatureConfig(BlockStateProvider.of(Blocks.GRASS), 32));
+         */
+
+        register(context, DECO_BEACHGRASS_KEY, Feature.RANDOM_PATCH,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(32, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.BEACHGRASS)))));
+
+
+        register(context, DECO_TALL_BEACHGRASS_KEY, Feature.RANDOM_PATCH,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(25, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.TALL_BEACHGRASS)))));
 
 
 

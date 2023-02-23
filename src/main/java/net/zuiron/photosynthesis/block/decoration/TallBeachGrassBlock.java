@@ -22,7 +22,7 @@ import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
 
-public class TallBeachGrassBlock extends PlantBlock {
+public class TallBeachGrassBlock extends TallPlantBlock {
     public static final EnumProperty<DoubleBlockHalf> HALF;
 
     public TallBeachGrassBlock(AbstractBlock.Settings settings) {

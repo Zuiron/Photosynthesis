@@ -187,10 +187,11 @@ public class ModPlacedFeatures {
 
 
 
-    public static final RegistryKey<PlacedFeature> DECO_ROCKS_RANDOM_PLACED_KEY = registerKey("deco_rocks_stone_placed");
-    public static final RegistryKey<PlacedFeature> DECO_STICKS_RANDOM_PLACED_KEY = registerKey("deco_sticks_oak_placed");
+    public static final RegistryKey<PlacedFeature> DECO_ROCKS_RANDOM_PLACED_KEY = registerKey("deco_rocks_random_placed");
+    public static final RegistryKey<PlacedFeature> DECO_STICKS_RANDOM_PLACED_KEY = registerKey("deco_sticks_random_placed");
 
-
+    public static final RegistryKey<PlacedFeature> DECO_BEACHGRASS_PLACED_KEY = registerKey("deco_beachgrass_placed");
+    public static final RegistryKey<PlacedFeature> DECO_TALL_BEACHGRASS_PLACED_KEY = registerKey("deco_tall_beachgrass_placed");
 
     public static final RegistryKey<PlacedFeature> FLORAMELISSIA_PLACED_KEY = registerKey("flormelissia_placed");
 
@@ -224,6 +225,36 @@ public class ModPlacedFeatures {
 
         register(context, DECO_STICKS_RANDOM_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.DECO_STICKS_RANDOM_KEY),
                 VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(0, 0.5f, 2)));
+
+        /*
+
+        PlacedFeatures.register(featureRegisterable, PATCH_TALL_GRASS_2, registryEntry14, new PlacementModifier[]{
+        NoiseThresholdCountPlacementModifier.of(-0.8, 0, 7),
+        RarityFilterPlacementModifier.of(32),
+        SquarePlacementModifier.of(),
+        PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP,
+        BiomePlacementModifier.of()});
+
+
+        PlacedFeatures.register(featureRegisterable, PATCH_TALL_GRASS, registryEntry14, new PlacementModifier[]{
+        RarityFilterPlacementModifier.of(5),
+        SquarePlacementModifier.of(),
+        PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP,
+        BiomePlacementModifier.of()});
+
+
+        PlacedFeatures.register(featureRegisterable, PATCH_GRASS_PLAIN, registryEntry6, new PlacementModifier[]{NoiseThresholdCountPlacementModifier.of(-0.8, 5, 10), SquarePlacementModifier.of(), PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of()});
+
+         */
+        register(context, DECO_BEACHGRASS_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.DECO_BEACHGRASS_KEY),
+                VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(0, 0.5f, 5)));
+
+        register(context, DECO_TALL_BEACHGRASS_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.DECO_TALL_BEACHGRASS_KEY),
+                NoiseThresholdCountPlacementModifier.of(-0.8, 0, 7),
+                RarityFilterPlacementModifier.of(32), SquarePlacementModifier.of(),
+                PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
+
+
 
         //PlacedFeatures.register(featureRegisterable, PATCH_GRASS_NORMAL, registryEntry6, modifiers(5));
 

@@ -1,6 +1,7 @@
 package net.zuiron.photosynthesis.world.gen;
 
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.registry.tag.BiomeTags;
 import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.gen.GenerationStep;
@@ -30,6 +31,7 @@ public class ModDecorationGeneration {
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.DECO_STICKS_OAK_PLACED_KEY);
          */
 
+        //STONES AND STICKS
         BiomeModifications.addFeature(context -> context.hasTag(BiomeTags.IS_OVERWORLD)
                         && !BiomeKeys.DESERT.equals(context.getBiomeKey()),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.DECO_ROCKS_RANDOM_PLACED_KEY);
@@ -37,5 +39,16 @@ public class ModDecorationGeneration {
         BiomeModifications.addFeature(context -> context.hasTag(BiomeTags.IS_OVERWORLD)
                         && !BiomeKeys.DESERT.equals(context.getBiomeKey()),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.DECO_STICKS_RANDOM_PLACED_KEY);
+
+
+        //BEACHGRASS
+        BiomeModifications.addFeature(context -> context.hasTag(BiomeTags.IS_OVERWORLD)
+                        && BiomeKeys.BEACH.equals(context.getBiomeKey()),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.DECO_BEACHGRASS_PLACED_KEY);
+
+        BiomeModifications.addFeature(context -> context.hasTag(BiomeTags.IS_OVERWORLD)
+                        && BiomeKeys.BEACH.equals(context.getBiomeKey()),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.DECO_TALL_BEACHGRASS_PLACED_KEY);
+
     }
 }
