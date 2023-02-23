@@ -19,6 +19,7 @@ import net.zuiron.photosynthesis.block.bushtreecrops.*;
 import net.zuiron.photosynthesis.block.cropblocks.CustomCropBlock;
 import net.zuiron.photosynthesis.block.cropblocks.CustomCropBlockWL;
 import net.zuiron.photosynthesis.block.custom.*;
+import net.zuiron.photosynthesis.block.decoration.BeachGrassBlock;
 import net.zuiron.photosynthesis.block.decoration.DecoRocksBlock;
 import net.zuiron.photosynthesis.block.decoration.DecoSticksBlock;
 import net.zuiron.photosynthesis.block.decoration.TallBeachGrassBlock;
@@ -38,6 +39,10 @@ public class ModBlocks {
 
     public static final Block TALL_BEACHGRASS = registerBlock("tall_beachgrass",
             new TallBeachGrassBlock(AbstractBlock.Settings.of(Material.REPLACEABLE_PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offsetType(AbstractBlock.OffsetType.XZ)));
+
+    //GRASS = register("grass", new FernBlock(Settings.of(Material.REPLACEABLE_PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offsetType(OffsetType.XYZ)));
+    public static final Block BEACHGRASS = registerBlock("beachgrass",
+            new BeachGrassBlock(AbstractBlock.Settings.of(Material.REPLACEABLE_PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offsetType(AbstractBlock.OffsetType.XYZ)));
 
     // FLOWERS ---------------------------------------------------------------------------------------------------------
     public static final Block FLORAMELISSIA = registerBlock("floramelissia",
