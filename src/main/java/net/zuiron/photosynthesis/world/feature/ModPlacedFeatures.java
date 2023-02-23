@@ -210,16 +210,10 @@ public class ModPlacedFeatures {
                         HeightRangePlacementModifier.trapezoid(YOffset.fixed(0), YOffset.fixed(90))));
         //from -80 to +80, most in middle, meaning mining level 0.
 
-        /*
-        register(context, SALT_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.SALT_ORE_KEY),
-                modifiersWithCount(32, // VeinsPerChunk
-                        HeightRangePlacementModifier.trapezoid(YOffset.aboveBottom(-80), YOffset.aboveBottom(80))));
-        //from -80 to +80, most in middle, meaning mining level 0.
-         */
 
-        /*register(context, DECO_ROCKS_STONE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.DECO_ROCKS_STONE_KEY),
-                RarityFilterPlacementModifier.of(100), SquarePlacementModifier.of(),
-                PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());*/
+
+
+
 
         register(context, DECO_ROCKS_RANDOM_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.DECO_ROCKS_RANDOM_KEY),
                 VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(0, 0.5f, 3)));
@@ -227,26 +221,6 @@ public class ModPlacedFeatures {
         register(context, DECO_STICKS_RANDOM_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.DECO_STICKS_RANDOM_KEY),
                 VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(0, 0.5f, 2)));
 
-        /*
-
-        PlacedFeatures.register(featureRegisterable, PATCH_TALL_GRASS_2, registryEntry14, new PlacementModifier[]{
-        NoiseThresholdCountPlacementModifier.of(-0.8, 0, 7),
-        RarityFilterPlacementModifier.of(32),
-        SquarePlacementModifier.of(),
-        PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP,
-        BiomePlacementModifier.of()});
-
-
-        PlacedFeatures.register(featureRegisterable, PATCH_TALL_GRASS, registryEntry14, new PlacementModifier[]{
-        RarityFilterPlacementModifier.of(5),
-        SquarePlacementModifier.of(),
-        PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP,
-        BiomePlacementModifier.of()});
-
-
-        PlacedFeatures.register(featureRegisterable, PATCH_GRASS_PLAIN, registryEntry6, new PlacementModifier[]{NoiseThresholdCountPlacementModifier.of(-0.8, 5, 10), SquarePlacementModifier.of(), PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of()});
-
-         */
         register(context, DECO_BEACHGRASS_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.DECO_BEACHGRASS_KEY),
                 VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(0, 0.5f, 5)));
 
@@ -260,7 +234,8 @@ public class ModPlacedFeatures {
 
 
 
-        //PlacedFeatures.register(featureRegisterable, PATCH_GRASS_NORMAL, registryEntry6, modifiers(5));
+
+
 
         register(context, FLORAMELISSIA_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.FLORAMELISSIA_KEY),
                 RarityFilterPlacementModifier.of(4), SquarePlacementModifier.of(),

@@ -28,19 +28,12 @@ public class ModBlocks {
     // DECORATION ------------------------------------------------------------------------------------------------------
     public static final Block DECORATION_ROCKS_RANDOM = registerBlockWithoutBlockItem("decoration_rocks_random",
             new DecoRocksBlock(StatusEffect.byRawId(1), 1,FabricBlockSettings.copy(Blocks.GRAVEL).nonOpaque().noCollision().breakInstantly().noBlockBreakParticles()));
-
     public static final Block DECORATION_STICKS_RANDOM = registerBlockWithoutBlockItem("decoration_sticks_random",
             new DecoSticksBlock(StatusEffect.byRawId(1), 1,FabricBlockSettings.copy(Blocks.BAMBOO).nonOpaque().noCollision().breakInstantly().noBlockBreakParticles()));
-
-    //TALL_GRASS = register("tall_grass", new TallPlantBlock(Settings.of(Material.REPLACEABLE_PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offsetType(OffsetType.XZ)));
-
     public static final Block TALL_BEACHGRASS = registerBlock("tall_beachgrass",
             new TallBeachGrassBlock(AbstractBlock.Settings.of(Material.REPLACEABLE_PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offsetType(AbstractBlock.OffsetType.XZ)));
-
-    //GRASS = register("grass", new FernBlock(Settings.of(Material.REPLACEABLE_PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offsetType(OffsetType.XYZ)));
     public static final Block BEACHGRASS = registerBlock("beachgrass",
             new BeachGrassBlock(AbstractBlock.Settings.of(Material.REPLACEABLE_PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offsetType(AbstractBlock.OffsetType.XYZ)));
-
     public static final Block DECORATION_SEASHELL = registerBlockWithoutBlockItem("decoration_seashell",
             new DecoSeaShellBlock(StatusEffect.byRawId(1), 1,FabricBlockSettings.copy(Blocks.SAND).nonOpaque().noCollision().breakInstantly().noBlockBreakParticles()));
 
