@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "photosynthesis:block/tall_beachgrass_bottom"
+    },
+    "half=upper": {
+      "model": "photosynthesis:block/tall_beachgrass_top"
+    }
+  }
+}

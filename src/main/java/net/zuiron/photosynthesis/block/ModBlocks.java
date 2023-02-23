@@ -21,6 +21,7 @@ import net.zuiron.photosynthesis.block.cropblocks.CustomCropBlockWL;
 import net.zuiron.photosynthesis.block.custom.*;
 import net.zuiron.photosynthesis.block.decoration.DecoRocksBlock;
 import net.zuiron.photosynthesis.block.decoration.DecoSticksBlock;
+import net.zuiron.photosynthesis.block.decoration.TallBeachGrassBlock;
 import net.zuiron.photosynthesis.item.ModItemGroup;
 import net.zuiron.photosynthesis.world.feature.tree.*;
 
@@ -32,6 +33,11 @@ public class ModBlocks {
 
     public static final Block DECORATION_STICKS_RANDOM = registerBlockWithoutBlockItem("decoration_sticks_random",
             new DecoSticksBlock(StatusEffect.byRawId(1), 1,FabricBlockSettings.copy(Blocks.BAMBOO).nonOpaque().noCollision().breakInstantly().noBlockBreakParticles()));
+
+    //TALL_GRASS = register("tall_grass", new TallPlantBlock(Settings.of(Material.REPLACEABLE_PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offsetType(OffsetType.XZ)));
+
+    public static final Block TALL_BEACHGRASS = registerBlock("tall_beachgrass",
+            new TallBeachGrassBlock(AbstractBlock.Settings.of(Material.REPLACEABLE_PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offsetType(AbstractBlock.OffsetType.XZ)));
 
     // FLOWERS ---------------------------------------------------------------------------------------------------------
     public static final Block FLORAMELISSIA = registerBlock("floramelissia",
