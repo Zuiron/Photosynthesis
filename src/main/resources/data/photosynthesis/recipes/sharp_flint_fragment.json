@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "# ",
+    "F "
+  ],
+  "key": {
+    "#": {
+      "item": "photosynthesis:stone_small"
+    },
+    "F": {
+      "item": "minecraft:flint"
+    }
+  },
+  "result": {
+    "item": "photosynthesis:sharp_flint_fragment",
+    "count": 1
+  }
+}

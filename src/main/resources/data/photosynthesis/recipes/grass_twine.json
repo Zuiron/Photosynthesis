@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "# "
+  ],
+  "key": {
+    "#": {
+      "item": "photosynthesis:grass_fibre"
+    }
+  },
+  "result": {
+    "item": "photosynthesis:grass_twine",
+    "count": 1
+  }
+}

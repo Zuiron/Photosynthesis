@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "ingredient": {
+    "tag": "c:tiny_charcoal_crafters"
+  },
+  "result": "photosynthesis:tiny_charcoal",
+  "experience": 0.1,
+  "cookingtime": 2000
+}

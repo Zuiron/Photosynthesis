@@ -28,10 +28,10 @@ public class ModBlocks {
 
     // DECORATION ------------------------------------------------------------------------------------------------------
     public static final Block DECORATION_ROCKS_RANDOM = registerBlockWithoutBlockItem("decoration_rocks_random",
-            new DecoRocksBlock(StatusEffect.byRawId(1), 1,FabricBlockSettings.copy(Blocks.STONE).nonOpaque().noCollision().breakInstantly()));
+            new DecoRocksBlock(StatusEffect.byRawId(1), 1,FabricBlockSettings.copy(Blocks.GRAVEL).nonOpaque().noCollision().breakInstantly().noBlockBreakParticles()));
 
     public static final Block DECORATION_STICKS_RANDOM = registerBlockWithoutBlockItem("decoration_sticks_random",
-            new DecoSticksBlock(StatusEffect.byRawId(1), 1,FabricBlockSettings.copy(Blocks.STONE).nonOpaque().noCollision().breakInstantly()));
+            new DecoSticksBlock(StatusEffect.byRawId(1), 1,FabricBlockSettings.copy(Blocks.BAMBOO).nonOpaque().noCollision().breakInstantly().noBlockBreakParticles()));
 
     // FLOWERS ---------------------------------------------------------------------------------------------------------
     public static final Block FLORAMELISSIA = registerBlock("floramelissia",

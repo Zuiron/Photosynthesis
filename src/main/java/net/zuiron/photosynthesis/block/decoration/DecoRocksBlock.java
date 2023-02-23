@@ -37,30 +37,33 @@ public class DecoRocksBlock extends FlowerBlock {
         return this.canPlantOnTop(world.getBlockState(blockPos), world, blockPos);
     }
 
+    /*
     @Override
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
         if (state.getBlock() != newState.getBlock()) {
 
-            /*ItemStack itemStack = new ItemStack(Blocks.STONE, 3);
+            ItemStack itemStack = new ItemStack(Blocks.STONE, 3);
             ItemEntity itemEntity = new ItemEntity(world, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, itemStack);
-            world.spawnEntity(itemEntity);*/
+            world.spawnEntity(itemEntity);
 
             super.onStateReplaced(state, world, pos, newState, moved);
         }
-    }
+    }*/
 
+    /*
     @Override
     public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
-        /*this.spawnBreakParticles(world, player, pos, state);
-        if (state.isIn(BlockTags.GUARDED_BY_PIGLINS)) {
-            PiglinBrain.onGuardedBlockInteracted(player, false);
-        }
+        //this.spawnBreakParticles(world, player, pos, state);
+        //if (state.isIn(BlockTags.GUARDED_BY_PIGLINS)) {
+        //    PiglinBrain.onGuardedBlockInteracted(player, false);
+        //}
 
-        world.emitGameEvent(GameEvent.BLOCK_DESTROY, pos, GameEvent.Emitter.of(player, state));*/
+        //world.emitGameEvent(GameEvent.BLOCK_DESTROY, pos, GameEvent.Emitter.of(player, state));
         ItemStack itemStack = new ItemStack(Blocks.STONE, 3);
         ItemEntity itemEntity = new ItemEntity(world, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, itemStack);
         world.spawnEntity(itemEntity);
     }
+     */
 
     public StatusEffect getEffectInStew() {
         return this.effectInStew;

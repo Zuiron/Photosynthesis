@@ -22,6 +22,110 @@ public class ModItems {
             new Item(new FabricItemSettings()));
     public static final Item SALT = registerItem("salt",
             new Item(new FabricItemSettings()));
+
+    // SURVIVAL --------------------------------------------------------------------------------------------------------
+    public static final Item FLINT_HOE = registerItem("flint_hoe",
+            new Item(new FabricItemSettings()));
+
+    public static final Item FLINT_KNIFE = registerItem("flint_knife",
+            new Item(new FabricItemSettings()));
+
+    public static final Item FLINT_PICKAXE = registerItem("flint_pickaxe",
+            new Item(new FabricItemSettings()));
+
+    public static final Item FLINT_SHOVEL = registerItem("flint_shovel",
+            new Item(new FabricItemSettings()));
+
+    public static final Item FORESTY_BUNDLE = registerItem("foresty_bundle",
+            new Item(new FabricItemSettings()));
+
+    public static final Item GRASS_FIBRE_PIECE = registerItem("grass_fibre_piece",
+            new Item(new FabricItemSettings()));
+
+    public static final Item GRASS_TWINE = registerItem("grass_twine",
+            new Item(new FabricItemSettings()));
+
+    public static final Item GRASS_TWINE_DRY = registerItem("grass_twine_dry",
+            new Item(new FabricItemSettings()));
+
+    public static final Item SHARP_FLINT_FRAGMENT = registerItem("sharp_flint_fragment",
+            new Item(new FabricItemSettings()));
+
+    public static final Item SHEEP_BONES = registerItem("sheep_bones",
+            new Item(new FabricItemSettings()));
+
+    public static final Item STONE_LARGE = registerItem("stone_large",
+            new Item(new FabricItemSettings()));
+
+    public static final Item STONE_LONG = registerItem("stone_long",
+            new Item(new FabricItemSettings()));
+
+    public static final Item STONE_SMALL = registerItem("stone_small",
+            new Item(new FabricItemSettings()));
+
+    public static final Item STURDY_STICK = registerItem("sturdy_stick",
+            new Item(new FabricItemSettings()));
+
+    public static final Item TINY_CHARCOAL = registerItem("tiny_charcoal",
+            new Item(new FabricItemSettings()));
+
+    public static final Item TREE_BRANCH = registerItem("tree_branch",
+            new Item(new FabricItemSettings()));
+
+    public static final Item TREE_CONE = registerItem("tree_cone",
+            new Item(new FabricItemSettings()));
+
+    public static final Item TREE_LEAF = registerItem("tree_leaf",
+            new Item(new FabricItemSettings()));
+
+    public static final Item WOOL_RAW_BLACK = registerItem("wool_raw_black",
+            new Item(new FabricItemSettings()));
+
+    public static final Item WOOL_RAW_BLUE = registerItem("wool_raw_blue",
+            new Item(new FabricItemSettings()));
+
+    public static final Item WOOL_RAW_BROWN = registerItem("wool_raw_brown",
+            new Item(new FabricItemSettings()));
+
+    public static final Item WOOL_RAW_CYAN = registerItem("wool_raw_cyan",
+            new Item(new FabricItemSettings()));
+
+    public static final Item WOOL_RAW_DARK_GRAY = registerItem("wool_raw_dark_gray",
+            new Item(new FabricItemSettings()));
+
+    public static final Item WOOL_RAW_GRAY = registerItem("wool_raw_gray",
+            new Item(new FabricItemSettings()));
+
+    public static final Item WOOL_RAW_GREEN = registerItem("wool_raw_green",
+            new Item(new FabricItemSettings()));
+
+    public static final Item WOOL_RAW_LIGHT_BLUE = registerItem("wool_raw_light_blue",
+            new Item(new FabricItemSettings()));
+
+    public static final Item WOOL_RAW_LIME = registerItem("wool_raw_lime",
+            new Item(new FabricItemSettings()));
+
+    public static final Item WOOL_RAW_MAGENTA = registerItem("wool_raw_magenta",
+            new Item(new FabricItemSettings()));
+
+    public static final Item WOOL_RAW_ORANGE = registerItem("wool_raw_orange",
+            new Item(new FabricItemSettings()));
+
+    public static final Item WOOL_RAW_PINK = registerItem("wool_raw_pink",
+            new Item(new FabricItemSettings()));
+
+    public static final Item WOOL_RAW_PURPLE = registerItem("wool_raw_purple",
+            new Item(new FabricItemSettings()));
+
+    public static final Item WOOL_RAW_RED = registerItem("wool_raw_red",
+            new Item(new FabricItemSettings()));
+
+    public static final Item WOOL_RAW_WHITE = registerItem("wool_raw_white",
+            new Item(new FabricItemSettings()));
+
+    public static final Item WOOL_RAW_YELLOW = registerItem("wool_raw_yellow",
+            new Item(new FabricItemSettings()));
+
     // TOOLS -----------------------------------------------------------------------------------------------------------
     public static final Item BARK_PEELER_SPUD = registerItem("bark_peeler_spud",
             new BarkPeelerSpudItem(PrimitiveToolMaterial.INSTANCE,
