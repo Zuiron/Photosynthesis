@@ -2,7 +2,7 @@
   "type": "photosynthesis:cutting_board",
   "ingredients": [
     {
-      "item": "photosynthesis:cutting_knife"
+      "tag": "c:cutting_board_cutting_knifes"
     },
     {
       "item": "photosynthesis:chive"

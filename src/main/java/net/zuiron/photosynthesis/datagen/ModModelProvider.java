@@ -56,7 +56,17 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.WOOL_RAW_RED,
                 ModItems.WOOL_RAW_WHITE,
                 ModItems.WOOL_RAW_YELLOW,
-                ModItems.SEASHELL
+                ModItems.SEASHELL,
+
+                ModItems.CUTTING_KNIFE_FLINT,
+                ModItems.CUTTING_KNIFE_IRON,
+                ModItems.CUTTING_KNIFE_DIAMOND,
+
+                ModItems.CUTTING_KNIFE_BLADE_FLINT,
+                ModItems.CUTTING_KNIFE_BLADE_IRON,
+                ModItems.CUTTING_KNIFE_BLADE_DIAMOND,
+
+                ModItems.CUTTING_KNIFE_HANDLE,
         };
         for (Item item : simple_items) {
             itemModelGenerator.register(item, Models.GENERATED);

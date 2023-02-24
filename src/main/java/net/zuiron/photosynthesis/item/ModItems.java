@@ -5,7 +5,6 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.CropBlock;
 import net.minecraft.block.SweetBerryBushBlock;
 import net.minecraft.item.*;
-import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -138,10 +137,18 @@ public class ModItems {
 
     /*public static final Item CUTTING_KNIFE = registerItem("cutting_knife",
             new Item(new FabricItemSettings()));*/
-    public static final Item CUTTING_KNIFE = registerItem("cutting_knife",
+    public static final Item CUTTING_KNIFE_FLINT = registerItem("cutting_knife_flint",
+            new SwordItem(ToolMaterials.WOOD, 3, -2.4F, new FabricItemSettings()));
+    public static final Item CUTTING_KNIFE_IRON = registerItem("cutting_knife_iron",
             new SwordItem(ToolMaterials.IRON, 3, -2.4F, new FabricItemSettings()));
+    public static final Item CUTTING_KNIFE_DIAMOND = registerItem("cutting_knife_diamond",
+            new SwordItem(ToolMaterials.DIAMOND, 3, -2.4F, new FabricItemSettings()));
 
-    public static final Item CUTTING_KNIFE_BLADE = registerItem("cutting_knife_blade",
+    public static final Item CUTTING_KNIFE_BLADE_FLINT = registerItem("cutting_knife_blade_flint",
+            new Item(new FabricItemSettings()));
+    public static final Item CUTTING_KNIFE_BLADE_IRON = registerItem("cutting_knife_blade_iron",
+            new Item(new FabricItemSettings()));
+    public static final Item CUTTING_KNIFE_BLADE_DIAMOND = registerItem("cutting_knife_blade_diamond",
             new Item(new FabricItemSettings()));
 
     public static final Item CUTTING_KNIFE_HANDLE = registerItem("cutting_knife_handle",
@@ -814,9 +821,15 @@ public class ModItems {
     public static void addItemsToItemGroups() {
         //ItemGroups.INGREDIENTS
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, BARK_PEELER_SPUD );
-        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CUTTING_KNIFE );
 
-        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CUTTING_KNIFE_BLADE );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CUTTING_KNIFE_FLINT);
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CUTTING_KNIFE_IRON);
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CUTTING_KNIFE_DIAMOND);
+
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CUTTING_KNIFE_BLADE_FLINT);
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CUTTING_KNIFE_BLADE_IRON);
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CUTTING_KNIFE_BLADE_DIAMOND);
+
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CUTTING_KNIFE_HANDLE );
         //addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CUTTING_BOARD );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, MORTAR_PESTLE );
