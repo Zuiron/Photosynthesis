@@ -10,16 +10,21 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
+import net.zuiron.photosynthesis.Photosynthesis;
 
 public class SkilletRecipe implements Recipe<SimpleInventory> {
     private final Identifier id;
     private final ItemStack output;
     private final DefaultedList<Ingredient> recipeItems;
 
-    public SkilletRecipe(Identifier id, ItemStack output, DefaultedList<Ingredient> recipeItems) {
+    private final int cookingTime;
+
+
+    public SkilletRecipe(Identifier id, ItemStack output, DefaultedList<Ingredient> recipeItems, int cookingTime) {
         this.id = id;
         this.output = output;
         this.recipeItems = recipeItems;
+        this.cookingTime = cookingTime;
     }
 
     @Override
@@ -44,6 +49,10 @@ public class SkilletRecipe implements Recipe<SimpleInventory> {
     @Override
     public ItemStack getOutput() {
         return output.copy();
+    }
+
+    public int getCookTime() {
+        return cookingTime;
     }
 
     @Override
@@ -80,6 +89,8 @@ public class SkilletRecipe implements Recipe<SimpleInventory> {
         @Override
         public SkilletRecipe read(Identifier id, JsonObject json) {
             ItemStack output = ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "output"));
+            int CookTime = JsonHelper.getInt(json, "cookingtime");
+            Photosynthesis.LOGGER.info("read cookingtime of: " + CookTime + ", for: " + output.getItem().getName().getString());
 
             JsonArray ingredients = JsonHelper.getArray(json, "ingredients");
             DefaultedList<Ingredient> inputs = DefaultedList.ofSize(2, Ingredient.EMPTY); //size: number of possible input ingredients.
@@ -88,7 +99,7 @@ public class SkilletRecipe implements Recipe<SimpleInventory> {
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
             }
 
-            return new SkilletRecipe(id, output, inputs);
+            return new SkilletRecipe(id, output, inputs, CookTime);
         }
 
         @Override
@@ -100,7 +111,7 @@ public class SkilletRecipe implements Recipe<SimpleInventory> {
             }
 
             ItemStack output = buf.readItemStack();
-            return new SkilletRecipe(id, output, inputs);
+            return new SkilletRecipe(id, output, inputs, 0);
         }
 
         @Override

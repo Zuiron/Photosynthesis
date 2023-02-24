@@ -11,5 +11,6 @@
   "output": {
     "item": "minecraft:cooked_porkchop",
     "count": 2
-  }
+  },
+  "cookingtime": 200
 }

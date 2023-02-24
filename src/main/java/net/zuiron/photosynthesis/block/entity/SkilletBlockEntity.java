@@ -32,6 +32,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
+import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.custom.LatexExtractorBlock;
 import net.zuiron.photosynthesis.block.custom.SkilletBlock;
 import net.zuiron.photosynthesis.item.ModItems;
@@ -77,7 +78,7 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
 
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
-    private int maxProgress = 20;
+    private int maxProgress = 20; //Crafting Time / The cook time in ticks
 
     public SkilletBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.SKILLET, pos, state);
@@ -130,6 +131,7 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
         super.writeNbt(nbt);
         Inventories.writeNbt(nbt, inventory);
         nbt.putInt("skillet.progress", progress);
+        nbt.putInt("skillet.cookingTime", maxProgress);
     }
 
     @Override
@@ -137,6 +139,7 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
         Inventories.readNbt(nbt, inventory);
         super.readNbt(nbt);
         progress = nbt.getInt("skillet.progress");
+        maxProgress = nbt.getInt("skillet.cookingTime");
     }
 
     private void resetProgress() {
@@ -263,6 +266,10 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
 
         Optional<SkilletRecipe> match = entity.getWorld().getRecipeManager()
                 .getFirstMatch(SkilletRecipe.Type.INSTANCE, inventory, entity.getWorld());
+
+        entity.maxProgress = entity.getWorld().getRecipeManager()
+                .getFirstMatch(SkilletRecipe.Type.INSTANCE, inventory, entity.getWorld()).map(SkilletRecipe::getCookTime).orElse(20);
+        //Photosynthesis.LOGGER.info("setting cooktime to: " + match.get().getCookTime());
 
         return match.isPresent() && canInsertAmountIntoOutputSlot(inventory)
                 && canInsertItemIntoOutputSlot(inventory, match.get().getOutput().getItem());
