@@ -2,6 +2,7 @@ package net.zuiron.photosynthesis.world.feature;
 
 import com.google.common.collect.ImmutableList;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.SweetBerryBushBlock;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
@@ -11,6 +12,7 @@ import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.structure.rule.TagMatchRuleTest;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.*;
@@ -22,6 +24,7 @@ import net.minecraft.world.gen.trunk.LargeOakTrunkPlacer;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
+import net.zuiron.photosynthesis.block.berrybushblocks.*;
 import net.zuiron.photosynthesis.world.gen.treedecorators.*;
 
 import java.util.Collections;
@@ -253,19 +256,19 @@ public class ModConfiguredFeatures {
 
         register(context, BLUEBERRYBUSH_KEY, Feature.FLOWER,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.BLUEBERRY_BUSH)))));
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.BLUEBERRY_BUSH.getDefaultState().with(BlueberryBush.AGE, 3))))));
         register(context, BLACKBERRY_KEY, Feature.FLOWER,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.BLACKBERRY_BUSH)))));
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.BLACKBERRY_BUSH.getDefaultState().with(BlackberryBush.AGE, 3))))));
         register(context, RASPBERRY_KEY, Feature.FLOWER,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.RASPBERRY_BUSH)))));
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.RASPBERRY_BUSH.getDefaultState().with(RaspberryBush.AGE, 3))))));
         register(context, CLOUDBERRY_KEY, Feature.FLOWER,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.CLOUDBERRY_BUSH)))));
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.CLOUDBERRY_BUSH.getDefaultState().with(CloudberryBush.AGE, 3))))));
         register(context, WILDSTRAWBERRY_KEY, Feature.FLOWER,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.WILD_STRAWBERRY_BUSH)))));
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.WILD_STRAWBERRY_BUSH.getDefaultState().with(Wild_StrawberryBush.AGE, 3))))));
 
 
         //chance to spawn tree's
