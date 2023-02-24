@@ -243,7 +243,7 @@ public class CuttingBoardBlockEntity extends BlockEntity implements ExtendedScre
         entity.maxProgress = entity.getWorld().getRecipeManager()
                 .getFirstMatch(CuttingBoardRecipe.Type.INSTANCE, inventory, entity.getWorld()).map(CuttingBoardRecipe::getCookTime).orElse(20);
 
-        return match.isPresent() && canInsertAmountIntoOutputSlot(inventory)
+        return match.isPresent() && canInsertAmountIntoOutputSlot(inventory, match.get().getOutput().getCount())
                 && canInsertItemIntoOutputSlot(inventory, match.get().getOutput().getItem());
     }
 
@@ -253,7 +253,7 @@ public class CuttingBoardBlockEntity extends BlockEntity implements ExtendedScre
         return inventory.getStack(2).isEmpty();
     }
 
-    private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory) {
-        return inventory.getStack(2).getMaxCount() > inventory.getStack(2).getCount();
+    private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory, int amount) {
+        return inventory.getStack(2).getMaxCount() >= inventory.getStack(2).getCount() + amount;
     }
 }
