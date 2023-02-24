@@ -271,17 +271,15 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
                 .getFirstMatch(SkilletRecipe.Type.INSTANCE, inventory, entity.getWorld()).map(SkilletRecipe::getCookTime).orElse(20);
         //Photosynthesis.LOGGER.info("setting cooktime to: " + match.get().getCookTime());
 
-        return match.isPresent() && canInsertAmountIntoOutputSlot(inventory)
+        return match.isPresent() && canInsertAmountIntoOutputSlot(inventory, match.get().getOutput().getCount())
                 && canInsertItemIntoOutputSlot(inventory, match.get().getOutput().getItem());
     }
 
     private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, Item output) {
         return inventory.getStack(2).getItem() == output || inventory.getStack(2).isEmpty(); //crafts up to a stack.
-        //make it so output has to be empty. (more manual labor) *evil*
-        //return inventory.getStack(2).isEmpty();
     }
 
-    private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory) {
-        return inventory.getStack(2).getMaxCount() > inventory.getStack(2).getCount();
+    private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory, int amount) {
+        return inventory.getStack(2).getMaxCount() >= inventory.getStack(2).getCount() + amount;
     }
 }

@@ -32,7 +32,7 @@ public class SkilletRecipe implements Recipe<SimpleInventory> {
         if(world.isClient()) {
             return false;
         }
-
+        //is this not used???
         return recipeItems.get(0).test(inventory.getStack(0)) && recipeItems.get(1).test(inventory.getStack(1));
     }
 
@@ -93,9 +93,12 @@ public class SkilletRecipe implements Recipe<SimpleInventory> {
             Photosynthesis.LOGGER.info("read cookingtime of: " + CookTime + ", for: " + output.getItem().getName().getString());
 
             JsonArray ingredients = JsonHelper.getArray(json, "ingredients");
-            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(2, Ingredient.EMPTY); //size: number of possible input ingredients.
+            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(2, Ingredient.EMPTY); //size: max number of possible input ingredients.
 
-            for (int i = 0; i < inputs.size(); i++) {
+            for (int i = 0; i < ingredients.size(); i++) {
+                if (i >= inputs.size()) {
+                    inputs.add(Ingredient.EMPTY);
+                }
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
             }
 

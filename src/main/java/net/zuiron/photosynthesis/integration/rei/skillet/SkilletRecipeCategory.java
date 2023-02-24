@@ -12,6 +12,7 @@ import me.shedaniel.rei.api.common.entry.EntryIngredient;
 import me.shedaniel.rei.api.common.util.EntryStacks;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
@@ -52,19 +53,23 @@ public class SkilletRecipeCategory implements DisplayCategory<SkilletRecipeDispl
         Rectangle bgBounds = PhotosynthesisREI.centeredIntoRecipeBase(origin, 116, 56);
         widgets.add(Widgets.createTexturedWidget(GUI_TEXTURE, bgBounds, 29, 16));
 
-        //FOR SOME REASON, WE ARE MISSING INPUTS!
+        //fixed
 
         List<EntryIngredient> ingredientEntries = display.getIngredientEntries();
+
         if (ingredientEntries != null) {
-            /*for (int i = 0; i < ingredientEntries.size(); i++) {
-                Point slotLoc = new Point(bgBounds.x + 1 + i % 3 * 18, bgBounds.y + 1 + (i / 3) * 18);
-                widgets.add(Widgets.createSlot(slotLoc).entries(ingredientEntries.get(i)).markInput().disableBackground());
-            }*/
-            widgets.add(Widgets.createSlot(new Point(bgBounds.x + 33, bgBounds.y + 16))
-                    .entries(ingredientEntries.get(0)).markInput().disableBackground());
-            widgets.add(Widgets.createSlot(new Point(bgBounds.x + 33, bgBounds.y + 34))
-                    .entries(ingredientEntries.get(1)).markInput().disableBackground());
+            if (ingredientEntries.size() >= 2) {
+                widgets.add(Widgets.createSlot(new Point(bgBounds.x + 33, bgBounds.y + 16))
+                        .entries(ingredientEntries.get(0)).markInput().disableBackground());
+                widgets.add(Widgets.createSlot(new Point(bgBounds.x + 33, bgBounds.y + 34))
+                        .entries(ingredientEntries.get(1)).markInput().disableBackground());
+            } else if (ingredientEntries.size() == 1) {
+                widgets.add(Widgets.createSlot(new Point(bgBounds.x + 33, bgBounds.y + 16))
+                        .entries(ingredientEntries.get(0)).markInput().disableBackground());
+            }
         }
+
+
 
         //OUTPUT
         widgets.add(Widgets.createSlot(new Point(bgBounds.x + 69, bgBounds.y + 34))
