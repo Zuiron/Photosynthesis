@@ -37,7 +37,7 @@ public class BarkPeelerSpudItem extends AxeItem {
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
 
         if(Screen.hasShiftDown()){
-            //tooltip.add(new TranslatableText("tooltip.huntergatherers.flint_knife_shift"));
+            //tooltip.add(Text.translatable("tooltip.huntergatherers.flint_knife_shift"));
         }else{
             //tooltip.add(new TranslatableText("tooltip.huntergatherers.flint_knife"));
         }
