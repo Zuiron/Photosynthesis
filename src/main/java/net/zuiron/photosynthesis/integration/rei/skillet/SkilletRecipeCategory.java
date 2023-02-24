@@ -25,7 +25,7 @@ import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.integration.rei.PhotosynthesisREI;
 @Environment(EnvType.CLIENT)
 public class SkilletRecipeCategory implements DisplayCategory<SkilletRecipeDisplay> {
-    private static final Identifier GUI_TEXTURE = new Identifier(Photosynthesis.MOD_ID, "textures/gui/skillet_gui.png");
+    private static final Identifier GUI_TEXTURE = new Identifier(Photosynthesis.MOD_ID, "textures/gui/skillet_gui_rei.png");
 
     @Override
     public Renderer getIcon() {
@@ -77,20 +77,24 @@ public class SkilletRecipeCategory implements DisplayCategory<SkilletRecipeDispl
                 .entries(display.getOutputEntries().get(0)).markOutput().disableBackground());
          */
 
-/*
-        widgets.add(Widgets.createTexturedWidget(GUI_TEXTURE,
-                new Rectangle(bgBounds.x + 18, bgBounds.y + 39, 17, 15), 176, 0));
+
+        /*widgets.add(Widgets.createTexturedWidget(GUI_TEXTURE,
+                new Rectangle(bgBounds.x + 18, bgBounds.y + 39, 17, 15), 176, 0));*/
+
+
+        int cookTime = display.getCookTime();
+        int cookTimeSeconds = cookTime / 20;
 
         Arrow cookArrow = Widgets.createArrow(new Point(bgBounds.x + 61, bgBounds.y + 10))
-                .animationDurationTicks(display.getCookTime());
+                .animationDurationTicks(cookTime);
         widgets.add(cookArrow);
         widgets.add(Widgets.createLabel(new Point(
                                 cookArrow.getBounds().x + cookArrow.getBounds().width / 2, cookArrow.getBounds().y - 8),
-                        Text.literal(display.getCookTime() + " t"))
-                .noShadow().centered().tooltip(Text.literal("Ticks"))
+                        Text.literal(cookTimeSeconds + " s"))
+                .noShadow().centered().tooltip(Text.literal("Seconds ("+cookTime+" t)"))
                 .color(Formatting.DARK_GRAY.getColorValue(), Formatting.GRAY.getColorValue()));
 
- */
+
 
         return widgets;
     }

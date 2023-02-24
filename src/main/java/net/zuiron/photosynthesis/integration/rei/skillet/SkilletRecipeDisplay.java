@@ -29,8 +29,8 @@ public class SkilletRecipeDisplay extends BasicDisplay {
         super(EntryIngredients.ofIngredients(recipe.getIngredients()), Collections.singletonList(EntryIngredients.of(recipe.getOutput())),
                 Optional.ofNullable(recipe.getId()));
         containerOutput = EntryIngredients.of(recipe.getOutput());
-        //cookTime = recipe.getCookTime();
-        cookTime = 200;
+        cookTime = recipe.getCookTime();
+        //cookTime = 200;
     }
 
     @Override
