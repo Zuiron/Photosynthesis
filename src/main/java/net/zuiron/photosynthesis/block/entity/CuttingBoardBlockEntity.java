@@ -28,6 +28,7 @@ import net.minecraft.world.World;
 import net.zuiron.photosynthesis.item.ModItems;
 import net.zuiron.photosynthesis.networking.ModMessages;
 import net.zuiron.photosynthesis.recipe.CuttingBoardRecipe;
+import net.zuiron.photosynthesis.recipe.SkilletRecipe;
 import net.zuiron.photosynthesis.screen.CuttingBoardScreenHandler;
 import org.jetbrains.annotations.Nullable;
 
@@ -137,6 +138,7 @@ public class CuttingBoardBlockEntity extends BlockEntity implements ExtendedScre
         super.writeNbt(nbt);
         Inventories.writeNbt(nbt, inventory);
         nbt.putInt("cutting_board.progress", progress);
+        nbt.putInt("cutting_board.cookingTime", maxProgress);
     }
 
     @Override
@@ -144,6 +146,7 @@ public class CuttingBoardBlockEntity extends BlockEntity implements ExtendedScre
         Inventories.readNbt(nbt, inventory);
         super.readNbt(nbt);
         progress = nbt.getInt("cutting_board.progress");
+        maxProgress = nbt.getInt("cutting_board.cookingTime");
     }
 
     private void resetProgress() {
@@ -236,6 +239,9 @@ public class CuttingBoardBlockEntity extends BlockEntity implements ExtendedScre
 
         Optional<CuttingBoardRecipe> match = entity.getWorld().getRecipeManager()
                 .getFirstMatch(CuttingBoardRecipe.Type.INSTANCE, inventory, entity.getWorld());
+
+        entity.maxProgress = entity.getWorld().getRecipeManager()
+                .getFirstMatch(CuttingBoardRecipe.Type.INSTANCE, inventory, entity.getWorld()).map(CuttingBoardRecipe::getCookTime).orElse(20);
 
         return match.isPresent() && canInsertAmountIntoOutputSlot(inventory)
                 && canInsertItemIntoOutputSlot(inventory, match.get().getOutput().getItem());

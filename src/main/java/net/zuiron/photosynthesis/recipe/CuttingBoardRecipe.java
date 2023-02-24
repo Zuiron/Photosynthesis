@@ -10,16 +10,20 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
+import net.zuiron.photosynthesis.Photosynthesis;
 
 public class CuttingBoardRecipe implements Recipe<SimpleInventory> {
     private final Identifier id;
     private final ItemStack output;
     private final DefaultedList<Ingredient> recipeItems;
 
-    public CuttingBoardRecipe(Identifier id, ItemStack output, DefaultedList<Ingredient> recipeItems) {
+    private final int cookingTime;
+
+    public CuttingBoardRecipe(Identifier id, ItemStack output, DefaultedList<Ingredient> recipeItems, int cookingTime) {
         this.id = id;
         this.output = output;
         this.recipeItems = recipeItems;
+        this.cookingTime = cookingTime;
     }
 
     @Override
@@ -57,6 +61,10 @@ public class CuttingBoardRecipe implements Recipe<SimpleInventory> {
         return output.copy();
     }
 
+    public int getCookTime() {
+        return cookingTime;
+    }
+
     @Override
     public Identifier getId() {
         return id;
@@ -86,6 +94,8 @@ public class CuttingBoardRecipe implements Recipe<SimpleInventory> {
         @Override
         public CuttingBoardRecipe read(Identifier id, JsonObject json) {
             ItemStack output = ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "output"));
+            int CookTime = JsonHelper.getInt(json, "cookingtime");
+            Photosynthesis.LOGGER.info("read cookingtime of: " + CookTime + ", for: " + output.getItem().getName().getString());
 
             JsonArray ingredients = JsonHelper.getArray(json, "ingredients");
             DefaultedList<Ingredient> inputs = DefaultedList.ofSize(2, Ingredient.EMPTY); //size: number of possible input ingredients.
@@ -94,7 +104,7 @@ public class CuttingBoardRecipe implements Recipe<SimpleInventory> {
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
             }
 
-            return new CuttingBoardRecipe(id, output, inputs);
+            return new CuttingBoardRecipe(id, output, inputs, CookTime);
         }
 
         @Override
@@ -106,7 +116,7 @@ public class CuttingBoardRecipe implements Recipe<SimpleInventory> {
             }
 
             ItemStack output = buf.readItemStack();
-            return new CuttingBoardRecipe(id, output, inputs);
+            return new CuttingBoardRecipe(id, output, inputs, 0);
         }
 
         @Override
