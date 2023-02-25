@@ -65,7 +65,7 @@ public class CustomCropBlock extends CropBlock {
             case "broccoli_crop": return ModItems.BROCCOLI;
             case "cauliflower_crop": return ModItems.CAULIFLOWER;
             case "corn_crop": return ModItems.CORN;
-            case "black_pepper_crop": return ModItems.BLACK_PEPPER;
+            //case "black_pepper_crop": return ModItems.BLACK_PEPPER;
             case "cabbage_crop": return ModItems.CABBAGE;
             case "bellpepper_crop": return ModItems.RED_BELLPEPPER;
             case "turnip_crop": return ModItems.TURNIP;

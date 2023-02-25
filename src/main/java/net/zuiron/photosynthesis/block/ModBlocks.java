@@ -92,7 +92,7 @@ public class ModBlocks {
     public static final CropBlock BROCCOLI_CROP = registerCropBlockSimple("broccoli_crop");
     public static final CropBlock CAULIFLOWER_CROP = registerCropBlockSimple("cauliflower_crop");
     public static final CropBlock CORN_CROP = registerCropBlockSimple("corn_crop");
-    public static final CropBlock BLACK_PEPPER_CROP = registerCropBlockSimple("black_pepper_crop");
+    //public static final CropBlock BLACK_PEPPER_CROP = registerCropBlockSimple("black_pepper_crop");
     public static final CropBlock CABBAGE_CROP = registerCropBlockSimple("cabbage_crop");
     public static final CropBlock BELLPEPPER_CROP = registerCropBlockSimple("bellpepper_crop");
     public static final CropBlock TURNIP_CROP = registerCropBlockSimple("turnip_crop");

@@ -316,9 +316,9 @@ public class ModItems {
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
-    public static final Item BLACK_PEPPER = registerItem("black_pepper",
+    /*public static final Item BLACK_PEPPER = registerItem("black_pepper",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));*/
 
     public static final Item CABBAGE = registerItem("cabbage",
             new Item(new FabricItemSettings()
@@ -666,7 +666,7 @@ public class ModItems {
     public static final Item BROCCOLI_SEEDS = registerSeedItem("broccoli_seeds", ModBlocks.BROCCOLI_CROP);
     public static final Item CAULIFLOWER_SEEDS = registerSeedItem("cauliflower_seeds", ModBlocks.CAULIFLOWER_CROP);
     public static final Item CORN_SEEDS = registerSeedItem("corn_seeds", ModBlocks.CORN_CROP);
-    public static final Item BLACK_PEPPER_SEEDS = registerSeedItem("black_pepper_seeds", ModBlocks.BLACK_PEPPER_CROP);
+    //public static final Item BLACK_PEPPER_SEEDS = registerSeedItem("black_pepper_seeds", ModBlocks.BLACK_PEPPER_CROP);
     public static final Item CABBAGE_SEEDS = registerSeedItem("cabbage_seeds", ModBlocks.CABBAGE_CROP);
     public static final Item BELLPEPPER_SEEDS = registerSeedItem("bellpepper_seeds", ModBlocks.BELLPEPPER_CROP);
     public static final Item TURNIP_SEEDS = registerSeedItem("turnip_seeds", ModBlocks.TURNIP_CROP);
@@ -879,7 +879,7 @@ public class ModItems {
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, BROCCOLI );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CAULIFLOWER );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CORN );
-        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, BLACK_PEPPER );
+        //addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, BLACK_PEPPER );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CABBAGE );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, RED_BELLPEPPER );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, GREEN_BELLPEPPER );
@@ -948,7 +948,7 @@ public class ModItems {
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, BROCCOLI_SEEDS );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CAULIFLOWER_SEEDS );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CORN_SEEDS );
-        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, BLACK_PEPPER_SEEDS );
+        //addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, BLACK_PEPPER_SEEDS );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CABBAGE_SEEDS );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, BELLPEPPER_SEEDS );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, TURNIP_SEEDS );
