@@ -1,6 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "photosynthesis:block/raspberry_bush_stage2"
-  }
-}
