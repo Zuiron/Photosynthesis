@@ -1,6 +1,6 @@
 {
-	"parent":"photosynthesis:block/berrybushsmallmodel",
+	"parent": "block/cross",
 	"textures": {
-		"2":"photosynthesis:block/wild_strawberry_bush_stage1"
+	  "cross": "photosynthesis:block/wild_strawberry_bush_stage1"
 	}
 }

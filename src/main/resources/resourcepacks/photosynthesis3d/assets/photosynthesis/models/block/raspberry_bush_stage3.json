@@ -1,0 +1,6 @@
+{
+	"parent":"photosynthesis:block/berrybushmodel",
+	"textures": {
+		"0":"photosynthesis:block/raspberry_bush_stage3"
+	}
+}
