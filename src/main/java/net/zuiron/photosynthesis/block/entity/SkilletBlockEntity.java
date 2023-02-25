@@ -41,6 +41,14 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
     //public static boolean LIT = false;
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(3, ItemStack.EMPTY);
 
+    public ItemStack getRenderStack() {
+        if(!this.getStack(0).isEmpty()) {
+            return this.getStack(0);
+        } else {
+            return this.getStack(2);
+        }
+    }
+
     public void setInventory(DefaultedList<ItemStack> inventory) {
         for (int i = 0; i < inventory.size(); i++) {
             this.inventory.set(i, inventory.get(i));
@@ -213,6 +221,7 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
             }
         } else {
             entity.resetProgress();
+            state = (BlockState)state.with(SkilletBlock.PROCESSING, false); world.setBlockState(blockPos, state, 3);
             markDirty(world, blockPos, state);
         }
     }
@@ -257,7 +266,6 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
             int outputSlotCount = entity.getStack(2).getCount();
 
             entity.setStack(2, new ItemStack(recipe.get().getOutput().getItem(), outputSlotCount + recipeOutputCount));
-
             entity.resetProgress();
         }
     }

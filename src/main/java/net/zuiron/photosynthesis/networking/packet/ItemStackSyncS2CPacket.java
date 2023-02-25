@@ -8,6 +8,7 @@ import net.minecraft.network.PacketByteBuf;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.zuiron.photosynthesis.block.entity.CuttingBoardBlockEntity;
+import net.zuiron.photosynthesis.block.entity.SkilletBlockEntity;
 
 public class ItemStackSyncS2CPacket {
     public static void receive(MinecraftClient client, ClientPlayNetworkHandler handler,
@@ -19,8 +20,7 @@ public class ItemStackSyncS2CPacket {
         }
         BlockPos position = buf.readBlockPos();
 
-        if(client.world.getBlockEntity(position) instanceof CuttingBoardBlockEntity blockEntity) {
-            blockEntity.setInventory(list);
-        }
+        if(client.world.getBlockEntity(position) instanceof CuttingBoardBlockEntity blockEntity) { blockEntity.setInventory(list); }
+        else if(client.world.getBlockEntity(position) instanceof SkilletBlockEntity blockEntity) { blockEntity.setInventory(list); }
     }
 }

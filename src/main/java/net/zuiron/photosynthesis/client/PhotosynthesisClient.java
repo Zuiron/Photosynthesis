@@ -20,6 +20,7 @@ import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.block.entity.ModBlockEntities;
 import net.zuiron.photosynthesis.block.entity.client.CuttingBoardBlockEntityRenderer;
+import net.zuiron.photosynthesis.block.entity.client.SkilletBlockEntityRenderer;
 import net.zuiron.photosynthesis.fluid.ModFluids;
 import net.zuiron.photosynthesis.networking.ModMessages;
 import net.zuiron.photosynthesis.screen.CuttingBoardScreen;
@@ -345,8 +346,9 @@ public class PhotosynthesisClient implements ClientModInitializer {
         HandledScreens.register(ModScreenHandlers.SKILLET_SCREEN_HANDLER, SkilletScreen::new);
         ModMessages.registerS2CPackets();
 
-        //BlockEntityRendererRegistry.register(ModBlockEntities.CUTTING_BOARD, CuttingBoardBlockEntityRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.CUTTING_BOARD, CuttingBoardBlockEntityRenderer::new);
+        BlockEntityRendererFactories.register(ModBlockEntities.SKILLET, SkilletBlockEntityRenderer::new);
+
 
         FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_LATEX, ModFluids.FLOWING_LATEX,
                 new SimpleFluidRenderHandler(
