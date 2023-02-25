@@ -3,6 +3,11 @@
     "sounds": [
       "photosynthesis:skillet"
     ]
+  },
+  "cookingpot": {
+    "sounds": [
+      "photosynthesis:cookingpot"
+    ]
   }
 }
 

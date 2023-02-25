@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
+import net.zuiron.photosynthesis.block.entity.CookingPotBlockEntity;
 import net.zuiron.photosynthesis.block.entity.CuttingBoardBlockEntity;
 import net.zuiron.photosynthesis.block.entity.SkilletBlockEntity;
 
@@ -22,5 +23,6 @@ public class ItemStackSyncS2CPacket {
 
         if(client.world.getBlockEntity(position) instanceof CuttingBoardBlockEntity blockEntity) { blockEntity.setInventory(list); }
         else if(client.world.getBlockEntity(position) instanceof SkilletBlockEntity blockEntity) { blockEntity.setInventory(list); }
+        else if(client.world.getBlockEntity(position) instanceof CookingPotBlockEntity blockEntity) { blockEntity.setInventory(list); }
     }
 }

@@ -183,7 +183,7 @@ public class CookingPotBlockEntity extends BlockEntity implements ExtendedScreen
     private static int tickCounter = 0;
 
     public static void loopCookingPotSound(World world, BlockPos blockPos) {
-        int ticksPerLoop = (int) (2.193 * 20);
+        int ticksPerLoop = (int) (2 * 20);
         tickCounter++;
         if (tickCounter >= ticksPerLoop) {
             playCookingPotSound(world, blockPos);
