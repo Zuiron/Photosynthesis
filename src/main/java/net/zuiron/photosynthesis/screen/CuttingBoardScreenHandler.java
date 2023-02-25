@@ -11,6 +11,7 @@ import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.screen.slot.Slot;
+import net.zuiron.photosynthesis.screen.slot.OutputSlot;
 import org.jetbrains.annotations.Nullable;
 
 public class CuttingBoardScreenHandler extends ScreenHandler {
@@ -30,7 +31,7 @@ public class CuttingBoardScreenHandler extends ScreenHandler {
 
         this.addSlot(new Slot(inventory, 0, 80, 22)); //tool
         this.addSlot(new Slot(inventory, 1, 62, 58)); //input
-        this.addSlot(new Slot(inventory, 2, 98, 58)); //output
+        this.addSlot(new OutputSlot(inventory, 2, 98, 58)); //output
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
