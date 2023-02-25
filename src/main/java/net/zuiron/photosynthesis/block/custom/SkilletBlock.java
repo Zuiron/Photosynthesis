@@ -27,11 +27,12 @@ import org.jetbrains.annotations.Nullable;
 public class SkilletBlock extends BlockWithEntity implements BlockEntityProvider {
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
     public static BooleanProperty LIT;
+    public static BooleanProperty PROCESSING;
 
     public SkilletBlock(Settings settings) {
         super(settings);
-        //this.setDefaultState((BlockState)((BlockState)((BlockState)this.stateManager.getDefaultState()).with(FACING, Direction.NORTH)).with(LIT, false));
         this.setDefaultState(this.stateManager.getDefaultState().with(LIT, false));
+        this.setDefaultState(this.stateManager.getDefaultState().with(PROCESSING, false));
     }
 
     private static VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 3, 16);
@@ -59,8 +60,7 @@ public class SkilletBlock extends BlockWithEntity implements BlockEntityProvider
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        //builder.add(FACING);
-        builder.add(new Property[]{FACING, LIT});
+        builder.add(new Property[]{FACING, LIT, PROCESSING});
     }
 
     /* BLOCK ENTITY */
@@ -110,5 +110,6 @@ public class SkilletBlock extends BlockWithEntity implements BlockEntityProvider
 
     static {
         LIT = Properties.LIT;
+        PROCESSING = BooleanProperty.of("processing");
     }
 }

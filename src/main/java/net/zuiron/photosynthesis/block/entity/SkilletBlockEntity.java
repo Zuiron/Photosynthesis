@@ -147,7 +147,7 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
         syncItems();
     }
 
-    public static void animationTick(World level, BlockPos pos) {
+    public static void animationTick(World level, BlockPos pos, BlockState state) {
         //level == entity.getWorld()
         if (isBlockBelowBurning(level, pos) && level.isClient()) {
             Random random = level.random;
@@ -159,7 +159,7 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
                 //level.addParticle(ModParticleTypes.STEAM.get(), x, y, z, 0.0D, motionY, 0.0D);
                 level.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, x, y, z, 0.0D, motionY, 0.0D);
             }
-            if (isBlockBelowBurning(level, pos)) {
+            if (state.get(BooleanProperty.of("processing"))) {
                 double x = (double) pos.getX() + 0.5D + (random.nextDouble() * 0.4D - 0.2D);
                 double y = (double) pos.getY() + 0.1D;
                 double z = (double) pos.getZ() + 0.5D + (random.nextDouble() * 0.4D - 0.2D);
@@ -171,11 +171,10 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
                 level.addParticle(ParticleTypes.SMOKE, x, y, z, 0.0D, motionY, 0.0D); //ENCHANTED_HIT
             }
         }
-
     }
 
     public static void tick(World world, BlockPos blockPos, BlockState state, SkilletBlockEntity entity) {
-        animationTick(world, blockPos);
+        animationTick(world, blockPos, state);
 
         if(world.isClient()) {
             return;
@@ -191,9 +190,11 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
 
         if(hasRecipe(entity) && isBelowHeat) {
             entity.progress++;
+            state = (BlockState)state.with(SkilletBlock.PROCESSING, true); world.setBlockState(blockPos, state, 3);
             markDirty(world, blockPos, state);
             if(entity.progress >= entity.maxProgress) {
                 craftItem(entity);
+                state = (BlockState)state.with(SkilletBlock.PROCESSING, false); world.setBlockState(blockPos, state, 3);
                 if (!world.isClient) {
                     world.playSound(
                             null, // Player - if non-null, will play sound for every nearby player *except* the specified player
@@ -219,9 +220,11 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
             // The block below your directional block is a furnace, blast furnace or smoker
             BlockEntity blockEntity = world.getBlockEntity(blockPosBelow);
                 //if (furnaceBlockEntity.isBurning()) {
-                if(blockStateBelow.get(Properties.LIT) || blockStateBelow.getBlock() == Blocks.CAMPFIRE) {
+                if(blockStateBelow.get(Properties.LIT)) {
                     // The furnace below your directional block is currently smelting
                     //TODO -- if we decide to allow campfire, which is unlimited LIT. should we decrease cook time? YES!
+                    return true;
+                } else if(blockStateBelow.getBlock() == Blocks.CAMPFIRE && blockStateBelow.get(Properties.SIGNAL_FIRE)) {
                     return true;
                 }
         }
