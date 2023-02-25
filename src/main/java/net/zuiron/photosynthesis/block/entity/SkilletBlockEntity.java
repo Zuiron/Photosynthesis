@@ -140,7 +140,6 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
     }
 
     public static void animationTick(World level, BlockPos pos, BlockState state) {
-        //level == entity.getWorld()
         if (isBlockBelowBurning(level, pos) && level.isClient()) {
             Random random = level.random;
             if (random.nextFloat() < 0.2F) {
@@ -148,24 +147,17 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
                 double y = (double) pos.getY() + 1.1D;
                 double z = (double) pos.getZ() + 0.5D + (random.nextDouble() * 0.4D - 0.2D);
                 double motionY = random.nextBoolean() ? 0.015D : 0.005D;
-                //level.addParticle(ModParticleTypes.STEAM.get(), x, y, z, 0.0D, motionY, 0.0D);
                 level.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, x, y, z, 0.0D, motionY, 0.0D);
             }
             if (state.get(BooleanProperty.of("processing"))) {
                 double x = (double) pos.getX() + 0.5D + (random.nextDouble() * 0.4D - 0.2D);
                 double y = (double) pos.getY() + 0.1D;
                 double z = (double) pos.getZ() + 0.5D + (random.nextDouble() * 0.4D - 0.2D);
-                /*double motionX = level.random.nextFloat() - 0.5F;
-                double motionY = level.random.nextFloat() * 0.5F + 0.2f;
-                double motionZ = level.random.nextFloat() - 0.5F;*/
-                //level.addParticle(ParticleTypes.SMOKE, x, y, z, motionX, motionY, motionZ); //ENCHANTED_HIT
                 double motionY = random.nextBoolean() ? 0.015D : 0.005D;
                 level.addParticle(ParticleTypes.SMOKE, x, y, z, 0.0D, motionY, 0.0D); //ENCHANTED_HIT
             }
         }
     }
-
-    private static int tickCounter = 0;
 
 
     public static void playSkilletSound(World world, BlockPos blockPos) {
@@ -181,13 +173,12 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
         }
     }
 
+    private static int tickCounter = 0;
+
     public static void loopSkilletSound(World world, BlockPos blockPos) {
         int ticksPerLoop = (int) (2.193 * 20);
-
         tickCounter++;
-        Photosynthesis.LOGGER.info(tickCounter);
-        if (tickCounter >= ticksPerLoop) { // execute every 20 ticks (1 second)
-            Photosynthesis.LOGGER.info("play skillet sound now");
+        if (tickCounter >= ticksPerLoop) {
             playSkilletSound(world, blockPos);
             tickCounter = 0;
         }
