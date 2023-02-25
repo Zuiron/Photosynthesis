@@ -23,10 +23,7 @@ import net.zuiron.photosynthesis.block.entity.client.CuttingBoardBlockEntityRend
 import net.zuiron.photosynthesis.block.entity.client.SkilletBlockEntityRenderer;
 import net.zuiron.photosynthesis.fluid.ModFluids;
 import net.zuiron.photosynthesis.networking.ModMessages;
-import net.zuiron.photosynthesis.screen.CuttingBoardScreen;
-import net.zuiron.photosynthesis.screen.LatexExtractorScreen;
-import net.zuiron.photosynthesis.screen.ModScreenHandlers;
-import net.zuiron.photosynthesis.screen.SkilletScreen;
+import net.zuiron.photosynthesis.screen.*;
 import net.fabricmc.fabric.api.resource.*;
 
 import java.util.Optional;
@@ -344,6 +341,7 @@ public class PhotosynthesisClient implements ClientModInitializer {
         HandledScreens.register(ModScreenHandlers.CUTTING_BOARD_SCREEN_HANDLER, CuttingBoardScreen::new);
         HandledScreens.register(ModScreenHandlers.LATEX_EXTRACTOR_SCREEN_HANDLER, LatexExtractorScreen::new);
         HandledScreens.register(ModScreenHandlers.SKILLET_SCREEN_HANDLER, SkilletScreen::new);
+        HandledScreens.register(ModScreenHandlers.COOKINGPOT_SCREEN_HANDLER, CookingPotScreen::new);
         ModMessages.registerS2CPackets();
 
         BlockEntityRendererFactories.register(ModBlockEntities.CUTTING_BOARD, CuttingBoardBlockEntityRenderer::new);
