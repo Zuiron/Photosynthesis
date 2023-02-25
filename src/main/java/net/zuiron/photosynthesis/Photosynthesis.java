@@ -1,6 +1,10 @@
 package net.zuiron.photosynthesis;
 
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.treedecorator.TreeDecoratorType;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.block.entity.ModBlockEntities;
@@ -124,7 +128,8 @@ public class Photosynthesis implements ModInitializer {
 
 
 
-
+	public static final Identifier SKILLET_SOUND_ID = new Identifier("photosynthesis:skillet");
+	public static SoundEvent SKILLET_SOUND_EVENT = SoundEvent.of(SKILLET_SOUND_ID);
 
 
 	@Override
@@ -132,6 +137,8 @@ public class Photosynthesis implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
+		Registry.register(Registries.SOUND_EVENT, Photosynthesis.SKILLET_SOUND_ID, SKILLET_SOUND_EVENT);
+
 		ModItemGroup.registerItemGroup();
 
 		ModItems.registerModItems(); //before blocks

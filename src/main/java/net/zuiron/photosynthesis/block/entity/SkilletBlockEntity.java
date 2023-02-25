@@ -4,11 +4,9 @@ import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.PlayerLookup;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
-import net.minecraft.block.AbstractFurnaceBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.block.entity.FurnaceBlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
@@ -23,23 +21,17 @@ import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.Photosynthesis;
-import net.zuiron.photosynthesis.block.custom.LatexExtractorBlock;
 import net.zuiron.photosynthesis.block.custom.SkilletBlock;
-import net.zuiron.photosynthesis.item.ModItems;
 import net.zuiron.photosynthesis.networking.ModMessages;
-import net.zuiron.photosynthesis.recipe.CuttingBoardRecipe;
 import net.zuiron.photosynthesis.recipe.SkilletRecipe;
-import net.zuiron.photosynthesis.screen.CuttingBoardScreenHandler;
 import net.zuiron.photosynthesis.screen.SkilletScreenHandler;
 import org.jetbrains.annotations.Nullable;
 
@@ -173,6 +165,34 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
         }
     }
 
+    private static int tickCounter = 0;
+
+
+    public static void playSkilletSound(World world, BlockPos blockPos) {
+        if(!world.isClient()) {
+            world.playSound(
+                    null, // Player - if non-null, will play sound for every nearby player *except* the specified player
+                    blockPos, // The position of where the sound will come from
+                    Photosynthesis.SKILLET_SOUND_EVENT, // The sound that will play, in this case, the sound the anvil plays when it lands.
+                    SoundCategory.BLOCKS, // This determines which of the volume sliders affect this sound
+                    1f, //Volume multiplier, 1 is normal, 0.5 is half volume, etc
+                    1f // Pitch multiplier, 1 is normal, 0.5 is half pitch, etc
+            );
+        }
+    }
+
+    public static void loopSkilletSound(World world, BlockPos blockPos) {
+        int ticksPerLoop = (int) (2.193 * 20);
+
+        tickCounter++;
+        Photosynthesis.LOGGER.info(tickCounter);
+        if (tickCounter >= ticksPerLoop) { // execute every 20 ticks (1 second)
+            Photosynthesis.LOGGER.info("play skillet sound now");
+            playSkilletSound(world, blockPos);
+            tickCounter = 0;
+        }
+    }
+
     public static void tick(World world, BlockPos blockPos, BlockState state, SkilletBlockEntity entity) {
         animationTick(world, blockPos, state);
 
@@ -192,19 +212,13 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
             entity.progress++;
             state = (BlockState)state.with(SkilletBlock.PROCESSING, true); world.setBlockState(blockPos, state, 3);
             markDirty(world, blockPos, state);
+
+            //play sound
+            loopSkilletSound(world, blockPos);
+
             if(entity.progress >= entity.maxProgress) {
                 craftItem(entity);
                 state = (BlockState)state.with(SkilletBlock.PROCESSING, false); world.setBlockState(blockPos, state, 3);
-                if (!world.isClient) {
-                    world.playSound(
-                            null, // Player - if non-null, will play sound for every nearby player *except* the specified player
-                            blockPos, // The position of where the sound will come from
-                            SoundEvents.BLOCK_BEEHIVE_SHEAR, // The sound that will play, in this case, the sound the anvil plays when it lands.
-                            SoundCategory.BLOCKS, // This determines which of the volume sliders affect this sound
-                            1f, //Volume multiplier, 1 is normal, 0.5 is half volume, etc
-                            1f // Pitch multiplier, 1 is normal, 0.5 is half pitch, etc
-                    );
-                }
             }
         } else {
             entity.resetProgress();
