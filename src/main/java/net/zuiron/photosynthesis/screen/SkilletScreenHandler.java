@@ -13,6 +13,7 @@ import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 import net.zuiron.photosynthesis.block.entity.LatexExtractorBlockEntity;
 import net.zuiron.photosynthesis.block.entity.SkilletBlockEntity;
+import net.zuiron.photosynthesis.screen.slot.OutputSlot;
 
 public class SkilletScreenHandler extends ScreenHandler {
     private final Inventory inventory;
@@ -35,7 +36,7 @@ public class SkilletScreenHandler extends ScreenHandler {
 
         this.addSlot(new Slot(inventory, 0, 62, 32)); //input1
         this.addSlot(new Slot(inventory, 1, 62, 50)); //input2
-        this.addSlot(new Slot(inventory, 2, 98, 50)); //output
+        this.addSlot(new OutputSlot(inventory, 2, 98, 50)); //output
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
