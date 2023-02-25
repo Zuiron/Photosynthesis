@@ -292,7 +292,9 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
     }
 
     private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, Item output) {
-        return inventory.getStack(2).getItem() == output || inventory.getStack(2).isEmpty(); //crafts up to a stack.
+        //return inventory.getStack(2).getItem() == output || inventory.getStack(2).isEmpty(); //crafts up to a stack.
+        //make it so output has to be empty. (more manual labor) *evil*
+        return inventory.getStack(2).isEmpty();
     }
 
     private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory, int amount) {
