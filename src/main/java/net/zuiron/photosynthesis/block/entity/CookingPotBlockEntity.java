@@ -14,6 +14,7 @@ import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.item.PotionItem;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.particle.ParticleTypes;
@@ -260,9 +261,10 @@ public class CookingPotBlockEntity extends BlockEntity implements ExtendedScreen
                 .getFirstMatch(CookingPotRecipe.Type.INSTANCE, inventory, entity.getWorld());
 
         if(hasRecipe(entity)) {
-            Photosynthesis.LOGGER.info(entity.getStack(0).getNbt().get("Potion").asString());
-            if(entity.getStack(0).hasNbt() && Objects.equals(entity.getStack(0).getNbt().get("Potion").asString(), "minecraft:water")) {
-                Photosynthesis.LOGGER.info("YAY");
+            //Photosynthesis.LOGGER.info(entity.getStack(0).getNbt().get("Potion").asString());
+            //if(entity.getStack(0).hasNbt() && Objects.equals(entity.getStack(0).getNbt().get("Potion").asString(), "minecraft:water")) {
+            if(entity.getStack(0).getItem() instanceof PotionItem) {
+                //Photosynthesis.LOGGER.info("YAY");
                 entity.setStack(8, new ItemStack(Items.GLASS_BOTTLE, 1));
             } else { entity.setStack(8, entity.getStack(0).getRecipeRemainder()); }
 
