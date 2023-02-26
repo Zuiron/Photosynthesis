@@ -1,8 +1,15 @@
 # Photosynthesis
+<img src="https://github.com/Zuiron/Photosynthesis/blob/1.19.3/screenshots/logo.png?raw=true" width="auto" height="auto">
+
 <img src="https://i.imgur.com/Ol1Tcf8.png" height="32">
 
 >This is a FABRIC mod for Minecraft 1.19.3 <br/>
-**Photosynthesis adds berries, crops, trees and foods. and much more!**
+
+Welcome to Photosynthesis, the ultimate farming and cooking experience! This mod adds nearly 50 new trees and 30 crops to Minecraft, including apples, nuts, bananas, and many more delicious varieties. With over 60 new edible foods to discover, you'll never go hungry again.
+
+But that's not all - Photosynthesis also introduces new tools like skillets, cooking pots, cutting boards and more to help you prepare and cook your harvests. And if that's not enough, the mod tweaks world generation to add beachgrass to beaches and random sticks and stones for early gameplay mechanics.
+
+Whether you're a seasoned farmer or just starting out, Photosynthesis offers a fresh and exciting gameplay experience with endless possibilities. Download today and discover a whole new world of farming and cooking in Minecraft!
 
 > **Warning**
 > This project is still in heavy development! You are free to compile yourself and try it out, but keep in mind that there will be missing blockmodels, textures, features etc... **This mod is not in a playable state!**
