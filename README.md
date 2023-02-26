@@ -4,7 +4,8 @@
 <p align="right">
 <img src="https://i.imgur.com/Ol1Tcf8.png" height="32">
 </p>
-This is a FABRIC mod for Minecraft 1.19.3 <br/>
+
+> This is a FABRIC mod for Minecraft 1.19.3
 
 Welcome to Photosynthesis, the ultimate farming and cooking experience! This mod adds nearly 50 new trees and 30 crops to Minecraft, including apples, nuts, bananas, and many more delicious varieties. With over 60 new edible foods to discover, you'll never go hungry again.
 
