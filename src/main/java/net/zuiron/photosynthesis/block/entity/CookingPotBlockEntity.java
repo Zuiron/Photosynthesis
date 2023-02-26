@@ -38,7 +38,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Optional;
 
 public class CookingPotBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
-    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(3, ItemStack.EMPTY);
+    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(9, ItemStack.EMPTY);
 
     public ItemStack getRenderStack() {
         if(!this.getStack(0).isEmpty()) {
@@ -257,14 +257,16 @@ public class CookingPotBlockEntity extends BlockEntity implements ExtendedScreen
         if(hasRecipe(entity)) {
             entity.removeStack(0, 1);
             entity.removeStack(1, 1);
-            /*entity.setStack(2, new ItemStack(ModItems.SALT,
-                    entity.getStack(2).getCount() + 1));*/
+            entity.removeStack(2, 1);
+            entity.removeStack(3, 1);
+            entity.removeStack(4, 1);
+            entity.removeStack(5, 1);
 
 
             int recipeOutputCount = recipe.get().getOutput().getCount();
-            int outputSlotCount = entity.getStack(2).getCount();
+            int outputSlotCount = entity.getStack(7).getCount();
 
-            entity.setStack(2, new ItemStack(recipe.get().getOutput().getItem(), outputSlotCount + recipeOutputCount));
+            entity.setStack(7, new ItemStack(recipe.get().getOutput().getItem(), outputSlotCount + recipeOutputCount));
             entity.resetProgress();
         }
     }
@@ -275,16 +277,11 @@ public class CookingPotBlockEntity extends BlockEntity implements ExtendedScreen
             inventory.setStack(i, entity.getStack(i));
         }
 
-        /*boolean hasRawSaltInFirstSlot = entity.getStack(1).getItem() == ModItems.RAW_SALT;
-        return hasRawSaltInFirstSlot && canInsertAmountIntoOutputSlot(inventory)
-                && canInsertItemIntoOutputSlot(inventory, ModItems.SALT);*/
-
         Optional<CookingPotRecipe> match = entity.getWorld().getRecipeManager()
                 .getFirstMatch(CookingPotRecipe.Type.INSTANCE, inventory, entity.getWorld());
 
         entity.maxProgress = entity.getWorld().getRecipeManager()
                 .getFirstMatch(CookingPotRecipe.Type.INSTANCE, inventory, entity.getWorld()).map(CookingPotRecipe::getCookTime).orElse(20);
-        //Photosynthesis.LOGGER.info("setting cooktime to: " + match.get().getCookTime());
 
         return match.isPresent() && canInsertAmountIntoOutputSlot(inventory, match.get().getOutput().getCount())
                 && canInsertItemIntoOutputSlot(inventory, match.get().getOutput().getItem());
@@ -293,10 +290,13 @@ public class CookingPotBlockEntity extends BlockEntity implements ExtendedScreen
     private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, Item output) {
         //return inventory.getStack(2).getItem() == output || inventory.getStack(2).isEmpty(); //crafts up to a stack.
         //make it so output has to be empty. (more manual labor) *evil*
-        return inventory.getStack(2).isEmpty();
+        if(inventory.getStack(7).isEmpty() && inventory.getStack(8).isEmpty()) {
+            return true;
+        }
+        return false;
     }
 
     private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory, int amount) {
-        return inventory.getStack(2).getMaxCount() >= inventory.getStack(2).getCount() + amount;
+        return inventory.getStack(7).getMaxCount() >= inventory.getStack(7).getCount() + amount;
     }
 }

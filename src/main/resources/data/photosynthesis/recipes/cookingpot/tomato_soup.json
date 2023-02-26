@@ -1,0 +1,26 @@
+{
+  "type": "photosynthesis:cookingpot",
+  "ingredients": [
+    {
+      "item": "minecraft:potion",
+      "nbt": "{Potion:\"minecraft:water\"}"
+    },
+    {
+      "item": "photosynthesis:tomato"
+    },
+    {
+      "item": "photosynthesis:salt"
+    },
+    {
+      "item": "photosynthesis:basil"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:tomatosoup",
+    "count": 1
+  },
+  "cookingtime": 100
+}

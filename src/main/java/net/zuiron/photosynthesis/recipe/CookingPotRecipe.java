@@ -2,6 +2,8 @@ package net.zuiron.photosynthesis.recipe;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import net.minecraft.fluid.Fluid;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
@@ -11,6 +13,7 @@ import net.minecraft.util.JsonHelper;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.Photosynthesis;
+import net.zuiron.photosynthesis.fluid.ModFluids;
 
 public class CookingPotRecipe implements Recipe<SimpleInventory> {
     private final Identifier id;
@@ -33,7 +36,13 @@ public class CookingPotRecipe implements Recipe<SimpleInventory> {
             return false;
         }
         //is this not used???
-        return recipeItems.get(0).test(inventory.getStack(0)) && recipeItems.get(1).test(inventory.getStack(1));
+        return recipeItems.get(0).test(inventory.getStack(0))
+                && recipeItems.get(1).test(inventory.getStack(1))
+                && recipeItems.get(2).test(inventory.getStack(2))
+                && recipeItems.get(3).test(inventory.getStack(3))
+                && recipeItems.get(4).test(inventory.getStack(4))
+                && recipeItems.get(5).test(inventory.getStack(5))
+                && recipeItems.get(6).test(inventory.getStack(6));
     }
 
     @Override
@@ -89,11 +98,12 @@ public class CookingPotRecipe implements Recipe<SimpleInventory> {
         @Override
         public CookingPotRecipe read(Identifier id, JsonObject json) {
             ItemStack output = ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "output"));
+
             int CookTime = JsonHelper.getInt(json, "cookingtime");
             Photosynthesis.LOGGER.info("read cookingtime of: " + CookTime + ", for: " + output.getItem().getName().getString());
 
             JsonArray ingredients = JsonHelper.getArray(json, "ingredients");
-            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(2, Ingredient.EMPTY); //size: max number of possible input ingredients.
+            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(7, Ingredient.EMPTY); //size: max number of possible input ingredients.
 
             for (int i = 0; i < ingredients.size(); i++) {
                 if (i >= inputs.size()) {
