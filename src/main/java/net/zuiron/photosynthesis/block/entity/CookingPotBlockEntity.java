@@ -13,6 +13,7 @@ import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.particle.ParticleTypes;
@@ -38,6 +39,7 @@ import net.zuiron.photosynthesis.screen.CookingPotScreenHandler;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 public class CookingPotBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
@@ -258,37 +260,28 @@ public class CookingPotBlockEntity extends BlockEntity implements ExtendedScreen
                 .getFirstMatch(CookingPotRecipe.Type.INSTANCE, inventory, entity.getWorld());
 
         if(hasRecipe(entity)) {
-            entity.removeStack(0, 1);
-            entity.removeStack(1, 1);
-            entity.removeStack(2, 1);
-            entity.removeStack(3, 1);
-            entity.removeStack(4, 1);
-            entity.removeStack(5, 1);
+            Photosynthesis.LOGGER.info(entity.getStack(0).getNbt().get("Potion").asString());
+            if(entity.getStack(0).hasNbt() && Objects.equals(entity.getStack(0).getNbt().get("Potion").asString(), "minecraft:water")) {
+                Photosynthesis.LOGGER.info("YAY");
+                entity.setStack(8, new ItemStack(Items.GLASS_BOTTLE, 1));
+            } else { entity.setStack(8, entity.getStack(0).getRecipeRemainder()); }
+
+            entity.removeStack(0, (Integer) recipe.get().getCounts().get(0));
+            entity.removeStack(1, (Integer) recipe.get().getCounts().get(1));
+            entity.removeStack(2, (Integer) recipe.get().getCounts().get(2));
+            entity.removeStack(3, (Integer) recipe.get().getCounts().get(3));
+            entity.removeStack(4, (Integer) recipe.get().getCounts().get(4));
+            entity.removeStack(5, (Integer) recipe.get().getCounts().get(5));
 
 
             int recipeOutputCount = recipe.get().getOutput().getCount();
             int outputSlotCount = entity.getStack(7).getCount();
 
             entity.setStack(7, new ItemStack(recipe.get().getOutput().getItem(), outputSlotCount + recipeOutputCount));
+
             entity.resetProgress();
         }
     }
-
-    /*private static boolean hasRecipe(CookingPotBlockEntity entity) {
-        SimpleInventory inventory = new SimpleInventory(entity.size());
-        for (int i = 0; i < entity.size(); i++) {
-            inventory.setStack(i, entity.getStack(i));
-        }
-
-        Optional<CookingPotRecipe> match = entity.getWorld().getRecipeManager()
-                .getFirstMatch(CookingPotRecipe.Type.INSTANCE, inventory, entity.getWorld());
-
-        entity.maxProgress = entity.getWorld().getRecipeManager()
-                .getFirstMatch(CookingPotRecipe.Type.INSTANCE, inventory, entity.getWorld()).map(CookingPotRecipe::getCookTime).orElse(20);
-
-        return match.isPresent() && canInsertAmountIntoOutputSlot(inventory, match.get().getOutput().getCount())
-                && canInsertItemIntoOutputSlot(inventory, match.get().getOutput().getItem());
-    }*/
 
     private static boolean hasRecipe(CookingPotBlockEntity entity) {
         SimpleInventory inventory = new SimpleInventory(entity.size());
