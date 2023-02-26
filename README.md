@@ -1,7 +1,7 @@
-# Photosynthesis
+<p align="center">
 <img src="https://github.com/Zuiron/Photosynthesis/blob/1.19.3/screenshots/logo.png?raw=true" width="auto" height="auto">
-
 <img src="https://i.imgur.com/Ol1Tcf8.png" height="32">
+</p>
 
 >This is a FABRIC mod for Minecraft 1.19.3 <br/>
 
