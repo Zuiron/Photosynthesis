@@ -16,6 +16,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -24,6 +25,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.text.Text;
+import net.minecraft.util.JsonHelper;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
@@ -35,6 +37,7 @@ import net.zuiron.photosynthesis.recipe.CookingPotRecipe;
 import net.zuiron.photosynthesis.screen.CookingPotScreenHandler;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
 import java.util.Optional;
 
 public class CookingPotBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
@@ -271,7 +274,7 @@ public class CookingPotBlockEntity extends BlockEntity implements ExtendedScreen
         }
     }
 
-    private static boolean hasRecipe(CookingPotBlockEntity entity) {
+    /*private static boolean hasRecipe(CookingPotBlockEntity entity) {
         SimpleInventory inventory = new SimpleInventory(entity.size());
         for (int i = 0; i < entity.size(); i++) {
             inventory.setStack(i, entity.getStack(i));
@@ -285,7 +288,51 @@ public class CookingPotBlockEntity extends BlockEntity implements ExtendedScreen
 
         return match.isPresent() && canInsertAmountIntoOutputSlot(inventory, match.get().getOutput().getCount())
                 && canInsertItemIntoOutputSlot(inventory, match.get().getOutput().getItem());
+    }*/
+
+    private static boolean hasRecipe(CookingPotBlockEntity entity) {
+        SimpleInventory inventory = new SimpleInventory(entity.size());
+        for (int i = 0; i < entity.size(); i++) {
+            inventory.setStack(i, entity.getStack(i));
+        }
+
+        Optional<CookingPotRecipe> match = entity.getWorld().getRecipeManager()
+                .getFirstMatch(CookingPotRecipe.Type.INSTANCE, inventory, entity.getWorld());
+
+        entity.maxProgress = match.map(CookingPotRecipe::getCookTime).orElse(20);
+
+        if (match.isPresent() && inventory.getStack(7).isEmpty() && inventory.getStack(8).isEmpty()) {
+            Photosynthesis.LOGGER.info("match is present! continue");
+            CookingPotRecipe recipe = match.get();
+            List<Ingredient> ingredients = recipe.getIngredients();
+            DefaultedList counts = recipe.getCounts();
+            for (int i = 0; i < ingredients.size(); i++) {
+                Ingredient ingredient = ingredients.get(i);
+                ItemStack itemStack = entity.getStack(i);
+                Photosynthesis.LOGGER.info("ingredient:"+ingredient.toJson()+", itemStack:"+itemStack);
+
+                int reqCount = (int) counts.get(i);
+
+                if (ingredient.isEmpty() || itemStack.isEmpty()) {
+                    continue;
+                } else if (ingredient.test(itemStack) && itemStack.getCount() >= reqCount) {
+                    Photosynthesis.LOGGER.info("recipe requires min:"+reqCount+", we got:"+itemStack.getCount());
+                    continue;
+                } else {
+                    Photosynthesis.LOGGER.info("FAILED - recipe requires:"+reqCount+", we got:"+itemStack.getCount());
+                    return false;
+                }
+            }
+
+            return canInsertAmountIntoOutputSlot(inventory, recipe.getOutput().getCount())
+                    && canInsertItemIntoOutputSlot(inventory, recipe.getOutput().getItem());
+        } else {
+            return false;
+        }
     }
+
+
+
 
     private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, Item output) {
         //return inventory.getStack(2).getItem() == output || inventory.getStack(2).isEmpty(); //crafts up to a stack.

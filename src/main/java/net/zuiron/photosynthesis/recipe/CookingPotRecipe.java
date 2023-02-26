@@ -2,8 +2,6 @@ package net.zuiron.photosynthesis.recipe;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import net.minecraft.fluid.Fluid;
-import net.minecraft.fluid.Fluids;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
@@ -13,7 +11,6 @@ import net.minecraft.util.JsonHelper;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.Photosynthesis;
-import net.zuiron.photosynthesis.fluid.ModFluids;
 
 public class CookingPotRecipe implements Recipe<SimpleInventory> {
     private final Identifier id;
@@ -22,12 +19,15 @@ public class CookingPotRecipe implements Recipe<SimpleInventory> {
 
     private final int cookingTime;
 
+    private final DefaultedList counts;
 
-    public CookingPotRecipe(Identifier id, ItemStack output, DefaultedList<Ingredient> recipeItems, int cookingTime) {
+
+    public CookingPotRecipe(Identifier id, ItemStack output, DefaultedList<Ingredient> recipeItems, int cookingTime, DefaultedList counts) {
         this.id = id;
         this.output = output;
         this.recipeItems = recipeItems;
         this.cookingTime = cookingTime;
+        this.counts = counts;
     }
 
     @Override
@@ -63,6 +63,8 @@ public class CookingPotRecipe implements Recipe<SimpleInventory> {
     public int getCookTime() {
         return cookingTime;
     }
+
+    public DefaultedList getCounts() { return counts; }
 
     @Override
     public DefaultedList<Ingredient> getIngredients() {
@@ -104,15 +106,21 @@ public class CookingPotRecipe implements Recipe<SimpleInventory> {
 
             JsonArray ingredients = JsonHelper.getArray(json, "ingredients");
             DefaultedList<Ingredient> inputs = DefaultedList.ofSize(7, Ingredient.EMPTY); //size: max number of possible input ingredients.
+            DefaultedList<Integer> counts = DefaultedList.ofSize(7, 0);
 
             for (int i = 0; i < ingredients.size(); i++) {
                 if (i >= inputs.size()) {
                     inputs.add(Ingredient.EMPTY);
+                    counts.add(0);
                 }
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
+                //counts.set(i, JsonHelper.getInt(ingredients.getAsJsonObject(),"count"));
+                //Photosynthesis.LOGGER.info("xCount: "+ingredients.get(i)); //does contain count also.
+                //Photosynthesis.LOGGER.info("xCount: "+JsonHelper.getInt(ingredients.get(i).getAsJsonObject(),"count"));  //WORKS!
+                counts.set(i, JsonHelper.getInt(ingredients.get(i).getAsJsonObject(),"count"));
             }
 
-            return new CookingPotRecipe(id, output, inputs, CookTime);
+            return new CookingPotRecipe(id, output, inputs, CookTime, counts);
         }
 
         @Override
@@ -124,7 +132,7 @@ public class CookingPotRecipe implements Recipe<SimpleInventory> {
             }
 
             ItemStack output = buf.readItemStack();
-            return new CookingPotRecipe(id, output, inputs, 0);
+            return new CookingPotRecipe(id, output, inputs, 0, DefaultedList.ofSize(7, 0));
         }
 
         @Override

@@ -3,19 +3,24 @@
   "ingredients": [
     {
       "item": "minecraft:potion",
-      "nbt": "{Potion:\"minecraft:water\"}"
+      "nbt": "{Potion:\"minecraft:water\"}",
+      "count": 1
     },
     {
-      "item": "photosynthesis:tomato"
+      "item": "photosynthesis:tomato",
+      "count": 4
     },
     {
-      "item": "photosynthesis:salt"
+      "item": "photosynthesis:salt",
+      "count": 1
     },
     {
-      "item": "photosynthesis:basil"
+      "item": "photosynthesis:basil",
+      "count": 1
     },
     {
-      "item": "minecraft:bowl"
+      "item": "minecraft:bowl",
+      "count": 1
     }
   ],
   "output": {
