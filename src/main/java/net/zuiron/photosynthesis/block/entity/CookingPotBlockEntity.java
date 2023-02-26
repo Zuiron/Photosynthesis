@@ -111,7 +111,7 @@ public class CookingPotBlockEntity extends BlockEntity implements ExtendedScreen
 
     @Override
     public Text getDisplayName() {
-        return Text.literal("Cooking Pot");
+        return Text.literal(""); //Cooking Pot
     }
 
     @Nullable
