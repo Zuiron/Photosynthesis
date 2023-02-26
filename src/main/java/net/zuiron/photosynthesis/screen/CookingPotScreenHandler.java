@@ -43,7 +43,7 @@ public class CookingPotScreenHandler extends ScreenHandler {
         this.addSlot(new Slot(inventory, 6, 70, 45)); //input
 
         this.addSlot(new OutputSlot(inventory, 7, 116, 45)); //output (empty bucket/flask)
-        this.addSlot(new OutputSlot(inventory, 8, 135, 45)); //output
+        this.addSlot(new OutputSlot(inventory, 8, 134, 45)); //output
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);

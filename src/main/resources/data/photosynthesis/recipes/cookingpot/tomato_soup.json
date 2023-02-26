@@ -2,8 +2,7 @@
   "type": "photosynthesis:cookingpot",
   "ingredients": [
     {
-      "item": "minecraft:potion",
-      "nbt": "{Potion:\"minecraft:water\"}",
+      "tag": "c:cookingpot_watercontainers",
       "count": 1
     },
     {

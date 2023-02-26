@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:water_bucket",
+    {
+      "type": "minecraft:potion",
+      "id": "minecraft:potion",
+      "potion": "minecraft:water"
+    }
+  ]
+}
