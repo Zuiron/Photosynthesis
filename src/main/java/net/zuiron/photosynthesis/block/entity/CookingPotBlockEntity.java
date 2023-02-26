@@ -83,7 +83,7 @@ public class CookingPotBlockEntity extends BlockEntity implements ExtendedScreen
 
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
-    private int maxProgress = 20; //Crafting Time / The cook time in ticks
+    private int maxProgress = 20;
 
     public CookingPotBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.COOKINGPOT, pos, state);
@@ -174,16 +174,7 @@ public class CookingPotBlockEntity extends BlockEntity implements ExtendedScreen
 
 
     public static void playCookingPotSound(World world, BlockPos blockPos) {
-        if(!world.isClient()) {
-            world.playSound(
-                    null, // Player - if non-null, will play sound for every nearby player *except* the specified player
-                    blockPos, // The position of where the sound will come from
-                    Photosynthesis.COOKINGPOT_SOUND_EVENT, // The sound that will play, in this case, the sound the anvil plays when it lands.
-                    SoundCategory.BLOCKS, // This determines which of the volume sliders affect this sound
-                    1f, //Volume multiplier, 1 is normal, 0.5 is half volume, etc
-                    1f // Pitch multiplier, 1 is normal, 0.5 is half pitch, etc
-            );
-        }
+        if(!world.isClient()) { world.playSound(null, blockPos, Photosynthesis.COOKINGPOT_SOUND_EVENT, SoundCategory.BLOCKS, 1f, 1f); }
     }
 
     private static int tickCounter = 0;
@@ -217,7 +208,6 @@ public class CookingPotBlockEntity extends BlockEntity implements ExtendedScreen
             state = (BlockState)state.with(CookingPotBlock.PROCESSING, true); world.setBlockState(blockPos, state, 3);
             markDirty(world, blockPos, state);
 
-            //play sound
             loopCookingPotSound(world, blockPos);
 
             if(entity.progress >= entity.maxProgress) {
@@ -261,19 +251,18 @@ public class CookingPotBlockEntity extends BlockEntity implements ExtendedScreen
                 .getFirstMatch(CookingPotRecipe.Type.INSTANCE, inventory, entity.getWorld());
 
         if(hasRecipe(entity)) {
-            //Photosynthesis.LOGGER.info(entity.getStack(0).getNbt().get("Potion").asString());
-            //if(entity.getStack(0).hasNbt() && Objects.equals(entity.getStack(0).getNbt().get("Potion").asString(), "minecraft:water")) {
             if(entity.getStack(0).getItem() instanceof PotionItem) {
-                //Photosynthesis.LOGGER.info("YAY");
                 entity.setStack(8, new ItemStack(Items.GLASS_BOTTLE, 1));
             } else { entity.setStack(8, entity.getStack(0).getRecipeRemainder()); }
 
-            entity.removeStack(0, (Integer) recipe.get().getCounts().get(0));
-            entity.removeStack(1, (Integer) recipe.get().getCounts().get(1));
-            entity.removeStack(2, (Integer) recipe.get().getCounts().get(2));
-            entity.removeStack(3, (Integer) recipe.get().getCounts().get(3));
-            entity.removeStack(4, (Integer) recipe.get().getCounts().get(4));
-            entity.removeStack(5, (Integer) recipe.get().getCounts().get(5));
+            entity.removeStack(0, (Integer) recipe.get().getCounts().get(0));   //fluid
+
+            entity.removeStack(1, (Integer) recipe.get().getCounts().get(1));   //input
+            entity.removeStack(2, (Integer) recipe.get().getCounts().get(2));   //input
+            entity.removeStack(3, (Integer) recipe.get().getCounts().get(3));   //input
+            entity.removeStack(4, (Integer) recipe.get().getCounts().get(4));   //input
+            entity.removeStack(5, (Integer) recipe.get().getCounts().get(5));   //input
+            entity.removeStack(6, (Integer) recipe.get().getCounts().get(6));   //input
 
 
             int recipeOutputCount = recipe.get().getOutput().getCount();
@@ -297,24 +286,24 @@ public class CookingPotBlockEntity extends BlockEntity implements ExtendedScreen
         entity.maxProgress = match.map(CookingPotRecipe::getCookTime).orElse(20);
 
         if (match.isPresent() && inventory.getStack(7).isEmpty() && inventory.getStack(8).isEmpty()) {
-            Photosynthesis.LOGGER.info("match is present! continue");
+            //Photosynthesis.LOGGER.info("match is present! continue");
             CookingPotRecipe recipe = match.get();
             List<Ingredient> ingredients = recipe.getIngredients();
             DefaultedList counts = recipe.getCounts();
             for (int i = 0; i < ingredients.size(); i++) {
                 Ingredient ingredient = ingredients.get(i);
                 ItemStack itemStack = entity.getStack(i);
-                Photosynthesis.LOGGER.info("ingredient:"+ingredient.toJson()+", itemStack:"+itemStack);
+                //Photosynthesis.LOGGER.info("ingredient:"+ingredient.toJson()+", itemStack:"+itemStack);
 
                 int reqCount = (int) counts.get(i);
 
                 if (ingredient.isEmpty() || itemStack.isEmpty()) {
                     continue;
                 } else if (ingredient.test(itemStack) && itemStack.getCount() >= reqCount) {
-                    Photosynthesis.LOGGER.info("recipe requires min:"+reqCount+", we got:"+itemStack.getCount());
+                    //Photosynthesis.LOGGER.info("recipe requires min:"+reqCount+", we got:"+itemStack.getCount());
                     continue;
                 } else {
-                    Photosynthesis.LOGGER.info("FAILED - recipe requires:"+reqCount+", we got:"+itemStack.getCount());
+                    //Photosynthesis.LOGGER.info("FAILED - recipe requires:"+reqCount+", we got:"+itemStack.getCount());
                     return false;
                 }
             }
