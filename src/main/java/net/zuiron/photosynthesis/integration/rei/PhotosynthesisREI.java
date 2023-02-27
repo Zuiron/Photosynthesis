@@ -13,19 +13,25 @@ import net.fabricmc.api.Environment;
 
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
+import net.zuiron.photosynthesis.integration.rei.cookingpot.CookingPotRecipeCategory;
+import net.zuiron.photosynthesis.integration.rei.cookingpot.CookingPotRecipeDisplay;
 import net.zuiron.photosynthesis.integration.rei.cutting_board.CuttingBoardRecipeCategory;
 import net.zuiron.photosynthesis.integration.rei.cutting_board.CuttingBoardRecipeDisplay;
 import net.zuiron.photosynthesis.integration.rei.skillet.SkilletRecipeCategory;
 import net.zuiron.photosynthesis.integration.rei.skillet.SkilletRecipeDisplay;
+import net.zuiron.photosynthesis.recipe.CookingPotRecipe;
 import net.zuiron.photosynthesis.recipe.CuttingBoardRecipe;
 import net.zuiron.photosynthesis.recipe.SkilletRecipe;
+import net.zuiron.photosynthesis.screen.CookingPotScreen;
 import net.zuiron.photosynthesis.screen.CuttingBoardScreen;
 import net.zuiron.photosynthesis.screen.SkilletScreen;
 
 @Environment(EnvType.CLIENT)
 public class PhotosynthesisREI implements REIClientPlugin {
+
     public static final CategoryIdentifier<SkilletRecipeDisplay> SKILLET = CategoryIdentifier.of(Photosynthesis.MOD_ID, "skillet");
     public static final CategoryIdentifier<CuttingBoardRecipeDisplay> CUTTINGBOARD = CategoryIdentifier.of(Photosynthesis.MOD_ID, "cuttingboard");
+    public static final CategoryIdentifier<CookingPotRecipeDisplay> COOKINGPOT = CategoryIdentifier.of(Photosynthesis.MOD_ID, "cookingpot");
 
     public static Rectangle centeredIntoRecipeBase(Point origin, int width, int height) {
         return centeredInto(new Rectangle(origin.x, origin.y, 150, 66), width, height);
@@ -44,6 +50,10 @@ public class PhotosynthesisREI implements REIClientPlugin {
         registry.add(
                 new CuttingBoardRecipeCategory());
         registry.addWorkstations(CUTTINGBOARD, EntryStacks.of(ModBlocks.CUTTINGBOARD));
+
+        registry.add(
+                new CookingPotRecipeCategory());
+        registry.addWorkstations(COOKINGPOT, EntryStacks.of(ModBlocks.COOKINGPOT));
     }
 
     @Override
@@ -51,6 +61,8 @@ public class PhotosynthesisREI implements REIClientPlugin {
         registry.registerRecipeFiller(SkilletRecipe.class, SkilletRecipe.Type.INSTANCE, SkilletRecipeDisplay::new);
 
         registry.registerRecipeFiller(CuttingBoardRecipe.class, CuttingBoardRecipe.Type.INSTANCE, CuttingBoardRecipeDisplay::new);
+
+        registry.registerRecipeFiller(CookingPotRecipe.class, CookingPotRecipe.Type.INSTANCE, CookingPotRecipeDisplay::new);
     }
 
     @Override
@@ -58,5 +70,7 @@ public class PhotosynthesisREI implements REIClientPlugin {
         registry.registerContainerClickArea(new Rectangle(89, 25, 24, 17), SkilletScreen.class, SKILLET);
 
         registry.registerContainerClickArea(new Rectangle(99, 25, 24, 17), CuttingBoardScreen.class, CUTTINGBOARD);
+
+        registry.registerContainerClickArea(new Rectangle(88, 44, 26, 18), CookingPotScreen.class, COOKINGPOT);
     }
 }
