@@ -1,0 +1,30 @@
+{
+  "type": "photosynthesis:cookingpot",
+  "ingredients": [
+    {
+      "item": "minecraft:milk_bucket",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:rice",
+      "count": 4
+    },
+    {
+      "item": "photosynthesis:salt",
+      "count": 1
+    },
+    {
+      "item": "minecraft:sugar",
+      "count": 2
+    },
+    {
+      "item": "minecraft:bowl",
+      "count": 4
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:rice_porridge",
+    "count": 4
+  },
+  "cookingtime": 200
+}
