@@ -3,10 +3,7 @@ package net.zuiron.photosynthesis.integration.rei.cookingpot;
 import me.shedaniel.math.Point;
 import me.shedaniel.math.Rectangle;
 import me.shedaniel.rei.api.client.gui.Renderer;
-import me.shedaniel.rei.api.client.gui.widgets.Arrow;
-import me.shedaniel.rei.api.client.gui.widgets.Label;
-import me.shedaniel.rei.api.client.gui.widgets.Widget;
-import me.shedaniel.rei.api.client.gui.widgets.Widgets;
+import me.shedaniel.rei.api.client.gui.widgets.*;
 import me.shedaniel.rei.api.client.registry.display.DisplayCategory;
 import me.shedaniel.rei.api.common.category.CategoryIdentifier;
 import me.shedaniel.rei.api.common.entry.EntryIngredient;
@@ -65,7 +62,7 @@ public class CookingPotRecipeCategory implements DisplayCategory<CookingPotRecip
 
 
         List<EntryIngredient> ingredientEntries = display.getIngredientEntries();
-        DefaultedList<Integer> counts = display.getCounts();
+        DefaultedList counts = display.getCounts();
 
         if (ingredientEntries != null) {
             int[] posX = {96, 5, 23, 41, 5, 23, 41};
@@ -76,17 +73,26 @@ public class CookingPotRecipeCategory implements DisplayCategory<CookingPotRecip
                 /*widgets.add(Widgets.createSlot(new Point(bgBounds.x + posX[i], bgBounds.y + posY[i]))
                         .entries(ingredientEntries.get(i)).markInput().disableBackground());*/
 
-                widgets.add(Widgets.createSlot(new Point(bgBounds.x + posX[i], bgBounds.y + posY[i]))
-                        .entry(ingredientEntries.get(i).get(0)));
+                /*widgets.add(Widgets.createSlot(new Point(bgBounds.x + posX[i], bgBounds.y + posY[i]))
+                        .entry(ingredientEntries.get(i).get(0)));*/
+                Slot slot = Widgets.createSlot(new Point(bgBounds.x + posX[i], bgBounds.y + posY[i]))
+                        .entry(ingredientEntries.get(i).get(0));
+                slot
+                        .disableBackground()
+                        .markInput();
+                widgets.add(slot);
 
 
                 //COUNT!!!!!!
-                Label countLabel = Widgets.createLabel(new Point(bgBounds.x + posX[i] + 8, bgBounds.y + posY[i] + 8),
+                Label countLabel = Widgets.createLabel(new Point(slot.getBounds().x + 16, slot.getBounds().y + 8),
                         Text.literal(""+counts.get(i)));
                 countLabel
                         .color(Formatting.WHITE.getColorValue())
-                        .setZOffset(999);
+                        .rightAligned();
                 widgets.add(countLabel);
+
+                //slot.setFocused(countLabel);
+                countLabel.setFocused(slot);
             }
         }
 
