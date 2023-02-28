@@ -253,7 +253,10 @@ public class CookingPotBlockEntity extends BlockEntity implements ExtendedScreen
         if(hasRecipe(entity)) {
             if(entity.getStack(0).getItem() instanceof PotionItem) {
                 entity.setStack(8, new ItemStack(Items.GLASS_BOTTLE, 1));
-            } else { entity.setStack(8, entity.getStack(0).getRecipeRemainder()); }
+            } else {
+                //entity.setStack(8, entity.getStack(0).getRecipeRemainder());
+                entity.setStack(8, new ItemStack(entity.getStack(0).getRecipeRemainder().getItem(), (Integer) recipe.get().getCounts().get(0)));
+            }
 
             entity.removeStack(0, (Integer) recipe.get().getCounts().get(0));   //fluid
 
