@@ -228,7 +228,20 @@ public class ModItems {
     public static final Item WILD_STRAWBERRIES = registerBerryItem("wild_strawberries", ModBlocks.WILD_STRAWBERRY_BUSH,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
 
+    public static final Item CANDLEBERRIES = registerBerryItem("candleberries", ModBlocks.CANDLEBERRY_BUSH,
+            new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
 
+    public static final Item CRANBERRIES = registerBerryItem("cranberries", ModBlocks.CRANBERRY_BUSH,
+            new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
+
+    public static final Item HUCKLEBERRIES = registerBerryItem("huckleberries", ModBlocks.HUCKLEBERRY_BUSH,
+            new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
+
+    public static final Item JUNIPERBERRIES = registerBerryItem("juniperberries", ModBlocks.JUNIPERBERRY_BUSH,
+            new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
+
+    public static final Item MULBERRIES = registerBerryItem("mulberries", ModBlocks.MULBERRY_BUSH,
+            new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
 
 
 

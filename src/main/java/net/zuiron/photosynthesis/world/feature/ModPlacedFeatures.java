@@ -204,6 +204,12 @@ public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> CLOUDBERRY_BUSH_PLACED_KEY = registerKey("cloudberry_bush_placed");
     public static final RegistryKey<PlacedFeature> WILD_STRAWBERRY_BUSH_PLACED_KEY = registerKey("wild_strawberry_bush_placed");
 
+    public static final RegistryKey<PlacedFeature> CANDLEBERRY_BUSH_PLACED_KEY = registerKey("candleberry_bush_placed");
+    public static final RegistryKey<PlacedFeature> CRANBERRY_BUSH_PLACED_KEY = registerKey("cranberry_bush_placed");
+    public static final RegistryKey<PlacedFeature> HUCKLEBERRY_BUSH_PLACED_KEY = registerKey("huckleberry_bush_placed");
+    public static final RegistryKey<PlacedFeature> JUNIPERBERRY_BUSH_PLACED_KEY = registerKey("juniperberry_bush_placed");
+    public static final RegistryKey<PlacedFeature> MULBERRY_BUSH_PLACED_KEY = registerKey("mulberry_bush_placed");
+
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
@@ -553,23 +559,43 @@ public class ModPlacedFeatures {
 
 
         register(context, BLUEBERRY_BUSH_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLUEBERRYBUSH_KEY),
-                RarityFilterPlacementModifier.of(15), SquarePlacementModifier.of(), CountPlacementModifier.of(10), RandomOffsetPlacementModifier.horizontally(ConstantIntProvider.create(2)),
+                RarityFilterPlacementModifier.of(17), SquarePlacementModifier.of(), CountPlacementModifier.of(10), RandomOffsetPlacementModifier.horizontally(ConstantIntProvider.create(2)),
                 PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of());
 
         register(context, BLACKBERRY_BUSH_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLACKBERRY_KEY),
-                RarityFilterPlacementModifier.of(15), SquarePlacementModifier.of(), CountPlacementModifier.of(10), RandomOffsetPlacementModifier.horizontally(ConstantIntProvider.create(2)),
+                RarityFilterPlacementModifier.of(17), SquarePlacementModifier.of(), CountPlacementModifier.of(10), RandomOffsetPlacementModifier.horizontally(ConstantIntProvider.create(2)),
                 PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of());
 
         register(context, RASPBERRY_BUSH_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.RASPBERRY_KEY),
-                RarityFilterPlacementModifier.of(15), SquarePlacementModifier.of(), CountPlacementModifier.of(10), RandomOffsetPlacementModifier.horizontally(ConstantIntProvider.create(2)),
+                RarityFilterPlacementModifier.of(17), SquarePlacementModifier.of(), CountPlacementModifier.of(10), RandomOffsetPlacementModifier.horizontally(ConstantIntProvider.create(2)),
                 PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of());
 
         register(context, CLOUDBERRY_BUSH_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.CLOUDBERRY_KEY),
-                RarityFilterPlacementModifier.of(15), SquarePlacementModifier.of(), CountPlacementModifier.of(10), RandomOffsetPlacementModifier.horizontally(ConstantIntProvider.create(2)),
+                RarityFilterPlacementModifier.of(17), SquarePlacementModifier.of(), CountPlacementModifier.of(10), RandomOffsetPlacementModifier.horizontally(ConstantIntProvider.create(2)),
                 PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of());
 
         register(context, WILD_STRAWBERRY_BUSH_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.WILDSTRAWBERRY_KEY),
-                RarityFilterPlacementModifier.of(15), SquarePlacementModifier.of(), CountPlacementModifier.of(10), RandomOffsetPlacementModifier.horizontally(ConstantIntProvider.create(2)),
+                RarityFilterPlacementModifier.of(17), SquarePlacementModifier.of(), CountPlacementModifier.of(10), RandomOffsetPlacementModifier.horizontally(ConstantIntProvider.create(2)),
+                PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of());
+
+        register(context, CANDLEBERRY_BUSH_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.CANDLEBERRY_KEY),
+                RarityFilterPlacementModifier.of(17), SquarePlacementModifier.of(), CountPlacementModifier.of(10), RandomOffsetPlacementModifier.horizontally(ConstantIntProvider.create(2)),
+                PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of());
+
+        register(context, CRANBERRY_BUSH_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.CRANBERRY_KEY),
+                RarityFilterPlacementModifier.of(17), SquarePlacementModifier.of(), CountPlacementModifier.of(10), RandomOffsetPlacementModifier.horizontally(ConstantIntProvider.create(2)),
+                PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of());
+
+        register(context, HUCKLEBERRY_BUSH_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.HUCKLEBERRY_KEY),
+                RarityFilterPlacementModifier.of(17), SquarePlacementModifier.of(), CountPlacementModifier.of(10), RandomOffsetPlacementModifier.horizontally(ConstantIntProvider.create(2)),
+                PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of());
+
+        register(context, JUNIPERBERRY_BUSH_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.JUNIPERBERRY_KEY),
+                RarityFilterPlacementModifier.of(17), SquarePlacementModifier.of(), CountPlacementModifier.of(10), RandomOffsetPlacementModifier.horizontally(ConstantIntProvider.create(2)),
+                PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of());
+
+        register(context, MULBERRY_BUSH_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.MULBERRY_KEY),
+                RarityFilterPlacementModifier.of(17), SquarePlacementModifier.of(), CountPlacementModifier.of(10), RandomOffsetPlacementModifier.horizontally(ConstantIntProvider.create(2)),
                 PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of());
     }
 

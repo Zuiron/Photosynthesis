@@ -44,6 +44,15 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?,?>> RASPBERRY_KEY = registerKey("raspberry_bush");
     public static final RegistryKey<ConfiguredFeature<?,?>> CLOUDBERRY_KEY = registerKey("cloudberry_bush");
     public static final RegistryKey<ConfiguredFeature<?,?>> WILDSTRAWBERRY_KEY = registerKey("wild_strawberry_bush");
+
+
+    public static final RegistryKey<ConfiguredFeature<?,?>> CANDLEBERRY_KEY = registerKey("candleberry_bush");
+    public static final RegistryKey<ConfiguredFeature<?,?>> CRANBERRY_KEY = registerKey("cranberry_bush");
+    public static final RegistryKey<ConfiguredFeature<?,?>> HUCKLEBERRY_KEY = registerKey("huckleberry_bush");
+    public static final RegistryKey<ConfiguredFeature<?,?>> JUNIPERBERRY_KEY = registerKey("juniperberry_bush");
+    public static final RegistryKey<ConfiguredFeature<?,?>> MULBERRY_KEY = registerKey("mulberry_bush");
+
+
     public static final RegistryKey<ConfiguredFeature<?,?>> APPLETREE_KEY = registerKey("appletree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> APPLETREE_SPAWN_KEY = registerKey("appletree_spawn");
     public static final RegistryKey<ConfiguredFeature<?,?>> BANANATREE_KEY = registerKey("bananatree_tree");
@@ -269,6 +278,23 @@ public class ModConfiguredFeatures {
         register(context, WILDSTRAWBERRY_KEY, Feature.FLOWER,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.WILD_STRAWBERRY_BUSH.getDefaultState().with(Wild_StrawberryBush.AGE, 3))))));
+
+
+        register(context, CANDLEBERRY_KEY, Feature.FLOWER,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.CANDLEBERRY_BUSH.getDefaultState().with(CandleberryBush.AGE, 3))))));
+        register(context, CRANBERRY_KEY, Feature.FLOWER,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.CRANBERRY_BUSH.getDefaultState().with(CranberryBush.AGE, 3))))));
+        register(context, HUCKLEBERRY_KEY, Feature.FLOWER,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.HUCKLEBERRY_BUSH.getDefaultState().with(HuckleberryBush.AGE, 3))))));
+        register(context, JUNIPERBERRY_KEY, Feature.FLOWER,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.JUNIPERBERRY_BUSH.getDefaultState().with(JuniperberryBush.AGE, 3))))));
+        register(context, MULBERRY_KEY, Feature.FLOWER,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.MULBERRY_BUSH.getDefaultState().with(MulberryBush.AGE, 3))))));
 
 
         //chance to spawn tree's

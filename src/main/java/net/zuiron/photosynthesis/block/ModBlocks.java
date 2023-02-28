@@ -1327,6 +1327,26 @@ public class ModBlocks {
             new Wild_StrawberryBush(AbstractBlock.Settings.of(Material.PLANT)
                     .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
+    public static final SweetBerryBushBlock CANDLEBERRY_BUSH = registerBushBlock("candleberry_bush",
+            new CandleberryBush(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+    public static final SweetBerryBushBlock CRANBERRY_BUSH = registerBushBlock("cranberry_bush",
+            new CranberryBush(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+    public static final SweetBerryBushBlock HUCKLEBERRY_BUSH = registerBushBlock("huckleberry_bush",
+            new HuckleberryBush(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+    public static final SweetBerryBushBlock JUNIPERBERRY_BUSH = registerBushBlock("juniperberry_bush",
+            new JuniperberryBush(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+    public static final SweetBerryBushBlock MULBERRY_BUSH = registerBushBlock("mulberry_bush",
+            new MulberryBush(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
 
     // END OF BLOCKS ---------------------------------------------------------------------------------------------------
 

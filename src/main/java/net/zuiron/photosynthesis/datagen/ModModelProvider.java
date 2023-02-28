@@ -102,7 +102,13 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.GINGER,
                 ModItems.GINGER_SEEDS,
                 ModItems.SESAME_SEEDS,
-                ModItems.MUSTARD_SEEDS
+                ModItems.MUSTARD_SEEDS,
+
+                ModItems.CANDLEBERRIES,
+                ModItems.CRANBERRIES,
+                ModItems.HUCKLEBERRIES,
+                ModItems.JUNIPERBERRIES,
+                ModItems.MULBERRIES
         };
         for (Item item : simple_items) {
             itemModelGenerator.register(item, Models.GENERATED);
