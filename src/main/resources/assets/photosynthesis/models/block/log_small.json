@@ -1,7 +1,7 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"particle": "kiwitree_log"
+		"particle": "photosynthesis:block/kiwitree_log"
 	},
 	"elements": [
 		{
