@@ -37,7 +37,7 @@ public class ModDecorationGeneration {
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.DECO_ROCKS_RANDOM_PLACED_KEY);
 
         BiomeModifications.addFeature(context -> context.hasTag(BiomeTags.IS_OVERWORLD)
-                        && !BiomeKeys.DESERT.equals(context.getBiomeKey()),
+                        && !BiomeKeys.DESERT.equals(context.getBiomeKey()) && !BiomeKeys.PLAINS.equals(context.getBiomeKey()),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.DECO_STICKS_RANDOM_PLACED_KEY);
 
 
