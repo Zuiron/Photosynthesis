@@ -62,15 +62,9 @@ public class CookingPotRecipeCategory implements DisplayCategory<CookingPotRecip
             int[] posY = {15, 24, 24, 24, 42, 42, 42};
 
             for (int i = 0; i < ingredientEntries.size(); i++) {
-                if(i == 0) {
-                    //TAG ITEM
-                    widgets.add(Widgets.createSlot(new Point(bgBounds.x + posX[i], bgBounds.y + posY[i]))
-                        .entries(ingredientEntries.get(i)));
-                } else {
-                    //INPUT ITEMS
-                    Item item = ((ItemStack) ingredientEntries.get(i).get(0).getValue()).getItem();
-                    widgets.add(Widgets.createSlot(new Point(bgBounds.x + posX[i], bgBounds.y + posY[i])).markInput().entries(List.of(EntryStacks.of(new ItemStack(item, (Integer) counts.get(i))))));
-                }
+                //INPUT ITEMS TODO foreach Item item = ((ItemStack) ingredientEntries.get(i) - might be multiple? if tags.
+                Item item = ((ItemStack) ingredientEntries.get(i).get(0).getValue()).getItem();
+                widgets.add(Widgets.createSlot(new Point(bgBounds.x + posX[i], bgBounds.y + posY[i])).markInput().entries(List.of(EntryStacks.of(new ItemStack(item, (Integer) counts.get(i))))));
             }
         }
 

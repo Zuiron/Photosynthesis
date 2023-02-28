@@ -110,7 +110,10 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.JUNIPERBERRIES,
                 ModItems.MULBERRIES,
 
-                ModItems.CUT_KIWI
+                ModItems.CUT_KIWI,
+                ModItems.MEASURING_CUP,
+                ModItems.MEASURING_CUP_WATER,
+                ModItems.MEASURING_CUP_MILK
         };
         for (Item item : simple_items) {
             itemModelGenerator.register(item, Models.GENERATED);

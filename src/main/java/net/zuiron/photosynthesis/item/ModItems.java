@@ -196,6 +196,19 @@ public class ModItems {
     public static final Item WHISK_HANDLE = registerItem("whisk_handle",
             new Item(new FabricItemSettings()));
 
+    public static final Item MEASURING_CUP = registerItem("measuring_cup",
+            new Item(new FabricItemSettings()));
+    public static final Item MEASURING_CUP_WATER = registerItem("measuring_cup_water",
+            new Item(new FabricItemSettings().recipeRemainder(ModItems.MEASURING_CUP)));
+
+    public static final Item MEASURING_CUP_MILK = registerItem("measuring_cup_milk",
+            new Item(new FabricItemSettings().recipeRemainder(ModItems.MEASURING_CUP)));
+
+    /*
+    LATEX_BUCKET = Registry.register(Registries.ITEM, new Identifier(Photosynthesis.MOD_ID, "latex_bucket"),
+                new BucketItem(ModFluids.STILL_LATEX, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1)));
+     */
+
 
 
     // BARK ------------------------------------------------------------------------------------------------------------
@@ -954,6 +967,10 @@ public class ModItems {
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, WHISK );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, WHISK_PART );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, WHISK_HANDLE );
+
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, MEASURING_CUP );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, MEASURING_CUP_WATER );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, MEASURING_CUP_MILK );
 
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, BARK_ACACIA );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, BARK_BIRCH );

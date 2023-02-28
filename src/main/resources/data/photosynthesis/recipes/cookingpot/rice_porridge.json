@@ -2,8 +2,8 @@
   "type": "photosynthesis:cookingpot",
   "ingredients": [
     {
-      "item": "minecraft:milk_bucket",
-      "count": 1
+      "tag": "c:cookingpot_milkcontainers",
+      "count": 2
     },
     {
       "item": "photosynthesis:rice",
