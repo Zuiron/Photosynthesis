@@ -1278,7 +1278,7 @@ public class ModBlocks {
 
 
     public static final Block KIWITREE_LOG = registerBlock("kiwitree_log",
-            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG).nonOpaque()));
     public static final Block KIWITREE_WOOD = registerBlock("kiwitree_wood",
             new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
     public static final Block STRIPPED_KIWITREE_LOG = registerBlock("stripped_kiwitree_log",
