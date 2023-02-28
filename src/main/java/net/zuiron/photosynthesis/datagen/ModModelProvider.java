@@ -21,6 +21,7 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
 
+        //itemModelGenerator.register(ModItems.CACTUS_FRUIT, );
         Item[] simple_items = {
                 ModItems.FLINT_HOE,
                 ModItems.FLINT_KNIFE,
@@ -67,6 +68,41 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.CUTTING_KNIFE_BLADE_DIAMOND,
 
                 ModItems.CUTTING_KNIFE_HANDLE,
+
+                ModItems.CACTUS_FRUIT,
+                ModItems.CACTUS_FRUIT_SEEDS,
+                ModItems.CANTALOUPE,
+                ModItems.CANTALOUPE_SEEDS,
+                ModItems.FLAX,
+                ModItems.FLAX_SEEDS,
+                ModItems.JUTE,
+                ModItems.JUTE_SEEDS,
+                ModItems.KENAF,
+                ModItems.KENAF_SEEDS,
+                ModItems.SISAL,
+                ModItems.SISAL_SEEDS,
+                ModItems.AMARANTH,
+                ModItems.AMARANTH_SEEDS,
+                ModItems.BEAN,
+                ModItems.BEAN_SEEDS,
+                ModItems.CHICKPEA,
+                ModItems.CHICKPEA_SEEDS,
+                ModItems.LENTIL,
+                ModItems.LENTIL_SEEDS,
+                ModItems.QUINOA,
+                ModItems.QUINOA_SEEDS,
+                ModItems.PEANUT,
+                ModItems.PEANUT_SEEDS,
+                ModItems.TARO,
+                ModItems.TARO_SEEDS,
+                ModItems.TOMATILLO,
+                ModItems.TOMATILLO_SEEDS,
+                ModItems.AGAVE,
+                ModItems.AGAVE_SEEDS,
+                ModItems.GINGER,
+                ModItems.GINGER_SEEDS,
+                ModItems.SESAME_SEEDS,
+                ModItems.MUSTARD_SEEDS
         };
         for (Item item : simple_items) {
             itemModelGenerator.register(item, Models.GENERATED);

@@ -492,6 +492,78 @@ public class ModItems {
 
 
 
+    public static final Item CACTUS_FRUIT = registerItem("cactus_fruit",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item CANTALOUPE = registerItem("cantaloupe",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item FLAX = registerItem("flax",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item JUTE = registerItem("jute",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item KENAF = registerItem("kenaf",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item SISAL = registerItem("sisal",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item AMARANTH = registerItem("amaranth",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item BEAN = registerItem("bean",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item CHICKPEA = registerItem("chickpea",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item LENTIL = registerItem("lentil",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item QUINOA = registerItem("quinoa",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item PEANUT = registerItem("peanut",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item TARO = registerItem("taro",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item TOMATILLO = registerItem("tomatillo",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item AGAVE = registerItem("agave",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item GINGER = registerItem("ginger",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    //sesame and mustard crops drops straight seeds.
+    /*public static final Item SESAME = registerItem("sesame",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item MUSTARD = registerItem("mustard",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));*/
 
     // TREE PRODUCE ----------------------------------------------------------------------------------------------------
 
@@ -713,6 +785,24 @@ public class ModItems {
 
 
 
+    public static final Item CACTUS_FRUIT_SEEDS = registerSeedItem("cactus_fruit_seeds", ModBlocks.CACTUS_FRUIT_CROP);
+    public static final Item CANTALOUPE_SEEDS = registerSeedItem("cantaloupe_seeds", ModBlocks.CANTALOUPE_CROP);
+    public static final Item FLAX_SEEDS = registerSeedItem("flax_seeds", ModBlocks.FLAX_CROP);
+    public static final Item JUTE_SEEDS = registerSeedItem("jute_seeds", ModBlocks.JUTE_CROP);
+    public static final Item KENAF_SEEDS = registerSeedItem("kenaf_seeds", ModBlocks.KENAF_CROP);
+    public static final Item SISAL_SEEDS = registerSeedItem("sisal_seeds", ModBlocks.SISAL_CROP);
+    public static final Item AMARANTH_SEEDS = registerSeedItem("amaranth_seeds", ModBlocks.AMARANTH_CROP);
+    public static final Item BEAN_SEEDS = registerSeedItem("bean_seeds", ModBlocks.BEAN_CROP);
+    public static final Item CHICKPEA_SEEDS = registerSeedItem("chickpea_seeds", ModBlocks.CHICKPEA_CROP);
+    public static final Item LENTIL_SEEDS = registerSeedItem("lentil_seeds", ModBlocks.LENTIL_CROP);
+    public static final Item QUINOA_SEEDS = registerSeedItem("quinoa_seeds", ModBlocks.QUINOA_CROP);
+    public static final Item PEANUT_SEEDS = registerSeedItem("peanut_seeds", ModBlocks.PEANUT_CROP);
+    public static final Item TARO_SEEDS = registerSeedItem("taro_seeds", ModBlocks.TARO_CROP);
+    public static final Item TOMATILLO_SEEDS = registerSeedItem("tomatillo_seeds", ModBlocks.TOMATILLO_CROP);
+    public static final Item AGAVE_SEEDS = registerSeedItem("agave_seeds", ModBlocks.AGAVE_CROP);
+    public static final Item GINGER_SEEDS = registerSeedItem("ginger_seeds", ModBlocks.GINGER_CROP);
+    public static final Item SESAME_SEEDS = registerSeedItem("sesame_seeds", ModBlocks.SESAME_CROP);
+    public static final Item MUSTARD_SEEDS = registerSeedItem("mustard_seeds", ModBlocks.MUSTARD_CROP);
 
     // Food's ----------------------------------------------------------------------------------------------------------
 
@@ -923,6 +1013,27 @@ public class ModItems {
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, PAPAVER_SOMNIFERUM );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, ERYTHROXYLUM_COCA );
 
+
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CACTUS_FRUIT );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CANTALOUPE );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, FLAX );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, JUTE );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, KENAF );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, SISAL );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, AMARANTH );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, BEAN );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CHICKPEA );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, LENTIL );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, QUINOA );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, PEANUT );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, TARO );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, TOMATILLO );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, AGAVE );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, GINGER );
+
+
+
+
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CINNAMON_RAW );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, GREENAPPLE );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, BANANA );
@@ -988,6 +1099,25 @@ public class ModItems {
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, NICOTIANA_RUSTICA_SEEDS );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, PAPAVER_SOMNIFERUM_SEEDS );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, ERYTHROXYLUM_COCA_SEEDS );
+
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CACTUS_FRUIT_SEEDS );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CANTALOUPE_SEEDS );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, FLAX_SEEDS );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, JUTE_SEEDS );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, KENAF_SEEDS );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, SISAL_SEEDS );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, AMARANTH_SEEDS );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, BEAN_SEEDS );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CHICKPEA_SEEDS );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, LENTIL_SEEDS );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, QUINOA_SEEDS );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, PEANUT_SEEDS );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, TARO_SEEDS );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, TOMATILLO_SEEDS );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, AGAVE_SEEDS );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, GINGER_SEEDS );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, SESAME_SEEDS );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, MUSTARD_SEEDS );
 
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CANOLA_OIL_BOTTLE );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, SUNFLOWER_OIL_BOTTLE );

@@ -130,6 +130,26 @@ public class ModBlocks {
     public static final CropBlock HOP_CROP = registerCropBlockSimple("hop_crop");
     public static final CropBlock FILIPENDULA_CROP = registerCropBlockSimple("filipendula_crop");
 
+    //new
+    public static final CropBlock CACTUS_FRUIT_CROP = registerCropBlockSimple("cactus_fruit_crop");
+    public static final CropBlock CANTALOUPE_CROP = registerCropBlockSimple("cantaloupe_crop");
+    public static final CropBlock FLAX_CROP = registerCropBlockSimple("flax_crop");
+    public static final CropBlock JUTE_CROP = registerCropBlockSimple("jute_crop");
+    public static final CropBlock KENAF_CROP = registerCropBlockSimple("kenaf_crop");
+    public static final CropBlock SISAL_CROP = registerCropBlockSimple("sisal_crop");
+    public static final CropBlock AMARANTH_CROP = registerCropBlockSimple("amaranth_crop");
+    public static final CropBlock BEAN_CROP = registerCropBlockSimple("bean_crop");
+    public static final CropBlock CHICKPEA_CROP = registerCropBlockSimple("chickpea_crop");
+    public static final CropBlock LENTIL_CROP = registerCropBlockSimple("lentil_crop");
+    public static final CropBlock QUINOA_CROP = registerCropBlockSimple("quinoa_crop");
+    public static final CropBlock PEANUT_CROP = registerCropBlockSimple("peanut_crop");
+    public static final CropBlock TARO_CROP = registerCropBlockSimple("taro_crop");
+    public static final CropBlock TOMATILLO_CROP = registerCropBlockSimple("tomatillo_crop");
+    public static final CropBlock AGAVE_CROP = registerCropBlockSimple("agave_crop");
+    public static final CropBlock GINGER_CROP = registerCropBlockSimple("ginger_crop");
+    public static final CropBlock SESAME_CROP = registerCropBlockSimple("sesame_crop");
+    public static final CropBlock MUSTARD_CROP = registerCropBlockSimple("mustard_crop");
+
 
     public static final CropBlock CAMELLIA_SINENSIS_CROP = registerCropBlockSimple("camellia_sinensis_crop");
     public static final CropBlock NICOTIANA_RUSTICA_CROP = registerCropBlockSimple("nicotiana_rustica_crop");

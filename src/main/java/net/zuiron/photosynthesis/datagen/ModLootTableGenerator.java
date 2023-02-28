@@ -3,6 +3,7 @@ package net.zuiron.photosynthesis.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.item.Items;
+import net.minecraft.loot.condition.LootCondition;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.item.ModItems;
 
@@ -18,5 +19,7 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.DECORATION_ROCKS_RANDOM, ModItems.STONE_SMALL);
         addDrop(ModBlocks.DECORATION_STICKS_RANDOM, Items.STICK);
         addDrop(ModBlocks.DECORATION_SEASHELL, ModItems.SEASHELL);
+
+        //cropDrops(ModBlocks.CACTUS_FRUIT_CROP, ModItems.CACTUS_FRUIT, ModItems.CACTUS_FRUIT_SEEDS, );
     }
 }
