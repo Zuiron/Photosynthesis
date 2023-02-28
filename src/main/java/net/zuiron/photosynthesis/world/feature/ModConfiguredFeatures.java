@@ -209,6 +209,9 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?,?>> GRAPETREE_KEY = registerKey("grapetree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> GRAPETREE_SPAWN_KEY = registerKey("grapetree_spawn");
 
+    public static final RegistryKey<ConfiguredFeature<?,?>> KIWITREE_KEY = registerKey("kiwitree_tree");
+    public static final RegistryKey<ConfiguredFeature<?,?>> KIWITREE_SPAWN_KEY = registerKey("kiwitree_spawn");
+
 
 
 
@@ -929,6 +932,18 @@ public class ModConfiguredFeatures {
         register(context, GRAPETREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.GRAPETREE_CHECKED_KEY),
                         spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.GRAPETREE_CHECKED_KEY)));
+
+
+        register(context, KIWITREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(ModBlocks.KIWITREE_LOG),
+                new StraightTrunkPlacer(4, 1, 1), //3,4,2
+                BlockStateProvider.of(ModBlocks.KIWITREE_LEAVES),
+                new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 2),//3
+                new TwoLayersFeatureSize(1, 0, 2)).decorators(Collections.singletonList(KiwiTreeDecorator.INSTANCE)).build());
+
+        register(context, KIWITREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
+                new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.KIWITREE_CHECKED_KEY),
+                        spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.KIWITREE_CHECKED_KEY)));
 
 
 

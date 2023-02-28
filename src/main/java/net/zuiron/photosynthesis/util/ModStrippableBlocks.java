@@ -164,7 +164,8 @@ public class ModStrippableBlocks {
         StrippableBlockRegistry.register(ModBlocks.GRAPETREE_LOG, ModBlocks.STRIPPED_GRAPETREE_LOG);
         StrippableBlockRegistry.register(ModBlocks.GRAPETREE_WOOD, ModBlocks.STRIPPED_GRAPETREE_WOOD);
 
-
+        StrippableBlockRegistry.register(ModBlocks.KIWITREE_LOG, ModBlocks.STRIPPED_KIWITREE_LOG);
+        StrippableBlockRegistry.register(ModBlocks.KIWITREE_WOOD, ModBlocks.STRIPPED_KIWITREE_WOOD);
 
 
 

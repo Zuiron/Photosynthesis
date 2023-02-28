@@ -1,0 +1,17 @@
+
+{
+  "variants": {
+    "axis=x": {
+      "model": "photosynthesis:block/kiwitree_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "photosynthesis:block/kiwitree_wood"
+    },
+    "axis=z": {
+      "model": "photosynthesis:block/kiwitree_wood",
+      "x": 90
+    }
+  }
+}

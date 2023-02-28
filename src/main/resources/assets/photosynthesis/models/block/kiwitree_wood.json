@@ -1,0 +1,8 @@
+
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "photosynthesis:block/kiwitree_log",
+    "side": "photosynthesis:block/kiwitree_log"
+  }
+}

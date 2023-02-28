@@ -1277,6 +1277,28 @@ public class ModBlocks {
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
 
+    public static final Block KIWITREE_LOG = registerBlock("kiwitree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block KIWITREE_WOOD = registerBlock("kiwitree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_KIWITREE_LOG = registerBlock("stripped_kiwitree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_KIWITREE_WOOD = registerBlock("stripped_kiwitree_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block KIWITREE_PLANKS = registerBlock("kiwitree_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block KIWITREE_LEAVES = registerBlock("kiwitree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block KIWITREE_SAPLING = registerBlock("kiwitree_sapling",
+            new SaplingBlock(new KiwitreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock KIWITREE_BUSHCROP = registerBushBlock("kiwitree_bushcrop",
+            new KiwitreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+
 
 
 

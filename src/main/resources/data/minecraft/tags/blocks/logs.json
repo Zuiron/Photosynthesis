@@ -258,6 +258,11 @@
     "photosynthesis:grapetree_log",
     "photosynthesis:grapetree_wood",
     "photosynthesis:stripped_grapetree_log",
-    "photosynthesis:stripped_grapetree_wood"
+    "photosynthesis:stripped_grapetree_wood",
+
+    "photosynthesis:kiwitree_log",
+    "photosynthesis:kiwitree_wood",
+    "photosynthesis:stripped_kiwitree_log",
+    "photosynthesis:stripped_kiwitree_wood"
   ]
 }

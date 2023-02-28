@@ -127,6 +127,9 @@ public class Photosynthesis implements ModInitializer {
 	public static final TreeDecoratorType<GrapeTreeDecorator> GRAPE_TREE_DECORATOR = TreeDecoratorTypeInvoker.callRegister("photosynthesis:grape_tree_decorator", GrapeTreeDecorator.CODEC);
 
 
+	public static final TreeDecoratorType<KiwiTreeDecorator> KIWI_TREE_DECORATOR = TreeDecoratorTypeInvoker.callRegister("photosynthesis:kiwi_tree_decorator", KiwiTreeDecorator.CODEC);
+
+
 
 	public static final Identifier SKILLET_SOUND_ID = new Identifier("photosynthesis:skillet");
 	public static SoundEvent SKILLET_SOUND_EVENT = SoundEvent.of(SKILLET_SOUND_ID);
