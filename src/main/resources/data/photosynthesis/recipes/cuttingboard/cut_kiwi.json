@@ -1,0 +1,16 @@
+{
+  "type": "photosynthesis:cutting_board",
+  "ingredients": [
+    {
+      "tag": "c:cutting_board_cutting_knifes"
+    },
+    {
+      "item": "photosynthesis:kiwi"
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:cut_kiwi",
+    "count": 2
+  },
+  "cookingtime": 30
+}

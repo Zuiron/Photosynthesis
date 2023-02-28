@@ -108,7 +108,9 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.CRANBERRIES,
                 ModItems.HUCKLEBERRIES,
                 ModItems.JUNIPERBERRIES,
-                ModItems.MULBERRIES
+                ModItems.MULBERRIES,
+
+                ModItems.CUT_KIWI
         };
         for (Item item : simple_items) {
             itemModelGenerator.register(item, Models.GENERATED);

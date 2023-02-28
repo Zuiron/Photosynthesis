@@ -837,6 +837,10 @@ public class ModItems {
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
+    public static final Item CUT_KIWI = registerItem("cut_kiwi",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
     public static final Item CRACKED_EGG = registerItem("cracked_egg",
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
@@ -1138,6 +1142,7 @@ public class ModItems {
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, SUNFLOWER_OIL_BOTTLE );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CINNAMON_POWDER );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CUT_CHIVES );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CUT_KIWI );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CRACKED_EGG );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, FRIED_EGG );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, SCRAMBLED_EGG );
