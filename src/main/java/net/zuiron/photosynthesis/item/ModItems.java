@@ -200,6 +200,12 @@ public class ModItems {
     public static final Item MEASURING_CUP_MILK = registerItem("measuring_cup_milk",
             new Item(new FabricItemSettings().recipeRemainder(ModItems.MEASURING_CUP)));
 
+    public static final Item MEASURING_CUP_CANOLAOIL = registerItem("measuring_cup_canolaoil",
+            new Item(new FabricItemSettings().recipeRemainder(ModItems.MEASURING_CUP)));
+
+    public static final Item MEASURING_CUP_SUNFLOWEROIL = registerItem("measuring_cup_sunfloweroil",
+            new Item(new FabricItemSettings().recipeRemainder(ModItems.MEASURING_CUP)));
+
     /*
     LATEX_BUCKET = Registry.register(Registries.ITEM, new Identifier(Photosynthesis.MOD_ID, "latex_bucket"),
                 new BucketItem(ModFluids.STILL_LATEX, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1)));
@@ -971,6 +977,8 @@ public class ModItems {
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, MEASURING_CUP );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, MEASURING_CUP_WATER );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, MEASURING_CUP_MILK );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, MEASURING_CUP_CANOLAOIL );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, MEASURING_CUP_SUNFLOWEROIL );
 
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, BARK_ACACIA );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, BARK_BIRCH );
