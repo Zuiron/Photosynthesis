@@ -376,7 +376,7 @@ public class PhotosynthesisClient implements ClientModInitializer {
         BlockEntityRendererFactories.register(ModBlockEntities.CUTTING_BOARD, CuttingBoardBlockEntityRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.SKILLET, SkilletBlockEntityRenderer::new);
 
-
+        //LATEX
         FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_LATEX, ModFluids.FLOWING_LATEX,
                 new SimpleFluidRenderHandler(
                         new Identifier("photosynthesis:block/latex_still"), //minecraft:block/water_still
@@ -386,5 +386,27 @@ public class PhotosynthesisClient implements ClientModInitializer {
 
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),
                 ModFluids.STILL_LATEX, ModFluids.FLOWING_LATEX);
+
+        //CANOLAOIL
+        FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_CANOLAOIL, ModFluids.FLOWING_CANOLAOIL,
+                new SimpleFluidRenderHandler(
+                        new Identifier("photosynthesis:block/latex_still"), //minecraft:block/water_still
+                        new Identifier("photosynthesis:block/latex_flow"), //minecraft:block/water_flow
+                        0xFFfff1d9
+                )); //0xA1E038D0
+
+        BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),
+                ModFluids.STILL_CANOLAOIL, ModFluids.FLOWING_CANOLAOIL);
+
+        //SUNFLOWEROIL
+        FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_SUNFLOWEROIL, ModFluids.FLOWING_SUNFLOWEROIL,
+                new SimpleFluidRenderHandler(
+                        new Identifier("photosynthesis:block/latex_still"), //minecraft:block/water_still
+                        new Identifier("photosynthesis:block/latex_flow"), //minecraft:block/water_flow
+                        0xFFffe7c0
+                )); //0xA1E038D0
+
+        BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),
+                ModFluids.STILL_SUNFLOWEROIL, ModFluids.FLOWING_SUNFLOWEROIL);
     }
 }

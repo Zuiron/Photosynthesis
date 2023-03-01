@@ -22,17 +22,48 @@ public class ModFluids {
     public static Block LATEX_BLOCK;
     public static Item LATEX_BUCKET;
 
+    public static FlowableFluid STILL_CANOLAOIL;
+    public static FlowableFluid FLOWING_CANOLAOIL;
+    public static Block CANOLAOIL_BLOCK;
+    public static Item CANOLAOIL_BUCKET;
+
+    public static FlowableFluid STILL_SUNFLOWEROIL;
+    public static FlowableFluid FLOWING_SUNFLOWEROIL;
+    public static Block SUNFLOWEROIL_BLOCK;
+    public static Item SUNFLOWEROIL_BUCKET;
+
     public static void register() {
+        //LATEX
         STILL_LATEX = Registry.register(Registries.FLUID,
                 new Identifier(Photosynthesis.MOD_ID, "latex"), new LatexFluid.Still());
         FLOWING_LATEX = Registry.register(Registries.FLUID,
                 new Identifier(Photosynthesis.MOD_ID, "flowing_latex"), new LatexFluid.Flowing());
-
         LATEX_BLOCK = Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, "latex_block"),
                 new FluidBlock(ModFluids.STILL_LATEX, FabricBlockSettings.copyOf(Blocks.WATER)){ });
         LATEX_BUCKET = Registry.register(Registries.ITEM, new Identifier(Photosynthesis.MOD_ID, "latex_bucket"),
                 new BucketItem(ModFluids.STILL_LATEX, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1)));
-
         ItemGroupEvents.modifyEntriesEvent(ModItemGroup.PHOTOSYNTHESIS).register(entries -> entries.add(LATEX_BUCKET));
+
+        //CANOLA OIL
+        STILL_CANOLAOIL = Registry.register(Registries.FLUID,
+                new Identifier(Photosynthesis.MOD_ID, "canolaoil"), new CanolaOilFluid.Still());
+        FLOWING_CANOLAOIL = Registry.register(Registries.FLUID,
+                new Identifier(Photosynthesis.MOD_ID, "flowing_canolaoil"), new CanolaOilFluid.Flowing());
+        CANOLAOIL_BLOCK = Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, "canolaoil_block"),
+                new FluidBlock(ModFluids.STILL_CANOLAOIL, FabricBlockSettings.copyOf(Blocks.WATER)){ });
+        CANOLAOIL_BUCKET = Registry.register(Registries.ITEM, new Identifier(Photosynthesis.MOD_ID, "canolaoil_bucket"),
+                new BucketItem(ModFluids.STILL_CANOLAOIL, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1)));
+        ItemGroupEvents.modifyEntriesEvent(ModItemGroup.PHOTOSYNTHESIS).register(entries -> entries.add(CANOLAOIL_BUCKET));
+
+        //SUNFLOWER OIL
+        STILL_SUNFLOWEROIL = Registry.register(Registries.FLUID,
+                new Identifier(Photosynthesis.MOD_ID, "sunfloweroil"), new SunflowerOilFluid.Still());
+        FLOWING_SUNFLOWEROIL = Registry.register(Registries.FLUID,
+                new Identifier(Photosynthesis.MOD_ID, "flowing_sunfloweroil"), new SunflowerOilFluid.Flowing());
+        SUNFLOWEROIL_BLOCK = Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, "sunfloweroil_block"),
+                new FluidBlock(ModFluids.STILL_SUNFLOWEROIL, FabricBlockSettings.copyOf(Blocks.WATER)){ });
+        SUNFLOWEROIL_BUCKET = Registry.register(Registries.ITEM, new Identifier(Photosynthesis.MOD_ID, "sunfloweroil_bucket"),
+                new BucketItem(ModFluids.STILL_SUNFLOWEROIL, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1)));
+        ItemGroupEvents.modifyEntriesEvent(ModItemGroup.PHOTOSYNTHESIS).register(entries -> entries.add(SUNFLOWEROIL_BUCKET));
     }
 }
