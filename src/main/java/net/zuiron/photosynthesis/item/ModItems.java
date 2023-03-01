@@ -23,18 +23,6 @@ public class ModItems {
             new Item(new FabricItemSettings()));
 
     // SURVIVAL --------------------------------------------------------------------------------------------------------
-    public static final Item FLINT_HOE = registerItem("flint_hoe",
-            new Item(new FabricItemSettings()));
-
-    public static final Item FLINT_KNIFE = registerItem("flint_knife",
-            new Item(new FabricItemSettings()));
-
-    public static final Item FLINT_PICKAXE = registerItem("flint_pickaxe",
-            new Item(new FabricItemSettings()));
-
-    public static final Item FLINT_SHOVEL = registerItem("flint_shovel",
-            new Item(new FabricItemSettings()));
-
     public static final Item FORESTY_BUNDLE = registerItem("foresty_bundle",
             new Item(new FabricItemSettings()));
 
@@ -77,7 +65,7 @@ public class ModItems {
     public static final Item TREE_LEAF = registerItem("tree_leaf",
             new Item(new FabricItemSettings()));
 
-    public static final Item WOOL_RAW_BLACK = registerItem("wool_raw_black",
+    /*public static final Item WOOL_RAW_BLACK = registerItem("wool_raw_black",
             new Item(new FabricItemSettings()));
 
     public static final Item WOOL_RAW_BLUE = registerItem("wool_raw_blue",
@@ -123,7 +111,7 @@ public class ModItems {
             new Item(new FabricItemSettings()));
 
     public static final Item WOOL_RAW_YELLOW = registerItem("wool_raw_yellow",
-            new Item(new FabricItemSettings()));
+            new Item(new FabricItemSettings()));*/
 
     public static final Item SEASHELL = registerItem("seashell",
             new Item(new FabricItemSettings()));
@@ -137,12 +125,20 @@ public class ModItems {
 
     /*public static final Item CUTTING_KNIFE = registerItem("cutting_knife",
             new Item(new FabricItemSettings()));*/
+    public static final Item GARDEN_GRUBBER_FLINT = registerItem("garden_grubber_flint",
+            new ShovelItem(PrimitiveToolMaterial.INSTANCE, 0, -0.0F, new FabricItemSettings()));
+    public static final Item GARDEN_GRUBBER_IRON = registerItem("garden_grubber_iron",
+            new ShovelItem(ToolMaterials.IRON, 0, -0.0F, new FabricItemSettings()));
+    public static final Item GARDEN_GRUBBER_DIAMOND = registerItem("garden_grubber_diamond",
+            new ShovelItem(ToolMaterials.DIAMOND, 0, -0.0F, new FabricItemSettings()));
+
+
     public static final Item CUTTING_KNIFE_FLINT = registerItem("cutting_knife_flint",
-            new SwordItem(ToolMaterials.WOOD, 3, -2.4F, new FabricItemSettings()));
+            new SwordItem(ToolMaterials.WOOD, 2, 3.4F, new FabricItemSettings()));
     public static final Item CUTTING_KNIFE_IRON = registerItem("cutting_knife_iron",
-            new SwordItem(ToolMaterials.IRON, 3, -2.4F, new FabricItemSettings()));
+            new SwordItem(ToolMaterials.IRON, 2, 3.4F, new FabricItemSettings()));
     public static final Item CUTTING_KNIFE_DIAMOND = registerItem("cutting_knife_diamond",
-            new SwordItem(ToolMaterials.DIAMOND, 3, -2.4F, new FabricItemSettings()));
+            new SwordItem(ToolMaterials.DIAMOND, 2, 3.4F, new FabricItemSettings()));
 
     public static final Item CUTTING_KNIFE_BLADE_FLINT = registerItem("cutting_knife_blade_flint",
             new Item(new FabricItemSettings()));
@@ -943,6 +939,10 @@ public class ModItems {
     public static void addItemsToItemGroups() {
         //ItemGroups.INGREDIENTS
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, BARK_PEELER_SPUD );
+
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, GARDEN_GRUBBER_FLINT );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, GARDEN_GRUBBER_IRON );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, GARDEN_GRUBBER_DIAMOND );
 
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CUTTING_KNIFE_FLINT);
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CUTTING_KNIFE_IRON);

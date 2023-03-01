@@ -23,10 +23,6 @@ public class ModModelProvider extends FabricModelProvider {
 
         //itemModelGenerator.register(ModItems.CACTUS_FRUIT, );
         Item[] simple_items = {
-                ModItems.FLINT_HOE,
-                ModItems.FLINT_KNIFE,
-                ModItems.FLINT_PICKAXE,
-                ModItems.FLINT_SHOVEL,
                 ModItems.FORESTY_BUNDLE,
                 ModItems.GRASS_FIBRE_PIECE,
                 ModItems.GRASS_TWINE,
@@ -41,7 +37,7 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.TREE_BRANCH,
                 ModItems.TREE_CONE,
                 ModItems.TREE_LEAF,
-                ModItems.WOOL_RAW_BLACK,
+                /*ModItems.WOOL_RAW_BLACK,
                 ModItems.WOOL_RAW_BLUE,
                 ModItems.WOOL_RAW_BROWN,
                 ModItems.WOOL_RAW_CYAN,
@@ -56,8 +52,12 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.WOOL_RAW_PURPLE,
                 ModItems.WOOL_RAW_RED,
                 ModItems.WOOL_RAW_WHITE,
-                ModItems.WOOL_RAW_YELLOW,
+                ModItems.WOOL_RAW_YELLOW,*/
                 ModItems.SEASHELL,
+
+                ModItems.GARDEN_GRUBBER_FLINT,
+                ModItems.GARDEN_GRUBBER_IRON,
+                ModItems.GARDEN_GRUBBER_DIAMOND,
 
                 ModItems.CUTTING_KNIFE_FLINT,
                 ModItems.CUTTING_KNIFE_IRON,

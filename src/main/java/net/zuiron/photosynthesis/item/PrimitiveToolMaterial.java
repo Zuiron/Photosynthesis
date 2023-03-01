@@ -8,7 +8,7 @@ public class PrimitiveToolMaterial implements ToolMaterial {
 
     @Override
     public int getDurability() {
-        return 30;
+        return 49;
     }
 
     @Override
