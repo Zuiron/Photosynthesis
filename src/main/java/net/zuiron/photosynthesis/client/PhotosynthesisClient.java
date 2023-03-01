@@ -371,6 +371,7 @@ public class PhotosynthesisClient implements ClientModInitializer {
         HandledScreens.register(ModScreenHandlers.LATEX_EXTRACTOR_SCREEN_HANDLER, LatexExtractorScreen::new);
         HandledScreens.register(ModScreenHandlers.SKILLET_SCREEN_HANDLER, SkilletScreen::new);
         HandledScreens.register(ModScreenHandlers.COOKINGPOT_SCREEN_HANDLER, CookingPotScreen::new);
+        HandledScreens.register(ModScreenHandlers.KEG_SCREEN_HANDLER, KegScreen::new);
         ModMessages.registerS2CPackets();
 
         BlockEntityRendererFactories.register(ModBlockEntities.CUTTING_BOARD, CuttingBoardBlockEntityRenderer::new);

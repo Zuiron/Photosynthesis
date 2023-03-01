@@ -137,6 +137,9 @@ public class Photosynthesis implements ModInitializer {
 	public static final Identifier COOKINGPOT_SOUND_ID = new Identifier("photosynthesis:cookingpot");
 	public static SoundEvent COOKINGPOT_SOUND_EVENT = SoundEvent.of(COOKINGPOT_SOUND_ID);
 
+	public static final Identifier KEG_SOUND_ID = new Identifier("photosynthesis:keg");
+	public static SoundEvent KEG_SOUND_EVENT = SoundEvent.of(KEG_SOUND_ID);
+
 
 	@Override
 	public void onInitialize() {
@@ -145,6 +148,7 @@ public class Photosynthesis implements ModInitializer {
 		// Proceed with mild caution.
 		Registry.register(Registries.SOUND_EVENT, Photosynthesis.SKILLET_SOUND_ID, SKILLET_SOUND_EVENT);
 		Registry.register(Registries.SOUND_EVENT, Photosynthesis.COOKINGPOT_SOUND_ID, COOKINGPOT_SOUND_EVENT);
+		Registry.register(Registries.SOUND_EVENT, Photosynthesis.KEG_SOUND_ID, KEG_SOUND_EVENT);
 
 		ModItemGroup.registerItemGroup();
 
