@@ -19,12 +19,15 @@ public class SkilletRecipe implements Recipe<SimpleInventory> {
 
     private final int cookingTime;
 
+    private final DefaultedList counts;
 
-    public SkilletRecipe(Identifier id, ItemStack output, DefaultedList<Ingredient> recipeItems, int cookingTime) {
+
+    public SkilletRecipe(Identifier id, ItemStack output, DefaultedList<Ingredient> recipeItems, int cookingTime, DefaultedList counts) {
         this.id = id;
         this.output = output;
         this.recipeItems = recipeItems;
         this.cookingTime = cookingTime;
+        this.counts = counts;
     }
 
     @Override
@@ -33,7 +36,13 @@ public class SkilletRecipe implements Recipe<SimpleInventory> {
             return false;
         }
         //is this not used???
-        return recipeItems.get(0).test(inventory.getStack(0)) && recipeItems.get(1).test(inventory.getStack(1));
+        return recipeItems.get(0).test(inventory.getStack(0))
+                && recipeItems.get(1).test(inventory.getStack(1))
+                && recipeItems.get(2).test(inventory.getStack(2))
+                && recipeItems.get(3).test(inventory.getStack(3))
+                && recipeItems.get(4).test(inventory.getStack(4))
+                && recipeItems.get(5).test(inventory.getStack(5))
+                && recipeItems.get(6).test(inventory.getStack(6));
     }
 
     @Override
@@ -54,6 +63,8 @@ public class SkilletRecipe implements Recipe<SimpleInventory> {
     public int getCookTime() {
         return cookingTime;
     }
+
+    public DefaultedList getCounts() { return counts; }
 
     @Override
     public DefaultedList<Ingredient> getIngredients() {
@@ -89,20 +100,24 @@ public class SkilletRecipe implements Recipe<SimpleInventory> {
         @Override
         public SkilletRecipe read(Identifier id, JsonObject json) {
             ItemStack output = ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "output"));
+
             int CookTime = JsonHelper.getInt(json, "cookingtime");
             Photosynthesis.LOGGER.info("read cookingtime of: " + CookTime + ", for: " + output.getItem().getName().getString());
 
             JsonArray ingredients = JsonHelper.getArray(json, "ingredients");
-            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(2, Ingredient.EMPTY); //size: max number of possible input ingredients.
+            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(7, Ingredient.EMPTY); //size: max number of possible input ingredients.
+            DefaultedList<Integer> counts = DefaultedList.ofSize(7, 0);
 
             for (int i = 0; i < ingredients.size(); i++) {
                 if (i >= inputs.size()) {
                     inputs.add(Ingredient.EMPTY);
+                    counts.add(0);
                 }
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
+                counts.set(i, JsonHelper.getInt(ingredients.get(i).getAsJsonObject(),"count"));
             }
 
-            return new SkilletRecipe(id, output, inputs, CookTime);
+            return new SkilletRecipe(id, output, inputs, CookTime, counts);
         }
 
         @Override
@@ -114,7 +129,7 @@ public class SkilletRecipe implements Recipe<SimpleInventory> {
             }
 
             ItemStack output = buf.readItemStack();
-            return new SkilletRecipe(id, output, inputs, 0);
+            return new SkilletRecipe(id, output, inputs, 0, DefaultedList.ofSize(7, 0));
         }
 
         @Override

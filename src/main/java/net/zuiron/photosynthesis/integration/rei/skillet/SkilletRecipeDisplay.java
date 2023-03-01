@@ -11,6 +11,7 @@ import me.shedaniel.rei.api.common.entry.EntryIngredient;
 import me.shedaniel.rei.api.common.util.EntryIngredients;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.minecraft.util.collection.DefaultedList;
 import net.zuiron.photosynthesis.integration.rei.PhotosynthesisREI;
 import net.zuiron.photosynthesis.recipe.SkilletRecipe;
 
@@ -20,17 +21,19 @@ import java.util.List;
 import java.util.Optional;
 
 import java.util.List;
+
 @Environment(EnvType.CLIENT)
 public class SkilletRecipeDisplay extends BasicDisplay {
     private final EntryIngredient containerOutput;
     private final int cookTime;
+    private final DefaultedList counts;
 
     public SkilletRecipeDisplay(SkilletRecipe recipe) {
         super(EntryIngredients.ofIngredients(recipe.getIngredients()), Collections.singletonList(EntryIngredients.of(recipe.getOutput())),
                 Optional.ofNullable(recipe.getId()));
         containerOutput = EntryIngredients.of(recipe.getOutput());
         cookTime = recipe.getCookTime();
-        //cookTime = 200;
+        this.counts = recipe.getCounts();
     }
 
     @Override
@@ -56,5 +59,9 @@ public class SkilletRecipeDisplay extends BasicDisplay {
 
     public int getCookTime() {
         return cookTime;
+    }
+
+    public DefaultedList getCounts() {
+        return counts;
     }
 }

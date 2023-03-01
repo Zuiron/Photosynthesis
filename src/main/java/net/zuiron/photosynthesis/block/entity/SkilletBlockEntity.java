@@ -13,9 +13,12 @@ import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraft.item.PotionItem;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -35,17 +38,17 @@ import net.zuiron.photosynthesis.recipe.SkilletRecipe;
 import net.zuiron.photosynthesis.screen.SkilletScreenHandler;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
 import java.util.Optional;
 
 public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
-    //public static boolean LIT = false;
-    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(3, ItemStack.EMPTY);
+    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(9, ItemStack.EMPTY);
 
     public ItemStack getRenderStack() {
-        if(this.getStack(2).isEmpty()) {
-            return this.getStack(0);
+        if(this.getStack(0).isEmpty()) {
+            return this.getStack(1);
         } else {
-            return this.getStack(2);
+            return this.getStack(7);
         }
     }
 
@@ -78,7 +81,7 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
 
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
-    private int maxProgress = 20; //Crafting Time / The cook time in ticks
+    private int maxProgress = 20;
 
     public SkilletBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.SKILLET, pos, state);
@@ -112,7 +115,7 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
 
     @Override
     public Text getDisplayName() {
-        return Text.literal("Skillet");
+        return Text.literal(""); //Skillet
     }
 
     @Nullable
@@ -169,16 +172,7 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
 
 
     public static void playSkilletSound(World world, BlockPos blockPos) {
-        if(!world.isClient()) {
-            world.playSound(
-                    null, // Player - if non-null, will play sound for every nearby player *except* the specified player
-                    blockPos, // The position of where the sound will come from
-                    Photosynthesis.SKILLET_SOUND_EVENT, // The sound that will play, in this case, the sound the anvil plays when it lands.
-                    SoundCategory.BLOCKS, // This determines which of the volume sliders affect this sound
-                    1f, //Volume multiplier, 1 is normal, 0.5 is half volume, etc
-                    1f // Pitch multiplier, 1 is normal, 0.5 is half pitch, etc
-            );
-        }
+        if(!world.isClient()) { world.playSound(null, blockPos, Photosynthesis.SKILLET_SOUND_EVENT, SoundCategory.BLOCKS, 1f, 1f); }
     }
 
     private static int tickCounter = 0;
@@ -212,7 +206,6 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
             state = (BlockState)state.with(SkilletBlock.PROCESSING, true); world.setBlockState(blockPos, state, 3);
             markDirty(world, blockPos, state);
 
-            //play sound
             loopSkilletSound(world, blockPos);
 
             if(entity.progress >= entity.maxProgress) {
@@ -256,16 +249,28 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
                 .getFirstMatch(SkilletRecipe.Type.INSTANCE, inventory, entity.getWorld());
 
         if(hasRecipe(entity)) {
-            entity.removeStack(0, 1);
-            entity.removeStack(1, 1);
-            /*entity.setStack(2, new ItemStack(ModItems.SALT,
-                    entity.getStack(2).getCount() + 1));*/
+            if(entity.getStack(0).getItem() instanceof PotionItem) {
+                entity.setStack(8, new ItemStack(Items.GLASS_BOTTLE, 1));
+            } else {
+                //entity.setStack(8, entity.getStack(0).getRecipeRemainder());
+                entity.setStack(8, new ItemStack(entity.getStack(0).getRecipeRemainder().getItem(), (Integer) recipe.get().getCounts().get(0)));
+            }
+
+            entity.removeStack(0, (Integer) recipe.get().getCounts().get(0));   //fluid
+
+            entity.removeStack(1, (Integer) recipe.get().getCounts().get(1));   //input
+            entity.removeStack(2, (Integer) recipe.get().getCounts().get(2));   //input
+            entity.removeStack(3, (Integer) recipe.get().getCounts().get(3));   //input
+            entity.removeStack(4, (Integer) recipe.get().getCounts().get(4));   //input
+            entity.removeStack(5, (Integer) recipe.get().getCounts().get(5));   //input
+            entity.removeStack(6, (Integer) recipe.get().getCounts().get(6));   //input
 
 
             int recipeOutputCount = recipe.get().getOutput().getCount();
-            int outputSlotCount = entity.getStack(2).getCount();
+            int outputSlotCount = entity.getStack(7).getCount();
 
-            entity.setStack(2, new ItemStack(recipe.get().getOutput().getItem(), outputSlotCount + recipeOutputCount));
+            entity.setStack(7, new ItemStack(recipe.get().getOutput().getItem(), outputSlotCount + recipeOutputCount));
+
             entity.resetProgress();
         }
     }
@@ -276,28 +281,54 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
             inventory.setStack(i, entity.getStack(i));
         }
 
-        /*boolean hasRawSaltInFirstSlot = entity.getStack(1).getItem() == ModItems.RAW_SALT;
-        return hasRawSaltInFirstSlot && canInsertAmountIntoOutputSlot(inventory)
-                && canInsertItemIntoOutputSlot(inventory, ModItems.SALT);*/
-
         Optional<SkilletRecipe> match = entity.getWorld().getRecipeManager()
                 .getFirstMatch(SkilletRecipe.Type.INSTANCE, inventory, entity.getWorld());
 
-        entity.maxProgress = entity.getWorld().getRecipeManager()
-                .getFirstMatch(SkilletRecipe.Type.INSTANCE, inventory, entity.getWorld()).map(SkilletRecipe::getCookTime).orElse(20);
-        //Photosynthesis.LOGGER.info("setting cooktime to: " + match.get().getCookTime());
+        entity.maxProgress = match.map(SkilletRecipe::getCookTime).orElse(20);
 
-        return match.isPresent() && canInsertAmountIntoOutputSlot(inventory, match.get().getOutput().getCount())
-                && canInsertItemIntoOutputSlot(inventory, match.get().getOutput().getItem());
+        if (match.isPresent() && inventory.getStack(7).isEmpty() && inventory.getStack(8).isEmpty()) {
+            //Photosynthesis.LOGGER.info("match is present! continue");
+            SkilletRecipe recipe = match.get();
+            List<Ingredient> ingredients = recipe.getIngredients();
+            DefaultedList counts = recipe.getCounts();
+            for (int i = 0; i < ingredients.size(); i++) {
+                Ingredient ingredient = ingredients.get(i);
+                ItemStack itemStack = entity.getStack(i);
+                //Photosynthesis.LOGGER.info("ingredient:"+ingredient.toJson()+", itemStack:"+itemStack);
+
+                int reqCount = (int) counts.get(i);
+
+                if (ingredient.isEmpty() || itemStack.isEmpty()) {
+                    continue;
+                } else if (ingredient.test(itemStack) && itemStack.getCount() >= reqCount) {
+                    //Photosynthesis.LOGGER.info("recipe requires min:"+reqCount+", we got:"+itemStack.getCount());
+                    continue;
+                } else {
+                    //Photosynthesis.LOGGER.info("FAILED - recipe requires:"+reqCount+", we got:"+itemStack.getCount());
+                    return false;
+                }
+            }
+
+            return canInsertAmountIntoOutputSlot(inventory, recipe.getOutput().getCount())
+                    && canInsertItemIntoOutputSlot(inventory, recipe.getOutput().getItem());
+        } else {
+            return false;
+        }
     }
+
+
+
 
     private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, Item output) {
         //return inventory.getStack(2).getItem() == output || inventory.getStack(2).isEmpty(); //crafts up to a stack.
         //make it so output has to be empty. (more manual labor) *evil*
-        return inventory.getStack(2).isEmpty();
+        if(inventory.getStack(7).isEmpty() && inventory.getStack(8).isEmpty()) {
+            return true;
+        }
+        return false;
     }
 
     private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory, int amount) {
-        return inventory.getStack(2).getMaxCount() >= inventory.getStack(2).getCount() + amount;
+        return inventory.getStack(7).getMaxCount() >= inventory.getStack(7).getCount() + amount;
     }
 }

@@ -12,6 +12,8 @@ import me.shedaniel.rei.api.common.entry.EntryIngredient;
 import me.shedaniel.rei.api.common.util.EntryStacks;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
@@ -21,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 import me.shedaniel.rei.api.client.registry.display.DisplayCategory;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.collection.DefaultedList;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.integration.rei.PhotosynthesisREI;
@@ -50,47 +53,36 @@ public class SkilletRecipeCategory implements DisplayCategory<SkilletRecipeDispl
         final List<Widget> widgets = new ArrayList<>();
 
         widgets.add(Widgets.createRecipeBase(bounds));
-        Rectangle bgBounds = PhotosynthesisREI.centeredIntoRecipeBase(origin, 116, 56);
-        widgets.add(Widgets.createTexturedWidget(GUI_TEXTURE, bgBounds, 29, 16));
-
-        //fixed
+        Rectangle bgBounds = PhotosynthesisREI.centeredIntoRecipeBase(origin, 125, 63);
+        widgets.add(Widgets.createTexturedWidget(GUI_TEXTURE, bgBounds, 29, 3));
 
         List<EntryIngredient> ingredientEntries = display.getIngredientEntries();
+        DefaultedList counts = display.getCounts();
 
+        //INPUTS
         if (ingredientEntries != null) {
-            if (ingredientEntries.size() >= 2) {
-                widgets.add(Widgets.createSlot(new Point(bgBounds.x + 33, bgBounds.y + 16))
-                        .entries(ingredientEntries.get(0)).markInput().disableBackground());
-                widgets.add(Widgets.createSlot(new Point(bgBounds.x + 33, bgBounds.y + 34))
-                        .entries(ingredientEntries.get(1)).markInput().disableBackground());
-            } else if (ingredientEntries.size() == 1) {
-                widgets.add(Widgets.createSlot(new Point(bgBounds.x + 33, bgBounds.y + 16))
-                        .entries(ingredientEntries.get(0)).markInput().disableBackground());
+            int[] posX = {96, 5, 23, 41, 5, 23, 41};
+            int[] posY = {15, 24, 24, 24, 42, 42, 42};
+
+            for (int i = 0; i < ingredientEntries.size(); i++) {
+                //INPUT ITEMS TODO foreach Item item = ((ItemStack) ingredientEntries.get(i) - might be multiple? if tags.
+                Item item = ((ItemStack) ingredientEntries.get(i).get(0).getValue()).getItem();
+                widgets.add(Widgets.createSlot(new Point(bgBounds.x + posX[i], bgBounds.y + posY[i])).markInput().entries(List.of(EntryStacks.of(new ItemStack(item, (Integer) counts.get(i))))));
             }
         }
 
 
 
         //OUTPUT
-        widgets.add(Widgets.createSlot(new Point(bgBounds.x + 69, bgBounds.y + 34))
-                .entries(display.getContainerOutput()).markInput().disableBackground());
+        widgets.add(Widgets.createSlot(new Point(bgBounds.x + 87, bgBounds.y + 42))
+                .entries(display.getContainerOutput()).markOutput().disableBackground());
 
-        /*
-        widgets.add(Widgets.createSlot(new Point(bgBounds.x + 95, bgBounds.y + 12))
-                .entries(display.getOutputEntries().get(0)).markOutput().disableBackground());
-        widgets.add(Widgets.createSlot(new Point(bgBounds.x + 95, bgBounds.y + 39))
-                .entries(display.getOutputEntries().get(0)).markOutput().disableBackground());
-         */
-
-
-        /*widgets.add(Widgets.createTexturedWidget(GUI_TEXTURE,
-                new Rectangle(bgBounds.x + 18, bgBounds.y + 39, 17, 15), 176, 0));*/
 
 
         int cookTime = display.getCookTime();
         int cookTimeSeconds = cookTime / 20;
 
-        Arrow cookArrow = Widgets.createArrow(new Point(bgBounds.x + 61, bgBounds.y + 10))
+        Arrow cookArrow = Widgets.createArrow(new Point(bgBounds.x + 60, bgBounds.y + 42))
                 .animationDurationTicks(cookTime);
         widgets.add(cookArrow);
         widgets.add(Widgets.createLabel(new Point(

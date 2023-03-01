@@ -28,15 +28,23 @@ public class SkilletScreenHandler extends ScreenHandler {
 
     public SkilletScreenHandler(int syncId, PlayerInventory playerInventory, BlockEntity entity, PropertyDelegate delegate) {
         super(ModScreenHandlers.SKILLET_SCREEN_HANDLER, syncId);
-        checkSize(((Inventory) entity), 3);
+        checkSize(((Inventory) entity), 9);
         this.inventory = (Inventory)entity;
         inventory.onOpen(playerInventory.player);
         this.propertyDelegate = delegate;
         this.blockEntity = (SkilletBlockEntity) entity;
 
-        this.addSlot(new Slot(inventory, 0, 62, 32)); //input1
-        this.addSlot(new Slot(inventory, 1, 62, 50)); //input2
-        this.addSlot(new OutputSlot(inventory, 2, 98, 50)); //output
+        this.addSlot(new Slot(inventory, 0, 125, 18)); //input (bucket / flask)
+
+        this.addSlot(new Slot(inventory, 1, 34, 27)); //input
+        this.addSlot(new Slot(inventory, 2, 52, 27)); //input
+        this.addSlot(new Slot(inventory, 3, 70, 27)); //input
+        this.addSlot(new Slot(inventory, 4, 34, 45)); //input
+        this.addSlot(new Slot(inventory, 5, 52, 45)); //input
+        this.addSlot(new Slot(inventory, 6, 70, 45)); //input
+
+        this.addSlot(new OutputSlot(inventory, 7, 116, 45)); //output (empty bucket/flask)
+        this.addSlot(new OutputSlot(inventory, 8, 134, 45)); //output
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);

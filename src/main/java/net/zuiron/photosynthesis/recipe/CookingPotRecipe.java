@@ -114,9 +114,6 @@ public class CookingPotRecipe implements Recipe<SimpleInventory> {
                     counts.add(0);
                 }
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
-                //counts.set(i, JsonHelper.getInt(ingredients.getAsJsonObject(),"count"));
-                //Photosynthesis.LOGGER.info("xCount: "+ingredients.get(i)); //does contain count also.
-                //Photosynthesis.LOGGER.info("xCount: "+JsonHelper.getInt(ingredients.get(i).getAsJsonObject(),"count"));  //WORKS!
                 counts.set(i, JsonHelper.getInt(ingredients.get(i).getAsJsonObject(),"count"));
             }
 
