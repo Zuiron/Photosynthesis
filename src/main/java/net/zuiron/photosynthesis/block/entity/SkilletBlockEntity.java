@@ -48,7 +48,7 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
         if(!this.getStack(7).isEmpty()) {
             return this.getStack(7);
         } else {
-            return this.getStack(2);
+            return this.getStack(1);
         }
     }
 
