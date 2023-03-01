@@ -251,7 +251,7 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
     }
 
     private static boolean hasRecipe(KegBlockEntity entity) {
-        SimpleInventory inventory = new SimpleInventory(entity.size());
+        /*SimpleInventory inventory = new SimpleInventory(entity.size());
         for (int i = 0; i < entity.size(); i++) {
             inventory.setStack(i, entity.getStack(i));
         }
@@ -261,7 +261,7 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
 
         entity.maxProgress = match.map(KegRecipe::getCookTime).orElse(20);
 
-        if (match.isPresent() && inventory.getStack(7).isEmpty() && inventory.getStack(8).isEmpty()) {
+        if (match.isPresent()) {
             //Photosynthesis.LOGGER.info("match is present! continue");
             KegRecipe recipe = match.get();
             List<Ingredient> ingredients = recipe.getIngredients();
@@ -288,7 +288,8 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
                     && canInsertItemIntoOutputSlot(inventory, recipe.getOutput().getItem());
         } else {
             return false;
-        }
+        }*/
+        return false;
     }
 
 

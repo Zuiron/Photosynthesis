@@ -1,0 +1,30 @@
+{
+  "type": "photosynthesis:keg",
+  "ingredients": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 81000
+    },
+    {
+      "item": "photosynthesis:canola_seeds",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:canola_seeds",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:canola_seeds",
+      "count": 3
+    },
+    {
+      "item": "photosynthesis:canola_seeds",
+      "count": 4
+    }
+  ],
+  "output": {
+    "fluid": "photosynthesis:canolaoil",
+    "amount": 81000
+  },
+  "cookingtime": 100
+}
