@@ -36,6 +36,7 @@ import net.zuiron.photosynthesis.block.custom.KegBlock;
 import net.zuiron.photosynthesis.networking.ModMessages;
 import net.zuiron.photosynthesis.recipe.KegRecipe;
 import net.zuiron.photosynthesis.screen.KegScreenHandler;
+import net.zuiron.photosynthesis.util.FluidStack;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -216,44 +217,34 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
     }
 
     private static void craftItem(KegBlockEntity entity) {
-        SimpleInventory inventory = new SimpleInventory(entity.size());
-        for (int i = 0; i < entity.size(); i++) {
-            inventory.setStack(i, entity.getStack(i));
+        SimpleInventory inventory = new SimpleInventory(4);
+        for (int i = 0; i < 4; i++) {
+            inventory.setStack(i, entity.getStack(i+1)); //ingredients start from slot1.
         }
 
         Optional<KegRecipe> recipe = entity.getWorld().getRecipeManager()
                 .getFirstMatch(KegRecipe.Type.INSTANCE, inventory, entity.getWorld());
 
         if(hasRecipe(entity)) {
-            if(entity.getStack(0).getItem() instanceof PotionItem) {
-                entity.setStack(8, new ItemStack(Items.GLASS_BOTTLE, 1));
-            } else {
-                entity.setStack(8, new ItemStack(entity.getStack(0).getRecipeRemainder().getItem(), (Integer) recipe.get().getCounts().get(0)));
-            }
 
-            entity.removeStack(0, (Integer) recipe.get().getCounts().get(0));   //fluid
+            //TODO - remove input fluid from input fluid tank
 
-            entity.removeStack(1, (Integer) recipe.get().getCounts().get(1));   //input
-            entity.removeStack(2, (Integer) recipe.get().getCounts().get(2));   //input
-            entity.removeStack(3, (Integer) recipe.get().getCounts().get(3));   //input
-            entity.removeStack(4, (Integer) recipe.get().getCounts().get(4));   //input
-            entity.removeStack(5, (Integer) recipe.get().getCounts().get(5));   //input
-            entity.removeStack(6, (Integer) recipe.get().getCounts().get(6));   //input
+            entity.removeStack(1, (Integer) recipe.get().getCounts().get(0));   //input
+            entity.removeStack(2, (Integer) recipe.get().getCounts().get(1));   //input
+            entity.removeStack(3, (Integer) recipe.get().getCounts().get(2));   //input
+            entity.removeStack(4, (Integer) recipe.get().getCounts().get(3));   //input
 
-
-            int recipeOutputCount = recipe.get().getOutput().getCount();
-            int outputSlotCount = entity.getStack(7).getCount();
-
-            entity.setStack(7, new ItemStack(recipe.get().getOutput().getItem(), outputSlotCount + recipeOutputCount));
+            //TODO - add output fluid to output tank
 
             entity.resetProgress();
+            Photosynthesis.LOGGER.info("Item crafted! SUCCESS.");
         }
     }
 
     private static boolean hasRecipe(KegBlockEntity entity) {
-        /*SimpleInventory inventory = new SimpleInventory(entity.size());
-        for (int i = 0; i < entity.size(); i++) {
-            inventory.setStack(i, entity.getStack(i));
+        SimpleInventory inventory = new SimpleInventory(4);
+        for (int i = 0; i < 4; i++) {
+            inventory.setStack(i, entity.getStack(i+1));
         }
 
         Optional<KegRecipe> match = entity.getWorld().getRecipeManager()
@@ -262,13 +253,17 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
         entity.maxProgress = match.map(KegRecipe::getCookTime).orElse(20);
 
         if (match.isPresent()) {
-            //Photosynthesis.LOGGER.info("match is present! continue");
+            Photosynthesis.LOGGER.info("match is present! continue");
             KegRecipe recipe = match.get();
             List<Ingredient> ingredients = recipe.getIngredients();
             DefaultedList counts = recipe.getCounts();
+
+            FluidStack inputFluid = recipe.getFluidInput();
+            FluidStack outputFluid = recipe.getOutputFluid();
+
             for (int i = 0; i < ingredients.size(); i++) {
                 Ingredient ingredient = ingredients.get(i);
-                ItemStack itemStack = entity.getStack(i);
+                ItemStack itemStack = entity.getStack(i+1);
                 //Photosynthesis.LOGGER.info("ingredient:"+ingredient.toJson()+", itemStack:"+itemStack);
 
                 int reqCount = (int) counts.get(i);
@@ -276,35 +271,33 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
                 if (ingredient.isEmpty() || itemStack.isEmpty()) {
                     continue;
                 } else if (ingredient.test(itemStack) && itemStack.getCount() >= reqCount) {
-                    //Photosynthesis.LOGGER.info("recipe requires min:"+reqCount+", we got:"+itemStack.getCount());
+                    Photosynthesis.LOGGER.info("recipe requires min:"+reqCount+", we got:"+itemStack.getCount());
+                    //TODO - check tanks for recipe matching fluids.
+
                     continue;
                 } else {
-                    //Photosynthesis.LOGGER.info("FAILED - recipe requires:"+reqCount+", we got:"+itemStack.getCount());
+                    Photosynthesis.LOGGER.info("FAILED - recipe requires:"+reqCount+", we got:"+itemStack.getCount());
                     return false;
                 }
             }
 
-            return canInsertAmountIntoOutputSlot(inventory, recipe.getOutput().getCount())
-                    && canInsertItemIntoOutputSlot(inventory, recipe.getOutput().getItem());
+            /*return canInsertAmountIntoOutputSlot(inventory, recipe.getOutput().getCount())
+                    && canInsertItemIntoOutputSlot(inventory, recipe.getOutput().getItem());*/
+            return true;
         } else {
+            Photosynthesis.LOGGER.info("no match is present...");
             return false;
-        }*/
-        return false;
+        }
     }
 
 
 
 
     private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, Item output) {
-        //return inventory.getStack(2).getItem() == output || inventory.getStack(2).isEmpty(); //crafts up to a stack.
-        //make it so output has to be empty. (more manual labor) *evil*
-        if(inventory.getStack(7).isEmpty() && inventory.getStack(8).isEmpty()) {
-            return true;
-        }
         return false;
     }
 
     private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory, int amount) {
-        return inventory.getStack(7).getMaxCount() >= inventory.getStack(7).getCount() + amount;
+        return false;
     }
 }

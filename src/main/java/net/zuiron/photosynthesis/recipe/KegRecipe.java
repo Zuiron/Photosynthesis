@@ -21,7 +21,8 @@ import net.zuiron.photosynthesis.util.FluidStack;
 
 public class KegRecipe implements Recipe<SimpleInventory> {
     private final Identifier id;
-    private final ItemStack output;
+    private final FluidStack output;
+    private final FluidStack fluidInput;
     private final DefaultedList<Ingredient> recipeItems;
 
     private final int cookingTime;
@@ -29,12 +30,13 @@ public class KegRecipe implements Recipe<SimpleInventory> {
     private final DefaultedList counts;
 
 
-    public KegRecipe(Identifier id, ItemStack output, DefaultedList<Ingredient> recipeItems, int cookingTime, DefaultedList counts) {
+    public KegRecipe(Identifier id, FluidStack output, DefaultedList<Ingredient> recipeItems, int cookingTime, DefaultedList counts, FluidStack fluidInput) {
         this.id = id;
         this.output = output;
         this.recipeItems = recipeItems;
         this.cookingTime = cookingTime;
         this.counts = counts;
+        this.fluidInput = fluidInput;
     }
 
     @Override
@@ -43,15 +45,15 @@ public class KegRecipe implements Recipe<SimpleInventory> {
             return false;
         }
         //is this not used???
-        return recipeItems.get(1).test(inventory.getStack(1))
+        return recipeItems.get(0).test(inventory.getStack(0))
+                && recipeItems.get(1).test(inventory.getStack(1))
                 && recipeItems.get(2).test(inventory.getStack(2))
-                && recipeItems.get(3).test(inventory.getStack(3))
-                && recipeItems.get(4).test(inventory.getStack(4));
+                && recipeItems.get(3).test(inventory.getStack(3));
     }
 
     @Override
     public ItemStack craft(SimpleInventory inventory) {
-        return output;
+        return null;
     }
 
     @Override
@@ -61,11 +63,19 @@ public class KegRecipe implements Recipe<SimpleInventory> {
 
     @Override
     public ItemStack getOutput() {
-        return output.copy();
+        return new ItemStack(Items.AIR);
+    }
+
+    public FluidStack getOutputFluid() {
+        return output;
     }
 
     public int getCookTime() {
         return cookingTime;
+    }
+
+    public FluidStack getFluidInput() {
+        return fluidInput;
     }
 
     public DefaultedList getCounts() { return counts; }
@@ -156,11 +166,11 @@ public class KegRecipe implements Recipe<SimpleInventory> {
             /*
             until its done.
              */
-            DefaultedList<Ingredient> inputsS = DefaultedList.ofSize(5, Ingredient.EMPTY);
-            ItemStack output = new ItemStack(Items.STICK);
+            //DefaultedList<Ingredient> inputsS = DefaultedList.ofSize(5, Ingredient.EMPTY);
+            //ItemStack output = new ItemStack(Items.STICK);
 
             int CookTime = JsonHelper.getInt(json, "cookingtime");
-            return new KegRecipe(id, output, inputsS, CookTime, counts);
+            return new KegRecipe(id, fluidOutput, inputs, CookTime, counts, fluidInput);
         }
 
         @Override
@@ -171,8 +181,8 @@ public class KegRecipe implements Recipe<SimpleInventory> {
                 inputs.set(i, Ingredient.fromPacket(buf));
             }
 
-            ItemStack output = buf.readItemStack();
-            return new KegRecipe(id, output, inputs, 0, DefaultedList.ofSize(7, 0));
+            //FluidStack output = buf.readItemStack();
+            return new KegRecipe(id, null, inputs, 0, DefaultedList.ofSize(7, 0), null);
         }
 
         @Override
@@ -181,7 +191,7 @@ public class KegRecipe implements Recipe<SimpleInventory> {
             for (Ingredient ing : recipe.getIngredients()) {
                 ing.write(buf);
             }
-            buf.writeItemStack(recipe.getOutput());
+            //buf.writeItemStack(recipe.getOutput());
         }
     }
 }

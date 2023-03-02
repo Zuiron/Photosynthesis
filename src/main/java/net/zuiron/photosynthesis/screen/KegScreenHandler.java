@@ -32,14 +32,14 @@ public class KegScreenHandler extends ScreenHandler {
         this.propertyDelegate = delegate;
         this.blockEntity = (KegBlockEntity) entity;
 
-        this.addSlot(new Slot(inventory, 0, 8, 6));          //
+        this.addSlot(new Slot(inventory, 0, 8, 6));          //bucket
 
-        this.addSlot(new Slot(inventory, 1, 53, 26));           //
-        this.addSlot(new Slot(inventory, 2, 71, 26));           //
-        this.addSlot(new Slot(inventory, 3, 89, 26));           //
-        this.addSlot(new Slot(inventory, 4, 107, 26));           //
+        this.addSlot(new Slot(inventory, 1, 53, 26));           //item
+        this.addSlot(new Slot(inventory, 2, 71, 26));           //item
+        this.addSlot(new Slot(inventory, 3, 89, 26));           //item
+        this.addSlot(new Slot(inventory, 4, 107, 26));           //item
 
-        this.addSlot(new Slot(inventory, 5, 152, 45));           //
+        this.addSlot(new Slot(inventory, 5, 152, 45));           //bucket
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
