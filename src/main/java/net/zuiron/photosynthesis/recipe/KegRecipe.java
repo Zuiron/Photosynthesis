@@ -104,7 +104,7 @@ public class KegRecipe implements Recipe<SimpleInventory> {
         @Override
         public KegRecipe read(Identifier id, JsonObject json) {
 
-
+            //FLUID output -- DONE
             JsonObject outputobj = JsonHelper.getObject(json, "output");
             int fluidamount = JsonHelper.getInt(outputobj, "amount", 81000);
 
@@ -112,29 +112,45 @@ public class KegRecipe implements Recipe<SimpleInventory> {
             Fluid fluid = (Fluid) Registries.FLUID.getOrEmpty(new Identifier(fluidstring)).orElseThrow(() -> {
                 return new JsonSyntaxException("Unknown fluid '" + fluidstring + "'");
             });
-            FluidStack fluidoutput = new FluidStack(FluidVariant.of(fluid), fluidamount);
-            Photosynthesis.LOGGER.info("output fluid: " + fluidoutput);
+            FluidStack fluidOutput = new FluidStack(FluidVariant.of(fluid), fluidamount);
+            Photosynthesis.LOGGER.info("output fluid: " + fluidOutput.fluidVariant.getFluid() + ", amount: " + fluidOutput.amount);
+            //----------------------------------------------------------------------------------------------------------
 
 
 
 
-
-
+            //FLUID output -- TODO
             JsonArray ingredients = JsonHelper.getArray(json, "ingredients");
             DefaultedList<Ingredient> inputs = DefaultedList.ofSize(4, Ingredient.EMPTY);
             DefaultedList<Integer> counts = DefaultedList.ofSize(4, 0);
 
-            for (int i = 0; i < ingredients.size()-1; i++) {
+            for (int i = 0; i < ingredients.size(); i++) {
                 if (i >= inputs.size()) {
                     inputs.add(Ingredient.EMPTY);
                     counts.add(0);
                 }
-                inputs.set(i, Ingredient.fromJson(ingredients.get(i+1)));
-                counts.set(i, JsonHelper.getInt(ingredients.get(i+1).getAsJsonObject(),"count"));
+                inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
+                counts.set(i, JsonHelper.getInt(ingredients.get(i).getAsJsonObject(),"count"));
+                Photosynthesis.LOGGER.info("Ingredient: " + inputs.get(i).toJson() + ", count: " + counts.get(i));
             }
+            //----------------------------------------------------------------------------------------------------------
 
-            Photosynthesis.LOGGER.info("ingredients: "+inputs+", counts: "+counts);
-            //TODO
+
+            //FLUID input -- TODO
+            JsonObject inputobj = JsonHelper.getObject(json, "fluidinput");
+            int inputfluidamount = JsonHelper.getInt(inputobj, "amount", 81000);
+
+            String inputfluidstring = JsonHelper.getString(inputobj, "fluid");
+            Fluid inputfluid = (Fluid) Registries.FLUID.getOrEmpty(new Identifier(inputfluidstring)).orElseThrow(() -> {
+                return new JsonSyntaxException("Unknown fluid '" + inputfluidstring + "'");
+            });
+            FluidStack fluidInput = new FluidStack(FluidVariant.of(inputfluid), inputfluidamount);
+            Photosynthesis.LOGGER.info("input fluid: " + fluidInput.fluidVariant.getFluid() + ", amount: " + fluidInput.amount);
+            //----------------------------------------------------------------------------------------------------------
+
+
+
+
 
 
             /*

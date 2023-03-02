@@ -1,10 +1,10 @@
 {
   "type": "photosynthesis:keg",
+  "fluidinput": {
+    "fluid": "minecraft:water",
+    "amount": 81000
+  },
   "ingredients": [
-    {
-      "fluid": "minecraft:water",
-      "amount": 81000
-    },
     {
       "item": "photosynthesis:canola_seeds",
       "count": 1
