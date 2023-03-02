@@ -34,7 +34,7 @@ public class KegScreen extends HandledScreen<KegScreenHandler> {
     }
 
     private void assignFluidStackRenderer() {
-        fluidStackRenderer = new FluidStackRenderer(FluidStack.convertDropletsToMb(FluidConstants.BUCKET) * 2,
+        fluidStackRenderer = new FluidStackRenderer(FluidStack.convertDropletsToMb(FluidConstants.BUCKET) * 4,
                 true, 15, 55);
     }
 
