@@ -68,9 +68,9 @@ public class KegScreen extends HandledScreen<KegScreenHandler> {
         renderProgressArrow(matrices, x, y);
 
         fluidStackRenderer.drawFluid(matrices, handler.fluidInputStack, x + 30, y + 6, 16, 55,
-                FluidStack.convertDropletsToMb(FluidConstants.BUCKET) * 2);
+                FluidStack.convertDropletsToMb(FluidConstants.BUCKET) * 4);
         fluidStackRenderer.drawFluid(matrices, handler.fluidOutputStack, x + 130, y + 6, 16, 55,
-                FluidStack.convertDropletsToMb(FluidConstants.BUCKET) * 2);
+                FluidStack.convertDropletsToMb(FluidConstants.BUCKET) * 4);
     }
 
     private void renderProgressArrow(MatrixStack matrices, int x, int y) {
