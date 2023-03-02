@@ -119,7 +119,7 @@ public class KegRecipe implements Recipe<SimpleInventory> {
 
 
 
-            //FLUID output -- TODO
+            //ITEM input -- DONE
             JsonArray ingredients = JsonHelper.getArray(json, "ingredients");
             DefaultedList<Ingredient> inputs = DefaultedList.ofSize(4, Ingredient.EMPTY);
             DefaultedList<Integer> counts = DefaultedList.ofSize(4, 0);
@@ -136,7 +136,7 @@ public class KegRecipe implements Recipe<SimpleInventory> {
             //----------------------------------------------------------------------------------------------------------
 
 
-            //FLUID input -- TODO
+            //FLUID input -- DONE
             JsonObject inputobj = JsonHelper.getObject(json, "fluidinput");
             int inputfluidamount = JsonHelper.getInt(inputobj, "amount", 81000);
 
