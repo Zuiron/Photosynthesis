@@ -11,13 +11,16 @@ import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 import net.zuiron.photosynthesis.block.entity.KegBlockEntity;
-import net.zuiron.photosynthesis.screen.slot.OutputSlot;
+import net.zuiron.photosynthesis.util.FluidStack;
 
 public class KegScreenHandler extends ScreenHandler {
     private final Inventory inventory;
     private final PropertyDelegate propertyDelegate;
 
     public final KegBlockEntity blockEntity;
+
+    public FluidStack fluidInputStack;
+    public FluidStack fluidOutputStack;
 
     public KegScreenHandler(int syncId, PlayerInventory inventory, PacketByteBuf buf) {
         this(syncId, inventory, inventory.player.getWorld().getBlockEntity(buf.readBlockPos()),
@@ -31,6 +34,8 @@ public class KegScreenHandler extends ScreenHandler {
         inventory.onOpen(playerInventory.player);
         this.propertyDelegate = delegate;
         this.blockEntity = (KegBlockEntity) entity;
+        this.fluidInputStack = new FluidStack(blockEntity.fluidInput.variant, blockEntity.fluidInput.amount);
+        this.fluidOutputStack = new FluidStack(blockEntity.fluidOutput.variant, blockEntity.fluidOutput.amount);
 
         this.addSlot(new Slot(inventory, 0, 8, 6));          //bucket
 
@@ -46,6 +51,15 @@ public class KegScreenHandler extends ScreenHandler {
 
         addProperties(delegate);
     }
+
+    public void setInputFluid(FluidStack stack) {
+        fluidInputStack = stack;
+    }
+
+    public void setOutputFluid(FluidStack stack) {
+        fluidOutputStack = stack;
+    }
+
 
     public boolean isCrafting() {
         return propertyDelegate.get(0) > 0;

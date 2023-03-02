@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.minecraft.util.Identifier;
 import net.zuiron.photosynthesis.networking.packet.FluidSyncS2CPacket;
+import net.zuiron.photosynthesis.networking.packet.FluidSyncS2CPacket2;
 import net.zuiron.photosynthesis.networking.packet.ItemStackSyncS2CPacket;
 
 public class ModMessages {
@@ -13,6 +14,7 @@ public class ModMessages {
 
     public static final Identifier ENERGY_SYNC = new Identifier(Photosynthesis.MOD_ID, "energy_sync");
     public static final Identifier FLUID_SYNC = new Identifier(Photosynthesis.MOD_ID, "fluid_sync");
+    public static final Identifier FLUID_SYNC2 = new Identifier(Photosynthesis.MOD_ID, "fluid_sync2");
     public static final Identifier ITEM_SYNC = new Identifier(Photosynthesis.MOD_ID, "item_sync");
 
     public static void registerC2SPackets() { //SERVER?
@@ -24,6 +26,7 @@ public class ModMessages {
         //ClientPlayNetworking.registerGlobalReceiver(THIRST_SYNC_ID, ThirstSyncDataS2CPacket::receive);
         //ClientPlayNetworking.registerGlobalReceiver(ENERGY_SYNC, EnergySyncS2CPacket::receive);
         ClientPlayNetworking.registerGlobalReceiver(FLUID_SYNC, FluidSyncS2CPacket::receive);
+        ClientPlayNetworking.registerGlobalReceiver(FLUID_SYNC2, FluidSyncS2CPacket2::receive);
         ClientPlayNetworking.registerGlobalReceiver(ITEM_SYNC, ItemStackSyncS2CPacket::receive);
     }
 }

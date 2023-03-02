@@ -4,8 +4,11 @@ import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.PlayerLookup;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
+import net.fabricmc.fabric.api.transfer.v1.fluid.FluidConstants;
+import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
+import net.fabricmc.fabric.api.transfer.v1.storage.base.SingleVariantStorage;
+import net.fabricmc.fabric.api.transfer.v1.transaction.Transaction;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -13,8 +16,6 @@ import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.item.PotionItem;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.particle.ParticleTypes;
@@ -25,7 +26,6 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.state.property.Properties;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
@@ -33,6 +33,7 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.custom.KegBlock;
+import net.zuiron.photosynthesis.fluid.ModFluids;
 import net.zuiron.photosynthesis.networking.ModMessages;
 import net.zuiron.photosynthesis.recipe.KegRecipe;
 import net.zuiron.photosynthesis.screen.KegScreenHandler;
@@ -69,7 +70,69 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
     @Override
     public void markDirty() {
         syncItems();
+        if(!world.isClient()) {
+            sendFluidPacket();
+        }
         super.markDirty();
+    }
+
+    public final SingleVariantStorage<FluidVariant> fluidInput = new SingleVariantStorage<FluidVariant>() {
+        @Override
+        protected FluidVariant getBlankVariant() {
+            return FluidVariant.blank();
+        }
+
+        @Override
+        protected long getCapacity(FluidVariant variant) {
+            return FluidStack.convertDropletsToMb(FluidConstants.BUCKET) * 4; // 4 buckets
+        }
+
+        @Override
+        protected void onFinalCommit() {
+            markDirty();
+            if(!world.isClient()) {
+                sendFluidPacket();
+            }
+        }
+    };
+
+    public final SingleVariantStorage<FluidVariant> fluidOutput = new SingleVariantStorage<FluidVariant>() {
+        @Override
+        protected FluidVariant getBlankVariant() {
+            return FluidVariant.blank();
+        }
+
+        @Override
+        protected long getCapacity(FluidVariant variant) {
+            return FluidStack.convertDropletsToMb(FluidConstants.BUCKET) * 4; // 4 buckets
+        }
+
+        @Override
+        protected void onFinalCommit() {
+            markDirty();
+            if(!world.isClient()) {
+                sendFluidPacket();
+            }
+        }
+    };
+
+    private void sendFluidPacket() {
+        PacketByteBuf data = PacketByteBufs.create();
+        PacketByteBuf data2 = PacketByteBufs.create();
+
+        fluidInput.variant.toPacket(data);
+        data.writeLong(fluidInput.amount);
+
+        fluidOutput.variant.toPacket(data2);
+        data2.writeLong(fluidOutput.amount);
+
+        data.writeBlockPos(getPos());
+        data2.writeBlockPos(getPos());
+
+        for (ServerPlayerEntity player : PlayerLookup.tracking((ServerWorld) world, getPos())) {
+            ServerPlayNetworking.send(player, ModMessages.FLUID_SYNC, data);
+            ServerPlayNetworking.send(player, ModMessages.FLUID_SYNC2, data2);
+        }
     }
 
     protected final PropertyDelegate propertyDelegate;
@@ -101,6 +164,16 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
         };
     }
 
+    public void setInputFluidLevel(FluidVariant fluidVariant, long fluidLevel) {
+        this.fluidInput.variant = fluidVariant;
+        this.fluidInput.amount = fluidLevel;
+    }
+
+    public void setOutputFluidLevel(FluidVariant fluidVariant, long fluidLevel) {
+        this.fluidOutput.variant = fluidVariant;
+        this.fluidOutput.amount = fluidLevel;
+    }
+
     @Override
     public DefaultedList<ItemStack> getItems() {
         return this.inventory;
@@ -114,6 +187,9 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
     @Nullable
     @Override
     public ScreenHandler createMenu(int syncId, PlayerInventory inv, PlayerEntity player) {
+        if(!world.isClient()) {
+            sendFluidPacket(); //SYNC when we open gui.
+        }
         return new KegScreenHandler(syncId, inv, this, this.propertyDelegate);
     }
 
@@ -128,6 +204,12 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
         Inventories.writeNbt(nbt, inventory);
         nbt.putInt("keg.progress", progress);
         nbt.putInt("keg.cookingTime", maxProgress);
+
+        nbt.put("inputFluid.variant", fluidInput.variant.toNbt());
+        nbt.putLong("inputFluid.fluid", fluidInput.amount);
+
+        nbt.put("outputFluid.variant", fluidOutput.variant.toNbt());
+        nbt.putLong("outputFluid.fluid", fluidOutput.amount);
     }
 
     @Override
@@ -136,6 +218,12 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
         super.readNbt(nbt);
         progress = nbt.getInt("keg.progress");
         maxProgress = nbt.getInt("keg.cookingTime");
+
+        fluidInput.variant = FluidVariant.fromNbt((NbtCompound) nbt.get("inputFluid.variant"));
+        fluidInput.amount = nbt.getLong("inputFluid.fluid");
+
+        fluidOutput.variant = FluidVariant.fromNbt((NbtCompound) nbt.get("outputFluid.variant"));
+        fluidOutput.amount = nbt.getLong("outputFluid.fluid");
     }
 
     private void resetProgress() {
@@ -226,6 +314,8 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
                 .getFirstMatch(KegRecipe.Type.INSTANCE, inventory, entity.getWorld());
 
         if(hasRecipe(entity)) {
+            FluidStack inputFluid = recipe.get().getFluidInput();
+            FluidStack outputFluid = recipe.get().getOutputFluid();
 
             //TODO - remove input fluid from input fluid tank
 
@@ -235,6 +325,11 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
             entity.removeStack(4, (Integer) recipe.get().getCounts().get(3));   //input
 
             //TODO - add output fluid to output tank
+            try(Transaction transaction = Transaction.openOuter()) {
+                entity.fluidOutput.insert(FluidVariant.of(outputFluid.fluidVariant.getFluid()),
+                        FluidStack.convertDropletsToMb(outputFluid.amount), transaction);
+                transaction.commit();
+            }
 
             entity.resetProgress();
             Photosynthesis.LOGGER.info("Item crafted! SUCCESS.");
