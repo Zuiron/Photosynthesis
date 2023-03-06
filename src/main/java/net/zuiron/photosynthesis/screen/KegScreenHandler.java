@@ -11,6 +11,7 @@ import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 import net.zuiron.photosynthesis.block.entity.KegBlockEntity;
+import net.zuiron.photosynthesis.screen.slot.OneCountSlot;
 import net.zuiron.photosynthesis.util.FluidStack;
 
 public class KegScreenHandler extends ScreenHandler {
@@ -37,14 +38,14 @@ public class KegScreenHandler extends ScreenHandler {
         this.fluidInputStack = new FluidStack(blockEntity.fluidInput.variant, blockEntity.fluidInput.amount);
         this.fluidOutputStack = new FluidStack(blockEntity.fluidOutput.variant, blockEntity.fluidOutput.amount);
 
-        this.addSlot(new Slot(inventory, 0, 8, 6));          //bucket
+        this.addSlot(new OneCountSlot(inventory, 0, 8, 6));          //bucket
 
         this.addSlot(new Slot(inventory, 1, 53, 26));           //item
         this.addSlot(new Slot(inventory, 2, 71, 26));           //item
         this.addSlot(new Slot(inventory, 3, 89, 26));           //item
         this.addSlot(new Slot(inventory, 4, 107, 26));           //item
 
-        this.addSlot(new Slot(inventory, 5, 152, 45));           //bucket
+        this.addSlot(new OneCountSlot(inventory, 5, 152, 45));           //bucket
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);

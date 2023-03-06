@@ -18,6 +18,7 @@ import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.particle.ParticleTypes;
@@ -35,6 +36,7 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.custom.KegBlock;
+import net.zuiron.photosynthesis.fluid.ModFluids;
 import net.zuiron.photosynthesis.networking.ModMessages;
 import net.zuiron.photosynthesis.recipe.KegRecipe;
 import net.zuiron.photosynthesis.screen.KegScreenHandler;
@@ -268,12 +270,52 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
         }
     }
 
+    private static boolean hasFluidSourceInSlot(KegBlockEntity entity) {
+        return entity.getStack(0).getItem() == Items.WATER_BUCKET;
+    }
+
+    private static void transferFluidToFluidStorage(KegBlockEntity entity) {
+
+        if(canTankAcceptBucketWorth(entity)) {
+            if (insertFluid(entity, FluidStack.convertDropletsToMb(FluidConstants.BUCKET))) {
+                entity.setStack(0, new ItemStack(Items.BUCKET));
+            }
+        }
+    }
+
+    private static boolean insertFluid(KegBlockEntity entity, long convertDropletsToMb) {
+        try(Transaction transaction = Transaction.openOuter()) {
+            entity.fluidInput.insert(FluidVariant.of(Fluids.WATER), convertDropletsToMb, transaction);
+            transaction.commit();
+            return true;
+        }
+        catch (Exception e) {
+            return false;
+        }
+    }
+
+    private static boolean canTankAcceptBucketWorth(KegBlockEntity entity) {
+        long availableSpace = entity.fluidInput.getCapacity() - entity.fluidInput.getAmount();
+        if(availableSpace >= FluidStack.convertDropletsToMb(FluidConstants.BUCKET)) {
+            return true;
+        }
+        return false;
+    }
+
     public static void tick(World world, BlockPos blockPos, BlockState state, KegBlockEntity entity) {
         animationTick(world, blockPos, state);
 
         if(world.isClient()) {
             return;
         }
+
+        //------------------- BUCKET STUFF
+        if(hasFluidSourceInSlot(entity)) {
+            transferFluidToFluidStorage(entity);
+        }
+        //--------------------------------
+
+
         boolean isBelowHeat = isBlockBelowBurning(world, blockPos);
 
         //check see if belowblock is burning, if so. enable hot texture!
