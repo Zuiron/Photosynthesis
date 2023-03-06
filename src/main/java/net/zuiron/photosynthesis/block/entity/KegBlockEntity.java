@@ -356,6 +356,7 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
             FluidStack inputFluid = recipe.getFluidInput();
             FluidStack outputFluid = recipe.getOutputFluid();
 
+            //check item counts.
             for (int i = 0; i < ingredients.size(); i++) {
                 Ingredient ingredient = ingredients.get(i);
                 ItemStack itemStack = entity.getStack(i+1);
@@ -367,15 +368,15 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
                     continue;
                 } else if (ingredient.test(itemStack) && itemStack.getCount() >= reqCount) {
                     Photosynthesis.LOGGER.info("recipe requires min:"+reqCount+", we got:"+itemStack.getCount());
-                    //TODO - check tanks for recipe matching fluids.
-
                     continue;
                 } else {
                     Photosynthesis.LOGGER.info("FAILED - recipe requires:"+reqCount+", we got:"+itemStack.getCount());
                     return false;
                 }
             }
+            //TODO - check if input fluid has enough input fluid.
 
+            //TODO - check if output can accept output.
             /*return canInsertAmountIntoOutputSlot(inventory, recipe.getOutput().getCount())
                     && canInsertItemIntoOutputSlot(inventory, recipe.getOutput().getItem());*/
             return true;
