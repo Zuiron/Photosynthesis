@@ -33,7 +33,6 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.custom.KegBlock;
-import net.zuiron.photosynthesis.fluid.ModFluids;
 import net.zuiron.photosynthesis.networking.ModMessages;
 import net.zuiron.photosynthesis.recipe.KegRecipe;
 import net.zuiron.photosynthesis.screen.KegScreenHandler;
@@ -377,16 +376,32 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
             //TODO - check if input fluid has enough input fluid.
 
             //TODO - check if output can accept output.
+
+            return canInsertFluidIntoFluidOutput(entity, outputFluid, FluidStack.convertDropletsToMb(outputFluid.amount));
             /*return canInsertAmountIntoOutputSlot(inventory, recipe.getOutput().getCount())
                     && canInsertItemIntoOutputSlot(inventory, recipe.getOutput().getItem());*/
-            return true;
+            //return true;
         } else {
             Photosynthesis.LOGGER.info("no match is present...");
             return false;
         }
     }
 
+    private static boolean canInsertFluidIntoFluidOutput(KegBlockEntity entity, FluidStack outputFluid, long amount) {
+        long outputTankCapacity = entity.fluidOutput.getCapacity();
+        long outputTankAmount = entity.fluidOutput.getAmount();
+        long outputTankRemainingCapacity = outputTankCapacity - outputTankAmount;
+        if(outputTankRemainingCapacity < amount) { return false; } //WORKING
 
+        //TODO -- check if output fluid is equal to outputtankfluid or is empty.
+        FluidVariant outputTankFluidVariant = entity.fluidOutput.getResource();
+
+        FluidVariant recipeFluidVariant = outputFluid.fluidVariant;
+
+        Photosynthesis.LOGGER.info("capacity: "+outputTankCapacity+", Amount: "+outputTankAmount+", of: "+outputTankFluidVariant);
+        Photosynthesis.LOGGER.info("trying to insert: "+recipeFluidVariant+", amount: "+amount);
+        return true;
+    }
 
 
     private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, Item output) {
