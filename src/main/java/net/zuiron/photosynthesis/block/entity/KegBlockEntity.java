@@ -318,19 +318,25 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
             FluidStack inputFluid = recipe.get().getFluidInput();
             FluidStack outputFluid = recipe.get().getOutputFluid();
 
-            //TODO - remove input fluid from input fluid tank
+            //DONE - remove input fluid from input fluid tank
+            try(Transaction transaction = Transaction.openOuter()) {
+                entity.fluidInput.extract(FluidVariant.of(inputFluid.fluidVariant.getFluid()),
+                        FluidStack.convertDropletsToMb(inputFluid.amount), transaction);
+                transaction.commit();
+            }
 
             entity.removeStack(1, (Integer) recipe.get().getCounts().get(0));   //input
             entity.removeStack(2, (Integer) recipe.get().getCounts().get(1));   //input
             entity.removeStack(3, (Integer) recipe.get().getCounts().get(2));   //input
             entity.removeStack(4, (Integer) recipe.get().getCounts().get(3));   //input
 
-            //TODO - add output fluid to output tank
+
             try(Transaction transaction = Transaction.openOuter()) {
                 entity.fluidOutput.insert(FluidVariant.of(outputFluid.fluidVariant.getFluid()),
                         FluidStack.convertDropletsToMb(outputFluid.amount), transaction);
                 transaction.commit();
             }
+
 
             entity.resetProgress();
             Photosynthesis.LOGGER.info("Item crafted! SUCCESS.");
