@@ -425,11 +425,29 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
             }
             //TODO - check if input fluid has enough input fluid.
 
-            return canInsertFluidIntoFluidOutput(entity, outputFluid, FluidStack.convertDropletsToMb(outputFluid.amount));
+
+            return canInsertFluidIntoFluidOutput(entity, outputFluid, FluidStack.convertDropletsToMb(outputFluid.amount)) &&
+                    doesInputTankContainEnoughRecipeInputFluid(entity, inputFluid, FluidStack.convertDropletsToMb(inputFluid.amount));
         } else {
             Photosynthesis.LOGGER.info("no match is present...");
             return false;
         }
+    }
+
+    private static boolean doesInputTankContainEnoughRecipeInputFluid(KegBlockEntity entity, FluidStack inputFluid, long amount) {
+        FluidVariant inputTankFluidVariant = entity.fluidInput.getResource();
+        long inputTankFluidAmount = entity.fluidInput.getAmount();
+
+        //if input tank is empty, no go.
+        if(inputTankFluidVariant.isOf(Fluids.EMPTY)) { return false; }
+
+        //is it the required variant?
+        if(inputTankFluidVariant != inputFluid.fluidVariant) { return false; }
+
+        //do we have enough?
+        if(inputTankFluidAmount < amount) { return false; }
+
+        return true;
     }
 
     private static boolean canInsertFluidIntoFluidOutput(KegBlockEntity entity, FluidStack outputFluid, long amount) {
