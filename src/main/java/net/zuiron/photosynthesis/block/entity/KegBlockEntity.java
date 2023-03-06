@@ -12,6 +12,8 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.fluid.Fluid;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.Item;
@@ -375,12 +377,7 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
             }
             //TODO - check if input fluid has enough input fluid.
 
-            //TODO - check if output can accept output.
-
             return canInsertFluidIntoFluidOutput(entity, outputFluid, FluidStack.convertDropletsToMb(outputFluid.amount));
-            /*return canInsertAmountIntoOutputSlot(inventory, recipe.getOutput().getCount())
-                    && canInsertItemIntoOutputSlot(inventory, recipe.getOutput().getItem());*/
-            //return true;
         } else {
             Photosynthesis.LOGGER.info("no match is present...");
             return false;
@@ -391,15 +388,17 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
         long outputTankCapacity = entity.fluidOutput.getCapacity();
         long outputTankAmount = entity.fluidOutput.getAmount();
         long outputTankRemainingCapacity = outputTankCapacity - outputTankAmount;
-        if(outputTankRemainingCapacity < amount) { return false; } //WORKING
 
-        //TODO -- check if output fluid is equal to outputtankfluid or is empty.
+        if(outputTankRemainingCapacity < amount) { return false; } //WORKING - capacity check
+
         FluidVariant outputTankFluidVariant = entity.fluidOutput.getResource();
-
         FluidVariant recipeFluidVariant = outputFluid.fluidVariant;
 
-        Photosynthesis.LOGGER.info("capacity: "+outputTankCapacity+", Amount: "+outputTankAmount+", of: "+outputTankFluidVariant);
-        Photosynthesis.LOGGER.info("trying to insert: "+recipeFluidVariant+", amount: "+amount);
+        //DONE -- check if output fluid is equal to outputtankfluid or is empty.
+        if(!outputTankFluidVariant.isOf(Fluids.EMPTY) && outputTankFluidVariant != recipeFluidVariant) { return false; } //? - is recipe and output tank same variant?
+
+        //Photosynthesis.LOGGER.info("capacity: "+outputTankCapacity+", Amount: "+outputTankAmount+", of: "+outputTankFluidVariant);
+        //Photosynthesis.LOGGER.info("trying to insert: "+recipeFluidVariant+", amount: "+amount);
         return true;
     }
 
