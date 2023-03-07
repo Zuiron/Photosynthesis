@@ -271,6 +271,7 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
     }
 
     private static boolean hasFluidSourceInSlot(KegBlockEntity entity) {
+        //TODO - what if we can use other fluid than water?
         return entity.getStack(0).getItem() == Items.WATER_BUCKET;
     }
 
