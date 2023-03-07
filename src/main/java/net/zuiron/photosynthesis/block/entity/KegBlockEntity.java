@@ -423,8 +423,6 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
                     return false;
                 }
             }
-            //TODO - check if input fluid has enough input fluid.
-
 
             return canInsertFluidIntoFluidOutput(entity, outputFluid, FluidStack.convertDropletsToMb(outputFluid.amount)) &&
                     doesInputTankContainEnoughRecipeInputFluid(entity, inputFluid, FluidStack.convertDropletsToMb(inputFluid.amount));
