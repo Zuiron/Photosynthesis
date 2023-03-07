@@ -256,6 +256,7 @@ public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedSc
 
     private static void extractFluidAndMakeBucket(LatexExtractorBlockEntity entity) {
         if(entity.fluidStorage.amount >= 1000 && entity.getStack(1).isEmpty()) {
+            ItemStack itemStack = new ItemStack(ModFluids.LATEX_BUCKET);
             if(extractFluid(entity, 1000)) {
                 //TODO fix, double buckets in slot 0 or more.
                 int count = entity.getStack(0).getCount();
@@ -265,7 +266,7 @@ public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedSc
                     entity.setStack(0, new ItemStack(Items.AIR));
                 }
 
-                entity.setStack(1, new ItemStack(ModFluids.LATEX_BUCKET));
+                entity.setStack(1, itemStack);
             }
         }
     }
