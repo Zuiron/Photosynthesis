@@ -274,6 +274,13 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
         return entity.getStack(0).getItem() == Items.WATER_BUCKET;
     }
 
+    private static boolean hasEmptyBucketInSlot(KegBlockEntity entity) {
+        if(entity.getStack(5).getItem() == Items.BUCKET) {
+            return true;
+        }
+        return false;
+    }
+
     private static void transferFluidToFluidStorage(KegBlockEntity entity) {
 
         if(canTankAcceptBucketWorth(entity)) {
@@ -302,6 +309,27 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
         return false;
     }
 
+    private static void extractFluidAndMakeBucket(KegBlockEntity entity) {
+        if(entity.fluidOutput.amount >= 1000) {
+            ItemStack itemStack = new ItemStack(entity.fluidOutput.getResource().getFluid().getBucketItem());
+            if(extractFluid(entity, 1000)) {
+                entity.setStack(5, itemStack);
+            }
+        }
+    }
+
+    private static boolean extractFluid(KegBlockEntity entity, int Amount) {
+        try(Transaction transaction = Transaction.openOuter()) {
+            entity.fluidOutput.extract(FluidVariant.of(entity.fluidOutput.getResource().getFluid()),
+                    Amount, transaction);
+            transaction.commit();
+            return true;
+        }
+        catch (Exception e) {
+            return false;
+        }
+    }
+
     public static void tick(World world, BlockPos blockPos, BlockState state, KegBlockEntity entity) {
         animationTick(world, blockPos, state);
 
@@ -312,6 +340,9 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
         //------------------- BUCKET STUFF
         if(hasFluidSourceInSlot(entity)) {
             transferFluidToFluidStorage(entity);
+        }
+        if(hasEmptyBucketInSlot(entity)) {
+            extractFluidAndMakeBucket(entity);
         }
         //--------------------------------
 
