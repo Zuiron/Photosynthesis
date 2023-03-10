@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "": [
+      { "model": "photosynthesis:block/appletree_leaves" },
+      { "model": "photosynthesis:block/appletree_leaves", "y": 90 },
+      { "model": "photosynthesis:block/appletree_leaves", "y": 180 },
+      { "model": "photosynthesis:block/appletree_leaves", "y": 270 },
+
+      { "model": "photosynthesis:block/appletree_leaves_1" },
+      { "model": "photosynthesis:block/appletree_leaves_1", "y": 90 },
+      { "model": "photosynthesis:block/appletree_leaves_1", "y": 180 },
+      { "model": "photosynthesis:block/appletree_leaves_1", "y": 270 },
+
+      { "model": "photosynthesis:block/appletree_leaves_2" },
+      { "model": "photosynthesis:block/appletree_leaves_2", "y": 90 },
+      { "model": "photosynthesis:block/appletree_leaves_2", "y": 180 },
+      { "model": "photosynthesis:block/appletree_leaves_2", "y": 270 }
+    ]
+  }
+}

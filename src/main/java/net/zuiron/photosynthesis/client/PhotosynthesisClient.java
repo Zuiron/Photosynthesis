@@ -43,6 +43,14 @@ public class PhotosynthesisClient implements ClientModInitializer {
                     ResourcePackActivationType.NORMAL);
         });
 
+        FabricLoader.getInstance().getModContainer(Photosynthesis.MOD_ID).ifPresent(modContainer -> {
+            ResourceManagerHelper.registerBuiltinResourcePack(new Identifier(Photosynthesis.MOD_ID,
+                            "photosynthesis32xhd"),
+                    modContainer,
+                    Text.of("Photosynthesis 32x HD"),
+                    ResourcePackActivationType.NORMAL);
+        });
+
 
         // DECORATION --------------------------------------------------------------------------------------------------
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.TALL_BEACHGRASS);

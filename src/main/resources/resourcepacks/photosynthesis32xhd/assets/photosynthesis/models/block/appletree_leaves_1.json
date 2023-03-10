@@ -1,0 +1,7 @@
+{
+  "parent": "photosynthesis:block/blockmodels/leaves_hd_1",
+  "textures": {
+    "0":"photosynthesis:block/appletree_leaves_1",
+    "particle":"photosynthesis:block/appletree_leaves_1"
+  }
+}
