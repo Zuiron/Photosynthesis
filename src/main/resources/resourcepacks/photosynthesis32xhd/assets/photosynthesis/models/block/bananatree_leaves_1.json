@@ -1,8 +1,0 @@
-{
-  "parent":"photosynthesis:block/better_leaves",
-  "textures": {
-      "0":"photosynthesis:block/bananatree_leaves_1",
-  "top": "photosynthesis:block/bananatree_leaves_inside_top",
-  "bottom": "photosynthesis:block/bananatree_leaves_inside_bottom"
-  }
-}

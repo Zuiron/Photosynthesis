@@ -1,0 +1,6 @@
+{
+  "parent": "photosynthesis:block/blockmodels/apple_bushcrop",
+  "textures": {
+    "0": "photosynthesis:block/appletree_bushcrop_stage3"
+  }
+}
