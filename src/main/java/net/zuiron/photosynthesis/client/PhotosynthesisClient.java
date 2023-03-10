@@ -35,13 +35,14 @@ public class PhotosynthesisClient implements ClientModInitializer {
     public void onInitializeClient() {
 
         // Optional Resource Pack - 3D Models (may cause lag on lower end pc's, So we pack it optionally)
-        FabricLoader.getInstance().getModContainer(Photosynthesis.MOD_ID).ifPresent(modContainer -> {
+        //DISCONTINUED
+        /*FabricLoader.getInstance().getModContainer(Photosynthesis.MOD_ID).ifPresent(modContainer -> {
             ResourceManagerHelper.registerBuiltinResourcePack(new Identifier(Photosynthesis.MOD_ID,
                     "photosynthesis3d"),
                     modContainer,
                     Text.of("Photosynthesis 3D"),
                     ResourcePackActivationType.NORMAL);
-        });
+        });*/
 
         FabricLoader.getInstance().getModContainer(Photosynthesis.MOD_ID).ifPresent(modContainer -> {
             ResourceManagerHelper.registerBuiltinResourcePack(new Identifier(Photosynthesis.MOD_ID,

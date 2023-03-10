@@ -1,0 +1,22 @@
+
+{
+  "variants": {
+    "axis=x": {
+      "model": "photosynthesis:block/appletree_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": [
+      { "model": "photosynthesis:block/appletree_log" },
+      { "model": "photosynthesis:block/appletree_log", "x": 180 },
+      { "model": "photosynthesis:block/appletree_log_1" },
+      { "model": "photosynthesis:block/appletree_log_1", "x": 180 },
+      { "model": "photosynthesis:block/appletree_log_2" },
+      { "model": "photosynthesis:block/appletree_log_2", "x": 180 }
+    ],
+    "axis=z": {
+      "model": "photosynthesis:block/appletree_log_horizontal",
+      "x": 90
+    }
+  }
+}
