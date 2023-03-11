@@ -19,9 +19,21 @@ public class ModTreeGeneration {
         /*BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD), //includeByKey(BiomeKeys.SPARSE_JUNGLE
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.BANANATREE_PLACED_KEY);*/
 
-        BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.15 && context.getBiome().getTemperature() <= 0.95
+        /*BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.15 && context.getBiome().getTemperature() <= 0.95
                         && !BiomeKeys.PLAINS.equals(context.getBiomeKey()),
-                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.APPLETREE_PLACED_KEY);
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.APPLETREE_PLACED_KEY);*/
+
+        BiomeModifications.addFeature(context -> {
+            RegistryKey<Biome> biomeKey = context.getBiomeKey();
+            String biomeId = biomeKey.getValue().toString();
+            float temperature = context.getBiome().getTemperature();
+            return temperature >= 0.15 && temperature <= 0.95
+                    && !biomeId.equals("minecraft:plains")
+                    && !biomeId.equals("tectonic:cold_plains")
+                    && !biomeId.equals("tectonic:grasslands");
+        }, GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.APPLETREE_PLACED_KEY);
+
+
 
         BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.9 && context.getBiome().getTemperature() <= 2.0
                         && !BiomeKeys.PLAINS.equals(context.getBiomeKey()),
