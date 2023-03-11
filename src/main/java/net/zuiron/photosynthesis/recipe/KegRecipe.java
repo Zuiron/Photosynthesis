@@ -17,6 +17,7 @@ import net.minecraft.util.JsonHelper;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.Photosynthesis;
+import net.zuiron.photosynthesis.fluid.ModFluids;
 import net.zuiron.photosynthesis.util.FluidStack;
 
 public class KegRecipe implements Recipe<SimpleInventory> {
@@ -63,7 +64,7 @@ public class KegRecipe implements Recipe<SimpleInventory> {
 
     @Override
     public ItemStack getOutput() {
-        return new ItemStack(Items.AIR);
+        return new ItemStack(output.fluidVariant.getFluid().getBucketItem());
     }
 
     public FluidStack getOutputFluid() {

@@ -96,6 +96,6 @@ public class PhotosynthesisREI implements REIClientPlugin {
 
         registry.registerContainerClickArea(new Rectangle(88, 44, 26, 18), CookingPotScreen.class, COOKINGPOT);
 
-        registry.registerContainerClickArea(new Rectangle(88, 44, 26, 18), KegScreen.class, KEG);
+        registry.registerContainerClickArea(new Rectangle(76, 47, 22, 15), KegScreen.class, KEG);
     }
 }

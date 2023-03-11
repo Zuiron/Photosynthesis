@@ -1,6 +1,20 @@
 {
   "itemGroup.photosynthesis.photosynthesis": "Photosynthesis",
 
+  "block.minecraft.empty": "Empty",
+
+  "block.photosynthesis.keg": "Keg",
+
+  "block.photosynthesis.canolaoil": "Canola Oil",
+  "block.photosynthesis.canolaoil_block": "Canola Oil",
+  "item.photosynthesis.canolaoil_bucket": "Canola Oil Bucket",
+  "item.photosynthesis.measuring_cup_canolaoil": "Canola Oil Measuring Cup",
+
+  "block.photosynthesis.sunfloweroil": "Sunflower Oil",
+  "block.photosynthesis.sunfloweroil_block": "Sunflower Oil",
+  "item.photosynthesis.sunfloweroil_bucket": "Sunflower Oil Bucket",
+  "item.photosynthesis.measuring_cup_sunfloweroil": "Sunflower Oil Measuring Cup",
+
   "photosynthesis.tooltip.liquid.amount.with.capacity": "%s / %s mB",
   "photosynthesis.tooltip.liquid.amount": "%s mB",
 

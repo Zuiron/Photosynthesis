@@ -36,7 +36,7 @@ import java.util.*;
 
 @Environment(EnvType.CLIENT)
 public class KegRecipeCategory implements DisplayCategory<KegRecipeDisplay> {
-    private static final Identifier GUI_TEXTURE = new Identifier(Photosynthesis.MOD_ID, "textures/gui/keg_gui.png");
+    private static final Identifier GUI_TEXTURE = new Identifier(Photosynthesis.MOD_ID, "textures/gui/keg_gui_rei.png");
 
     @Override
     public Renderer getIcon() {
@@ -70,13 +70,19 @@ public class KegRecipeCategory implements DisplayCategory<KegRecipeDisplay> {
 
         //input fluid
         FluidStack inputFluid = display.getInputFluid();
-        widgets.add(Widgets.createSlot(new Point(bgBounds.x + 3, bgBounds.y + 41))
-                .entries(EntryIngredients.of(inputFluid.fluidVariant.getFluid(), inputFluid.amount)));
+        widgets.add(Widgets.createSlot(new Point(bgBounds.x + 3, bgBounds.y + 22))
+                .entries(EntryIngredients.of(inputFluid.fluidVariant.getFluid(), inputFluid.amount)).markOutput());
+
+        widgets.add(Widgets.createLabel(new Point(bgBounds.x + 2, bgBounds.y + 42), Text.literal(FluidStack.convertDropletsToMb(inputFluid.amount)+" mB"))
+                .noShadow().leftAligned().color(Formatting.DARK_GRAY.getColorValue(), Formatting.GRAY.getColorValue()).shadow(true));
 
         //output fluid
         FluidStack outputFluid = display.getOutputFluid();
-        widgets.add(Widgets.createSlot(new Point(bgBounds.x + 103, bgBounds.y + 41))
-                .entries(EntryIngredients.of(outputFluid.fluidVariant.getFluid(), outputFluid.amount)));
+        widgets.add(Widgets.createSlot(new Point(bgBounds.x + 103, bgBounds.y + 22))
+                .entries(EntryIngredients.of(outputFluid.fluidVariant.getFluid(), outputFluid.amount)).markOutput());
+
+        widgets.add(Widgets.createLabel(new Point(bgBounds.x + 120, bgBounds.y + 42), Text.literal(FluidStack.convertDropletsToMb(outputFluid.amount)+" mB"))
+                .noShadow().rightAligned().color(Formatting.DARK_GRAY.getColorValue(), Formatting.GRAY.getColorValue()).shadow(true));
 
 
         //INPUTS
@@ -98,11 +104,11 @@ public class KegRecipeCategory implements DisplayCategory<KegRecipeDisplay> {
         int cookTimeMinutes = cookTimeSeconds / 60;
 
 
-        Arrow cookArrow = Widgets.createArrow(new Point(bgBounds.x + 49, bgBounds.y + 43))
+        Arrow cookArrow = Widgets.createArrow(new Point(bgBounds.x + 75, bgBounds.y + 2))
                 .animationDurationTicks(cookTime);
         widgets.add(cookArrow);
         widgets.add(Widgets.createLabel(new Point(
-                                cookArrow.getBounds().x + cookArrow.getBounds().width / 2 + 25, cookArrow.getBounds().y + 5),
+                                cookArrow.getBounds().x + cookArrow.getBounds().width / 2 - 25, cookArrow.getBounds().y + 5),
                         Text.literal(cookTimeSeconds + "s"))
                 .noShadow().centered().tooltip(Text.literal(cookTimeSeconds + "seconds ("+cookTime+" ticks) \n" + cookTimeMinutes + "minutes"))
                 .color(Formatting.DARK_GRAY.getColorValue(), Formatting.GRAY.getColorValue()));
