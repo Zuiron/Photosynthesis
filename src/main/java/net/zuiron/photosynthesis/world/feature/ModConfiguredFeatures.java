@@ -44,8 +44,6 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?,?>> RASPBERRY_KEY = registerKey("raspberry_bush");
     public static final RegistryKey<ConfiguredFeature<?,?>> CLOUDBERRY_KEY = registerKey("cloudberry_bush");
     public static final RegistryKey<ConfiguredFeature<?,?>> WILDSTRAWBERRY_KEY = registerKey("wild_strawberry_bush");
-
-
     public static final RegistryKey<ConfiguredFeature<?,?>> CANDLEBERRY_KEY = registerKey("candleberry_bush");
     public static final RegistryKey<ConfiguredFeature<?,?>> CRANBERRY_KEY = registerKey("cranberry_bush");
     public static final RegistryKey<ConfiguredFeature<?,?>> HUCKLEBERRY_KEY = registerKey("huckleberry_bush");
@@ -71,152 +69,88 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?,?>> CHERRYTREE_SPAWN_KEY = registerKey("cherrytree_spawn");
     public static final RegistryKey<ConfiguredFeature<?,?>> LEMONTREE_KEY = registerKey("lemontree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> LEMONTREE_SPAWN_KEY = registerKey("lemontree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> MANGOTREE_KEY = registerKey("mangotree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> MANGOTREE_SPAWN_KEY = registerKey("mangotree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> OLIVETREE_KEY = registerKey("olivetree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> OLIVETREE_SPAWN_KEY = registerKey("olivetree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> RUBBERTREE_KEY = registerKey("rubbertree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> RUBBERTREE_SPAWN_KEY = registerKey("rubbertree_spawn");
-
-
-
-
-
-
-
-
     public static final RegistryKey<ConfiguredFeature<?,?>> CANDLENUTTREE_KEY = registerKey("candlenuttree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> CANDLENUTTREE_SPAWN_KEY = registerKey("candlenuttree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> CHESTNUTTREE_KEY = registerKey("chestnuttree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> CHESTNUTTREE_SPAWN_KEY = registerKey("chestnuttree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> NUTMEGTREE_KEY = registerKey("nutmegtree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> NUTMEGTREE_SPAWN_KEY = registerKey("nutmegtree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> PEACHTREE_KEY = registerKey("peachtree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> PEACHTREE_SPAWN_KEY = registerKey("peachtree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> PLUMTREE_KEY = registerKey("plumtree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> PLUMTREE_SPAWN_KEY = registerKey("plumtree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> WALNUTTREE_KEY = registerKey("walnuttree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> WALNUTTREE_SPAWN_KEY = registerKey("walnuttree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> HAZELNUTTREE_KEY = registerKey("hazelnuttree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> HAZELNUTTREE_SPAWN_KEY = registerKey("hazelnuttree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> PAWPAWTREE_KEY = registerKey("pawpawtree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> PAWPAWTREE_SPAWN_KEY = registerKey("pawpawtree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> SOURSOPTREE_KEY = registerKey("soursoptree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> SOURSOPTREE_SPAWN_KEY = registerKey("soursoptree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> ALMONDTREE_KEY = registerKey("almondtree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> ALMONDTREE_SPAWN_KEY = registerKey("almondtree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> APRICOTTREE_KEY = registerKey("apricottree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> APRICOTTREE_SPAWN_KEY = registerKey("apricottree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> CASHEWTREE_KEY = registerKey("cashewtree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> CASHEWTREE_SPAWN_KEY = registerKey("cashewtree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> DATETREE_KEY = registerKey("datetree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> DATETREE_SPAWN_KEY = registerKey("datetree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> DRAGONFRUITTREE_KEY = registerKey("dragonfruittree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> DRAGONFRUITTREE_SPAWN_KEY = registerKey("dragonfruittree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> DURIANTREE_KEY = registerKey("duriantree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> DURIANTREE_SPAWN_KEY = registerKey("duriantree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> FIGTREE_KEY = registerKey("figtree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> FIGTREE_SPAWN_KEY = registerKey("figtree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> GRAPEFRUITTREE_KEY = registerKey("grapefruittree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> GRAPEFRUITTREE_SPAWN_KEY = registerKey("grapefruittree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> LIMETREE_KEY = registerKey("limetree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> LIMETREE_SPAWN_KEY = registerKey("limetree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> PAPAYATREE_KEY = registerKey("papayatree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> PAPAYATREE_SPAWN_KEY = registerKey("papayatree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> PECANTREE_KEY = registerKey("pecantree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> PECANTREE_SPAWN_KEY = registerKey("pecantree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> PERSIMMONTREE_KEY = registerKey("persimmontree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> PERSIMMONTREE_SPAWN_KEY = registerKey("persimmontree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> PISTACHIOTREE_KEY = registerKey("pistachiotree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> PISTACHIOTREE_SPAWN_KEY = registerKey("pistachiotree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> POMEGRANATETREE_KEY = registerKey("pomegranatetree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> POMEGRANATETREE_SPAWN_KEY = registerKey("pomegranatetree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> STARFRUITTREE_KEY = registerKey("starfruittree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> STARFRUITTREE_SPAWN_KEY = registerKey("starfruittree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> BREADFRUITTREE_KEY = registerKey("breadfruittree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> BREADFRUITTREE_SPAWN_KEY = registerKey("breadfruittree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> GUAVATREE_KEY = registerKey("guavatree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> GUAVATREE_SPAWN_KEY = registerKey("guavatree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> JACKFRUITTREE_KEY = registerKey("jackfruittree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> JACKFRUITTREE_SPAWN_KEY = registerKey("jackfruittree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> LYCHEETREE_KEY = registerKey("lycheetree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> LYCHEETREE_SPAWN_KEY = registerKey("lycheetree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> PASSIONFRUITTREE_KEY = registerKey("passionfruittree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> PASSIONFRUITTREE_SPAWN_KEY = registerKey("passionfruittree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> RAMBUTANTREE_KEY = registerKey("rambutantree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> RAMBUTANTREE_SPAWN_KEY = registerKey("rambutantree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> TAMARINDTREE_KEY = registerKey("tamarindtree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> TAMARINDTREE_SPAWN_KEY = registerKey("tamarindtree_spawn");
-
-
-
-
-
-
-
-
-
-
-
     public static final RegistryKey<ConfiguredFeature<?,?>> MAPLETREE_KEY = registerKey("mapletree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> MAPLETREE_SPAWN_KEY = registerKey("mapletree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> PEPPERCORNTREE_KEY = registerKey("peppercorntree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> PEPPERCORNTREE_SPAWN_KEY = registerKey("peppercorntree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> VANILLABEANTREE_KEY = registerKey("vanillabeantree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> VANILLABEANTREE_SPAWN_KEY = registerKey("vanillabeantree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> PINENUTTREE_KEY = registerKey("pinenuttree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> PINENUTTREE_SPAWN_KEY = registerKey("pinenuttree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> GOOSEBERRYTREE_KEY = registerKey("gooseberrytree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> GOOSEBERRYTREE_SPAWN_KEY = registerKey("gooseberrytree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> GRAPETREE_KEY = registerKey("grapetree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> GRAPETREE_SPAWN_KEY = registerKey("grapetree_spawn");
-
     public static final RegistryKey<ConfiguredFeature<?,?>> KIWITREE_KEY = registerKey("kiwitree_tree");
     public static final RegistryKey<ConfiguredFeature<?,?>> KIWITREE_SPAWN_KEY = registerKey("kiwitree_spawn");
-
-
-
-
-
-
 
 
 
@@ -234,8 +168,6 @@ public class ModConfiguredFeatures {
 
         register(context, SALT_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldSaltOres, 16)); //size: vein size??? default: 9
         //size is basically, how many ores per started generation?
-
-
 
 
         register(context, FLORAMELISSIA_KEY, Feature.FLOWER,
@@ -281,8 +213,6 @@ public class ModConfiguredFeatures {
         register(context, WILDSTRAWBERRY_KEY, Feature.FLOWER,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.WILD_STRAWBERRY_BUSH.getDefaultState().with(Wild_StrawberryBush.AGE, 3))))));
-
-
         register(context, CANDLEBERRY_KEY, Feature.FLOWER,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.CANDLEBERRY_BUSH.getDefaultState().with(CandleberryBush.AGE, 3))))));
