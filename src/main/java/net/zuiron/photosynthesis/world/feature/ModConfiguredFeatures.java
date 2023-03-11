@@ -238,7 +238,7 @@ public class ModConfiguredFeatures {
                 BlockStateProvider.of(ModBlocks.APPLETREE_LOG), //int baseHeight, int firstRandomHeight, int secondRandomHeight, IntProvider extraBranchSteps, float placeBranchPerLogProbability, IntProvider extraBranchLength, RegistryEntryList<Block> canGrowThrough
                 new LargeOakTrunkPlacer(7, 2, 1),
                 BlockStateProvider.of(ModBlocks.APPLETREE_LEAVES),
-                new LargeOakFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(4), 4),
+                new LargeOakFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(3), 3),
                 new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(6))).ignoreVines().decorators(Collections.singletonList(AppleTreeDecorator.INSTANCE)).build());
 
         register(context, APPLETREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
