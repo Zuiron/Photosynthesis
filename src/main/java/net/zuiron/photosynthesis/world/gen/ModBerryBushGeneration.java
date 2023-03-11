@@ -33,7 +33,6 @@ public class ModBerryBushGeneration {
                         && !BiomeKeys.PLAINS.equals(context.getBiomeKey()),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.WILD_STRAWBERRY_BUSH_PLACED_KEY);
 
-
         BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 1.2 && context.getBiome().getTemperature() <= 2.0
                         && !BiomeKeys.PLAINS.equals(context.getBiomeKey()),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.CANDLEBERRY_BUSH_PLACED_KEY);
