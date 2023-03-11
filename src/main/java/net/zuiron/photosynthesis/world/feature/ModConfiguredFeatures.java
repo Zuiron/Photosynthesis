@@ -3,9 +3,8 @@ package net.zuiron.photosynthesis.world.feature;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.SweetBerryBushBlock;
-import net.minecraft.registry.Registerable;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.*;
+import net.minecraft.registry.entry.RegistryEntryList;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.structure.rule.BlockMatchRuleTest;
 import net.minecraft.structure.rule.RuleTest;
@@ -22,6 +21,7 @@ import net.minecraft.world.gen.treedecorator.TrunkVineTreeDecorator;
 import net.minecraft.world.gen.trunk.BendingTrunkPlacer;
 import net.minecraft.world.gen.trunk.LargeOakTrunkPlacer;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
+import net.minecraft.world.gen.trunk.UpwardsBranchingTrunkPlacer;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.block.berrybushblocks.*;
@@ -235,11 +235,11 @@ public class ModConfiguredFeatures {
 
 
         register(context, APPLETREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
-                BlockStateProvider.of(ModBlocks.APPLETREE_LOG),
-                new StraightTrunkPlacer(3, 4, 2), //3,4,2
+                BlockStateProvider.of(ModBlocks.APPLETREE_LOG), //int baseHeight, int firstRandomHeight, int secondRandomHeight, IntProvider extraBranchSteps, float placeBranchPerLogProbability, IntProvider extraBranchLength, RegistryEntryList<Block> canGrowThrough
+                new UpwardsBranchingTrunkPlacer(6, 1, 0, ConstantIntProvider.create(3), 0.7f, ConstantIntProvider.create(4), RegistryEntryList.of(ModBlocks.APPLETREE_LEAVES.getRegistryEntry())), //3,4,2
                 BlockStateProvider.of(ModBlocks.APPLETREE_LEAVES),
-                new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),//3
-                new TwoLayersFeatureSize(1, 0, 2)).decorators(Collections.singletonList(AppleTreeDecorator.INSTANCE)).build());
+                new AcaciaFoliagePlacer(ConstantIntProvider.create(1), ConstantIntProvider.create(1)),//3
+                new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4))).ignoreVines().decorators(Collections.singletonList(AppleTreeDecorator.INSTANCE)).build());
 
         register(context, APPLETREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.APPLETREE_CHECKED_KEY),
