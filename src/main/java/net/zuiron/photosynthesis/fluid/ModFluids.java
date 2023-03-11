@@ -32,6 +32,11 @@ public class ModFluids {
     public static Block SUNFLOWEROIL_BLOCK;
     public static Item SUNFLOWEROIL_BUCKET;
 
+    public static FlowableFluid STILL_MEAD;
+    public static FlowableFluid FLOWING_MEAD;
+    public static Block MEAD_BLOCK;
+    public static Item MEAD_BUCKET;
+
     public static void register() {
         //LATEX
         STILL_LATEX = Registry.register(Registries.FLUID,
@@ -65,5 +70,16 @@ public class ModFluids {
         SUNFLOWEROIL_BUCKET = Registry.register(Registries.ITEM, new Identifier(Photosynthesis.MOD_ID, "sunfloweroil_bucket"),
                 new BucketItem(ModFluids.STILL_SUNFLOWEROIL, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1)));
         ItemGroupEvents.modifyEntriesEvent(ModItemGroup.PHOTOSYNTHESIS).register(entries -> entries.add(SUNFLOWEROIL_BUCKET));
+
+        //MEAD
+        STILL_MEAD = Registry.register(Registries.FLUID,
+                new Identifier(Photosynthesis.MOD_ID, "mead"), new MeadFluid.Still());
+        FLOWING_MEAD = Registry.register(Registries.FLUID,
+                new Identifier(Photosynthesis.MOD_ID, "flowing_mead"), new MeadFluid.Flowing());
+        MEAD_BLOCK = Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, "mead_block"),
+                new FluidBlock(ModFluids.STILL_MEAD, FabricBlockSettings.copyOf(Blocks.WATER)){ });
+        MEAD_BUCKET = Registry.register(Registries.ITEM, new Identifier(Photosynthesis.MOD_ID, "mead_bucket"),
+                new BucketItem(ModFluids.STILL_MEAD, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1)));
+        ItemGroupEvents.modifyEntriesEvent(ModItemGroup.PHOTOSYNTHESIS).register(entries -> entries.add(MEAD_BUCKET));
     }
 }

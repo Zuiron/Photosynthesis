@@ -1,0 +1,26 @@
+{
+  "type": "photosynthesis:keg",
+  "fluidinput": {
+    "fluid": "minecraft:water",
+    "amount": 81000
+  },
+  "ingredients": [
+    {
+      "item": "photosynthesis:filipendula",
+      "count": 8
+    },
+    {
+      "item": "photosynthesis:barley_seeds",
+      "count": 16
+    },
+    {
+      "item": "minecraft:honeycomb",
+      "count": 6
+    }
+  ],
+  "output": {
+    "fluid": "photosynthesis:mead",
+    "amount": 81000
+  },
+  "cookingtime": 600
+}

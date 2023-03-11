@@ -15,6 +15,10 @@
   "item.photosynthesis.sunfloweroil_bucket": "Sunflower Oil Bucket",
   "item.photosynthesis.measuring_cup_sunfloweroil": "Sunflower Oil Measuring Cup",
 
+  "block.photosynthesis.mead": "Mead",
+  "block.photosynthesis.mead_block": "Mead",
+  "item.photosynthesis.mead_bucket": "Mead Bucket",
+
   "photosynthesis.tooltip.liquid.amount.with.capacity": "%s / %s mB",
   "photosynthesis.tooltip.liquid.amount": "%s mB",
 
