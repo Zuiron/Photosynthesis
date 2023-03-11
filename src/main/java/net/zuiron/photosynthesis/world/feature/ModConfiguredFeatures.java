@@ -236,10 +236,10 @@ public class ModConfiguredFeatures {
 
         register(context, APPLETREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.APPLETREE_LOG), //int baseHeight, int firstRandomHeight, int secondRandomHeight, IntProvider extraBranchSteps, float placeBranchPerLogProbability, IntProvider extraBranchLength, RegistryEntryList<Block> canGrowThrough
-                new UpwardsBranchingTrunkPlacer(6, 1, 0, ConstantIntProvider.create(3), 0.7f, ConstantIntProvider.create(4), RegistryEntryList.of(ModBlocks.APPLETREE_LEAVES.getRegistryEntry())), //3,4,2
+                new LargeOakTrunkPlacer(7, 2, 1),
                 BlockStateProvider.of(ModBlocks.APPLETREE_LEAVES),
-                new AcaciaFoliagePlacer(ConstantIntProvider.create(1), ConstantIntProvider.create(1)),//3
-                new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4))).ignoreVines().decorators(Collections.singletonList(AppleTreeDecorator.INSTANCE)).build());
+                new LargeOakFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(4), 4),
+                new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(6))).ignoreVines().decorators(Collections.singletonList(AppleTreeDecorator.INSTANCE)).build());
 
         register(context, APPLETREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.APPLETREE_CHECKED_KEY),
