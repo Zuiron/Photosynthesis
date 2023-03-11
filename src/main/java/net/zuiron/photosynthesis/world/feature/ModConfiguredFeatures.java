@@ -302,9 +302,9 @@ public class ModConfiguredFeatures {
 
         register(context, PEARTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.PEARTREE_LOG),
-                new StraightTrunkPlacer(4, 1, 1), //3,4,2
+                new LargeOakTrunkPlacer(7, 2, 1),
                 BlockStateProvider.of(ModBlocks.PEARTREE_LEAVES),
-                new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 2),//3
+                new LargeOakFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(3), 3),
                 new TwoLayersFeatureSize(1, 0, 2)).decorators(Collections.singletonList(PearTreeDecorator.INSTANCE)).build());
 
         register(context, PEARTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
