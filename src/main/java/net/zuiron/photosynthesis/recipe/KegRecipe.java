@@ -124,7 +124,7 @@ public class KegRecipe implements Recipe<SimpleInventory> {
                 return new JsonSyntaxException("Unknown fluid '" + fluidstring + "'");
             });
             FluidStack fluidOutput = new FluidStack(FluidVariant.of(fluid), fluidamount);
-            Photosynthesis.LOGGER.info("output fluid: " + fluidOutput.fluidVariant.getFluid() + ", amount: " + fluidOutput.amount);
+            //Photosynthesis.LOGGER.info("output fluid: " + fluidOutput.fluidVariant.getFluid() + ", amount: " + fluidOutput.amount);
             //----------------------------------------------------------------------------------------------------------
 
 
@@ -142,7 +142,7 @@ public class KegRecipe implements Recipe<SimpleInventory> {
                 }
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
                 counts.set(i, JsonHelper.getInt(ingredients.get(i).getAsJsonObject(),"count"));
-                Photosynthesis.LOGGER.info("Ingredient: " + inputs.get(i).toJson() + ", count: " + counts.get(i));
+                //Photosynthesis.LOGGER.info("Ingredient: " + inputs.get(i).toJson() + ", count: " + counts.get(i));
             }
             //----------------------------------------------------------------------------------------------------------
 
@@ -156,7 +156,7 @@ public class KegRecipe implements Recipe<SimpleInventory> {
                 return new JsonSyntaxException("Unknown fluid '" + inputfluidstring + "'");
             });
             FluidStack fluidInput = new FluidStack(FluidVariant.of(inputfluid), inputfluidamount);
-            Photosynthesis.LOGGER.info("input fluid: " + fluidInput.fluidVariant.getFluid() + ", amount: " + fluidInput.amount);
+            //Photosynthesis.LOGGER.info("input fluid: " + fluidInput.fluidVariant.getFluid() + ", amount: " + fluidInput.amount);
             //----------------------------------------------------------------------------------------------------------
 
 
