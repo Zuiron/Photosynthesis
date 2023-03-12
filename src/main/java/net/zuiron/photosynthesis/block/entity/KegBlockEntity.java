@@ -413,7 +413,7 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
 
 
             entity.resetProgress();
-            Photosynthesis.LOGGER.info("Item crafted! SUCCESS.");
+            //Photosynthesis.LOGGER.info("Item crafted! SUCCESS.");
         }
     }
 
@@ -429,7 +429,7 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
         entity.maxProgress = match.map(KegRecipe::getCookTime).orElse(20);
 
         if (match.isPresent()) {
-            Photosynthesis.LOGGER.info("match is present! continue");
+            //Photosynthesis.LOGGER.info("match is present! continue");
             KegRecipe recipe = match.get();
             List<Ingredient> ingredients = recipe.getIngredients();
             DefaultedList counts = recipe.getCounts();
@@ -448,10 +448,10 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
                 if (ingredient.isEmpty() || itemStack.isEmpty()) {
                     continue;
                 } else if (ingredient.test(itemStack) && itemStack.getCount() >= reqCount) {
-                    Photosynthesis.LOGGER.info("recipe requires min:"+reqCount+", we got:"+itemStack.getCount());
+                    //Photosynthesis.LOGGER.info("recipe requires min:"+reqCount+", we got:"+itemStack.getCount());
                     continue;
                 } else {
-                    Photosynthesis.LOGGER.info("FAILED - recipe requires:"+reqCount+", we got:"+itemStack.getCount());
+                    //Photosynthesis.LOGGER.info("FAILED - recipe requires:"+reqCount+", we got:"+itemStack.getCount());
                     return false;
                 }
             }
@@ -459,7 +459,7 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
             return canInsertFluidIntoFluidOutput(entity, outputFluid, FluidStack.convertDropletsToMb(outputFluid.amount)) &&
                     doesInputTankContainEnoughRecipeInputFluid(entity, inputFluid, FluidStack.convertDropletsToMb(inputFluid.amount));
         } else {
-            Photosynthesis.LOGGER.info("no match is present...");
+            //Photosynthesis.LOGGER.info("no match is present...");
             return false;
         }
     }
