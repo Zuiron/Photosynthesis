@@ -1,4 +1,3 @@
-
 {
   "type": "minecraft:block",
   "pools": [
@@ -11,7 +10,7 @@
           "children": [
             {
               "type": "minecraft:item",
-              "name": "photosynthesis:sesame_seeds",
+              "name": "photosynthesis:sesame",
               "functions": [
                 {
                   "function": "minecraft:set_count",
