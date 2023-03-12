@@ -90,7 +90,7 @@ public class PhotosynthesisREI implements REIClientPlugin {
 
     @Override
     public void registerScreens(ScreenRegistry registry) {
-        registry.registerContainerClickArea(new Rectangle(89, 25, 24, 17), SkilletScreen.class, SKILLET);
+        registry.registerContainerClickArea(new Rectangle(88, 44, 26, 17), SkilletScreen.class, SKILLET);
 
         registry.registerContainerClickArea(new Rectangle(99, 25, 24, 17), CuttingBoardScreen.class, CUTTINGBOARD);
 
