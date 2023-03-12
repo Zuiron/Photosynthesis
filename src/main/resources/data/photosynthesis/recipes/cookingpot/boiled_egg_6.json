@@ -1,0 +1,38 @@
+{
+  "type": "photosynthesis:cookingpot",
+  "ingredients": [
+    {
+      "tag": "c:cookingpot_watercontainers",
+      "count": 1
+    },
+    {
+      "item": "minecraft:egg",
+      "count": 1
+    },
+    {
+      "item": "minecraft:egg",
+      "count": 1
+    },
+    {
+      "item": "minecraft:egg",
+      "count": 1
+    },
+    {
+      "item": "minecraft:egg",
+      "count": 1
+    },
+    {
+      "item": "minecraft:egg",
+      "count": 1
+    },
+    {
+      "item": "minecraft:egg",
+      "count": 1
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:boiled_egg",
+    "count": 6
+  },
+  "cookingtime": 12000
+}
