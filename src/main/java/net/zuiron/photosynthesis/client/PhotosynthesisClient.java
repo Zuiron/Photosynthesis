@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.fabricmc.fabric.impl.blockrenderlayer.BlockRenderLayerMapImpl;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.ModContainer;
@@ -51,6 +52,8 @@ public class PhotosynthesisClient implements ClientModInitializer {
                     Text.of("Photosynthesis 32x HD"),
                     ResourcePackActivationType.NORMAL);
         });
+
+        HudRenderCallback.EVENT.register(new ThirstHudOverlay());
 
 
         // DECORATION --------------------------------------------------------------------------------------------------
