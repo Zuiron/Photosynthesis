@@ -1,5 +1,6 @@
 package net.zuiron.photosynthesis.block.entity;
 
+import me.shedaniel.autoconfig.AutoConfig;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.PlayerLookup;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
@@ -34,6 +35,7 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.custom.CookingPotBlock;
+import net.zuiron.photosynthesis.config.ModConfig;
 import net.zuiron.photosynthesis.networking.ModMessages;
 import net.zuiron.photosynthesis.recipe.CookingPotRecipe;
 import net.zuiron.photosynthesis.screen.CookingPotScreenHandler;
@@ -222,6 +224,9 @@ public class CookingPotBlockEntity extends BlockEntity implements ExtendedScreen
     }
 
     private static boolean isBlockBelowBurning(World world, BlockPos blockPos) {
+        //ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
+        //if(!config.requireHeatUnder) { return true; }
+
         BlockPos blockPosBelow = blockPos.down(); // assuming 'pos' is the BlockPos of your directional block
         BlockState blockStateBelow = world.getBlockState(blockPosBelow); // assuming 'world' is the World object
 

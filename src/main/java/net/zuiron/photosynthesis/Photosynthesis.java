@@ -1,5 +1,7 @@
 package net.zuiron.photosynthesis;
 
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -8,6 +10,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.treedecorator.TreeDecoratorType;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.block.entity.ModBlockEntities;
+import net.zuiron.photosynthesis.config.ModConfig;
 import net.zuiron.photosynthesis.fluid.ModFluids;
 import net.zuiron.photosynthesis.item.ModItemGroup;
 import net.zuiron.photosynthesis.item.ModItems;
@@ -146,6 +149,8 @@ public class Photosynthesis implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
+		AutoConfig.register(ModConfig.class, JanksonConfigSerializer::new);
+
 		Registry.register(Registries.SOUND_EVENT, Photosynthesis.SKILLET_SOUND_ID, SKILLET_SOUND_EVENT);
 		Registry.register(Registries.SOUND_EVENT, Photosynthesis.COOKINGPOT_SOUND_ID, COOKINGPOT_SOUND_EVENT);
 		Registry.register(Registries.SOUND_EVENT, Photosynthesis.KEG_SOUND_ID, KEG_SOUND_EVENT);

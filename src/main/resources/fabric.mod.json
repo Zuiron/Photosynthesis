@@ -26,6 +26,9 @@
     "rei_client": [
       "net.zuiron.photosynthesis.integration.rei.PhotosynthesisREI"
     ],
+    "modmenu": [
+      "net.zuiron.photosynthesis.integration.modmenu.ModMenuIntegration"
+    ],
     "fabric-datagen": [
       "net.zuiron.photosynthesis.datagen.ModDataGeneration"
     ]
