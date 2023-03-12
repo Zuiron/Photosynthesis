@@ -585,13 +585,13 @@ public class ModItems {
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     //sesame and mustard crops drops straight seeds.
-    /*public static final Item SESAME = registerItem("sesame",
+    public static final Item SESAME = registerItem("sesame",
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item MUSTARD = registerItem("mustard",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));*/
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     // TREE PRODUCE ----------------------------------------------------------------------------------------------------
 
@@ -739,7 +739,6 @@ public class ModItems {
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
     public static final Item GRAPE = registerBerryItem("grape", ModBlocks.GRAPETREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item KIWI = registerBerryItem("kiwi", ModBlocks.KIWITREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
 
@@ -836,13 +835,13 @@ public class ModItems {
 
     // Food's ----------------------------------------------------------------------------------------------------------
 
-    public static final Item CANOLA_OIL_BOTTLE = registerItem("canola_oil_bottle",
+    /*public static final Item CANOLA_OIL_BOTTLE = registerItem("canola_oil_bottle",
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item SUNFLOWER_OIL_BOTTLE = registerItem("sunflower_oil_bottle",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));*/
 
     public static final Item CINNAMON_POWDER = registerItem("cinnamon_powder",
             new Item(new FabricItemSettings()
@@ -856,9 +855,9 @@ public class ModItems {
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
-    public static final Item CRACKED_EGG = registerItem("cracked_egg",
+    /*public static final Item CRACKED_EGG = registerItem("cracked_egg",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));*/
 
     public static final Item FRIED_EGG = registerItem("fried_egg",
             new Item(new FabricItemSettings()
@@ -868,11 +867,15 @@ public class ModItems {
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
-    public static final Item HARD_BOILED_EGG = registerItem("hard_boiled_egg",
+    /*public static final Item HARD_BOILED_EGG = registerItem("hard_boiled_egg",
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item SOFT_BOILED_EGG = registerItem("soft_boiled_egg",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));*/
+
+    public static final Item BOILED_EGG = registerItem("boiled_egg",
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
@@ -1074,6 +1077,8 @@ public class ModItems {
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, TOMATILLO );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, AGAVE );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, GINGER );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, SESAME );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, MUSTARD );
 
 
 
@@ -1138,6 +1143,8 @@ public class ModItems {
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, PARSLEY_SEEDS );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, MINT_SEEDS );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, PINEAPPLE_SEEDS );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, HOP_SEEDS );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, FILIPENDULA_SEEDS );
 
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CAMELLIA_SINENSIS_SEEDS );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, NICOTIANA_RUSTICA_SEEDS );
@@ -1163,16 +1170,17 @@ public class ModItems {
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, SESAME_SEEDS );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, MUSTARD_SEEDS );
 
-        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CANOLA_OIL_BOTTLE );
-        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, SUNFLOWER_OIL_BOTTLE );
+        //addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CANOLA_OIL_BOTTLE );
+        //addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, SUNFLOWER_OIL_BOTTLE );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CINNAMON_POWDER );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CUT_CHIVES );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CUT_KIWI );
-        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CRACKED_EGG );
+        //addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, CRACKED_EGG );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, FRIED_EGG );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, SCRAMBLED_EGG );
-        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, HARD_BOILED_EGG );
-        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, SOFT_BOILED_EGG );
+        //addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, HARD_BOILED_EGG );
+        //addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, SOFT_BOILED_EGG );
+        addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, BOILED_EGG );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, DRIED_BLACK_PEPPER );
 
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, TOMATOSOUP );

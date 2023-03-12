@@ -102,7 +102,9 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.AGAVE_SEEDS,
                 ModItems.GINGER,
                 ModItems.GINGER_SEEDS,
+                ModItems.SESAME,
                 ModItems.SESAME_SEEDS,
+                ModItems.MUSTARD,
                 ModItems.MUSTARD_SEEDS,
 
                 ModItems.CANDLEBERRIES,
@@ -110,6 +112,8 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.HUCKLEBERRIES,
                 ModItems.JUNIPERBERRIES,
                 ModItems.MULBERRIES,
+
+                ModItems.BOILED_EGG,
 
                 ModItems.CUT_KIWI,
                 ModItems.MEASURING_CUP,
