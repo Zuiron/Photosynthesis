@@ -2,7 +2,7 @@
 	"credit": "Made with Blockbench",
 	"textures": {
 		"0": "photosynthesis:block/mug",
-		"1": "photosynthesis:block/latex_still",
+		"1": "photosynthesis:block/transparent",
 		"particle": "photosynthesis:block/mug"
 	},
 	"elements": [
@@ -130,7 +130,7 @@
 			"translation": [1.5, 3.5, -4]
 		},
 		"ground": {
-			"translation": [0, 0.75, 0],
+			"translation": [0, 2.5, 0],
 			"scale": [0.5, 0.5, 0.5]
 		},
 		"gui": {

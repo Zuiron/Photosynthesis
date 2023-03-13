@@ -1,6 +1,7 @@
 package net.zuiron.photosynthesis.item;
 
 import net.minecraft.advancement.criterion.Criteria;
+import net.minecraft.advancement.criterion.ItemDurabilityChangedCriterion;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -14,7 +15,7 @@ import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.UseAction;
 import net.minecraft.world.World;
 
-public class MugItem extends Item {
+public class MugItem extends Item{
     public MugItem(Settings settings) {
         super(settings);
     }

@@ -920,7 +920,7 @@ public class ModItems {
             new MugItem(new FabricItemSettings()));
 
     public static final Item MUG_MEAD = registerItem("mug_mead",
-            new MeadMugItem(new FabricItemSettings().maxCount(1).recipeRemainder(ModItems.EMPTY_MUG)));
+            new MeadMugItem(new FabricItemSettings().maxCount(1).maxDamage(10).recipeRemainder(ModItems.EMPTY_MUG),6));
 
 
 

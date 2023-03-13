@@ -8,6 +8,13 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.zuiron.photosynthesis.networking.ModMessages;
 
 public class ThirstData {
+
+    public static int getThirst(IEntityDataSaver player) {
+        NbtCompound nbt = player.getPersistentData();
+        int thirst = nbt.getInt("thirst");
+        syncThirst(thirst, (ServerPlayerEntity) player);
+        return thirst;
+    }
     public static int addThirst(IEntityDataSaver player, int amount) {
         NbtCompound nbt = player.getPersistentData();
         int thirst = nbt.getInt("thirst");

@@ -6,6 +6,9 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.render.GameRenderer;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.passive.HorseEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.random.Random;
@@ -34,15 +37,21 @@ public class ThirstHudOverlay implements HudRenderCallback {
 
         assert client != null;
         PlayerEntity player = client.player;
-        int offset;
-        //if (player != null && player.isSubmergedInWater()) {
-        if (player != null && player.getAir() < 300) {
-            // Player is underwater
-            // Draw the underwater HUD overlay here
+        int offset = 0;
+
+        if (player != null && player.hasVehicle()) {
+            Entity vehicle = player.getVehicle();
+            if (vehicle instanceof LivingEntity) {
+                float health = ((LivingEntity) vehicle).getMaxHealth();
+                if(health > 20.0f) {
+                    offset = 59;
+                } else { offset = 49; }
+            }
+        }
+        else if(player.getAir() < 300) {
             offset = 59;
-        } else {
-            // Player is not underwater
-            // Draw the regular HUD overlay here
+        }
+        else {
             offset = 49;
         }
 
