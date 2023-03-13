@@ -916,6 +916,12 @@ public class ModItems {
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
 
+    public static final Item EMPTY_MUG = registerItem("mug",
+            new MugItem(new FabricItemSettings()));
+
+    public static final Item MUG_MEAD = registerItem("mug_mead",
+            new MeadMugItem(new FabricItemSettings().maxCount(1).recipeRemainder(ModItems.EMPTY_MUG)));
+
 
 
     // END OF ModItems -------------------------------------------------------------------------------------------------

@@ -1,0 +1,6 @@
+{
+    "parent": "photosynthesis:block/blockmodels/mug",
+    "textures": {
+        "1": "photosynthesis:block/mead_still"
+      }
+}
