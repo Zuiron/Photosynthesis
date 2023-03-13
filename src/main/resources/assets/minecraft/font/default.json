@@ -1,0 +1,25 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "photosynthesis:thirst/thirst_full.png",
+      "ascent": 9,
+      "height": 9,
+      "chars": ["\uE001"]
+    },
+    {
+      "type": "bitmap",
+      "file": "photosynthesis:thirst/thirst_empty.png",
+      "ascent": 9,
+      "height": 9,
+      "chars": ["\uE002"]
+    },
+    {
+      "type": "bitmap",
+      "file": "photosynthesis:thirst/thirst_contaminated.png",
+      "ascent": 9,
+      "height": 9,
+      "chars": ["\uE003"]
+    }
+  ]
+}

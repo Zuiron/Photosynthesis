@@ -9,6 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsage;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.UseAction;
@@ -69,7 +70,13 @@ public class MeadMugItem extends MugItem {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(Text.literal("Thirst: "+addThirst));
+        String thirst = "";
+
+        for (int i = 0; i < addThirst; i++) {
+            thirst = thirst + "\uE001";
+        }
+
+        tooltip.add(Text.literal(thirst));
         int remain = stack.getMaxDamage() - stack.getDamage();
         tooltip.add(Text.literal("Uses: "+remain+"/"+stack.getMaxDamage()));
         super.appendTooltip(stack, world, tooltip, context);
