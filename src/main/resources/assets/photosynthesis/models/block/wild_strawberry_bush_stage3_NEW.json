@@ -1,0 +1,6 @@
+{
+	"parent": "photosynthesis:block/blockmodels/wild_strawberries_bush",
+	"textures": {
+	  "0": "photosynthesis:block/wild_strawberries"
+	}
+}
