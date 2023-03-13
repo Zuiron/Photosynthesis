@@ -66,7 +66,7 @@ public class ThirstHudOverlay implements HudRenderCallback {
         for(int i = 0; i < 10; i++) {
             //if(((IEntityDataSaver) MinecraftClient.getInstance().player).getPersistentData().getInt("thirst") > i) {
             if(7 > i) {
-                DrawableHelper.drawTexture(matrixStack,x + 10 + (i * 8),y - offset,0,0,9,9,
+                DrawableHelper.drawTexture(matrixStack,x + 82 - (i * 8),y - z,0,0,9,9,
                         9,9);
             } else {
                 break;
