@@ -3,6 +3,8 @@ package net.zuiron.photosynthesis;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.SoundEvent;
@@ -11,6 +13,7 @@ import net.minecraft.world.gen.treedecorator.TreeDecoratorType;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.block.entity.ModBlockEntities;
 import net.zuiron.photosynthesis.config.ModConfig;
+import net.zuiron.photosynthesis.event.PlayerTickHandler;
 import net.zuiron.photosynthesis.fluid.ModFluids;
 import net.zuiron.photosynthesis.item.ModItemGroup;
 import net.zuiron.photosynthesis.item.ModItems;
@@ -172,6 +175,8 @@ public class Photosynthesis implements ModInitializer {
 		ModRecipes.registerRecipes();
 
 		ModWorldGen.generateModWorldGen(); //last
+
+		ServerTickEvents.START_SERVER_TICK.register(new PlayerTickHandler());
 
 		LOGGER.info("Hello Fabric world!");
 	}

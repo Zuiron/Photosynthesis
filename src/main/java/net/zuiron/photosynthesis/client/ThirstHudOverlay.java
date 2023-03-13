@@ -10,6 +10,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.random.Random;
 import net.zuiron.photosynthesis.Photosynthesis;
+import net.zuiron.photosynthesis.util.IEntityDataSaver;
 
 public class ThirstHudOverlay implements HudRenderCallback {
     private static final Identifier FILLED_THIRST = new Identifier(Photosynthesis.MOD_ID,
@@ -53,7 +54,8 @@ public class ThirstHudOverlay implements HudRenderCallback {
         int z = 0;
 
         for(int i = 0; i < 10; i++) {
-            if (player.getHungerManager().getSaturationLevel() <= 0.0F) {
+            //if (player.getHungerManager().getSaturationLevel() <= 0.0F) {
+            if (((IEntityDataSaver) MinecraftClient.getInstance().player).getPersistentData().getInt("thirst") <= 1) {
                 z = offset + (random.nextInt(3) - 1);
             } else {
                 z = offset;
@@ -64,8 +66,9 @@ public class ThirstHudOverlay implements HudRenderCallback {
 
         RenderSystem.setShaderTexture(0, FILLED_THIRST);
         for(int i = 0; i < 10; i++) {
-            //if(((IEntityDataSaver) MinecraftClient.getInstance().player).getPersistentData().getInt("thirst") > i) {
-            if(7 > i) {
+            assert MinecraftClient.getInstance().player != null;
+            if(((IEntityDataSaver) MinecraftClient.getInstance().player).getPersistentData().getInt("thirst") > i) {
+            //if(7 > i) {
                 DrawableHelper.drawTexture(matrixStack,x + 82 - (i * 8),y - z,0,0,9,9,
                         9,9);
             } else {

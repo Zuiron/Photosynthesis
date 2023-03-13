@@ -2,6 +2,7 @@ package net.zuiron.photosynthesis.client;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
@@ -22,6 +23,8 @@ import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.block.entity.ModBlockEntities;
 import net.zuiron.photosynthesis.block.entity.client.CuttingBoardBlockEntityRenderer;
 import net.zuiron.photosynthesis.block.entity.client.SkilletBlockEntityRenderer;
+import net.zuiron.photosynthesis.event.ClientPlayConnectionJoin;
+import net.zuiron.photosynthesis.event.KeyInputHandler;
 import net.zuiron.photosynthesis.fluid.ModFluids;
 import net.zuiron.photosynthesis.networking.ModMessages;
 import net.zuiron.photosynthesis.screen.*;
@@ -54,6 +57,8 @@ public class PhotosynthesisClient implements ClientModInitializer {
         });
 
         HudRenderCallback.EVENT.register(new ThirstHudOverlay());
+        KeyInputHandler.register();
+        ClientPlayConnectionEvents.JOIN.register(new ClientPlayConnectionJoin());
 
 
         // DECORATION --------------------------------------------------------------------------------------------------
