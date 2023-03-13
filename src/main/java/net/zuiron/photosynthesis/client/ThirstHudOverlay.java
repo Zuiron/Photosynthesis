@@ -6,7 +6,9 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.render.GameRenderer;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.random.Random;
 import net.zuiron.photosynthesis.Photosynthesis;
 
 public class ThirstHudOverlay implements HudRenderCallback {
@@ -14,6 +16,8 @@ public class ThirstHudOverlay implements HudRenderCallback {
             "textures/thirst/thirst_full.png");
     private static final Identifier EMPTY_THIRST = new Identifier(Photosynthesis.MOD_ID,
             "textures/thirst/thirst_empty.png");
+
+    Random random = Random.create();
     @Override
     public void onHudRender(MatrixStack matrixStack, float tickDelta) {
         int x = 0;
@@ -27,22 +31,46 @@ public class ThirstHudOverlay implements HudRenderCallback {
             y = height;
         }
 
+        assert client != null;
+        PlayerEntity player = client.player;
+        int offset;
+        //if (player != null && player.isSubmergedInWater()) {
+        if (player != null && player.getAir() < 300) {
+            // Player is underwater
+            // Draw the underwater HUD overlay here
+            offset = 59;
+        } else {
+            // Player is not underwater
+            // Draw the regular HUD overlay here
+            offset = 49;
+        }
+
         RenderSystem.setShader(GameRenderer::getPositionTexProgram);
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.setShaderTexture(0, EMPTY_THIRST);
+
+        int k = player.getHungerManager().getFoodLevel();
+        int z = 0;
+
         for(int i = 0; i < 10; i++) {
-            DrawableHelper.drawTexture(matrixStack,x - 94 + (i * 9),y - 54,0,0,9,9,
+            if (player.getHungerManager().getSaturationLevel() <= 0.0F) {
+                z = offset + (random.nextInt(3) - 1);
+            } else {
+                z = offset;
+            }
+            DrawableHelper.drawTexture(matrixStack,x + 10 + (i * 8),y - z,0,0,9,9,
                     9,9);
         }
 
-        /*RenderSystem.setShaderTexture(0, FILLED_THIRST);
+        RenderSystem.setShaderTexture(0, FILLED_THIRST);
         for(int i = 0; i < 10; i++) {
-            if(((IEntityDataSaver) MinecraftClient.getInstance().player).getPersistentData().getInt("thirst") > i) {
-                DrawableHelper.drawTexture(matrixStack,x - 94 + (i * 9),y - 54,0,0,12,12,
-                        12,12);
+            //if(((IEntityDataSaver) MinecraftClient.getInstance().player).getPersistentData().getInt("thirst") > i) {
+            if(7 > i) {
+                DrawableHelper.drawTexture(matrixStack,x + 10 + (i * 8),y - offset,0,0,9,9,
+                        9,9);
             } else {
                 break;
             }
-        }*/
+        }
     }
 }
