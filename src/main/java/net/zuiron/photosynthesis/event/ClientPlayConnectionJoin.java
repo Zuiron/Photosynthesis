@@ -11,6 +11,6 @@ import net.zuiron.photosynthesis.networking.ModMessages;
 public class ClientPlayConnectionJoin implements ClientPlayConnectionEvents.Join {
     @Override
     public void onPlayReady(ClientPlayNetworkHandler handler, PacketSender sender, MinecraftClient client) {
-        ClientPlayNetworking.send(ModMessages.DRINKING_ID, PacketByteBufs.create());
+        ClientPlayNetworking.send(ModMessages.THIRST_REQ_SYNC_ID, PacketByteBufs.create());
     }
 }
