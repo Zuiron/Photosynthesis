@@ -15,6 +15,38 @@ public class ThirstData {
         syncThirst(thirst, (ServerPlayerEntity) player);
         return thirst;
     }
+
+    public static int addThirstSaturation(IEntityDataSaver player, int amount) {
+        NbtCompound nbt = player.getPersistentData();
+        int thirst_sat = nbt.getInt("thirst_sat");
+        if(thirst_sat + amount >= 300) {
+            thirst_sat = 300;
+        } else {
+            thirst_sat += amount;
+        }
+
+        nbt.putInt("thirst_sat", thirst_sat);
+        //syncThirst(thirst_sat, (ServerPlayerEntity) player); //we do not need to sync saturation to client.
+        return thirst_sat;
+    }
+
+    public static int removeThirstSaturation(IEntityDataSaver player, int amount) {
+        NbtCompound nbt = player.getPersistentData();
+        int thirst_sat = nbt.getInt("thirst_sat");
+        if(thirst_sat - amount <= 0) {
+            thirst_sat = 0;
+            //TODO remove thirst and reset saturation.
+            removeThirst(player, 1);
+            thirst_sat = 300;
+        } else {
+            thirst_sat -= amount;
+        }
+
+        nbt.putInt("thirst_sat", thirst_sat);
+        //syncThirst(thirst_sat, (ServerPlayerEntity) player); //we do not need to sync saturation to client.
+        return thirst_sat;
+    }
+
     public static int addThirst(IEntityDataSaver player, int amount) {
         NbtCompound nbt = player.getPersistentData();
         int thirst = nbt.getInt("thirst");
@@ -25,6 +57,7 @@ public class ThirstData {
         }
 
         nbt.putInt("thirst", thirst);
+        addThirstSaturation(player, 300);
         syncThirst(thirst, (ServerPlayerEntity) player);
         return thirst;
     }

@@ -14,7 +14,9 @@ public class ModConfig implements ConfigData {
     @ConfigEntry.Gui.Tooltip
     @Comment("enable or disable seasons")
     public boolean seasons = true;
-    public int daysPerMonth = 1;
+    public int daysPerSeason = 20;
+
+    //https://www.curseforge.com/minecraft/texture-packs/seasons-data-pack
 
     /*boolean toggleA = true;
     boolean toggleB = false;
