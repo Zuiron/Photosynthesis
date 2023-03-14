@@ -1,0 +1,87 @@
+package net.zuiron.photosynthesis.client;
+
+import com.mojang.blaze3d.systems.RenderSystem;
+import me.shedaniel.autoconfig.AutoConfig;
+import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.font.TextRenderer;
+import net.minecraft.client.gui.DrawableHelper;
+import net.minecraft.client.render.GameRenderer;
+import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.Identifier;
+import net.minecraft.world.World;
+import net.zuiron.photosynthesis.Photosynthesis;
+import net.zuiron.photosynthesis.config.ModConfig;
+
+public class SeasonsHudOverlay implements HudRenderCallback {
+    private static final Identifier CALENDAR = new Identifier(Photosynthesis.MOD_ID,
+            "textures/seasons/seasons_calendar.png");
+    private static final Identifier CALENDAR_BAR = new Identifier(Photosynthesis.MOD_ID,
+            "textures/seasons/seasons_bar.png");
+    private static final Identifier CALENDAR_TAB = new Identifier(Photosynthesis.MOD_ID,
+            "textures/seasons/tab.png");
+
+    @Override
+    public void onHudRender(MatrixStack matrixStack, float tickDelta) {
+        int x = 0;
+        int y = 0;
+        MinecraftClient client = MinecraftClient.getInstance();
+        if (client != null) {
+            int width = client.getWindow().getScaledWidth();
+            int height = client.getWindow().getScaledHeight();
+
+            x = width / 2;
+            y = height;
+        }
+
+        Photosynthesis.LOGGER.info("SEASONS");
+
+        assert client != null;
+        PlayerEntity player = client.player;
+
+        RenderSystem.setShader(GameRenderer::getPositionTexProgram);
+        RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
+
+        ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
+        boolean seasons = config.seasons; //is seasons enabled = default: true
+        int daysPerSeason = config.daysPerSeason; //days per season = default: 20
+        //starting season = summer. minecraft time 0
+
+        MinecraftClient minecraft = MinecraftClient.getInstance();
+        World world = minecraft.world;
+
+        assert world != null;
+        long time = world.getTime();
+
+        int day = (int) (time / 24000L) + 1; // add 1 since day 0 is the first day
+
+        String season = "help";
+
+        // calculate the current season based on the number of days per season
+        int seasonNumber = (day / daysPerSeason) % 4;
+
+        // calculate the current day of the current season
+        int dayInSeason = (day - 1) % daysPerSeason + 1;
+
+        // adjust the season number based on the starting season
+        seasonNumber = (seasonNumber + 3) % 4; // summer = 0, autumn = 1, winter = 2, spring = 3
+
+        // map the season number to a season name
+        switch (seasonNumber) {
+            case 0 -> season = "summer";
+            case 1 -> season = "autumn";
+            case 2 -> season = "winter";
+            case 3 -> season = "spring";
+        }
+
+        RenderSystem.setShaderTexture(0, CALENDAR_BAR);
+        DrawableHelper.drawTexture(matrixStack,x - 128 ,0 ,0,0,256,12,
+                256,12);
+
+        RenderSystem.setShaderTexture(0, CALENDAR_TAB);
+        DrawableHelper.drawTexture(matrixStack,x - 9 ,2,0,0,8,18,
+                8,18);
+
+    }
+}
