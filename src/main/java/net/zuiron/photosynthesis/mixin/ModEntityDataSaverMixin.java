@@ -19,7 +19,7 @@ public abstract class ModEntityDataSaverMixin implements IEntityDataSaver {
             this.persistentData = new NbtCompound();
 
             this.getPersistentData().putInt("thirst", 10);
-            this.getPersistentData().putInt("thirst_sat", 300);
+            this.getPersistentData().putInt("thirst_sat", 600);
         }
         return persistentData;
     }
