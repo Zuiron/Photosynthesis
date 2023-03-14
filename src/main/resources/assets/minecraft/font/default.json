@@ -9,7 +9,7 @@
     },
     {
       "type": "bitmap",
-      "file": "photosynthesis:thirst/thirst_empty.png",
+      "file": "photosynthesis:thirst/thirst_full_glint.png",
       "ascent": 9,
       "height": 9,
       "chars": ["\uE002"]

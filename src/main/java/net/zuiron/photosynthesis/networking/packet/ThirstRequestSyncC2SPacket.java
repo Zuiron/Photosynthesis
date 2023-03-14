@@ -27,5 +27,6 @@ public class ThirstRequestSyncC2SPacket {
 
         // Sync thirst
         ThirstData.syncThirst(((IEntityDataSaver) player).getPersistentData().getInt("thirst"), player);
+        ThirstData.syncThirstSat(((IEntityDataSaver) player).getPersistentData().getInt("thirst_sat"), player);
     }
 }

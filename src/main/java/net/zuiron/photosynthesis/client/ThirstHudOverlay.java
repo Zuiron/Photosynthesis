@@ -17,6 +17,8 @@ import net.zuiron.photosynthesis.util.IEntityDataSaver;
 public class ThirstHudOverlay implements HudRenderCallback {
     private static final Identifier FILLED_THIRST = new Identifier(Photosynthesis.MOD_ID,
             "textures/thirst/thirst_full.png");
+    private static final Identifier FILLED_THIRST_GLINT = new Identifier(Photosynthesis.MOD_ID,
+            "textures/thirst/thirst_full_glint.png");
     private static final Identifier EMPTY_THIRST = new Identifier(Photosynthesis.MOD_ID,
             "textures/thirst/thirst_empty.png");
 
@@ -71,15 +73,34 @@ public class ThirstHudOverlay implements HudRenderCallback {
                     9,9);
         }
 
+
+        int thirst = ((IEntityDataSaver) MinecraftClient.getInstance().player).getPersistentData().getInt("thirst");
+
+
+        int thirstSat = ((IEntityDataSaver) MinecraftClient.getInstance().player).getPersistentData().getInt("thirst_sat");
+        RenderSystem.setShaderTexture(0, FILLED_THIRST_GLINT); //max saturation is 600. so "glint texture" for each 60 saturation we got.
+        for(int i = 0; i < thirstSat / 60; i++) {
+            //if(i >= thirst) { break; }
+            if(thirst <= 1) { break; }
+            assert MinecraftClient.getInstance().player != null;
+            DrawableHelper.drawTexture(matrixStack,x + 82 - (i * 8),y - z,0,0,9,9,
+                    9,9);
+        }
+
+
+
         RenderSystem.setShaderTexture(0, FILLED_THIRST);
         for(int i = 0; i < 10; i++) {
             assert MinecraftClient.getInstance().player != null;
-            if(((IEntityDataSaver) MinecraftClient.getInstance().player).getPersistentData().getInt("thirst") > i) {
+            //int thirst = ((IEntityDataSaver) MinecraftClient.getInstance().player).getPersistentData().getInt("thirst");
+            if(thirst > i) {
                 DrawableHelper.drawTexture(matrixStack,x + 82 - (i * 8),y - z,0,0,9,9,
                         9,9);
             } else {
                 break;
             }
         }
+
+
     }
 }

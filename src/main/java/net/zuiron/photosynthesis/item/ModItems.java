@@ -919,8 +919,8 @@ public class ModItems {
     public static final Item EMPTY_MUG = registerItem("mug",
             new MugItem(new FabricItemSettings()));
 
-    public static final Item MUG_MEAD = registerItem("mug_mead",
-            new MeadMugItem(new FabricItemSettings().maxCount(1).maxDamage(10).recipeRemainder(ModItems.EMPTY_MUG),6, 600));
+    public static final Item MUG_MEAD = registerItem("mug_mead", //max 10 thirst - 600 tSat - damage is drink usage.
+            new MeadMugItem(new FabricItemSettings().maxCount(1).maxDamage(10).recipeRemainder(ModItems.EMPTY_MUG),2, 240));
 
 
 

@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.networking.ModMessages;
 
 public class ThirstData {
@@ -16,14 +17,26 @@ public class ThirstData {
         return thirst;
     }
 
-    public static int addThirstSaturation(IEntityDataSaver player, int amount) {
+    public static int getThirstSat(IEntityDataSaver player) {
         NbtCompound nbt = player.getPersistentData();
+        int thirstSat = nbt.getInt("thirst_sat");
+        syncThirstSat(thirstSat, (ServerPlayerEntity) player);
+        return thirstSat;
+    }
+
+    public static int addThirstSaturation(IEntityDataSaver player, int amount) {
+        NbtCompound nbt = player.getPersistentData(); //TODO something weird is going on here.
         int thirst_sat = nbt.getInt("thirst_sat");
+
+        Photosynthesis.LOGGER.info("thirst sat current: "+thirst_sat);
+
         if(thirst_sat + amount >= 600) {
             thirst_sat = 600;
         } else {
             thirst_sat += amount;
         }
+
+        Photosynthesis.LOGGER.info("thirst sat new: "+thirst_sat);
 
         nbt.putInt("thirst_sat", thirst_sat);
         syncThirstSat(thirst_sat, (ServerPlayerEntity) player);

@@ -56,12 +56,18 @@ public class MeadMugItem extends MugItem {
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         String thirst = "";
+        String thirstSat = "";
 
         for (int i = 0; i < addThirst; i++) {
             thirst = thirst + "\uE001";
         }
-
         tooltip.add(Text.literal(thirst));
+
+        for (int i = 0; i < addThirstSat / 60; i++) {
+            thirstSat = thirstSat + "\uE002";
+        }
+        tooltip.add(Text.literal(thirstSat));
+
         int remain = stack.getMaxDamage() - stack.getDamage();
         tooltip.add(Text.literal("Uses: "+remain+"/"+stack.getMaxDamage()));
         super.appendTooltip(stack, world, tooltip, context);
