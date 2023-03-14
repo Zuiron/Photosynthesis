@@ -75,13 +75,15 @@ public class MeadMugItem extends MugItem {
 
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         if (user instanceof ServerPlayerEntity serverPlayerEntity) {
-            ItemStack itemStack = user.getStackInHand(hand);
+            //prevent drinking if full. nahhhhhh
+            /*ItemStack itemStack = user.getStackInHand(hand);
             int Thirst = ThirstData.getThirst((IEntityDataSaver)serverPlayerEntity);
             if (Thirst < 10) {
                 return ItemUsage.consumeHeldItem(world, user, hand);
             } else {
                 return TypedActionResult.fail(itemStack);
-            }
+            }*/
+            return ItemUsage.consumeHeldItem(world, user, hand);
         } else {
             return TypedActionResult.pass(user.getStackInHand(hand));
         }

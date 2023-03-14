@@ -35,10 +35,12 @@ public class PlayerTickHandler implements ServerTickEvents.StartTick {
             if (new Random().nextFloat() <= probability) {
                 IEntityDataSaver dataPlayer = ((IEntityDataSaver) player);
 
-                if(ThirstData.getThirstSat(dataPlayer) >= 300) { amount = amount / 4; }
+                if(ThirstData.getThirstSat(dataPlayer) >= 450) { amount = amount / 8; }
+                else if(ThirstData.getThirstSat(dataPlayer) >= 300) { amount = amount / 6; }
+                else if(ThirstData.getThirstSat(dataPlayer) >= 150) { amount = amount / 2; }
 
                 int Sat = ThirstData.removeThirstSaturation(dataPlayer, amount);
-                player.sendMessage(Text.literal("Removed Thirst Saturation: " + Sat + "/300"));
+                player.sendMessage(Text.literal("Removed Thirst Saturation: " + Sat + " - amount: "+amount));
             }
         }
     }

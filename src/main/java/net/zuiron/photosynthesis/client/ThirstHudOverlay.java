@@ -19,6 +19,10 @@ public class ThirstHudOverlay implements HudRenderCallback {
             "textures/thirst/thirst_full.png");
     private static final Identifier FILLED_THIRST_GLINT = new Identifier(Photosynthesis.MOD_ID,
             "textures/thirst/thirst_full_glint.png");
+    private static final Identifier FILLED_THIRST_GLINT_EFFECT = new Identifier(Photosynthesis.MOD_ID,
+            "textures/thirst/thirst_full_glint_effect.png");
+    private static final Identifier FILLED_THIRST_GLINT_NOBG = new Identifier(Photosynthesis.MOD_ID,
+            "textures/thirst/thirst_full_glint_nobg.png");
     private static final Identifier EMPTY_THIRST = new Identifier(Photosynthesis.MOD_ID,
             "textures/thirst/thirst_empty.png");
 
@@ -78,7 +82,7 @@ public class ThirstHudOverlay implements HudRenderCallback {
 
 
         int thirstSat = ((IEntityDataSaver) MinecraftClient.getInstance().player).getPersistentData().getInt("thirst_sat");
-        RenderSystem.setShaderTexture(0, FILLED_THIRST_GLINT); //max saturation is 600. so "glint texture" for each 60 saturation we got.
+        RenderSystem.setShaderTexture(0, FILLED_THIRST_GLINT_EFFECT); //max saturation is 600. so "glint texture" for each 60 saturation we got.
         for(int i = 0; i < thirstSat / 60; i++) {
             //if(i >= thirst) { break; }
             if(thirst <= 1) { break; }
@@ -88,8 +92,12 @@ public class ThirstHudOverlay implements HudRenderCallback {
         }
 
 
+        if(thirstSat >= 300) {
+            RenderSystem.setShaderTexture(0, FILLED_THIRST_GLINT_NOBG);
+        } else {
+            RenderSystem.setShaderTexture(0, FILLED_THIRST);
+        }
 
-        RenderSystem.setShaderTexture(0, FILLED_THIRST);
         for(int i = 0; i < 10; i++) {
             assert MinecraftClient.getInstance().player != null;
             //int thirst = ((IEntityDataSaver) MinecraftClient.getInstance().player).getPersistentData().getInt("thirst");

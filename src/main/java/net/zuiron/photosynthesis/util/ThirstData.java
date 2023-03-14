@@ -47,10 +47,10 @@ public class ThirstData {
         NbtCompound nbt = player.getPersistentData();
         int thirst_sat = nbt.getInt("thirst_sat");
         if(thirst_sat - amount <= 0) {
-            thirst_sat = 0;
-            //TODO remove thirst and reset saturation.
+            //thirst_sat = 0;
             removeThirst(player, 1);
-            thirst_sat = 150;
+            if(nbt.getInt("thirst") < 1) { thirst_sat = 0; }
+            else { thirst_sat = 150; }
         } else {
             thirst_sat -= amount;
         }
@@ -70,7 +70,7 @@ public class ThirstData {
         }
 
         nbt.putInt("thirst", thirst);
-        addThirstSaturation(player, 300);
+        //addThirstSaturation(player, 300);
         syncThirst(thirst, (ServerPlayerEntity) player);
         return thirst;
     }
