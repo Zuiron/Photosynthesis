@@ -27,12 +27,14 @@ public class PlayerTickHandler implements ServerTickEvents.StartTick {
     public void onStartTick(MinecraftServer server) {
         for (ServerPlayerEntity player : server.getPlayerManager().getPlayerList()) {
             float probability = 0.001f; //0.1%chance
+            int amount = 25;
             if (player.isSprinting()) {
-                probability = 0.002f;    //0.2% chance
+                probability = 0.01f;    //0.5% chance
+                amount = 50;
             }
             if (new Random().nextFloat() <= probability) {
                 IEntityDataSaver dataPlayer = ((IEntityDataSaver) player);
-                int Sat = ThirstData.removeThirstSaturation(dataPlayer, 25);
+                int Sat = ThirstData.removeThirstSaturation(dataPlayer, amount);
                 player.sendMessage(Text.literal("Removed Thirst Saturation: " + Sat + "/300"));
             }
         }

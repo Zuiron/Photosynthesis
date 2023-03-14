@@ -23,9 +23,11 @@ import java.util.List;
 
 public class MeadMugItem extends MugItem {
     private final int addThirst;
-    public MeadMugItem(Settings settings, int addThirst) {
+    private final int addThirstSat;
+    public MeadMugItem(Settings settings, int addThirst, int addThirstSat) {
         super(settings);
         this.addThirst = addThirst;
+        this.addThirstSat = addThirstSat;
     }
 
     @Override
@@ -39,6 +41,7 @@ public class MeadMugItem extends MugItem {
             //serverPlayerEntity.incrementStat(Stats.USED.getOrCreateStat(this));
 
             ThirstData.addThirst((IEntityDataSaver)serverPlayerEntity, addThirst);
+            ThirstData.addThirstSaturation((IEntityDataSaver)serverPlayerEntity, addThirstSat);
             //stack.damage(1, Random.create(0),null);
 
             stack.damage(1, user, (e) -> {

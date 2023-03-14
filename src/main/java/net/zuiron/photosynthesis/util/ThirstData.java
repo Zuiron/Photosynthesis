@@ -19,8 +19,8 @@ public class ThirstData {
     public static int addThirstSaturation(IEntityDataSaver player, int amount) {
         NbtCompound nbt = player.getPersistentData();
         int thirst_sat = nbt.getInt("thirst_sat");
-        if(thirst_sat + amount >= 300) {
-            thirst_sat = 300;
+        if(thirst_sat + amount >= 600) {
+            thirst_sat = 600;
         } else {
             thirst_sat += amount;
         }
@@ -37,7 +37,7 @@ public class ThirstData {
             thirst_sat = 0;
             //TODO remove thirst and reset saturation.
             removeThirst(player, 1);
-            thirst_sat = 300;
+            thirst_sat = 150;
         } else {
             thirst_sat -= amount;
         }
