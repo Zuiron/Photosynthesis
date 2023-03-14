@@ -26,7 +26,7 @@ public class ThirstData {
         }
 
         nbt.putInt("thirst_sat", thirst_sat);
-        //syncThirst(thirst_sat, (ServerPlayerEntity) player); //we do not need to sync saturation to client.
+        syncThirstSat(thirst_sat, (ServerPlayerEntity) player);
         return thirst_sat;
     }
 
@@ -43,7 +43,7 @@ public class ThirstData {
         }
 
         nbt.putInt("thirst_sat", thirst_sat);
-        //syncThirst(thirst_sat, (ServerPlayerEntity) player); //we do not need to sync saturation to client.
+        syncThirstSat(thirst_sat, (ServerPlayerEntity) player);
         return thirst_sat;
     }
 
@@ -80,5 +80,11 @@ public class ThirstData {
         PacketByteBuf buffer = PacketByteBufs.create();
         buffer.writeInt(thirst);
         ServerPlayNetworking.send(player, ModMessages.THIRST_SYNC_ID, buffer);
+    }
+
+    public static void syncThirstSat(int thirstSat, ServerPlayerEntity player) {
+        PacketByteBuf buffer = PacketByteBufs.create();
+        buffer.writeInt(thirstSat);
+        ServerPlayNetworking.send(player, ModMessages.THIRSTSAT_SYNC_ID, buffer);
     }
 }

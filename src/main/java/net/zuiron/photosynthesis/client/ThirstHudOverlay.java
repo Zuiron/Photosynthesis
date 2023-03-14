@@ -8,7 +8,6 @@ import net.minecraft.client.render.GameRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.passive.HorseEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.random.Random;
@@ -63,7 +62,6 @@ public class ThirstHudOverlay implements HudRenderCallback {
         int z = 0;
 
         for(int i = 0; i < 10; i++) {
-            //if (player.getHungerManager().getSaturationLevel() <= 0.0F) {
             if (((IEntityDataSaver) MinecraftClient.getInstance().player).getPersistentData().getInt("thirst") <= 1) {
                 z = offset + (random.nextInt(3) - 1);
             } else {
@@ -77,7 +75,6 @@ public class ThirstHudOverlay implements HudRenderCallback {
         for(int i = 0; i < 10; i++) {
             assert MinecraftClient.getInstance().player != null;
             if(((IEntityDataSaver) MinecraftClient.getInstance().player).getPersistentData().getInt("thirst") > i) {
-            //if(7 > i) {
                 DrawableHelper.drawTexture(matrixStack,x + 82 - (i * 8),y - z,0,0,9,9,
                         9,9);
             } else {

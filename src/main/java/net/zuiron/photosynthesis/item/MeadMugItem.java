@@ -2,18 +2,15 @@ package net.zuiron.photosynthesis.item;
 
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.client.item.TooltipContext;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsage;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.UseAction;
-import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.util.IEntityDataSaver;
 import net.zuiron.photosynthesis.util.ThirstData;
@@ -37,28 +34,13 @@ public class MeadMugItem extends MugItem {
 
     public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
         if (user instanceof ServerPlayerEntity serverPlayerEntity) {
-            //Criteria.CONSUME_ITEM.trigger(serverPlayerEntity, stack);
-            //serverPlayerEntity.incrementStat(Stats.USED.getOrCreateStat(this));
-
             ThirstData.addThirst((IEntityDataSaver)serverPlayerEntity, addThirst);
             ThirstData.addThirstSaturation((IEntityDataSaver)serverPlayerEntity, addThirstSat);
-            //stack.damage(1, Random.create(0),null);
 
             stack.damage(1, user, (e) -> {
-                //e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND);
                 Criteria.CONSUME_ITEM.trigger(serverPlayerEntity, stack);
             });
-
-            //entity.getStack(0).damage(10, Random.create(0), null);
         }
-
-        /*if (user instanceof PlayerEntity && !((PlayerEntity)user).getAbilities().creativeMode) {
-            stack.decrement(1);
-        }
-
-        if (!world.isClient) {
-            user.clearStatusEffects();
-        }*/
 
         return stack.isEmpty() ? new ItemStack(ModItems.EMPTY_MUG) : stack;
     }
@@ -86,12 +68,10 @@ public class MeadMugItem extends MugItem {
     }
 
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        //return ItemUsage.consumeHeldItem(world, user, hand);
         if (user instanceof ServerPlayerEntity serverPlayerEntity) {
             ItemStack itemStack = user.getStackInHand(hand);
             int Thirst = ThirstData.getThirst((IEntityDataSaver)serverPlayerEntity);
             if (Thirst < 10) {
-                //return TypedActionResult.consume(itemStack);
                 return ItemUsage.consumeHeldItem(world, user, hand);
             } else {
                 return TypedActionResult.fail(itemStack);
