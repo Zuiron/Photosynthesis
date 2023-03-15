@@ -67,10 +67,10 @@ public class SeasonsHudOverlay implements HudRenderCallback {
         assert world != null;
         long time = world.getTimeOfDay();
 
-        int day = (int) (time / 24000L) + 1; // add 1 since day 0 is the first day
+        int day = (int) (time / 24000L); // add 1 since day 0 is the first day
 
         // calculate the current day of the current season
-        int dayInSeason = (day - 1) % daysPerSeason + 1;
+        int dayInSeason = (day) % daysPerSeason;
 
 
         RenderSystem.setShaderTexture(0, CALENDAR_BAR);
