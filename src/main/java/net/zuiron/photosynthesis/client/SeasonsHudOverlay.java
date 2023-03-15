@@ -118,11 +118,6 @@ public class SeasonsHudOverlay implements HudRenderCallback {
         int xs = (int) (client.getWindow().getScaledWidth() / 2.0f - textWidth / 2.0f);
         int ys = 20;
 
-        matrixStack.push();
-        matrixStack.scale(0.5f, 0.5f, 1.0f);
-        xs /= 0.5f; // Adjust for scaling
-        //matrixStack.translate(xs, 0, 0);
         textRenderer.draw(matrixStack, text, xs, ys, 0xFFFFFF);
-        matrixStack.pop();
     }
 }
