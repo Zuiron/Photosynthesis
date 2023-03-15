@@ -97,7 +97,7 @@ public class SeasonsHudOverlay implements HudRenderCallback {
 
 
         RenderSystem.setShaderTexture(0, CALENDAR_TAB);
-        DrawableHelper.drawTexture(matrixStack, (int) (x + tabPosition - 3),1,0,0,5,11,
+        DrawableHelper.drawTexture(matrixStack, (int) (x + tabPosition - 4),1,0,0,5,11,
                 5,11);
 
     }
