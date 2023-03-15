@@ -5,14 +5,18 @@ import me.shedaniel.autoconfig.AutoConfig;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
+import net.minecraft.client.font.UnicodeTextureFont;
 import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.render.GameRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.config.ModConfig;
+
+import java.awt.font.FontRenderContext;
 
 public class SeasonsHudOverlay implements HudRenderCallback {
     private static final Identifier CALENDAR = new Identifier(Photosynthesis.MOD_ID,
@@ -109,13 +113,16 @@ public class SeasonsHudOverlay implements HudRenderCallback {
 
         // Get the text renderer
         TextRenderer textRenderer = MinecraftClient.getInstance().textRenderer;
-
         // Draw the text
         int textWidth = textRenderer.getWidth(text);
         int xs = (int) (client.getWindow().getScaledWidth() / 2.0f - textWidth / 2.0f);
         int ys = 20;
+
+        matrixStack.push();
+        matrixStack.scale(0.5f, 0.5f, 1.0f);
+        xs /= 0.5f; // Adjust for scaling
+        //matrixStack.translate(xs, 0, 0);
         textRenderer.draw(matrixStack, text, xs, ys, 0xFFFFFF);
-
-
+        matrixStack.pop();
     }
 }
