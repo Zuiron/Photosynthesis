@@ -35,7 +35,7 @@ public class SeasonsHudOverlay implements HudRenderCallback {
             y = height;
         }
 
-        Photosynthesis.LOGGER.info("SEASONS");
+        //Photosynthesis.LOGGER.info("SEASONS");
 
         assert client != null;
         PlayerEntity player = client.player;
@@ -48,11 +48,11 @@ public class SeasonsHudOverlay implements HudRenderCallback {
         int daysPerSeason = config.daysPerSeason; //days per season = default: 20
         //starting season = summer. minecraft time 0
 
-        MinecraftClient minecraft = MinecraftClient.getInstance();
-        World world = minecraft.world;
+        assert player != null;
+        World world = player.getWorld();
 
         assert world != null;
-        long time = world.getTime();
+        long time = world.getTimeOfDay();
 
         int day = (int) (time / 24000L) + 1; // add 1 since day 0 is the first day
 
@@ -79,8 +79,53 @@ public class SeasonsHudOverlay implements HudRenderCallback {
         DrawableHelper.drawTexture(matrixStack,x - 128 ,0 ,0,0,256,12,
                 256,12);
 
+
+
+
+
+
+
+
+        int seasonStartDay = (seasonNumber * daysPerSeason) + 1;
+        int currentDay = day - seasonStartDay + 1;
+        float seasonProgress = (float) currentDay / (float) daysPerSeason;
+        int seasonOffset = seasonNumber * 64;
+        float calendarTabPosition = (seasonProgress * 256.0f) - 128.0f + seasonOffset;
+
+
+        //int daysSinceStartOfYear = day;
+        //float pixelsPerSeason = 64.0f;
+        //int tabPosition = (int)(((daysSinceStartOfYear % daysPerSeason) / (daysPerSeason - 1.0f)) * pixelsPerSeason - (pixelsPerSeason / 2.0f));
+
+
+
+        int daysSinceStartOfYear = day;
+        //int daysPerSeason = 20;
+        int seasonsPerYear = 4;
+        int daysPerYear = daysPerSeason * seasonsPerYear;
+
+// Calculate the number of days since the start of the year, modulo the number of days in a year
+        int dayOfYear = daysSinceStartOfYear % daysPerYear;
+
+// Calculate the number of days per season, modulo the number of days in a year
+        int daysPerSeasonMod = daysPerSeason % daysPerYear;
+
+        // Calculate the season, based on the number of days since the start of the year
+        //int current_season = (dayOfYear / daysPerSeasonMod) % seasonsPerYear;
+        // Calculate the season, based on the number of days since the start of the year
+        int current_season = dayOfYear / daysPerSeason;
+
+        float pixelsPerSeason = 256.0f / seasonsPerYear; // 4 seasons
+        //int tabPosition = (int) ((dayOfYear % daysPerSeason) * pixelsPerSeason) - 128;
+        int tabPosition = (int) (pixelsPerSeason * current_season - 128);
+
+
+
+        Photosynthesis.LOGGER.info("time: "+time+", day: "+day+", tabposition: " + tabPosition + ", daysperseason: "+daysPerSeason);
+
+
         RenderSystem.setShaderTexture(0, CALENDAR_TAB);
-        DrawableHelper.drawTexture(matrixStack,x - 9 ,2,0,0,8,18,
+        DrawableHelper.drawTexture(matrixStack, x + tabPosition + 4,2,0,0,8,18,
                 8,18);
 
     }
