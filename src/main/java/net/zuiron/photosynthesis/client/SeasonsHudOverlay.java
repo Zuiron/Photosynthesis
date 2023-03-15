@@ -114,10 +114,17 @@ public class SeasonsHudOverlay implements HudRenderCallback {
         // Get the text renderer
         TextRenderer textRenderer = MinecraftClient.getInstance().textRenderer;
         // Draw the text
+        int scaledWidth = (int) (textRenderer.getWidth(text) * 0.5f);
         int textWidth = textRenderer.getWidth(text);
-        int xs = (int) (client.getWindow().getScaledWidth() / 2.0f - textWidth / 2.0f);
+        //int xs = (int) (client.getWindow().getScaledWidth() / 2.0f - textWidth / 2.0f);
+        int xs = (int) ((client.getWindow().getScaledWidth() / 2.0f) - (scaledWidth / 2));
         int ys = 20;
 
+        matrixStack.push();
+        matrixStack.scale(0.5f, 0.5f, 1.0f);
+        xs /= 0.5f; // Adjust for scaling
+        //matrixStack.translate(xs / 2, 0, 0);
         textRenderer.draw(matrixStack, text, xs, ys, 0xFFFFFF);
+        matrixStack.pop();
     }
 }
