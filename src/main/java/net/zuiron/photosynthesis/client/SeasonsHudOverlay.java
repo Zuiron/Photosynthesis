@@ -26,6 +26,15 @@ public class SeasonsHudOverlay implements HudRenderCallback {
     private static final Identifier CALENDAR_TAB = new Identifier(Photosynthesis.MOD_ID,
             "textures/seasons/tab.png");
 
+    private static final Identifier SEASON_SUMMER = new Identifier(Photosynthesis.MOD_ID,
+            "textures/seasons/summer.png");
+    private static final Identifier SEASON_SPRING = new Identifier(Photosynthesis.MOD_ID,
+            "textures/seasons/spring.png");
+    private static final Identifier SEASON_AUTUMN = new Identifier(Photosynthesis.MOD_ID,
+            "textures/seasons/autumn.png");
+    private static final Identifier SEASON_WINTER = new Identifier(Photosynthesis.MOD_ID,
+            "textures/seasons/winter.png");
+
     @Override
     public void onHudRender(MatrixStack matrixStack, float tickDelta) {
         int x = 0;
@@ -65,8 +74,8 @@ public class SeasonsHudOverlay implements HudRenderCallback {
 
 
         RenderSystem.setShaderTexture(0, CALENDAR_BAR);
-        DrawableHelper.drawTexture(matrixStack,x - 128 ,0 ,0,0,256,12,
-                256,12);
+        DrawableHelper.drawTexture(matrixStack, x - 128, 0, 0, 0, 256, 12,
+                256, 12);
 
 
         int daysSinceStartOfYear = day;
@@ -85,13 +94,30 @@ public class SeasonsHudOverlay implements HudRenderCallback {
         int daysRemaining = daysPerSeason - (day % daysPerSeason);
 
         // Calculate the percentage of the current season that has elapsed
-        float seasonPercentage = ((float)(daysSinceStartOfYear % daysPerSeason)) / daysPerSeason;
+        float seasonPercentage = ((float) (daysSinceStartOfYear % daysPerSeason)) / daysPerSeason;
 
         float pixelsPerSeason = 256.0f / seasonsPerYear; // 4 seasons
 
         // Calculate the position of the tab within the current season's pixel range
         float tabPosition = (current_season * pixelsPerSeason) + (seasonPercentage * pixelsPerSeason) - 128.0f;
 
+
+        //seasons image
+        if (current_season == 0) {
+            RenderSystem.setShaderTexture(0, SEASON_SUMMER);
+        } else if(current_season == 1) {
+            RenderSystem.setShaderTexture(0, SEASON_AUTUMN);
+        } else if(current_season == 2) {
+            RenderSystem.setShaderTexture(0, SEASON_WINTER);
+        } else if(current_season == 3) {
+            RenderSystem.setShaderTexture(0, SEASON_SPRING);
+        } else {
+            RenderSystem.setShaderTexture(0, SEASON_SUMMER); //just in case.
+        }
+
+
+        DrawableHelper.drawTexture(matrixStack,2 ,2 ,0,0,64,64,
+                64,64);
 
 
         Photosynthesis.LOGGER.info("time: "+time+
