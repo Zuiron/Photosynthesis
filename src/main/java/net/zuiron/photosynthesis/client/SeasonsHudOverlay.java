@@ -56,24 +56,9 @@ public class SeasonsHudOverlay implements HudRenderCallback {
 
         int day = (int) (time / 24000L) + 1; // add 1 since day 0 is the first day
 
-        String season = "help";
-
-        // calculate the current season based on the number of days per season
-        int seasonNumber = (day / daysPerSeason) % 4;
-
         // calculate the current day of the current season
         int dayInSeason = (day - 1) % daysPerSeason + 1;
 
-        // adjust the season number based on the starting season
-        seasonNumber = (seasonNumber + 3) % 4; // summer = 0, autumn = 1, winter = 2, spring = 3
-
-        // map the season number to a season name
-        switch (seasonNumber) {
-            case 0 -> season = "summer";
-            case 1 -> season = "autumn";
-            case 2 -> season = "winter";
-            case 3 -> season = "spring";
-        }
 
         RenderSystem.setShaderTexture(0, CALENDAR_BAR);
         DrawableHelper.drawTexture(matrixStack,x - 128 ,0 ,0,0,256,12,
@@ -103,7 +88,12 @@ public class SeasonsHudOverlay implements HudRenderCallback {
 
 
 
-        Photosynthesis.LOGGER.info("time: "+time+", day: "+day+", tabposition: " + tabPosition + ", daysperseason: "+daysPerSeason+", season number: "+seasonNumber);
+        Photosynthesis.LOGGER.info("time: "+time+
+                ", day: "+day+
+                ", tabPosition: " + tabPosition +
+                ", daysPerSeason: "+daysPerSeason+
+                ", current_season: "+current_season+
+                ", dayInSeason: "+dayInSeason);
 
 
         RenderSystem.setShaderTexture(0, CALENDAR_TAB);
