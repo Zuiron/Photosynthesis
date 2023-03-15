@@ -22,4 +22,9 @@ public class Seasons {
     public static int getDayInSeason(long time) {
         return (getDay(time)) % daysPerSeason;
     }
+
+    // calculate days per year
+    public static int getDaysPerYear() {
+        return daysPerSeason * 4;
+    }
 }

@@ -79,17 +79,9 @@ public class SeasonsHudOverlay implements HudRenderCallback {
         assert world != null;
         long time = world.getTimeOfDay();
 
-        //int day = (int) (time / 24000L); // add 1 since day 0 is the first day
-        //lets try our API here.
-        int day = Seasons.getDay(time);
-
-        // calculate the current day of the current season
-        int dayInSeason = (day) % daysPerSeason;
-
-
-        int daysSinceStartOfYear = day;
-        int seasonsPerYear = 4;
-        int daysPerYear = daysPerSeason * seasonsPerYear;
+        int daysSinceStartOfYear = Seasons.getDay(time);
+        int dayInSeason = Seasons.getDayInSeason(time);
+        int daysPerYear = Seasons.getDaysPerYear();
 
         // Calculate the number of days since the start of the year, modulo the number of days in a year
         int dayOfYear = daysSinceStartOfYear % daysPerYear;
@@ -98,14 +90,14 @@ public class SeasonsHudOverlay implements HudRenderCallback {
         int daysPerSeasonMod = daysPerSeason % daysPerYear;
 
         // Calculate the season, based on the number of days since the start of the year
-        int current_season = (dayOfYear / daysPerSeasonMod) % seasonsPerYear;
+        int current_season = (dayOfYear / daysPerSeasonMod) % 4;
         // Get the current season and days remaining in the season
-        int daysRemaining = daysPerSeason - (day % daysPerSeason);
+        int daysRemaining = daysPerSeason - (daysSinceStartOfYear % daysPerSeason);
 
         // Calculate the percentage of the current season that has elapsed
         float seasonPercentage = ((float) (daysSinceStartOfYear % daysPerSeason)) / daysPerSeason;
 
-        float pixelsPerSeason = 256.0f / seasonsPerYear; // 4 seasons
+        float pixelsPerSeason = 256.0f / 4; // 4 seasons
 
         //--------------------------------------------------------------------------------------------------------------
         //------------- SEASON IMAGE
