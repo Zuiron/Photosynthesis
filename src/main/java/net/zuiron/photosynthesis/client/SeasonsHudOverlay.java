@@ -77,6 +77,8 @@ public class SeasonsHudOverlay implements HudRenderCallback {
 
         // Calculate the season, based on the number of days since the start of the year
         int current_season = (dayOfYear / daysPerSeasonMod) % seasonsPerYear;
+        // Get the current season and days remaining in the season
+        int daysRemaining = daysPerSeason - (day % daysPerSeason);
 
         // Calculate the percentage of the current season that has elapsed
         float seasonPercentage = ((float)(daysSinceStartOfYear % daysPerSeason)) / daysPerSeason;
@@ -99,6 +101,21 @@ public class SeasonsHudOverlay implements HudRenderCallback {
         RenderSystem.setShaderTexture(0, CALENDAR_TAB);
         DrawableHelper.drawTexture(matrixStack, (int) (x + tabPosition - 4),1,0,0,5,11,
                 5,11);
+
+        String[] seasonNames = {"Summer", "Autumn", "Winter", "Spring"};
+
+        // Get the text to display
+        String text = String.format("Current season: %s (%d days remaining)", seasonNames[current_season], daysRemaining);
+
+        // Get the text renderer
+        TextRenderer textRenderer = MinecraftClient.getInstance().textRenderer;
+
+        // Draw the text
+        int textWidth = textRenderer.getWidth(text);
+        int xs = (int) (client.getWindow().getScaledWidth() / 2.0f - textWidth / 2.0f);
+        int ys = 20;
+        textRenderer.draw(matrixStack, text, xs, ys, 0xFFFFFF);
+
 
     }
 }
