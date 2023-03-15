@@ -27,4 +27,9 @@ public class Seasons {
     public static int getDaysPerYear() {
         return daysPerSeason * 4;
     }
+
+    // Calculate the number of days since the start of the year, modulo the number of days in a year
+    public static int getDayOfYear(long time) {
+        return getDay(time) % getDaysPerYear();
+    }
 }
