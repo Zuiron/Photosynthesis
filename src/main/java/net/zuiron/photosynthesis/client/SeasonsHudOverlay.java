@@ -113,11 +113,18 @@ public class SeasonsHudOverlay implements HudRenderCallback {
         // Calculate the season, based on the number of days since the start of the year
         //int current_season = (dayOfYear / daysPerSeasonMod) % seasonsPerYear;
         // Calculate the season, based on the number of days since the start of the year
-        int current_season = dayOfYear / daysPerSeason;
+        //int current_season = dayOfYear / daysPerSeason;
+        int current_season = (dayOfYear / daysPerSeasonMod) % seasonsPerYear;
+
+        // Calculate the percentage of the current season that has elapsed
+        float seasonPercentage = ((float)(daysSinceStartOfYear % daysPerSeason)) / daysPerSeason;
 
         float pixelsPerSeason = 256.0f / seasonsPerYear; // 4 seasons
         //int tabPosition = (int) ((dayOfYear % daysPerSeason) * pixelsPerSeason) - 128;
-        int tabPosition = (int) (pixelsPerSeason * current_season - 128);
+        //int tabPosition = (int) (pixelsPerSeason * current_season - 128);
+
+        // Calculate the position of the tab within the current season's pixel range
+        float tabPosition = (current_season * pixelsPerSeason) + (seasonPercentage * pixelsPerSeason) - 128.0f;
 
 
 
@@ -125,7 +132,7 @@ public class SeasonsHudOverlay implements HudRenderCallback {
 
 
         RenderSystem.setShaderTexture(0, CALENDAR_TAB);
-        DrawableHelper.drawTexture(matrixStack, x + tabPosition + 4,2,0,0,8,18,
+        DrawableHelper.drawTexture(matrixStack, (int) (x + tabPosition + 4),2,0,0,8,18,
                 8,18);
 
     }
