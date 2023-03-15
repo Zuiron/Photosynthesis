@@ -14,6 +14,7 @@ import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.Photosynthesis;
+import net.zuiron.photosynthesis.api.Seasons;
 import net.zuiron.photosynthesis.config.ModConfig;
 
 import java.awt.font.FontRenderContext;
@@ -34,6 +35,12 @@ public class SeasonsHudOverlay implements HudRenderCallback {
             "textures/seasons/autumn.png");
     private static final Identifier SEASON_WINTER = new Identifier(Photosynthesis.MOD_ID,
             "textures/seasons/winter.png");
+
+    public static void renderSeasonsBar(MatrixStack matrixStack, float tickDelta, int x) {
+        RenderSystem.setShaderTexture(0, CALENDAR_BAR);
+        DrawableHelper.drawTexture(matrixStack, x - 128, 0, 0, 0, 256, 12,
+                256, 12);
+    }
 
     @Override
     public void onHudRender(MatrixStack matrixStack, float tickDelta) {
@@ -64,18 +71,20 @@ public class SeasonsHudOverlay implements HudRenderCallback {
         assert player != null;
         World world = player.getWorld();
 
+        //--------------------------------------------------------------------------------------------------------------
+        //------------- CALENDAR BAR
+        renderSeasonsBar(matrixStack, tickDelta, x);
+
+
         assert world != null;
         long time = world.getTimeOfDay();
 
-        int day = (int) (time / 24000L); // add 1 since day 0 is the first day
+        //int day = (int) (time / 24000L); // add 1 since day 0 is the first day
+        //lets try our API here.
+        int day = Seasons.getDay(time);
 
         // calculate the current day of the current season
         int dayInSeason = (day) % daysPerSeason;
-
-
-        RenderSystem.setShaderTexture(0, CALENDAR_BAR);
-        DrawableHelper.drawTexture(matrixStack, x - 128, 0, 0, 0, 256, 12,
-                256, 12);
 
 
         int daysSinceStartOfYear = day;
@@ -98,9 +107,8 @@ public class SeasonsHudOverlay implements HudRenderCallback {
 
         float pixelsPerSeason = 256.0f / seasonsPerYear; // 4 seasons
 
-        // Calculate the position of the tab within the current season's pixel range
-        float tabPosition = (current_season * pixelsPerSeason) + (seasonPercentage * pixelsPerSeason) - 128.0f;
-
+        //--------------------------------------------------------------------------------------------------------------
+        //------------- SEASON IMAGE
 
         //seasons image
         if (current_season == 0) {
@@ -120,13 +128,18 @@ public class SeasonsHudOverlay implements HudRenderCallback {
                 64,64);
 
 
-        Photosynthesis.LOGGER.info("time: "+time+
+        /*Photosynthesis.LOGGER.info("time: "+time+
                 ", day: "+day+
-                ", tabPosition: " + tabPosition +
                 ", daysPerSeason: "+daysPerSeason+
                 ", current_season: "+current_season+
-                ", dayInSeason: "+dayInSeason);
+                ", dayInSeason: "+dayInSeason);*/
 
+
+        //--------------------------------------------------------------------------------------------------------------
+        //------------- CALENDAR TAB
+
+        // Calculate the position of the tab within the current season's pixel range
+        float tabPosition = (current_season * pixelsPerSeason) + (seasonPercentage * pixelsPerSeason) - 128.0f;
 
         RenderSystem.setShaderTexture(0, CALENDAR_TAB);
         DrawableHelper.drawTexture(matrixStack, (int) (x + tabPosition - 4),1,0,0,5,11,
@@ -152,5 +165,9 @@ public class SeasonsHudOverlay implements HudRenderCallback {
         //matrixStack.translate(xs / 2, 0, 0);
         textRenderer.draw(matrixStack, text, xs, ys, 0xFFFFFF);
         matrixStack.pop();
+
+
+        //--------------------------------------------------------------------------------------------------------------
+        //------------- INFO DISPLAYS
     }
 }
