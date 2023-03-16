@@ -6,7 +6,8 @@
   "mixins": [
     "ItemAccessor",
     "TreeDecoratorTypeInvoker",
-    "ModEntityDataSaverMixin"
+    "ModEntityDataSaverMixin",
+    "ModCropBlock"
   ],
   "client": [
     "PhotosynthesisMixin"
