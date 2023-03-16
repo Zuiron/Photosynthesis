@@ -58,35 +58,28 @@ public class SeasonsHudOverlay implements HudRenderCallback {
         assert client != null;
         PlayerEntity player = client.player;
 
-        RenderSystem.setShader(GameRenderer::getPositionTexProgram);
-        RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
-
-        ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
-        boolean seasons = config.seasons; //is seasons enabled = default: true
-        int daysPerSeason = config.daysPerSeason; //days per season = default: 20
-        //starting season = summer. minecraft time 0
-
         assert player != null;
         World world = player.getWorld();
-
-        //--------------------------------------------------------------------------------------------------------------
-        //------------- CALENDAR BAR
-        renderSeasonsBar(matrixStack, tickDelta, x);
-
 
         assert world != null;
         long time = world.getTimeOfDay();
 
-        int day = Seasons.getDay(time);
-        int dayInSeason = Seasons.getDayInSeason(time);
-        int daysPerYear = Seasons.getDaysPerYear();
-        int dayOfYear = Seasons.getDayOfYear(time);
-        int daysPerSeasonMod = Seasons.getDaysPerSeasonMod();
+        RenderSystem.setShader(GameRenderer::getPositionTexProgram);
+        RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
+
+        //int day = Seasons.getDay(time);
+        //int dayInSeason = Seasons.getDayInSeason(time);
+        //int daysPerYear = Seasons.getDaysPerYear();
+        //int dayOfYear = Seasons.getDayOfYear(time);
+        //int daysPerSeasonMod = Seasons.getDaysPerSeasonMod();
         int current_season = Seasons.getCurrentSeason(time);
         int daysRemaining = Seasons.getRemainingDaysOfCurrentSeason(time);
         float seasonPercentage = Seasons.getSeasonPercentage(time);
 
-        float pixelsPerSeason = 256.0f / 4; // 4 seasons
+        //--------------------------------------------------------------------------------------------------------------
+        //------------- SEASONS BAR
+        renderSeasonsBar(matrixStack, tickDelta, x);
+
 
         //--------------------------------------------------------------------------------------------------------------
         //------------- SEASON IMAGE
@@ -103,22 +96,15 @@ public class SeasonsHudOverlay implements HudRenderCallback {
         } else {
             RenderSystem.setShaderTexture(0, SEASON_SUMMER); //just in case.
         }
-
-
         DrawableHelper.drawTexture(matrixStack,2 ,2 ,0,0,64,64,
                 64,64);
 
 
-        /*Photosynthesis.LOGGER.info("time: "+time+
-                ", day: "+day+
-                ", daysPerSeason: "+daysPerSeason+
-                ", current_season: "+current_season+
-                ", dayInSeason: "+dayInSeason);*/
 
 
         //--------------------------------------------------------------------------------------------------------------
         //------------- CALENDAR TAB
-
+        float pixelsPerSeason = 256.0f / 4; // 4 seasons
         // Calculate the position of the tab within the current season's pixel range
         float tabPosition = (current_season * pixelsPerSeason) + (seasonPercentage * pixelsPerSeason) - 128.0f;
 
@@ -149,5 +135,7 @@ public class SeasonsHudOverlay implements HudRenderCallback {
 
         //--------------------------------------------------------------------------------------------------------------
         //------------- INFO DISPLAYS
+
+        //TODO
     }
 }
