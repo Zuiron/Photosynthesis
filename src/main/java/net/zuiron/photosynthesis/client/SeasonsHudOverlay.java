@@ -107,7 +107,10 @@ public class SeasonsHudOverlay implements HudRenderCallback {
         //------------- CALENDAR TAB
         float pixelsPerSeason = 256.0f / 4; // 4 seasons
         // Calculate the position of the tab within the current season's pixel range
-        float tabPosition = (current_season * pixelsPerSeason) + (seasonPercentage * pixelsPerSeason) - 128.0f;
+        // Lets shift by one. and fix shift. looks nicer on the bar.
+        int current_seasonMOD = current_season + 1;
+        if(current_seasonMOD == 4) { current_seasonMOD = 0; }
+        float tabPosition = (current_seasonMOD * pixelsPerSeason) + (seasonPercentage * pixelsPerSeason) - 128.0f;
 
         RenderSystem.setShaderTexture(0, CALENDAR_TAB);
         DrawableHelper.drawTexture(matrixStack, (int) (x + tabPosition),1,0,0,5,11,
