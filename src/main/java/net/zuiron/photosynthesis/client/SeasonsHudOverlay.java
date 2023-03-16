@@ -145,14 +145,14 @@ public class SeasonsHudOverlay implements HudRenderCallback {
         text_season_1.formatted(Formatting.BOLD);
         matrixStack.push();
         matrixStack.scale(0.5f, 0.5f, 1.0f);
-        textRenderer.drawWithShadow(matrixStack, text_season_1, 2, 100, 0xFFFFFF);
+        textRenderer.drawWithShadow(matrixStack, text_season_1, 10, 100, 0xFFFFFF);
         matrixStack.pop();
 
         String text_season_2 = String.format("%s - Day: %d/%d", seasonNames[current_season], dayInSeason + 1, daysPerSeasonMod);
         text_season_2.formatted(Formatting.BOLD);
         matrixStack.push();
         matrixStack.scale(0.5f, 0.5f, 1.0f);
-        textRenderer.drawWithShadow(matrixStack, text_season_2, 2, 110, 0xFFFFFF);
+        textRenderer.drawWithShadow(matrixStack, text_season_2, 10, 110, 0xFFFFFF);
         matrixStack.pop();
     }
 }
