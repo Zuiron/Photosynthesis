@@ -110,13 +110,13 @@ public class SeasonsHudOverlay implements HudRenderCallback {
         float tabPosition = (current_season * pixelsPerSeason) + (seasonPercentage * pixelsPerSeason) - 128.0f;
 
         RenderSystem.setShaderTexture(0, CALENDAR_TAB);
-        DrawableHelper.drawTexture(matrixStack, (int) (x + tabPosition - 4),1,0,0,5,11,
+        DrawableHelper.drawTexture(matrixStack, (int) (x + tabPosition),1,0,0,5,11,
                 5,11);
 
         String[] seasonNames = {"Summer", "Autumn", "Winter", "Spring"};
 
         // Get the text to display
-        String text = String.format("Current season: %s (%d days remaining)", seasonNames[current_season], daysRemaining - 1);
+        String text = String.format("%s (%d days remaining)", seasonNames[current_season], daysRemaining - 1);
 
         // Get the text renderer
         TextRenderer textRenderer = MinecraftClient.getInstance().textRenderer;
@@ -141,14 +141,14 @@ public class SeasonsHudOverlay implements HudRenderCallback {
         //Day: 3/80 of year 4
         //Season: Summer Day 3/20
         //String text_season_year = String.format("Day %s of Year %d, %d Day.", seasonNames[current_season], getYear, dayOfYear);
-        String text_season_1 = String.format("Day: %d/%d, of Year: %d.", dayOfYear + 1, daysPerYear, getYear);
+        String text_season_1 = String.format("Day: %d/%d, Year: %d", dayOfYear + 1, daysPerYear, getYear);
         text_season_1.formatted(Formatting.BOLD);
         matrixStack.push();
         matrixStack.scale(0.5f, 0.5f, 1.0f);
         textRenderer.drawWithShadow(matrixStack, text_season_1, 2, 100, 0xFFFFFF);
         matrixStack.pop();
 
-        String text_season_2 = String.format("Season: %s - Day: %d/%d.", seasonNames[current_season], dayInSeason + 1, daysPerSeasonMod);
+        String text_season_2 = String.format("%s - Day: %d/%d", seasonNames[current_season], dayInSeason + 1, daysPerSeasonMod);
         text_season_2.formatted(Formatting.BOLD);
         matrixStack.push();
         matrixStack.scale(0.5f, 0.5f, 1.0f);
