@@ -1,11 +1,9 @@
 package net.zuiron.photosynthesis.client;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import me.shedaniel.autoconfig.AutoConfig;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
-import net.minecraft.client.font.UnicodeTextureFont;
 import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.render.GameRenderer;
 import net.minecraft.client.util.math.MatrixStack;
@@ -15,9 +13,6 @@ import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.api.Seasons;
-import net.zuiron.photosynthesis.config.ModConfig;
-
-import java.awt.font.FontRenderContext;
 
 public class SeasonsHudOverlay implements HudRenderCallback {
     private static final Identifier CALENDAR = new Identifier(Photosynthesis.MOD_ID,
@@ -140,10 +135,6 @@ public class SeasonsHudOverlay implements HudRenderCallback {
         //--------------------------------------------------------------------------------------------------------------
         //------------- INFO DISPLAYS
 
-        //TODO
-        //Day: 3/80 of year 4
-        //Season: Summer Day 3/20
-        //String text_season_year = String.format("Day %s of Year %d, %d Day.", seasonNames[current_season], getYear, dayOfYear);
         String text_season_1 = String.format("Day: %d/%d, Year: %d", dayOfYear + 1, daysPerYear, getYear);
         text_season_1.formatted(Formatting.BOLD);
         matrixStack.push();
