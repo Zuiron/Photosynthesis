@@ -85,7 +85,8 @@ public class SeasonsHudOverlay implements HudRenderCallback {
         int dayOfYear = Seasons.getDayOfYear(time);
 
         // Calculate the number of days per season, modulo the number of days in a year
-        int daysPerSeasonMod = daysPerSeason % daysPerYear;
+        //int daysPerSeasonMod = daysPerSeason % daysPerYear;
+        int daysPerSeasonMod = Seasons.getDaysPerSeasonMod();
 
         // Calculate the season, based on the number of days since the start of the year
         int current_season = (dayOfYear / daysPerSeasonMod) % 4;
