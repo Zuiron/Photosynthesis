@@ -55,8 +55,6 @@ public class SeasonsHudOverlay implements HudRenderCallback {
             y = height;
         }
 
-        //Photosynthesis.LOGGER.info("SEASONS");
-
         assert client != null;
         PlayerEntity player = client.player;
 
@@ -83,18 +81,10 @@ public class SeasonsHudOverlay implements HudRenderCallback {
         int dayInSeason = Seasons.getDayInSeason(time);
         int daysPerYear = Seasons.getDaysPerYear();
         int dayOfYear = Seasons.getDayOfYear(time);
-
-        // Calculate the number of days per season, modulo the number of days in a year
-        //int daysPerSeasonMod = daysPerSeason % daysPerYear;
         int daysPerSeasonMod = Seasons.getDaysPerSeasonMod();
-
-        // Calculate the season, based on the number of days since the start of the year
-        int current_season = (dayOfYear / daysPerSeasonMod) % 4;
-        // Get the current season and days remaining in the season
-        int daysRemaining = daysPerSeason - (day % daysPerSeason);
-
-        // Calculate the percentage of the current season that has elapsed
-        float seasonPercentage = ((float) (day % daysPerSeason)) / daysPerSeason;
+        int current_season = Seasons.getCurrentSeason(time);
+        int daysRemaining = Seasons.getRemainingDaysOfCurrentSeason(time);
+        float seasonPercentage = Seasons.getSeasonPercentage(time);
 
         float pixelsPerSeason = 256.0f / 4; // 4 seasons
 
@@ -153,7 +143,6 @@ public class SeasonsHudOverlay implements HudRenderCallback {
         matrixStack.push();
         matrixStack.scale(0.5f, 0.5f, 1.0f);
         xs /= 0.5f; // Adjust for scaling
-        //matrixStack.translate(xs / 2, 0, 0);
         textRenderer.draw(matrixStack, text, xs, ys, 0xFFFFFF);
         matrixStack.pop();
 

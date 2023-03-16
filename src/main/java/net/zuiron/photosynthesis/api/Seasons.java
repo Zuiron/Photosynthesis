@@ -37,4 +37,19 @@ public class Seasons {
     public static int getDaysPerSeasonMod() {
         return daysPerSeason % getDaysPerYear();
     }
+
+    // Calculate the season, based on the number of days since the start of the year
+    public static int getCurrentSeason(long time) {
+        return (getDayOfYear(time) / getDaysPerSeasonMod()) % 4;
+    }
+
+    // Get the current season and days remaining in the season
+    public static int getRemainingDaysOfCurrentSeason(long time) {
+        return daysPerSeason - (getDay(time) % daysPerSeason);
+    }
+
+    // Calculate the percentage of the current season that has elapsed
+    public static float getSeasonPercentage(long time) {
+        return ((float) (getDay(time) % daysPerSeason)) / daysPerSeason;
+    }
 }
