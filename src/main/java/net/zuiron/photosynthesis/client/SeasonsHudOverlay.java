@@ -67,11 +67,12 @@ public class SeasonsHudOverlay implements HudRenderCallback {
         RenderSystem.setShader(GameRenderer::getPositionTexProgram);
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
 
-        //int day = Seasons.getDay(time);
-        //int dayInSeason = Seasons.getDayInSeason(time);
-        //int daysPerYear = Seasons.getDaysPerYear();
-        //int dayOfYear = Seasons.getDayOfYear(time);
-        //int daysPerSeasonMod = Seasons.getDaysPerSeasonMod();
+        int day = Seasons.getDay(time);
+        int dayInSeason = Seasons.getDayInSeason(time);
+        int daysPerYear = Seasons.getDaysPerYear();
+        int dayOfYear = Seasons.getDayOfYear(time);
+        int getYear = Seasons.getYear(time);
+        int daysPerSeasonMod = Seasons.getDaysPerSeasonMod();
         int current_season = Seasons.getCurrentSeason(time);
         int daysRemaining = Seasons.getRemainingDaysOfCurrentSeason(time);
         float seasonPercentage = Seasons.getSeasonPercentage(time);
@@ -115,7 +116,7 @@ public class SeasonsHudOverlay implements HudRenderCallback {
         String[] seasonNames = {"Summer", "Autumn", "Winter", "Spring"};
 
         // Get the text to display
-        String text = String.format("Current season: %s (%d days remaining)", seasonNames[current_season], daysRemaining);
+        String text = String.format("Current season: %s (%d days remaining)", seasonNames[current_season], daysRemaining - 1);
 
         // Get the text renderer
         TextRenderer textRenderer = MinecraftClient.getInstance().textRenderer;
@@ -129,7 +130,7 @@ public class SeasonsHudOverlay implements HudRenderCallback {
         matrixStack.push();
         matrixStack.scale(0.5f, 0.5f, 1.0f);
         xs /= 0.5f; // Adjust for scaling
-        textRenderer.draw(matrixStack, text, xs, ys, 0xFFFFFF);
+        textRenderer.drawWithShadow(matrixStack, text, xs, ys, 0xFFFFFF);
         matrixStack.pop();
 
 
@@ -137,5 +138,21 @@ public class SeasonsHudOverlay implements HudRenderCallback {
         //------------- INFO DISPLAYS
 
         //TODO
+        //Day: 3/80 of year 4
+        //Season: Summer Day 3/20
+        //String text_season_year = String.format("Day %s of Year %d, %d Day.", seasonNames[current_season], getYear, dayOfYear);
+        String text_season_1 = String.format("Day: %d/%d, of Year: %d.", dayOfYear + 1, daysPerYear, getYear);
+        text_season_1.formatted(Formatting.BOLD);
+        matrixStack.push();
+        matrixStack.scale(0.5f, 0.5f, 1.0f);
+        textRenderer.drawWithShadow(matrixStack, text_season_1, 2, 100, 0xFFFFFF);
+        matrixStack.pop();
+
+        String text_season_2 = String.format("Season: %s - Day: %d/%d.", seasonNames[current_season], dayInSeason + 1, daysPerSeasonMod);
+        text_season_2.formatted(Formatting.BOLD);
+        matrixStack.push();
+        matrixStack.scale(0.5f, 0.5f, 1.0f);
+        textRenderer.drawWithShadow(matrixStack, text_season_2, 2, 110, 0xFFFFFF);
+        matrixStack.pop();
     }
 }

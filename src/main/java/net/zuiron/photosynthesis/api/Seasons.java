@@ -33,6 +33,16 @@ public class Seasons {
         return getDay(time) % getDaysPerYear();
     }
 
+    // Calculate the year
+    public static int getYear(long time) {
+        return getDay(time) / (daysPerSeason * 4);
+    }
+
+    // Calculate remaining days in current year
+    public static int getRemainingDaysInCurrentYear(long time) {
+        return getDay(time) % (daysPerSeason * 4); //UMMMMMMM???
+    }
+
     // Calculate the number of days per season, modulo the number of days in a year
     public static int getDaysPerSeasonMod() {
         return daysPerSeason % getDaysPerYear();
