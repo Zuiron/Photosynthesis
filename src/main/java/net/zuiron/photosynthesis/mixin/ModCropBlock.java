@@ -58,13 +58,14 @@ public abstract class ModCropBlock {
                 } else {
                     Photosynthesis.LOGGER.info("Crop: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NO GROW"+", %:"+seasonPercentage);
                 }
+                ci.cancel(); //cancel, do not run vanilla code.
+                //Note we only cancel IF we found seasons data for the crop. otherwise vanilla code runs.
             }
 
             /*if (Objects.equals(state.getBlock().getTranslationKey(), "block.minecraft.wheat")) {
                 Photosynthesis.LOGGER.info("Wheat tried to grow. Season: "+Seasons.getCurrentSeason(world.getTimeOfDay()));
             }*/
             //world.setBlockState(pos, this.withAge(this.getAge(state) + 1), 2); //works - converted - applies growth
-            ci.cancel(); //cancel, do not run vanilla code.
         }
         //world.setBlockState(pos, this.withAge(i + 1), 2); //Original MC Code
     }
