@@ -22,10 +22,10 @@ public class CropData {
 
     public static Map<String, CropData> cropDataMap = new HashMap<>();
     static { //maxAge Summer, Autumn, Winter, Spring ---- minAge Summer, Autumn, Winter, Spring
-        cropDataMap.put("block.minecraft.wheat", new CropData(new int[]{7, 1, 2, 5}, new int[]{4, 0, 1, 2}));
-        cropDataMap.put("block.minecraft.carrots", new CropData(new int[]{7, 1, 1, 4}, new int[]{4, 0, 1, 1}));
-        cropDataMap.put("block.minecraft.potatoes", new CropData(new int[]{7, 1, 1, 4}, new int[]{4, 0, 1, 1}));
-        cropDataMap.put("block.minecraft.beetroot", new CropData(new int[]{3, 0, 0, 2}, new int[]{2, 0, 1, 1}));
+        cropDataMap.put("block.minecraft.wheat", new CropData(new int[]{7, 1, 2, 5}, new int[]{4, 0, 1, 2}));       //plant autumn, harvest summer.
+        cropDataMap.put("block.minecraft.carrots", new CropData(new int[]{4, 7, 1, 1}, new int[]{1, 4, 7, 0}));     //plant spring, harvest autumn.
+        cropDataMap.put("block.minecraft.potatoes", new CropData(new int[]{4, 7, 1, 1}, new int[]{1, 4, 7, 0}));    //plant spring, harvest autumn.
+        cropDataMap.put("block.minecraft.beetroot", new CropData(new int[]{4, 7, 0, 0}, new int[]{0, 4, 7, 7}));    //plant summer, harvest autumn
         // add more crops here as needed
     }
 
