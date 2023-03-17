@@ -18,7 +18,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(CropBlock.class)
 public abstract class ModCropBlock {
-    @Shadow public abstract int getMaxAge();
 
     @Shadow protected abstract int getAge(BlockState state);
 
