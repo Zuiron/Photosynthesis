@@ -27,6 +27,7 @@ public abstract class ModCropBlock {
     @Inject(method = "isFertilizable", at = @At("HEAD"), cancellable = true)
     public void isFertilizable(WorldView world, BlockPos pos, BlockState state, boolean isClient, CallbackInfoReturnable<Boolean> cir) {
         //Photosynthesis.LOGGER.info("bonemealing not allowed");
+        //TODO make it so, only crops that has cropData is disabled.
         cir.setReturnValue(false);
         cir.cancel();
     }
