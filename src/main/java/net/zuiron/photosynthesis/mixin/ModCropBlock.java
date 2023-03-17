@@ -26,10 +26,14 @@ public abstract class ModCropBlock {
 
     @Inject(method = "isFertilizable", at = @At("HEAD"), cancellable = true)
     public void isFertilizable(WorldView world, BlockPos pos, BlockState state, boolean isClient, CallbackInfoReturnable<Boolean> cir) {
-        //Photosynthesis.LOGGER.info("bonemealing not allowed");
-        //TODO make it so, only crops that has cropData is disabled.
-        cir.setReturnValue(false);
-        cir.cancel();
+        //disable bonemealing on crops we have cropdata for.
+        if(Seasons.isSeasonsEnabled()) {
+            CropData cropData = CropData.getCropDataFor(state.getBlock().getTranslationKey());
+            if(cropData != null) {
+                cir.setReturnValue(false);
+                cir.cancel();
+            }
+        }
     }
 
     @Inject(method = "randomTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/CropBlock;withAge(I)Lnet/minecraft/block/BlockState;", ordinal = 0), cancellable = true)
