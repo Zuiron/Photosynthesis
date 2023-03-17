@@ -112,6 +112,7 @@ public class SeasonsHudOverlay implements HudRenderCallback {
                 5,11);
 
         String[] seasonNames = {"Summer", "Autumn", "Winter", "Spring"};
+        //String getSeasonName = Seasons.getSeasonString(current_season);
 
         // Get the text to display
         String text = String.format("%s (%d days remaining)", seasonNames[current_season], daysRemaining - 1);

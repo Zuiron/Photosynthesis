@@ -8,7 +8,7 @@
     "TreeDecoratorTypeInvoker",
     "ModEntityDataSaverMixin",
     "ModCropBlock",
-    "ModAliasedBlockItem"
+    "ModBlockItem"
   ],
   "client": [
     "PhotosynthesisMixin"

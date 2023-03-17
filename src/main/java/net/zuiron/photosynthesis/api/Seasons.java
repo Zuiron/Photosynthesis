@@ -6,6 +6,13 @@ import net.zuiron.photosynthesis.config.ModConfig;
 public class Seasons {
     static ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
 
+    static String[] seasonNames = {"Summer", "Autumn", "Winter", "Spring"};
+
+    // get str from int.
+    public static String getSeasonString(int season) {
+        return seasonNames[season];
+    }
+
     // is seasons enabled or not.
     public static boolean isSeasonsEnabled() {
         return config.seasons; //true if seasons is enabled. false if disabled.
