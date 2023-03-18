@@ -33,7 +33,7 @@ public class CropData {
                 return i;
             }
         }
-        return -1;
+        return 0;
     }
 
     public int getPlantSeason() {
@@ -42,7 +42,7 @@ public class CropData {
                 return i;
             }
         }
-        return -1;
+        return 0;
     }
 
     public String getHarvestSeasonStr() {
