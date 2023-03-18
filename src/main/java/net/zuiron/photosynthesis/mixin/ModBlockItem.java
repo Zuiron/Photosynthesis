@@ -9,6 +9,7 @@ import net.minecraft.text.TextColor;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.api.CropData;
+import net.zuiron.photosynthesis.api.Seasons;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -25,7 +26,8 @@ public abstract class ModBlockItem {
     public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context, CallbackInfo ci) {
         String getBlockStrKey = this.getBlock().getTranslationKey();
         CropData cropData = CropData.getCropDataFor(getBlockStrKey);
-        if(cropData != null) {
+
+        if(cropData != null && Seasons.isSeasonsEnabled()) {
             String getHarvestSeason = cropData.getHarvestSeasonStr();
             String getPlantSeason = cropData.getPlantSeasonStr();
 

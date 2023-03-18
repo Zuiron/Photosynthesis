@@ -6,6 +6,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.WorldView;
+import net.minecraft.world.biome.Biome;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.api.CropData;
 import net.zuiron.photosynthesis.api.Seasons;
@@ -45,6 +46,11 @@ public abstract class ModCropBlock {
                 int maxAge = cropData.getMaxAge(Seasons.getCurrentSeason(world.getTimeOfDay()));
                 float seasonPercentage = Seasons.getSeasonPercentage(world.getTimeOfDay());
                 int currentCropAge = this.getAge(state);
+
+                /*Biome biome = world.getBiome(pos).value();
+                float temperature = biome.getTemperature();
+                Photosynthesis.LOGGER.info("current temperature: "+temperature);*/
+
                 if(currentCropAge >= minAge && currentCropAge < maxAge && seasonPercentage > 0.5f) { //0.5f = 50% "halfway thru season"
                     Photosynthesis.LOGGER.info("Crop: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NewCropAge: "+(this.getAge(state) + 1)+", %:"+seasonPercentage);
                     world.setBlockState(pos, this.withAge(this.getAge(state) + 1), 2);
