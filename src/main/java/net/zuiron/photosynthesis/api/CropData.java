@@ -1,11 +1,18 @@
 package net.zuiron.photosynthesis.api;
 
+import net.minecraft.text.TextColor;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class CropData {
     private int[] maxAge;
     private int[] minAge;
+
+    TextColor SPRING = TextColor.fromRgb(0xFF64e700);
+    TextColor SUMMER = TextColor.fromRgb(0xFFe7e952);
+    TextColor AUTUMN = TextColor.fromRgb(0xFFA500);
+    TextColor WINTER = TextColor.fromRgb(0xFFebebeb);
 
     public CropData(int[] maxAge, int[] minAge) {
         this.maxAge = maxAge;
@@ -44,8 +51,34 @@ public class CropData {
     }
 
     public String getPlantSeasonStr() {
-        int harvestSeason = getPlantSeason();
-        return Seasons.getSeasonString(harvestSeason);
+        int plantSeason = getPlantSeason();
+        return Seasons.getSeasonString(plantSeason);
+    }
+
+    public TextColor getPlantSeasonTextColor() {
+        int plantSeason = getPlantSeason();
+        if(plantSeason == 0) {
+            return SUMMER;
+        } else if(plantSeason == 1) {
+            return AUTUMN;
+        } else if (plantSeason == 2) {
+            return WINTER;
+        } else {
+            return SPRING;
+        }
+    }
+
+    public TextColor getHarvestSeasonTextColor() {
+        int harvestSeason = getHarvestSeason();
+        if(harvestSeason == 0) {
+            return SUMMER;
+        } else if(harvestSeason == 1) {
+            return AUTUMN;
+        } else if (harvestSeason == 2) {
+            return WINTER;
+        } else {
+            return SPRING;
+        }
     }
 
     public static Map<String, CropData> cropDataMap = new HashMap<>();

@@ -5,6 +5,8 @@ import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
+import net.minecraft.text.TextColor;
+import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.api.CropData;
 import org.spongepowered.asm.mixin.Mixin;
@@ -26,9 +28,12 @@ public abstract class ModBlockItem {
         if(cropData != null) {
             String getHarvestSeason = cropData.getHarvestSeasonStr();
             String getPlantSeason = cropData.getPlantSeasonStr();
-            //tooltip.add(Text.literal("test: " + getBlockStrKey));
-            tooltip.add(Text.literal("Plant: "+getPlantSeason));
-            tooltip.add(Text.literal("Harvest: "+getHarvestSeason));
+
+            TextColor getHarvestSeasonTextColor = cropData.getHarvestSeasonTextColor();
+            TextColor getPlantSeasonTextColor = cropData.getPlantSeasonTextColor();
+
+            tooltip.add(Text.literal("Plant: ").append(Text.literal(getPlantSeason).styled(style -> style.withColor(getPlantSeasonTextColor))));
+            tooltip.add(Text.literal("Harvest: ").append(Text.literal(getHarvestSeason).styled(style -> style.withColor(getHarvestSeasonTextColor))));
         }
     }
 }
