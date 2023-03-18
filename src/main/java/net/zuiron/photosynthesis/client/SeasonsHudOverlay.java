@@ -31,123 +31,120 @@ public class SeasonsHudOverlay implements HudRenderCallback {
     private static final Identifier SEASON_WINTER = new Identifier(Photosynthesis.MOD_ID,
             "textures/seasons/winter.png");
 
-    public static void renderSeasonsBar(MatrixStack matrixStack, float tickDelta, int x) {
-        RenderSystem.setShaderTexture(0, CALENDAR_BAR);
-        DrawableHelper.drawTexture(matrixStack, x - 128, 0, 0, 0, 256, 12,
-                256, 12);
-    }
 
     @Override
     public void onHudRender(MatrixStack matrixStack, float tickDelta) {
-        int x = 0;
-        int y = 0;
-        MinecraftClient client = MinecraftClient.getInstance();
-        if (client != null) {
-            int width = client.getWindow().getScaledWidth();
-            int height = client.getWindow().getScaledHeight();
+        if(Seasons.isSeasonsEnabled()) {
+            int x = 0;
+            int y = 0;
+            MinecraftClient client = MinecraftClient.getInstance();
+            if (client != null) {
+                int width = client.getWindow().getScaledWidth();
+                int height = client.getWindow().getScaledHeight();
 
-            x = width / 2;
-            y = height;
+                x = width / 2;
+                y = height;
+            }
+
+            assert client != null;
+            PlayerEntity player = client.player;
+
+            assert player != null;
+            World world = player.getWorld();
+
+            assert world != null;
+            long time = world.getTimeOfDay();
+
+            RenderSystem.setShader(GameRenderer::getPositionTexProgram);
+            RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
+
+            int day = Seasons.getDay(time);
+            int dayInSeason = Seasons.getDayInSeason(time);
+            int daysPerYear = Seasons.getDaysPerYear();
+            int dayOfYear = Seasons.getDayOfYear(time);
+            int getYear = Seasons.getYear(time);
+            int daysPerSeasonMod = Seasons.getDaysPerSeasonMod();
+            int current_season = Seasons.getCurrentSeason(time);
+            int daysRemaining = Seasons.getRemainingDaysOfCurrentSeason(time);
+            float seasonPercentage = Seasons.getSeasonPercentage(time);
+            String getSeasonName = Seasons.getSeasonString(current_season);
+
+            //--------------------------------------------------------------------------------------------------------------
+            //------------- SEASONS BAR
+            RenderSystem.setShaderTexture(0, CALENDAR_BAR);
+            DrawableHelper.drawTexture(matrixStack, x - 128, 0, 0, 0, 256, 12,
+                    256, 12);
+
+
+            //--------------------------------------------------------------------------------------------------------------
+            //------------- SEASON IMAGE
+
+            //seasons image
+            if (current_season == 0) {
+                RenderSystem.setShaderTexture(0, SEASON_SUMMER);
+            } else if (current_season == 1) {
+                RenderSystem.setShaderTexture(0, SEASON_AUTUMN);
+            } else if (current_season == 2) {
+                RenderSystem.setShaderTexture(0, SEASON_WINTER);
+            } else if (current_season == 3) {
+                RenderSystem.setShaderTexture(0, SEASON_SPRING);
+            } else {
+                RenderSystem.setShaderTexture(0, SEASON_SUMMER); //just in case.
+            }
+            DrawableHelper.drawTexture(matrixStack, 2, 2, 0, 0, 64, 64,
+                    64, 64);
+
+
+            //--------------------------------------------------------------------------------------------------------------
+            //------------- CALENDAR TAB
+            float pixelsPerSeason = 256.0f / 4; // 4 seasons
+            // Calculate the position of the tab within the current season's pixel range
+            // Lets shift by one. and fix shift. looks nicer on the bar.
+            int current_seasonMOD = current_season + 1;
+            if (current_seasonMOD == 4) {
+                current_seasonMOD = 0;
+            }
+            float tabPosition = (current_seasonMOD * pixelsPerSeason) + (seasonPercentage * pixelsPerSeason) - 128.0f;
+
+            RenderSystem.setShaderTexture(0, CALENDAR_TAB);
+            DrawableHelper.drawTexture(matrixStack, (int) (x + tabPosition), 1, 0, 0, 5, 11,
+                    5, 11);
+
+            // Get the text to display
+            String text = String.format("%s (%d days remaining)", getSeasonName, daysRemaining - 1);
+
+            // Get the text renderer
+            TextRenderer textRenderer = MinecraftClient.getInstance().textRenderer;
+            // Draw the text
+            int scaledWidth = (int) (textRenderer.getWidth(text) * 0.5f);
+            int textWidth = textRenderer.getWidth(text);
+            //int xs = (int) (client.getWindow().getScaledWidth() / 2.0f - textWidth / 2.0f);
+            int xs = (int) ((client.getWindow().getScaledWidth() / 2.0f) - (scaledWidth / 2));
+            int ys = 20;
+
+            matrixStack.push();
+            matrixStack.scale(0.5f, 0.5f, 1.0f);
+            xs /= 0.5f; // Adjust for scaling
+            textRenderer.drawWithShadow(matrixStack, text, xs, ys, 0xFFFFFF);
+            matrixStack.pop();
+
+
+            //--------------------------------------------------------------------------------------------------------------
+            //------------- INFO DISPLAYS
+
+            String text_season_1 = String.format("Day: %d/%d, Year: %d", dayOfYear + 1, daysPerYear, getYear);
+            text_season_1.formatted(Formatting.BOLD);
+            matrixStack.push();
+            matrixStack.scale(0.5f, 0.5f, 1.0f);
+            textRenderer.drawWithShadow(matrixStack, text_season_1, 10, 100, 0xFFFFFF);
+            matrixStack.pop();
+
+            String text_season_2 = String.format("%s - Day: %d/%d", getSeasonName, dayInSeason + 1, daysPerSeasonMod);
+            text_season_2.formatted(Formatting.BOLD);
+            matrixStack.push();
+            matrixStack.scale(0.5f, 0.5f, 1.0f);
+            textRenderer.drawWithShadow(matrixStack, text_season_2, 10, 110, 0xFFFFFF);
+            matrixStack.pop();
         }
-
-        assert client != null;
-        PlayerEntity player = client.player;
-
-        assert player != null;
-        World world = player.getWorld();
-
-        assert world != null;
-        long time = world.getTimeOfDay();
-
-        RenderSystem.setShader(GameRenderer::getPositionTexProgram);
-        RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
-
-        int day = Seasons.getDay(time);
-        int dayInSeason = Seasons.getDayInSeason(time);
-        int daysPerYear = Seasons.getDaysPerYear();
-        int dayOfYear = Seasons.getDayOfYear(time);
-        int getYear = Seasons.getYear(time);
-        int daysPerSeasonMod = Seasons.getDaysPerSeasonMod();
-        int current_season = Seasons.getCurrentSeason(time);
-        int daysRemaining = Seasons.getRemainingDaysOfCurrentSeason(time);
-        float seasonPercentage = Seasons.getSeasonPercentage(time);
-
-        //--------------------------------------------------------------------------------------------------------------
-        //------------- SEASONS BAR
-        renderSeasonsBar(matrixStack, tickDelta, x);
-
-
-        //--------------------------------------------------------------------------------------------------------------
-        //------------- SEASON IMAGE
-
-        //seasons image
-        if (current_season == 0) {
-            RenderSystem.setShaderTexture(0, SEASON_SUMMER);
-        } else if(current_season == 1) {
-            RenderSystem.setShaderTexture(0, SEASON_AUTUMN);
-        } else if(current_season == 2) {
-            RenderSystem.setShaderTexture(0, SEASON_WINTER);
-        } else if(current_season == 3) {
-            RenderSystem.setShaderTexture(0, SEASON_SPRING);
-        } else {
-            RenderSystem.setShaderTexture(0, SEASON_SUMMER); //just in case.
-        }
-        DrawableHelper.drawTexture(matrixStack,2 ,2 ,0,0,64,64,
-                64,64);
-
-
-
-
-        //--------------------------------------------------------------------------------------------------------------
-        //------------- CALENDAR TAB
-        float pixelsPerSeason = 256.0f / 4; // 4 seasons
-        // Calculate the position of the tab within the current season's pixel range
-        // Lets shift by one. and fix shift. looks nicer on the bar.
-        int current_seasonMOD = current_season + 1;
-        if(current_seasonMOD == 4) { current_seasonMOD = 0; }
-        float tabPosition = (current_seasonMOD * pixelsPerSeason) + (seasonPercentage * pixelsPerSeason) - 128.0f;
-
-        RenderSystem.setShaderTexture(0, CALENDAR_TAB);
-        DrawableHelper.drawTexture(matrixStack, (int) (x + tabPosition),1,0,0,5,11,
-                5,11);
-
-        String[] seasonNames = {"Summer", "Autumn", "Winter", "Spring"};
-        //String getSeasonName = Seasons.getSeasonString(current_season);
-
-        // Get the text to display
-        String text = String.format("%s (%d days remaining)", seasonNames[current_season], daysRemaining - 1);
-
-        // Get the text renderer
-        TextRenderer textRenderer = MinecraftClient.getInstance().textRenderer;
-        // Draw the text
-        int scaledWidth = (int) (textRenderer.getWidth(text) * 0.5f);
-        int textWidth = textRenderer.getWidth(text);
-        //int xs = (int) (client.getWindow().getScaledWidth() / 2.0f - textWidth / 2.0f);
-        int xs = (int) ((client.getWindow().getScaledWidth() / 2.0f) - (scaledWidth / 2));
-        int ys = 20;
-
-        matrixStack.push();
-        matrixStack.scale(0.5f, 0.5f, 1.0f);
-        xs /= 0.5f; // Adjust for scaling
-        textRenderer.drawWithShadow(matrixStack, text, xs, ys, 0xFFFFFF);
-        matrixStack.pop();
-
-
-        //--------------------------------------------------------------------------------------------------------------
-        //------------- INFO DISPLAYS
-
-        String text_season_1 = String.format("Day: %d/%d, Year: %d", dayOfYear + 1, daysPerYear, getYear);
-        text_season_1.formatted(Formatting.BOLD);
-        matrixStack.push();
-        matrixStack.scale(0.5f, 0.5f, 1.0f);
-        textRenderer.drawWithShadow(matrixStack, text_season_1, 10, 100, 0xFFFFFF);
-        matrixStack.pop();
-
-        String text_season_2 = String.format("%s - Day: %d/%d", seasonNames[current_season], dayInSeason + 1, daysPerSeasonMod);
-        text_season_2.formatted(Formatting.BOLD);
-        matrixStack.push();
-        matrixStack.scale(0.5f, 0.5f, 1.0f);
-        textRenderer.drawWithShadow(matrixStack, text_season_2, 10, 110, 0xFFFFFF);
-        matrixStack.pop();
     }
 }
