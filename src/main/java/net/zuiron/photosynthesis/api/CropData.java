@@ -92,9 +92,9 @@ public class CropData {
         //Crops
         cropDataMap.put("block.photosynthesis.oregano_crop",        new CropData(new int[]{7, 0, 0, 4}, new int[]{4, 7, 7, 0}));    //plant spring, harvest summer.
 
-        //Berries and TreeCrops
+        //Berries and TreeCrops - where you want it to grow to max, use 7 not 3 as max, because 7 is identifier as "harvest season"
         cropDataMap.put("block.photosynthesis.appletree_bushcrop",  new CropData(new int[]{2, 7, 0, 1}, new int[]{1, 2, 7, 0}));    //plant spring, harvest autumn.
-        // add more crops here as needed
+        // add more crops here as needed - crops not added here will grow as per vanilla.
     }
 
     public static CropData getCropDataFor(String blockName) {
