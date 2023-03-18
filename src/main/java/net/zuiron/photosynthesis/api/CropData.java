@@ -154,82 +154,82 @@ public class CropData {
         cropDataMap.put("block.photosynthesis.cantaloupe_crop",         new CropData(new int[]{7, 0, 0, 4}, new int[]{4, 7, 7, 0}));    //plant spring, harvest summer.
         cropDataMap.put("block.photosynthesis.flax_crop",               new CropData(new int[]{7, 0, 0, 4}, new int[]{4, 7, 7, 0}));    //plant spring, harvest summer.
         cropDataMap.put("block.photosynthesis.jute_crop",               new CropData(new int[]{4, 7, 1, 1}, new int[]{1, 4, 7, 0}));    //plant spring, harvest autumn.
-        cropDataMap.put("block.photosynthesis.kenaf_crop",              new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.sisal_crop",              new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.amaranth_crop",           new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.bean_crop",               new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.chickpea_crop",           new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.lentil_crop",             new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.quinoa_crop",             new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.peanut_crop",             new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.taro_crop",               new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.tomatillo_crop",          new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.agave_crop",              new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.ginger_crop",             new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.sesame_crop",             new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.mustard_crop",            new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.camellia_sinensis_crop",  new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.nicotiana_rustica_crop",  new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.papaver_somniferum_crop", new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.erythroxylum_coca_crop",  new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
+        cropDataMap.put("block.photosynthesis.kenaf_crop",              new CropData(new int[]{4, 7, 1, 1}, new int[]{1, 4, 7, 0}));    //plant spring, harvest autumn.
+        cropDataMap.put("block.photosynthesis.sisal_crop",              new CropData(new int[]{7, 1, 2, 5}, new int[]{4, 0, 1, 2}));    //plant autumn, harvest summer.
+        cropDataMap.put("block.photosynthesis.amaranth_crop",           new CropData(new int[]{7, 0, 0, 4}, new int[]{4, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.bean_crop",               new CropData(new int[]{7, 0, 0, 4}, new int[]{4, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.chickpea_crop",           new CropData(new int[]{4, 7, 1, 1}, new int[]{1, 4, 7, 0}));    //plant spring, harvest autumn.
+        cropDataMap.put("block.photosynthesis.lentil_crop",             new CropData(new int[]{7, 0, 0, 4}, new int[]{4, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.quinoa_crop",             new CropData(new int[]{4, 7, 1, 1}, new int[]{1, 4, 7, 0}));    //plant spring, harvest autumn.
+        cropDataMap.put("block.photosynthesis.peanut_crop",             new CropData(new int[]{4, 7, 1, 1}, new int[]{1, 4, 7, 0}));    //plant spring, harvest autumn.
+        cropDataMap.put("block.photosynthesis.taro_crop",               new CropData(new int[]{4, 7, 1, 1}, new int[]{1, 4, 7, 0}));    //plant spring, harvest autumn.
+        cropDataMap.put("block.photosynthesis.tomatillo_crop",          new CropData(new int[]{7, 0, 0, 4}, new int[]{4, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.agave_crop",              new CropData(new int[]{7, 1, 2, 5}, new int[]{4, 0, 1, 2}));    //plant autumn, harvest summer.
+        cropDataMap.put("block.photosynthesis.ginger_crop",             new CropData(new int[]{4, 7, 1, 1}, new int[]{1, 4, 7, 0}));    //plant spring, harvest autumn.
+        cropDataMap.put("block.photosynthesis.sesame_crop",             new CropData(new int[]{4, 7, 1, 1}, new int[]{1, 4, 7, 0}));    //plant spring, harvest autumn.
+        cropDataMap.put("block.photosynthesis.mustard_crop",            new CropData(new int[]{7, 0, 0, 4}, new int[]{4, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.camellia_sinensis_crop",  new CropData(new int[]{7, 0, 0, 4}, new int[]{4, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.nicotiana_rustica_crop",  new CropData(new int[]{4, 7, 1, 1}, new int[]{1, 4, 7, 0}));    //plant spring, harvest autumn.
+        cropDataMap.put("block.photosynthesis.papaver_somniferum_crop", new CropData(new int[]{7, 0, 0, 4}, new int[]{4, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.erythroxylum_coca_crop",  new CropData(new int[]{4, 7, 1, 1}, new int[]{1, 4, 7, 0}));    //plant spring, harvest autumn.
 
 
         //Berries - where you want it to grow to max, use 7 not 3 as max, because 7 is identifier as "harvest season"
                                                                         //maxAge Summer, Autumn, Winter, Spring ---- minAge Summer, Autumn, Winter, Spring
-        cropDataMap.put("block.photosynthesis.blueberry_bush",          new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.blackberry_bush",         new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.raspberry_bush",          new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.cloudberry_bush",         new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.wild_strawberry_bush",    new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.candleberry_bush",        new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.cranberry_bush",          new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.huckleberry_bush",        new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.juniperberry_bush",       new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.mulberry_bush",           new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
+        cropDataMap.put("block.photosynthesis.blueberry_bush",          new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.blackberry_bush",         new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.raspberry_bush",          new CropData(new int[]{2, 7, 0, 1}, new int[]{1, 2, 7, 0}));    //plant spring, harvest autumn.
+        cropDataMap.put("block.photosynthesis.cloudberry_bush",         new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.wild_strawberry_bush",    new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.candleberry_bush",        new CropData(new int[]{2, 7, 0, 1}, new int[]{1, 2, 7, 0}));    //plant spring, harvest autumn.
+        cropDataMap.put("block.photosynthesis.cranberry_bush",          new CropData(new int[]{2, 7, 0, 1}, new int[]{1, 2, 7, 0}));    //plant spring, harvest autumn.
+        cropDataMap.put("block.photosynthesis.huckleberry_bush",        new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.juniperberry_bush",       new CropData(new int[]{2, 7, 0, 1}, new int[]{1, 2, 7, 0}));    //plant spring, harvest autumn.
+        cropDataMap.put("block.photosynthesis.mulberry_bush",           new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
 
         //TreeCrops - where you want it to grow to max, use 7 not 3 as max, because 7 is identifier as "harvest season"
                                                                         //maxAge Summer, Autumn, Winter, Spring ---- minAge Summer, Autumn, Winter, Spring
         cropDataMap.put("block.photosynthesis.appletree_bushcrop",      new CropData(new int[]{2, 7, 0, 1}, new int[]{1, 2, 7, 0}));    //plant spring, harvest autumn.
-        cropDataMap.put("block.photosynthesis.bananatree_bushcrop",     new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.orangetree_bushcrop",     new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.peartree_bushcrop",       new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.coconuttree_bushcrop",    new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.avocadotree_bushcrop",    new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.cherrytree_bushcrop",     new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.lemontree_bushcrop",      new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.mangotree_bushcrop",      new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.olivetree_bushcrop",      new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.candlenuttree_bushcrop",  new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.chestnuttree_bushcrop",   new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.nutmegtree_bushcrop",     new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.peachtree_bushcrop",      new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.plumtree_bushcrop",       new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.walnuttree_bushcrop",     new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.hazelnuttree_bushcrop",   new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.pawpawtree_bushcrop",     new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.soursoptree_bushcrop",    new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.almondtree_bushcrop",     new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.apricottree_bushcrop",    new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.cashewtree_bushcrop",     new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.datetree_bushcrop",       new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.dragonfruittree_bushcrop",new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.duriantree_bushcrop",     new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.figtree_bushcrop",        new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.grapefruittree_bushcrop", new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.limetree_bushcrop",       new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.papayatree_bushcrop",     new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.pecantree_bushcrop",      new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.persimmontree_bushcrop",  new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.pistachiotree_bushcrop",  new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.pomegranatetree_bushcrop",new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.starfruittree_bushcrop",  new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.breadfruittree_bushcrop", new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.guavatree_bushcrop",      new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.jackfruittree_bushcrop",  new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.lycheetree_bushcrop",     new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.passionfruittree_bushcrop",new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.rambutantree_bushcrop",   new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.tamarindtree_bushcrop",   new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
+        cropDataMap.put("block.photosynthesis.bananatree_bushcrop",     new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.orangetree_bushcrop",     new CropData(new int[]{2, 7, 0, 1}, new int[]{1, 2, 7, 0}));    //plant spring, harvest autumn.
+        cropDataMap.put("block.photosynthesis.peartree_bushcrop",       new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.coconuttree_bushcrop",    new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.avocadotree_bushcrop",    new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.cherrytree_bushcrop",     new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.lemontree_bushcrop",      new CropData(new int[]{2, 7, 0, 1}, new int[]{1, 2, 7, 0}));    //plant spring, harvest autumn.
+        cropDataMap.put("block.photosynthesis.mangotree_bushcrop",      new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.olivetree_bushcrop",      new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.candlenuttree_bushcrop",  new CropData(new int[]{2, 7, 0, 1}, new int[]{1, 2, 7, 0}));    //plant spring, harvest autumn.
+        cropDataMap.put("block.photosynthesis.chestnuttree_bushcrop",   new CropData(new int[]{2, 7, 0, 1}, new int[]{1, 2, 7, 0}));    //plant spring, harvest autumn.
+        cropDataMap.put("block.photosynthesis.nutmegtree_bushcrop",     new CropData(new int[]{2, 7, 0, 1}, new int[]{1, 2, 7, 0}));    //plant spring, harvest autumn.
+        cropDataMap.put("block.photosynthesis.peachtree_bushcrop",      new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.plumtree_bushcrop",       new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.walnuttree_bushcrop",     new CropData(new int[]{2, 7, 0, 1}, new int[]{1, 2, 7, 0}));    //plant spring, harvest autumn.
+        cropDataMap.put("block.photosynthesis.hazelnuttree_bushcrop",   new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.pawpawtree_bushcrop",     new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.soursoptree_bushcrop",    new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.almondtree_bushcrop",     new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.apricottree_bushcrop",    new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.cashewtree_bushcrop",     new CropData(new int[]{2, 2, 7, 2}, new int[]{2, 2, 2, 0}));    //plant spring, harvest winter.
+        cropDataMap.put("block.photosynthesis.datetree_bushcrop",       new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.dragonfruittree_bushcrop",new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.duriantree_bushcrop",     new CropData(new int[]{2, 7, 0, 1}, new int[]{1, 2, 7, 0}));    //plant spring, harvest autumn.
+        cropDataMap.put("block.photosynthesis.figtree_bushcrop",        new CropData(new int[]{2, 7, 0, 1}, new int[]{1, 2, 7, 0}));    //plant spring, harvest autumn.
+        cropDataMap.put("block.photosynthesis.grapefruittree_bushcrop", new CropData(new int[]{2, 7, 0, 1}, new int[]{1, 2, 7, 0}));    //plant spring, harvest autumn.
+        cropDataMap.put("block.photosynthesis.limetree_bushcrop",       new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.papayatree_bushcrop",     new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.pecantree_bushcrop",      new CropData(new int[]{2, 7, 0, 1}, new int[]{1, 2, 7, 0}));    //plant spring, harvest autumn.
+        cropDataMap.put("block.photosynthesis.persimmontree_bushcrop",  new CropData(new int[]{2, 7, 0, 1}, new int[]{1, 2, 7, 0}));    //plant spring, harvest autumn.
+        cropDataMap.put("block.photosynthesis.pistachiotree_bushcrop",  new CropData(new int[]{2, 7, 0, 1}, new int[]{1, 2, 7, 0}));    //plant spring, harvest autumn.
+        cropDataMap.put("block.photosynthesis.pomegranatetree_bushcrop",new CropData(new int[]{2, 7, 0, 1}, new int[]{1, 2, 7, 0}));    //plant spring, harvest autumn.
+        cropDataMap.put("block.photosynthesis.starfruittree_bushcrop",  new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.breadfruittree_bushcrop", new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.guavatree_bushcrop",      new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.jackfruittree_bushcrop",  new CropData(new int[]{2, 7, 0, 1}, new int[]{1, 2, 7, 0}));    //plant spring, harvest autumn.
+        cropDataMap.put("block.photosynthesis.lycheetree_bushcrop",     new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.passionfruittree_bushcrop",new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.rambutantree_bushcrop",   new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.tamarindtree_bushcrop",   new CropData(new int[]{2, 7, 0, 1}, new int[]{1, 2, 7, 0}));    //plant spring, harvest autumn.
         cropDataMap.put("block.photosynthesis.peppercorntree_bushcrop", new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
         cropDataMap.put("block.photosynthesis.vanillabeantree_bushcrop",new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
         cropDataMap.put("block.photosynthesis.pinenuttree_bushcrop",    new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
