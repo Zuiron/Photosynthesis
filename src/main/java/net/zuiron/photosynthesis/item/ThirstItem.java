@@ -4,6 +4,7 @@ import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsage;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -18,10 +19,10 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class MeadMugItem extends MugItem {
+public class ThirstItem extends Item {
     private final int addThirst;
     private final int addThirstSat;
-    public MeadMugItem(Settings settings, int addThirst, int addThirstSat) {
+    public ThirstItem(Settings settings, int addThirst, int addThirstSat) {
         super(settings);
         this.addThirst = addThirst;
         this.addThirstSat = addThirstSat;
@@ -41,8 +42,8 @@ public class MeadMugItem extends MugItem {
                 Criteria.CONSUME_ITEM.trigger(serverPlayerEntity, stack);
             });
         }
-
-        return stack.isEmpty() ? new ItemStack(ModItems.EMPTY_MUG) : stack;
+        ItemStack recipeRemain = this.getRecipeRemainder(stack);
+        return stack.isEmpty() ? new ItemStack(recipeRemain.getItem()) : stack;
     }
 
     public int getMaxUseTime(ItemStack stack) {
