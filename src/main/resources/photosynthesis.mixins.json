@@ -8,6 +8,7 @@
     "TreeDecoratorTypeInvoker",
     "ModEntityDataSaverMixin",
     "ModCropBlock",
+    "ModSweetBerryBushBlock",
     "ModBlockItem"
   ],
   "client": [
