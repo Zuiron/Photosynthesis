@@ -29,15 +29,6 @@ public class CherrytreeBushCrop extends SweetBerryBushBlock {
         super(settings);
     }
 
-    @Override
-    public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        int i = (Integer)state.get(AGE); //bound default 5, now 10 for slower apple growth.
-        if (i < 3 && random.nextInt(10) == 0 && world.getBaseLightLevel(pos.up(), 0) >= 9) {
-            BlockState blockState = (BlockState)state.with(AGE, i + 1);
-            world.setBlockState(pos, blockState, 2);
-            world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Emitter.of(blockState));
-        }
-    }
 
     @Override
     public ItemStack getPickStack(BlockView world, BlockPos pos, BlockState state) {
