@@ -687,6 +687,8 @@ public class ModItems {
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
     public static final Item GRAPE = registerBerryItem("grape", ModBlocks.GRAPETREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
+    public static final Item RED_GRAPE = registerBerryItem("red_grape", ModBlocks.RED_GRAPETREE_BUSHCROP,
+            new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
     public static final Item KIWI = registerBerryItem("kiwi", ModBlocks.KIWITREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
 

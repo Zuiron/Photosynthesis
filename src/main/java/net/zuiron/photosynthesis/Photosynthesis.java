@@ -131,7 +131,7 @@ public class Photosynthesis implements ModInitializer {
 	public static final TreeDecoratorType<GooseberryTreeDecorator> GOOSEBERRY_TREE_DECORATOR = TreeDecoratorTypeInvoker.callRegister("photosynthesis:gooseberry_tree_decorator", GooseberryTreeDecorator.CODEC);
 
 	public static final TreeDecoratorType<GrapeTreeDecorator> GRAPE_TREE_DECORATOR = TreeDecoratorTypeInvoker.callRegister("photosynthesis:grape_tree_decorator", GrapeTreeDecorator.CODEC);
-
+	public static final TreeDecoratorType<RedGrapeTreeDecorator> RED_GRAPE_TREE_DECORATOR = TreeDecoratorTypeInvoker.callRegister("photosynthesis:red_grape_tree_decorator", RedGrapeTreeDecorator.CODEC);
 
 	public static final TreeDecoratorType<KiwiTreeDecorator> KIWI_TREE_DECORATOR = TreeDecoratorTypeInvoker.callRegister("photosynthesis:kiwi_tree_decorator", KiwiTreeDecorator.CODEC);
 

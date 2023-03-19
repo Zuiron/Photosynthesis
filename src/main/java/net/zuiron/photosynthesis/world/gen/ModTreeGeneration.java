@@ -229,6 +229,10 @@ public class ModTreeGeneration {
 
         BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.5 && context.getBiome().getTemperature() <= 1.5
                         && !BiomeKeys.PLAINS.equals(context.getBiomeKey()),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.RED_GRAPETREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.5 && context.getBiome().getTemperature() <= 1.5
+                        && !BiomeKeys.PLAINS.equals(context.getBiomeKey()),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.KIWITREE_PLACED_KEY);
 
     }

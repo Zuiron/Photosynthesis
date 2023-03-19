@@ -185,6 +185,9 @@ public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> GRAPETREE_CHECKED_KEY = registerKey("grapetree_checked");
     public static final RegistryKey<PlacedFeature> GRAPETREE_PLACED_KEY = registerKey("grapetree_placed");
 
+    public static final RegistryKey<PlacedFeature> RED_GRAPETREE_CHECKED_KEY = registerKey("red_grapetree_checked");
+    public static final RegistryKey<PlacedFeature> RED_GRAPETREE_PLACED_KEY = registerKey("red_grapetree_placed");
+
     public static final RegistryKey<PlacedFeature> KIWITREE_CHECKED_KEY = registerKey("kiwitree_checked");
     public static final RegistryKey<PlacedFeature> KIWITREE_PLACED_KEY = registerKey("kiwitree_placed");
 
@@ -548,6 +551,11 @@ public class ModPlacedFeatures {
         register(context, GRAPETREE_CHECKED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.GRAPETREE_KEY),
                 List.of(PlacedFeatures.wouldSurvive(ModBlocks.GRAPETREE_SAPLING)));
         register(context, GRAPETREE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.GRAPETREE_SPAWN_KEY),
+                VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(count, extraChance, extraCount)));
+
+        register(context, RED_GRAPETREE_CHECKED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.RED_GRAPETREE_KEY),
+                List.of(PlacedFeatures.wouldSurvive(ModBlocks.RED_GRAPETREE_SAPLING)));
+        register(context, RED_GRAPETREE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.RED_GRAPETREE_SPAWN_KEY),
                 VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(count, extraChance, extraCount)));
 
         register(context, KIWITREE_CHECKED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.KIWITREE_KEY),

@@ -1277,6 +1277,23 @@ public class ModBlocks {
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
 
+
+
+    public static final Block RED_GRAPETREE_LOG = registerBlock("red_grapetree_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG).nonOpaque()));
+    public static final Block RED_GRAPETREE_LEAVES = registerBlock("red_grapetree_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block RED_GRAPETREE_SAPLING = registerBlock("red_grapetree_sapling",
+            new SaplingBlock(new RedGrapetreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
+    public static final SweetBerryBushBlock RED_GRAPETREE_BUSHCROP = registerBushBlock("red_grapetree_bushcrop",
+            new RedGrapetreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+                    .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+
+
+
+
     public static final Block KIWITREE_LOG = registerBlock("kiwitree_log",
             new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG).nonOpaque()));
     /*public static final Block KIWITREE_WOOD = registerBlock("kiwitree_wood",
