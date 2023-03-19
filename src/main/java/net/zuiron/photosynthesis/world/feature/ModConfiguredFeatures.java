@@ -854,10 +854,10 @@ public class ModConfiguredFeatures {
 
         register(context, GRAPETREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.GRAPETREE_LOG),
-                new StraightTrunkPlacer(4, 1, 1), //3,4,2
+                new StraightTrunkPlacer(3, 0, 0), //3,4,2
                 BlockStateProvider.of(ModBlocks.GRAPETREE_LEAVES),
-                new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 2),//3
-                new TwoLayersFeatureSize(1, 0, 2)).decorators(Collections.singletonList(GrapeTreeDecorator.INSTANCE)).build());
+                new BushFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(2), 2),//3
+                new TwoLayersFeatureSize(2, 2, 3)).decorators(Collections.singletonList(GrapeTreeDecorator.INSTANCE)).build());
 
         register(context, GRAPETREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.GRAPETREE_CHECKED_KEY),

@@ -2,7 +2,7 @@
 {
   "variants": {
     "axis=x": {
-      "model": "photosynthesis:block/grapetree_log_horizontal",
+      "model": "photosynthesis:block/grapetree_log",
       "x": 90,
       "y": 90
     },
@@ -13,7 +13,7 @@
       { "model": "photosynthesis:block/grapetree_log_1", "x": 180 }
     ],
     "axis=z": {
-      "model": "photosynthesis:block/grapetree_log_horizontal",
+      "model": "photosynthesis:block/grapetree_log",
       "x": 90
     }
   }

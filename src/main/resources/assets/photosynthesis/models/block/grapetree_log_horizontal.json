@@ -1,6 +1,6 @@
 
 {
-  "parent": "minecraft:block/cube_column_horizontal",
+  "parent": "photosynthesis:block/blockmodels/log_small_horizontal",
   "textures": {
     "end": "photosynthesis:block/grapetree_log_top",
     "side": "photosynthesis:block/grapetree_log"

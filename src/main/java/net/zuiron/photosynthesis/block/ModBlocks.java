@@ -1256,7 +1256,7 @@ public class ModBlocks {
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block GRAPETREE_LOG = registerBlock("grapetree_log",
-            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG).nonOpaque()));
     public static final Block GRAPETREE_WOOD = registerBlock("grapetree_wood",
             new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
     public static final Block STRIPPED_GRAPETREE_LOG = registerBlock("stripped_grapetree_log",
