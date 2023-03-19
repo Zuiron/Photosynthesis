@@ -871,10 +871,10 @@ public class ModItems {
             new Item(new FabricItemSettings()));
 
     public static final Item MUG_MEAD = registerItem("mug_mead", //max 10 thirst - 600 tSat - damage is drink usage.
-            new ThirstItem(new FabricItemSettings().maxCount(1).maxDamage(6).recipeRemainder(ModItems.EMPTY_MUG),2, 240));
+            new ThirstItem(new FabricItemSettings().maxCount(1).maxDamage(6).recipeRemainder(ModItems.EMPTY_MUG),3, 240));
 
     public static final Item MUG_WATER = registerItem("mug_water", //max 10 thirst - 600 tSat - damage is drink usage.
-            new ThirstItem(new FabricItemSettings().maxCount(1).maxDamage(6).recipeRemainder(ModItems.EMPTY_MUG),2, 120));
+            new ThirstItem(new FabricItemSettings().maxCount(1).maxDamage(6).recipeRemainder(ModItems.EMPTY_MUG),3, 120));
 
     public static final Item LEATHER_WATER_BLADDER = registerItem("leather_water_bladder",
             new Item(new FabricItemSettings()));
@@ -884,7 +884,7 @@ public class ModItems {
                     .maxCount(1).maxDamage(6).recipeRemainder(ModItems.LEATHER_WATER_BLADDER),1, 0));
 
     public static final Item LEATHER_WATER_BLADDER_CLEAN = registerItem("leather_water_bladder_clean", //max 10 thirst - 600 tSat - damage is drink usage.
-            new ThirstItem(new FabricItemSettings().maxCount(1).maxDamage(6).recipeRemainder(ModItems.LEATHER_WATER_BLADDER),3, 120));
+            new ThirstItem(new FabricItemSettings().maxCount(1).maxDamage(6).recipeRemainder(ModItems.LEATHER_WATER_BLADDER),2, 120));
 
     // END OF ModItems -------------------------------------------------------------------------------------------------
     private static Item registerBerryItem(String name, SweetBerryBushBlock alias, FabricItemSettings settings) {

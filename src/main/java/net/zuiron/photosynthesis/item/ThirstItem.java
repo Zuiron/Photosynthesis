@@ -35,7 +35,7 @@ public class ThirstItem extends Item {
     public boolean isDamageable() {
         return true;
     }
-
+    @SuppressWarnings({})
     private void applyFoodEffects(ItemStack stack, World world, LivingEntity targetEntity) {
         Item item = stack.getItem();
         if (item.isFood()) {
