@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#S",
+    "LL"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:oak_button"
+    },
+    "S": {
+      "item": "photosynthesis:grass_twine_dry"
+    },
+    "L": {
+      "item": "minecraft:leather"
+    }
+  },
+  "result": {
+    "item": "photosynthesis:leather_water_bladder",
+    "count": 1
+  }
+}

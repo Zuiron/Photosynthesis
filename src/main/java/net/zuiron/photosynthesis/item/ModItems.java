@@ -881,7 +881,7 @@ public class ModItems {
 
     public static final Item LEATHER_WATER_BLADDER_DIRTY = registerItem("leather_water_bladder_dirty", //max 10 thirst - 600 tSat - damage is drink usage.
             new ThirstItem(new FabricItemSettings().food(new FoodComponent.Builder().statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 1000, 1), 1.0f).alwaysEdible().build())
-                    .maxCount(1).maxDamage(6).recipeRemainder(ModItems.LEATHER_WATER_BLADDER),1, 0));
+                    .maxCount(1).maxDamage(1).recipeRemainder(ModItems.LEATHER_WATER_BLADDER),1, 0));
 
     public static final Item LEATHER_WATER_BLADDER_CLEAN = registerItem("leather_water_bladder_clean", //max 10 thirst - 600 tSat - damage is drink usage.
             new ThirstItem(new FabricItemSettings().maxCount(1).maxDamage(6).recipeRemainder(ModItems.LEATHER_WATER_BLADDER),2, 120));

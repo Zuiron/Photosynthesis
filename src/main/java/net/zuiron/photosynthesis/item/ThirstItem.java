@@ -21,6 +21,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 
 public class ThirstItem extends Item {
     private final int addThirst;
@@ -35,17 +36,15 @@ public class ThirstItem extends Item {
     public boolean isDamageable() {
         return true;
     }
-    @SuppressWarnings({})
+
     private void applyFoodEffects(ItemStack stack, World world, LivingEntity targetEntity) {
         Item item = stack.getItem();
         if (item.isFood()) {
-            List<Pair<StatusEffectInstance, Float>> list = item.getFoodComponent().getStatusEffects();
-            Iterator var6 = list.iterator();
+            List<Pair<StatusEffectInstance, Float>> list = Objects.requireNonNull(item.getFoodComponent()).getStatusEffects();
 
-            while(var6.hasNext()) {
-                Pair<StatusEffectInstance, Float> pair = (Pair)var6.next();
-                if (!world.isClient && pair.getFirst() != null && world.random.nextFloat() < (Float)pair.getSecond()) {
-                    targetEntity.addStatusEffect(new StatusEffectInstance((StatusEffectInstance)pair.getFirst()));
+            for (Pair<StatusEffectInstance, Float> pair : list) {
+                if (!world.isClient && pair.getFirst() != null && world.random.nextFloat() < pair.getSecond()) {
+                    targetEntity.addStatusEffect(new StatusEffectInstance(pair.getFirst()));
                 }
             }
         }
@@ -55,12 +54,12 @@ public class ThirstItem extends Item {
         if (user instanceof ServerPlayerEntity serverPlayerEntity) {
             ThirstData.addThirst((IEntityDataSaver)serverPlayerEntity, addThirst);
             ThirstData.addThirstSaturation((IEntityDataSaver)serverPlayerEntity, addThirstSat);
+            if (stack.isFood()) {
+                this.applyFoodEffects(stack, world, user);
+            }
             stack.damage(1, user, (e) -> {
                 Criteria.CONSUME_ITEM.trigger(serverPlayerEntity, stack);
             });
-        }
-        if (stack.isFood()) {
-            this.applyFoodEffects(stack, world, user);
         }
         ItemStack recipeRemain = this.getRecipeRemainder(stack);
         return stack.isEmpty() ? new ItemStack(recipeRemain.getItem()) : stack;
