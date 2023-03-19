@@ -476,10 +476,6 @@ public class ModItems {
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
-    /*public static final Item GRAPE = registerItem("grape",
-            new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));*/
-
     public static final Item PARSLEY = registerItem("parsley",
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
@@ -601,134 +597,86 @@ public class ModItems {
 
     public static final Item GREENAPPLE = registerBerryItem("greenapple", ModBlocks.APPLETREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item BANANA = registerBerryItem("banana", ModBlocks.BANANATREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item ORANGE = registerBerryItem("orange", ModBlocks.ORANGETREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item PEAR = registerBerryItem("pear", ModBlocks.PEARTREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item COCONUT = registerBerryItem("coconut", ModBlocks.COCONUTTREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item AVOCADO = registerBerryItem("avocado", ModBlocks.AVOCADOTREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item CHERRY = registerBerryItem("cherry", ModBlocks.CHERRYTREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item LEMON = registerBerryItem("lemon", ModBlocks.LEMONTREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item MANGO = registerBerryItem("mango", ModBlocks.MANGOTREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item OLIVE = registerBerryItem("olive", ModBlocks.OLIVETREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
-
-
-
-
-
     public static final Item CANDLENUT = registerBerryItem("candlenut", ModBlocks.CANDLENUTTREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item CHESTNUT = registerBerryItem("chestnut", ModBlocks.CHESTNUTTREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item NUTMEG = registerBerryItem("nutmeg", ModBlocks.NUTMEGTREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item PEACH = registerBerryItem("peach", ModBlocks.PEACHTREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item PLUM = registerBerryItem("plum", ModBlocks.PLUMTREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item WALNUT = registerBerryItem("walnut", ModBlocks.WALNUTTREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item HAZELNUT = registerBerryItem("hazelnut", ModBlocks.HAZELNUTTREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item PAWPAW = registerBerryItem("pawpaw", ModBlocks.PAWPAWTREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item SOURSOP = registerBerryItem("soursop", ModBlocks.SOURSOPTREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item ALMOND = registerBerryItem("almond", ModBlocks.ALMONDTREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item APRICOT = registerBerryItem("apricot", ModBlocks.APRICOTTREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item CASHEW = registerBerryItem("cashew", ModBlocks.CASHEWTREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item DATE = registerBerryItem("date", ModBlocks.DATETREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item DRAGONFRUIT = registerBerryItem("dragonfruit", ModBlocks.DRAGONFRUITTREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item DURIAN = registerBerryItem("durian", ModBlocks.DURIANTREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item FIG = registerBerryItem("fig", ModBlocks.FIGTREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item GRAPEFRUIT = registerBerryItem("grapefruit", ModBlocks.GRAPEFRUITTREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item LIME = registerBerryItem("lime", ModBlocks.LIMETREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item PAPAYA = registerBerryItem("papaya", ModBlocks.PAPAYATREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item PECAN = registerBerryItem("pecan", ModBlocks.PECANTREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item PERSIMMON = registerBerryItem("persimmon", ModBlocks.PERSIMMONTREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item PISTACHIO = registerBerryItem("pistachio", ModBlocks.PISTACHIOTREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item POMEGRANATE = registerBerryItem("pomegranate", ModBlocks.POMEGRANATETREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item STARFRUIT = registerBerryItem("starfruit", ModBlocks.STARFRUITTREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item BREADFRUIT = registerBerryItem("breadfruit", ModBlocks.BREADFRUITTREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item GUAVA = registerBerryItem("guava", ModBlocks.GUAVATREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item JACKFRUIT = registerBerryItem("jackfruit", ModBlocks.JACKFRUITTREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(3).saturationModifier(0.4f).build()));
-
     public static final Item LYCHEE = registerBerryItem("lychee", ModBlocks.LYCHEETREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item PASSIONFRUIT = registerBerryItem("passionfruit", ModBlocks.PASSIONFRUITTREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item RAMBUTAN = registerBerryItem("rambutan", ModBlocks.RAMBUTANTREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
     public static final Item TAMARIND = registerBerryItem("tamarind", ModBlocks.TAMARINDTREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
-
-
-    //'Peppercorn', 'Vanillabean', 'Pinenut', 'Gooseberry', 'Grape']
     public static final Item PEPPERCORN = registerBerryItem("peppercorn", ModBlocks.PEPPERCORNTREE_BUSHCROP,
             new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
     public static final Item VANILLABEAN = registerBerryItem("vanillabean", ModBlocks.VANILLABEANTREE_BUSHCROP,
@@ -798,7 +746,6 @@ public class ModItems {
     public static final Item SQUASH_SEEDS = registerSeedItem("squash_seeds", ModBlocks.SQUASH_CROP);
     public static final Item ZUCCHINI_SEEDS = registerSeedItem("zucchini_seeds", ModBlocks.ZUCCHINI_CROP);
     public static final Item COFFEA_SEEDS = registerSeedItem("coffea_seeds", ModBlocks.COFFEA_CROP);
-    //public static final Item GRAPE_SEEDS = registerSeedItem("grape_seeds", ModBlocks.GRAPE_CROP);
     public static final Item PARSLEY_SEEDS = registerSeedItem("parsley_seeds", ModBlocks.PARSLEY_CROP);
     public static final Item MINT_SEEDS = registerSeedItem("mint_seeds", ModBlocks.MINT_CROP);
     public static final Item PINEAPPLE_SEEDS = registerSeedItem("pineapple_seeds", ModBlocks.PINEAPPLE_CROP);
@@ -1058,7 +1005,6 @@ public class ModItems {
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, SQUASH );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, ZUCCHINI );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, COFFEA );
-        //addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, GRAPE );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, PARSLEY );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, MINT );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, PINEAPPLE );
@@ -1147,7 +1093,6 @@ public class ModItems {
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, SQUASH_SEEDS );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, ZUCCHINI_SEEDS );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, COFFEA_SEEDS );
-        //addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, GRAPE_SEEDS );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, PARSLEY_SEEDS );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, MINT_SEEDS );
         addToItemGroup(ModItemGroup.PHOTOSYNTHESIS, PINEAPPLE_SEEDS );
