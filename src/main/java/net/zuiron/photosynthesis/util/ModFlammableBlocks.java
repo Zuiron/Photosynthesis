@@ -445,20 +445,20 @@ public class ModFlammableBlocks {
         registry.add(ModBlocks.GOOSEBERRYTREE_LEAVES, 30, 60);
 
         registry.add(ModBlocks.GRAPETREE_LOG, 5, 5);
-        registry.add(ModBlocks.GRAPETREE_WOOD, 5, 5);
-        registry.add(ModBlocks.STRIPPED_GRAPETREE_LOG, 5, 5);
-        registry.add(ModBlocks.STRIPPED_GRAPETREE_WOOD, 5, 5);
+        //registry.add(ModBlocks.GRAPETREE_WOOD, 5, 5);
+        //registry.add(ModBlocks.STRIPPED_GRAPETREE_LOG, 5, 5);
+        //registry.add(ModBlocks.STRIPPED_GRAPETREE_WOOD, 5, 5);
 
-        registry.add(ModBlocks.GRAPETREE_PLANKS, 5, 20);
+        //registry.add(ModBlocks.GRAPETREE_PLANKS, 5, 20);
         registry.add(ModBlocks.GRAPETREE_LEAVES, 30, 60);
 
 
         registry.add(ModBlocks.KIWITREE_LOG, 5, 5);
-        registry.add(ModBlocks.KIWITREE_WOOD, 5, 5);
-        registry.add(ModBlocks.STRIPPED_KIWITREE_LOG, 5, 5);
-        registry.add(ModBlocks.STRIPPED_KIWITREE_WOOD, 5, 5);
+        //registry.add(ModBlocks.KIWITREE_WOOD, 5, 5);
+        //registry.add(ModBlocks.STRIPPED_KIWITREE_LOG, 5, 5);
+        //registry.add(ModBlocks.STRIPPED_KIWITREE_WOOD, 5, 5);
 
-        registry.add(ModBlocks.KIWITREE_PLANKS, 5, 20);
+        //registry.add(ModBlocks.KIWITREE_PLANKS, 5, 20);
         registry.add(ModBlocks.KIWITREE_LEAVES, 30, 60);
 
 

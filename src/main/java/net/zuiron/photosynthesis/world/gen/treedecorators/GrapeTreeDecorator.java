@@ -21,7 +21,7 @@ public class GrapeTreeDecorator extends TreeDecorator {
     public void generate(Generator generator) {
         generator.getLeavesPositions().forEach(pos -> {
             Random random = generator.getRandom();
-            int chance = random.nextInt(4);
+            int chance = random.nextInt(2);
 
             if(generator.isAir(pos.down()) && chance == 0) {
                 generator.replace(pos.offset(Direction.DOWN, 1), ModBlocks.GRAPETREE_BUSHCROP.getDefaultState());

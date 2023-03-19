@@ -1257,7 +1257,7 @@ public class ModBlocks {
 
     public static final Block GRAPETREE_LOG = registerBlock("grapetree_log",
             new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG).nonOpaque()));
-    public static final Block GRAPETREE_WOOD = registerBlock("grapetree_wood",
+    /*public static final Block GRAPETREE_WOOD = registerBlock("grapetree_wood",
             new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
     public static final Block STRIPPED_GRAPETREE_LOG = registerBlock("stripped_grapetree_log",
             new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
@@ -1265,7 +1265,7 @@ public class ModBlocks {
             new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
 
     public static final Block GRAPETREE_PLANKS = registerBlock("grapetree_planks",
-            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));*/
     public static final Block GRAPETREE_LEAVES = registerBlock("grapetree_leaves",
             new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
 
@@ -1279,7 +1279,7 @@ public class ModBlocks {
 
     public static final Block KIWITREE_LOG = registerBlock("kiwitree_log",
             new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG).nonOpaque()));
-    public static final Block KIWITREE_WOOD = registerBlock("kiwitree_wood",
+    /*public static final Block KIWITREE_WOOD = registerBlock("kiwitree_wood",
             new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
     public static final Block STRIPPED_KIWITREE_LOG = registerBlock("stripped_kiwitree_log",
             new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)));
@@ -1287,7 +1287,7 @@ public class ModBlocks {
             new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)));
 
     public static final Block KIWITREE_PLANKS = registerBlock("kiwitree_planks",
-            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));*/
     public static final Block KIWITREE_LEAVES = registerBlock("kiwitree_leaves",
             new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
 
