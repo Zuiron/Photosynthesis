@@ -120,7 +120,11 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.MEASURING_CUP_WATER,
                 ModItems.MEASURING_CUP_MILK,
                 ModItems.MEASURING_CUP_CANOLAOIL,
-                ModItems.MEASURING_CUP_SUNFLOWEROIL
+                ModItems.MEASURING_CUP_SUNFLOWEROIL,
+
+                ModItems.LEATHER_WATER_BLADDER,
+                ModItems.LEATHER_WATER_BLADDER_DIRTY,
+                ModItems.LEATHER_WATER_BLADDER_CLEAN
         };
         for (Item item : simple_items) {
             itemModelGenerator.register(item, Models.GENERATED);

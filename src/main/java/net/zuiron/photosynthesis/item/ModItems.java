@@ -4,6 +4,8 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.CropBlock;
 import net.minecraft.block.SweetBerryBushBlock;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -869,11 +871,20 @@ public class ModItems {
             new Item(new FabricItemSettings()));
 
     public static final Item MUG_MEAD = registerItem("mug_mead", //max 10 thirst - 600 tSat - damage is drink usage.
-            new ThirstItem(new FabricItemSettings().maxCount(1).maxDamage(4).recipeRemainder(ModItems.EMPTY_MUG),2, 240));
+            new ThirstItem(new FabricItemSettings().maxCount(1).maxDamage(6).recipeRemainder(ModItems.EMPTY_MUG),2, 240));
 
     public static final Item MUG_WATER = registerItem("mug_water", //max 10 thirst - 600 tSat - damage is drink usage.
-            new ThirstItem(new FabricItemSettings().maxCount(1).maxDamage(4).recipeRemainder(ModItems.EMPTY_MUG),2, 120));
+            new ThirstItem(new FabricItemSettings().maxCount(1).maxDamage(6).recipeRemainder(ModItems.EMPTY_MUG),2, 120));
 
+    public static final Item LEATHER_WATER_BLADDER = registerItem("leather_water_bladder",
+            new Item(new FabricItemSettings()));
+
+    public static final Item LEATHER_WATER_BLADDER_DIRTY = registerItem("leather_water_bladder_dirty", //max 10 thirst - 600 tSat - damage is drink usage.
+            new ThirstItem(new FabricItemSettings().food(new FoodComponent.Builder().statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 1000, 1), 1.0f).alwaysEdible().build())
+                    .maxCount(1).maxDamage(6).recipeRemainder(ModItems.LEATHER_WATER_BLADDER),1, 0));
+
+    public static final Item LEATHER_WATER_BLADDER_CLEAN = registerItem("leather_water_bladder_clean", //max 10 thirst - 600 tSat - damage is drink usage.
+            new ThirstItem(new FabricItemSettings().maxCount(1).maxDamage(6).recipeRemainder(ModItems.LEATHER_WATER_BLADDER),3, 120));
 
     // END OF ModItems -------------------------------------------------------------------------------------------------
     private static Item registerBerryItem(String name, SweetBerryBushBlock alias, FabricItemSettings settings) {
