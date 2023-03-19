@@ -1,6 +1,6 @@
 
 {
-  "parent": "photosynthesis:block/log_small",
+  "parent": "photosynthesis:block/blockmodels/log_small",
   "textures": {
     "end": "photosynthesis:block/kiwitree_log_top",
     "side": "photosynthesis:block/kiwitree_log"

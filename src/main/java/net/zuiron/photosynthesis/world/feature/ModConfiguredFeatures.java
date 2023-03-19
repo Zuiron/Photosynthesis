@@ -866,10 +866,10 @@ public class ModConfiguredFeatures {
 
         register(context, KIWITREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.KIWITREE_LOG),
-                new StraightTrunkPlacer(4, 1, 1), //3,4,2
+                new StraightTrunkPlacer(3, 0, 0), //3,4,2
                 BlockStateProvider.of(ModBlocks.KIWITREE_LEAVES),
-                new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 2),//3
-                new TwoLayersFeatureSize(1, 0, 2)).decorators(Collections.singletonList(KiwiTreeDecorator.INSTANCE)).build());
+                new BushFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(2), 2),//radius, offset, height
+                new TwoLayersFeatureSize(2, 2, 3)).decorators(Collections.singletonList(KiwiTreeDecorator.INSTANCE)).build());
 
         register(context, KIWITREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.KIWITREE_CHECKED_KEY),
