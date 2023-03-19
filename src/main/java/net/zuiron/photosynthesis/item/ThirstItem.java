@@ -1,8 +1,10 @@
 package net.zuiron.photosynthesis.item;
 
+import com.mojang.datafixers.util.Pair;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -17,6 +19,7 @@ import net.zuiron.photosynthesis.util.IEntityDataSaver;
 import net.zuiron.photosynthesis.util.ThirstData;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Iterator;
 import java.util.List;
 
 public class ThirstItem extends Item {
@@ -33,14 +36,31 @@ public class ThirstItem extends Item {
         return true;
     }
 
+    private void applyFoodEffects(ItemStack stack, World world, LivingEntity targetEntity) {
+        Item item = stack.getItem();
+        if (item.isFood()) {
+            List<Pair<StatusEffectInstance, Float>> list = item.getFoodComponent().getStatusEffects();
+            Iterator var6 = list.iterator();
+
+            while(var6.hasNext()) {
+                Pair<StatusEffectInstance, Float> pair = (Pair)var6.next();
+                if (!world.isClient && pair.getFirst() != null && world.random.nextFloat() < (Float)pair.getSecond()) {
+                    targetEntity.addStatusEffect(new StatusEffectInstance((StatusEffectInstance)pair.getFirst()));
+                }
+            }
+        }
+
+    }
     public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
         if (user instanceof ServerPlayerEntity serverPlayerEntity) {
             ThirstData.addThirst((IEntityDataSaver)serverPlayerEntity, addThirst);
             ThirstData.addThirstSaturation((IEntityDataSaver)serverPlayerEntity, addThirstSat);
-
             stack.damage(1, user, (e) -> {
                 Criteria.CONSUME_ITEM.trigger(serverPlayerEntity, stack);
             });
+        }
+        if (stack.isFood()) {
+            this.applyFoodEffects(stack, world, user);
         }
         ItemStack recipeRemain = this.getRecipeRemainder(stack);
         return stack.isEmpty() ? new ItemStack(recipeRemain.getItem()) : stack;
@@ -67,7 +87,9 @@ public class ThirstItem extends Item {
         for (int i = 0; i < addThirstSat / 60; i++) {
             thirstSat = thirstSat + "\uE002";
         }
-        tooltip.add(Text.literal(thirstSat));
+        if(addThirstSat > 0) {
+            tooltip.add(Text.literal(thirstSat));
+        }
 
         int remain = stack.getMaxDamage() - stack.getDamage();
         tooltip.add(Text.literal("Uses: "+remain+"/"+stack.getMaxDamage()));
