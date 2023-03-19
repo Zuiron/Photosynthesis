@@ -230,12 +230,12 @@ public class CropData {
         cropDataMap.put("block.photosynthesis.passionfruittree_bushcrop",new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
         cropDataMap.put("block.photosynthesis.rambutantree_bushcrop",   new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
         cropDataMap.put("block.photosynthesis.tamarindtree_bushcrop",   new CropData(new int[]{2, 7, 0, 1}, new int[]{1, 2, 7, 0}));    //plant spring, harvest autumn.
-        cropDataMap.put("block.photosynthesis.peppercorntree_bushcrop", new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.vanillabeantree_bushcrop",new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.pinenuttree_bushcrop",    new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.gooseberrytree_bushcrop", new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.grapetree_bushcrop",      new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
-        cropDataMap.put("block.photosynthesis.kiwitree_bushcrop",       new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
+        cropDataMap.put("block.photosynthesis.peppercorntree_bushcrop", new CropData(new int[]{2, 7, 0, 1}, new int[]{1, 2, 7, 0}));    //plant spring, harvest autumn.
+        cropDataMap.put("block.photosynthesis.vanillabeantree_bushcrop",new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.pinenuttree_bushcrop",    new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.gooseberrytree_bushcrop", new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.grapetree_bushcrop",      new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.photosynthesis.kiwitree_bushcrop",       new CropData(new int[]{2, 7, 0, 1}, new int[]{1, 2, 7, 0}));    //plant spring, harvest autumn.
         //cropDataMap.put("block.photosynthesis.",        new CropData(new int[]{0, 0, 0, 0}, new int[]{0, 0, 0, 0}));
         // add more crops here as needed - crops not added here will grow as per vanilla.
     }
