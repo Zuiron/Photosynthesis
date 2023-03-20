@@ -12,6 +12,10 @@ public class ModConfig implements ConfigData {
     //public boolean requireHeatUnder = true;
 
     @ConfigEntry.Gui.Tooltip
+    @Comment("enable or disable thirst")
+    public boolean thirst = true;
+
+    @ConfigEntry.Gui.Tooltip
     @Comment("enable or disable seasons")
     public boolean seasons = true;
     public int daysPerSeason = 20;
