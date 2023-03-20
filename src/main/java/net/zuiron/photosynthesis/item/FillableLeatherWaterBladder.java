@@ -34,7 +34,7 @@ public class FillableLeatherWaterBladder extends Item {
         if (user instanceof ServerPlayerEntity serverPlayerEntity) {
             if(isAroundWaterThem(serverPlayerEntity, world, 2)) {
                 stack.damage(1, user, (e) -> {
-                    Criteria.CONSUME_ITEM.trigger(serverPlayerEntity, stack);
+                    //Criteria.CONSUME_ITEM.trigger(serverPlayerEntity, stack);
                 });
                 return stack.isEmpty() ? new ItemStack(ModItems.LEATHER_WATER_BLADDER_DIRTY) : stack;
             }
