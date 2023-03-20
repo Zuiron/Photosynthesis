@@ -50,6 +50,7 @@ public class FillableLeatherWaterBladder extends Item {
                 ItemStack stackInHand = serverPlayerEntity.getStackInHand(serverPlayerEntity.getActiveHand());
                 if(stackInHand.isEmpty()) {
                     serverPlayerEntity.giveItemStack(new ItemStack(ModItems.LEATHER_WATER_BLADDER_DIRTY));
+                    serverPlayerEntity.getItemCooldownManager().set(this, 20); //fixes weird issue with reactivating immediately.
                     world.playSound(
                             null, // Player - if non-null, will play sound for every nearby player *except* the specified player
                             serverPlayerEntity.getBlockPos(), // The position of where the sound will come from
