@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "photosynthesis:leather_water_bladder_dirty"
+  },
+  "result": "photosynthesis:leather_water_bladder_clean",
+  "experience": 0.1,
+  "cookingtime": 300
+}
