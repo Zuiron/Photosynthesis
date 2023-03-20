@@ -2,18 +2,24 @@ package net.zuiron.photosynthesis.item;
 
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsage;
-import net.minecraft.item.Items;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
-import net.minecraft.util.UseAction;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.Style;
+import net.minecraft.text.Text;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class FillableLeatherWaterBladder extends Item {
     public FillableLeatherWaterBladder(Settings settings) {
@@ -30,16 +36,34 @@ public class FillableLeatherWaterBladder extends Item {
                 .map(world::getBlockState).filter(state -> state.isOf(Blocks.WATER)).toArray().length > 0;
     }
 
-    public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
-        if (user instanceof ServerPlayerEntity serverPlayerEntity) {
-            if(isAroundWaterThem(serverPlayerEntity, world, 2)) {
+    @Override
+    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+        tooltip.add(Text.literal("Right click near water to fill.").formatted(Formatting.ITALIC, Formatting.DARK_GRAY));
+    }
+
+    public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
+        if (user instanceof ServerPlayerEntity serverPlayerEntity && !world.isClient) {
+            if(isAroundWaterThem(serverPlayerEntity, world, 1)) {
                 stack.damage(1, user, (e) -> {
-                    //Criteria.CONSUME_ITEM.trigger(serverPlayerEntity, stack);
+                    Criteria.CONSUME_ITEM.trigger(serverPlayerEntity, stack);
                 });
-                return stack.isEmpty() ? new ItemStack(ModItems.LEATHER_WATER_BLADDER_DIRTY) : stack;
+                ItemStack stackInHand = serverPlayerEntity.getStackInHand(serverPlayerEntity.getActiveHand());
+                if(stackInHand.isEmpty()) {
+                    serverPlayerEntity.giveItemStack(new ItemStack(ModItems.LEATHER_WATER_BLADDER_DIRTY));
+                    world.playSound(
+                            null, // Player - if non-null, will play sound for every nearby player *except* the specified player
+                            serverPlayerEntity.getBlockPos(), // The position of where the sound will come from
+                            SoundEvents.ITEM_BUCKET_FILL, // The sound that will play, in this case, the sound the anvil plays when it lands.
+                            SoundCategory.BLOCKS, // This determines which of the volume sliders affect this sound
+                            1f, //Volume multiplier, 1 is normal, 0.5 is half volume, etc
+                            1f // Pitch multiplier, 1 is normal, 0.5 is half pitch, etc
+                    );
+                }
+            } else {
+                serverPlayerEntity.sendMessage(Text.translatable("message.photosynthesis.no_water_nearby")
+                        .fillStyle(Style.EMPTY.withColor(Formatting.RED)), false);
             }
         }
-        return new ItemStack(Items.AIR);
     }
 
     public int getMaxUseTime(ItemStack stack) {
@@ -47,11 +71,11 @@ public class FillableLeatherWaterBladder extends Item {
     }
 
     public UseAction getUseAction(ItemStack stack) {
-        return UseAction.BOW;
+        return UseAction.NONE;
     }
 
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        if (user instanceof ServerPlayerEntity serverPlayerEntity) {
+        if (user instanceof ServerPlayerEntity serverPlayerEntity && !world.isClient()) {
             return ItemUsage.consumeHeldItem(world, user, hand);
         } else {
             return TypedActionResult.pass(user.getStackInHand(hand));
