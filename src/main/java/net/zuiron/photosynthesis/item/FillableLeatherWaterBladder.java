@@ -40,7 +40,7 @@ public class FillableLeatherWaterBladder extends Item {
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         tooltip.add(Text.literal("Right click near water to fill.").formatted(Formatting.ITALIC, Formatting.YELLOW));
     }
-
+    @Override
     public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
         if (user instanceof ServerPlayerEntity serverPlayerEntity && !world.isClient) {
             if(isAroundWaterThem(serverPlayerEntity, world, 1)) {
@@ -50,7 +50,6 @@ public class FillableLeatherWaterBladder extends Item {
                 ItemStack stackInHand = serverPlayerEntity.getStackInHand(serverPlayerEntity.getActiveHand());
                 if(stackInHand.isEmpty()) {
                     serverPlayerEntity.giveItemStack(new ItemStack(ModItems.LEATHER_WATER_BLADDER_DIRTY));
-                    serverPlayerEntity.getItemCooldownManager().set(this, 20); //fixes weird issue with reactivating immediately.
                     world.playSound(
                             null, // Player - if non-null, will play sound for every nearby player *except* the specified player
                             serverPlayerEntity.getBlockPos(), // The position of where the sound will come from
@@ -66,17 +65,18 @@ public class FillableLeatherWaterBladder extends Item {
             }
         }
     }
-
+    @Override
     public int getMaxUseTime(ItemStack stack) {
         return 32;
     }
-
+    @Override
     public UseAction getUseAction(ItemStack stack) {
         return UseAction.NONE;
     }
-
+    @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         if (user instanceof ServerPlayerEntity serverPlayerEntity && !world.isClient()) {
+            serverPlayerEntity.getItemCooldownManager().set(this, 40); //fixes weird issue with reactivating immediately.
             return ItemUsage.consumeHeldItem(world, user, hand);
         } else {
             return TypedActionResult.pass(user.getStackInHand(hand));
