@@ -385,9 +385,11 @@ public class PhotosynthesisClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.JUNIPERBERRY_BUSH);
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.MULBERRY_BUSH);
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.LATEX_EXTRACTOR);
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.MAPLE_EXTRACTOR);
 
         HandledScreens.register(ModScreenHandlers.CUTTING_BOARD_SCREEN_HANDLER, CuttingBoardScreen::new);
         HandledScreens.register(ModScreenHandlers.LATEX_EXTRACTOR_SCREEN_HANDLER, LatexExtractorScreen::new);
+        HandledScreens.register(ModScreenHandlers.MAPLE_EXTRACTOR_SCREEN_HANDLER, MapleExtractorScreen::new);
         HandledScreens.register(ModScreenHandlers.SKILLET_SCREEN_HANDLER, SkilletScreen::new);
         HandledScreens.register(ModScreenHandlers.COOKINGPOT_SCREEN_HANDLER, CookingPotScreen::new);
         HandledScreens.register(ModScreenHandlers.KEG_SCREEN_HANDLER, KegScreen::new);
@@ -406,6 +408,17 @@ public class PhotosynthesisClient implements ClientModInitializer {
 
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),
                 ModFluids.STILL_LATEX, ModFluids.FLOWING_LATEX);
+
+        //MAPLE
+        FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_MAPLE, ModFluids.FLOWING_MAPLE,
+                new SimpleFluidRenderHandler(
+                        new Identifier("minecraft:block/water_still"), //minecraft:block/water_still
+                        new Identifier("minecraft:block/water_flow"), //minecraft:block/water_flow
+                        0xFFffe1d1
+                )); //0xA1E038D0
+
+        BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),
+                ModFluids.STILL_MAPLE, ModFluids.FLOWING_MAPLE);
 
         //CANOLAOIL
         FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_CANOLAOIL, ModFluids.FLOWING_CANOLAOIL,

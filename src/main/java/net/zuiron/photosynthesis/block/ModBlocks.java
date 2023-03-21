@@ -70,6 +70,10 @@ public class ModBlocks {
             new LatexExtractorBlock(FabricBlockSettings.of(Material.WOOD)
                     .strength(4f).requiresTool().nonOpaque()));
 
+    public static final Block MAPLE_EXTRACTOR = registerBlock("maple_extractor",
+            new MapleExtractorBlock(FabricBlockSettings.of(Material.WOOD)
+                    .strength(4f).requiresTool().nonOpaque()));
+
 
     // CROP BLOCKS -----------------------------------------------------------------------------------------------------
     public static final CropBlock TOMATO_CROP = registerCropBlockSimple("tomato_crop");

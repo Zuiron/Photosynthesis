@@ -22,6 +22,11 @@ public class ModFluids {
     public static Block LATEX_BLOCK;
     public static Item LATEX_BUCKET;
 
+    public static FlowableFluid STILL_MAPLE;
+    public static FlowableFluid FLOWING_MAPLE;
+    public static Block MAPLE_BLOCK;
+    public static Item MAPLE_BUCKET;
+
     public static FlowableFluid STILL_CANOLAOIL;
     public static FlowableFluid FLOWING_CANOLAOIL;
     public static Block CANOLAOIL_BLOCK;
@@ -48,6 +53,17 @@ public class ModFluids {
         LATEX_BUCKET = Registry.register(Registries.ITEM, new Identifier(Photosynthesis.MOD_ID, "latex_bucket"),
                 new BucketItem(ModFluids.STILL_LATEX, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1)));
         ItemGroupEvents.modifyEntriesEvent(ModItemGroup.PHOTOSYNTHESIS).register(entries -> entries.add(LATEX_BUCKET));
+
+        //MAPLE SAP
+        STILL_MAPLE = Registry.register(Registries.FLUID,
+                new Identifier(Photosynthesis.MOD_ID, "maple"), new MapleFluid.Still());
+        FLOWING_MAPLE = Registry.register(Registries.FLUID,
+                new Identifier(Photosynthesis.MOD_ID, "flowing_maple"), new MapleFluid.Flowing());
+        MAPLE_BLOCK = Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, "maple_block"),
+                new FluidBlock(ModFluids.STILL_MAPLE, FabricBlockSettings.copyOf(Blocks.WATER)){ });
+        MAPLE_BUCKET = Registry.register(Registries.ITEM, new Identifier(Photosynthesis.MOD_ID, "maple_bucket"),
+                new BucketItem(ModFluids.STILL_MAPLE, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1)));
+        ItemGroupEvents.modifyEntriesEvent(ModItemGroup.PHOTOSYNTHESIS).register(entries -> entries.add(MAPLE_BUCKET));
 
         //CANOLA OIL
         STILL_CANOLAOIL = Registry.register(Registries.FLUID,

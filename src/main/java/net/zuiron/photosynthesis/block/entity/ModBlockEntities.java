@@ -12,7 +12,7 @@ import net.zuiron.photosynthesis.block.ModBlocks;
 public class ModBlockEntities {
     public static BlockEntityType<CuttingBoardBlockEntity> CUTTING_BOARD;
     public static BlockEntityType<LatexExtractorBlockEntity> LATEX_EXTRACTOR;
-
+    public static BlockEntityType<MapleExtractorBlockEntity> MAPLE_EXTRACTOR;
     public static BlockEntityType<SkilletBlockEntity> SKILLET;
     public static BlockEntityType<CookingPotBlockEntity> COOKINGPOT;
     public static BlockEntityType<KegBlockEntity> KEG;
@@ -27,6 +27,11 @@ public class ModBlockEntities {
                 new Identifier(Photosynthesis.MOD_ID, "latex_extractor"),
                 FabricBlockEntityTypeBuilder.create(LatexExtractorBlockEntity::new,
                         ModBlocks.LATEX_EXTRACTOR).build(null));
+
+        MAPLE_EXTRACTOR = Registry.register(Registries.BLOCK_ENTITY_TYPE,
+                new Identifier(Photosynthesis.MOD_ID, "maple_extractor"),
+                FabricBlockEntityTypeBuilder.create(MapleExtractorBlockEntity::new,
+                        ModBlocks.MAPLE_EXTRACTOR).build(null));
 
         SKILLET = Registry.register(Registries.BLOCK_ENTITY_TYPE,
                 new Identifier(Photosynthesis.MOD_ID, "skillet"),
@@ -44,5 +49,6 @@ public class ModBlockEntities {
                         ModBlocks.KEG).build(null));
 
         FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidStorage, LATEX_EXTRACTOR);
+        FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidStorage, MAPLE_EXTRACTOR);
     }
 }

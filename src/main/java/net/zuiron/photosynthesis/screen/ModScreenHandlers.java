@@ -14,6 +14,9 @@ public class ModScreenHandlers {
     public static ScreenHandlerType<LatexExtractorScreenHandler> LATEX_EXTRACTOR_SCREEN_HANDLER =
             new ExtendedScreenHandlerType<>(LatexExtractorScreenHandler::new);
 
+    public static ScreenHandlerType<MapleExtractorScreenHandler> MAPLE_EXTRACTOR_SCREEN_HANDLER =
+            new ExtendedScreenHandlerType<>(MapleExtractorScreenHandler::new);
+
     public static ScreenHandlerType<SkilletScreenHandler> SKILLET_SCREEN_HANDLER =
             new ExtendedScreenHandlerType<>(SkilletScreenHandler::new);
 
@@ -28,6 +31,8 @@ public class ModScreenHandlers {
                 CUTTING_BOARD_SCREEN_HANDLER);
         Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "latex_extractor"),
                 LATEX_EXTRACTOR_SCREEN_HANDLER);
+        Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "maple_extractor"),
+                MAPLE_EXTRACTOR_SCREEN_HANDLER);
         Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "skillet"),
                 SKILLET_SCREEN_HANDLER);
         Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "cookingpot"),
