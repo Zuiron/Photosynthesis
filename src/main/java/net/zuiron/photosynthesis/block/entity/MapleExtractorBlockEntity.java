@@ -228,7 +228,7 @@ public class MapleExtractorBlockEntity extends BlockEntity implements ExtendedSc
         BlockPos relativeSouthUp = blockPos.offset(localDir, -1).up();
         BlockState relSouthStateUp = world.getBlockState(relativeSouthUp);
 
-        if (relSouthState.getBlock() == ModBlocks.MAPLETREE_LOG && relSouthStateUp.getBlock() == ModBlocks.STRIPPED_MAPLETREE_LOG) {
+        if (relSouthState.getBlock() == ModBlocks.MAPLETREE_LOG) {
             return true;
         } else {
             //drop contents
