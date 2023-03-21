@@ -414,7 +414,7 @@ public class PhotosynthesisClient implements ClientModInitializer {
                 new SimpleFluidRenderHandler(
                         new Identifier("minecraft:block/water_still"), //minecraft:block/water_still
                         new Identifier("minecraft:block/water_flow"), //minecraft:block/water_flow
-                        0xFFffe1d1
+                        0xa1ffe1d1
                 )); //0xA1E038D0
 
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),
