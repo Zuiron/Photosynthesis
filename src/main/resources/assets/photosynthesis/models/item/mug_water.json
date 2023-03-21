@@ -1,6 +1,6 @@
 {
     "parent": "photosynthesis:block/blockmodels/mug",
     "textures": {
-        "1": "minecraft:block/water_still"
+        "1": "photosynthesis:block/bluewater_still"
       }
 }
