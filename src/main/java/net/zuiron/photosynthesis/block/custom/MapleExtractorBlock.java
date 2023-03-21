@@ -50,7 +50,7 @@ public class MapleExtractorBlock extends BlockWithEntity implements BlockEntityP
             BlockPos relativeSouthUp = pos.offset(state.get(FACING), -1).up();
             BlockState relSouthStateUp = world.getBlockState(relativeSouthUp);
 
-            if (relSouthState.getBlock() == ModBlocks.MAPLETREE_LOG) {
+            if (relSouthState.getBlock() == ModBlocks.MAPLETREE_LOG && relSouthStateUp.getBlock() == ModBlocks.MAPLETREE_LOG) {
                 return true;
             }
         }
