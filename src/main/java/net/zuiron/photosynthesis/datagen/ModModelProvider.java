@@ -114,6 +114,7 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.MULBERRIES,
 
                 ModItems.BOILED_EGG,
+                ModItems.WHEAT_DOUGH,
 
                 ModItems.CUT_KIWI,
                 ModItems.MEASURING_CUP,

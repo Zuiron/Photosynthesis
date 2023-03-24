@@ -1,0 +1,26 @@
+{
+  "type": "photosynthesis:mixingbowl",
+  "ingredients": [
+    {
+      "item": "photosynthesis:measuring_cup_water",
+      "count": 1
+    },
+    {
+      "item": "minecraft:wheat",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:raw_salt",
+      "count": 1
+    },
+    {
+      "item": "minecraft:egg",
+      "count": 1
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:wheat_dough",
+    "count": 1
+  },
+  "cookingtime": 400
+}

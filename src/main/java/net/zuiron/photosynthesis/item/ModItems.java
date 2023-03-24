@@ -867,6 +867,9 @@ public class ModItems {
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
 
+    public static final Item WHEAT_DOUGH = registerItem("wheat_dough",
+            new Item(new FabricItemSettings()));
+
     public static final Item EMPTY_MUG = registerItem("mug",
             new Item(new FabricItemSettings()));
 

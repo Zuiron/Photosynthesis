@@ -54,6 +54,10 @@ public class ModBlocks {
             new SkilletBlock(FabricBlockSettings.of(Material.METAL)
                     .strength(4f).requiresTool().nonOpaque()));
 
+    public static final Block MIXING_BOWL = registerBlock("mixing_bowl",
+            new MixingBowlBlock(FabricBlockSettings.of(Material.WOOD)
+                    .strength(4f).requiresTool().nonOpaque()));
+
     public static final Block KEG = registerBlock("keg",
             new KegBlock(FabricBlockSettings.of(Material.WOOD)
                     .strength(4f).requiresTool().nonOpaque()));

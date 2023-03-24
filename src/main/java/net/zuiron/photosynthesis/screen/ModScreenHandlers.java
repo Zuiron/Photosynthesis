@@ -20,6 +20,9 @@ public class ModScreenHandlers {
     public static ScreenHandlerType<SkilletScreenHandler> SKILLET_SCREEN_HANDLER =
             new ExtendedScreenHandlerType<>(SkilletScreenHandler::new);
 
+    public static ScreenHandlerType<MixingBowlScreenHandler> MIXINGBOWL_SCREEN_HANDLER =
+            new ExtendedScreenHandlerType<>(MixingBowlScreenHandler::new);
+
     public static ScreenHandlerType<CookingPotScreenHandler> COOKINGPOT_SCREEN_HANDLER =
             new ExtendedScreenHandlerType<>(CookingPotScreenHandler::new);
 
@@ -35,6 +38,8 @@ public class ModScreenHandlers {
                 MAPLE_EXTRACTOR_SCREEN_HANDLER);
         Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "skillet"),
                 SKILLET_SCREEN_HANDLER);
+        Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "mixingbowl"),
+                MIXINGBOWL_SCREEN_HANDLER);
         Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "cookingpot"),
                 COOKINGPOT_SCREEN_HANDLER);
         Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "keg"),

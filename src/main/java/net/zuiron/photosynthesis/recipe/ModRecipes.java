@@ -22,6 +22,12 @@ public class ModRecipes {
         Registry.register(Registries.RECIPE_TYPE, new Identifier(Photosynthesis.MOD_ID, SkilletRecipe.Type.ID),
                 SkilletRecipe.Type.INSTANCE);
 
+        //MIXING BOWL
+        Registry.register(Registries.RECIPE_SERIALIZER, new Identifier(Photosynthesis.MOD_ID, MixingBowlRecipe.Serializer.ID),
+                MixingBowlRecipe.Serializer.INSTANCE);
+        Registry.register(Registries.RECIPE_TYPE, new Identifier(Photosynthesis.MOD_ID, MixingBowlRecipe.Type.ID),
+                MixingBowlRecipe.Type.INSTANCE);
+
 
         //COOKING POT
         Registry.register(Registries.RECIPE_SERIALIZER, new Identifier(Photosynthesis.MOD_ID, CookingPotRecipe.Serializer.ID),

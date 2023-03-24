@@ -14,6 +14,7 @@ public class ModBlockEntities {
     public static BlockEntityType<LatexExtractorBlockEntity> LATEX_EXTRACTOR;
     public static BlockEntityType<MapleExtractorBlockEntity> MAPLE_EXTRACTOR;
     public static BlockEntityType<SkilletBlockEntity> SKILLET;
+    public static BlockEntityType<MixingBowlBlockEntity> MIXINGBOWL;
     public static BlockEntityType<CookingPotBlockEntity> COOKINGPOT;
     public static BlockEntityType<KegBlockEntity> KEG;
 
@@ -37,6 +38,11 @@ public class ModBlockEntities {
                 new Identifier(Photosynthesis.MOD_ID, "skillet"),
                 FabricBlockEntityTypeBuilder.create(SkilletBlockEntity::new,
                         ModBlocks.SKILLET).build(null));
+
+        MIXINGBOWL = Registry.register(Registries.BLOCK_ENTITY_TYPE,
+                new Identifier(Photosynthesis.MOD_ID, "mixingbowl"),
+                FabricBlockEntityTypeBuilder.create(MixingBowlBlockEntity::new,
+                        ModBlocks.MIXING_BOWL).build(null));
 
         COOKINGPOT = Registry.register(Registries.BLOCK_ENTITY_TYPE,
                 new Identifier(Photosynthesis.MOD_ID, "cookingpot"),

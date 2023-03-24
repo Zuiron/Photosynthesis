@@ -140,6 +140,9 @@ public class Photosynthesis implements ModInitializer {
 	public static final Identifier SKILLET_SOUND_ID = new Identifier("photosynthesis:skillet");
 	public static SoundEvent SKILLET_SOUND_EVENT = SoundEvent.of(SKILLET_SOUND_ID);
 
+	public static final Identifier MIXINGBOWL_SOUND_ID = new Identifier("photosynthesis:mixingbowl");
+	public static SoundEvent MIXINGBOWL_SOUND_EVENT = SoundEvent.of(MIXINGBOWL_SOUND_ID);
+
 	public static final Identifier COOKINGPOT_SOUND_ID = new Identifier("photosynthesis:cookingpot");
 	public static SoundEvent COOKINGPOT_SOUND_EVENT = SoundEvent.of(COOKINGPOT_SOUND_ID);
 
@@ -155,6 +158,7 @@ public class Photosynthesis implements ModInitializer {
 		AutoConfig.register(ModConfig.class, JanksonConfigSerializer::new);
 
 		Registry.register(Registries.SOUND_EVENT, Photosynthesis.SKILLET_SOUND_ID, SKILLET_SOUND_EVENT);
+		Registry.register(Registries.SOUND_EVENT, Photosynthesis.MIXINGBOWL_SOUND_ID, MIXINGBOWL_SOUND_EVENT);
 		Registry.register(Registries.SOUND_EVENT, Photosynthesis.COOKINGPOT_SOUND_ID, COOKINGPOT_SOUND_EVENT);
 		Registry.register(Registries.SOUND_EVENT, Photosynthesis.KEG_SOUND_ID, KEG_SOUND_EVENT);
 
