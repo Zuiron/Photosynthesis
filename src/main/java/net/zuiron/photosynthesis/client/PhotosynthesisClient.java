@@ -388,6 +388,7 @@ public class PhotosynthesisClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.MAPLE_EXTRACTOR);
 
         HandledScreens.register(ModScreenHandlers.CUTTING_BOARD_SCREEN_HANDLER, CuttingBoardScreen::new);
+        HandledScreens.register(ModScreenHandlers.MORTAR_SCREEN_HANDLER, MortarScreen::new);
         HandledScreens.register(ModScreenHandlers.LATEX_EXTRACTOR_SCREEN_HANDLER, LatexExtractorScreen::new);
         HandledScreens.register(ModScreenHandlers.MAPLE_EXTRACTOR_SCREEN_HANDLER, MapleExtractorScreen::new);
         HandledScreens.register(ModScreenHandlers.SKILLET_SCREEN_HANDLER, SkilletScreen::new);

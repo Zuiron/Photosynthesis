@@ -15,6 +15,12 @@ public class ModRecipes {
         Registry.register(Registries.RECIPE_TYPE, new Identifier(Photosynthesis.MOD_ID, CuttingBoardRecipe.Type.ID),
                 CuttingBoardRecipe.Type.INSTANCE);
 
+        //Mortar
+        Registry.register(Registries.RECIPE_SERIALIZER, new Identifier(Photosynthesis.MOD_ID, MortarRecipe.Serializer.ID),
+                MortarRecipe.Serializer.INSTANCE);
+        Registry.register(Registries.RECIPE_TYPE, new Identifier(Photosynthesis.MOD_ID, MortarRecipe.Type.ID),
+                MortarRecipe.Type.INSTANCE);
+
 
         //SKILLET
         Registry.register(Registries.RECIPE_SERIALIZER, new Identifier(Photosynthesis.MOD_ID, SkilletRecipe.Serializer.ID),

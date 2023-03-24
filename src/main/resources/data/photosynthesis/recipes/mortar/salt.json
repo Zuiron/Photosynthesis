@@ -1,0 +1,16 @@
+{
+  "type": "photosynthesis:mortar",
+  "ingredients": [
+    {
+      "item": "photosynthesis:pestle"
+    },
+    {
+      "item": "photosynthesis:raw_salt"
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:salt",
+    "count": 2
+  },
+  "cookingtime": 30
+}

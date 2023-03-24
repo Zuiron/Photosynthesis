@@ -11,6 +11,7 @@ import net.zuiron.photosynthesis.block.ModBlocks;
 
 public class ModBlockEntities {
     public static BlockEntityType<CuttingBoardBlockEntity> CUTTING_BOARD;
+    public static BlockEntityType<MortarBlockEntity> MORTAR;
     public static BlockEntityType<LatexExtractorBlockEntity> LATEX_EXTRACTOR;
     public static BlockEntityType<MapleExtractorBlockEntity> MAPLE_EXTRACTOR;
     public static BlockEntityType<SkilletBlockEntity> SKILLET;
@@ -23,6 +24,11 @@ public class ModBlockEntities {
                 new Identifier(Photosynthesis.MOD_ID, "cutting_board"),
                 FabricBlockEntityTypeBuilder.create(CuttingBoardBlockEntity::new,
                         ModBlocks.CUTTINGBOARD).build(null));
+
+        MORTAR = Registry.register(Registries.BLOCK_ENTITY_TYPE,
+                new Identifier(Photosynthesis.MOD_ID, "mortar"),
+                FabricBlockEntityTypeBuilder.create(MortarBlockEntity::new,
+                        ModBlocks.MORTAR).build(null));
 
         LATEX_EXTRACTOR = Registry.register(Registries.BLOCK_ENTITY_TYPE,
                 new Identifier(Photosynthesis.MOD_ID, "latex_extractor"),

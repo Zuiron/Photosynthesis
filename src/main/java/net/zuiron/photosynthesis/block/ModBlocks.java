@@ -70,6 +70,10 @@ public class ModBlocks {
             new CuttingBoardBlock(FabricBlockSettings.of(Material.WOOD)
                     .strength(4f).requiresTool().nonOpaque()));
 
+    public static final Block MORTAR = registerBlock("mortar",
+            new MortarBlock(FabricBlockSettings.of(Material.STONE)
+                    .strength(4f).requiresTool().nonOpaque()));
+
     public static final Block LATEX_EXTRACTOR = registerBlock("latex_extractor",
             new LatexExtractorBlock(FabricBlockSettings.of(Material.WOOD)
                     .strength(4f).requiresTool().nonOpaque()));
