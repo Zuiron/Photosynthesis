@@ -28,6 +28,8 @@ import net.zuiron.photosynthesis.integration.rei.cutting_board.CuttingBoardRecip
 import net.zuiron.photosynthesis.integration.rei.cutting_board.CuttingBoardRecipeDisplay;
 import net.zuiron.photosynthesis.integration.rei.keg.KegRecipeCategory;
 import net.zuiron.photosynthesis.integration.rei.keg.KegRecipeDisplay;
+import net.zuiron.photosynthesis.integration.rei.mixingbowl.MixingBowlRecipeCategory;
+import net.zuiron.photosynthesis.integration.rei.mixingbowl.MixingBowlRecipeDisplay;
 import net.zuiron.photosynthesis.integration.rei.mortar.MortarRecipeCategory;
 import net.zuiron.photosynthesis.integration.rei.mortar.MortarRecipeDisplay;
 import net.zuiron.photosynthesis.integration.rei.skillet.SkilletRecipeCategory;
@@ -42,6 +44,7 @@ import org.jetbrains.annotations.Nullable;
 public class PhotosynthesisREI implements REIClientPlugin {
 
     public static final CategoryIdentifier<SkilletRecipeDisplay> SKILLET = CategoryIdentifier.of(Photosynthesis.MOD_ID, "skillet");
+    public static final CategoryIdentifier<MixingBowlRecipeDisplay> MIXINGBOWL = CategoryIdentifier.of(Photosynthesis.MOD_ID, "mixingbowl");
     public static final CategoryIdentifier<CuttingBoardRecipeDisplay> CUTTINGBOARD = CategoryIdentifier.of(Photosynthesis.MOD_ID, "cuttingboard");
     public static final CategoryIdentifier<MortarRecipeDisplay> MORTAR = CategoryIdentifier.of(Photosynthesis.MOD_ID, "mortar");
     public static final CategoryIdentifier<CookingPotRecipeDisplay> COOKINGPOT = CategoryIdentifier.of(Photosynthesis.MOD_ID, "cookingpot");
@@ -60,6 +63,10 @@ public class PhotosynthesisREI implements REIClientPlugin {
         registry.add(
                 new SkilletRecipeCategory());
         registry.addWorkstations(SKILLET, EntryStacks.of(ModBlocks.SKILLET));
+
+        registry.add(
+                new MixingBowlRecipeCategory());
+        registry.addWorkstations(MIXINGBOWL, EntryStacks.of(ModBlocks.MIXING_BOWL));
 
         registry.add(
                 new CuttingBoardRecipeCategory());
@@ -82,6 +89,8 @@ public class PhotosynthesisREI implements REIClientPlugin {
     public void registerDisplays(DisplayRegistry registry) {
         registry.registerRecipeFiller(SkilletRecipe.class, SkilletRecipe.Type.INSTANCE, SkilletRecipeDisplay::new);
 
+        registry.registerRecipeFiller(MixingBowlRecipe.class, MixingBowlRecipe.Type.INSTANCE, MixingBowlRecipeDisplay::new);
+
         registry.registerRecipeFiller(CuttingBoardRecipe.class, CuttingBoardRecipe.Type.INSTANCE, CuttingBoardRecipeDisplay::new);
 
         registry.registerRecipeFiller(MortarRecipe.class, MortarRecipe.Type.INSTANCE, MortarRecipeDisplay::new);
@@ -94,6 +103,8 @@ public class PhotosynthesisREI implements REIClientPlugin {
     @Override
     public void registerScreens(ScreenRegistry registry) {
         registry.registerContainerClickArea(new Rectangle(88, 44, 26, 17), SkilletScreen.class, SKILLET);
+
+        registry.registerContainerClickArea(new Rectangle(88, 44, 26, 17), MixingBowlScreen.class, MIXINGBOWL);
 
         registry.registerContainerClickArea(new Rectangle(99, 25, 24, 17), CuttingBoardScreen.class, CUTTINGBOARD);
 
