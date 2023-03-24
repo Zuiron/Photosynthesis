@@ -28,16 +28,12 @@ import net.zuiron.photosynthesis.integration.rei.cutting_board.CuttingBoardRecip
 import net.zuiron.photosynthesis.integration.rei.cutting_board.CuttingBoardRecipeDisplay;
 import net.zuiron.photosynthesis.integration.rei.keg.KegRecipeCategory;
 import net.zuiron.photosynthesis.integration.rei.keg.KegRecipeDisplay;
+import net.zuiron.photosynthesis.integration.rei.mortar.MortarRecipeCategory;
+import net.zuiron.photosynthesis.integration.rei.mortar.MortarRecipeDisplay;
 import net.zuiron.photosynthesis.integration.rei.skillet.SkilletRecipeCategory;
 import net.zuiron.photosynthesis.integration.rei.skillet.SkilletRecipeDisplay;
-import net.zuiron.photosynthesis.recipe.CookingPotRecipe;
-import net.zuiron.photosynthesis.recipe.CuttingBoardRecipe;
-import net.zuiron.photosynthesis.recipe.KegRecipe;
-import net.zuiron.photosynthesis.recipe.SkilletRecipe;
-import net.zuiron.photosynthesis.screen.CookingPotScreen;
-import net.zuiron.photosynthesis.screen.CuttingBoardScreen;
-import net.zuiron.photosynthesis.screen.KegScreen;
-import net.zuiron.photosynthesis.screen.SkilletScreen;
+import net.zuiron.photosynthesis.recipe.*;
+import net.zuiron.photosynthesis.screen.*;
 import net.zuiron.photosynthesis.screen.renderer.FluidStackRenderer;
 import net.zuiron.photosynthesis.util.FluidStack;
 import org.jetbrains.annotations.Nullable;
@@ -47,6 +43,7 @@ public class PhotosynthesisREI implements REIClientPlugin {
 
     public static final CategoryIdentifier<SkilletRecipeDisplay> SKILLET = CategoryIdentifier.of(Photosynthesis.MOD_ID, "skillet");
     public static final CategoryIdentifier<CuttingBoardRecipeDisplay> CUTTINGBOARD = CategoryIdentifier.of(Photosynthesis.MOD_ID, "cuttingboard");
+    public static final CategoryIdentifier<MortarRecipeDisplay> MORTAR = CategoryIdentifier.of(Photosynthesis.MOD_ID, "mortar");
     public static final CategoryIdentifier<CookingPotRecipeDisplay> COOKINGPOT = CategoryIdentifier.of(Photosynthesis.MOD_ID, "cookingpot");
     public static final CategoryIdentifier<KegRecipeDisplay> KEG = CategoryIdentifier.of(Photosynthesis.MOD_ID, "keg");
 
@@ -69,6 +66,10 @@ public class PhotosynthesisREI implements REIClientPlugin {
         registry.addWorkstations(CUTTINGBOARD, EntryStacks.of(ModBlocks.CUTTINGBOARD));
 
         registry.add(
+                new MortarRecipeCategory());
+        registry.addWorkstations(MORTAR, EntryStacks.of(ModBlocks.MORTAR));
+
+        registry.add(
                 new CookingPotRecipeCategory());
         registry.addWorkstations(COOKINGPOT, EntryStacks.of(ModBlocks.COOKINGPOT));
 
@@ -83,6 +84,8 @@ public class PhotosynthesisREI implements REIClientPlugin {
 
         registry.registerRecipeFiller(CuttingBoardRecipe.class, CuttingBoardRecipe.Type.INSTANCE, CuttingBoardRecipeDisplay::new);
 
+        registry.registerRecipeFiller(MortarRecipe.class, MortarRecipe.Type.INSTANCE, MortarRecipeDisplay::new);
+
         registry.registerRecipeFiller(CookingPotRecipe.class, CookingPotRecipe.Type.INSTANCE, CookingPotRecipeDisplay::new);
 
         registry.registerRecipeFiller(KegRecipe.class, KegRecipe.Type.INSTANCE, KegRecipeDisplay::new);
@@ -93,6 +96,8 @@ public class PhotosynthesisREI implements REIClientPlugin {
         registry.registerContainerClickArea(new Rectangle(88, 44, 26, 17), SkilletScreen.class, SKILLET);
 
         registry.registerContainerClickArea(new Rectangle(99, 25, 24, 17), CuttingBoardScreen.class, CUTTINGBOARD);
+
+        registry.registerContainerClickArea(new Rectangle(99, 25, 24, 17), MortarScreen.class, MORTAR);
 
         registry.registerContainerClickArea(new Rectangle(88, 44, 26, 18), CookingPotScreen.class, COOKINGPOT);
 
