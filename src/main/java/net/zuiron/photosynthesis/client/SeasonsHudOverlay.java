@@ -10,6 +10,7 @@ import net.minecraft.client.model.ModelPart;
 import net.minecraft.client.render.GameRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.text.LiteralTextContent;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
@@ -36,7 +37,7 @@ public class SeasonsHudOverlay implements HudRenderCallback {
 
 
     @Override
-    public void onHudRender(DrawContext DrawableHelper, float tickDelta) {
+    public void onHudRender(DrawContext context, float tickDelta) {
         if(Seasons.isSeasonsEnabled()) {
             int x = 0;
             int y = 0;
@@ -75,7 +76,7 @@ public class SeasonsHudOverlay implements HudRenderCallback {
             //--------------------------------------------------------------------------------------------------------------
             //------------- SEASONS BAR
             RenderSystem.setShaderTexture(0, CALENDAR_BAR);
-            DrawableHelper.drawTexture(CALENDAR_BAR, x - 128, 0, 0, 0, 256, 12,
+            context.drawTexture(CALENDAR_BAR, x - 128, 0, 0, 0, 256, 12,
                     256, 12);
 
 
@@ -85,23 +86,23 @@ public class SeasonsHudOverlay implements HudRenderCallback {
             //seasons image
             if (current_season == 0) {
                 RenderSystem.setShaderTexture(0, SEASON_SUMMER);
-                DrawableHelper.drawTexture(SEASON_SUMMER, 2, 2, 0, 0, 64, 64,
+                context.drawTexture(SEASON_SUMMER, 2, 2, 0, 0, 64, 64,
                         64, 64);
             } else if (current_season == 1) {
                 RenderSystem.setShaderTexture(0, SEASON_AUTUMN);
-                DrawableHelper.drawTexture(SEASON_AUTUMN, 2, 2, 0, 0, 64, 64,
+                context.drawTexture(SEASON_AUTUMN, 2, 2, 0, 0, 64, 64,
                         64, 64);
             } else if (current_season == 2) {
                 RenderSystem.setShaderTexture(0, SEASON_WINTER);
-                DrawableHelper.drawTexture(SEASON_WINTER, 2, 2, 0, 0, 64, 64,
+                context.drawTexture(SEASON_WINTER, 2, 2, 0, 0, 64, 64,
                         64, 64);
             } else if (current_season == 3) {
                 RenderSystem.setShaderTexture(0, SEASON_SPRING);
-                DrawableHelper.drawTexture(SEASON_SPRING, 2, 2, 0, 0, 64, 64,
+                context.drawTexture(SEASON_SPRING, 2, 2, 0, 0, 64, 64,
                         64, 64);
             } else {
                 RenderSystem.setShaderTexture(0, SEASON_SUMMER); //just in case.
-                DrawableHelper.drawTexture(SEASON_SUMMER, 2, 2, 0, 0, 64, 64,
+                context.drawTexture(SEASON_SUMMER, 2, 2, 0, 0, 64, 64,
                         64, 64);
             }
 
@@ -118,7 +119,7 @@ public class SeasonsHudOverlay implements HudRenderCallback {
             float tabPosition = (current_seasonMOD * pixelsPerSeason) + (seasonPercentage * pixelsPerSeason) - 128.0f;
 
             RenderSystem.setShaderTexture(0, CALENDAR_TAB);
-            DrawableHelper.drawTexture(CALENDAR_TAB, (int) (x + tabPosition), 1, 0, 0, 5, 11,
+            context.drawTexture(CALENDAR_TAB, (int) (x + tabPosition), 1, 0, 0, 5, 11,
                     5, 11);
 
             // Get the text to display
@@ -133,16 +134,18 @@ public class SeasonsHudOverlay implements HudRenderCallback {
             int xs = (int) ((client.getWindow().getScaledWidth() / 2.0f) - (scaledWidth / 2));
             int ys = 20;
 
+            context.drawTextWithShadow(textRenderer, text, xs, ys, 0xFFFFFF);
             /*matrixStack.push();
             matrixStack.scale(0.5f, 0.5f, 1.0f);
             xs /= 0.5f; // Adjust for scaling
             textRenderer.drawWithShadow(matrixStack, text, xs, ys, 0xFFFFFF);
             matrixStack.pop();
-
+*/
 
             //--------------------------------------------------------------------------------------------------------------
             //------------- INFO DISPLAYS
 
+            /*
             String text_season_1 = String.format("Day: %d/%d, Year: %d", dayOfYear + 1, daysPerYear, getYear);
             text_season_1.formatted(Formatting.BOLD);
             matrixStack.push();
@@ -158,6 +161,10 @@ public class SeasonsHudOverlay implements HudRenderCallback {
             matrixStack.pop();*/
         }
     }
+
+
+
+
     /*@Override
     public void onHudRender(MatrixStack matrixStack, float tickDelta) {
         if(Seasons.isSeasonsEnabled()) {
