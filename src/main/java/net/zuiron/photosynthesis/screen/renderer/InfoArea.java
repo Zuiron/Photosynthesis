@@ -1,6 +1,5 @@
 package net.zuiron.photosynthesis.screen.renderer;
 
-import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.client.util.math.Rect2i;
 
@@ -11,7 +10,7 @@ import net.minecraft.client.util.math.Rect2i;
  *  This code is licensed under "Blu's License of Common Sense" (FORGE VERSION)
  *  Details can be found in the license file in the root folder of this project
  */
-public abstract class InfoArea extends DrawableHelper {
+public abstract class InfoArea {
     protected final Rect2i area;
 
     protected InfoArea(Rect2i area) {

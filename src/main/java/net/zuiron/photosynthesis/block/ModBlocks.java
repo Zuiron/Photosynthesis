@@ -31,9 +31,9 @@ public class ModBlocks {
     public static final Block DECORATION_STICKS_RANDOM = registerBlockWithoutBlockItem("decoration_sticks_random",
             new DecoSticksBlock(StatusEffect.byRawId(1), 1,FabricBlockSettings.copy(Blocks.BAMBOO).nonOpaque().noCollision().breakInstantly().noBlockBreakParticles()));
     public static final Block TALL_BEACHGRASS = registerBlock("tall_beachgrass",
-            new TallBeachGrassBlock(AbstractBlock.Settings.of(Material.REPLACEABLE_PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offsetType(AbstractBlock.OffsetType.XZ)));
+            new TallBeachGrassBlock(AbstractBlock.Settings.copy(Blocks.TALL_GRASS).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offset(AbstractBlock.OffsetType.XZ)));
     public static final Block BEACHGRASS = registerBlock("beachgrass",
-            new BeachGrassBlock(AbstractBlock.Settings.of(Material.REPLACEABLE_PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offsetType(AbstractBlock.OffsetType.XYZ)));
+            new BeachGrassBlock(AbstractBlock.Settings.copy(Blocks.GRASS).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offset(AbstractBlock.OffsetType.XYZ)));
     public static final Block DECORATION_SEASHELL = registerBlockWithoutBlockItem("decoration_seashell",
             new DecoSeaShellBlock(StatusEffect.byRawId(1), 1,FabricBlockSettings.copy(Blocks.SAND).nonOpaque().noCollision().breakInstantly().noBlockBreakParticles()));
 
@@ -46,40 +46,40 @@ public class ModBlocks {
 
     // ORES
     public static final Block SALT_ORE = registerBlock("salt_ore",
-            new ExperienceDroppingBlock(FabricBlockSettings.of(Material.STONE).strength(2f).requiresTool(),
+            new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.STONE).strength(2f).requiresTool(),
                     UniformIntProvider.create(1, 2)));
 
     // "Machines"
     public static final Block SKILLET = registerBlock("skillet",
-            new SkilletBlock(FabricBlockSettings.of(Material.METAL)
+            new SkilletBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)
                     .strength(4f).requiresTool().nonOpaque()));
 
     public static final Block MIXING_BOWL = registerBlock("mixing_bowl",
-            new MixingBowlBlock(FabricBlockSettings.of(Material.WOOD)
+            new MixingBowlBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
                     .strength(4f).requiresTool().nonOpaque()));
 
     public static final Block KEG = registerBlock("keg",
-            new KegBlock(FabricBlockSettings.of(Material.WOOD)
+            new KegBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
                     .strength(4f).requiresTool().nonOpaque()));
 
     public static final Block COOKINGPOT = registerBlock("cooking_pot",
-            new CookingPotBlock(FabricBlockSettings.of(Material.METAL)
+            new CookingPotBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)
                     .strength(4f).requiresTool().nonOpaque()));
 
     public static final Block CUTTINGBOARD = registerBlock("cutting_board",
-            new CuttingBoardBlock(FabricBlockSettings.of(Material.WOOD)
+            new CuttingBoardBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
                     .strength(4f).requiresTool().nonOpaque()));
 
     public static final Block MORTAR = registerBlock("mortar",
-            new MortarBlock(FabricBlockSettings.of(Material.STONE)
+            new MortarBlock(FabricBlockSettings.copyOf(Blocks.STONE)
                     .strength(4f).requiresTool().nonOpaque()));
 
     public static final Block LATEX_EXTRACTOR = registerBlock("latex_extractor",
-            new LatexExtractorBlock(FabricBlockSettings.of(Material.WOOD)
+            new LatexExtractorBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
                     .strength(4f).requiresTool().nonOpaque()));
 
     public static final Block MAPLE_EXTRACTOR = registerBlock("maple_extractor",
-            new MapleExtractorBlock(FabricBlockSettings.of(Material.WOOD)
+            new MapleExtractorBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
                     .strength(4f).requiresTool().nonOpaque()));
 
 
@@ -189,7 +189,7 @@ public class ModBlocks {
             new SaplingBlock(new AppletreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock APPLETREE_BUSHCROP = registerBushBlock("appletree_bushcrop",
-            new AppletreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new AppletreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
 
@@ -214,7 +214,7 @@ public class ModBlocks {
             new SaplingBlock(new BananatreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock BANANATREE_BUSHCROP = registerBushBlock("bananatree_bushcrop",
-            new BananatreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new BananatreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
 
@@ -260,7 +260,7 @@ public class ModBlocks {
             new SaplingBlock(new OrangetreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock ORANGETREE_BUSHCROP = registerBushBlock("orangetree_bushcrop",
-            new OrangetreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new OrangetreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
 
@@ -286,7 +286,7 @@ public class ModBlocks {
             new SaplingBlock(new PeartreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock PEARTREE_BUSHCROP = registerBushBlock("peartree_bushcrop",
-            new PeartreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new PeartreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
 
@@ -314,7 +314,7 @@ public class ModBlocks {
             new SaplingBlock(new CoconuttreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock COCONUTTREE_BUSHCROP = registerBushBlock("coconuttree_bushcrop",
-            new CoconuttreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new CoconuttreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
 
@@ -342,7 +342,7 @@ public class ModBlocks {
             new SaplingBlock(new AvocadotreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock AVOCADOTREE_BUSHCROP = registerBushBlock("avocadotree_bushcrop",
-            new AvocadotreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new AvocadotreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
 
@@ -370,7 +370,7 @@ public class ModBlocks {
             new SaplingBlock(new CherrytreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock CHERRYTREE_BUSHCROP = registerBushBlock("cherrytree_bushcrop",
-            new CherrytreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new CherrytreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
 
@@ -397,7 +397,7 @@ public class ModBlocks {
             new SaplingBlock(new LemontreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock LEMONTREE_BUSHCROP = registerBushBlock("lemontree_bushcrop",
-            new LemontreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new LemontreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
 
@@ -424,7 +424,7 @@ public class ModBlocks {
             new SaplingBlock(new MangotreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock MANGOTREE_BUSHCROP = registerBushBlock("mangotree_bushcrop",
-            new MangotreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new MangotreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
 
@@ -452,7 +452,7 @@ public class ModBlocks {
             new SaplingBlock(new OlivetreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock OLIVETREE_BUSHCROP = registerBushBlock("olivetree_bushcrop",
-            new OlivetreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new OlivetreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
 
@@ -517,7 +517,7 @@ public class ModBlocks {
             new SaplingBlock(new CandlenuttreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock CANDLENUTTREE_BUSHCROP = registerBushBlock("candlenuttree_bushcrop",
-            new CandlenuttreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new CandlenuttreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block CHESTNUTTREE_LOG = registerBlock("chestnuttree_log",
@@ -538,7 +538,7 @@ public class ModBlocks {
             new SaplingBlock(new ChestnuttreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock CHESTNUTTREE_BUSHCROP = registerBushBlock("chestnuttree_bushcrop",
-            new ChestnuttreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new ChestnuttreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block NUTMEGTREE_LOG = registerBlock("nutmegtree_log",
@@ -559,7 +559,7 @@ public class ModBlocks {
             new SaplingBlock(new NutmegtreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock NUTMEGTREE_BUSHCROP = registerBushBlock("nutmegtree_bushcrop",
-            new NutmegtreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new NutmegtreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block PEACHTREE_LOG = registerBlock("peachtree_log",
@@ -580,7 +580,7 @@ public class ModBlocks {
             new SaplingBlock(new PeachtreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock PEACHTREE_BUSHCROP = registerBushBlock("peachtree_bushcrop",
-            new PeachtreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new PeachtreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block PLUMTREE_LOG = registerBlock("plumtree_log",
@@ -601,7 +601,7 @@ public class ModBlocks {
             new SaplingBlock(new PlumtreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock PLUMTREE_BUSHCROP = registerBushBlock("plumtree_bushcrop",
-            new PlumtreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new PlumtreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block WALNUTTREE_LOG = registerBlock("walnuttree_log",
@@ -622,7 +622,7 @@ public class ModBlocks {
             new SaplingBlock(new WalnuttreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock WALNUTTREE_BUSHCROP = registerBushBlock("walnuttree_bushcrop",
-            new WalnuttreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new WalnuttreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block HAZELNUTTREE_LOG = registerBlock("hazelnuttree_log",
@@ -643,7 +643,7 @@ public class ModBlocks {
             new SaplingBlock(new HazelnuttreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock HAZELNUTTREE_BUSHCROP = registerBushBlock("hazelnuttree_bushcrop",
-            new HazelnuttreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new HazelnuttreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block PAWPAWTREE_LOG = registerBlock("pawpawtree_log",
@@ -664,7 +664,7 @@ public class ModBlocks {
             new SaplingBlock(new PawpawtreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock PAWPAWTREE_BUSHCROP = registerBushBlock("pawpawtree_bushcrop",
-            new PawpawtreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new PawpawtreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block SOURSOPTREE_LOG = registerBlock("soursoptree_log",
@@ -685,7 +685,7 @@ public class ModBlocks {
             new SaplingBlock(new SoursoptreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock SOURSOPTREE_BUSHCROP = registerBushBlock("soursoptree_bushcrop",
-            new SoursoptreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new SoursoptreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block ALMONDTREE_LOG = registerBlock("almondtree_log",
@@ -706,7 +706,7 @@ public class ModBlocks {
             new SaplingBlock(new AlmondtreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock ALMONDTREE_BUSHCROP = registerBushBlock("almondtree_bushcrop",
-            new AlmondtreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new AlmondtreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block APRICOTTREE_LOG = registerBlock("apricottree_log",
@@ -727,7 +727,7 @@ public class ModBlocks {
             new SaplingBlock(new ApricottreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock APRICOTTREE_BUSHCROP = registerBushBlock("apricottree_bushcrop",
-            new ApricottreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new ApricottreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block CASHEWTREE_LOG = registerBlock("cashewtree_log",
@@ -748,7 +748,7 @@ public class ModBlocks {
             new SaplingBlock(new CashewtreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock CASHEWTREE_BUSHCROP = registerBushBlock("cashewtree_bushcrop",
-            new CashewtreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new CashewtreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block DATETREE_LOG = registerBlock("datetree_log",
@@ -769,7 +769,7 @@ public class ModBlocks {
             new SaplingBlock(new DatetreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock DATETREE_BUSHCROP = registerBushBlock("datetree_bushcrop",
-            new DatetreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new DatetreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block DRAGONFRUITTREE_LOG = registerBlock("dragonfruittree_log",
@@ -790,7 +790,7 @@ public class ModBlocks {
             new SaplingBlock(new DragonfruittreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock DRAGONFRUITTREE_BUSHCROP = registerBushBlock("dragonfruittree_bushcrop",
-            new DragonfruittreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new DragonfruittreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block DURIANTREE_LOG = registerBlock("duriantree_log",
@@ -811,7 +811,7 @@ public class ModBlocks {
             new SaplingBlock(new DuriantreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock DURIANTREE_BUSHCROP = registerBushBlock("duriantree_bushcrop",
-            new DuriantreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new DuriantreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block FIGTREE_LOG = registerBlock("figtree_log",
@@ -832,7 +832,7 @@ public class ModBlocks {
             new SaplingBlock(new FigtreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock FIGTREE_BUSHCROP = registerBushBlock("figtree_bushcrop",
-            new FigtreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new FigtreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block GRAPEFRUITTREE_LOG = registerBlock("grapefruittree_log",
@@ -853,7 +853,7 @@ public class ModBlocks {
             new SaplingBlock(new GrapefruittreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock GRAPEFRUITTREE_BUSHCROP = registerBushBlock("grapefruittree_bushcrop",
-            new GrapefruittreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new GrapefruittreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block LIMETREE_LOG = registerBlock("limetree_log",
@@ -874,7 +874,7 @@ public class ModBlocks {
             new SaplingBlock(new LimetreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock LIMETREE_BUSHCROP = registerBushBlock("limetree_bushcrop",
-            new LimetreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new LimetreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block PAPAYATREE_LOG = registerBlock("papayatree_log",
@@ -895,7 +895,7 @@ public class ModBlocks {
             new SaplingBlock(new PapayatreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock PAPAYATREE_BUSHCROP = registerBushBlock("papayatree_bushcrop",
-            new PapayatreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new PapayatreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block PECANTREE_LOG = registerBlock("pecantree_log",
@@ -916,7 +916,7 @@ public class ModBlocks {
             new SaplingBlock(new PecantreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock PECANTREE_BUSHCROP = registerBushBlock("pecantree_bushcrop",
-            new PecantreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new PecantreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block PERSIMMONTREE_LOG = registerBlock("persimmontree_log",
@@ -937,7 +937,7 @@ public class ModBlocks {
             new SaplingBlock(new PersimmontreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock PERSIMMONTREE_BUSHCROP = registerBushBlock("persimmontree_bushcrop",
-            new PersimmontreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new PersimmontreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block PISTACHIOTREE_LOG = registerBlock("pistachiotree_log",
@@ -958,7 +958,7 @@ public class ModBlocks {
             new SaplingBlock(new PistachiotreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock PISTACHIOTREE_BUSHCROP = registerBushBlock("pistachiotree_bushcrop",
-            new PistachiotreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new PistachiotreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block POMEGRANATETREE_LOG = registerBlock("pomegranatetree_log",
@@ -979,7 +979,7 @@ public class ModBlocks {
             new SaplingBlock(new PomegranatetreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock POMEGRANATETREE_BUSHCROP = registerBushBlock("pomegranatetree_bushcrop",
-            new PomegranatetreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new PomegranatetreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block STARFRUITTREE_LOG = registerBlock("starfruittree_log",
@@ -1000,7 +1000,7 @@ public class ModBlocks {
             new SaplingBlock(new StarfruittreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock STARFRUITTREE_BUSHCROP = registerBushBlock("starfruittree_bushcrop",
-            new StarfruittreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new StarfruittreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block BREADFRUITTREE_LOG = registerBlock("breadfruittree_log",
@@ -1021,7 +1021,7 @@ public class ModBlocks {
             new SaplingBlock(new BreadfruittreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock BREADFRUITTREE_BUSHCROP = registerBushBlock("breadfruittree_bushcrop",
-            new BreadfruittreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new BreadfruittreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block GUAVATREE_LOG = registerBlock("guavatree_log",
@@ -1042,7 +1042,7 @@ public class ModBlocks {
             new SaplingBlock(new GuavatreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock GUAVATREE_BUSHCROP = registerBushBlock("guavatree_bushcrop",
-            new GuavatreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new GuavatreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block JACKFRUITTREE_LOG = registerBlock("jackfruittree_log",
@@ -1063,7 +1063,7 @@ public class ModBlocks {
             new SaplingBlock(new JackfruittreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock JACKFRUITTREE_BUSHCROP = registerBushBlock("jackfruittree_bushcrop",
-            new JackfruittreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new JackfruittreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block LYCHEETREE_LOG = registerBlock("lycheetree_log",
@@ -1084,7 +1084,7 @@ public class ModBlocks {
             new SaplingBlock(new LycheetreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock LYCHEETREE_BUSHCROP = registerBushBlock("lycheetree_bushcrop",
-            new LycheetreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new LycheetreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block PASSIONFRUITTREE_LOG = registerBlock("passionfruittree_log",
@@ -1105,7 +1105,7 @@ public class ModBlocks {
             new SaplingBlock(new PassionfruittreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock PASSIONFRUITTREE_BUSHCROP = registerBushBlock("passionfruittree_bushcrop",
-            new PassionfruittreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new PassionfruittreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block RAMBUTANTREE_LOG = registerBlock("rambutantree_log",
@@ -1126,7 +1126,7 @@ public class ModBlocks {
             new SaplingBlock(new RambutantreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock RAMBUTANTREE_BUSHCROP = registerBushBlock("rambutantree_bushcrop",
-            new RambutantreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new RambutantreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block TAMARINDTREE_LOG = registerBlock("tamarindtree_log",
@@ -1147,7 +1147,7 @@ public class ModBlocks {
             new SaplingBlock(new TamarindtreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock TAMARINDTREE_BUSHCROP = registerBushBlock("tamarindtree_bushcrop",
-            new TamarindtreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new TamarindtreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
 
@@ -1201,7 +1201,7 @@ public class ModBlocks {
             new SaplingBlock(new PeppercorntreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock PEPPERCORNTREE_BUSHCROP = registerBushBlock("peppercorntree_bushcrop",
-            new PeppercorntreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new PeppercorntreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block VANILLABEANTREE_LOG = registerBlock("vanillabeantree_log",
@@ -1222,7 +1222,7 @@ public class ModBlocks {
             new SaplingBlock(new VanillabeantreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock VANILLABEANTREE_BUSHCROP = registerBushBlock("vanillabeantree_bushcrop",
-            new VanillabeantreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new VanillabeantreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block PINENUTTREE_LOG = registerBlock("pinenuttree_log",
@@ -1243,7 +1243,7 @@ public class ModBlocks {
             new SaplingBlock(new PinenuttreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock PINENUTTREE_BUSHCROP = registerBushBlock("pinenuttree_bushcrop",
-            new PinenuttreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new PinenuttreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block GOOSEBERRYTREE_LOG = registerBlock("gooseberrytree_log",
@@ -1264,7 +1264,7 @@ public class ModBlocks {
             new SaplingBlock(new GooseberrytreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock GOOSEBERRYTREE_BUSHCROP = registerBushBlock("gooseberrytree_bushcrop",
-            new GooseberrytreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new GooseberrytreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block GRAPETREE_LOG = registerBlock("grapetree_log",
@@ -1285,7 +1285,7 @@ public class ModBlocks {
             new SaplingBlock(new GrapetreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock GRAPETREE_BUSHCROP = registerBushBlock("grapetree_bushcrop",
-            new GrapetreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new GrapetreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
 
@@ -1300,7 +1300,7 @@ public class ModBlocks {
             new SaplingBlock(new RedGrapetreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock RED_GRAPETREE_BUSHCROP = registerBushBlock("red_grapetree_bushcrop",
-            new RedGrapetreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new RedGrapetreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
 
@@ -1324,7 +1324,7 @@ public class ModBlocks {
             new SaplingBlock(new KiwitreeSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
     public static final SweetBerryBushBlock KIWITREE_BUSHCROP = registerBushBlock("kiwitree_bushcrop",
-            new KiwitreeBushCrop(AbstractBlock.Settings.of(Material.PLANT)
+            new KiwitreeBushCrop(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
 
@@ -1356,46 +1356,46 @@ public class ModBlocks {
 
     // BERRY BUSHES ----------------------------------------------------------------------------------------------------
     public static final SweetBerryBushBlock BLUEBERRY_BUSH = registerBushBlock("blueberry_bush",
-            new BlueberryBush(AbstractBlock.Settings.of(Material.PLANT)
+            new BlueberryBush(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
 
     public static final SweetBerryBushBlock BLACKBERRY_BUSH = registerBushBlock("blackberry_bush",
-            new BlackberryBush(AbstractBlock.Settings.of(Material.PLANT)
+            new BlackberryBush(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
 
     public static final SweetBerryBushBlock RASPBERRY_BUSH = registerBushBlock("raspberry_bush",
-            new RaspberryBush(AbstractBlock.Settings.of(Material.PLANT)
+            new RaspberryBush(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
 
     public static final SweetBerryBushBlock CLOUDBERRY_BUSH = registerBushBlock("cloudberry_bush",
-            new CloudberryBush(AbstractBlock.Settings.of(Material.PLANT)
+            new CloudberryBush(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final SweetBerryBushBlock WILD_STRAWBERRY_BUSH = registerBushBlock("wild_strawberry_bush",
-            new Wild_StrawberryBush(AbstractBlock.Settings.of(Material.PLANT)
+            new Wild_StrawberryBush(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final SweetBerryBushBlock CANDLEBERRY_BUSH = registerBushBlock("candleberry_bush",
-            new CandleberryBush(AbstractBlock.Settings.of(Material.PLANT)
+            new CandleberryBush(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final SweetBerryBushBlock CRANBERRY_BUSH = registerBushBlock("cranberry_bush",
-            new CranberryBush(AbstractBlock.Settings.of(Material.PLANT)
+            new CranberryBush(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final SweetBerryBushBlock HUCKLEBERRY_BUSH = registerBushBlock("huckleberry_bush",
-            new HuckleberryBush(AbstractBlock.Settings.of(Material.PLANT)
+            new HuckleberryBush(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final SweetBerryBushBlock JUNIPERBERRY_BUSH = registerBushBlock("juniperberry_bush",
-            new JuniperberryBush(AbstractBlock.Settings.of(Material.PLANT)
+            new JuniperberryBush(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final SweetBerryBushBlock MULBERRY_BUSH = registerBushBlock("mulberry_bush",
-            new MulberryBush(AbstractBlock.Settings.of(Material.PLANT)
+            new MulberryBush(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
 
@@ -1406,15 +1406,14 @@ public class ModBlocks {
     }
 
     private static Block registerBlock(String name, Block block) {
-        registerBlockItem(name, block, ModItemGroup.PHOTOSYNTHESIS);
+        registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, name), block);
     }
 
 
-    private static Item registerBlockItem(String name, Block block, ItemGroup tab) {
+    private static Item registerBlockItem(String name, Block block) {
         Item item = Registry.register(Registries.ITEM, new Identifier(Photosynthesis.MOD_ID, name),
                 new BlockItem(block, new FabricItemSettings()));
-        ItemGroupEvents.modifyEntriesEvent(tab).register(entries -> entries.add(item));
         return item;
     }
 
@@ -1424,14 +1423,14 @@ public class ModBlocks {
 
     private static CropBlock registerCropBlockSimple(String name){
         return Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, name),
-                new CustomCropBlock(AbstractBlock.Settings.of(Material.PLANT)
+                new CustomCropBlock(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                 .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),
                 name));
     }
 
     private static CropBlock registerCropBlockSimpleWL(String name){
         return Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, name),
-                new CustomCropBlockWL(AbstractBlock.Settings.of(Material.PLANT)
+                new CustomCropBlockWL(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                         .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),
                         name));
 

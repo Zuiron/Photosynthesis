@@ -23,7 +23,7 @@ public class DrinkingC2SPacket {
     public static void receive(MinecraftServer server, ServerPlayerEntity player, ServerPlayNetworkHandler handler,
                                PacketByteBuf buf, PacketSender responseSender) {
         // Everything here happens ONLY on the Server!
-        ServerWorld world = player.getWorld();
+        ServerWorld world = player.getServerWorld();
         if(isAroundWaterThem(player, world, 2)) {
             // Notify the player
             player.sendMessage(Text.translatable(MESSAGE_DRINKING_WATER)

@@ -2,13 +2,15 @@ package net.zuiron.photosynthesis.screen.renderer;
 
 import com.google.common.base.Preconditions;
 import com.mojang.blaze3d.systems.RenderSystem;
+import me.shedaniel.rei.api.client.gui.DrawableConsumer;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.transfer.v1.client.fluid.FluidVariantRendering;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidConstants;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
+import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.gui.Drawable;
 import net.zuiron.photosynthesis.util.FluidStack;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.client.texture.Sprite;
 import net.minecraft.client.util.math.MatrixStack;
@@ -68,7 +70,7 @@ public class FluidStackRenderer implements IIngredientRenderer<FluidStack> {
     * METHOD FROM https://github.com/TechReborn/TechReborn
     * UNDER MIT LICENSE: https://github.com/TechReborn/TechReborn/blob/1.19/LICENSE.md
     */
-    public void drawFluid(MatrixStack matrixStack, FluidStack fluid, int x, int y, int width, int height, long maxCapacity) {
+    /*public void drawFluid(MatrixStack matrixStack, FluidStack fluid, int x, int y, int width, int height, long maxCapacity) {
         if (fluid.getFluidVariant().getFluid() == Fluids.EMPTY) {
             return;
         }
@@ -99,7 +101,41 @@ public class FluidStackRenderer implements IIngredientRenderer<FluidStack> {
 
         RenderSystem.setShaderTexture(0, FluidRenderHandlerRegistry.INSTANCE.get(fluid.getFluidVariant().getFluid())
                 .getFluidSprites(MinecraftClient.getInstance().world, null, fluid.getFluidVariant().getFluid().getDefaultState())[0].getAtlasId());
+    }*/
+    public void drawFluid(DrawContext context, FluidStack fluid, int x, int y, int width, int height, long maxCapacity) {
+        if (fluid.getFluidVariant().getFluid() == Fluids.EMPTY) {
+            return;
+        }
+
+        RenderSystem.setShaderTexture(0, PlayerScreenHandler.BLOCK_ATLAS_TEXTURE);
+        y += height;
+        final Sprite sprite = FluidVariantRendering.getSprite(fluid.getFluidVariant());
+        int color = FluidVariantRendering.getColor(fluid.getFluidVariant());
+
+        final int drawHeight = (int) (fluid.getAmount() / (maxCapacity * 1F) * height);
+        final int iconHeight = sprite.getY();
+        int offsetHeight = drawHeight;
+
+        RenderSystem.setShaderColor((color >> 16 & 255) / 255.0F, (float) (color >> 8 & 255) / 255.0F, (float) (color & 255) / 255.0F, 1F);
+
+        int iteration = 0;
+        while (offsetHeight != 0) {
+            final int curHeight = offsetHeight < iconHeight ? offsetHeight : iconHeight;
+
+            context.drawSprite(x, y - offsetHeight, 0, width, curHeight, sprite);
+            offsetHeight -= curHeight;
+            iteration++;
+            if (iteration > 50) {
+                break;
+            }
+        }
+
+        RenderSystem.setShaderColor(1F, 1F, 1F, 1F);
+
+        RenderSystem.setShaderTexture(0, FluidRenderHandlerRegistry.INSTANCE.get(fluid.getFluidVariant().getFluid())
+                .getFluidSprites(MinecraftClient.getInstance().world, null, fluid.getFluidVariant().getFluid().getDefaultState())[0].getAtlasId());
     }
+
 
     @Override
     public List<Text> getTooltip(FluidStack fluidStack, TooltipContext tooltipFlag) {

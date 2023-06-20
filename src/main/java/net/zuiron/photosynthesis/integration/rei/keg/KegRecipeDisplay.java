@@ -26,9 +26,9 @@ public class KegRecipeDisplay extends BasicDisplay {
     private final FluidStack outputFluid;
 
     public KegRecipeDisplay(KegRecipe recipe) {
-        super(EntryIngredients.ofIngredients(recipe.getIngredients()), Collections.singletonList(EntryIngredients.of(recipe.getOutput())),
+        super(EntryIngredients.ofIngredients(recipe.getIngredients()), Collections.singletonList(EntryIngredients.of(recipe.getOutputStack())),
                 Optional.ofNullable(recipe.getId()));
-        containerOutput = EntryIngredients.of(recipe.getOutput());
+        containerOutput = EntryIngredients.of(recipe.getOutputStack());
         cookTime = recipe.getCookTime();
         this.counts = recipe.getCounts();
         inputFluid = recipe.getFluidInput();

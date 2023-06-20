@@ -63,8 +63,7 @@ public class SkilletBlockEntityRenderer implements BlockEntityRenderer<SkilletBl
                 matrices.scale(scale, scale, scale);
             }
         }
-        itemRenderer.renderItem(itemStack, ModelTransformation.Mode.GUI, getLightLevel(entity.getWorld(), entity.getPos()),
-                OverlayTexture.DEFAULT_UV, matrices, vertexConsumers, 1);
+        //itemRenderer.renderItem(itemStack, ModelTransformation.Mode.GUI, getLightLevel(entity.getWorld(), entity.getPos()), OverlayTexture.DEFAULT_UV, matrices, vertexConsumers, 1);
         matrices.pop();
 
     }

@@ -22,9 +22,9 @@ public class MortarRecipeDisplay extends BasicDisplay {
     private final int cookTime;
 
     public MortarRecipeDisplay(MortarRecipe recipe) {
-        super(EntryIngredients.ofIngredients(recipe.getIngredients()), Collections.singletonList(EntryIngredients.of(recipe.getOutput())),
+        super(EntryIngredients.ofIngredients(recipe.getIngredients()), Collections.singletonList(EntryIngredients.of(recipe.getOutputStack())),
                 Optional.ofNullable(recipe.getId()));
-        containerOutput = EntryIngredients.of(recipe.getOutput());
+        containerOutput = EntryIngredients.of(recipe.getOutputStack());
         cookTime = recipe.getCookTime();
         //cookTime = 200;
     }

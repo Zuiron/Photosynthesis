@@ -8,6 +8,7 @@ import net.minecraft.client.render.block.entity.BlockEntityRenderer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactory;
 import net.minecraft.client.render.item.ItemRenderer;
 import net.minecraft.client.render.model.json.ModelTransformation;
+import net.minecraft.client.render.model.json.ModelTransformationMode;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
@@ -57,8 +58,7 @@ public class CuttingBoardBlockEntityRenderer implements BlockEntityRenderer<Cutt
                 matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(-90));
             }
         }
-        itemRenderer.renderItem(itemStack, ModelTransformation.Mode.GUI, getLightLevel(entity.getWorld(), entity.getPos()),
-                OverlayTexture.DEFAULT_UV, matrices, vertexConsumers, 1);
+        //itemRenderer.renderItem(itemStack, ModelTransformation.Mode.GUI, getLightLevel(entity.getWorld(), entity.getPos()), OverlayTexture.DEFAULT_UV, matrices, vertexConsumers, 1);
         matrices.pop();
 
 
@@ -89,8 +89,7 @@ public class CuttingBoardBlockEntityRenderer implements BlockEntityRenderer<Cutt
                 matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(-90));
             }
         }
-        itemRenderer.renderItem(itemStack1, ModelTransformation.Mode.GUI, getLightLevel(entity.getWorld(), entity.getPos()),
-                OverlayTexture.DEFAULT_UV, matrices, vertexConsumers, 1);
+        //itemRenderer.renderItem(itemStack1, ModelTransformation.Mode.GUI, getLightLevel(entity.getWorld(), entity.getPos()), OverlayTexture.DEFAULT_UV, matrices, vertexConsumers, 1);
         matrices.pop();
 
 
@@ -121,8 +120,7 @@ public class CuttingBoardBlockEntityRenderer implements BlockEntityRenderer<Cutt
                 matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(-90));
             }
         }
-        itemRenderer.renderItem(itemStack2, ModelTransformation.Mode.GUI, getLightLevel(entity.getWorld(), entity.getPos()),
-                OverlayTexture.DEFAULT_UV, matrices, vertexConsumers, 1);
+        //itemRenderer.renderItem(itemStack2, ModelTransformation.Mode.GUI, getLightLevel(entity.getWorld(), entity.getPos()), OverlayTexture.DEFAULT_UV, matrices, vertexConsumers, 1);
         matrices.pop();
 
 

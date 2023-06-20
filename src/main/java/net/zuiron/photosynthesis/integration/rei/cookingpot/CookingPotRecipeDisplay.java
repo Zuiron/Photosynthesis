@@ -24,9 +24,9 @@ public class CookingPotRecipeDisplay extends BasicDisplay {
     private final DefaultedList counts;
 
     public CookingPotRecipeDisplay(CookingPotRecipe recipe) {
-        super(EntryIngredients.ofIngredients(recipe.getIngredients()), Collections.singletonList(EntryIngredients.of(recipe.getOutput())),
+        super(EntryIngredients.ofIngredients(recipe.getIngredients()), Collections.singletonList(EntryIngredients.of(recipe.getOutputStack())),
                 Optional.ofNullable(recipe.getId()));
-        containerOutput = EntryIngredients.of(recipe.getOutput());
+        containerOutput = EntryIngredients.of(recipe.getOutputStack());
         cookTime = recipe.getCookTime();
         this.counts = recipe.getCounts();
     }

@@ -2,6 +2,7 @@ package net.zuiron.photosynthesis.screen;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidConstants;
+import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.client.render.GameRenderer;
@@ -37,48 +38,50 @@ public class LatexExtractorScreen extends HandledScreen<LatexExtractorScreenHand
                 true, 15, 61);
     }
 
+
     @Override
-    protected void drawForeground(MatrixStack matrices, int mouseX, int mouseY) {
+    protected void drawForeground(DrawContext context, int mouseX, int mouseY) {
         int x = (width - backgroundWidth) / 2;
         int y = (height - backgroundHeight) / 2;
 
-        //renderEnergyAreaTooltips(matrices, mouseX, mouseY, x, y);
-        renderFluidTooltip(matrices, mouseX, mouseY, x, y, handler.fluidStack, 62, 13, fluidStackRenderer);
+        // renderEnergyAreaTooltips(context, mouseX, mouseY, x, y);
+        renderFluidTooltip(context, mouseX, mouseY, x, y, handler.fluidStack, 62, 13, fluidStackRenderer);
     }
 
-    private void renderFluidTooltip(MatrixStack matrices, int mouseX, int mouseY, int x, int y,
+    private void renderFluidTooltip(DrawContext context, int mouseX, int mouseY, int x, int y,
                                     FluidStack fluidStack, int offsetX, int offsetY, FluidStackRenderer renderer) {
-        if(isMouseAboveArea(mouseX, mouseY, x, y, offsetX, offsetY, renderer)) {
-            renderTooltip(matrices, renderer.getTooltip(fluidStack, TooltipContext.Default.BASIC),
-                    Optional.empty(), mouseX - x, mouseY - y);
+        if (isMouseAboveArea(mouseX, mouseY, x, y, offsetX, offsetY, renderer)) {
+            //context.drawTooltip(renderer.getTooltip(fluidStack, TooltipContext.Default.BASIC),Optional.empty(), mouseX - x, mouseY - y);
+            //TODO
         }
     }
 
     @Override
-    protected void drawBackground(MatrixStack matrices, float delta, int mouseX, int mouseY) {
+    protected void drawBackground(DrawContext context, float delta, int mouseX, int mouseY) {
         RenderSystem.setShader(GameRenderer::getPositionTexProgram);
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.setShaderTexture(0, TEXTURE);
         int x = (width - backgroundWidth) / 2;
         int y = (height - backgroundHeight) / 2;
-        drawTexture(matrices, x, y, 0, 0, backgroundWidth, backgroundHeight);
+        context.drawTexture(TEXTURE, x, y, 0, 0, backgroundWidth, backgroundHeight);
 
-        //renderProgressArrow(matrices, x, y);
-        fluidStackRenderer.drawFluid(matrices, handler.fluidStack, x + 62, y + 13, 16, 61,
+        renderProgressArrow(context, x, y);
+
+        fluidStackRenderer.drawFluid(context, handler.fluidStack, x + 62, y + 13, 16, 61,
                 FluidStack.convertDropletsToMb(FluidConstants.BUCKET) * 2);
     }
 
-    private void renderProgressArrow(MatrixStack matrices, int x, int y) {
-        if(handler.isCrafting()) {
-            drawTexture(matrices, x + 103, y + 27, 176, 0, 8, handler.getScaledProgress());
+    private void renderProgressArrow(DrawContext context, int x, int y) {
+        if (handler.isCrafting()) {
+            context.drawTexture(TEXTURE, x + 103, y + 27, 176, 0, 8, handler.getScaledProgress());
         }
     }
 
     @Override
-    public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
-        renderBackground(matrices);
-        super.render(matrices, mouseX, mouseY, delta);
-        drawMouseoverTooltip(matrices, mouseX, mouseY);
+    public void render(DrawContext context, int mouseX, int mouseY, float delta) {
+        renderBackground(context);
+        super.render(context, mouseX, mouseY, delta);
+        drawMouseoverTooltip(context, mouseX, mouseY);
     }
 
     private boolean isMouseAboveArea(int pMouseX, int pMouseY, int x, int y, int offsetX, int offsetY, FluidStackRenderer renderer) {

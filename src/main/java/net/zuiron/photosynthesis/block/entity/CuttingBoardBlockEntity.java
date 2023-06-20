@@ -199,10 +199,10 @@ public class CuttingBoardBlockEntity extends BlockEntity implements ExtendedScre
                     entity.getStack(2).getCount() + 1)); //add one to output.
              */
 
-            int recipeOutputCount = recipe.get().getOutput().getCount();
+            int recipeOutputCount = recipe.get().getOutputStack().getCount();
             int outputSlotCount = entity.getStack(2).getCount();
 
-            entity.setStack(2, new ItemStack(recipe.get().getOutput().getItem(), outputSlotCount + recipeOutputCount));
+            entity.setStack(2, new ItemStack(recipe.get().getOutputStack().getItem(), outputSlotCount + recipeOutputCount));
 
             //durability.
             //check durability. if less then 1, break.
@@ -243,8 +243,8 @@ public class CuttingBoardBlockEntity extends BlockEntity implements ExtendedScre
         entity.maxProgress = entity.getWorld().getRecipeManager()
                 .getFirstMatch(CuttingBoardRecipe.Type.INSTANCE, inventory, entity.getWorld()).map(CuttingBoardRecipe::getCookTime).orElse(20);
 
-        return match.isPresent() && canInsertAmountIntoOutputSlot(inventory, match.get().getOutput().getCount())
-                && canInsertItemIntoOutputSlot(inventory, match.get().getOutput().getItem());
+        return match.isPresent() && canInsertAmountIntoOutputSlot(inventory, match.get().getOutputStack().getCount())
+                && canInsertItemIntoOutputSlot(inventory, match.get().getOutputStack().getItem());
     }
 
     private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, Item output) {

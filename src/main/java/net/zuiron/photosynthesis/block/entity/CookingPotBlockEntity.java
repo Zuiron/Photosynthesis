@@ -273,10 +273,10 @@ public class CookingPotBlockEntity extends BlockEntity implements ExtendedScreen
             entity.removeStack(6, (Integer) recipe.get().getCounts().get(6));   //input
 
 
-            int recipeOutputCount = recipe.get().getOutput().getCount();
+            int recipeOutputCount = recipe.get().getOutputStack().getCount();
             int outputSlotCount = entity.getStack(7).getCount();
 
-            entity.setStack(7, new ItemStack(recipe.get().getOutput().getItem(), outputSlotCount + recipeOutputCount));
+            entity.setStack(7, new ItemStack(recipe.get().getOutputStack().getItem(), outputSlotCount + recipeOutputCount));
 
             entity.resetProgress();
         }
@@ -316,8 +316,8 @@ public class CookingPotBlockEntity extends BlockEntity implements ExtendedScreen
                 }
             }
 
-            return canInsertAmountIntoOutputSlot(inventory, recipe.getOutput().getCount())
-                    && canInsertItemIntoOutputSlot(inventory, recipe.getOutput().getItem());
+            return canInsertAmountIntoOutputSlot(inventory, recipe.getOutputStack().getCount())
+                    && canInsertItemIntoOutputSlot(inventory, recipe.getOutputStack().getItem());
         } else {
             return false;
         }

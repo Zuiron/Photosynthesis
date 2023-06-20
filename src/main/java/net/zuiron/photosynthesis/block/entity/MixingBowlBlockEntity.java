@@ -235,11 +235,11 @@ public class MixingBowlBlockEntity extends BlockEntity implements ExtendedScreen
             entity.removeStack(2, (Integer) recipe.get().getCounts().get(2));   //input
             entity.removeStack(3, (Integer) recipe.get().getCounts().get(3));   //input
 
-            int recipeOutputCount = recipe.get().getOutput().getCount();
+            int recipeOutputCount = recipe.get().getOutputStack().getCount();
             int outputSlotCount = entity.getStack(4).getCount();
 
             //output
-            entity.setStack(4, new ItemStack(recipe.get().getOutput().getItem(), outputSlotCount + recipeOutputCount));
+            entity.setStack(4, new ItemStack(recipe.get().getOutputStack().getItem(), outputSlotCount + recipeOutputCount));
 
             entity.resetProgress();
         }
@@ -279,8 +279,8 @@ public class MixingBowlBlockEntity extends BlockEntity implements ExtendedScreen
                 }
             }
 
-            return canInsertAmountIntoOutputSlot(inventory, recipe.getOutput().getCount())
-                    && canInsertItemIntoOutputSlot(inventory, recipe.getOutput().getItem());
+            return canInsertAmountIntoOutputSlot(inventory, recipe.getOutputStack().getCount())
+                    && canInsertItemIntoOutputSlot(inventory, recipe.getOutputStack().getItem());
         } else {
             return false;
         }
