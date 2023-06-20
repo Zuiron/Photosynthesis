@@ -51,8 +51,7 @@ public class LatexExtractorScreen extends HandledScreen<LatexExtractorScreenHand
     private void renderFluidTooltip(DrawContext context, int mouseX, int mouseY, int x, int y,
                                     FluidStack fluidStack, int offsetX, int offsetY, FluidStackRenderer renderer) {
         if (isMouseAboveArea(mouseX, mouseY, x, y, offsetX, offsetY, renderer)) {
-            //context.drawTooltip(renderer.getTooltip(fluidStack, TooltipContext.Default.BASIC),Optional.empty(), mouseX - x, mouseY - y);
-            //TODO
+            context.drawTooltip(textRenderer, renderer.getTooltip(fluidStack, TooltipContext.Default.BASIC), mouseX - x, mouseY - y);
         }
     }
 
