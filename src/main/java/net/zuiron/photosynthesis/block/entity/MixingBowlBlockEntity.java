@@ -181,7 +181,7 @@ public class MixingBowlBlockEntity extends BlockEntity implements ExtendedScreen
     }
 
     public static void tick(World world, BlockPos blockPos, BlockState state, MixingBowlBlockEntity entity) {
-        animationTick(world, blockPos, state);
+        //animationTick(world, blockPos, state);
 
         if(world.isClient()) {
             return;
