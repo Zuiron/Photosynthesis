@@ -102,7 +102,7 @@ public class FluidStackRenderer implements IIngredientRenderer<FluidStack> {
         RenderSystem.setShaderTexture(0, FluidRenderHandlerRegistry.INSTANCE.get(fluid.getFluidVariant().getFluid())
                 .getFluidSprites(MinecraftClient.getInstance().world, null, fluid.getFluidVariant().getFluid().getDefaultState())[0].getAtlasId());
     }*/
-    public void drawFluid(DrawContext context, FluidStack fluid, int x, int y, int width, int height, long maxCapacity) {
+    /*public void drawFluid(DrawContext context, FluidStack fluid, int x, int y, int width, int height, long maxCapacity) {
         if (fluid.getFluidVariant().getFluid() == Fluids.EMPTY) {
             return;
         }
@@ -134,6 +134,34 @@ public class FluidStackRenderer implements IIngredientRenderer<FluidStack> {
 
         RenderSystem.setShaderTexture(0, FluidRenderHandlerRegistry.INSTANCE.get(fluid.getFluidVariant().getFluid())
                 .getFluidSprites(MinecraftClient.getInstance().world, null, fluid.getFluidVariant().getFluid().getDefaultState())[0].getAtlasId());
+    }*/
+
+    public void drawFluid(DrawContext drawContext, FluidStack fluid, int x, int y, int width, int height, long maxCapacity) {
+        if (fluid.getFluidVariant().getFluid() == Fluids.EMPTY) {
+            return;
+        }
+        y += height;
+        final Sprite sprite = FluidVariantRendering.getSprite(fluid.getFluidVariant());
+        int color = FluidVariantRendering.getColor(fluid.getFluidVariant());
+
+        final int drawHeight = (int) (fluid.getAmount() / (maxCapacity * 1F) * height);
+        final int iconHeight = sprite.getContents().getHeight();
+        int offsetHeight = drawHeight;
+
+        drawContext.setShaderColor((color >> 16 & 255) / 255.0F, (float) (color >> 8 & 255) / 255.0F, (float) (color & 255) / 255.0F, 1F);
+
+        int iteration = 0;
+        while (offsetHeight != 0) {
+            final int curHeight = offsetHeight < iconHeight ? offsetHeight : iconHeight;
+
+            drawContext.drawSprite(x, y - offsetHeight, 0, width, curHeight, sprite);
+            offsetHeight -= curHeight;
+            iteration++;
+            if (iteration > 50) {
+                break;
+            }
+        }
+        drawContext.setShaderColor(1, 1, 1, 1);
     }
 
 
