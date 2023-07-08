@@ -35,8 +35,8 @@ public class MapleExtractorScreenHandler extends ScreenHandler {
         this.blockEntity = (MapleExtractorBlockEntity) entity;
         this.fluidStack = new FluidStack(blockEntity.fluidStorage.variant, blockEntity.fluidStorage.amount);
 
-        this.addSlot(new Slot(inventory, 0, 98, 13)); //input
-        this.addSlot(new Slot(inventory, 1, 98, 58)); //output
+        this.addSlot(new Slot(inventory, 0, 98, 20)); //input
+        this.addSlot(new Slot(inventory, 1, 98, 65)); //output
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
