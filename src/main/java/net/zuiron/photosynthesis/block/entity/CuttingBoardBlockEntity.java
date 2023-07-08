@@ -119,8 +119,8 @@ public class CuttingBoardBlockEntity extends BlockEntity implements ExtendedScre
 
     @Override
     public Text getDisplayName() {
-        return Text.literal("Cutting Board");
-    }
+        return Text.literal("");
+    } //Cutting Board
 
     @Nullable
     @Override

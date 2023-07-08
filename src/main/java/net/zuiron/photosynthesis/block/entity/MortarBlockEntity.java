@@ -119,8 +119,8 @@ public class MortarBlockEntity extends BlockEntity implements ExtendedScreenHand
 
     @Override
     public Text getDisplayName() {
-        return Text.literal("Mortar");
-    }
+        return Text.literal("");
+    } //Mortar
 
     @Nullable
     @Override
