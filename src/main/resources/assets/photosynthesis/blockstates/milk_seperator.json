@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "photosynthesis:block/milk_seperator"
+    },
+    "facing=south": {
+      "model": "photosynthesis:block/milk_seperator",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "photosynthesis:block/milk_seperator",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "photosynthesis:block/milk_seperator",
+      "y": 90
+    }
+  }
+}

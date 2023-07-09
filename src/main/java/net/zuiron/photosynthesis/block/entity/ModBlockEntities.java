@@ -19,6 +19,8 @@ public class ModBlockEntities {
     public static BlockEntityType<CookingPotBlockEntity> COOKINGPOT;
     public static BlockEntityType<KegBlockEntity> KEG;
 
+    public static BlockEntityType<MilkSeperatorBlockEntity> MILKSEPERATOR;
+
     public static void registerBlockEntities() {
         CUTTING_BOARD = Registry.register(Registries.BLOCK_ENTITY_TYPE,
                 new Identifier(Photosynthesis.MOD_ID, "cutting_board"),
@@ -59,6 +61,11 @@ public class ModBlockEntities {
                 new Identifier(Photosynthesis.MOD_ID, "keg"),
                 FabricBlockEntityTypeBuilder.create(KegBlockEntity::new,
                         ModBlocks.KEG).build(null));
+
+        MILKSEPERATOR = Registry.register(Registries.BLOCK_ENTITY_TYPE,
+                new Identifier(Photosynthesis.MOD_ID, "milkseperator"),
+                FabricBlockEntityTypeBuilder.create(MilkSeperatorBlockEntity::new,
+                        ModBlocks.MILKSEPERATOR).build(null));
 
         FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidStorage, LATEX_EXTRACTOR);
         FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidStorage, MAPLE_EXTRACTOR);

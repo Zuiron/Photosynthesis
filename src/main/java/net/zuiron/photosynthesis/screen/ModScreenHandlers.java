@@ -32,6 +32,9 @@ public class ModScreenHandlers {
     public static ScreenHandlerType<KegScreenHandler> KEG_SCREEN_HANDLER =
             new ExtendedScreenHandlerType<>(KegScreenHandler::new);
 
+    public static ScreenHandlerType<MilkSeperatorScreenHandler> MILKSEPERATOR_SCREEN_HANDLER =
+            new ExtendedScreenHandlerType<>(MilkSeperatorScreenHandler::new);
+
     public static void registerAllScreenHandlers() {
         Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "cutting_board"),
                 CUTTING_BOARD_SCREEN_HANDLER);
@@ -49,5 +52,7 @@ public class ModScreenHandlers {
                 COOKINGPOT_SCREEN_HANDLER);
         Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "keg"),
                 KEG_SCREEN_HANDLER);
+        Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "milkseperator"),
+                MILKSEPERATOR_SCREEN_HANDLER);
     }
 }

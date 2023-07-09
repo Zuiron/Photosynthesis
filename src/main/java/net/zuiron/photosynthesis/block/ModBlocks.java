@@ -62,6 +62,10 @@ public class ModBlocks {
             new KegBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
                     .strength(4f).requiresTool().nonOpaque()));
 
+    public static final Block MILKSEPERATOR = registerBlock("milk_seperator",
+            new MilkSeperatorBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(4f).requiresTool().nonOpaque()));
+
     public static final Block COOKINGPOT = registerBlock("cooking_pot",
             new CookingPotBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)
                     .strength(4f).requiresTool().nonOpaque()));
