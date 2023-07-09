@@ -19,6 +19,14 @@
   "block.photosynthesis.mead_block": "Mead",
   "item.photosynthesis.mead_bucket": "Mead Bucket",
 
+  "block.photosynthesis.maple": "Maple Sap",
+  "block.photosynthesis.maple_block": "Maple Sap",
+  "item.photosynthesis.maple_bucket": "Maple Sap Bucket",
+
+  "block.photosynthesis.maplesyrup": "Maple Syrup",
+  "block.photosynthesis.maplesyrup_block": "Maple Syrup",
+  "item.photosynthesis.maplesyrup_bucket": "Maple Syrup Bucket",
+
   "photosynthesis.tooltip.liquid.amount.with.capacity": "%s / %s mB",
   "photosynthesis.tooltip.liquid.amount": "%s mB",
 

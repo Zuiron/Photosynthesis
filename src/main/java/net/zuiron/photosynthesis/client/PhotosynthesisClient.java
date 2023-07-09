@@ -422,6 +422,17 @@ public class PhotosynthesisClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),
                 ModFluids.STILL_MAPLE, ModFluids.FLOWING_MAPLE);
 
+        //MAPLE SYRUP
+        FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_MAPLESYRUP, ModFluids.FLOWING_MAPLESYRUP,
+                new SimpleFluidRenderHandler(
+                        new Identifier("minecraft:block/water_still"), //minecraft:block/water_still
+                        new Identifier("minecraft:block/water_flow"), //minecraft:block/water_flow
+                        0xa1dca879
+                )); //0xA1E038D0
+
+        BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),
+                ModFluids.STILL_MAPLESYRUP, ModFluids.FLOWING_MAPLESYRUP);
+
         //CANOLAOIL
         FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_CANOLAOIL, ModFluids.FLOWING_CANOLAOIL,
                 new SimpleFluidRenderHandler(

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "photosynthesis:maple_bucket"
+  },
+  "result": "photosynthesis:maplesyrup_bucket",
+  "experience": 0.1,
+  "cookingtime": 900
+}
