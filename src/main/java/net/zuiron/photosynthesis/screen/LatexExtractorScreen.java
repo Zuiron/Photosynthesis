@@ -45,7 +45,7 @@ public class LatexExtractorScreen extends HandledScreen<LatexExtractorScreenHand
         int y = (height - backgroundHeight) / 2;
 
         // renderEnergyAreaTooltips(context, mouseX, mouseY, x, y);
-        renderFluidTooltip(context, mouseX, mouseY, x, y, handler.fluidStack, 62, 13, fluidStackRenderer);
+        renderFluidTooltip(context, mouseX, mouseY, x, y, handler.fluidStack, 62, 20, fluidStackRenderer);
     }
 
     private void renderFluidTooltip(DrawContext context, int mouseX, int mouseY, int x, int y,
@@ -66,13 +66,13 @@ public class LatexExtractorScreen extends HandledScreen<LatexExtractorScreenHand
 
         renderProgressArrow(context, x, y);
 
-        fluidStackRenderer.drawFluid(context, handler.fluidStack, x + 62, y + 13, 16, 61,
+        fluidStackRenderer.drawFluid(context, handler.fluidStack, x + 62, y + 20, 16, 61,
                 FluidStack.convertDropletsToMb(FluidConstants.BUCKET) * 2);
     }
 
     private void renderProgressArrow(DrawContext context, int x, int y) {
         if (handler.isCrafting()) {
-            context.drawTexture(TEXTURE, x + 103, y + 27, 176, 0, 8, handler.getScaledProgress());
+            context.drawTexture(TEXTURE, x + 103, y + 36, 176, 0, 8, handler.getScaledProgress());
         }
     }
 
