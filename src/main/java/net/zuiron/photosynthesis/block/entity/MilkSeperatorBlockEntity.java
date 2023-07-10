@@ -313,8 +313,8 @@ public class MilkSeperatorBlockEntity extends BlockEntity implements ExtendedScr
         return entity.getStack(0).getItem() == ModFluids.MILK_BUCKET;
     }
 
-    private static boolean hasEmptyBucketInSlot(MilkSeperatorBlockEntity entity) {
-        if(entity.getStack(2).getItem() == Items.BUCKET) { //TODO slot2?
+    private static boolean hasEmptyBucketInSlot(MilkSeperatorBlockEntity entity, int slot) {
+        if(entity.getStack(slot).getItem() == Items.BUCKET) { //slot 1 = skimmed, 2 = cream
             return true;
         }
         return false;
@@ -349,19 +349,35 @@ public class MilkSeperatorBlockEntity extends BlockEntity implements ExtendedScr
         return false;
     }
 
-    private static void extractFluidAndMakeBucket(MilkSeperatorBlockEntity entity) {
-        if(entity.fluidOutput.amount >= 1000) {
-            ItemStack itemStack = new ItemStack(entity.fluidOutput.getResource().getFluid().getBucketItem());
-            if(extractFluid(entity, 1000)) {
-                entity.setStack(2, itemStack);
+    private static void extractFluidAndMakeBucket(MilkSeperatorBlockEntity entity, int slot) {
+        if(slot == 1) { //1 = skimmed, 2 = cream
+            if (entity.fluidOutput.amount >= 1000) {
+                ItemStack itemStack = new ItemStack(entity.fluidOutput.getResource().getFluid().getBucketItem());
+                if (extractFluid(entity, 1000, 1)) {
+                    entity.setStack(slot, itemStack);
+                }
+            }
+        } else if (slot == 2) {
+            if (entity.fluidOutput2.amount >= 1000) {
+                ItemStack itemStack = new ItemStack(entity.fluidOutput2.getResource().getFluid().getBucketItem());
+                if (extractFluid(entity, 1000, 2)) {
+                    entity.setStack(slot, itemStack);
+                }
             }
         }
     }
 
-    private static boolean extractFluid(MilkSeperatorBlockEntity entity, int Amount) {
+    private static boolean extractFluid(MilkSeperatorBlockEntity entity, int Amount, int slot) {
         try(Transaction transaction = Transaction.openOuter()) {
-            entity.fluidOutput.extract(FluidVariant.of(entity.fluidOutput.getResource().getFluid()),
-                    Amount, transaction);
+
+            if(slot == 1) {
+                entity.fluidOutput.extract(FluidVariant.of(entity.fluidOutput.getResource().getFluid()),
+                        Amount, transaction);
+            } else if (slot == 2) {
+                entity.fluidOutput2.extract(FluidVariant.of(entity.fluidOutput2.getResource().getFluid()),
+                        Amount, transaction);
+            }
+
             transaction.commit();
             return true;
         }
@@ -381,8 +397,11 @@ public class MilkSeperatorBlockEntity extends BlockEntity implements ExtendedScr
         if(hasFluidSourceInSlot(entity)) {
             transferFluidToFluidStorage(entity);
         }
-        if(hasEmptyBucketInSlot(entity)) {
-            extractFluidAndMakeBucket(entity);
+        if(hasEmptyBucketInSlot(entity, 1)) {
+            extractFluidAndMakeBucket(entity, 1);
+        }
+        if(hasEmptyBucketInSlot(entity, 2)) {
+            extractFluidAndMakeBucket(entity, 2);
         }
         //--------------------------------
 

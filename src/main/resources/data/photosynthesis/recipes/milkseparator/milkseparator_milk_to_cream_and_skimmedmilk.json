@@ -6,11 +6,11 @@
   },
   "output": {
     "fluid": "photosynthesis:skimmedmilk",
-    "amount": 40500
+    "amount": 72900
   },
   "output2": {
     "fluid": "photosynthesis:milkcream",
-    "amount": 40500
+    "amount": 8100
   },
   "cookingtime": 100
 }

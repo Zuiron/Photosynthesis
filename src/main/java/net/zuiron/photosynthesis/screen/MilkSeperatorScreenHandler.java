@@ -41,8 +41,8 @@ public class MilkSeperatorScreenHandler extends ScreenHandler {
         this.fluidOutputStack2 = new FluidStack(blockEntity.fluidOutput2.variant, blockEntity.fluidOutput2.amount);
 
         this.addSlot(new OneCountSlot(inventory, 0, 43,  19));       //bucket
-        this.addSlot(new OneCountSlot(inventory, 5, 95,  58));       //bucket
-        this.addSlot(new OneCountSlot(inventory, 5, 152, 58));       //bucket
+        this.addSlot(new OneCountSlot(inventory, 1, 95,  58));       //bucket
+        this.addSlot(new OneCountSlot(inventory, 2, 152, 58));       //bucket
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
