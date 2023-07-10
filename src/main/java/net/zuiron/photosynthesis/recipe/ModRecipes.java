@@ -46,5 +46,11 @@ public class ModRecipes {
                 KegRecipe.Serializer.INSTANCE);
         Registry.register(Registries.RECIPE_TYPE, new Identifier(Photosynthesis.MOD_ID, KegRecipe.Type.ID),
                 KegRecipe.Type.INSTANCE);
+
+        //MILK-SEPARATOR
+        Registry.register(Registries.RECIPE_SERIALIZER, new Identifier(Photosynthesis.MOD_ID, MilkSeperatorRecipe.Serializer.ID),
+                MilkSeperatorRecipe.Serializer.INSTANCE);
+        Registry.register(Registries.RECIPE_TYPE, new Identifier(Photosynthesis.MOD_ID, MilkSeperatorRecipe.Type.ID),
+                MilkSeperatorRecipe.Type.INSTANCE);
     }
 }

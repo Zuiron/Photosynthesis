@@ -42,8 +42,9 @@ public class MilkSeperatorScreen extends HandledScreen<MilkSeperatorScreenHandle
         int y = (height - backgroundHeight) / 2;
 
         // renderEnergyAreaTooltips(context, mouseX, mouseY, x, y);
-        renderFluidTooltip(context, mouseX, mouseY, x, y, handler.fluidInputStack, 30, 6, fluidStackRenderer);
-        renderFluidTooltip(context, mouseX, mouseY, x, y, handler.fluidOutputStack, 130, 6, fluidStackRenderer);
+        renderFluidTooltip(context, mouseX, mouseY, x, y, handler.fluidInputStack, 62, 19, fluidStackRenderer);
+        renderFluidTooltip(context, mouseX, mouseY, x, y, handler.fluidOutputStack, 114, 19, fluidStackRenderer);
+        renderFluidTooltip(context, mouseX, mouseY, x, y, handler.fluidOutputStack2, 133, 19, fluidStackRenderer);
     }
 
 
@@ -66,9 +67,11 @@ public class MilkSeperatorScreen extends HandledScreen<MilkSeperatorScreenHandle
 
         renderProgressArrow(context, x, y);
 
-        fluidStackRenderer.drawFluid(context, handler.fluidInputStack, x + 30, y + 6, 16, 55,
+        fluidStackRenderer.drawFluid(context, handler.fluidInputStack, x + 62, y + 19, 16, 55,
                 FluidStack.convertDropletsToMb(FluidConstants.BUCKET) * 4);
-        fluidStackRenderer.drawFluid(context, handler.fluidOutputStack, x + 130, y + 6, 16, 55,
+        fluidStackRenderer.drawFluid(context, handler.fluidOutputStack, x + 114, y + 19, 16, 55,
+                FluidStack.convertDropletsToMb(FluidConstants.BUCKET) * 4);
+        fluidStackRenderer.drawFluid(context, handler.fluidOutputStack2, x + 133, y + 19, 16, 55,
                 FluidStack.convertDropletsToMb(FluidConstants.BUCKET) * 4);
     }
 

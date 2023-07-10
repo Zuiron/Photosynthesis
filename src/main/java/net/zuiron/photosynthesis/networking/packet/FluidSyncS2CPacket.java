@@ -9,9 +9,11 @@ import net.minecraft.util.math.BlockPos;
 import net.zuiron.photosynthesis.block.entity.KegBlockEntity;
 import net.zuiron.photosynthesis.block.entity.LatexExtractorBlockEntity;
 import net.zuiron.photosynthesis.block.entity.MapleExtractorBlockEntity;
+import net.zuiron.photosynthesis.block.entity.MilkSeperatorBlockEntity;
 import net.zuiron.photosynthesis.screen.KegScreenHandler;
 import net.zuiron.photosynthesis.screen.LatexExtractorScreenHandler;
 import net.zuiron.photosynthesis.screen.MapleExtractorScreenHandler;
+import net.zuiron.photosynthesis.screen.MilkSeperatorScreenHandler;
 import net.zuiron.photosynthesis.util.FluidStack;
 
 public class FluidSyncS2CPacket {
@@ -46,6 +48,15 @@ public class FluidSyncS2CPacket {
                     screenHandler.blockEntity.getPos().equals(position)) {
                 blockEntity.setFluidLevel(variant, fluidLevel);
                 screenHandler.setFluid(new FluidStack(variant, fluidLevel));
+            }
+        }
+        else if(client.world.getBlockEntity(position) instanceof MilkSeperatorBlockEntity blockEntity) {
+            blockEntity.setInputFluidLevel(variant, fluidLevel);
+
+            if(client.player.currentScreenHandler instanceof MilkSeperatorScreenHandler screenHandler &&
+                    screenHandler.blockEntity.getPos().equals(position)) {
+                blockEntity.setInputFluidLevel(variant, fluidLevel);
+                screenHandler.setInputFluid(new FluidStack(variant, fluidLevel));
             }
         }
     }

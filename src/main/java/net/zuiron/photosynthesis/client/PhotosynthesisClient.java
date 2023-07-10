@@ -466,5 +466,38 @@ public class PhotosynthesisClient implements ClientModInitializer {
 
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),
                 ModFluids.STILL_MEAD, ModFluids.FLOWING_MEAD);
+
+        //MILK
+        FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_MILK, ModFluids.FLOWING_MILK,
+                new SimpleFluidRenderHandler(
+                        new Identifier("photosynthesis:block/latex_still"), //minecraft:block/water_still
+                        new Identifier("photosynthesis:block/latex_flow"), //minecraft:block/water_flow
+                        0xFFFFFFFF
+                )); //0xA1E038D0
+
+        BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),
+                ModFluids.STILL_MILK, ModFluids.FLOWING_MILK);
+
+        //MILKCREAM
+        FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_MILKCREAM, ModFluids.FLOWING_MILKCREAM,
+                new SimpleFluidRenderHandler(
+                        new Identifier("photosynthesis:block/latex_still"), //minecraft:block/water_still
+                        new Identifier("photosynthesis:block/latex_flow"), //minecraft:block/water_flow
+                        0xFFFFFFFF
+                )); //0xA1E038D0
+
+        BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),
+                ModFluids.STILL_MILKCREAM, ModFluids.FLOWING_MILKCREAM);
+
+        //SKIMMEDMILK
+        FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_SKIMMEDMILK, ModFluids.FLOWING_SKIMMEDMILK,
+                new SimpleFluidRenderHandler(
+                        new Identifier("photosynthesis:block/latex_still"), //minecraft:block/water_still
+                        new Identifier("photosynthesis:block/latex_flow"), //minecraft:block/water_flow
+                        0xFFFFFFFF
+                )); //0xA1E038D0
+
+        BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),
+                ModFluids.STILL_SKIMMEDMILK, ModFluids.FLOWING_SKIMMEDMILK);
     }
 }

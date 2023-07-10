@@ -1,0 +1,16 @@
+{
+  "type": "photosynthesis:milkseperator",
+  "fluidinput": {
+    "fluid": "photosynthesis:milk",
+    "amount": 81000
+  },
+  "output": {
+    "fluid": "photosynthesis:skimmedmilk",
+    "amount": 40500
+  },
+  "output2": {
+    "fluid": "photosynthesis:milkcream",
+    "amount": 40500
+  },
+  "cookingtime": 100
+}

@@ -35,6 +35,8 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.custom.MilkSeperatorBlock;
+import net.zuiron.photosynthesis.fluid.ModFluids;
+import net.zuiron.photosynthesis.item.ModItems;
 import net.zuiron.photosynthesis.networking.ModMessages;
 import net.zuiron.photosynthesis.recipe.MilkSeperatorRecipe;
 import net.zuiron.photosynthesis.screen.MilkSeperatorScreenHandler;
@@ -117,9 +119,30 @@ public class MilkSeperatorBlockEntity extends BlockEntity implements ExtendedScr
         }
     };
 
+    public final SingleVariantStorage<FluidVariant> fluidOutput2 = new SingleVariantStorage<FluidVariant>() {
+        @Override
+        protected FluidVariant getBlankVariant() {
+            return FluidVariant.blank();
+        }
+
+        @Override
+        protected long getCapacity(FluidVariant variant) {
+            return FluidStack.convertDropletsToMb(FluidConstants.BUCKET) * 4; // 4 buckets
+        }
+
+        @Override
+        protected void onFinalCommit() {
+            markDirty();
+            if(!world.isClient()) {
+                sendFluidPacket();
+            }
+        }
+    };
+
     private void sendFluidPacket() {
         PacketByteBuf data = PacketByteBufs.create();
         PacketByteBuf data2 = PacketByteBufs.create();
+        PacketByteBuf data3 = PacketByteBufs.create();
 
         fluidInput.variant.toPacket(data);
         data.writeLong(fluidInput.amount);
@@ -127,12 +150,17 @@ public class MilkSeperatorBlockEntity extends BlockEntity implements ExtendedScr
         fluidOutput.variant.toPacket(data2);
         data2.writeLong(fluidOutput.amount);
 
+        fluidOutput2.variant.toPacket(data3);
+        data3.writeLong(fluidOutput2.amount);
+
         data.writeBlockPos(getPos());
         data2.writeBlockPos(getPos());
+        data3.writeBlockPos(getPos());
 
         for (ServerPlayerEntity player : PlayerLookup.tracking((ServerWorld) world, getPos())) {
             ServerPlayNetworking.send(player, ModMessages.FLUID_SYNC, data);
             ServerPlayNetworking.send(player, ModMessages.FLUID_SYNC2, data2);
+            ServerPlayNetworking.send(player, ModMessages.FLUID_SYNC3, data3);
         }
     }
 
@@ -175,6 +203,11 @@ public class MilkSeperatorBlockEntity extends BlockEntity implements ExtendedScr
         this.fluidOutput.amount = fluidLevel;
     }
 
+    public void setOutputFluidLevel2(FluidVariant fluidVariant, long fluidLevel) {
+        this.fluidOutput2.variant = fluidVariant;
+        this.fluidOutput2.amount = fluidLevel;
+    }
+
     @Override
     public DefaultedList<ItemStack> getItems() {
         return this.inventory;
@@ -211,6 +244,9 @@ public class MilkSeperatorBlockEntity extends BlockEntity implements ExtendedScr
 
         nbt.put("outputFluid.variant", fluidOutput.variant.toNbt());
         nbt.putLong("outputFluid.fluid", fluidOutput.amount);
+
+        nbt.put("outputFluid2.variant", fluidOutput2.variant.toNbt());
+        nbt.putLong("outputFluid2.fluid", fluidOutput2.amount);
     }
 
     @Override
@@ -225,6 +261,9 @@ public class MilkSeperatorBlockEntity extends BlockEntity implements ExtendedScr
 
         fluidOutput.variant = FluidVariant.fromNbt((NbtCompound) nbt.get("outputFluid.variant"));
         fluidOutput.amount = nbt.getLong("outputFluid.fluid");
+
+        fluidOutput2.variant = FluidVariant.fromNbt((NbtCompound) nbt.get("outputFluid2.variant"));
+        fluidOutput2.amount = nbt.getLong("outputFluid2.fluid");
     }
 
     private void resetProgress() {
@@ -269,12 +308,13 @@ public class MilkSeperatorBlockEntity extends BlockEntity implements ExtendedScr
     }
 
     private static boolean hasFluidSourceInSlot(MilkSeperatorBlockEntity entity) {
-        //TODO - what if we can use other fluid than water?
-        return entity.getStack(0).getItem() == Items.WATER_BUCKET;
+        //TODO - what if we can use other fluid than milk?
+        //return entity.getStack(0).getItem() == Items.MILK_BUCKET;
+        return entity.getStack(0).getItem() == ModFluids.MILK_BUCKET;
     }
 
     private static boolean hasEmptyBucketInSlot(MilkSeperatorBlockEntity entity) {
-        if(entity.getStack(5).getItem() == Items.BUCKET) {
+        if(entity.getStack(2).getItem() == Items.BUCKET) { //TODO slot2?
             return true;
         }
         return false;
@@ -291,7 +331,8 @@ public class MilkSeperatorBlockEntity extends BlockEntity implements ExtendedScr
 
     private static boolean insertFluid(MilkSeperatorBlockEntity entity, long convertDropletsToMb) {
         try(Transaction transaction = Transaction.openOuter()) {
-            entity.fluidInput.insert(FluidVariant.of(Fluids.WATER), convertDropletsToMb, transaction);
+            //entity.fluidInput.insert(FluidVariant.of(Fluids.WATER), convertDropletsToMb, transaction); //TODO add milk fluid.
+            entity.fluidInput.insert(FluidVariant.of(ModFluids.STILL_MILK.getDefaultState().getFluid()), convertDropletsToMb, transaction);
             transaction.commit();
             return true;
         }
@@ -312,7 +353,7 @@ public class MilkSeperatorBlockEntity extends BlockEntity implements ExtendedScr
         if(entity.fluidOutput.amount >= 1000) {
             ItemStack itemStack = new ItemStack(entity.fluidOutput.getResource().getFluid().getBucketItem());
             if(extractFluid(entity, 1000)) {
-                entity.setStack(5, itemStack);
+                entity.setStack(2, itemStack);
             }
         }
     }
@@ -389,6 +430,7 @@ public class MilkSeperatorBlockEntity extends BlockEntity implements ExtendedScr
         if(hasRecipe(entity)) {
             FluidStack inputFluid = recipe.get().getFluidInput();
             FluidStack outputFluid = recipe.get().getOutputFluid();
+            FluidStack outputFluid2 = recipe.get().getOutputFluid2();
 
             //DONE - remove input fluid from input fluid tank
             try(Transaction transaction = Transaction.openOuter()) {
@@ -397,10 +439,12 @@ public class MilkSeperatorBlockEntity extends BlockEntity implements ExtendedScr
                 transaction.commit();
             }
 
+            /*
             entity.removeStack(1, (Integer) recipe.get().getCounts().get(0));   //input
             entity.removeStack(2, (Integer) recipe.get().getCounts().get(1));   //input
             entity.removeStack(3, (Integer) recipe.get().getCounts().get(2));   //input
             entity.removeStack(4, (Integer) recipe.get().getCounts().get(3));   //input
+            */
 
 
             try(Transaction transaction = Transaction.openOuter()) {
@@ -408,6 +452,13 @@ public class MilkSeperatorBlockEntity extends BlockEntity implements ExtendedScr
                         FluidStack.convertDropletsToMb(outputFluid.amount), transaction);
                 transaction.commit();
             }
+
+            try(Transaction transaction = Transaction.openOuter()) {
+                entity.fluidOutput2.insert(FluidVariant.of(outputFluid2.fluidVariant.getFluid()),
+                        FluidStack.convertDropletsToMb(outputFluid2.amount), transaction);
+                transaction.commit();
+            }
+
 
 
             entity.resetProgress();
@@ -429,32 +480,14 @@ public class MilkSeperatorBlockEntity extends BlockEntity implements ExtendedScr
         if (match.isPresent()) {
             //Photosynthesis.LOGGER.info("match is present! continue");
             MilkSeperatorRecipe recipe = match.get();
-            List<Ingredient> ingredients = recipe.getIngredients();
-            DefaultedList counts = recipe.getCounts();
+            //List<Ingredient> ingredients = recipe.getIngredients();
+            //DefaultedList counts = recipe.getCounts();
 
             FluidStack inputFluid = recipe.getFluidInput();
             FluidStack outputFluid = recipe.getOutputFluid();
+            FluidStack outputFluid2 = recipe.getOutputFluid2();
 
-            //check item counts.
-            for (int i = 0; i < ingredients.size(); i++) {
-                Ingredient ingredient = ingredients.get(i);
-                ItemStack itemStack = entity.getStack(i+1);
-                //Photosynthesis.LOGGER.info("ingredient:"+ingredient.toJson()+", itemStack:"+itemStack);
-
-                int reqCount = (int) counts.get(i);
-
-                if (ingredient.isEmpty() || itemStack.isEmpty()) {
-                    continue;
-                } else if (ingredient.test(itemStack) && itemStack.getCount() >= reqCount) {
-                    //Photosynthesis.LOGGER.info("recipe requires min:"+reqCount+", we got:"+itemStack.getCount());
-                    continue;
-                } else {
-                    //Photosynthesis.LOGGER.info("FAILED - recipe requires:"+reqCount+", we got:"+itemStack.getCount());
-                    return false;
-                }
-            }
-
-            return canInsertFluidIntoFluidOutput(entity, outputFluid, FluidStack.convertDropletsToMb(outputFluid.amount)) &&
+            return canInsertFluidIntoFluidOutput(entity, outputFluid, outputFluid2, FluidStack.convertDropletsToMb(outputFluid.amount), FluidStack.convertDropletsToMb(outputFluid2.amount)) &&
                     doesInputTankContainEnoughRecipeInputFluid(entity, inputFluid, FluidStack.convertDropletsToMb(inputFluid.amount));
         } else {
             //Photosynthesis.LOGGER.info("no match is present...");
@@ -478,18 +511,27 @@ public class MilkSeperatorBlockEntity extends BlockEntity implements ExtendedScr
         return true;
     }
 
-    private static boolean canInsertFluidIntoFluidOutput(MilkSeperatorBlockEntity entity, FluidStack outputFluid, long amount) {
+    private static boolean canInsertFluidIntoFluidOutput(MilkSeperatorBlockEntity entity, FluidStack outputFluid, FluidStack outputFluid2, long amount, long amount2) {
         long outputTankCapacity = entity.fluidOutput.getCapacity();
         long outputTankAmount = entity.fluidOutput.getAmount();
         long outputTankRemainingCapacity = outputTankCapacity - outputTankAmount;
 
+        long outputTankCapacity2 = entity.fluidOutput2.getCapacity();
+        long outputTankAmount2 = entity.fluidOutput2.getAmount();
+        long outputTankRemainingCapacity2 = outputTankCapacity2 - outputTankAmount2;
+
         if(outputTankRemainingCapacity < amount) { return false; } //WORKING - capacity check
+        if(outputTankRemainingCapacity2 < amount2) { return false; } //WORKING - capacity check
 
         FluidVariant outputTankFluidVariant = entity.fluidOutput.getResource();
         FluidVariant recipeFluidVariant = outputFluid.fluidVariant;
 
+        FluidVariant outputTankFluidVariant2 = entity.fluidOutput2.getResource();
+        FluidVariant recipeFluidVariant2 = outputFluid2.fluidVariant;
+
         //DONE -- check if output fluid is equal to outputtankfluid or is empty.
         if(!outputTankFluidVariant.isOf(Fluids.EMPTY) && outputTankFluidVariant != recipeFluidVariant) { return false; } //? - is recipe and output tank same variant?
+        if(!outputTankFluidVariant2.isOf(Fluids.EMPTY) && outputTankFluidVariant2 != recipeFluidVariant2) { return false; } //? - is recipe and output tank same variant?
 
         //Photosynthesis.LOGGER.info("capacity: "+outputTankCapacity+", Amount: "+outputTankAmount+", of: "+outputTankFluidVariant);
         //Photosynthesis.LOGGER.info("trying to insert: "+recipeFluidVariant+", amount: "+amount);

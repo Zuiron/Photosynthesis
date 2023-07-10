@@ -47,6 +47,21 @@ public class ModFluids {
     public static Block MEAD_BLOCK;
     public static Item MEAD_BUCKET;
 
+    public static FlowableFluid STILL_MILK;
+    public static FlowableFluid FLOWING_MILK;
+    public static Block MILK_BLOCK;
+    public static Item MILK_BUCKET;
+
+    public static FlowableFluid STILL_MILKCREAM;
+    public static FlowableFluid FLOWING_MILKCREAM;
+    public static Block MILKCREAM_BLOCK;
+    public static Item MILKCREAM_BUCKET;
+
+    public static FlowableFluid STILL_SKIMMEDMILK;
+    public static FlowableFluid FLOWING_SKIMMEDMILK;
+    public static Block SKIMMEDMILK_BLOCK;
+    public static Item SKIMMEDMILK_BUCKET;
+
     public static void register() {
         //LATEX
         STILL_LATEX = Registry.register(Registries.FLUID,
@@ -113,5 +128,35 @@ public class ModFluids {
         MEAD_BUCKET = Registry.register(Registries.ITEM, new Identifier(Photosynthesis.MOD_ID, "mead_bucket"),
                 new BucketItem(ModFluids.STILL_MEAD, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1)));
         //ItemGroupEvents.modifyEntriesEvent(ModItemGroup.PHOTOSYNTHESIS).register(entries -> entries.add(MEAD_BUCKET));
+
+        //MILK
+        STILL_MILK = Registry.register(Registries.FLUID,
+                new Identifier(Photosynthesis.MOD_ID, "milk"), new MilkFluid.Still());
+        FLOWING_MILK = Registry.register(Registries.FLUID,
+                new Identifier(Photosynthesis.MOD_ID, "flowing_milk"), new MilkFluid.Flowing());
+        MILK_BLOCK = Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, "milk_block"),
+                new FluidBlock(ModFluids.STILL_MILK, FabricBlockSettings.copyOf(Blocks.WATER)){ });
+        MILK_BUCKET = Registry.register(Registries.ITEM, new Identifier(Photosynthesis.MOD_ID, "milk_bucket"),
+                new BucketItem(ModFluids.STILL_MILK, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1)));
+
+        //MILKCREAM
+        STILL_MILKCREAM = Registry.register(Registries.FLUID,
+                new Identifier(Photosynthesis.MOD_ID, "milkcream"), new MilkCreamFluid.Still());
+        FLOWING_MILKCREAM = Registry.register(Registries.FLUID,
+                new Identifier(Photosynthesis.MOD_ID, "flowing_milkcream"), new MilkCreamFluid.Flowing());
+        MILKCREAM_BLOCK = Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, "milkcream_block"),
+                new FluidBlock(ModFluids.STILL_MILKCREAM, FabricBlockSettings.copyOf(Blocks.WATER)){ });
+        MILKCREAM_BUCKET = Registry.register(Registries.ITEM, new Identifier(Photosynthesis.MOD_ID, "milkcream_bucket"),
+                new BucketItem(ModFluids.STILL_MILKCREAM, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1)));
+
+        //SKIMMEDMILK
+        STILL_SKIMMEDMILK = Registry.register(Registries.FLUID,
+                new Identifier(Photosynthesis.MOD_ID, "skimmedmilk"), new SkimmedMilkFluid.Still());
+        FLOWING_SKIMMEDMILK = Registry.register(Registries.FLUID,
+                new Identifier(Photosynthesis.MOD_ID, "flowing_skimmedmilk"), new SkimmedMilkFluid.Flowing());
+        SKIMMEDMILK_BLOCK = Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, "skimmedmilk_block"),
+                new FluidBlock(ModFluids.STILL_SKIMMEDMILK, FabricBlockSettings.copyOf(Blocks.WATER)){ });
+        SKIMMEDMILK_BUCKET = Registry.register(Registries.ITEM, new Identifier(Photosynthesis.MOD_ID, "skimmedmilk_bucket"),
+                new BucketItem(ModFluids.STILL_SKIMMEDMILK, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1)));
     }
 }

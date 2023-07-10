@@ -22,6 +22,7 @@ public class MilkSeperatorScreenHandler extends ScreenHandler {
 
     public FluidStack fluidInputStack;
     public FluidStack fluidOutputStack;
+    public FluidStack fluidOutputStack2;
 
     public MilkSeperatorScreenHandler(int syncId, PlayerInventory inventory, PacketByteBuf buf) {
         this(syncId, inventory, inventory.player.getWorld().getBlockEntity(buf.readBlockPos()),
@@ -30,22 +31,18 @@ public class MilkSeperatorScreenHandler extends ScreenHandler {
 
     public MilkSeperatorScreenHandler(int syncId, PlayerInventory playerInventory, BlockEntity entity, PropertyDelegate delegate) {
         super(ModScreenHandlers.MILKSEPERATOR_SCREEN_HANDLER, syncId);
-        checkSize(((Inventory) entity), 6);
+        checkSize(((Inventory) entity), 3);
         this.inventory = (Inventory)entity;
         inventory.onOpen(playerInventory.player);
         this.propertyDelegate = delegate;
         this.blockEntity = (MilkSeperatorBlockEntity) entity;
         this.fluidInputStack = new FluidStack(blockEntity.fluidInput.variant, blockEntity.fluidInput.amount);
         this.fluidOutputStack = new FluidStack(blockEntity.fluidOutput.variant, blockEntity.fluidOutput.amount);
+        this.fluidOutputStack2 = new FluidStack(blockEntity.fluidOutput2.variant, blockEntity.fluidOutput2.amount);
 
-        this.addSlot(new OneCountSlot(inventory, 0, 8, 6));          //bucket
-
-        this.addSlot(new Slot(inventory, 1, 53, 26));           //item
-        this.addSlot(new Slot(inventory, 2, 71, 26));           //item
-        this.addSlot(new Slot(inventory, 3, 89, 26));           //item
-        this.addSlot(new Slot(inventory, 4, 107, 26));           //item
-
-        this.addSlot(new OneCountSlot(inventory, 5, 152, 45));           //bucket
+        this.addSlot(new OneCountSlot(inventory, 0, 43,  19));       //bucket
+        this.addSlot(new OneCountSlot(inventory, 5, 95,  58));       //bucket
+        this.addSlot(new OneCountSlot(inventory, 5, 152, 58));       //bucket
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
@@ -59,6 +56,10 @@ public class MilkSeperatorScreenHandler extends ScreenHandler {
 
     public void setOutputFluid(FluidStack stack) {
         fluidOutputStack = stack;
+    }
+
+    public void setOutputFluid2(FluidStack stack) {
+        fluidOutputStack2 = stack;
     }
 
 
