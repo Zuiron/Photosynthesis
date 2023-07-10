@@ -116,6 +116,15 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.BOILED_EGG,
                 ModItems.WHEAT_DOUGH,
 
+                ModItems.BBQ_SKEWERS,
+                ModItems.MINCED_BEEF,
+                ModItems.YELLOW_CHEESE,
+                ModItems.ENGLISH_BREAKFAST,
+                ModItems.MEATBALLS,
+                ModItems.MINCED_PORK,
+                ModItems.PUMPKIN_SOUP,
+                ModItems.WAFFLE,
+
                 ModItems.CUT_KIWI,
                 ModItems.MEASURING_CUP,
                 ModItems.MEASURING_CUP_WATER,
