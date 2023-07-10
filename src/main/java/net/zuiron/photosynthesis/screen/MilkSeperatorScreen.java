@@ -79,7 +79,7 @@ public class MilkSeperatorScreen extends HandledScreen<MilkSeperatorScreenHandle
 
     private void renderProgressArrow(DrawContext context, int x, int y) {
         if (handler.isCrafting()) {
-            context.drawTexture(TEXTURE, x + 76, y + 47, 177, 31, handler.getScaledProgress2(), 16);
+            context.drawTexture(TEXTURE, x + 85, y + 31, 177, 31, handler.getScaledProgress2(), 16);
         }
     }
 
