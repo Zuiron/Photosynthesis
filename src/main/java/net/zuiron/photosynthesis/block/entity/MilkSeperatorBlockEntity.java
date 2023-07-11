@@ -12,9 +12,11 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.SimpleInventory;
+import net.minecraft.item.BucketItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -308,9 +310,14 @@ public class MilkSeperatorBlockEntity extends BlockEntity implements ExtendedScr
     }
 
     private static boolean hasFluidSourceInSlot(MilkSeperatorBlockEntity entity) {
-        //TODO - what if we can use other fluid than milk?
-        //return entity.getStack(0).getItem() == Items.MILK_BUCKET;
-        return entity.getStack(0).getItem() == ModFluids.MILK_BUCKET;
+        if (entity.getStack(0).getItem() instanceof BucketItem || entity.getStack(0).getItem() == Items.MILK_BUCKET) {
+            Photosynthesis.LOGGER.info(entity.getStack(0).getItem());
+            if(entity.getStack(0).getItem() != Items.BUCKET) {
+                return true;
+            }
+            else return false;
+        }
+        return false;
     }
 
     private static boolean hasEmptyBucketInSlot(MilkSeperatorBlockEntity entity, int slot) {
@@ -331,8 +338,12 @@ public class MilkSeperatorBlockEntity extends BlockEntity implements ExtendedScr
 
     private static boolean insertFluid(MilkSeperatorBlockEntity entity, long convertDropletsToMb) {
         try(Transaction transaction = Transaction.openOuter()) {
-            //entity.fluidInput.insert(FluidVariant.of(Fluids.WATER), convertDropletsToMb, transaction); //TODO add milk fluid.
-            entity.fluidInput.insert(FluidVariant.of(ModFluids.STILL_MILK.getDefaultState().getFluid()), convertDropletsToMb, transaction);
+            Fluid fluid = Fluids.EMPTY;
+            if(entity.getStack(0).getItem() == Items.MILK_BUCKET || entity.getStack(0).getItem() == ModFluids.MILK_BUCKET) {
+                fluid = ModFluids.STILL_MILK.getDefaultState().getFluid();
+            }
+
+            entity.fluidInput.insert(FluidVariant.of(fluid), convertDropletsToMb, transaction);
             transaction.commit();
             return true;
         }
