@@ -18,6 +18,7 @@ public class ModBlockEntities {
     public static BlockEntityType<MixingBowlBlockEntity> MIXINGBOWL;
     public static BlockEntityType<CookingPotBlockEntity> COOKINGPOT;
     public static BlockEntityType<KegBlockEntity> KEG;
+    public static BlockEntityType<FluidPressBlockEntity> FLUID_PRESS;
 
     public static BlockEntityType<MilkSeperatorBlockEntity> MILKSEPERATOR;
 
@@ -61,6 +62,11 @@ public class ModBlockEntities {
                 new Identifier(Photosynthesis.MOD_ID, "keg"),
                 FabricBlockEntityTypeBuilder.create(KegBlockEntity::new,
                         ModBlocks.KEG).build(null));
+
+        FLUID_PRESS = Registry.register(Registries.BLOCK_ENTITY_TYPE,
+                new Identifier(Photosynthesis.MOD_ID, "fluid_press"),
+                FabricBlockEntityTypeBuilder.create(FluidPressBlockEntity::new,
+                        ModBlocks.FLUID_PRESS).build(null));
 
         MILKSEPERATOR = Registry.register(Registries.BLOCK_ENTITY_TYPE,
                 new Identifier(Photosynthesis.MOD_ID, "milkseperator"),

@@ -62,6 +62,10 @@ public class ModBlocks {
             new KegBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
                     .strength(4f).requiresTool().nonOpaque()));
 
+    public static final Block FLUID_PRESS = registerBlock("fluid_press",
+            new FluidPressBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(4f).requiresTool().nonOpaque()));
+
     public static final Block MILKSEPERATOR = registerBlock("milk_seperator",
             new MilkSeperatorBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
                     .strength(4f).requiresTool().nonOpaque()));

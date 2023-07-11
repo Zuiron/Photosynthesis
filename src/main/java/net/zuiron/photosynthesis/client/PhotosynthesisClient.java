@@ -395,6 +395,7 @@ public class PhotosynthesisClient implements ClientModInitializer {
         HandledScreens.register(ModScreenHandlers.MIXINGBOWL_SCREEN_HANDLER, MixingBowlScreen::new);
         HandledScreens.register(ModScreenHandlers.COOKINGPOT_SCREEN_HANDLER, CookingPotScreen::new);
         HandledScreens.register(ModScreenHandlers.KEG_SCREEN_HANDLER, KegScreen::new);
+        HandledScreens.register(ModScreenHandlers.FLUID_PRESS_SCREEN_HANDLER, FluidPressScreen::new);
         HandledScreens.register(ModScreenHandlers.MILKSEPERATOR_SCREEN_HANDLER, MilkSeperatorScreen::new);
         ModMessages.registerS2CPackets();
 
