@@ -499,5 +499,16 @@ public class PhotosynthesisClient implements ClientModInitializer {
 
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),
                 ModFluids.STILL_SKIMMEDMILK, ModFluids.FLOWING_SKIMMEDMILK);
+
+        //OLIVEOIL
+        FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_OLIVEOIL, ModFluids.FLOWING_OLIVEOIL,
+                new SimpleFluidRenderHandler(
+                        new Identifier("photosynthesis:block/latex_still"), //minecraft:block/water_still
+                        new Identifier("photosynthesis:block/latex_flow"), //minecraft:block/water_flow
+                        0xFFe8e474
+                )); //0xA1E038D0
+
+        BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),
+                ModFluids.STILL_OLIVEOIL, ModFluids.FLOWING_OLIVEOIL);
     }
 }

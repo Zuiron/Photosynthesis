@@ -62,6 +62,11 @@ public class ModFluids {
     public static Block SKIMMEDMILK_BLOCK;
     public static Item SKIMMEDMILK_BUCKET;
 
+    public static FlowableFluid STILL_OLIVEOIL;
+    public static FlowableFluid FLOWING_OLIVEOIL;
+    public static Block OLIVEOIL_BLOCK;
+    public static Item OLIVEOIL_BUCKET;
+
     public static void register() {
         //LATEX
         STILL_LATEX = Registry.register(Registries.FLUID,
@@ -158,5 +163,15 @@ public class ModFluids {
                 new FluidBlock(ModFluids.STILL_SKIMMEDMILK, FabricBlockSettings.copyOf(Blocks.WATER)){ });
         SKIMMEDMILK_BUCKET = Registry.register(Registries.ITEM, new Identifier(Photosynthesis.MOD_ID, "skimmedmilk_bucket"),
                 new BucketItem(ModFluids.STILL_SKIMMEDMILK, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1)));
+
+        //OLIVEOIL
+        STILL_OLIVEOIL = Registry.register(Registries.FLUID,
+                new Identifier(Photosynthesis.MOD_ID, "oliveoil"), new OliveOilFluid.Still());
+        FLOWING_OLIVEOIL = Registry.register(Registries.FLUID,
+                new Identifier(Photosynthesis.MOD_ID, "flowing_oliveoil"), new OliveOilFluid.Flowing());
+        OLIVEOIL_BLOCK = Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, "oliveoil_block"),
+                new FluidBlock(ModFluids.STILL_OLIVEOIL, FabricBlockSettings.copyOf(Blocks.WATER)){ });
+        OLIVEOIL_BUCKET = Registry.register(Registries.ITEM, new Identifier(Photosynthesis.MOD_ID, "oliveoil_bucket"),
+                new BucketItem(ModFluids.STILL_OLIVEOIL, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1)));
     }
 }
