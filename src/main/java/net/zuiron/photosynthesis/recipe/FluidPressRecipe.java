@@ -18,12 +18,13 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
+import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.util.FluidStack;
 
 public class FluidPressRecipe implements Recipe<SimpleInventory> {
     private final Identifier id;
     private final FluidStack output;
-    private final FluidStack fluidInput;
+    //private final FluidStack fluidInput;
     private final DefaultedList<Ingredient> recipeItems;
 
     private final int cookingTime;
@@ -31,13 +32,13 @@ public class FluidPressRecipe implements Recipe<SimpleInventory> {
     private final DefaultedList counts;
 
 
-    public FluidPressRecipe(Identifier id, FluidStack output, DefaultedList<Ingredient> recipeItems, int cookingTime, DefaultedList counts, FluidStack fluidInput) {
+    public FluidPressRecipe(Identifier id, FluidStack output, DefaultedList<Ingredient> recipeItems, int cookingTime, DefaultedList counts) {
         this.id = id;
         this.output = output;
         this.recipeItems = recipeItems;
         this.cookingTime = cookingTime;
         this.counts = counts;
-        this.fluidInput = fluidInput;
+        //this.fluidInput = fluidInput;
     }
 
     @Override
@@ -46,10 +47,7 @@ public class FluidPressRecipe implements Recipe<SimpleInventory> {
             return false;
         }
         //is this not used???
-        return recipeItems.get(0).test(inventory.getStack(0))
-                && recipeItems.get(1).test(inventory.getStack(1))
-                && recipeItems.get(2).test(inventory.getStack(2))
-                && recipeItems.get(3).test(inventory.getStack(3));
+        return recipeItems.get(0).test(inventory.getStack(0));
     }
 
     @Override
@@ -79,9 +77,9 @@ public class FluidPressRecipe implements Recipe<SimpleInventory> {
         return cookingTime;
     }
 
-    public FluidStack getFluidInput() {
+    /*public FluidStack getFluidInput() {
         return fluidInput;
-    }
+    }*/
 
     public DefaultedList getCounts() { return counts; }
 
@@ -136,8 +134,8 @@ public class FluidPressRecipe implements Recipe<SimpleInventory> {
 
             //ITEM input -- DONE
             JsonArray ingredients = JsonHelper.getArray(json, "ingredients");
-            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(4, Ingredient.EMPTY);
-            DefaultedList<Integer> counts = DefaultedList.ofSize(4, 0);
+            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(1, Ingredient.EMPTY);
+            DefaultedList<Integer> counts = DefaultedList.ofSize(1, 0);
 
             for (int i = 0; i < ingredients.size(); i++) {
                 if (i >= inputs.size()) {
@@ -152,7 +150,7 @@ public class FluidPressRecipe implements Recipe<SimpleInventory> {
 
 
             //FLUID input -- DONE
-            JsonObject inputobj = JsonHelper.getObject(json, "fluidinput");
+            /*JsonObject inputobj = JsonHelper.getObject(json, "fluidinput");
             int inputfluidamount = JsonHelper.getInt(inputobj, "amount", 81000);
 
             String inputfluidstring = JsonHelper.getString(inputobj, "fluid");
@@ -161,6 +159,7 @@ public class FluidPressRecipe implements Recipe<SimpleInventory> {
             });
             FluidStack fluidInput = new FluidStack(FluidVariant.of(inputfluid), inputfluidamount);
             //Photosynthesis.LOGGER.info("input fluid: " + fluidInput.fluidVariant.getFluid() + ", amount: " + fluidInput.amount);
+            */
             //----------------------------------------------------------------------------------------------------------
 
 
@@ -175,7 +174,7 @@ public class FluidPressRecipe implements Recipe<SimpleInventory> {
             //ItemStack output = new ItemStack(Items.STICK);
 
             int CookTime = JsonHelper.getInt(json, "cookingtime");
-            return new FluidPressRecipe(id, fluidOutput, inputs, CookTime, counts, fluidInput);
+            return new FluidPressRecipe(id, fluidOutput, inputs, CookTime, counts);
         }
 
         @Override
@@ -187,7 +186,7 @@ public class FluidPressRecipe implements Recipe<SimpleInventory> {
             }
 
             //FluidStack output = buf.readItemStack();
-            return new FluidPressRecipe(id, null, inputs, 0, DefaultedList.ofSize(7, 0), null);
+            return new FluidPressRecipe(id, null, inputs, 0, DefaultedList.ofSize(7, 0));
         }
 
         @Override

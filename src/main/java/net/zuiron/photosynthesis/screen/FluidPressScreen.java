@@ -42,8 +42,8 @@ public class FluidPressScreen extends HandledScreen<FluidPressScreenHandler> {
         int y = (height - backgroundHeight) / 2;
 
         // renderEnergyAreaTooltips(context, mouseX, mouseY, x, y);
-        renderFluidTooltip(context, mouseX, mouseY, x, y, handler.fluidInputStack, 30, 6, fluidStackRenderer);
-        renderFluidTooltip(context, mouseX, mouseY, x, y, handler.fluidOutputStack, 130, 6, fluidStackRenderer);
+        //renderFluidTooltip(context, mouseX, mouseY, x, y, handler.fluidInputStack, 30, 6, fluidStackRenderer);
+        renderFluidTooltip(context, mouseX, mouseY, x, y, handler.fluidOutputStack, 112, 19, fluidStackRenderer);
     }
 
 
@@ -66,9 +66,9 @@ public class FluidPressScreen extends HandledScreen<FluidPressScreenHandler> {
 
         renderProgressArrow(context, x, y);
 
-        fluidStackRenderer.drawFluid(context, handler.fluidInputStack, x + 30, y + 6, 16, 55,
-                FluidStack.convertDropletsToMb(FluidConstants.BUCKET) * 4);
-        fluidStackRenderer.drawFluid(context, handler.fluidOutputStack, x + 130, y + 6, 16, 55,
+        /*fluidStackRenderer.drawFluid(context, handler.fluidInputStack, x + 30, y + 6, 16, 55,
+                FluidStack.convertDropletsToMb(FluidConstants.BUCKET) * 4);*/
+        fluidStackRenderer.drawFluid(context, handler.fluidOutputStack, x + 112, y + 19, 16, 55,
                 FluidStack.convertDropletsToMb(FluidConstants.BUCKET) * 4);
     }
 
@@ -76,7 +76,7 @@ public class FluidPressScreen extends HandledScreen<FluidPressScreenHandler> {
 
     private void renderProgressArrow(DrawContext context, int x, int y) {
         if (handler.isCrafting()) {
-            context.drawTexture(TEXTURE, x + 76, y + 47, 177, 31, handler.getScaledProgress2(), 16);
+            context.drawTexture(TEXTURE, x + 85, y + 31, 177, 31, handler.getScaledProgress2(), 16);
         }
     }
 

@@ -48,7 +48,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class FluidPressBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
-    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(6, ItemStack.EMPTY);
+    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(2, ItemStack.EMPTY);
 
     public void setInventory(DefaultedList<ItemStack> inventory) {
         for (int i = 0; i < inventory.size(); i++) {
@@ -80,25 +80,7 @@ public class FluidPressBlockEntity extends BlockEntity implements ExtendedScreen
         super.markDirty();
     }
 
-    public final SingleVariantStorage<FluidVariant> fluidInput = new SingleVariantStorage<FluidVariant>() {
-        @Override
-        protected FluidVariant getBlankVariant() {
-            return FluidVariant.blank();
-        }
 
-        @Override
-        protected long getCapacity(FluidVariant variant) {
-            return FluidStack.convertDropletsToMb(FluidConstants.BUCKET) * 4; // 4 buckets
-        }
-
-        @Override
-        protected void onFinalCommit() {
-            markDirty();
-            if(!world.isClient()) {
-                sendFluidPacket();
-            }
-        }
-    };
 
     public final SingleVariantStorage<FluidVariant> fluidOutput = new SingleVariantStorage<FluidVariant>() {
         @Override
@@ -121,20 +103,17 @@ public class FluidPressBlockEntity extends BlockEntity implements ExtendedScreen
     };
 
     private void sendFluidPacket() {
-        PacketByteBuf data = PacketByteBufs.create();
+        //PacketByteBuf data = PacketByteBufs.create();
         PacketByteBuf data2 = PacketByteBufs.create();
-
-        fluidInput.variant.toPacket(data);
-        data.writeLong(fluidInput.amount);
 
         fluidOutput.variant.toPacket(data2);
         data2.writeLong(fluidOutput.amount);
 
-        data.writeBlockPos(getPos());
+        //data.writeBlockPos(getPos());
         data2.writeBlockPos(getPos());
 
         for (ServerPlayerEntity player : PlayerLookup.tracking((ServerWorld) world, getPos())) {
-            ServerPlayNetworking.send(player, ModMessages.FLUID_SYNC, data);
+            //ServerPlayNetworking.send(player, ModMessages.FLUID_SYNC, data);
             ServerPlayNetworking.send(player, ModMessages.FLUID_SYNC2, data2);
         }
     }
@@ -166,11 +145,6 @@ public class FluidPressBlockEntity extends BlockEntity implements ExtendedScreen
                 return 2;
             }
         };
-    }
-
-    public void setInputFluidLevel(FluidVariant fluidVariant, long fluidLevel) {
-        this.fluidInput.variant = fluidVariant;
-        this.fluidInput.amount = fluidLevel;
     }
 
     public void setOutputFluidLevel(FluidVariant fluidVariant, long fluidLevel) {
@@ -209,9 +183,6 @@ public class FluidPressBlockEntity extends BlockEntity implements ExtendedScreen
         nbt.putInt("fluid_press.progress", progress);
         nbt.putInt("fluid_press.cookingTime", maxProgress);
 
-        nbt.put("inputFluid.variant", fluidInput.variant.toNbt());
-        nbt.putLong("inputFluid.fluid", fluidInput.amount);
-
         nbt.put("outputFluid.variant", fluidOutput.variant.toNbt());
         nbt.putLong("outputFluid.fluid", fluidOutput.amount);
     }
@@ -222,9 +193,6 @@ public class FluidPressBlockEntity extends BlockEntity implements ExtendedScreen
         super.readNbt(nbt);
         progress = nbt.getInt("fluid_press.progress");
         maxProgress = nbt.getInt("fluid_press.cookingTime");
-
-        fluidInput.variant = FluidVariant.fromNbt((NbtCompound) nbt.get("inputFluid.variant"));
-        fluidInput.amount = nbt.getLong("inputFluid.fluid");
 
         fluidOutput.variant = FluidVariant.fromNbt((NbtCompound) nbt.get("outputFluid.variant"));
         fluidOutput.amount = nbt.getLong("outputFluid.fluid");
@@ -271,28 +239,28 @@ public class FluidPressBlockEntity extends BlockEntity implements ExtendedScreen
         }
     }
 
-    private static boolean hasFluidSourceInSlot(FluidPressBlockEntity entity) {
+    /*private static boolean hasFluidSourceInSlot(FluidPressBlockEntity entity) {
         //TODO - what if we can use other fluid than water?
         return entity.getStack(0).getItem() == Items.WATER_BUCKET;
-    }
+    }*/
 
     private static boolean hasEmptyBucketInSlot(FluidPressBlockEntity entity) {
-        if(entity.getStack(5).getItem() == Items.BUCKET) {
+        if(entity.getStack(1).getItem() == Items.BUCKET) {
             return true;
         }
         return false;
     }
 
-    private static void transferFluidToFluidStorage(FluidPressBlockEntity entity) {
+    /*private static void transferFluidToFluidStorage(FluidPressBlockEntity entity) {
 
         if(canTankAcceptBucketWorth(entity)) {
             if (insertFluid(entity, FluidStack.convertDropletsToMb(FluidConstants.BUCKET))) {
                 entity.setStack(0, new ItemStack(Items.BUCKET));
             }
         }
-    }
+    }*/
 
-    private static boolean insertFluid(FluidPressBlockEntity entity, long convertDropletsToMb) {
+    /*private static boolean insertFluid(FluidPressBlockEntity entity, long convertDropletsToMb) {
         try(Transaction transaction = Transaction.openOuter()) {
             entity.fluidInput.insert(FluidVariant.of(Fluids.WATER), convertDropletsToMb, transaction);
             transaction.commit();
@@ -301,21 +269,21 @@ public class FluidPressBlockEntity extends BlockEntity implements ExtendedScreen
         catch (Exception e) {
             return false;
         }
-    }
+    }*/
 
-    private static boolean canTankAcceptBucketWorth(FluidPressBlockEntity entity) {
+    /*private static boolean canTankAcceptBucketWorth(FluidPressBlockEntity entity) {
         long availableSpace = entity.fluidInput.getCapacity() - entity.fluidInput.getAmount();
         if(availableSpace >= FluidStack.convertDropletsToMb(FluidConstants.BUCKET)) {
             return true;
         }
         return false;
-    }
+    }*/
 
     private static void extractFluidAndMakeBucket(FluidPressBlockEntity entity) {
         if(entity.fluidOutput.amount >= 1000) {
             ItemStack itemStack = new ItemStack(entity.fluidOutput.getResource().getFluid().getBucketItem());
             if(extractFluid(entity, 1000)) {
-                entity.setStack(5, itemStack);
+                entity.setStack(1, itemStack);
             }
         }
     }
@@ -340,9 +308,9 @@ public class FluidPressBlockEntity extends BlockEntity implements ExtendedScreen
         }
 
         //------------------- BUCKET STUFF
-        if(hasFluidSourceInSlot(entity)) {
+        /*if(hasFluidSourceInSlot(entity)) {
             transferFluidToFluidStorage(entity);
-        }
+        }*/
         if(hasEmptyBucketInSlot(entity)) {
             extractFluidAndMakeBucket(entity);
         }
@@ -381,29 +349,29 @@ public class FluidPressBlockEntity extends BlockEntity implements ExtendedScreen
     }
 
     private static void craftItem(FluidPressBlockEntity entity) {
-        SimpleInventory inventory = new SimpleInventory(4);
-        for (int i = 0; i < 4; i++) {
-            inventory.setStack(i, entity.getStack(i+1)); //ingredients start from slot1.
+        SimpleInventory inventory = new SimpleInventory(1);
+        for (int i = 0; i < 1; i++) {
+            inventory.setStack(i, entity.getStack(i)); //ingredients start from slot0.
         }
 
         Optional<FluidPressRecipe> recipe = entity.getWorld().getRecipeManager()
                 .getFirstMatch(FluidPressRecipe.Type.INSTANCE, inventory, entity.getWorld());
 
         if(hasRecipe(entity)) {
-            FluidStack inputFluid = recipe.get().getFluidInput();
+            //FluidStack inputFluid = recipe.get().getFluidInput();
             FluidStack outputFluid = recipe.get().getOutputFluid();
 
             //DONE - remove input fluid from input fluid tank
-            try(Transaction transaction = Transaction.openOuter()) {
+            /*try(Transaction transaction = Transaction.openOuter()) {
                 entity.fluidInput.extract(FluidVariant.of(inputFluid.fluidVariant.getFluid()),
                         FluidStack.convertDropletsToMb(inputFluid.amount), transaction);
                 transaction.commit();
-            }
+            }*/
 
-            entity.removeStack(1, (Integer) recipe.get().getCounts().get(0));   //input
-            entity.removeStack(2, (Integer) recipe.get().getCounts().get(1));   //input
-            entity.removeStack(3, (Integer) recipe.get().getCounts().get(2));   //input
-            entity.removeStack(4, (Integer) recipe.get().getCounts().get(3));   //input
+            entity.removeStack(0, (Integer) recipe.get().getCounts().get(0));   //input
+            //entity.removeStack(2, (Integer) recipe.get().getCounts().get(1));   //input
+            //entity.removeStack(3, (Integer) recipe.get().getCounts().get(2));   //input
+            //entity.removeStack(4, (Integer) recipe.get().getCounts().get(3));   //input
 
 
             try(Transaction transaction = Transaction.openOuter()) {
@@ -419,9 +387,9 @@ public class FluidPressBlockEntity extends BlockEntity implements ExtendedScreen
     }
 
     private static boolean hasRecipe(FluidPressBlockEntity entity) {
-        SimpleInventory inventory = new SimpleInventory(4);
-        for (int i = 0; i < 4; i++) {
-            inventory.setStack(i, entity.getStack(i+1));
+        SimpleInventory inventory = new SimpleInventory(1);
+        for (int i = 0; i < 1; i++) {
+            inventory.setStack(i, entity.getStack(i));
         }
 
         Optional<FluidPressRecipe> match = entity.getWorld().getRecipeManager()
@@ -435,13 +403,13 @@ public class FluidPressBlockEntity extends BlockEntity implements ExtendedScreen
             List<Ingredient> ingredients = recipe.getIngredients();
             DefaultedList counts = recipe.getCounts();
 
-            FluidStack inputFluid = recipe.getFluidInput();
+            //FluidStack inputFluid = recipe.getFluidInput();
             FluidStack outputFluid = recipe.getOutputFluid();
 
             //check item counts.
             for (int i = 0; i < ingredients.size(); i++) {
                 Ingredient ingredient = ingredients.get(i);
-                ItemStack itemStack = entity.getStack(i+1);
+                ItemStack itemStack = entity.getStack(i);
                 //Photosynthesis.LOGGER.info("ingredient:"+ingredient.toJson()+", itemStack:"+itemStack);
 
                 int reqCount = (int) counts.get(i);
@@ -457,15 +425,14 @@ public class FluidPressBlockEntity extends BlockEntity implements ExtendedScreen
                 }
             }
 
-            return canInsertFluidIntoFluidOutput(entity, outputFluid, FluidStack.convertDropletsToMb(outputFluid.amount)) &&
-                    doesInputTankContainEnoughRecipeInputFluid(entity, inputFluid, FluidStack.convertDropletsToMb(inputFluid.amount));
+            return canInsertFluidIntoFluidOutput(entity, outputFluid, FluidStack.convertDropletsToMb(outputFluid.amount));
         } else {
             //Photosynthesis.LOGGER.info("no match is present...");
             return false;
         }
     }
 
-    private static boolean doesInputTankContainEnoughRecipeInputFluid(FluidPressBlockEntity entity, FluidStack inputFluid, long amount) {
+    /*private static boolean doesInputTankContainEnoughRecipeInputFluid(FluidPressBlockEntity entity, FluidStack inputFluid, long amount) {
         FluidVariant inputTankFluidVariant = entity.fluidInput.getResource();
         long inputTankFluidAmount = entity.fluidInput.getAmount();
 
@@ -479,7 +446,7 @@ public class FluidPressBlockEntity extends BlockEntity implements ExtendedScreen
         if(inputTankFluidAmount < amount) { return false; }
 
         return true;
-    }
+    }*/
 
     private static boolean canInsertFluidIntoFluidOutput(FluidPressBlockEntity entity, FluidStack outputFluid, long amount) {
         long outputTankCapacity = entity.fluidOutput.getCapacity();

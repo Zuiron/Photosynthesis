@@ -1,0 +1,14 @@
+{
+  "type": "photosynthesis:fluid_press",
+  "ingredients": [
+    {
+      "item": "photosynthesis:olive",
+      "count": 2
+    }
+  ],
+  "output": {
+    "fluid": "photosynthesis:oliveoil",
+    "amount": 8100
+  },
+  "cookingtime": 100
+}

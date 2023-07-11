@@ -6,9 +6,11 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.util.math.BlockPos;
+import net.zuiron.photosynthesis.block.entity.FluidPressBlockEntity;
 import net.zuiron.photosynthesis.block.entity.KegBlockEntity;
 import net.zuiron.photosynthesis.block.entity.LatexExtractorBlockEntity;
 import net.zuiron.photosynthesis.block.entity.MilkSeperatorBlockEntity;
+import net.zuiron.photosynthesis.screen.FluidPressScreenHandler;
 import net.zuiron.photosynthesis.screen.KegScreenHandler;
 import net.zuiron.photosynthesis.screen.LatexExtractorScreenHandler;
 import net.zuiron.photosynthesis.screen.MilkSeperatorScreenHandler;
@@ -29,7 +31,17 @@ public class FluidSyncS2CPacket2 {
                 blockEntity.setOutputFluidLevel(variant, fluidLevel);
                 screenHandler.setOutputFluid(new FluidStack(variant, fluidLevel));
             }
-        } else if(client.world.getBlockEntity(position) instanceof MilkSeperatorBlockEntity blockEntity) {
+        }
+        else if(client.world.getBlockEntity(position) instanceof FluidPressBlockEntity blockEntity) {
+            blockEntity.setOutputFluidLevel(variant, fluidLevel);
+
+            if(client.player.currentScreenHandler instanceof FluidPressScreenHandler screenHandler &&
+                    screenHandler.blockEntity.getPos().equals(position)) {
+                blockEntity.setOutputFluidLevel(variant, fluidLevel);
+                screenHandler.setOutputFluid(new FluidStack(variant, fluidLevel));
+            }
+        }
+        else if(client.world.getBlockEntity(position) instanceof MilkSeperatorBlockEntity blockEntity) {
             blockEntity.setOutputFluidLevel(variant, fluidLevel);
 
             if(client.player.currentScreenHandler instanceof MilkSeperatorScreenHandler screenHandler &&

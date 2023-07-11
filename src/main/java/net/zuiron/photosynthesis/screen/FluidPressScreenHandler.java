@@ -21,7 +21,7 @@ public class FluidPressScreenHandler extends ScreenHandler {
 
     public final FluidPressBlockEntity blockEntity;
 
-    public FluidStack fluidInputStack;
+    //public FluidStack fluidInputStack;
     public FluidStack fluidOutputStack;
 
     public FluidPressScreenHandler(int syncId, PlayerInventory inventory, PacketByteBuf buf) {
@@ -31,22 +31,22 @@ public class FluidPressScreenHandler extends ScreenHandler {
 
     public FluidPressScreenHandler(int syncId, PlayerInventory playerInventory, BlockEntity entity, PropertyDelegate delegate) {
         super(ModScreenHandlers.FLUID_PRESS_SCREEN_HANDLER, syncId);
-        checkSize(((Inventory) entity), 6);
+        checkSize(((Inventory) entity), 2);
         this.inventory = (Inventory)entity;
         inventory.onOpen(playerInventory.player);
         this.propertyDelegate = delegate;
         this.blockEntity = (FluidPressBlockEntity) entity;
-        this.fluidInputStack = new FluidStack(blockEntity.fluidInput.variant, blockEntity.fluidInput.amount);
+        //this.fluidInputStack = new FluidStack(blockEntity.fluidInput.variant, blockEntity.fluidInput.amount);
         this.fluidOutputStack = new FluidStack(blockEntity.fluidOutput.variant, blockEntity.fluidOutput.amount);
 
-        this.addSlot(new OneCountSlot(inventory, 0, 8, 6));          //bucket
+        //this.addSlot(new OneCountSlot(inventory, 0, 8, 6));          //bucket
 
-        this.addSlot(new Slot(inventory, 1, 53, 26));           //item
-        this.addSlot(new Slot(inventory, 2, 71, 26));           //item
-        this.addSlot(new Slot(inventory, 3, 89, 26));           //item
-        this.addSlot(new Slot(inventory, 4, 107, 26));           //item
+        this.addSlot(new Slot(inventory, 0, 65, 31));           //item
+        //this.addSlot(new Slot(inventory, 2, 71, 26));           //item
+        //this.addSlot(new Slot(inventory, 3, 89, 26));           //item
+        //this.addSlot(new Slot(inventory, 4, 107, 26));           //item
 
-        this.addSlot(new OneCountSlot(inventory, 5, 152, 45));           //bucket
+        this.addSlot(new OneCountSlot(inventory, 1, 131, 58));           //bucket
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
@@ -54,9 +54,9 @@ public class FluidPressScreenHandler extends ScreenHandler {
         addProperties(delegate);
     }
 
-    public void setInputFluid(FluidStack stack) {
+    /*public void setInputFluid(FluidStack stack) {
         fluidInputStack = stack;
-    }
+    }*/
 
     public void setOutputFluid(FluidStack stack) {
         fluidOutputStack = stack;
