@@ -473,7 +473,7 @@ public class PhotosynthesisClient implements ClientModInitializer {
                 new SimpleFluidRenderHandler(
                         new Identifier("photosynthesis:block/latex_still"), //minecraft:block/water_still
                         new Identifier("photosynthesis:block/latex_flow"), //minecraft:block/water_flow
-                        0xFFFFFFFF
+                        0xFFF5F5DC
                 )); //0xA1E038D0
 
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),
@@ -484,7 +484,7 @@ public class PhotosynthesisClient implements ClientModInitializer {
                 new SimpleFluidRenderHandler(
                         new Identifier("photosynthesis:block/latex_still"), //minecraft:block/water_still
                         new Identifier("photosynthesis:block/latex_flow"), //minecraft:block/water_flow
-                        0xFFFFFFFF
+                        0xFFf1ecbf
                 )); //0xA1E038D0
 
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),
@@ -511,5 +511,38 @@ public class PhotosynthesisClient implements ClientModInitializer {
 
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),
                 ModFluids.STILL_OLIVEOIL, ModFluids.FLOWING_OLIVEOIL);
+
+        //GOATMILK
+        FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_GOATMILK, ModFluids.FLOWING_GOATMILK,
+                new SimpleFluidRenderHandler(
+                        new Identifier("photosynthesis:block/latex_still"), //minecraft:block/water_still
+                        new Identifier("photosynthesis:block/latex_flow"), //minecraft:block/water_flow
+                        0xFFF5F5DC
+                )); //0xA1E038D0
+
+        BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),
+                ModFluids.STILL_GOATMILK, ModFluids.FLOWING_GOATMILK);
+
+        //GOATMILKCREAM
+        FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_GOATMILKCREAM, ModFluids.FLOWING_GOATMILKCREAM,
+                new SimpleFluidRenderHandler(
+                        new Identifier("photosynthesis:block/latex_still"), //minecraft:block/water_still
+                        new Identifier("photosynthesis:block/latex_flow"), //minecraft:block/water_flow
+                        0xFFf1ecbf
+                )); //0xA1E038D0
+
+        BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),
+                ModFluids.STILL_GOATMILKCREAM, ModFluids.FLOWING_GOATMILKCREAM);
+
+        //SKIMMEDGOATMILK
+        FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_SKIMMEDGOATMILK, ModFluids.FLOWING_SKIMMEDGOATMILK,
+                new SimpleFluidRenderHandler(
+                        new Identifier("photosynthesis:block/latex_still"), //minecraft:block/water_still
+                        new Identifier("photosynthesis:block/latex_flow"), //minecraft:block/water_flow
+                        0xFFFFFFFF
+                )); //0xA1E038D0
+
+        BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),
+                ModFluids.STILL_SKIMMEDGOATMILK, ModFluids.FLOWING_SKIMMEDGOATMILK);
     }
 }

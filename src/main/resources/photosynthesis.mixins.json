@@ -10,7 +10,8 @@
     "ModCropBlock",
     "ModSweetBerryBushBlock",
     "ModBlockItem",
-    "ModCowEntity"
+    "ModCowEntity",
+    "ModGoatEntity"
   ],
   "client": [
     "PhotosynthesisMixin"

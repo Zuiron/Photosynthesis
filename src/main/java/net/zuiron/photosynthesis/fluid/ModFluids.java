@@ -67,6 +67,21 @@ public class ModFluids {
     public static Block OLIVEOIL_BLOCK;
     public static Item OLIVEOIL_BUCKET;
 
+    public static FlowableFluid STILL_GOATMILK;
+    public static FlowableFluid FLOWING_GOATMILK;
+    public static Block GOATMILK_BLOCK;
+    public static Item GOATMILK_BUCKET;
+
+    public static FlowableFluid STILL_GOATMILKCREAM;
+    public static FlowableFluid FLOWING_GOATMILKCREAM;
+    public static Block GOATMILKCREAM_BLOCK;
+    public static Item GOATMILKCREAM_BUCKET;
+
+    public static FlowableFluid STILL_SKIMMEDGOATMILK;
+    public static FlowableFluid FLOWING_SKIMMEDGOATMILK;
+    public static Block SKIMMEDGOATMILK_BLOCK;
+    public static Item SKIMMEDGOATMILK_BUCKET;
+
     public static void register() {
         //LATEX
         STILL_LATEX = Registry.register(Registries.FLUID,
@@ -173,5 +188,35 @@ public class ModFluids {
                 new FluidBlock(ModFluids.STILL_OLIVEOIL, FabricBlockSettings.copyOf(Blocks.WATER)){ });
         OLIVEOIL_BUCKET = Registry.register(Registries.ITEM, new Identifier(Photosynthesis.MOD_ID, "oliveoil_bucket"),
                 new BucketItem(ModFluids.STILL_OLIVEOIL, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1)));
+
+        //GOATMILK
+        STILL_GOATMILK = Registry.register(Registries.FLUID,
+                new Identifier(Photosynthesis.MOD_ID, "goatmilk"), new GoatMilkFluid.Still());
+        FLOWING_GOATMILK = Registry.register(Registries.FLUID,
+                new Identifier(Photosynthesis.MOD_ID, "flowing_goatmilk"), new GoatMilkFluid.Flowing());
+        GOATMILK_BLOCK = Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, "goatmilk_block"),
+                new FluidBlock(ModFluids.STILL_GOATMILK, FabricBlockSettings.copyOf(Blocks.WATER)){ });
+        GOATMILK_BUCKET = Registry.register(Registries.ITEM, new Identifier(Photosynthesis.MOD_ID, "goatmilk_bucket"),
+                new BucketItem(ModFluids.STILL_GOATMILK, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1)));
+
+        //GOATMILKCREAM
+        STILL_GOATMILKCREAM = Registry.register(Registries.FLUID,
+                new Identifier(Photosynthesis.MOD_ID, "goatmilkcream"), new GoatMilkCreamFluid.Still());
+        FLOWING_GOATMILKCREAM = Registry.register(Registries.FLUID,
+                new Identifier(Photosynthesis.MOD_ID, "flowing_goatmilkcream"), new GoatMilkCreamFluid.Flowing());
+        GOATMILKCREAM_BLOCK = Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, "goatmilkcream_block"),
+                new FluidBlock(ModFluids.STILL_GOATMILKCREAM, FabricBlockSettings.copyOf(Blocks.WATER)){ });
+        GOATMILKCREAM_BUCKET = Registry.register(Registries.ITEM, new Identifier(Photosynthesis.MOD_ID, "goatmilkcream_bucket"),
+                new BucketItem(ModFluids.STILL_GOATMILKCREAM, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1)));
+
+        //SKIMMEDGOATMILK
+        STILL_SKIMMEDGOATMILK = Registry.register(Registries.FLUID,
+                new Identifier(Photosynthesis.MOD_ID, "skimmedgoatmilk"), new SkimmedGoatMilkFluid.Still());
+        FLOWING_SKIMMEDGOATMILK = Registry.register(Registries.FLUID,
+                new Identifier(Photosynthesis.MOD_ID, "flowing_skimmedgoatmilk"), new SkimmedGoatMilkFluid.Flowing());
+        SKIMMEDGOATMILK_BLOCK = Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, "skimmedgoatmilk_block"),
+                new FluidBlock(ModFluids.STILL_SKIMMEDGOATMILK, FabricBlockSettings.copyOf(Blocks.WATER)){ });
+        SKIMMEDGOATMILK_BUCKET = Registry.register(Registries.ITEM, new Identifier(Photosynthesis.MOD_ID, "skimmedgoatmilk_bucket"),
+                new BucketItem(ModFluids.STILL_SKIMMEDGOATMILK, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1)));
     }
 }
