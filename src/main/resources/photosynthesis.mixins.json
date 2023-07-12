@@ -9,7 +9,8 @@
     "ModEntityDataSaverMixin",
     "ModCropBlock",
     "ModSweetBerryBushBlock",
-    "ModBlockItem"
+    "ModBlockItem",
+    "ModCowEntity"
   ],
   "client": [
     "PhotosynthesisMixin"
