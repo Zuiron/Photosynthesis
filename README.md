@@ -5,7 +5,7 @@
 <img src="https://i.imgur.com/Ol1Tcf8.png" height="32">
 </p>
 
-> This is a FABRIC mod for Minecraft 1.19.3
+> This is a FABRIC mod for Minecraft 1.20
 
 Welcome to Photosynthesis, the ultimate farming and cooking experience! This mod adds nearly 50 new trees and 30 crops to Minecraft, including apples, nuts, bananas, and many more delicious varieties. With over 60 new edible foods to discover, you'll never go hungry again.
 
@@ -15,6 +15,19 @@ Whether you're a seasoned farmer or just starting out, Photosynthesis offers a f
 
 > **Warning**
 > This project is still in heavy development! You are free to compile yourself and try it out, but keep in mind that there will be missing blockmodels, textures, features etc... **This mod is not in a playable state!**
+
+# Changed Mob Behavior
+When milking cows, it gets a cooldown of 8000 ticks, 1/3 of a minecraft day. Meaning
+you can only milk a cow 3 times a day. Also you get Cows Milk instead of regular milk (Minecraft Milk).
+
+When milking goats, it gets a cooldown of 8000 ticks, 1/3 of a minecraft day. Meaning
+you can only milk a cow 3 times a day. Also you get Goats Milk instead of regular milk (Minecraft Milk).
+
+# Seasons
+When seasons is enabled. crops grow in specific fashion based on the crop. Hover over seeds or produce to see which season
+it should be planted and when it will mature.
+
+Also BONEMEAL is disabled if seasons is enabled.
 
 # Tree's
 

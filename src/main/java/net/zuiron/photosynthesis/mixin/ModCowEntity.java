@@ -32,7 +32,7 @@ public abstract class ModCowEntity extends AnimalEntity {
     public int milkablecooldown;
 
     @Unique
-    public int cooldownticks = 1000; // 8000 = 3 times pr mc day.
+    public int cooldownticks = 8000; // 8000 = 3 times pr mc day.
 
 
     protected void mobTick() {
