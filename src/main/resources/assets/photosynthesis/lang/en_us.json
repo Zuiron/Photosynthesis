@@ -76,6 +76,8 @@
   "block.photosynthesis.appletree_planks": "Apple-tree Planks",
   "block.photosynthesis.appletree_leaves": "Apple-tree Leaves",
   "block.photosynthesis.appletree_sapling": "Apple-tree Sapling",
+  "block.photosynthesis.greenappletree_bushcrop": "Apple",
+  "item.photosynthesis.greenapple": "Apple",
 
   "block.photosynthesis.cinnamon_log": "Cinnamon-tree Log",
   "block.photosynthesis.cinnamon_wood": "Cinnamon-tree Wood",
@@ -84,6 +86,8 @@
   "block.photosynthesis.cinnamon_planks": "Cinnamon-tree Planks",
   "block.photosynthesis.cinnamon_leaves": "Cinnamon-tree Leaves",
   "block.photosynthesis.cinnamon_sapling": "Cinnamon-tree Sapling",
+  "block.photosynthesis.cinnamon_bushcrop": "Cinnamon",
+  "item.photosynthesis.cinnamon_raw": "Cinnamon",
 
   "block.photosynthesis.bananatree_log":            "Banana-tree Log",
   "block.photosynthesis.bananatree_wood":           "Banana-tree Wood",
@@ -92,6 +96,8 @@
   "block.photosynthesis.bananatree_planks":         "Banana-tree Planks",
   "block.photosynthesis.bananatree_leaves":         "Banana-tree Leaves",
   "block.photosynthesis.bananatree_sapling":        "Banana-tree Sapling",
+  "block.photosynthesis.bananatree_bushcrop":       "Banana",
+  "item.photosynthesis.banana":                     "Banana",
 
   "block.photosynthesis.orangetree_log": "Orange-tree Log",
   "block.photosynthesis.orangetree_wood": "Orange-tree Wood",
@@ -100,6 +106,8 @@
   "block.photosynthesis.orangetree_planks": "Orange-tree Planks",
   "block.photosynthesis.orangetree_leaves": "Orange-tree Leaves",
   "block.photosynthesis.orangetree_sapling": "Orange-tree Sapling",
+  "block.photosynthesis.orangetree_bushcrop": "Mango",
+  "item.photosynthesis.orangetree": "Mango",
 
   "block.photosynthesis.peartree_log": "Pear-tree Log",
   "block.photosynthesis.peartree_wood": "Pear-tree Wood",
@@ -108,6 +116,8 @@
   "block.photosynthesis.peartree_planks": "Pear-tree Planks",
   "block.photosynthesis.peartree_leaves": "Pear-tree Leaves",
   "block.photosynthesis.peartree_sapling": "Pear-tree Sapling",
+  "block.photosynthesis.peartree_bushcrop": "Pear",
+  "item.photosynthesis.pear": "Pear",
 
   "block.photosynthesis.avocadotree_log": "Avocado-tree Log",
   "block.photosynthesis.avocadotree_wood": "Avocado-tree Wood",
@@ -116,6 +126,8 @@
   "block.photosynthesis.avocadotree_planks": "Avocado-tree Planks",
   "block.photosynthesis.avocadotree_leaves": "Avocado-tree Leaves",
   "block.photosynthesis.avocadotree_sapling": "Avocado-tree Sapling",
+  "block.photosynthesis.avocadotree_bushcrop": "Avocado",
+  "item.photosynthesis.avocado": "Avocado",
 
   "block.photosynthesis.coconuttree_log": "Coconut-tree Log",
   "block.photosynthesis.coconuttree_wood": "Coconut-tree Wood",
@@ -124,6 +136,8 @@
   "block.photosynthesis.coconuttree_planks": "Coconut-tree Planks",
   "block.photosynthesis.coconuttree_leaves": "Coconut-tree Leaves",
   "block.photosynthesis.coconuttree_sapling": "Coconut-tree Sapling",
+  "block.photosynthesis.coconuttree_bushcrop": "Coconut",
+  "item.photosynthesis.coconut": "Coconut",
 
   "block.photosynthesis.cherrytree_log": "Cherry-tree Log",
   "block.photosynthesis.cherrytree_wood": "Cherry-tree Wood",
@@ -132,6 +146,8 @@
   "block.photosynthesis.cherrytree_planks": "Cherry-tree Planks",
   "block.photosynthesis.cherrytree_leaves": "Cherry-tree Leaves",
   "block.photosynthesis.cherrytree_sapling": "Cherry-tree Sapling",
+  "block.photosynthesis.cherrytree_bushcrop": "Cherry",
+  "item.photosynthesis.cherry": "Cherry",
 
   "block.photosynthesis.lemontree_log": "Lemon-tree Log",
   "block.photosynthesis.lemontree_wood": "Lemon-tree Wood",
@@ -140,6 +156,8 @@
   "block.photosynthesis.lemontree_planks": "Lemon-tree Planks",
   "block.photosynthesis.lemontree_leaves": "Lemon-tree Leaves",
   "block.photosynthesis.lemontree_sapling": "Lemon-tree Sapling",
+  "block.photosynthesis.lemontree_bushcrop": "Lemon",
+  "item.photosynthesis.lemon": "Lemon",
 
   "block.photosynthesis.olivetree_log": "Olive-tree Log",
   "block.photosynthesis.olivetree_wood": "Olive-tree Wood",
@@ -148,6 +166,8 @@
   "block.photosynthesis.olivetree_planks": "Olive-tree Planks",
   "block.photosynthesis.olivetree_leaves": "Olive-tree Leaves",
   "block.photosynthesis.olivetree_sapling": "Olive-tree Sapling",
+  "block.photosynthesis.olivetree_bushcrop": "Olive",
+  "item.photosynthesis.olive": "Olive",
 
   "block.photosynthesis.rubbertree_log": "Rubber-tree Log",
   "block.photosynthesis.rubbertree_wood": "Rubber-tree Wood",
@@ -156,6 +176,8 @@
   "block.photosynthesis.rubbertree_planks": "Rubber-tree Planks",
   "block.photosynthesis.rubbertree_leaves": "Rubber-tree Leaves",
   "block.photosynthesis.rubbertree_sapling": "Rubber-tree Sapling",
+  "block.photosynthesis.rubbertree_bushcrop": "Rubber",
+  "item.photosynthesis.rubber": "Rubber",
 
   "block.photosynthesis.candlenuttree_log": "Candlenut-tree Log",
   "block.photosynthesis.candlenuttree_wood": "Candlenut-tree Wood",
@@ -164,6 +186,8 @@
   "block.photosynthesis.candlenuttree_planks": "Candlenut-tree Planks",
   "block.photosynthesis.candlenuttree_leaves": "Candlenut-tree Leaves",
   "block.photosynthesis.candlenuttree_sapling": "Candlenut-tree Sapling",
+  "block.photosynthesis.candlenuttree_bushcrop": "Candlenut",
+  "item.photosynthesis.candlenut": "Candlenut",
 
   "block.photosynthesis.chestnuttree_log": "Chestnut-tree Log",
   "block.photosynthesis.chestnuttree_wood": "Chestnut-tree Wood",
@@ -172,6 +196,8 @@
   "block.photosynthesis.chestnuttree_planks": "Chestnut-tree Planks",
   "block.photosynthesis.chestnuttree_leaves": "Chestnut-tree Leaves",
   "block.photosynthesis.chestnuttree_sapling": "Chestnut-tree Sapling",
+  "block.photosynthesis.chestnuttree_bushcrop": "Chestnut",
+  "item.photosynthesis.chestnut": "Chestnut",
 
   "block.photosynthesis.nutmegtree_log": "Nutmeg-tree Log",
   "block.photosynthesis.nutmegtree_wood": "Nutmeg-tree Wood",
@@ -180,6 +206,8 @@
   "block.photosynthesis.nutmegtree_planks": "Nutmeg-tree Planks",
   "block.photosynthesis.nutmegtree_leaves": "Nutmeg-tree Leaves",
   "block.photosynthesis.nutmegtree_sapling": "Nutmeg-tree Sapling",
+  "block.photosynthesis.nutmegtree_bushcrop": "Nutmeg",
+  "item.photosynthesis.nutmeg": "Nutmeg",
 
   "block.photosynthesis.peachtree_log": "Peach-tree Log",
   "block.photosynthesis.peachtree_wood": "Peach-tree Wood",
@@ -188,6 +216,8 @@
   "block.photosynthesis.peachtree_planks": "Peach-tree Planks",
   "block.photosynthesis.peachtree_leaves": "Peach-tree Leaves",
   "block.photosynthesis.peachtree_sapling": "Peach-tree Sapling",
+  "block.photosynthesis.peachtree_bushcrop": "Peach",
+  "item.photosynthesis.peach": "Peach",
 
   "block.photosynthesis.plumtree_log": "Plum-tree Log",
   "block.photosynthesis.plumtree_wood": "Plum-tree Wood",
@@ -196,6 +226,8 @@
   "block.photosynthesis.plumtree_planks": "Plum-tree Planks",
   "block.photosynthesis.plumtree_leaves": "Plum-tree Leaves",
   "block.photosynthesis.plumtree_sapling": "Plum-tree Sapling",
+  "block.photosynthesis.plumtree_bushcrop": "Plum",
+  "item.photosynthesis.plum": "Plum",
 
   "block.photosynthesis.walnuttree_log": "Walnut-tree Log",
   "block.photosynthesis.walnuttree_wood": "Walnut-tree Wood",
@@ -204,6 +236,8 @@
   "block.photosynthesis.walnuttree_planks": "Walnut-tree Planks",
   "block.photosynthesis.walnuttree_leaves": "Walnut-tree Leaves",
   "block.photosynthesis.walnuttree_sapling": "Walnut-tree Sapling",
+  "block.photosynthesis.walnuttree_bushcrop": "Walnut",
+  "item.photosynthesis.walnut": "Walnut",
 
   "block.photosynthesis.hazelnuttree_log": "Hazelnut-tree Log",
   "block.photosynthesis.hazelnuttree_wood": "Hazelnut-tree Wood",
@@ -212,6 +246,8 @@
   "block.photosynthesis.hazelnuttree_planks": "Hazelnut-tree Planks",
   "block.photosynthesis.hazelnuttree_leaves": "Hazelnut-tree Leaves",
   "block.photosynthesis.hazelnuttree_sapling": "Hazelnut-tree Sapling",
+  "block.photosynthesis.hazelnuttree_bushcrop": "Hazelnut",
+  "item.photosynthesis.hazelnut": "Hazelnut",
 
   "block.photosynthesis.pawpawtree_log": "Pawpaw-tree Log",
   "block.photosynthesis.pawpawtree_wood": "Pawpaw-tree Wood",
@@ -220,6 +256,8 @@
   "block.photosynthesis.pawpawtree_planks": "Pawpaw-tree Planks",
   "block.photosynthesis.pawpawtree_leaves": "Pawpaw-tree Leaves",
   "block.photosynthesis.pawpawtree_sapling": "Pawpaw-tree Sapling",
+  "block.photosynthesis.pawpawtree_bushcrop": "Pawpaw",
+  "item.photosynthesis.pawpaw": "Pawpaw",
 
   "block.photosynthesis.soursoptree_log": "Soursop-tree Log",
   "block.photosynthesis.soursoptree_wood": "Soursop-tree Wood",
@@ -228,6 +266,8 @@
   "block.photosynthesis.soursoptree_planks": "Soursop-tree Planks",
   "block.photosynthesis.soursoptree_leaves": "Soursop-tree Leaves",
   "block.photosynthesis.soursoptree_sapling": "Soursop-tree Sapling",
+  "block.photosynthesis.soursoptree_bushcrop": "Soursop",
+  "item.photosynthesis.soursop": "Soursop",
 
   "block.photosynthesis.almondtree_log": "Almond-tree Log",
   "block.photosynthesis.almondtree_wood": "Almond-tree Wood",
@@ -236,6 +276,8 @@
   "block.photosynthesis.almondtree_planks": "Almond-tree Planks",
   "block.photosynthesis.almondtree_leaves": "Almond-tree Leaves",
   "block.photosynthesis.almondtree_sapling": "Almond-tree Sapling",
+  "block.photosynthesis.almondtree_bushcrop": "Almond",
+  "item.photosynthesis.almond": "Almond",
 
   "block.photosynthesis.apricottree_log": "Apricot-tree Log",
   "block.photosynthesis.apricottree_wood": "Apricot-tree Wood",
@@ -244,6 +286,8 @@
   "block.photosynthesis.apricottree_planks": "Apricot-tree Planks",
   "block.photosynthesis.apricottree_leaves": "Apricot-tree Leaves",
   "block.photosynthesis.apricottree_sapling": "Apricot-tree Sapling",
+  "block.photosynthesis.apricottree_bushcrop": "Apricot",
+  "item.photosynthesis.apricot": "Apricot",
 
   "block.photosynthesis.cashewtree_log": "Cashew-tree Log",
   "block.photosynthesis.cashewtree_wood": "Cashew-tree Wood",
@@ -252,6 +296,8 @@
   "block.photosynthesis.cashewtree_planks": "Cashew-tree Planks",
   "block.photosynthesis.cashewtree_leaves": "Cashew-tree Leaves",
   "block.photosynthesis.cashewtree_sapling": "Cashew-tree Sapling",
+  "block.photosynthesis.cashewtree_bushcrop": "Cashew",
+  "item.photosynthesis.cashew": "Cashew",
 
   "block.photosynthesis.datetree_log": "Date-tree Log",
   "block.photosynthesis.datetree_wood": "Date-tree Wood",
@@ -260,6 +306,8 @@
   "block.photosynthesis.datetree_planks": "Date-tree Planks",
   "block.photosynthesis.datetree_leaves": "Date-tree Leaves",
   "block.photosynthesis.datetree_sapling": "Date-tree Sapling",
+  "block.photosynthesis.datetree_bushcrop": "Date",
+  "item.photosynthesis.date": "Date",
 
   "block.photosynthesis.dragonfruittree_log": "Dragonfruit-tree Log",
   "block.photosynthesis.dragonfruittree_wood": "Dragonfruit-tree Wood",
@@ -268,6 +316,8 @@
   "block.photosynthesis.dragonfruittree_planks": "Dragonfruit-tree Planks",
   "block.photosynthesis.dragonfruittree_leaves": "Dragonfruit-tree Leaves",
   "block.photosynthesis.dragonfruittree_sapling": "Dragonfruit-tree Sapling",
+  "block.photosynthesis.dragonfruittree_bushcrop": "Dragonfruit",
+  "item.photosynthesis.dragonfruit": "Dragonfruit",
 
   "block.photosynthesis.duriantree_log": "Durian-tree Log",
   "block.photosynthesis.duriantree_wood": "Durian-tree Wood",
@@ -276,6 +326,8 @@
   "block.photosynthesis.duriantree_planks": "Durian-tree Planks",
   "block.photosynthesis.duriantree_leaves": "Durian-tree Leaves",
   "block.photosynthesis.duriantree_sapling": "Durian-tree Sapling",
+  "block.photosynthesis.duriantree_bushcrop": "Durian",
+  "item.photosynthesis.durian": "Durian",
 
   "block.photosynthesis.figtree_log": "Fig-tree Log",
   "block.photosynthesis.figtree_wood": "Fig-tree Wood",
@@ -284,6 +336,8 @@
   "block.photosynthesis.figtree_planks": "Fig-tree Planks",
   "block.photosynthesis.figtree_leaves": "Fig-tree Leaves",
   "block.photosynthesis.figtree_sapling": "Fig-tree Sapling",
+  "block.photosynthesis.figtree_bushcrop": "Fig",
+  "item.photosynthesis.fig": "Fig",
 
   "block.photosynthesis.grapefruittree_log": "Grapefruit-tree Log",
   "block.photosynthesis.grapefruittree_wood": "Grapefruit-tree Wood",
@@ -292,6 +346,8 @@
   "block.photosynthesis.grapefruittree_planks": "Grapefruit-tree Planks",
   "block.photosynthesis.grapefruittree_leaves": "Grapefruit-tree Leaves",
   "block.photosynthesis.grapefruittree_sapling": "Grapefruit-tree Sapling",
+  "block.photosynthesis.grapefruittree_bushcrop": "Grapefruit",
+  "item.photosynthesis.grapefruit": "Grapefruit",
 
   "block.photosynthesis.limetree_log": "Lime-tree Log",
   "block.photosynthesis.limetree_wood": "Lime-tree Wood",
@@ -300,6 +356,8 @@
   "block.photosynthesis.limetree_planks": "Lime-tree Planks",
   "block.photosynthesis.limetree_leaves": "Lime-tree Leaves",
   "block.photosynthesis.limetree_sapling": "Lime-tree Sapling",
+  "block.photosynthesis.limetree_bushcrop": "Lime",
+  "item.photosynthesis.lime": "Lime",
 
   "block.photosynthesis.papayatree_log": "Papaya-tree Log",
   "block.photosynthesis.papayatree_wood": "Papaya-tree Wood",
@@ -308,6 +366,8 @@
   "block.photosynthesis.papayatree_planks": "Papaya-tree Planks",
   "block.photosynthesis.papayatree_leaves": "Papaya-tree Leaves",
   "block.photosynthesis.papayatree_sapling": "Papaya-tree Sapling",
+  "block.photosynthesis.papayatree_bushcrop": "Papaya",
+  "item.photosynthesis.papaya": "Papaya",
 
   "block.photosynthesis.pecantree_log": "Pecan-tree Log",
   "block.photosynthesis.pecantree_wood": "Pecan-tree Wood",
@@ -316,6 +376,8 @@
   "block.photosynthesis.pecantree_planks": "Pecan-tree Planks",
   "block.photosynthesis.pecantree_leaves": "Pecan-tree Leaves",
   "block.photosynthesis.pecantree_sapling": "Pecan-tree Sapling",
+  "block.photosynthesis.pecantree_bushcrop": "Pecan",
+  "item.photosynthesis.pecan": "Pecan",
 
   "block.photosynthesis.persimmontree_log": "Persimmon-tree Log",
   "block.photosynthesis.persimmontree_wood": "Persimmon-tree Wood",
@@ -324,6 +386,8 @@
   "block.photosynthesis.persimmontree_planks": "Persimmon-tree Planks",
   "block.photosynthesis.persimmontree_leaves": "Persimmon-tree Leaves",
   "block.photosynthesis.persimmontree_sapling": "Persimmon-tree Sapling",
+  "block.photosynthesis.persimmontree_bushcrop": "Persimmon",
+  "item.photosynthesis.persimmon": "Persimmon",
 
   "block.photosynthesis.pistachiotree_log": "Pistachio-tree Log",
   "block.photosynthesis.pistachiotree_wood": "Pistachio-tree Wood",
@@ -332,6 +396,8 @@
   "block.photosynthesis.pistachiotree_planks": "Pistachio-tree Planks",
   "block.photosynthesis.pistachiotree_leaves": "Pistachio-tree Leaves",
   "block.photosynthesis.pistachiotree_sapling": "Pistachio-tree Sapling",
+  "block.photosynthesis.pistachiotree_bushcrop": "Pistachio",
+  "item.photosynthesis.pistachio": "Pistachio",
 
   "block.photosynthesis.pomegranatetree_log": "Pomegranate-tree Log",
   "block.photosynthesis.pomegranatetree_wood": "Pomegranate-tree Wood",
@@ -340,6 +406,8 @@
   "block.photosynthesis.pomegranatetree_planks": "Pomegranate-tree Planks",
   "block.photosynthesis.pomegranatetree_leaves": "Pomegranate-tree Leaves",
   "block.photosynthesis.pomegranatetree_sapling": "Pomegranate-tree Sapling",
+  "block.photosynthesis.pomegranatetree_bushcrop": "Pomegranate",
+  "item.photosynthesis.pomegranate": "Pomegranate",
 
   "block.photosynthesis.starfruittree_log": "Starfruit-tree Log",
   "block.photosynthesis.starfruittree_wood": "Starfruit-tree Wood",
@@ -348,6 +416,8 @@
   "block.photosynthesis.starfruittree_planks": "Starfruit-tree Planks",
   "block.photosynthesis.starfruittree_leaves": "Starfruit-tree Leaves",
   "block.photosynthesis.starfruittree_sapling": "Starfruit-tree Sapling",
+  "block.photosynthesis.starfruittree_bushcrop": "Starfruit",
+  "item.photosynthesis.starfruit": "Starfruit",
 
   "block.photosynthesis.breadfruittree_log": "Breadfruit-tree Log",
   "block.photosynthesis.breadfruittree_wood": "Breadfruit-tree Wood",
@@ -356,6 +426,8 @@
   "block.photosynthesis.breadfruittree_planks": "Breadfruit-tree Planks",
   "block.photosynthesis.breadfruittree_leaves": "Breadfruit-tree Leaves",
   "block.photosynthesis.breadfruittree_sapling": "Breadfruit-tree Sapling",
+  "block.photosynthesis.breadfruittree_bushcrop": "Breadfruit",
+  "item.photosynthesis.breadfruit": "Breadfruit",
 
   "block.photosynthesis.guavatree_log": "Guava-tree Log",
   "block.photosynthesis.guavatree_wood": "Guava-tree Wood",
@@ -364,6 +436,8 @@
   "block.photosynthesis.guavatree_planks": "Guava-tree Planks",
   "block.photosynthesis.guavatree_leaves": "Guava-tree Leaves",
   "block.photosynthesis.guavatree_sapling": "Guava-tree Sapling",
+  "block.photosynthesis.guavatree_bushcrop": "Guava",
+  "item.photosynthesis.guava": "Guava",
 
   "block.photosynthesis.jackfruittree_log": "Jackfruit-tree Log",
   "block.photosynthesis.jackfruittree_wood": "Jackfruit-tree Wood",
@@ -372,6 +446,8 @@
   "block.photosynthesis.jackfruittree_planks": "Jackfruit-tree Planks",
   "block.photosynthesis.jackfruittree_leaves": "Jackfruit-tree Leaves",
   "block.photosynthesis.jackfruittree_sapling": "Jackfruit-tree Sapling",
+  "block.photosynthesis.jackfruittree_bushcrop": "Jackfruit",
+  "item.photosynthesis.jackfruit": "Jackfruit",
 
   "block.photosynthesis.lycheetree_log": "Lychee-tree Log",
   "block.photosynthesis.lycheetree_wood": "Lychee-tree Wood",
@@ -380,6 +456,8 @@
   "block.photosynthesis.lycheetree_planks": "Lychee-tree Planks",
   "block.photosynthesis.lycheetree_leaves": "Lychee-tree Leaves",
   "block.photosynthesis.lycheetree_sapling": "Lychee-tree Sapling",
+  "block.photosynthesis.lycheetree_bushcrop": "Lychee",
+  "item.photosynthesis.lychee": "Lychee",
 
   "block.photosynthesis.passionfruittree_log": "Passionfruit-tree Log",
   "block.photosynthesis.passionfruittree_wood": "Passionfruit-tree Wood",
@@ -388,6 +466,8 @@
   "block.photosynthesis.passionfruittree_planks": "Passionfruit-tree Planks",
   "block.photosynthesis.passionfruittree_leaves": "Passionfruit-tree Leaves",
   "block.photosynthesis.passionfruittree_sapling": "Passionfruit-tree Sapling",
+  "block.photosynthesis.passionfruittree_bushcrop": "Passionfruit",
+  "item.photosynthesis.passionfruit": "Passionfruit",
 
   "block.photosynthesis.rambutantree_log": "Rambutan-tree Log",
   "block.photosynthesis.rambutantree_wood": "Rambutan-tree Wood",
@@ -396,6 +476,8 @@
   "block.photosynthesis.rambutantree_planks": "Rambutan-tree Planks",
   "block.photosynthesis.rambutantree_leaves": "Rambutan-tree Leaves",
   "block.photosynthesis.rambutantree_sapling": "Rambutan-tree Sapling",
+  "block.photosynthesis.rambutantree_bushcrop": "Rambutan",
+  "item.photosynthesis.rambutan": "Rambutan",
 
   "block.photosynthesis.tamarindtree_log": "Tamarind-tree Log",
   "block.photosynthesis.tamarindtree_wood": "Tamarind-tree Wood",
@@ -404,6 +486,8 @@
   "block.photosynthesis.tamarindtree_planks": "Tamarind-tree Planks",
   "block.photosynthesis.tamarindtree_leaves": "Tamarind-tree Leaves",
   "block.photosynthesis.tamarindtree_sapling": "Tamarind-tree Sapling",
+  "block.photosynthesis.tamarindtree_bushcrop": "Tamarind",
+  "item.photosynthesis.tamarind": "Tamarind",
 
   "block.photosynthesis.mapletree_log": "Maple-tree Log",
   "block.photosynthesis.mapletree_wood": "Maple-tree Wood",
@@ -412,6 +496,8 @@
   "block.photosynthesis.mapletree_planks": "Maple-tree Planks",
   "block.photosynthesis.mapletree_leaves": "Maple-tree Leaves",
   "block.photosynthesis.mapletree_sapling": "Maple-tree Sapling",
+  "block.photosynthesis.mapletree_bushcrop": "Maple",
+  "item.photosynthesis.maple": "Maple",
 
   "block.photosynthesis.peppercorntree_log": "Peppercorn-tree Log",
   "block.photosynthesis.peppercorntree_wood": "Peppercorn-tree Wood",
@@ -420,6 +506,8 @@
   "block.photosynthesis.peppercorntree_planks": "Peppercorn-tree Planks",
   "block.photosynthesis.peppercorntree_leaves": "Peppercorn-tree Leaves",
   "block.photosynthesis.peppercorntree_sapling": "Peppercorn-tree Sapling",
+  "block.photosynthesis.peppercorntree_bushcrop": "Peppercorn",
+  "item.photosynthesis.peppercorn": "Peppercorn",
 
   "block.photosynthesis.vanillabeantree_log": "Vanillabean-tree Log",
   "block.photosynthesis.vanillabeantree_wood": "Vanillabean-tree Wood",
@@ -428,6 +516,8 @@
   "block.photosynthesis.vanillabeantree_planks": "Vanillabean-tree Planks",
   "block.photosynthesis.vanillabeantree_leaves": "Vanillabean-tree Leaves",
   "block.photosynthesis.vanillabeantree_sapling": "Vanillabean-tree Sapling",
+  "block.photosynthesis.vanillabeantree_bushcrop": "Vanillabean",
+  "item.photosynthesis.vanillabean": "Vanillabean",
 
   "block.photosynthesis.pinenuttree_log": "Pinenut-tree Log",
   "block.photosynthesis.pinenuttree_wood": "Pinenut-tree Wood",
@@ -436,6 +526,8 @@
   "block.photosynthesis.pinenuttree_planks": "Pinenut-tree Planks",
   "block.photosynthesis.pinenuttree_leaves": "Pinenut-tree Leaves",
   "block.photosynthesis.pinenuttree_sapling": "Pinenut-tree Sapling",
+  "block.photosynthesis.pinenuttree_bushcrop": "Pinenut",
+  "item.photosynthesis.pinenut": "Pinenut",
 
   "block.photosynthesis.gooseberrytree_log": "Gooseberry-tree Log",
   "block.photosynthesis.gooseberrytree_wood": "Gooseberry-tree Wood",
@@ -444,6 +536,8 @@
   "block.photosynthesis.gooseberrytree_planks": "Gooseberry-tree Planks",
   "block.photosynthesis.gooseberrytree_leaves": "Gooseberry-tree Leaves",
   "block.photosynthesis.gooseberrytree_sapling": "Gooseberry-tree Sapling",
+  "block.photosynthesis.gooseberrytree_bushcrop": "Gooseberry",
+  "item.photosynthesis.gooseberry": "Gooseberry",
 
   "block.photosynthesis.grapetree_log": "Grape-tree Log",
   "block.photosynthesis.grapetree_wood": "Grape-tree Wood",
@@ -452,6 +546,8 @@
   "block.photosynthesis.grapetree_planks": "Grape-tree Planks",
   "block.photosynthesis.grapetree_leaves": "Grape-tree Leaves",
   "block.photosynthesis.grapetree_sapling": "Grape-tree Sapling",
+  "block.photosynthesis.grapetree_bushcrop": "Grape",
+  "item.photosynthesis.grape": "Grape",
 
   "block.photosynthesis.red_grapetree_log": "Red Grape-tree Log",
   "block.photosynthesis.red_grapetree_wood": "Red Grape-tree Wood",
@@ -460,6 +556,8 @@
   "block.photosynthesis.red_grapetree_planks": "Red Grape-tree Planks",
   "block.photosynthesis.red_grapetree_leaves": "Red Grape-tree Leaves",
   "block.photosynthesis.red_grapetree_sapling": "Red Grape-tree Sapling",
+  "block.photosynthesis.red_grapetree_bushcrop": "Red Grape",
+  "item.photosynthesis.red_grape": "Red Grape",
 
   "block.photosynthesis.kiwitree_log": "Kiwi-tree Log",
   "block.photosynthesis.kiwitree_wood": "Kiwi-tree Wood",
@@ -468,6 +566,8 @@
   "block.photosynthesis.kiwitree_planks": "Kiwi-tree Planks",
   "block.photosynthesis.kiwitree_leaves": "Kiwi-tree Leaves",
   "block.photosynthesis.kiwitree_sapling": "Kiwi-tree Sapling",
+  "block.photosynthesis.kiwitree_bushcrop": "Kiwi",
+  "item.photosynthesis.kiwi": "Kiwi",
 
   "block.photosynthesis.mangotree_log": "Mango-tree Log",
   "block.photosynthesis.mangotree_wood": "Mango-tree Wood",
@@ -476,19 +576,8 @@
   "block.photosynthesis.mangotree_planks": "Mango-tree Planks",
   "block.photosynthesis.mangotree_leaves": "Mango-tree Leaves",
   "block.photosynthesis.mangotree_sapling": "Mango-tree Sapling",
-
-  "block.photosynthesis.greenappletree_bushcrop": "Green Apple",
-  "block.photosynthesis.bananatree_bushcrop": "Banana",
-  "block.photosynthesis.orangetree_bushcrop": "Orange",
-  "block.photosynthesis.peartree_bushcrop": "Pear",
-  "block.photosynthesis.avocadotree_bushcrop": "Avocado",
-
-  "item.photosynthesis.cinnamon_raw": "Cinnamon",
-  "item.photosynthesis.greenapple": "Green Apple",
-  "item.photosynthesis.banana": "Banana",
-  "item.photosynthesis.orange": "Orange",
-  "item.photosynthesis.pear": "Pear",
-  "item.photosynthesis.avocado": "Avocado",
+  "block.photosynthesis.mangotree_bushcrop": "Mango",
+  "item.photosynthesis.mango": "Mango",
 
   "item.photosynthesis.blueberries": "Blueberries",
   "item.photosynthesis.blackberries": "Blackberries",
@@ -609,8 +698,6 @@
   "item.photosynthesis.squash": "Butternut Squash",
   "item.photosynthesis.zucchini": "Zucchini",
   "item.photosynthesis.coffea": "Coffea",
-  "item.photosynthesis.grape": "Green Grape",
-  "item.photosynthesis.red_grape": "Red Grape",
   "item.photosynthesis.parsley": "Parsley",
   "item.photosynthesis.mint": "Mint",
   "item.photosynthesis.pineapple": "Pineapple",
