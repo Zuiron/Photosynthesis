@@ -16,6 +16,11 @@
   "item.photosynthesis.sunfloweroil_bucket": "Sunflower Oil Bucket",
   "item.photosynthesis.measuring_cup_sunfloweroil": "Sunflower Oil Measuring Cup",
 
+  "block.photosynthesis.oliveoil": "Olive Oil",
+  "block.photosynthesis.oliveoil_block": "Olive Oil",
+  "item.photosynthesis.oliveoil_bucket": "Olive Oil Bucket",
+  "item.photosynthesis.measuring_cup_oliveoil": "Olive Oil Measuring Cup",
+
   "block.photosynthesis.mead": "Mead",
   "block.photosynthesis.mead_block": "Mead",
   "item.photosynthesis.mead_bucket": "Mead Bucket",
@@ -27,6 +32,14 @@
   "block.photosynthesis.maplesyrup": "Maple Syrup",
   "block.photosynthesis.maplesyrup_block": "Maple Syrup",
   "item.photosynthesis.maplesyrup_bucket": "Maple Syrup Bucket",
+
+  "block.photosynthesis.milk": "Cow Milk",
+  "block.photosynthesis.milk_block": "Cow Milk",
+  "item.photosynthesis.milk_bucket": "Cow Milk Bucket",
+
+  "block.photosynthesis.goatmilk": "Goat Milk",
+  "block.photosynthesis.goatmilk_block": "Goat Milk",
+  "item.photosynthesis.goatmilk_bucket": "Goat Milk Bucket",
 
   "photosynthesis.tooltip.liquid.amount.with.capacity": "%s / %s mB",
   "photosynthesis.tooltip.liquid.amount": "%s mB",
