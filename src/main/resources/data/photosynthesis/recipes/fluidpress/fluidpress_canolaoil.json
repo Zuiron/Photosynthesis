@@ -1,0 +1,14 @@
+{
+  "type": "photosynthesis:fluid_press",
+  "ingredients": [
+    {
+      "item": "photosynthesis:canola_seeds",
+      "count": 2
+    }
+  ],
+  "output": {
+    "fluid": "photosynthesis:canolaoil",
+    "amount": 8100
+  },
+  "cookingtime": 100
+}

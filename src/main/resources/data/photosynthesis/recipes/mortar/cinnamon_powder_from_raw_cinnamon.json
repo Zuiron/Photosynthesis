@@ -1,0 +1,16 @@
+{
+  "type": "photosynthesis:mortar",
+  "ingredients": [
+    {
+      "item": "photosynthesis:pestle"
+    },
+    {
+      "item": "photosynthesis:cinnamon_raw"
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:cinnamon_powder",
+    "count": 2
+  },
+  "cookingtime": 30
+}

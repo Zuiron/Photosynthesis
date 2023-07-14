@@ -1,0 +1,14 @@
+{
+  "type": "photosynthesis:fluid_press",
+  "ingredients": [
+    {
+      "item": "photosynthesis:sunflower_seeds",
+      "count": 2
+    }
+  ],
+  "output": {
+    "fluid": "photosynthesis:sunfloweroil",
+    "amount": 8100
+  },
+  "cookingtime": 100
+}
