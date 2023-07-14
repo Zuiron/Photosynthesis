@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "photosynthesis:lentil"
+    }
+  ],
+  "result": {
+    "item": "photosynthesis:lentil_seeds",
+    "count": 1
+  }
+}

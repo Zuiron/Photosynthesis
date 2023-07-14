@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "photosynthesis:kenaf"
+    }
+  ],
+  "result": {
+    "item": "photosynthesis:kenaf_seeds",
+    "count": 1
+  }
+}

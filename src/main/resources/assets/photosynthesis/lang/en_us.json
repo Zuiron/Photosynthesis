@@ -21,6 +21,10 @@
   "item.photosynthesis.oliveoil_bucket": "Olive Oil Bucket",
   "item.photosynthesis.measuring_cup_oliveoil": "Olive Oil Measuring Cup",
 
+  "block.photosynthesis.latex": "Latex",
+  "block.photosynthesis.latex_block": "Latex",
+  "item.photosynthesis.latex_bucket": "Latex Bucket",
+
   "block.photosynthesis.mead": "Mead",
   "block.photosynthesis.mead_block": "Mead",
   "item.photosynthesis.mead_bucket": "Mead Bucket",
@@ -847,6 +851,23 @@
   "item.photosynthesis.asparagusbacondish": "Asparagus with Bacon",
   "item.photosynthesis.rice_porridge": "Rice Porridge",
   "item.photosynthesis.salad": "Salad",
+  "item.photosynthesis.barbeque_skewers": "Barbeque Skewers",
+  "item.photosynthesis.minced_beef": "Minced Beef",
+  "item.photosynthesis.yellow_cheese": "Yellow Cheese",
+  "item.photosynthesis.english_breakfast": "English Breakfast",
+  "item.photosynthesis.meatballs": "Meatballs",
+  "item.photosynthesis.minced_pork": "Minced Pork",
+  "item.photosynthesis.pumpkin_soup": "Pumpkin Soup",
+  "item.photosynthesis.waffle": "Waffle",
+  "item.photosynthesis.wheat_dough": "Wheat Dough",
+
+  "item.photosynthesis.mug": "Mug",
+  "item.photosynthesis.mug_mead": "Mead Mug",
+  "item.photosynthesis.mug_water": "Water Mug",
+
+  "item.photosynthesis.leather_water_bladder": "Empty Leather Bladder",
+  "item.photosynthesis.leather_water_bladder_dirty": "Dirty Water Leather Bladder",
+  "item.photosynthesis.leather_water_bladder_clean": "Clean Water Leather Bladder",
 
   "item.photosynthesis.cutting_knife": "Cutting Knife",
   "item.photosynthesis.whisk": "Whisk",
@@ -873,10 +894,13 @@
   "item.photosynthesis.cracked_egg": "Cracked Egg",
   "item.photosynthesis.scrambled_egg": "Scrambled Egg",
 
+  "item.photosynthesis.boiled_egg": "Boiled Egg",
+
   "item.photosynthesis.canola_oil": "Canola Oil",
   "item.photosynthesis.sunflower_oil": "Sunflower Oil",
   "item.photosynthesis.cinnamon_powder": "Cinnamon Powder",
   "item.photosynthesis.cut_chives": "Cut Chives",
+  "item.photosynthesis.cut_kiwi": "Cut Kiwi",
   "item.photosynthesis.scrambled_egg_mix": "Scrambled Egg Mix",
   "item.photosynthesis.salt": "Salt",
   "item.photosynthesis.raw_salt": "Raw Salt",

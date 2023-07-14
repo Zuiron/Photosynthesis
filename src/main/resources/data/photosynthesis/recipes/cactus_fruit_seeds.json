@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "photosynthesis:cactus_fruit"
+    }
+  ],
+  "result": {
+    "item": "photosynthesis:cactus_fruit_seeds",
+    "count": 1
+  }
+}

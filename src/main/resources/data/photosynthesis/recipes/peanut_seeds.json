@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "photosynthesis:peanut"
+    }
+  ],
+  "result": {
+    "item": "photosynthesis:peanut_seeds",
+    "count": 1
+  }
+}
