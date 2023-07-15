@@ -80,7 +80,7 @@ public abstract class ModSaplingBlock extends PlantBlock
             this.generate(world, pos, state, random, ci);
         }
         /*Photosynthesis.LOGGER.info("randomTick - Sapling - stage: "+state.get(STAGE));
-        //TODO - implement growing like crops with stages, make it so all saplings needs to be planted it spring, and mature in autumn.
+        //TODO - implement growing like crops with stages, make it so all saplings needs to be planted in summer and grow into trees in spring
         if (world.getLightLevel(pos.up()) >= 9 && random.nextInt(7) == 0) {
             this.generate(world, pos, state, random, ci);
         }*/
