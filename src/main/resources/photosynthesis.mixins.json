@@ -11,7 +11,8 @@
     "ModSweetBerryBushBlock",
     "ModBlockItem",
     "ModCowEntity",
-    "ModGoatEntity"
+    "ModGoatEntity",
+    "ModSaplingBlock"
   ],
   "client": [
     "PhotosynthesisMixin"
