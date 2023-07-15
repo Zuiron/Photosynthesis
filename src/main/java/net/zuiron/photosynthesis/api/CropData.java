@@ -99,6 +99,10 @@ public class CropData {
         cropDataMap.put("nonexist.block.photosynthesis.trees",          new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));    //plant summer, harvest spring.
         cropDataMap.put("block.photosynthesis.duriantree_sapling",      new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));    //plant summer, harvest spring.
 
+        // ----- MOD COMPAT
+        // - Tech Reborn                                                //maxAge Summer, Autumn, Winter, Spring ---- minAge Summer, Autumn, Winter, Spring
+        cropDataMap.put("block.techreborn.rubber_sapling",              new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));    //plant summer, harvest spring.
+
         //Crops                                                         //maxAge Summer, Autumn, Winter, Spring ---- minAge Summer, Autumn, Winter, Spring
         cropDataMap.put("block.photosynthesis.tomato_crop",             new CropData(new int[]{7, 0, 0, 4}, new int[]{4, 7, 7, 0}));    //plant spring, harvest summer.
         cropDataMap.put("block.photosynthesis.basil_crop",              new CropData(new int[]{4, 7, 0, 0}, new int[]{0, 4, 7, 7}));    //plant summer, harvest autumn.
