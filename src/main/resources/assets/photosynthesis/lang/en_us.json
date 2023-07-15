@@ -3,6 +3,13 @@
 
   "block.minecraft.empty": "Empty",
 
+  "text.autoconfig.photosynthesis.title": "Photosynthesis Config",
+  "text.autoconfig.photosynthesis.option.thirst": "Enable Thirst",
+  "text.autoconfig.photosynthesis.option.thirst.@Tooltip": "When YES, Thirst is enabled.",
+  "text.autoconfig.photosynthesis.option.seasons": "Enable Seasons",
+  "text.autoconfig.photosynthesis.option.seasons.@Tooltip": "When YES, Seasons is enabled.",
+  "text.autoconfig.photosynthesis.option.daysPerSeason": "Days Per Season",
+
   "block.photosynthesis.keg": "Keg",
   "block.photosynthesis.milk_seperator": "Milk Separator",
 
@@ -66,6 +73,7 @@
   "photosynthesis.tooltip.liquid.amount": "%s mB",
 
   "block.photosynthesis.floramelissia": "Floramelissia",
+  "block.photosynthesis.potted_floramelissia": "Potted Floramelissia",
 
   "block.photosynthesis.appletree_log": "Apple-tree Log",
   "block.photosynthesis.appletree_wood": "Apple-tree Wood",

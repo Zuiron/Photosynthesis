@@ -14,6 +14,17 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
+        //machines
+        addDrop(ModBlocks.SKILLET);
+        addDrop(ModBlocks.MIXING_BOWL);
+        addDrop(ModBlocks.KEG);
+        addDrop(ModBlocks.FLUID_PRESS);
+        addDrop(ModBlocks.MILKSEPERATOR);
+        addDrop(ModBlocks.COOKINGPOT);
+        addDrop(ModBlocks.CUTTINGBOARD);
+        addDrop(ModBlocks.MORTAR);
+        addDrop(ModBlocks.LATEX_EXTRACTOR);
+        addDrop(ModBlocks.MAPLE_EXTRACTOR);
 
         //Planks
         addDrop(ModBlocks.APPLETREE_PLANKS);
