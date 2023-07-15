@@ -103,6 +103,9 @@ public abstract class ModSaplingBlock extends PlantBlock
 
                 ci.cancel(); //do not run vanilla code...
             }
+        } else { //seasons disabled
+            //set age to 7 to display "fully grown sapling texture"
+            world.setBlockState(pos, this.withAge(this.getMaxAge()), 2);
         }
         /*Photosynthesis.LOGGER.info("randomTick - Sapling - stage: "+state.get(STAGE));
         //TODO - implement growing like crops with stages, make it so all saplings needs to be planted in summer and grow into trees in spring
