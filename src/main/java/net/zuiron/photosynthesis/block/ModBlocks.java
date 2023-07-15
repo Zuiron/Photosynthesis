@@ -51,44 +51,44 @@ public class ModBlocks {
 
     // "Machines"
     public static final Block SKILLET = registerBlock("skillet",
-            new SkilletBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)
-                    .strength(4f).requiresTool().nonOpaque()));
+            new SkilletBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
 
     public static final Block MIXING_BOWL = registerBlock("mixing_bowl",
             new MixingBowlBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
-                    .strength(4f).requiresTool().nonOpaque()));
+                    .strength(2f).nonOpaque()));
 
     public static final Block KEG = registerBlock("keg",
             new KegBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
-                    .strength(4f).requiresTool().nonOpaque()));
+                    .strength(2f).nonOpaque()));
 
     public static final Block FLUID_PRESS = registerBlock("fluid_press",
             new FluidPressBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
-                    .strength(4f).requiresTool().nonOpaque()));
+                    .strength(2f).nonOpaque()));
 
     public static final Block MILKSEPERATOR = registerBlock("milk_seperator",
             new MilkSeperatorBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
-                    .strength(4f).requiresTool().nonOpaque()));
+                    .strength(2f).nonOpaque()));
 
     public static final Block COOKINGPOT = registerBlock("cooking_pot",
-            new CookingPotBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)
-                    .strength(4f).requiresTool().nonOpaque()));
+            new CookingPotBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
 
     public static final Block CUTTINGBOARD = registerBlock("cutting_board",
             new CuttingBoardBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
-                    .strength(4f).requiresTool().nonOpaque()));
+                    .strength(2f).nonOpaque()));
 
     public static final Block MORTAR = registerBlock("mortar",
-            new MortarBlock(FabricBlockSettings.copyOf(Blocks.STONE)
-                    .strength(4f).requiresTool().nonOpaque()));
+            new MortarBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
 
     public static final Block LATEX_EXTRACTOR = registerBlock("latex_extractor",
             new LatexExtractorBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
-                    .strength(4f).requiresTool().nonOpaque()));
+                    .strength(2f).nonOpaque()));
 
     public static final Block MAPLE_EXTRACTOR = registerBlock("maple_extractor",
             new MapleExtractorBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
-                    .strength(4f).requiresTool().nonOpaque()));
+                    .strength(2f).nonOpaque()));
 
 
     // CROP BLOCKS -----------------------------------------------------------------------------------------------------
