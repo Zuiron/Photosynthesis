@@ -129,9 +129,8 @@ public abstract class ModSaplingBlock extends PlantBlock
     public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state, boolean isClient) {
         if(Seasons.isSeasonsEnabled()) {
             return false;
-        } else {
-            return !this.isMature(state);
         }
+        return true;
     }
 
     @Override

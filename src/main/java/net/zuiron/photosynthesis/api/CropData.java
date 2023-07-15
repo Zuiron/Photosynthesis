@@ -97,7 +97,68 @@ public class CropData {
 
         //TREE's, same for ALL trees                                    //maxAge Summer, Autumn, Winter, Spring ---- minAge Summer, Autumn, Winter, Spring
         cropDataMap.put("nonexist.block.photosynthesis.trees",          new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));    //plant summer, harvest spring.
-        cropDataMap.put("block.photosynthesis.duriantree_sapling",      new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));    //plant summer, harvest spring.
+        //Vanilla trees                                                 //maxAge Summer, Autumn, Winter, Spring ---- minAge Summer, Autumn, Winter, Spring
+        cropDataMap.put("block.minecraft.oak_sapling",                  new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.minecraft.dark_oak_sapling",             new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.minecraft.spruce_sapling",               new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.minecraft.birch_sapling",                new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.minecraft.jungle_sapling",               new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.minecraft.acacia_sapling",               new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.minecraft.cherry_sapling",               new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+
+        //Photosynthesis trees                                          //maxAge Summer, Autumn, Winter, Spring ---- minAge Summer, Autumn, Winter, Spring
+        cropDataMap.put("block.photosynthesis.appletree_sapling",       new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.cinnamon_sapling",        new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.bananatree_sapling",      new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.orangetree_sapling",      new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.peartree_sapling",        new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.avocadotree_sapling",     new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.coconuttree_sapling",     new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.cherrytree_sapling",      new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.lemontree_sapling",       new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.olivetree_sapling",       new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.rubbertree_sapling",      new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.candlenuttree_sapling",   new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.chestnuttree_sapling",    new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.nutmegtree_sapling",      new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.peachtree_sapling",       new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.plumtree_sapling",        new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.walnuttree_sapling",      new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.hazelnuttree_sapling",    new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.pawpawtree_sapling",      new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.soursoptree_sapling",     new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.almondtree_sapling",      new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.apricottree_sapling",     new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.cashewtree_sapling",      new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.datetree_sapling",        new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.dragonfruittree_sapling", new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.duriantree_sapling",      new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.figtree_sapling",         new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.grapefruittree_sapling",  new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.limetree_sapling",        new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.papayatree_sapling",      new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.pecantree_sapling",       new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.persimmontree_sapling",   new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.pistachiotree_sapling",   new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.pomegranatetree_sapling", new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.starfruittree_sapling",   new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.breadfruittree_sapling",  new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.guavatree_sapling",       new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.jackfruittree_sapling",   new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.lycheetree_sapling",      new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.passionfruittree_sapling",new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.rambutantree_sapling",    new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.tamarindtree_sapling",    new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.mapletree_sapling",       new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.peppercorntree_sapling",  new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.vanillabeantree_sapling", new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.pinenuttree_sapling",     new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.gooseberrytree_sapling",  new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.grapetree_sapling",       new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.red_grapetree_sapling",   new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.kiwitree_sapling",        new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.photosynthesis.mangotree_sapling",       new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+
 
         // ----- MOD COMPAT
         // - Tech Reborn                                                //maxAge Summer, Autumn, Winter, Spring ---- minAge Summer, Autumn, Winter, Spring
