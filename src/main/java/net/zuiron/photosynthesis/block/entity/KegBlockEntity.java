@@ -87,7 +87,8 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
 
         @Override
         protected long getCapacity(FluidVariant variant) {
-            return FluidStack.convertDropletsToMb(FluidConstants.BUCKET) * 4; // 4 buckets
+            //return FluidStack.convertDropletsToMb(FluidConstants.BUCKET) * 4; // 4 buckets
+            return FluidConstants.BUCKET * 4; // 4 buckets
         }
 
         @Override
@@ -107,7 +108,8 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
 
         @Override
         protected long getCapacity(FluidVariant variant) {
-            return FluidStack.convertDropletsToMb(FluidConstants.BUCKET) * 4; // 4 buckets
+            //return FluidStack.convertDropletsToMb(FluidConstants.BUCKET) * 4; // 4 buckets
+            return FluidConstants.BUCKET * 4; // 4 buckets
         }
 
         @Override
@@ -285,15 +287,16 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
     private static void transferFluidToFluidStorage(KegBlockEntity entity) {
 
         if(canTankAcceptBucketWorth(entity)) {
-            if (insertFluid(entity, FluidStack.convertDropletsToMb(FluidConstants.BUCKET))) {
+            //if (insertFluid(entity, FluidStack.convertDropletsToMb(FluidConstants.BUCKET))) {
+            if (insertFluid(entity, FluidConstants.BUCKET)) {
                 entity.setStack(0, new ItemStack(Items.BUCKET));
             }
         }
     }
 
-    private static boolean insertFluid(KegBlockEntity entity, long convertDropletsToMb) {
+    private static boolean insertFluid(KegBlockEntity entity, long amount) {
         try(Transaction transaction = Transaction.openOuter()) {
-            entity.fluidInput.insert(FluidVariant.of(Fluids.WATER), convertDropletsToMb, transaction);
+            entity.fluidInput.insert(FluidVariant.of(Fluids.WATER), amount, transaction);
             transaction.commit();
             return true;
         }
@@ -304,22 +307,25 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
 
     private static boolean canTankAcceptBucketWorth(KegBlockEntity entity) {
         long availableSpace = entity.fluidInput.getCapacity() - entity.fluidInput.getAmount();
-        if(availableSpace >= FluidStack.convertDropletsToMb(FluidConstants.BUCKET)) {
+        //if(availableSpace >= FluidStack.convertDropletsToMb(FluidConstants.BUCKET)) {
+        if(availableSpace >= FluidConstants.BUCKET) {
             return true;
         }
         return false;
     }
 
     private static void extractFluidAndMakeBucket(KegBlockEntity entity) {
-        if(entity.fluidOutput.amount >= 1000) {
+        //if(entity.fluidOutput.amount >= 1000) {
+        if(entity.fluidOutput.amount >= FluidConstants.BUCKET) {
             ItemStack itemStack = new ItemStack(entity.fluidOutput.getResource().getFluid().getBucketItem());
-            if(extractFluid(entity, 1000)) {
+            //if(extractFluid(entity, 1000)) {
+            if(extractFluid(entity, FluidConstants.BUCKET)) {
                 entity.setStack(5, itemStack);
             }
         }
     }
 
-    private static boolean extractFluid(KegBlockEntity entity, int Amount) {
+    private static boolean extractFluid(KegBlockEntity entity, long Amount) {
         try(Transaction transaction = Transaction.openOuter()) {
             entity.fluidOutput.extract(FluidVariant.of(entity.fluidOutput.getResource().getFluid()),
                     Amount, transaction);
@@ -389,13 +395,14 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
                 .getFirstMatch(KegRecipe.Type.INSTANCE, inventory, entity.getWorld());
 
         if(hasRecipe(entity)) {
-            FluidStack inputFluid = recipe.get().getFluidInput();
-            FluidStack outputFluid = recipe.get().getOutputFluid();
+            FluidStack inputFluid = recipe.get().getFluidInput(); //amount is in droplets !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            FluidStack outputFluid = recipe.get().getOutputFluid(); //amount is in droplets !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
             //DONE - remove input fluid from input fluid tank
             try(Transaction transaction = Transaction.openOuter()) {
                 entity.fluidInput.extract(FluidVariant.of(inputFluid.fluidVariant.getFluid()),
-                        FluidStack.convertDropletsToMb(inputFluid.amount), transaction);
+                        //FluidStack.convertDropletsToMb(inputFluid.amount), transaction);
+                        inputFluid.amount, transaction);
                 transaction.commit();
             }
 
@@ -407,7 +414,8 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
 
             try(Transaction transaction = Transaction.openOuter()) {
                 entity.fluidOutput.insert(FluidVariant.of(outputFluid.fluidVariant.getFluid()),
-                        FluidStack.convertDropletsToMb(outputFluid.amount), transaction);
+                        //FluidStack.convertDropletsToMb(outputFluid.amount), transaction);
+                        outputFluid.amount, transaction);
                 transaction.commit();
             }
 
@@ -456,8 +464,10 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
                 }
             }
 
-            return canInsertFluidIntoFluidOutput(entity, outputFluid, FluidStack.convertDropletsToMb(outputFluid.amount)) &&
-                    doesInputTankContainEnoughRecipeInputFluid(entity, inputFluid, FluidStack.convertDropletsToMb(inputFluid.amount));
+            /*return canInsertFluidIntoFluidOutput(entity, outputFluid, FluidStack.convertDropletsToMb(outputFluid.amount)) &&
+                    doesInputTankContainEnoughRecipeInputFluid(entity, inputFluid, FluidStack.convertDropletsToMb(inputFluid.amount));*/
+            return canInsertFluidIntoFluidOutput(entity, outputFluid, outputFluid.amount) &&
+                    doesInputTankContainEnoughRecipeInputFluid(entity, inputFluid, inputFluid.amount);
         } else {
             //Photosynthesis.LOGGER.info("no match is present...");
             return false;
