@@ -32,6 +32,6 @@ public class FluidStack {
     }
 
     public static long convertMbToDroplets(long mb) {
-        return mb * 81;
+        return (mb * 81);
     }
 }

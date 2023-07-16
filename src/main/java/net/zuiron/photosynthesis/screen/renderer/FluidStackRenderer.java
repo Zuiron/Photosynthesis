@@ -144,7 +144,7 @@ public class FluidStackRenderer implements IIngredientRenderer<FluidStack> {
         final Sprite sprite = FluidVariantRendering.getSprite(fluid.getFluidVariant());
         int color = FluidVariantRendering.getColor(fluid.getFluidVariant());
 
-        final int drawHeight = (int) (fluid.getAmount() / (maxCapacity * 1F) * height);
+        final int drawHeight = (int) (FluidStack.convertDropletsToMb(fluid.getAmount()) / (maxCapacity * 1F) * height);
         final int iconHeight = sprite.getContents().getHeight();
         int offsetHeight = drawHeight;
 
@@ -176,7 +176,7 @@ public class FluidStackRenderer implements IIngredientRenderer<FluidStack> {
         MutableText displayName = Text.translatable("block." + Registries.FLUID.getId(fluidStack.fluidVariant.getFluid()).toTranslationKey());
         tooltip.add(displayName);
 
-        long amount = fluidStack.getAmount();
+        long amount = FluidStack.convertDropletsToMb(fluidStack.getAmount());
         if (tooltipMode == TooltipMode.SHOW_AMOUNT_AND_CAPACITY) {
             MutableText amountString = Text.translatable("photosynthesis.tooltip.liquid.amount.with.capacity", nf.format(amount), nf.format(capacityMb));
             tooltip.add(amountString.fillStyle(Style.EMPTY.withColor(Formatting.DARK_GRAY)));
