@@ -18,6 +18,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
+import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.util.FluidStack;
 
 public class MilkSeperatorRecipe implements Recipe<SimpleInventory> {
@@ -45,15 +46,17 @@ public class MilkSeperatorRecipe implements Recipe<SimpleInventory> {
 
     @Override
     public boolean matches(SimpleInventory inventory, World world) {
-        if(world.isClient()) {
+        if (world.isClient()) {
             return false;
         }
-        //is this not used???
-        /*return recipeItems.get(0).test(inventory.getStack(0))
-                && recipeItems.get(1).test(inventory.getStack(1))
-                && recipeItems.get(2).test(inventory.getStack(2))
-                && recipeItems.get(3).test(inventory.getStack(3));*/
-        return true;
+        //Photosynthesis.LOGGER.info(inventory.getStack(0).getItem().getDefaultStack()+" - == - "+fluidInput.fluidVariant.getFluid().getBucketItem().getDefaultStack());
+        if(inventory.getStack(0).getItem() == fluidInput.fluidVariant.getFluid().getBucketItem()) {
+            //Photosynthesis.LOGGER.info("true");
+            return true;
+        } else {
+            //Photosynthesis.LOGGER.info("false");
+            return false;
+        }
     }
 
     @Override
