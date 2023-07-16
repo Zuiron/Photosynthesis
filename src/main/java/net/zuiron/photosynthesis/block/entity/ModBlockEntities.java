@@ -74,17 +74,17 @@ public class ModBlockEntities {
                 FabricBlockEntityTypeBuilder.create(MilkSeperatorBlockEntity::new,
                         ModBlocks.MILKSEPERATOR).build(null));
 
-        FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidStorage, LATEX_EXTRACTOR);
+        FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidStorage, LATEX_EXTRACTOR); //ALL sides extract, ok.
 
-        FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidStorage, MAPLE_EXTRACTOR);
+        FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidStorage, MAPLE_EXTRACTOR); //ALL sides extract, ok.
 
-        FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidInput, KEG);
-        FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidOutput, KEG);
+        FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> null, KEG);
+        //FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidOutput, KEG);
 
-        FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidOutput, FLUID_PRESS);
+        FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidOutput, FLUID_PRESS); //ALL sides extract, ok.
 
         //FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidInput, MILKSEPERATOR);
-        FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> null, MILKSEPERATOR);
+        FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> null, MILKSEPERATOR); //input fluid TOP only. extract skimmed bottom, cream right.
         //FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidOutput2, MILKSEPERATOR);
         /*FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> {
             // Allow fluid extraction from the bottom
