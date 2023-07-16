@@ -3,6 +3,7 @@
 </p>
 <p align="right">
 <img src="https://i.imgur.com/Ol1Tcf8.png" height="32">
+<img src="https://i.imgur.com/7weZ8uu.png" height="32">
 </p>
 
 > This is a FABRIC mod for Minecraft 1.20.1
