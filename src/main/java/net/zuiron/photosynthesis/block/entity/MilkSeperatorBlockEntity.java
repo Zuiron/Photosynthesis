@@ -354,9 +354,13 @@ public class MilkSeperatorBlockEntity extends BlockEntity implements ExtendedScr
                 fluid = ModFluids.STILL_GOATMILK.getDefaultState().getFluid();
             }
 
-            entity.fluidInput.insert(FluidVariant.of(fluid), amount, transaction);
-            transaction.commit();
-            return true;
+            if(FluidVariant.of(fluid) == entity.fluidInput.variant || entity.fluidInput.amount == 0) { //only insert if already existing fluid is either empty or same.
+                entity.fluidInput.insert(FluidVariant.of(fluid), amount, transaction);
+                transaction.commit();
+                return true;
+            } else {
+                return false;
+            }
         }
         catch (Exception e) {
             return false;
