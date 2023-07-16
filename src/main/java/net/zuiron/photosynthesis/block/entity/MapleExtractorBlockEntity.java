@@ -83,7 +83,8 @@ public class MapleExtractorBlockEntity extends BlockEntity implements ExtendedSc
 
         @Override
         protected long getCapacity(FluidVariant variant) {
-            return FluidStack.convertDropletsToMb(FluidConstants.BUCKET) * 2; // 20k mB
+            //return FluidStack.convertDropletsToMb(FluidConstants.BUCKET) * 2; // 20k mB
+            return FluidConstants.BUCKET * 2; // 20k mB
         }
 
         @Override
@@ -252,9 +253,11 @@ public class MapleExtractorBlockEntity extends BlockEntity implements ExtendedSc
     }
 
     private static void extractFluidAndMakeBucket(MapleExtractorBlockEntity entity) {
-        if(entity.fluidStorage.amount >= 1000 && entity.getStack(1).isEmpty()) {
+        //if(entity.fluidStorage.amount >= 1000 && entity.getStack(1).isEmpty()) {
+        if(entity.fluidStorage.amount >= FluidConstants.BUCKET && entity.getStack(1).isEmpty()) {
             ItemStack itemStack = new ItemStack(ModFluids.MAPLE_BUCKET);
-            if(extractFluid(entity, 1000)) {
+            //if(extractFluid(entity, 1000)) {
+            if(extractFluid(entity, FluidConstants.BUCKET)) {
                 //TODO fix, double buckets in slot 0 or more.
                 int count = entity.getStack(0).getCount();
                 if(count > 1) {
@@ -268,7 +271,7 @@ public class MapleExtractorBlockEntity extends BlockEntity implements ExtendedSc
         }
     }
 
-    private static boolean extractFluid(MapleExtractorBlockEntity entity, int Amount) {
+    private static boolean extractFluid(MapleExtractorBlockEntity entity, long Amount) {
         try(Transaction transaction = Transaction.openOuter()) {
             entity.fluidStorage.extract(FluidVariant.of(ModFluids.STILL_MAPLE),
                     Amount, transaction);
@@ -282,9 +285,9 @@ public class MapleExtractorBlockEntity extends BlockEntity implements ExtendedSc
 
 
 
-    private static boolean insertFluid(MapleExtractorBlockEntity entity, long convertDropletsToMb) {
+    private static boolean insertFluid(MapleExtractorBlockEntity entity, long amount) {
         try(Transaction transaction = Transaction.openOuter()) {
-            entity.fluidStorage.insert(FluidVariant.of(ModFluids.STILL_MAPLE), convertDropletsToMb, transaction);
+            entity.fluidStorage.insert(FluidVariant.of(ModFluids.STILL_MAPLE), amount, transaction);
             transaction.commit();
             return true;
         }
@@ -296,7 +299,8 @@ public class MapleExtractorBlockEntity extends BlockEntity implements ExtendedSc
     private static void transferFluidToFluidStorage(MapleExtractorBlockEntity entity) {
 
         if(entity.getStack(1).isEmpty() && canTankAcceptBucketWorth(entity)) {
-            if (insertFluid(entity, FluidStack.convertDropletsToMb(FluidConstants.BUCKET))) {
+            //if (insertFluid(entity, FluidStack.convertDropletsToMb(FluidConstants.BUCKET))) {
+            if (insertFluid(entity, FluidConstants.BUCKET)) {
                 entity.setStack(0, new ItemStack(Items.AIR));
                 entity.setStack(1, new ItemStack(Items.BUCKET));
             }
@@ -305,7 +309,8 @@ public class MapleExtractorBlockEntity extends BlockEntity implements ExtendedSc
 
     private static boolean canTankAcceptBucketWorth(MapleExtractorBlockEntity entity) {
         long availableSpace = entity.fluidStorage.getCapacity() - entity.fluidStorage.getAmount();
-        if(availableSpace >= FluidStack.convertDropletsToMb(FluidConstants.BUCKET)) {
+        //if(availableSpace >= FluidStack.convertDropletsToMb(FluidConstants.BUCKET)) {
+        if(availableSpace >= FluidConstants.BUCKET) {
             return true;
         }
         return false;
@@ -315,9 +320,6 @@ public class MapleExtractorBlockEntity extends BlockEntity implements ExtendedSc
         return entity.getStack(0).getItem() == ModFluids.MAPLE_BUCKET;
     }
 
-    private static boolean hasEnoughFluid(MapleExtractorBlockEntity entity) {
-        return entity.fluidStorage.amount >= 500; // mB amount!
-    }
 
     private static void craftItem(MapleExtractorBlockEntity entity) {
         SimpleInventory inventory = new SimpleInventory(entity.size());
@@ -333,7 +335,8 @@ public class MapleExtractorBlockEntity extends BlockEntity implements ExtendedSc
 
             try(Transaction transaction = Transaction.openOuter()) {
                 entity.fluidStorage.insert(FluidVariant.of(ModFluids.STILL_MAPLE),
-                        FluidStack.convertDropletsToMb(FluidConstants.NUGGET), transaction);
+                        //FluidStack.convertDropletsToMb(FluidConstants.NUGGET), transaction);
+                        FluidConstants.NUGGET, transaction);
                 transaction.commit();
             }
 
