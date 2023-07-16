@@ -6,6 +6,7 @@ import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.Direction;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
 
@@ -74,7 +75,28 @@ public class ModBlockEntities {
                         ModBlocks.MILKSEPERATOR).build(null));
 
         FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidStorage, LATEX_EXTRACTOR);
+
         FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidStorage, MAPLE_EXTRACTOR);
+
+        FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidInput, KEG);
         FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidOutput, KEG);
+
+        FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidOutput, FLUID_PRESS);
+
+        FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidInput, MILKSEPERATOR);
+        FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidOutput, MILKSEPERATOR);
+        FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidOutput2, MILKSEPERATOR);
+        /*FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> {
+            // Allow fluid extraction from the bottom
+            if (direction == Direction.DOWN) {
+                return blockEntity.fluidOutput;
+            }
+            // Allow fluid insertion from the top
+            else if (direction == Direction.UP) {
+                return blockEntity.fluidInput;
+            }
+            // Disallow fluid extraction and insertion from other sides
+            return null;
+        }, KEG);*/
     }
 }
