@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "photosynthesis:guavatree_log",
+    "photosynthesis:guavatree_wood",
+    "photosynthesis:stripped_guavatree_log",
+    "photosynthesis:stripped_guavatree_wood"
+  ]
+}

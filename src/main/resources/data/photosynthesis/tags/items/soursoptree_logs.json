@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "photosynthesis:soursoptree_log",
+    "photosynthesis:soursoptree_wood",
+    "photosynthesis:stripped_soursoptree_log",
+    "photosynthesis:stripped_soursoptree_wood"
+  ]
+}

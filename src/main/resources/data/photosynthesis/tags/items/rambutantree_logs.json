@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "photosynthesis:rambutantree_log",
+    "photosynthesis:rambutantree_wood",
+    "photosynthesis:stripped_rambutantree_log",
+    "photosynthesis:stripped_rambutantree_wood"
+  ]
+}

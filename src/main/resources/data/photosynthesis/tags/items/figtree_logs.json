@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "photosynthesis:figtree_log",
+    "photosynthesis:figtree_wood",
+    "photosynthesis:stripped_figtree_log",
+    "photosynthesis:stripped_figtree_wood"
+  ]
+}

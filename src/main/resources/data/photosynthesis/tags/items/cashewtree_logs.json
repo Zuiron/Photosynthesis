@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "photosynthesis:cashewtree_log",
+    "photosynthesis:cashewtree_wood",
+    "photosynthesis:stripped_cashewtree_log",
+    "photosynthesis:stripped_cashewtree_wood"
+  ]
+}

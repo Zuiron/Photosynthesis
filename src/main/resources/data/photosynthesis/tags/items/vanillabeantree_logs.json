@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "photosynthesis:vanillabeantree_log",
+    "photosynthesis:vanillabeantree_wood",
+    "photosynthesis:stripped_vanillabeantree_log",
+    "photosynthesis:stripped_vanillabeantree_wood"
+  ]
+}

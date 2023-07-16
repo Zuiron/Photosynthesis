@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "photosynthesis:lycheetree_log",
+    "photosynthesis:lycheetree_wood",
+    "photosynthesis:stripped_lycheetree_log",
+    "photosynthesis:stripped_lycheetree_wood"
+  ]
+}

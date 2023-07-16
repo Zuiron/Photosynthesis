@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "photosynthesis:cinnamon_log",
+    "photosynthesis:cinnamon_wood",
+    "photosynthesis:stripped_cinnamon_log",
+    "photosynthesis:stripped_cinnamon_wood"
+  ]
+}

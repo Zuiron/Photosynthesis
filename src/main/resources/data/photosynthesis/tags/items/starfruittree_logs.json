@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "photosynthesis:starfruittree_log",
+    "photosynthesis:starfruittree_wood",
+    "photosynthesis:stripped_starfruittree_log",
+    "photosynthesis:stripped_starfruittree_wood"
+  ]
+}

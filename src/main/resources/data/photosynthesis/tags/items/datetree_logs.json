@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "photosynthesis:datetree_log",
+    "photosynthesis:datetree_wood",
+    "photosynthesis:stripped_datetree_log",
+    "photosynthesis:stripped_datetree_wood"
+  ]
+}

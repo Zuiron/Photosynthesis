@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "photosynthesis:nutmegtree_log",
+    "photosynthesis:nutmegtree_wood",
+    "photosynthesis:stripped_nutmegtree_log",
+    "photosynthesis:stripped_nutmegtree_wood"
+  ]
+}

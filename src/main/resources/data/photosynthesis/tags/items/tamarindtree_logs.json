@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "photosynthesis:tamarindtree_log",
+    "photosynthesis:tamarindtree_wood",
+    "photosynthesis:stripped_tamarindtree_log",
+    "photosynthesis:stripped_tamarindtree_wood"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "photosynthesis:limetree_log",
+    "photosynthesis:limetree_wood",
+    "photosynthesis:stripped_limetree_log",
+    "photosynthesis:stripped_limetree_wood"
+  ]
+}

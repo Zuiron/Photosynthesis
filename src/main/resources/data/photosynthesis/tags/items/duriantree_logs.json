@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "photosynthesis:duriantree_log",
+    "photosynthesis:duriantree_wood",
+    "photosynthesis:stripped_duriantree_log",
+    "photosynthesis:stripped_duriantree_wood"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "photosynthesis:olivetree_log",
+    "photosynthesis:olivetree_wood",
+    "photosynthesis:stripped_olivetree_log",
+    "photosynthesis:stripped_olivetree_wood"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "photosynthesis:pomegranatetree_log",
+    "photosynthesis:pomegranatetree_wood",
+    "photosynthesis:stripped_pomegranatetree_log",
+    "photosynthesis:stripped_pomegranatetree_wood"
+  ]
+}
