@@ -90,7 +90,8 @@ public class FluidPressBlockEntity extends BlockEntity implements ExtendedScreen
 
         @Override
         protected long getCapacity(FluidVariant variant) {
-            return FluidStack.convertDropletsToMb(FluidConstants.BUCKET) * 4; // 4 buckets
+            //return FluidStack.convertDropletsToMb(FluidConstants.BUCKET) * 4; // 4 buckets
+            return FluidConstants.BUCKET * 4; // 4 buckets
         }
 
         @Override
@@ -280,15 +281,17 @@ public class FluidPressBlockEntity extends BlockEntity implements ExtendedScreen
     }*/
 
     private static void extractFluidAndMakeBucket(FluidPressBlockEntity entity) {
-        if(entity.fluidOutput.amount >= 1000) {
+        //if(entity.fluidOutput.amount >= 1000) {
+        if(entity.fluidOutput.amount >= FluidConstants.BUCKET) {
             ItemStack itemStack = new ItemStack(entity.fluidOutput.getResource().getFluid().getBucketItem());
-            if(extractFluid(entity, 1000)) {
+            //if(extractFluid(entity, 1000)) {
+            if(extractFluid(entity, FluidConstants.BUCKET)) {
                 entity.setStack(1, itemStack);
             }
         }
     }
 
-    private static boolean extractFluid(FluidPressBlockEntity entity, int Amount) {
+    private static boolean extractFluid(FluidPressBlockEntity entity, long Amount) {
         try(Transaction transaction = Transaction.openOuter()) {
             entity.fluidOutput.extract(FluidVariant.of(entity.fluidOutput.getResource().getFluid()),
                     Amount, transaction);
@@ -376,7 +379,8 @@ public class FluidPressBlockEntity extends BlockEntity implements ExtendedScreen
 
             try(Transaction transaction = Transaction.openOuter()) {
                 entity.fluidOutput.insert(FluidVariant.of(outputFluid.fluidVariant.getFluid()),
-                        FluidStack.convertDropletsToMb(outputFluid.amount), transaction);
+                        //FluidStack.convertDropletsToMb(outputFluid.amount), transaction);
+                        outputFluid.amount, transaction);
                 transaction.commit();
             }
 
@@ -425,7 +429,8 @@ public class FluidPressBlockEntity extends BlockEntity implements ExtendedScreen
                 }
             }
 
-            return canInsertFluidIntoFluidOutput(entity, outputFluid, FluidStack.convertDropletsToMb(outputFluid.amount));
+            //return canInsertFluidIntoFluidOutput(entity, outputFluid, FluidStack.convertDropletsToMb(outputFluid.amount));
+            return canInsertFluidIntoFluidOutput(entity, outputFluid, outputFluid.amount);
         } else {
             //Photosynthesis.LOGGER.info("no match is present...");
             return false;
