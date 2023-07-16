@@ -83,9 +83,9 @@ public class ModBlockEntities {
 
         FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidOutput, FLUID_PRESS);
 
-        FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidInput, MILKSEPERATOR);
-        FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidOutput, MILKSEPERATOR);
-        FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidOutput2, MILKSEPERATOR);
+        //FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidInput, MILKSEPERATOR);
+        FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> null, MILKSEPERATOR);
+        //FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidOutput2, MILKSEPERATOR);
         /*FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> {
             // Allow fluid extraction from the bottom
             if (direction == Direction.DOWN) {

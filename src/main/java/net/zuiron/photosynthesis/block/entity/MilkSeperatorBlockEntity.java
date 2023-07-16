@@ -6,6 +6,8 @@ import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidConstants;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
+import net.fabricmc.fabric.api.transfer.v1.storage.Storage;
+import net.fabricmc.fabric.api.transfer.v1.storage.base.SidedStorageBlockEntity;
 import net.fabricmc.fabric.api.transfer.v1.storage.base.SingleVariantStorage;
 import net.fabricmc.fabric.api.transfer.v1.transaction.Transaction;
 import net.minecraft.block.BlockState;
@@ -15,6 +17,7 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.inventory.Inventories;
+import net.minecraft.inventory.SidedInventory;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.BucketItem;
 import net.minecraft.item.Item;
@@ -33,9 +36,11 @@ import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.Photosynthesis;
+import net.zuiron.photosynthesis.block.custom.LatexExtractorBlock;
 import net.zuiron.photosynthesis.block.custom.MilkSeperatorBlock;
 import net.zuiron.photosynthesis.fluid.ModFluids;
 import net.zuiron.photosynthesis.item.ModItems;
@@ -48,7 +53,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.Optional;
 
-public class MilkSeperatorBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
+public class MilkSeperatorBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory, SidedStorageBlockEntity {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(6, ItemStack.EMPTY);
 
     public void setInventory(DefaultedList<ItemStack> inventory) {
@@ -593,5 +598,51 @@ public class MilkSeperatorBlockEntity extends BlockEntity implements ExtendedScr
 
     private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory, int amount) {
         return false;
+    }
+
+    /*@Override
+    public boolean canInsertFluid(int tank, FluidVariant fluid, @Nullable Direction direction) {
+        // Allow fluid insertion from the top side
+        return direction == Direction.UP && fluid.matches(fluidInput);
+    }
+
+    @Override
+    public boolean canExtractFluid(int tank, FluidVariant fluid, Direction direction) {
+        // Allow fluid extraction from the bottom side
+        return direction == Direction.DOWN && fluid.matches(fluidOutput);
+    }*/
+
+    /*
+     @Override
+    public boolean canInsert(int slot, ItemStack stack, @Nullable Direction side) {
+        Direction localDir = this.getWorld().getBlockState(this.pos).get(GemInfusingStationBlock.FACING);
+     */
+
+    @Override
+    public Storage<FluidVariant> getFluidStorage(Direction direction) {
+        //my block is FACING which way? north, south, west, east ?
+        Direction blockFacing = this.getWorld().getBlockState(this.pos).get(MilkSeperatorBlock.FACING);
+
+        if(direction == Direction.DOWN) {
+            // Side is at the bottom of the block
+            return fluidOutput;
+        } else if (direction == Direction.UP) {
+            // Side is at the top of the block
+            return fluidInput;
+        } else if (direction == blockFacing.rotateYCounterclockwise()) {
+            // Side is to the right of the block
+            return fluidOutput2;
+        } else if (direction == blockFacing.rotateYClockwise()) {
+            // Side is to the left of the block
+            return null;
+        } else if (direction == blockFacing.getOpposite()) {
+            // Side is at the back of the block
+            return null;
+        } else if (direction == blockFacing) {
+            // Side is at the front of the block
+            return null;
+        } else {
+            return null;
+        }
     }
 }
