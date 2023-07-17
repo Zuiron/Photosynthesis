@@ -26,6 +26,60 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.LATEX_EXTRACTOR);
         addDrop(ModBlocks.MAPLE_EXTRACTOR);
 
+        //Saplings
+        addDrop(ModBlocks.APPLETREE_SAPLING);
+        addDrop(ModBlocks.CINNAMON_SAPLING);
+        addDrop(ModBlocks.BANANATREE_SAPLING);
+        addDrop(ModBlocks.ORANGETREE_SAPLING);
+        addDrop(ModBlocks.PEARTREE_SAPLING);
+        addDrop(ModBlocks.AVOCADOTREE_SAPLING);
+        addDrop(ModBlocks.COCONUTTREE_SAPLING);
+        addDrop(ModBlocks.CHERRYTREE_SAPLING);
+        addDrop(ModBlocks.LEMONTREE_SAPLING);
+        addDrop(ModBlocks.OLIVETREE_SAPLING);
+        addDrop(ModBlocks.RUBBERTREE_SAPLING);
+        addDrop(ModBlocks.CANDLENUTTREE_SAPLING);
+        addDrop(ModBlocks.CHESTNUTTREE_SAPLING);
+        addDrop(ModBlocks.NUTMEGTREE_SAPLING);
+        addDrop(ModBlocks.PEACHTREE_SAPLING);
+        addDrop(ModBlocks.PLUMTREE_SAPLING);
+        addDrop(ModBlocks.WALNUTTREE_SAPLING);
+        addDrop(ModBlocks.HAZELNUTTREE_SAPLING);
+        addDrop(ModBlocks.PAWPAWTREE_SAPLING);
+        addDrop(ModBlocks.SOURSOPTREE_SAPLING);
+        addDrop(ModBlocks.ALMONDTREE_SAPLING);
+        addDrop(ModBlocks.APRICOTTREE_SAPLING);
+        addDrop(ModBlocks.CASHEWTREE_SAPLING);
+        addDrop(ModBlocks.DATETREE_SAPLING);
+        addDrop(ModBlocks.DRAGONFRUITTREE_SAPLING);
+        addDrop(ModBlocks.DURIANTREE_SAPLING);
+        addDrop(ModBlocks.FIGTREE_SAPLING);
+        addDrop(ModBlocks.GRAPEFRUITTREE_SAPLING);
+        addDrop(ModBlocks.LIMETREE_SAPLING);
+        addDrop(ModBlocks.PAPAYATREE_SAPLING);
+        addDrop(ModBlocks.PECANTREE_SAPLING);
+        addDrop(ModBlocks.PERSIMMONTREE_SAPLING);
+        addDrop(ModBlocks.PISTACHIOTREE_SAPLING);
+        addDrop(ModBlocks.POMEGRANATETREE_SAPLING);
+        addDrop(ModBlocks.STARFRUITTREE_SAPLING);
+        addDrop(ModBlocks.BREADFRUITTREE_SAPLING);
+        addDrop(ModBlocks.GUAVATREE_SAPLING);
+        addDrop(ModBlocks.JACKFRUITTREE_SAPLING);
+        addDrop(ModBlocks.LYCHEETREE_SAPLING);
+        addDrop(ModBlocks.PASSIONFRUITTREE_SAPLING);
+        addDrop(ModBlocks.RAMBUTANTREE_SAPLING);
+        addDrop(ModBlocks.TAMARINDTREE_SAPLING);
+        addDrop(ModBlocks.MAPLETREE_SAPLING);
+        addDrop(ModBlocks.PEPPERCORNTREE_SAPLING);
+        addDrop(ModBlocks.VANILLABEANTREE_SAPLING);
+        addDrop(ModBlocks.PINENUTTREE_SAPLING);
+        addDrop(ModBlocks.GOOSEBERRYTREE_SAPLING);
+        addDrop(ModBlocks.GRAPETREE_SAPLING);
+        addDrop(ModBlocks.RED_GRAPETREE_SAPLING);
+        addDrop(ModBlocks.KIWITREE_SAPLING);
+        addDrop(ModBlocks.MANGOTREE_SAPLING);
+
+
         //Planks
         addDrop(ModBlocks.APPLETREE_PLANKS);
         addDrop(ModBlocks.CINNAMON_PLANKS);
