@@ -339,9 +339,9 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.VANILLABEANTREE_LEAVES, leavesDrops(ModBlocks.VANILLABEANTREE_LEAVES, ModBlocks.VANILLABEANTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
         addDrop(ModBlocks.PINENUTTREE_LEAVES, leavesDrops(ModBlocks.PINENUTTREE_LEAVES, ModBlocks.PINENUTTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
         addDrop(ModBlocks.GOOSEBERRYTREE_LEAVES, leavesDrops(ModBlocks.GOOSEBERRYTREE_LEAVES, ModBlocks.GOOSEBERRYTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.GRAPETREE_LEAVES, leavesDrops(ModBlocks.GRAPETREE_LEAVES, ModBlocks.GRAPETREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.RED_GRAPETREE_LEAVES, leavesDrops(ModBlocks.RED_GRAPETREE_LEAVES, ModBlocks.RED_GRAPETREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.KIWITREE_LEAVES, leavesDrops(ModBlocks.KIWITREE_LEAVES, ModBlocks.KIWITREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
+        addDrop(ModBlocks.GRAPETREE_LEAVES, leavesDrops(ModBlocks.GRAPETREE_LEAVES, ModBlocks.GRAPETREE_SAPLING, 0.15f, 0.1875f, 0.249f, 0.3f));
+        addDrop(ModBlocks.RED_GRAPETREE_LEAVES, leavesDrops(ModBlocks.RED_GRAPETREE_LEAVES, ModBlocks.RED_GRAPETREE_SAPLING, 0.15f, 0.1875f, 0.249f, 0.3f));
+        addDrop(ModBlocks.KIWITREE_LEAVES, leavesDrops(ModBlocks.KIWITREE_LEAVES, ModBlocks.KIWITREE_SAPLING, 0.15f, 0.1875f, 0.249f, 0.3f));
         addDrop(ModBlocks.MANGOTREE_LEAVES, leavesDrops(ModBlocks.MANGOTREE_LEAVES, ModBlocks.MANGOTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
 
 
