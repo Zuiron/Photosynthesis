@@ -638,13 +638,13 @@ public class MilkSeperatorBlockEntity extends BlockEntity implements ExtendedScr
             return fluidOutput2;
         } else if (direction == blockFacing.rotateYClockwise()) {
             // Side is to the left of the block
-            return null;
+            return fluidInput;
         } else if (direction == blockFacing.getOpposite()) {
             // Side is at the back of the block
-            return null;
+            return fluidInput;
         } else if (direction == blockFacing) {
             // Side is at the front of the block
-            return null;
+            return fluidOutput2;
         } else {
             return null;
         }
