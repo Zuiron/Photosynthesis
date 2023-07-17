@@ -38,7 +38,8 @@ public class SkilletScreen extends HandledScreen<SkilletScreenHandler> {
 
     private void renderProgressArrow(DrawContext context, int x, int y) {
         if (handler.isCrafting()) {
-            context.drawTexture(TEXTURE, x + 103, y + 27, 176, 0, 8, handler.getScaledProgress());
+            //context.drawTexture(TEXTURE, x + 103, y + 27, 176, 0, 8, handler.getScaledProgress());
+            context.drawTexture(TEXTURE, x + 90, y + 45, 177, 31, handler.getScaledProgress2(), 16);
         }
     }
 
