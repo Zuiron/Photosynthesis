@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "photosynthesis:wheat_dough"
+  },
+  "result": "minecraft:bread",
+  "experience": 0.1,
+  "cookingtime": 200
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " #",
+    "/ "
+  ],
+  "key": {
+    "#": {
+      "item": "photosynthesis:cutting_knife_blade_flint"
+    },
+    "/": {
+      "item": "photosynthesis:cutting_knife_handle"
+    }
+  },
+  "result": {
+    "item": "photosynthesis:cutting_knife_flint",
+    "count": 1
+  }
+}

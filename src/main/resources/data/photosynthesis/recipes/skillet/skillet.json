@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ccc",
+    "ccc",
+    " / "
+  ],
+  "key": {
+    "c": {
+      "item": "minecraft:copper_ingot"
+    },
+    "/": {
+      "item": "photosynthesis:sturdy_stick"
+    }
+  },
+  "result": {
+    "item": "photosynthesis:skillet",
+    "count": 1
+  }
+}

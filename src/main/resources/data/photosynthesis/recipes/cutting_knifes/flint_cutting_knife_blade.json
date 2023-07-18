@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:flint"
+  },
+  "result": "photosynthesis:cutting_knife_blade_flint",
+  "count": 1
+}

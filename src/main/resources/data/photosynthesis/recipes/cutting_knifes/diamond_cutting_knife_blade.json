@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:diamond"
+  },
+  "result": "photosynthesis:cutting_knife_blade_diamond",
+  "count": 1
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "O##",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:oak_pressure_plate"
+    },
+    "O": {
+      "item": "minecraft:oak_button"
+    }
+  },
+  "result": {
+    "item": "photosynthesis:cutting_board",
+    "count": 1
+  }
+}

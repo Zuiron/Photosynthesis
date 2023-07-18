@@ -1,0 +1,38 @@
+{
+  "type": "photosynthesis:skillet",
+  "ingredients": [
+    {
+      "item": "photosynthesis:measuring_cup_milk",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:cracked_egg",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:cracked_egg",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:cracked_egg",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:cracked_egg",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:cracked_egg",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:cracked_egg",
+      "count": 1
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:scrambled_egg",
+    "count": 6
+  },
+  "cookingtime": 400
+}

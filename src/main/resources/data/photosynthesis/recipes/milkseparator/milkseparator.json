@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "/c#",
+    " i#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:bucket"
+    },
+    "/": {
+      "item": "minecraft:stick"
+    },
+    "c": {
+      "item": "minecraft:copper_ingot"
+    },
+    "i": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "photosynthesis:milk_seperator",
+    "count": 1
+  }
+}

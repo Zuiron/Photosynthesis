@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "# #",
+    "#_#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:polished_diorite"
+    },
+    "_": {
+      "item": "minecraft:polished_diorite_slab"
+    }
+  },
+  "result": {
+    "item": "photosynthesis:mortar",
+    "count": 1
+  }
+}

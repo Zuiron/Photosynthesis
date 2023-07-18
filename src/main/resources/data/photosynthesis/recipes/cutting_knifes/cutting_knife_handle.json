@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:stick"
+  },
+  "result": "photosynthesis:cutting_knife_handle",
+  "count": 1
+}

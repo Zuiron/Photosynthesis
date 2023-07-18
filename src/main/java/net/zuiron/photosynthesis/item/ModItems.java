@@ -816,11 +816,7 @@ public class ModItems {
 
     public static final Item SCRAMBLED_EGG = registerItem("scrambled_egg",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
-
-    public static final Item MARSHMALLOW = registerItem("marshmallow",
-            new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+                    .food(new FoodComponent.Builder().hunger(3).saturationModifier(0.5f).build())));
 
     /*public static final Item HARD_BOILED_EGG = registerItem("hard_boiled_egg",
             new Item(new FabricItemSettings()
@@ -838,13 +834,25 @@ public class ModItems {
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
+    public static final Item MARSHMALLOW = registerItem("marshmallow",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
+    public static final Item BUTTER = registerItem("butter",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
+    public static final Item WHIPPED_CREAM = registerItem("whipped_cream",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
+    public static final Item CHOCOLATE_COOKIE_DOUGH = registerItem("chocolate_cookie_dough",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
-
-
-
+    public static final Item COOKIE_DOUGH = registerItem("cookie_dough",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item TOMATOSOUP = registerItem("tomatosoup",
             new Item(new FabricItemSettings()

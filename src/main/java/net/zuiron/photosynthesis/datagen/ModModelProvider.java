@@ -136,7 +136,11 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.LEATHER_WATER_BLADDER_DIRTY,
                 ModItems.LEATHER_WATER_BLADDER_CLEAN,
 
-                ModItems.MARSHMALLOW
+                ModItems.MARSHMALLOW,
+                ModItems.BUTTER,
+                ModItems.WHIPPED_CREAM,
+                ModItems.COOKIE_DOUGH,
+                ModItems.CHOCOLATE_COOKIE_DOUGH
         };
         for (Item item : simple_items) {
             itemModelGenerator.register(item, Models.GENERATED);
