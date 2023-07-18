@@ -17,6 +17,7 @@ import net.zuiron.photosynthesis.event.PlayerTickHandler;
 import net.zuiron.photosynthesis.fluid.ModFluids;
 import net.zuiron.photosynthesis.item.ModItemGroup;
 import net.zuiron.photosynthesis.item.ModItems;
+import net.zuiron.photosynthesis.loot.modifyLootTables;
 import net.zuiron.photosynthesis.mixin.TreeDecoratorTypeInvoker;
 import net.zuiron.photosynthesis.networking.ModMessages;
 import net.zuiron.photosynthesis.recipe.ModRecipes;
@@ -177,6 +178,8 @@ public class Photosynthesis implements ModInitializer {
 		ModScreenHandlers.registerAllScreenHandlers();
 
 		ModRecipes.registerRecipes();
+
+		modifyLootTables.registerModifyLootTables();
 
 		ModWorldGen.generateModWorldGen(); //last
 

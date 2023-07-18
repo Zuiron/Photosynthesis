@@ -1,0 +1,16 @@
+{
+  "type": "photosynthesis:cutting_board",
+  "ingredients": [
+    {
+      "tag": "c:cutting_board_cutting_knifes"
+    },
+    {
+      "item": "minecraft:bread"
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:bread_slice",
+    "count": 20
+  },
+  "cookingtime": 30
+}

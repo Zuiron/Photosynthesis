@@ -35,6 +35,7 @@
   "block.photosynthesis.mead": "Mead",
   "block.photosynthesis.mead_block": "Mead",
   "item.photosynthesis.mead_bucket": "Mead Bucket",
+  "item.photosynthesis.measuring_cup_mead": "Mead Measuring Cup",
 
   "block.photosynthesis.maple": "Maple Sap",
   "block.photosynthesis.maple_block": "Maple Sap",
@@ -52,6 +53,7 @@
   "block.photosynthesis.milkcream": "Cow Milk Cream",
   "block.photosynthesis.milkcream_block": "Cow Milk Cream",
   "item.photosynthesis.milkcream_bucket": "Cow Milk Cream Bucket",
+  "item.photosynthesis.measuring_cup_milk_cream": "Cow Milk Cream Measuring Cup",
 
   "block.photosynthesis.skimmedmilk": "Skimmed Cow Milk",
   "block.photosynthesis.skimmedmilk_block": "Skimmed Cow Milk",
@@ -959,5 +961,16 @@
   "block.photosynthesis.cutting_board": "Cutting Board",
   "block.photosynthesis.mortar": "Mortar",
   "block.photosynthesis.latex_extractor": "Latex Extractor",
-  "block.photosynthesis.maple_extractor": "Maple Extractor"
+  "block.photosynthesis.maple_extractor": "Maple Extractor",
+
+  "item.photosynthesis.whipped_cream": "Whipped Cream",
+  "item.photosynthesis.wheat_flour": "Wheat Flour",
+  "item.photosynthesis.butter": "Butter",
+  "item.photosynthesis.cookie_dough": "Cookie Dough",
+  "item.photosynthesis.chocolate_cookie_dough": "Chocolate Cookie Dough",
+  "item.photosynthesis.marshmallow": "Marshmallow",
+  "item.photosynthesis.bread_slice": "Slice of Bread",
+  "item.photosynthesis.powdered_sugar": "Powdered Sugar",
+  "item.photosynthesis.gelatin_sheet": "Gelatin Sheet",
+  "item.photosynthesis.vanilla_powder": "Vanilla Powder"
 }

@@ -10,11 +10,11 @@
       "item": "photosynthesis:measuring_cup"
     },
     "W": {
-      "item": "photosynthesis:milk_bucket"
+      "item": "photosynthesis:mead_bucket"
     }
   },
   "result": {
-    "item": "photosynthesis:measuring_cup_milk",
+    "item": "photosynthesis:measuring_cup_mead",
     "count": 4
   }
 }

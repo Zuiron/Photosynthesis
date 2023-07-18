@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  #",
+    " / ",
+    "/  "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:diamond"
+    },
+    "/": {
+      "item": "photosynthesis:sturdy_stick"
+    }
+  },
+  "result": {
+    "item": "photosynthesis:garden_grubber_diamond",
+    "count": 1
+  }
+}

@@ -186,7 +186,7 @@ public class ModItems {
             new Item(new FabricItemSettings()));
 
     public static final Item WHISK = registerRemainderItem("whisk",
-            new Item(new FabricItemSettings()));
+            new Item(new FabricItemSettings().recipeRemainder(ModItems.WHISK)));
 
     public static final Item WHISK_PART = registerItem("whisk_part",
             new Item(new FabricItemSettings()));
@@ -202,10 +202,16 @@ public class ModItems {
     public static final Item MEASURING_CUP_MILK = registerItem("measuring_cup_milk",
             new Item(new FabricItemSettings().recipeRemainder(ModItems.MEASURING_CUP)));
 
+    public static final Item MEASURING_CUP_MILK_CREAM = registerItem("measuring_cup_milk_cream",
+            new Item(new FabricItemSettings().recipeRemainder(ModItems.MEASURING_CUP)));
+
     public static final Item MEASURING_CUP_CANOLAOIL = registerItem("measuring_cup_canolaoil",
             new Item(new FabricItemSettings().recipeRemainder(ModItems.MEASURING_CUP)));
 
     public static final Item MEASURING_CUP_SUNFLOWEROIL = registerItem("measuring_cup_sunfloweroil",
+            new Item(new FabricItemSettings().recipeRemainder(ModItems.MEASURING_CUP)));
+
+    public static final Item MEASURING_CUP_MEAD = registerItem("measuring_cup_mead",
             new Item(new FabricItemSettings().recipeRemainder(ModItems.MEASURING_CUP)));
 
     /*
@@ -798,11 +804,19 @@ public class ModItems {
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
+    public static final Item WHEAT_FLOUR = registerItem("wheat_flour",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
     public static final Item CUT_CHIVES = registerItem("cut_chives",
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item CUT_KIWI = registerItem("cut_kiwi",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item BREAD_SLICE = registerItem("bread_slice",
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
@@ -835,6 +849,18 @@ public class ModItems {
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item MARSHMALLOW = registerItem("marshmallow",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item POWDERED_SUGAR = registerItem("powdered_sugar",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item GELATIN_SHEET = registerItem("gelatin_sheet",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item VANILLA_POWDER = registerItem("vanilla_powder",
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 

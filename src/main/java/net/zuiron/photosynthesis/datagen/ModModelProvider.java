@@ -129,6 +129,7 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.MEASURING_CUP,
                 ModItems.MEASURING_CUP_WATER,
                 ModItems.MEASURING_CUP_MILK,
+                ModItems.MEASURING_CUP_MILK_CREAM,
                 ModItems.MEASURING_CUP_CANOLAOIL,
                 ModItems.MEASURING_CUP_SUNFLOWEROIL,
 
@@ -140,7 +141,13 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.BUTTER,
                 ModItems.WHIPPED_CREAM,
                 ModItems.COOKIE_DOUGH,
-                ModItems.CHOCOLATE_COOKIE_DOUGH
+                ModItems.CHOCOLATE_COOKIE_DOUGH,
+                ModItems.WHEAT_FLOUR,
+                ModItems.BREAD_SLICE,
+                ModItems.POWDERED_SUGAR,
+                ModItems.GELATIN_SHEET,
+                ModItems.VANILLA_POWDER,
+                ModItems.MEASURING_CUP_MEAD
         };
         for (Item item : simple_items) {
             itemModelGenerator.register(item, Models.GENERATED);

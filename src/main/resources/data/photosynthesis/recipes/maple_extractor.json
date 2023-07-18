@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "/O/",
+    "HBH",
+    "_H_"
+  ],
+  "key": {
+    "/": {
+      "item": "minecraft:stick"
+    },
+    "O": {
+      "item": "minecraft:oak_button"
+    },
+    "H": {
+      "item": "minecraft:oak_planks"
+    },
+    "B": {
+      "item": "minecraft:bucket"
+    },
+    "_": {
+      "item": "minecraft:oak_slab"
+    }
+  },
+  "result": {
+    "item": "photosynthesis:maple_extractor",
+    "count": 1
+  }
+}
