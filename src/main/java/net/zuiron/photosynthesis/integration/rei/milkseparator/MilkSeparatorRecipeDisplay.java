@@ -7,6 +7,7 @@ import me.shedaniel.rei.api.common.entry.EntryIngredient;
 import me.shedaniel.rei.api.common.util.EntryIngredients;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.collection.DefaultedList;
 import net.zuiron.photosynthesis.integration.rei.PhotosynthesisREI;
 import net.zuiron.photosynthesis.recipe.KegRecipe;
@@ -20,7 +21,7 @@ import java.util.Optional;
 
 @Environment(EnvType.CLIENT)
 public class MilkSeparatorRecipeDisplay extends BasicDisplay {
-    private final EntryIngredient containerOutput;
+    private final List<EntryIngredient> containerOutput;
     private final int cookTime;
     //private final DefaultedList counts;
     private final FluidStack inputFluid;
@@ -28,9 +29,10 @@ public class MilkSeparatorRecipeDisplay extends BasicDisplay {
     private final FluidStack outputFluid2;
 
     public MilkSeparatorRecipeDisplay(MilkSeperatorRecipe recipe) {
-        super(EntryIngredients.ofIngredients(recipe.getIngredients()), Collections.singletonList(EntryIngredients.of(recipe.getOutputStack())),
+        super(EntryIngredients.ofIngredients(recipe.getIngredients()), EntryIngredients.ofIngredients(recipe.getOutputsBuckets()),
                 Optional.ofNullable(recipe.getId()));
-        containerOutput = EntryIngredients.of(recipe.getOutputStack());
+        //containerOutput = EntryIngredients.of(recipe.getOutputStack());
+        containerOutput = EntryIngredients.ofIngredients(recipe.getOutputsBuckets());
         cookTime = recipe.getCookTime();
         //this.counts = recipe.getCounts();
         inputFluid = recipe.getFluidInput();
@@ -46,7 +48,7 @@ public class MilkSeparatorRecipeDisplay extends BasicDisplay {
     @Override
     public List<EntryIngredient> getInputEntries() {
         List<EntryIngredient> inputEntryList = new ArrayList<>(super.getInputEntries());
-        inputEntryList.add(getContainerOutput());
+        inputEntryList.addAll(getContainerOutput());
 
         return ImmutableList.copyOf(inputEntryList);
     }
@@ -55,7 +57,7 @@ public class MilkSeparatorRecipeDisplay extends BasicDisplay {
         return super.getInputEntries();
     }
 
-    public EntryIngredient getContainerOutput() {
+    public List<EntryIngredient> getContainerOutput() {
         return containerOutput;
     }
 

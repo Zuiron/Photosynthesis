@@ -28,13 +28,15 @@ public class MilkSeperatorRecipe implements Recipe<SimpleInventory> {
     private final FluidStack fluidInput;
     private final DefaultedList<Ingredient> recipeItems;
 
+    private final DefaultedList<Ingredient> recipeOutputBuckets;
+
     private final int cookingTime;
 
     //private final DefaultedList counts;
 
 
     //public MilkSeperatorRecipe(Identifier id, FluidStack output, FluidStack output2, DefaultedList<Ingredient> recipeItems, int cookingTime, DefaultedList counts, FluidStack fluidInput) {
-    public MilkSeperatorRecipe(Identifier id, FluidStack output, FluidStack output2, DefaultedList<Ingredient> recipeItems, int cookingTime, FluidStack fluidInput) {
+    public MilkSeperatorRecipe(Identifier id, FluidStack output, FluidStack output2, DefaultedList<Ingredient> recipeItems, int cookingTime, FluidStack fluidInput, DefaultedList<Ingredient> recipeOutputBuckets) {
         this.id = id;
         this.output = output;
         this.output2 = output2;
@@ -42,6 +44,7 @@ public class MilkSeperatorRecipe implements Recipe<SimpleInventory> {
         this.cookingTime = cookingTime;
         //this.counts = counts;
         this.fluidInput = fluidInput;
+        this.recipeOutputBuckets = recipeOutputBuckets;
     }
 
     @Override
@@ -74,8 +77,16 @@ public class MilkSeperatorRecipe implements Recipe<SimpleInventory> {
         return new ItemStack(output.fluidVariant.getFluid().getBucketItem());
     }
 
+    /*public ItemStack getOutputStack() {
+        return new ItemStack(output.fluidVariant.getFluid().getBucketItem());
+    }*/
+
     public ItemStack getOutputStack() {
         return new ItemStack(output.fluidVariant.getFluid().getBucketItem());
+    }
+
+    public DefaultedList<Ingredient> getOutputsBuckets() {
+        return recipeOutputBuckets;
     }
 
     public FluidStack getOutputFluid() {
@@ -201,8 +212,10 @@ public class MilkSeperatorRecipe implements Recipe<SimpleInventory> {
 
 
 
-
-
+            //outputs bucketlist.
+            DefaultedList<Ingredient> outputs_buckets = DefaultedList.ofSize(2, Ingredient.EMPTY);
+            outputs_buckets.set(0, Ingredient.ofStacks(fluidOutput.fluidVariant.getFluid().getBucketItem().getDefaultStack()));
+            outputs_buckets.set(1, Ingredient.ofStacks(fluidOutput2.fluidVariant.getFluid().getBucketItem().getDefaultStack()));
 
             /*
             until its done.
@@ -212,7 +225,7 @@ public class MilkSeperatorRecipe implements Recipe<SimpleInventory> {
 
             int CookTime = JsonHelper.getInt(json, "cookingtime");
             //return new MilkSeperatorRecipe(id, fluidOutput, fluidOutput2, inputs, CookTime, counts, fluidInput);
-            return new MilkSeperatorRecipe(id, fluidOutput, fluidOutput2, inputs, CookTime, fluidInput);
+            return new MilkSeperatorRecipe(id, fluidOutput, fluidOutput2, inputs, CookTime, fluidInput, outputs_buckets);
         }
 
         @Override
@@ -225,7 +238,7 @@ public class MilkSeperatorRecipe implements Recipe<SimpleInventory> {
 
             //FluidStack output = buf.readItemStack();
             //return new MilkSeperatorRecipe(id, null, null, inputs, 0, DefaultedList.ofSize(7, 0), null);
-            return new MilkSeperatorRecipe(id, null, null, inputs, 0, null);
+            return new MilkSeperatorRecipe(id, null, null, inputs, 0, null, null);
         }
 
         @Override
