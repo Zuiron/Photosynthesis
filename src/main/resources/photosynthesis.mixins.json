@@ -13,7 +13,8 @@
     "ModCowEntity",
     "ModGoatEntity",
     "ModSaplingBlock",
-    "ModBucketItem"
+    "ModBucketItem",
+    "ModStemBlock"
   ],
   "client": [
     "PhotosynthesisMixin"
