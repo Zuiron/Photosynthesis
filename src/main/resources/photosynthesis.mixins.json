@@ -15,7 +15,8 @@
     "ModSaplingBlock",
     "ModBucketItem",
     "ModStemBlock",
-    "ModSugarCaneBlock"
+    "ModSugarCaneBlock",
+    "ModCocoaBlock"
   ],
   "client": [
     "PhotosynthesisMixin"

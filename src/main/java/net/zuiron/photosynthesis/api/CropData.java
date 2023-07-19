@@ -92,6 +92,7 @@ public class CropData {
         cropDataMap.put("block.minecraft.melon_stem",                   new CropData(new int[]{7, 0, 0, 4}, new int[]{4, 7, 7, 0}));    //plant spring, harvest summer.
         cropDataMap.put("block.minecraft.pumpkin_stem",                 new CropData(new int[]{4, 7, 0, 0}, new int[]{0, 4, 7, 7}));    //plant summer, harvest autumn.
         cropDataMap.put("block.minecraft.sugar_cane",                   new CropData(new int[]{4, 7, 0, 0}, new int[]{0, 4, 7, 7}));    //plant summer, harvest autumn.
+        cropDataMap.put("block.minecraft.cocoa",                        new CropData(new int[]{7, 0, 0, 1}, new int[]{1, 7, 7, 0}));    //plant spring, harvest summer.
         //TODO need to make mixin for StemBlock. melon and pumpkin. or nah?
         //TODO mixin for cocoaBlock. or nah?
         //TODO GlowBerries? / cave vines. or nah?
