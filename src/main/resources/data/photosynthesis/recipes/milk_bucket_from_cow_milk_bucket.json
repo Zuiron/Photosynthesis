@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "photosynthesis:milk_bucket"
+    }
+  ],
+  "result": {
+    "item": "minecraft:milk_bucket",
+    "count": 1
+  }
+}
