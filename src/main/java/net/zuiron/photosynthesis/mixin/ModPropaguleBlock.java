@@ -73,6 +73,7 @@ public abstract class ModPropaguleBlock extends SaplingBlock
                         Photosynthesis.LOGGER.info("Sapling: " + state.getBlock().getTranslationKey() + ", minAge:" + minAge + ", maxAge:" + maxAge + ", CurrentCropAge: " + currentCropAge + ", NO GROW" + ", %:" + seasonPercentage);
                     }
                 }
+                ci.cancel(); //do not run vanilla code!
             }
         }
     }
