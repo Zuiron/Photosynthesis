@@ -25,7 +25,7 @@ public abstract class ModSugarCaneBlock extends Block {
     @Mutable
     @Final
     @Shadow
-    private static final IntProperty AGE = Properties.AGE_7;
+    private static final IntProperty AGE = Properties.AGE_15;
 
     public ModSugarCaneBlock(Settings settings) {
         super(settings);
