@@ -65,6 +65,7 @@ public abstract class ModGoatEntity extends AnimalEntity {
             //Photosynthesis.LOGGER.info("MILK SUCCESS: ticks: "+this.milkablecooldown);
             player.playSound(SoundEvents.ENTITY_GOAT_MILK, 1.0F, 1.0F);
             ItemStack itemStack2 = ItemUsage.exchangeStack(itemStack, player, ModFluids.GOATMILK_BUCKET.getDefaultStack());
+            player.getItemCooldownManager().set(itemStack2.getItem(), 40); //fixes weird issue with reactivating immediately.
             player.setStackInHand(hand, itemStack2);
             //return ActionResult.success(this.getWorld().isClient);
             this.milkablecooldown = 0;
