@@ -72,8 +72,8 @@ public abstract class ModSaplingBlock extends PlantBlock
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random, CallbackInfo ci) {
 
         if(Seasons.isSeasonsEnabled()) {
-            //CropData cropData = CropData.getCropDataFor(state.getBlock().getTranslationKey());
-            CropData cropData = CropData.getCropDataFor("nonexist.block.photosynthesis.trees"); //use this data for ALL saplings!
+            CropData cropData = CropData.getCropDataFor(state.getBlock().getTranslationKey());
+            //CropData cropData = CropData.getCropDataFor("nonexist.block.photosynthesis.trees"); //use this data for ALL saplings!
             if(cropData != null) {
 
                 int minAge = cropData.getMinAge(Seasons.getCurrentSeason(world.getTimeOfDay()));
