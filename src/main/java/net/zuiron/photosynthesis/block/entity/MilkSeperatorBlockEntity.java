@@ -324,8 +324,8 @@ public class MilkSeperatorBlockEntity extends BlockEntity implements ExtendedScr
         if (entity.getStack(0).getItem() instanceof BucketItem || entity.getStack(0).getItem() == Items.MILK_BUCKET) {
             //ThirstData.syncThirstSat(((IEntityDataSaver) player).getPersistentData().getInt("thirst_sat"), player);
             //Fluid fluid = ((getFluidFromBucketItemHelper) entity.getStack(0).getItem()).getFluidFromBucketItem();
-            Fluid fluid = FluidUtil.getFluidFromBucketItem(entity.getStack(0).getItem());
-            Photosynthesis.LOGGER.info("this is a test: "+fluid);
+            //Fluid fluid = FluidUtil.getFluidFromBucketItem(entity.getStack(0).getItem());
+            //Photosynthesis.LOGGER.info("this is a test: "+fluid);
             if(entity.getStack(0).getItem() != Items.BUCKET) {
                 return true;
             }
