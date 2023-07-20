@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  #",
+    " / ",
+    "/  "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:iron_ingot"
+    },
+    "/": {
+      "item": "photosynthesis:sturdy_stick"
+    }
+  },
+  "result": {
+    "item": "photosynthesis:garden_grubber_iron",
+    "count": 1
+  }
+}

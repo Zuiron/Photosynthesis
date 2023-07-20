@@ -58,13 +58,14 @@ public abstract class ModCowEntity extends AnimalEntity {
         if (itemStack.isOf(Items.BUCKET) && !this.isBaby() && this.milkablecooldown < cooldownticks) {
             player.playSound(SoundEvents.ENTITY_COW_AMBIENT, 1.0F, 1.0F);
             if(this.milkablecooldown != 0) {
-                //Photosynthesis.LOGGER.info("cow ticks:" + this.milkablecooldown + "/"+cooldownticks);
+                Photosynthesis.LOGGER.info("cow ticks:" + this.milkablecooldown + "/"+cooldownticks);
             }
         }
         if (itemStack.isOf(Items.BUCKET) && !this.isBaby() && this.milkablecooldown >= cooldownticks) {
             player.playSound(SoundEvents.ENTITY_COW_MILK, 1.0F, 1.0F);
             //ItemStack itemStack2 = ItemUsage.exchangeStack(itemStack, player, Items.MILK_BUCKET.getDefaultStack());
             ItemStack itemStack2 = ItemUsage.exchangeStack(itemStack, player, ModFluids.MILK_BUCKET.getDefaultStack()); //we give our own milk bucket instead
+            player.getItemCooldownManager().set(itemStack2.getItem(), 40); //fixes weird issue with reactivating immediately.
             player.setStackInHand(hand, itemStack2);
             //return ActionResult.success(this.getWorld().isClient);
             this.milkablecooldown = 0;

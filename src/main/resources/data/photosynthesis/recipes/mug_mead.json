@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "W"
+  ],
+  "key": {
+    "#": {
+      "item": "photosynthesis:measuring_cup_mead"
+    },
+    "W": {
+      "item": "photosynthesis:mug"
+    }
+  },
+  "result": {
+    "item": "photosynthesis:mug_mead",
+    "count": 1
+  }
+}

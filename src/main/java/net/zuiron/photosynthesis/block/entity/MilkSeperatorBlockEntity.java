@@ -44,10 +44,13 @@ import net.zuiron.photosynthesis.block.custom.LatexExtractorBlock;
 import net.zuiron.photosynthesis.block.custom.MilkSeperatorBlock;
 import net.zuiron.photosynthesis.fluid.ModFluids;
 import net.zuiron.photosynthesis.item.ModItems;
+import net.zuiron.photosynthesis.mixin.ModBucketItem;
 import net.zuiron.photosynthesis.networking.ModMessages;
 import net.zuiron.photosynthesis.recipe.MilkSeperatorRecipe;
 import net.zuiron.photosynthesis.screen.MilkSeperatorScreenHandler;
 import net.zuiron.photosynthesis.util.FluidStack;
+import net.zuiron.photosynthesis.util.FluidUtil;
+import net.zuiron.photosynthesis.util.getFluidFromBucketItemHelper;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -319,7 +322,10 @@ public class MilkSeperatorBlockEntity extends BlockEntity implements ExtendedScr
 
     private static boolean hasFluidSourceInSlot(MilkSeperatorBlockEntity entity) {
         if (entity.getStack(0).getItem() instanceof BucketItem || entity.getStack(0).getItem() == Items.MILK_BUCKET) {
-            //Photosynthesis.LOGGER.info(entity.getStack(0).getItem());
+            //ThirstData.syncThirstSat(((IEntityDataSaver) player).getPersistentData().getInt("thirst_sat"), player);
+            //Fluid fluid = ((getFluidFromBucketItemHelper) entity.getStack(0).getItem()).getFluidFromBucketItem();
+            //Fluid fluid = FluidUtil.getFluidFromBucketItem(entity.getStack(0).getItem());
+            //Photosynthesis.LOGGER.info("this is a test: "+fluid);
             if(entity.getStack(0).getItem() != Items.BUCKET) {
                 return true;
             }
@@ -347,12 +353,15 @@ public class MilkSeperatorBlockEntity extends BlockEntity implements ExtendedScr
 
     private static boolean insertFluid(MilkSeperatorBlockEntity entity, long amount) {
         try(Transaction transaction = Transaction.openOuter()) {
-            Fluid fluid = Fluids.EMPTY;
+            /*Fluid fluid = Fluids.EMPTY;
             if(entity.getStack(0).getItem() == Items.MILK_BUCKET || entity.getStack(0).getItem() == ModFluids.MILK_BUCKET) {
                 fluid = ModFluids.STILL_MILK.getDefaultState().getFluid();
             } else if(entity.getStack(0).getItem() == ModFluids.GOATMILK_BUCKET) {
                 fluid = ModFluids.STILL_GOATMILK.getDefaultState().getFluid();
-            }
+            }*/
+            //Fluid fluid = ((getFluidFromBucketItemHelper) entity.getStack(0).getItem()).getFluidFromBucketItem();
+            Fluid fluid = FluidUtil.getFluidFromBucketItem(entity.getStack(0).getItem());
+            //YES! its working.
 
             if(FluidVariant.of(fluid) == entity.fluidInput.variant || entity.fluidInput.amount == 0) { //only insert if already existing fluid is either empty or same.
                 entity.fluidInput.insert(FluidVariant.of(fluid), amount, transaction);

@@ -1,0 +1,22 @@
+{
+  "type": "photosynthesis:skillet",
+  "ingredients": [
+    {
+      "item": "photosynthesis:butter",
+      "count": 1
+    },
+    {
+      "item": "minecraft:chicken",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:salt",
+      "count": 1
+    }
+  ],
+  "output": {
+    "item": "minecraft:cooked_chicken",
+    "count": 1
+  },
+  "cookingtime": 100
+}

@@ -1,0 +1,38 @@
+{
+  "type": "photosynthesis:cookingpot",
+  "ingredients": [
+    {
+      "tag": "c:cookingpot_watercontainers",
+      "count": 1
+    },
+    {
+      "item": "minecraft:bowl",
+      "count": 6
+    },
+    {
+      "item": "minecraft:brown_mushroom",
+      "count": 5
+    },
+    {
+      "item": "minecraft:red_mushroom",
+      "count": 6
+    },
+    {
+      "item": "photosynthesis:onion",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:salt",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:wheat_flour",
+      "count": 1
+    }
+  ],
+  "output": {
+    "item": "minecraft:mushroom_stew",
+    "count": 6
+  },
+  "cookingtime": 100
+}

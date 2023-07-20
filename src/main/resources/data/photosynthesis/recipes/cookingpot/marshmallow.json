@@ -1,0 +1,30 @@
+{
+  "type": "photosynthesis:cookingpot",
+  "ingredients": [
+    {
+      "tag": "c:cookingpot_watercontainers",
+      "count": 2
+    },
+    {
+      "item": "minecraft:sugar",
+      "count": 4
+    },
+    {
+      "item": "photosynthesis:gelatin_sheet",
+      "count": 3
+    },
+    {
+      "item": "photosynthesis:powdered_sugar",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:vanilla_powder",
+      "count": 1
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:marshmallow",
+    "count": 16
+  },
+  "cookingtime": 12000
+}

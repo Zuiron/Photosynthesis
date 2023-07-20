@@ -2,24 +2,20 @@
   "type": "photosynthesis:mixingbowl",
   "ingredients": [
     {
-      "item": "photosynthesis:measuring_cup_water",
+      "item": "photosynthesis:whisk",
       "count": 1
     },
     {
-      "item": "photosynthesis:wheat_flour",
-      "count": 1
+      "item": "photosynthesis:whipped_cream",
+      "count": 2
     },
     {
       "item": "photosynthesis:salt",
       "count": 1
-    },
-    {
-      "item": "minecraft:egg",
-      "count": 1
     }
   ],
   "output": {
-    "item": "photosynthesis:wheat_dough",
+    "item": "photosynthesis:butter",
     "count": 1
   },
   "cookingtime": 400

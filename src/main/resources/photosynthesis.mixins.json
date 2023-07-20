@@ -12,7 +12,12 @@
     "ModBlockItem",
     "ModCowEntity",
     "ModGoatEntity",
-    "ModSaplingBlock"
+    "ModSaplingBlock",
+    "ModBucketItem",
+    "ModStemBlock",
+    "ModSugarCaneBlock",
+    "ModCocoaBlock",
+    "ModPropaguleBlock"
   ],
   "client": [
     "PhotosynthesisMixin"

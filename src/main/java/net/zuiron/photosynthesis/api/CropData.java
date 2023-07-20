@@ -89,8 +89,10 @@ public class CropData {
         cropDataMap.put("block.minecraft.potatoes",                     new CropData(new int[]{4, 7, 1, 1}, new int[]{1, 4, 7, 0}));    //plant spring, harvest autumn.
         cropDataMap.put("block.minecraft.beetroots",                    new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
         cropDataMap.put("block.minecraft.sweet_berry_bush",             new CropData(new int[]{7, 0, 0, 1}, new int[]{1, 7, 7, 0}));    //plant spring, harvest summer.
-        //cropDataMap.put("block.minecraft.melon_stem",                 new CropData(new int[]{7, 0, 0, 4}, new int[]{4, 7, 7, 0}));    //plant spring, harvest summer.
-        //cropDataMap.put("block.minecraft.pumpkin_stem",               new CropData(new int[]{4, 7, 0, 0}, new int[]{0, 4, 7, 7}));    //plant summer, harvest autumn.
+        cropDataMap.put("block.minecraft.melon_stem",                   new CropData(new int[]{7, 0, 0, 4}, new int[]{4, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.minecraft.pumpkin_stem",                 new CropData(new int[]{4, 7, 0, 0}, new int[]{0, 4, 7, 7}));    //plant summer, harvest autumn.
+        cropDataMap.put("block.minecraft.sugar_cane",                   new CropData(new int[]{4, 7, 0, 0}, new int[]{0, 4, 7, 7}));    //plant summer, harvest autumn.
+        cropDataMap.put("block.minecraft.cocoa",                        new CropData(new int[]{7, 0, 0, 1}, new int[]{1, 7, 7, 0}));    //plant spring, harvest summer.
         //TODO need to make mixin for StemBlock. melon and pumpkin. or nah?
         //TODO mixin for cocoaBlock. or nah?
         //TODO GlowBerries? / cave vines. or nah?
@@ -105,6 +107,7 @@ public class CropData {
         cropDataMap.put("block.minecraft.jungle_sapling",               new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
         cropDataMap.put("block.minecraft.acacia_sapling",               new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
         cropDataMap.put("block.minecraft.cherry_sapling",               new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
+        cropDataMap.put("block.minecraft.mangrove_propagule",           new CropData(new int[]{1, 2, 3, 7}, new int[]{0, 1, 2, 3}));
 
         //Photosynthesis trees                                          //maxAge Summer, Autumn, Winter, Spring ---- minAge Summer, Autumn, Winter, Spring
         cropDataMap.put("block.photosynthesis.appletree_sapling",       new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));

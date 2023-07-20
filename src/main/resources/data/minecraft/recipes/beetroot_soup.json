@@ -1,0 +1,34 @@
+{
+  "type": "photosynthesis:cookingpot",
+  "ingredients": [
+    {
+      "tag": "c:cookingpot_watercontainers",
+      "count": 1
+    },
+    {
+      "item": "minecraft:bowl",
+      "count": 8
+    },
+    {
+      "item": "minecraft:beetroot",
+      "count": 6
+    },
+    {
+      "item": "photosynthesis:onion",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:radish",
+      "count": 3
+    },
+    {
+      "item": "photosynthesis:garlic",
+      "count": 1
+    }
+  ],
+  "output": {
+    "item": "minecraft:beetroot_soup",
+    "count": 8
+  },
+  "cookingtime": 100
+}

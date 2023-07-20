@@ -1,0 +1,18 @@
+{
+  "type": "photosynthesis:mixingbowl",
+  "ingredients": [
+    {
+      "item": "photosynthesis:whisk",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:measuring_cup_milk_cream",
+      "count": 1
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:whipped_cream",
+    "count": 1
+  },
+  "cookingtime": 400
+}
