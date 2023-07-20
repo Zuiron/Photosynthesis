@@ -38,6 +38,9 @@ public class ModScreenHandlers {
     public static ScreenHandlerType<MilkSeperatorScreenHandler> MILKSEPERATOR_SCREEN_HANDLER =
             new ExtendedScreenHandlerType<>(MilkSeperatorScreenHandler::new);
 
+    public static ScreenHandlerType<PlateScreenHandler> PLATE_SCREEN_HANDLER =
+            new ExtendedScreenHandlerType<>(PlateScreenHandler::new);
+
     public static void registerAllScreenHandlers() {
         Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "cutting_board"),
                 CUTTING_BOARD_SCREEN_HANDLER);
@@ -59,5 +62,7 @@ public class ModScreenHandlers {
                 FLUID_PRESS_SCREEN_HANDLER);
         Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "milkseperator"),
                 MILKSEPERATOR_SCREEN_HANDLER);
+        Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "plate"),
+                PLATE_SCREEN_HANDLER);
     }
 }

@@ -164,8 +164,8 @@ public class ModItems {
     public static final Item PESTLE = registerItem("pestle",
             new DamageableItem(new FabricItemSettings().maxCount(1).maxDamage(45)));
 
-    public static final Item PLATE = registerItem("plate",
-            new Item(new FabricItemSettings()));
+    /*public static final Item PLATE = registerItem("plate",
+            new Item(new FabricItemSettings()));*/
 
     public static final Item ROLLING_PIN = registerRemainderItem("rolling_pin",
             new Item(new FabricItemSettings()));
