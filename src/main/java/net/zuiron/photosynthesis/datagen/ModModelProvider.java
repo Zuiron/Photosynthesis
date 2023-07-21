@@ -148,7 +148,8 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.GELATIN_SHEET,
                 ModItems.VANILLA_POWDER,
                 ModItems.MEASURING_CUP_MEAD,
-                ModItems.PIZZA
+                ModItems.PIZZA,
+                ModItems.PANCAKES
         };
         for (Item item : simple_items) {
             itemModelGenerator.register(item, Models.GENERATED);
