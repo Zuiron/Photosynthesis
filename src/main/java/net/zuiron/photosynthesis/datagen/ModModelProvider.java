@@ -149,7 +149,8 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.VANILLA_POWDER,
                 ModItems.MEASURING_CUP_MEAD,
                 ModItems.PIZZA,
-                ModItems.PANCAKES
+                ModItems.PANCAKES,
+                ModItems.PIE
         };
         for (Item item : simple_items) {
             itemModelGenerator.register(item, Models.GENERATED);
