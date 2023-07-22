@@ -29,11 +29,18 @@ public class ToolRackBlock extends BlockWithEntity implements BlockEntityProvide
         super(settings);
     }
 
-    private static VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 16, 16);
+    //private static VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 16, 2);
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return SHAPE;
+        VoxelShape SHAPE2 = Block.createCuboidShape(0, 0, 0, 16, 16, 16);
+        switch (state.get(FACING)) {
+            case NORTH -> SHAPE2 = Block.createCuboidShape(0, 0, 14, 16, 16, 16);
+            case EAST -> SHAPE2 = Block.createCuboidShape(0, 0, 0, 2, 16, 16);
+            case SOUTH -> SHAPE2 = Block.createCuboidShape(0, 0, 0, 16, 16, 2);
+            case WEST -> SHAPE2 = Block.createCuboidShape(14, 0, 0, 16, 16, 16);
+        }
+        return SHAPE2;
     }
 
     @Nullable
