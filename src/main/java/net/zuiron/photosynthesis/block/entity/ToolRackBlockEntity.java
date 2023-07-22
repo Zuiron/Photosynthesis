@@ -24,19 +24,15 @@ import net.zuiron.photosynthesis.screen.ToolRackScreenHandler;
 import org.jetbrains.annotations.Nullable;
 
 public class ToolRackBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
-    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(1, ItemStack.EMPTY); //N#:SLOTS
-
-    /*public ItemStack getRenderStack() {
-        if(this.getStack(2).isEmpty()) {
-            return this.getStack(1);
-        } else {
-            return this.getStack(2);
-        }
-    }*/
+    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(2, ItemStack.EMPTY); //N#:SLOTS
 
     public ItemStack getRenderStack0() {
         //return this.getStack(0);
         return this.inventory.get(0);
+    }
+    public ItemStack getRenderStack1() {
+        //return this.getStack(0);
+        return this.inventory.get(1);
     }
 
     public void setInventory(DefaultedList<ItemStack> inventory) {

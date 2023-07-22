@@ -8,21 +8,23 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
+import net.zuiron.photosynthesis.screen.slot.OneCountSlot;
 
 public class ToolRackScreenHandler extends ScreenHandler {
     private final Inventory inventory;
 
     public ToolRackScreenHandler(int syncId, PlayerInventory inventory, PacketByteBuf buf) {
-        this(syncId, inventory, new SimpleInventory(1));
+        this(syncId, inventory, new SimpleInventory(2));
     }
 
     public ToolRackScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory) {
         super(ModScreenHandlers.TOOLRACK_SCREEN_HANDLER, syncId);
-        checkSize(inventory, 1);
+        checkSize(inventory, 2);
         this.inventory = inventory;
         inventory.onOpen(playerInventory.player);
 
-        this.addSlot(new Slot(inventory, 0, 79, 35)); //tool
+        this.addSlot(new OneCountSlot(inventory, 0, 66, 34));
+        this.addSlot(new OneCountSlot(inventory, 1, 93, 34));
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
