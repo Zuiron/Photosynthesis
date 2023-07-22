@@ -34,25 +34,21 @@ public class ToolRackBlockEntityRenderer implements BlockEntityRenderer<ToolRack
         matrices.push();
         matrices.scale(0.5f, 0.5f, 0.5f);
         switch (entity.getCachedState().get(ToolRackBlock.FACING)) {
-            case NORTH -> {
-                matrices.translate(1.0f, 0.05f, 1.0f); //DONE
-                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(180));
-                matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(-90));
+            case NORTH -> { //player looking south
+                matrices.translate(0.5f, 1.0f, 1.85f); //correct
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(180)); //correct
             }
-            case EAST -> {
-                matrices.translate(1.0f, 0.05f, 1.0f); //DONE
-                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(-270));
-                matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(-90));
+            case SOUTH -> { //player looking north
+                matrices.translate(1.5f, 1.0f, 0.15f); //correct
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(0)); //correct
             }
-            case SOUTH -> {
-                matrices.translate(1.0f, 0.05f, 1.0f); //DONE
-                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(0));
-                matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(-90));
+            case EAST -> { //player looking west
+                matrices.translate(0.15f, 1.0f, 0.5f); //correct
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(90)); //correct
             }
-            case WEST -> {
-                matrices.translate(1.0f, 0.05f, 1.0f); //DONE
-                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(270));
-                matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(-90));
+            case WEST -> { //player looking east
+                matrices.translate(1.85f, 1.0f, 1.5f); //correct
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(-90)); //correct
             }
         }
         //itemRenderer.renderItem(itemStack, ModelTransformation.Mode.GUI, getLightLevel(entity.getWorld(), entity.getPos()), OverlayTexture.DEFAULT_UV, matrices, vertexConsumers, 1);
