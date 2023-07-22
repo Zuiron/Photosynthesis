@@ -21,10 +21,7 @@ import net.minecraft.util.Identifier;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.block.entity.ModBlockEntities;
-import net.zuiron.photosynthesis.block.entity.client.CuttingBoardBlockEntityRenderer;
-import net.zuiron.photosynthesis.block.entity.client.PlateBlockEntityRenderer;
-import net.zuiron.photosynthesis.block.entity.client.SkilletBlockEntityRenderer;
-import net.zuiron.photosynthesis.block.entity.client.ToolRackBlockEntityRenderer;
+import net.zuiron.photosynthesis.block.entity.client.*;
 import net.zuiron.photosynthesis.event.ClientPlayConnectionJoin;
 import net.zuiron.photosynthesis.event.KeyInputHandler;
 import net.zuiron.photosynthesis.fluid.ModFluids;
@@ -403,12 +400,14 @@ public class PhotosynthesisClient implements ClientModInitializer {
         HandledScreens.register(ModScreenHandlers.MILKSEPERATOR_SCREEN_HANDLER, MilkSeperatorScreen::new);
         HandledScreens.register(ModScreenHandlers.PLATE_SCREEN_HANDLER, PlateScreen::new);
         HandledScreens.register(ModScreenHandlers.TOOLRACK_SCREEN_HANDLER, ToolRackScreen::new);
+        HandledScreens.register(ModScreenHandlers.SHELF_SCREEN_HANDLER, ShelfScreen::new);
         ModMessages.registerS2CPackets();
 
         BlockEntityRendererFactories.register(ModBlockEntities.CUTTING_BOARD, CuttingBoardBlockEntityRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.SKILLET, SkilletBlockEntityRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.PLATE, PlateBlockEntityRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.TOOLRACK, ToolRackBlockEntityRenderer::new);
+        BlockEntityRendererFactories.register(ModBlockEntities.SHELF, ShelfBlockEntityRenderer::new);
 
         //LATEX
         FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_LATEX, ModFluids.FLOWING_LATEX,

@@ -24,5 +24,6 @@ public class ItemStackSyncS2CPacket {
         else if(client.world.getBlockEntity(position) instanceof CookingPotBlockEntity blockEntity) { blockEntity.setInventory(list); }
         else if(client.world.getBlockEntity(position) instanceof PlateBlockEntity blockEntity) { blockEntity.setInventory(list); }
         else if(client.world.getBlockEntity(position) instanceof ToolRackBlockEntity blockEntity) { blockEntity.setInventory(list); }
+        else if(client.world.getBlockEntity(position) instanceof ShelfBlockEntity blockEntity) { blockEntity.setInventory(list); }
     }
 }

@@ -25,6 +25,8 @@ public class ModBlockEntities {
 
     public static BlockEntityType<ToolRackBlockEntity> TOOLRACK;
 
+    public static BlockEntityType<ShelfBlockEntity> SHELF;
+
     public static void registerBlockEntities() {
         CUTTING_BOARD = Registry.register(Registries.BLOCK_ENTITY_TYPE,
                 new Identifier(Photosynthesis.MOD_ID, "cutting_board"),
@@ -85,6 +87,11 @@ public class ModBlockEntities {
                 new Identifier(Photosynthesis.MOD_ID, "toolrack"),
                 FabricBlockEntityTypeBuilder.create(ToolRackBlockEntity::new,
                         ModBlocks.TOOLRACK).build(null));
+
+        SHELF = Registry.register(Registries.BLOCK_ENTITY_TYPE,
+                new Identifier(Photosynthesis.MOD_ID, "shelf"),
+                FabricBlockEntityTypeBuilder.create(ShelfBlockEntity::new,
+                        ModBlocks.SHELF).build(null));
 
         FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidStorage, LATEX_EXTRACTOR); //ALL sides extract, ok.
 
