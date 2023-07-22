@@ -41,6 +41,9 @@ public class ModScreenHandlers {
     public static ScreenHandlerType<PlateScreenHandler> PLATE_SCREEN_HANDLER =
             new ExtendedScreenHandlerType<>(PlateScreenHandler::new);
 
+    public static ScreenHandlerType<ToolRackScreenHandler> TOOLRACK_SCREEN_HANDLER =
+            new ExtendedScreenHandlerType<>(ToolRackScreenHandler::new);
+
     public static void registerAllScreenHandlers() {
         Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "cutting_board"),
                 CUTTING_BOARD_SCREEN_HANDLER);
@@ -64,5 +67,7 @@ public class ModScreenHandlers {
                 MILKSEPERATOR_SCREEN_HANDLER);
         Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "plate"),
                 PLATE_SCREEN_HANDLER);
+        Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "toolrack"),
+                TOOLRACK_SCREEN_HANDLER);
     }
 }

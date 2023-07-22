@@ -94,6 +94,10 @@ public class ModBlocks {
             new PlateBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
                     .strength(2f).nonOpaque()));
 
+    public static final Block TOOLRACK = registerBlock("toolrack",
+            new ToolRackBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
 
     // CROP BLOCKS -----------------------------------------------------------------------------------------------------
     public static final CropBlock TOMATO_CROP = registerCropBlockSimple("tomato_crop");

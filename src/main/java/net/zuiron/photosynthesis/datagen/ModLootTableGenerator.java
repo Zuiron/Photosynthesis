@@ -26,6 +26,7 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.LATEX_EXTRACTOR);
         addDrop(ModBlocks.MAPLE_EXTRACTOR);
         addDrop(ModBlocks.PLATE);
+        addDrop(ModBlocks.TOOLRACK);
 
         //Saplings
         addDrop(ModBlocks.APPLETREE_SAPLING);
