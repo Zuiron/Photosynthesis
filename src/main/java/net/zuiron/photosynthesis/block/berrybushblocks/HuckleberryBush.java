@@ -49,6 +49,6 @@ public class HuckleberryBush extends SweetBerryBushBlock {
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        super.onEntityCollision(state, world, pos, entity);
+
     }
 }
