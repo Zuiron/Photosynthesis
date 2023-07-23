@@ -1,4 +1,4 @@
-package net.zuiron.photosynthesis.integration.rei.dryingnet;
+package net.zuiron.photosynthesis.integration.rei.dryingrack;
 
 import me.shedaniel.math.Point;
 import me.shedaniel.math.Rectangle;
@@ -23,27 +23,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Environment(EnvType.CLIENT)
-public class DryingNetRecipeCategory implements DisplayCategory<DryingNetRecipeDisplay> {
-    private static final Identifier GUI_TEXTURE = new Identifier(Photosynthesis.MOD_ID, "textures/gui/dryingnet_gui_rei.png");
+public class DryingRackRecipeCategory implements DisplayCategory<DryingRackRecipeDisplay> {
+    private static final Identifier GUI_TEXTURE = new Identifier(Photosynthesis.MOD_ID, "textures/gui/dryingrack_gui_rei.png");
 
     @Override
     public Renderer getIcon() {
-        return EntryStacks.of(ModBlocks.DRYINGNET);
+        return EntryStacks.of(ModBlocks.DRYINGRACK);
     }
 
     @Override
     public Text getTitle() {
         //return Photosynthesis.i18n("rei.cooking");
-        return Text.literal("Drying Net");
+        return Text.literal("Drying Rack");
     }
 
     @Override
-    public CategoryIdentifier<? extends DryingNetRecipeDisplay> getCategoryIdentifier() {
-        return PhotosynthesisREI.DRYINGNET;
+    public CategoryIdentifier<? extends DryingRackRecipeDisplay> getCategoryIdentifier() {
+        return PhotosynthesisREI.DRYINGRACK;
     }
 
     @Override
-    public List<Widget> setupDisplay(DryingNetRecipeDisplay display, Rectangle bounds) {
+    public List<Widget> setupDisplay(DryingRackRecipeDisplay display, Rectangle bounds) {
         Point origin = bounds.getLocation();
         final List<Widget> widgets = new ArrayList<>();
 

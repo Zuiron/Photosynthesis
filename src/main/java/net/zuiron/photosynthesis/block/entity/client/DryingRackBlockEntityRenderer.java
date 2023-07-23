@@ -23,7 +23,7 @@ public class DryingRackBlockEntityRenderer implements BlockEntityRenderer<Drying
     public DryingRackBlockEntityRenderer(BlockEntityRendererFactory.Context context) {
 
     }
-    public float rot = 0.0f;
+
     @Override
     public void render(DryingRackBlockEntity entity, float tickDelta, MatrixStack matrices,
                        VertexConsumerProvider vertexConsumers, int light, int overlay) {
@@ -35,29 +35,32 @@ public class DryingRackBlockEntityRenderer implements BlockEntityRenderer<Drying
         double max = 1.0f;
         //case: SOUTH: player looking north
         double x = 0.5f; //0 is LEFT, 1.0 is RIGHT edge.
-        double y = 0.3f; //0 is BOTTOM, 1 is TOP.
-        double z = 0.5f; //0, is BACK, 1.0 is FRONT outside of shelf. toward player when looking at shelf.
-        //int rot = 0;
-        rot += 0.125f;
-        if(rot > 360.0f) { rot = 0.0f; }
-        float scale = 0.5f;
+        double y = 0.57f; //0 is BOTTOM, 1 is TOP.
+        double z = 0.63f; //0, is BACK, 1.0 is FRONT outside of shelf. toward player when looking at shelf.
+        int rot = 0;
+        float rot2 = 22.5f;
+        float scale = 0.7f;
 
         matrices.push();
         switch (entity.getCachedState().get(DryingRackBlock.FACING)) {
             case NORTH -> { //player looking south
                 matrices.translate(max - x, y, max - z);
+                matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(rot2));
                 matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(180+rot));
             }
             case SOUTH -> { //player looking north
                 matrices.translate(x, y, z);
+                matrices.multiply(RotationAxis.NEGATIVE_X.rotationDegrees(rot2));
                 matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(0+rot));
             }
             case EAST -> { //player looking west
                 matrices.translate(z, y, max - x);
+                matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(rot2));
                 matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(90+rot));
             }
             case WEST -> { //player looking east
                 matrices.translate(max - z, y, x);
+                matrices.multiply(RotationAxis.NEGATIVE_Z.rotationDegrees(rot2));
                 matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(-90+rot));
             }
         }
