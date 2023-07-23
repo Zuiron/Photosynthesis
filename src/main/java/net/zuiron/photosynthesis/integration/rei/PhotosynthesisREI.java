@@ -26,6 +26,8 @@ import net.zuiron.photosynthesis.integration.rei.cookingpot.CookingPotRecipeCate
 import net.zuiron.photosynthesis.integration.rei.cookingpot.CookingPotRecipeDisplay;
 import net.zuiron.photosynthesis.integration.rei.cutting_board.CuttingBoardRecipeCategory;
 import net.zuiron.photosynthesis.integration.rei.cutting_board.CuttingBoardRecipeDisplay;
+import net.zuiron.photosynthesis.integration.rei.dryingnet.DryingNetRecipeCategory;
+import net.zuiron.photosynthesis.integration.rei.dryingnet.DryingNetRecipeDisplay;
 import net.zuiron.photosynthesis.integration.rei.fluidpress.FluidPressRecipeCategory;
 import net.zuiron.photosynthesis.integration.rei.fluidpress.FluidPressRecipeDisplay;
 import net.zuiron.photosynthesis.integration.rei.keg.KegRecipeCategory;
@@ -55,6 +57,7 @@ public class PhotosynthesisREI implements REIClientPlugin {
     public static final CategoryIdentifier<KegRecipeDisplay> KEG = CategoryIdentifier.of(Photosynthesis.MOD_ID, "keg");
     public static final CategoryIdentifier<FluidPressRecipeDisplay> FLUIDPRESS = CategoryIdentifier.of(Photosynthesis.MOD_ID, "fluidpress");
     public static final CategoryIdentifier<MilkSeparatorRecipeDisplay> MILKSEPARATOR = CategoryIdentifier.of(Photosynthesis.MOD_ID, "milkseparator");
+    public static final CategoryIdentifier<DryingNetRecipeDisplay> DRYINGNET = CategoryIdentifier.of(Photosynthesis.MOD_ID, "dryingnet");
 
     public static Rectangle centeredIntoRecipeBase(Point origin, int width, int height) {
         return centeredInto(new Rectangle(origin.x, origin.y, 150, 66), width, height);
@@ -97,6 +100,10 @@ public class PhotosynthesisREI implements REIClientPlugin {
         registry.add(
                 new MilkSeparatorRecipeCategory());
         registry.addWorkstations(MILKSEPARATOR, EntryStacks.of(ModBlocks.MILKSEPERATOR));
+
+        registry.add(
+                new DryingNetRecipeCategory());
+        registry.addWorkstations(DRYINGNET, EntryStacks.of(ModBlocks.DRYINGNET));
     }
 
     @Override
@@ -116,6 +123,8 @@ public class PhotosynthesisREI implements REIClientPlugin {
         registry.registerRecipeFiller(FluidPressRecipe.class, FluidPressRecipe.Type.INSTANCE, FluidPressRecipeDisplay::new);
 
         registry.registerRecipeFiller(MilkSeperatorRecipe.class, MilkSeperatorRecipe.Type.INSTANCE, MilkSeparatorRecipeDisplay::new);
+
+        registry.registerRecipeFiller(DryingNetRecipe.class, DryingNetRecipe.Type.INSTANCE, DryingNetRecipeDisplay::new);
     }
 
     @Override
@@ -135,5 +144,7 @@ public class PhotosynthesisREI implements REIClientPlugin {
         registry.registerContainerClickArea(new Rectangle(76, 47, 22, 15), FluidPressScreen.class, FLUIDPRESS);
 
         registry.registerContainerClickArea(new Rectangle(76, 47, 22, 15), MilkSeperatorScreen.class, MILKSEPARATOR);
+
+        registry.registerContainerClickArea(new Rectangle(77, 37, 22, 15), DryingNetScreen.class, DRYINGNET);
     }
 }
