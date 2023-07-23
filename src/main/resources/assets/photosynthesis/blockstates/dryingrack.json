@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "photosynthesis:block/dryingrack"
+    },
+    "facing=south": {
+      "model": "photosynthesis:block/dryingrack",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "photosynthesis:block/dryingrack",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "photosynthesis:block/dryingrack",
+      "y": 90
+    }
+  }
+}

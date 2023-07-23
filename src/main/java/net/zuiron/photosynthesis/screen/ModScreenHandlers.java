@@ -50,6 +50,9 @@ public class ModScreenHandlers {
     public static ScreenHandlerType<DryingNetScreenHandler> DRYINGNET_SCREEN_HANDLER =
             new ExtendedScreenHandlerType<>(DryingNetScreenHandler::new);
 
+    public static ScreenHandlerType<DryingRackScreenHandler> DRYINGRACK_SCREEN_HANDLER =
+            new ExtendedScreenHandlerType<>(DryingRackScreenHandler::new);
+
     public static void registerAllScreenHandlers() {
         Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "cutting_board"),
                 CUTTING_BOARD_SCREEN_HANDLER);
@@ -79,5 +82,7 @@ public class ModScreenHandlers {
                 SHELF_SCREEN_HANDLER);
         Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "dryingnet"),
                 DRYINGNET_SCREEN_HANDLER);
+        Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "dryingrack"),
+                DRYINGRACK_SCREEN_HANDLER);
     }
 }

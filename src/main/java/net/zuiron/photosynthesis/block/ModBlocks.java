@@ -86,6 +86,10 @@ public class ModBlocks {
             new DryingNetBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
                     .strength(2f).nonOpaque()));
 
+    public static final Block DRYINGRACK = registerBlock("dryingrack",
+            new DryingRackBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
     public static final Block LATEX_EXTRACTOR = registerBlock("latex_extractor",
             new LatexExtractorBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
                     .strength(2f).nonOpaque()));

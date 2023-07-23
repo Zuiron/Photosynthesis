@@ -64,5 +64,11 @@ public class ModRecipes {
                 DryingNetRecipe.Serializer.INSTANCE);
         Registry.register(Registries.RECIPE_TYPE, new Identifier(Photosynthesis.MOD_ID, DryingNetRecipe.Type.ID),
                 DryingNetRecipe.Type.INSTANCE);
+
+        //Drying Rack
+        Registry.register(Registries.RECIPE_SERIALIZER, new Identifier(Photosynthesis.MOD_ID, DryingRackRecipe.Serializer.ID),
+                DryingRackRecipe.Serializer.INSTANCE);
+        Registry.register(Registries.RECIPE_TYPE, new Identifier(Photosynthesis.MOD_ID, DryingRackRecipe.Type.ID),
+                DryingRackRecipe.Type.INSTANCE);
     }
 }
