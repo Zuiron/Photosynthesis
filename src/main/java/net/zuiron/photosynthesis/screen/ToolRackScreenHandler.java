@@ -23,8 +23,8 @@ public class ToolRackScreenHandler extends ScreenHandler {
         this.inventory = inventory;
         inventory.onOpen(playerInventory.player);
 
-        this.addSlot(new OneCountSlot(inventory, 0, 66, 34));
-        this.addSlot(new OneCountSlot(inventory, 1, 93, 34));
+        this.addSlot(new Slot(inventory, 0, 66, 34));
+        this.addSlot(new Slot(inventory, 1, 93, 34));
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
