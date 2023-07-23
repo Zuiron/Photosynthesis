@@ -26,29 +26,8 @@ import org.jetbrains.annotations.Nullable;
 public class ShelfBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(6, ItemStack.EMPTY); //N#:SLOTS
 
-    public ItemStack getRenderStack0() {
-        //return this.getStack(0);
-        return this.inventory.get(0);
-    }
-    public ItemStack getRenderStack1() {
-        //return this.getStack(0);
-        return this.inventory.get(1);
-    }
-    public ItemStack getRenderStack2() {
-        //return this.getStack(0);
-        return this.inventory.get(2);
-    }
-    public ItemStack getRenderStack3() {
-        //return this.getStack(0);
-        return this.inventory.get(3);
-    }
-    public ItemStack getRenderStack4() {
-        //return this.getStack(0);
-        return this.inventory.get(4);
-    }
-    public ItemStack getRenderStack5() {
-        //return this.getStack(0);
-        return this.inventory.get(5);
+    public DefaultedList<ItemStack> getInventoryMod() {
+        return this.inventory;
     }
 
     public void setInventory(DefaultedList<ItemStack> inventory) {
