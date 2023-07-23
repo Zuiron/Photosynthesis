@@ -1,0 +1,13 @@
+{
+  "type": "photosynthesis:dryingnet",
+  "ingredients": [
+    {
+      "item": "photosynthesis:peppercorn"
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:dried_black_pepper",
+    "count": 1
+  },
+  "cookingtime": 30
+}

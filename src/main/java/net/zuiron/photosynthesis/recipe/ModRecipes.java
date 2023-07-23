@@ -58,5 +58,11 @@ public class ModRecipes {
                 MilkSeperatorRecipe.Serializer.INSTANCE);
         Registry.register(Registries.RECIPE_TYPE, new Identifier(Photosynthesis.MOD_ID, MilkSeperatorRecipe.Type.ID),
                 MilkSeperatorRecipe.Type.INSTANCE);
+
+        //Drying Net
+        Registry.register(Registries.RECIPE_SERIALIZER, new Identifier(Photosynthesis.MOD_ID, DryingNetRecipe.Serializer.ID),
+                DryingNetRecipe.Serializer.INSTANCE);
+        Registry.register(Registries.RECIPE_TYPE, new Identifier(Photosynthesis.MOD_ID, DryingNetRecipe.Type.ID),
+                DryingNetRecipe.Type.INSTANCE);
     }
 }

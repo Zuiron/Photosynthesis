@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "photosynthesis:block/dryingnet"
+    },
+    "facing=south": {
+      "model": "photosynthesis:block/dryingnet",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "photosynthesis:block/dryingnet",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "photosynthesis:block/dryingnet",
+      "y": 90
+    }
+  }
+}

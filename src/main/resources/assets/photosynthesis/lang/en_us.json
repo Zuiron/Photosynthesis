@@ -885,6 +885,7 @@
   "item.photosynthesis.rolling_pin": "Rolling Pin",
   "item.photosynthesis.plate": "Plate",
   "item.photosynthesis.cutting_board": "Cutting Board",
+  "item.photosynthesis.dryingnet": "Drying Net",
   "item.photosynthesis.squeezer": "Squeezer",
 
   "item.photosynthesis.squeezer_part": "Squeezer Part",
@@ -959,6 +960,7 @@
   "block.photosynthesis.fluid_press": "Fluid Press",
   "block.photosynthesis.cooking_pot": "Cooking Pot",
   "block.photosynthesis.cutting_board": "Cutting Board",
+  "block.photosynthesis.dryingnet": "Drying Net",
   "block.photosynthesis.mortar": "Mortar",
   "block.photosynthesis.latex_extractor": "Latex Extractor",
   "block.photosynthesis.maple_extractor": "Maple Extractor",

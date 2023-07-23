@@ -387,6 +387,7 @@ public class PhotosynthesisClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.MAPLE_EXTRACTOR);
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.PLATE);
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.TOOLRACK);
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.DRYINGNET);
 
         HandledScreens.register(ModScreenHandlers.CUTTING_BOARD_SCREEN_HANDLER, CuttingBoardScreen::new);
         HandledScreens.register(ModScreenHandlers.MORTAR_SCREEN_HANDLER, MortarScreen::new);
@@ -401,6 +402,7 @@ public class PhotosynthesisClient implements ClientModInitializer {
         HandledScreens.register(ModScreenHandlers.PLATE_SCREEN_HANDLER, PlateScreen::new);
         HandledScreens.register(ModScreenHandlers.TOOLRACK_SCREEN_HANDLER, ToolRackScreen::new);
         HandledScreens.register(ModScreenHandlers.SHELF_SCREEN_HANDLER, ShelfScreen::new);
+        HandledScreens.register(ModScreenHandlers.DRYINGNET_SCREEN_HANDLER, DryingNetScreen::new);
         ModMessages.registerS2CPackets();
 
         BlockEntityRendererFactories.register(ModBlockEntities.CUTTING_BOARD, CuttingBoardBlockEntityRenderer::new);
@@ -408,6 +410,7 @@ public class PhotosynthesisClient implements ClientModInitializer {
         BlockEntityRendererFactories.register(ModBlockEntities.PLATE, PlateBlockEntityRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.TOOLRACK, ToolRackBlockEntityRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.SHELF, ShelfBlockEntityRenderer::new);
+        BlockEntityRendererFactories.register(ModBlockEntities.DRYINGNET, DryingNetBlockEntityRenderer::new);
 
         //LATEX
         FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_LATEX, ModFluids.FLOWING_LATEX,
