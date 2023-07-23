@@ -21,7 +21,7 @@ public class DryingNetBlockEntityRenderer implements BlockEntityRenderer<DryingN
     public DryingNetBlockEntityRenderer(BlockEntityRendererFactory.Context context) {
 
     }
-    private float rot = 0.0f;
+    //private float rot = 0.0f;
     @Override
     public void render(DryingNetBlockEntity entity, float tickDelta, MatrixStack matrices,
                        VertexConsumerProvider vertexConsumers, int light, int overlay) {
@@ -35,28 +35,28 @@ public class DryingNetBlockEntityRenderer implements BlockEntityRenderer<DryingN
         double x = 0.5f; //0 is LEFT, 1.0 is RIGHT edge.
         double y = 0.3f; //0 is BOTTOM, 1 is TOP.
         double z = 0.5f; //0, is BACK, 1.0 is FRONT outside of shelf. toward player when looking at shelf.
-        //int rot = 0;
-        this.rot += 0.125f;
-        if(this.rot > 360.0f) { this.rot = 0.0f; }
+        int rot = 0;
+        /*this.rot += 0.125f;
+        if(this.rot > 360.0f) { this.rot = 0.0f; }*/
         float scale = 0.5f;
 
         matrices.push();
         switch (entity.getCachedState().get(DryingNetBlock.FACING)) {
             case NORTH -> { //player looking south
                 matrices.translate(max - x, y, max - z);
-                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(180+this.rot));
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(180+rot));
             }
             case SOUTH -> { //player looking north
                 matrices.translate(x, y, z);
-                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(0+this.rot));
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(0+rot));
             }
             case EAST -> { //player looking west
                 matrices.translate(z, y, max - x);
-                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(90+this.rot));
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(90+rot));
             }
             case WEST -> { //player looking east
                 matrices.translate(max - z, y, x);
-                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(-90+this.rot));
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(-90+rot));
             }
         }
         matrices.scale(scale, scale, scale);
