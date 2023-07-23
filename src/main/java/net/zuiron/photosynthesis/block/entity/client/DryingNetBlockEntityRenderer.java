@@ -38,7 +38,7 @@ public class DryingNetBlockEntityRenderer implements BlockEntityRenderer<DryingN
         //int rot = 0;
         rot += 0.125f;
         if(rot > 360.0f) { rot = 0.0f; }
-        float scale = 0.6f;
+        float scale = 0.5f;
 
         matrices.push();
         switch (entity.getCachedState().get(DryingNetBlock.FACING)) {
