@@ -37,28 +37,191 @@ public class ShelfBlockEntityRenderer implements BlockEntityRenderer<ShelfBlockE
         ItemStack itemStack4 = entity.getRenderStack4();
         ItemStack itemStack5 = entity.getRenderStack5();
 
+        double max = 1.0f;
+        //case: SOUTH: player looking north
+        double x = 0.10f; //0 is LEFT, 1.0 is RIGHT edge.
+        double y = 0.56f; //0 is BOTTOM, 1 is TOP.
+        double z = 0.15f; //0, is BACK, 1.0 is FRONT outside of shelf. toward player when looking at shelf.
+        int rot = 45;
+        double itemOffset = 0.16;
+
         //SLOT0
         matrices.push();
-        matrices.scale(0.5f, 0.5f, 0.5f);
         switch (entity.getCachedState().get(ShelfBlock.FACING)) {
             case NORTH -> { //player looking south
-                matrices.translate(1.5f, 1.0f, 1.85f); //correct
-                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(180)); //correct
+                //matrices.translate(0.75f, 0.56f, 0.925f); //correct
+                matrices.translate(max - x, y, max - z); //correct
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(180+rot)); //correct
             }
             case SOUTH -> { //player looking north
-                matrices.translate(0.5f, 1.0f, 0.15f); //correct
-                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(0)); //correct
+                //matrices.translate(0.25f, 0.56f, 0.075f); //correct
+                matrices.translate(x, y, z); //correct
+                //matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(0)); //correct
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(0+rot)); //correct
             }
             case EAST -> { //player looking west
-                matrices.translate(0.15f, 1.0f, 1.5f); //correct
-                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(90)); //correct
+                //matrices.translate(0.075f, 0.56f, 0.75f); //correct
+                matrices.translate(z, y, max - x); //correct
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(90+rot)); //correct
             }
             case WEST -> { //player looking east
-                matrices.translate(1.85f, 1.0f, 0.5f); //correct
-                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(-90)); //correct
+                //matrices.translate(0.925f, 0.56f, 0.25f); //correct
+                matrices.translate(max - z, y, x); //correct
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(-90+rot)); //correct
             }
         }
+        matrices.scale(0.25f, 0.25f, 0.25f);
         itemRenderer.renderItem(itemStack, ModelTransformationMode.GUI, getLightLevel(entity.getWorld(), entity.getPos()), OverlayTexture.DEFAULT_UV, matrices, vertexConsumers, entity.getWorld(), 1);
+        matrices.pop();
+
+        //SLOT1
+        x += itemOffset;
+        matrices.push();
+        switch (entity.getCachedState().get(ShelfBlock.FACING)) {
+            case NORTH -> { //player looking south
+                //matrices.translate(0.75f, 0.56f, 0.925f); //correct
+                matrices.translate(max - x, y, max - z); //correct
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(180+rot)); //correct
+            }
+            case SOUTH -> { //player looking north
+                //matrices.translate(0.25f, 0.56f, 0.075f); //correct
+                matrices.translate(x, y, z); //correct
+                //matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(0)); //correct
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(0+rot)); //correct
+            }
+            case EAST -> { //player looking west
+                //matrices.translate(0.075f, 0.56f, 0.75f); //correct
+                matrices.translate(z, y, max - x); //correct
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(90+rot)); //correct
+            }
+            case WEST -> { //player looking east
+                //matrices.translate(0.925f, 0.56f, 0.25f); //correct
+                matrices.translate(max - z, y, x); //correct
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(-90+rot)); //correct
+            }
+        }
+        matrices.scale(0.25f, 0.25f, 0.25f);
+        itemRenderer.renderItem(itemStack1, ModelTransformationMode.GUI, getLightLevel(entity.getWorld(), entity.getPos()), OverlayTexture.DEFAULT_UV, matrices, vertexConsumers, entity.getWorld(), 1);
+        matrices.pop();
+
+        //SLOT2
+        x += itemOffset;
+        matrices.push();
+        switch (entity.getCachedState().get(ShelfBlock.FACING)) {
+            case NORTH -> { //player looking south
+                //matrices.translate(0.75f, 0.56f, 0.925f); //correct
+                matrices.translate(max - x, y, max - z); //correct
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(180+rot)); //correct
+            }
+            case SOUTH -> { //player looking north
+                //matrices.translate(0.25f, 0.56f, 0.075f); //correct
+                matrices.translate(x, y, z); //correct
+                //matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(0)); //correct
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(0+rot)); //correct
+            }
+            case EAST -> { //player looking west
+                //matrices.translate(0.075f, 0.56f, 0.75f); //correct
+                matrices.translate(z, y, max - x); //correct
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(90+rot)); //correct
+            }
+            case WEST -> { //player looking east
+                //matrices.translate(0.925f, 0.56f, 0.25f); //correct
+                matrices.translate(max - z, y, x); //correct
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(-90+rot)); //correct
+            }
+        }
+        matrices.scale(0.25f, 0.25f, 0.25f);
+        itemRenderer.renderItem(itemStack2, ModelTransformationMode.GUI, getLightLevel(entity.getWorld(), entity.getPos()), OverlayTexture.DEFAULT_UV, matrices, vertexConsumers, entity.getWorld(), 1);
+        matrices.pop();
+
+        //SLOT3
+        x += itemOffset;
+        matrices.push();
+        switch (entity.getCachedState().get(ShelfBlock.FACING)) {
+            case NORTH -> { //player looking south
+                //matrices.translate(0.75f, 0.56f, 0.925f); //correct
+                matrices.translate(max - x, y, max - z); //correct
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(180+rot)); //correct
+            }
+            case SOUTH -> { //player looking north
+                //matrices.translate(0.25f, 0.56f, 0.075f); //correct
+                matrices.translate(x, y, z); //correct
+                //matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(0)); //correct
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(0+rot)); //correct
+            }
+            case EAST -> { //player looking west
+                //matrices.translate(0.075f, 0.56f, 0.75f); //correct
+                matrices.translate(z, y, max - x); //correct
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(90+rot)); //correct
+            }
+            case WEST -> { //player looking east
+                //matrices.translate(0.925f, 0.56f, 0.25f); //correct
+                matrices.translate(max - z, y, x); //correct
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(-90+rot)); //correct
+            }
+        }
+        matrices.scale(0.25f, 0.25f, 0.25f);
+        itemRenderer.renderItem(itemStack3, ModelTransformationMode.GUI, getLightLevel(entity.getWorld(), entity.getPos()), OverlayTexture.DEFAULT_UV, matrices, vertexConsumers, entity.getWorld(), 1);
+        matrices.pop();
+
+        //SLOT4
+        x += itemOffset;
+        matrices.push();
+        switch (entity.getCachedState().get(ShelfBlock.FACING)) {
+            case NORTH -> { //player looking south
+                //matrices.translate(0.75f, 0.56f, 0.925f); //correct
+                matrices.translate(max - x, y, max - z); //correct
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(180+rot)); //correct
+            }
+            case SOUTH -> { //player looking north
+                //matrices.translate(0.25f, 0.56f, 0.075f); //correct
+                matrices.translate(x, y, z); //correct
+                //matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(0)); //correct
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(0+rot)); //correct
+            }
+            case EAST -> { //player looking west
+                //matrices.translate(0.075f, 0.56f, 0.75f); //correct
+                matrices.translate(z, y, max - x); //correct
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(90+rot)); //correct
+            }
+            case WEST -> { //player looking east
+                //matrices.translate(0.925f, 0.56f, 0.25f); //correct
+                matrices.translate(max - z, y, x); //correct
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(-90+rot)); //correct
+            }
+        }
+        matrices.scale(0.25f, 0.25f, 0.25f);
+        itemRenderer.renderItem(itemStack4, ModelTransformationMode.GUI, getLightLevel(entity.getWorld(), entity.getPos()), OverlayTexture.DEFAULT_UV, matrices, vertexConsumers, entity.getWorld(), 1);
+        matrices.pop();
+
+        //SLOT5
+        x += itemOffset;
+        matrices.push();
+        switch (entity.getCachedState().get(ShelfBlock.FACING)) {
+            case NORTH -> { //player looking south
+                //matrices.translate(0.75f, 0.56f, 0.925f); //correct
+                matrices.translate(max - x, y, max - z); //correct
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(180+rot)); //correct
+            }
+            case SOUTH -> { //player looking north
+                //matrices.translate(0.25f, 0.56f, 0.075f); //correct
+                matrices.translate(x, y, z); //correct
+                //matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(0)); //correct
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(0+rot)); //correct
+            }
+            case EAST -> { //player looking west
+                //matrices.translate(0.075f, 0.56f, 0.75f); //correct
+                matrices.translate(z, y, max - x); //correct
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(90+rot)); //correct
+            }
+            case WEST -> { //player looking east
+                //matrices.translate(0.925f, 0.56f, 0.25f); //correct
+                matrices.translate(max - z, y, x); //correct
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(-90+rot)); //correct
+            }
+        }
+        matrices.scale(0.25f, 0.25f, 0.25f);
+        itemRenderer.renderItem(itemStack5, ModelTransformationMode.GUI, getLightLevel(entity.getWorld(), entity.getPos()), OverlayTexture.DEFAULT_UV, matrices, vertexConsumers, entity.getWorld(), 1);
         matrices.pop();
 
     }
