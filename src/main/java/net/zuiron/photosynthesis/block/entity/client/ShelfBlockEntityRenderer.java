@@ -42,7 +42,7 @@ public class ShelfBlockEntityRenderer implements BlockEntityRenderer<ShelfBlockE
         double x = 0.10f; //0 is LEFT, 1.0 is RIGHT edge.
         double y = 0.56f; //0 is BOTTOM, 1 is TOP.
         double z = 0.15f; //0, is BACK, 1.0 is FRONT outside of shelf. toward player when looking at shelf.
-        int rot = 45;
+        int rot = 30;
         double itemOffset = 0.16;
 
         //SLOT0
