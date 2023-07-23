@@ -210,7 +210,7 @@ public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> CLOUDBERRY_BUSH_PLACED_KEY = registerKey("cloudberry_bush_placed");
     public static final RegistryKey<PlacedFeature> WILD_STRAWBERRY_BUSH_PLACED_KEY = registerKey("wild_strawberry_bush_placed");
 
-    public static final RegistryKey<PlacedFeature> CANDLEBERRY_BUSH_PLACED_KEY = registerKey("candleberry_bush_placed");
+    public static final RegistryKey<PlacedFeature> LINGONBERRY_BUSH_PLACED_KEY = registerKey("lingonberry_bush_placed");
     public static final RegistryKey<PlacedFeature> CRANBERRY_BUSH_PLACED_KEY = registerKey("cranberry_bush_placed");
     public static final RegistryKey<PlacedFeature> HUCKLEBERRY_BUSH_PLACED_KEY = registerKey("huckleberry_bush_placed");
     public static final RegistryKey<PlacedFeature> JUNIPERBERRY_BUSH_PLACED_KEY = registerKey("juniperberry_bush_placed");
@@ -593,7 +593,7 @@ public class ModPlacedFeatures {
                 RarityFilterPlacementModifier.of(28), SquarePlacementModifier.of(), CountPlacementModifier.of(8), RandomOffsetPlacementModifier.horizontally(ConstantIntProvider.create(2)),
                 PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of());
 
-        register(context, CANDLEBERRY_BUSH_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.CANDLEBERRY_KEY),
+        register(context, LINGONBERRY_BUSH_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.LINGONBERRY_KEY),
                 RarityFilterPlacementModifier.of(28), SquarePlacementModifier.of(), CountPlacementModifier.of(8), RandomOffsetPlacementModifier.horizontally(ConstantIntProvider.create(2)),
                 PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of());
 

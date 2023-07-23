@@ -1398,8 +1398,8 @@ public class ModBlocks {
             new Wild_StrawberryBush(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
-    public static final SweetBerryBushBlock CANDLEBERRY_BUSH = registerBushBlock("candleberry_bush",
-            new CandleberryBush(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
+    public static final SweetBerryBushBlock LINGONBERRY_BUSH = registerBushBlock("lingonberry_bush",
+            new LingonberryBush(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                     .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final SweetBerryBushBlock CRANBERRY_BUSH = registerBushBlock("cranberry_bush",

@@ -2,16 +2,13 @@ package net.zuiron.photosynthesis.world.feature;
 
 import com.google.common.collect.ImmutableList;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.SweetBerryBushBlock;
 import net.minecraft.registry.*;
-import net.minecraft.registry.entry.RegistryEntryList;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.structure.rule.BlockMatchRuleTest;
 import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.structure.rule.TagMatchRuleTest;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
-import net.minecraft.util.math.random.Random;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.*;
@@ -21,7 +18,6 @@ import net.minecraft.world.gen.treedecorator.TrunkVineTreeDecorator;
 import net.minecraft.world.gen.trunk.BendingTrunkPlacer;
 import net.minecraft.world.gen.trunk.LargeOakTrunkPlacer;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
-import net.minecraft.world.gen.trunk.UpwardsBranchingTrunkPlacer;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.block.berrybushblocks.*;
@@ -44,7 +40,7 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?,?>> RASPBERRY_KEY = registerKey("raspberry_bush");
     public static final RegistryKey<ConfiguredFeature<?,?>> CLOUDBERRY_KEY = registerKey("cloudberry_bush");
     public static final RegistryKey<ConfiguredFeature<?,?>> WILDSTRAWBERRY_KEY = registerKey("wild_strawberry_bush");
-    public static final RegistryKey<ConfiguredFeature<?,?>> CANDLEBERRY_KEY = registerKey("candleberry_bush");
+    public static final RegistryKey<ConfiguredFeature<?,?>> LINGONBERRY_KEY = registerKey("lingonberry_bush");
     public static final RegistryKey<ConfiguredFeature<?,?>> CRANBERRY_KEY = registerKey("cranberry_bush");
     public static final RegistryKey<ConfiguredFeature<?,?>> HUCKLEBERRY_KEY = registerKey("huckleberry_bush");
     public static final RegistryKey<ConfiguredFeature<?,?>> JUNIPERBERRY_KEY = registerKey("juniperberry_bush");
@@ -215,9 +211,9 @@ public class ModConfiguredFeatures {
         register(context, WILDSTRAWBERRY_KEY, Feature.FLOWER,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.WILD_STRAWBERRY_BUSH.getDefaultState().with(Wild_StrawberryBush.AGE, 3))))));
-        register(context, CANDLEBERRY_KEY, Feature.FLOWER,
+        register(context, LINGONBERRY_KEY, Feature.FLOWER,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.CANDLEBERRY_BUSH.getDefaultState().with(CandleberryBush.AGE, 3))))));
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.LINGONBERRY_BUSH.getDefaultState().with(LingonberryBush.AGE, 3))))));
         register(context, CRANBERRY_KEY, Feature.FLOWER,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.CRANBERRY_BUSH.getDefaultState().with(CranberryBush.AGE, 3))))));

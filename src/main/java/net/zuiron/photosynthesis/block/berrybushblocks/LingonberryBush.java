@@ -17,15 +17,15 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.item.ModItems;
 
-public class CandleberryBush extends SweetBerryBushBlock {
+public class LingonberryBush extends SweetBerryBushBlock {
 
-    public CandleberryBush(Settings settings) {
+    public LingonberryBush(Settings settings) {
         super(settings);
     }
 
     @Override
     public ItemStack getPickStack(BlockView world, BlockPos pos, BlockState state) {
-        return new ItemStack(ModItems.CANDLEBERRIES);
+        return new ItemStack(ModItems.LINGONBERRIES);
     }
 
 
@@ -37,7 +37,7 @@ public class CandleberryBush extends SweetBerryBushBlock {
             return ActionResult.PASS;
         } else if (i > 2) {
             int j = 1 + world.random.nextInt(2);
-            dropStack(world, pos, new ItemStack(ModItems.CANDLEBERRIES, j + (bl ? 1 : 0)));
+            dropStack(world, pos, new ItemStack(ModItems.LINGONBERRIES, j + (bl ? 1 : 0)));
             world.playSound((PlayerEntity)null, pos, SoundEvents.BLOCK_SWEET_BERRY_BUSH_PICK_BERRIES, SoundCategory.BLOCKS, 1.0F, 0.8F + world.random.nextFloat() * 0.4F);
             world.setBlockState(pos, (BlockState)state.with(AGE, 0), Block.NOTIFY_LISTENERS);
             return ActionResult.success(world.isClient);

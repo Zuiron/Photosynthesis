@@ -107,7 +107,7 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.MUSTARD,
                 ModItems.MUSTARD_SEEDS,
 
-                ModItems.CANDLEBERRIES,
+                ModItems.LINGONBERRIES,
                 ModItems.CRANBERRIES,
                 ModItems.HUCKLEBERRIES,
                 ModItems.JUNIPERBERRIES,

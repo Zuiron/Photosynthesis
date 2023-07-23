@@ -2,6 +2,6 @@
 {
   "parent": "minecraft:block/cross",
   "textures": {
-    "cross": "photosynthesis:block/candleberry_bush_stage1"
+    "cross": "photosynthesis:block/lingonberry_bush_stage2"
   }
 }
