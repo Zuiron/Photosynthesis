@@ -113,6 +113,8 @@ public class ModBlockEntities {
                         //all kitchen counters or objects of SingleDoubleChest's goes here.
                         //Diorite
                         ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_OAK,
+                        ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DIORITE_OAK,
+                        ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DIORITE_OAK,
                         //Deepslate
                         ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_OAK,
                         //Andesite
