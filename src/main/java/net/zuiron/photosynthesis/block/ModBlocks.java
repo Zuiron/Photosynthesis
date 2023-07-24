@@ -150,6 +150,14 @@ public class ModBlocks {
             new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
                     .strength(2f).nonOpaque()));
 
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_GRANITE_OAK = registerBlock("kitchencounter_drawers_polished_granite_oak",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_GRANITE_OAK = registerBlock("kitchencounter_big_polished_granite_oak",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
 
     // CROP BLOCKS -----------------------------------------------------------------------------------------------------
     public static final CropBlock TOMATO_CROP = registerCropBlockSimple("tomato_crop");

@@ -124,7 +124,9 @@ public class ModBlockEntities {
                         ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_OAK,
                         ModBlocks.KITCHENCOUNTER_BIG_POLISHED_ANDESITE_OAK,
                         //Granite
-                        ModBlocks.KITCHENCOUNTER_POLISHED_GRANITE_OAK
+                        ModBlocks.KITCHENCOUNTER_POLISHED_GRANITE_OAK,
+                        ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_GRANITE_OAK,
+                        ModBlocks.KITCHENCOUNTER_BIG_POLISHED_GRANITE_OAK
                 ).build(null));
 
         FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidStorage, LATEX_EXTRACTOR); //ALL sides extract, ok.
