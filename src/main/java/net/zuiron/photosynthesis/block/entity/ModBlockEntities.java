@@ -29,6 +29,7 @@ public class ModBlockEntities {
 
     public static BlockEntityType<DryingNetBlockEntity> DRYINGNET;
     public static BlockEntityType<DryingRackBlockEntity> DRYINGRACK;
+    public static BlockEntityType<SingleDoubleChestBlockEntity> SINGLEDOUBLECHEST;
 
     public static void registerBlockEntities() {
         CUTTING_BOARD = Registry.register(Registries.BLOCK_ENTITY_TYPE,
@@ -105,6 +106,11 @@ public class ModBlockEntities {
                 new Identifier(Photosynthesis.MOD_ID, "dryingrack"),
                 FabricBlockEntityTypeBuilder.create(DryingRackBlockEntity::new,
                         ModBlocks.DRYINGRACK).build(null));
+
+        SINGLEDOUBLECHEST = Registry.register(Registries.BLOCK_ENTITY_TYPE,
+                new Identifier(Photosynthesis.MOD_ID, "singledoublechest"),
+                FabricBlockEntityTypeBuilder.create(SingleDoubleChestBlockEntity::new,
+                        ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_OAK).build(null));
 
         FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidStorage, LATEX_EXTRACTOR); //ALL sides extract, ok.
 
