@@ -42,6 +42,34 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                         FabricRecipeProvider.conditionsFromItem(ModItems.CITRINE))
                 .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(ModItems.RAW_CITRINE)));
          */
+
+        List<ItemConvertible> itemconvert_from = new ArrayList<>();
+        List<ItemConvertible> itemconvert_to = new ArrayList<>();
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_OAK);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DEEPSLATE_OAK);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DEEPSLATE_OAK);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DEEPSLATE_OAK);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DEEPSLATE_OAK);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_OAK);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_GRANITE_OAK);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_GRANITE_OAK);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_GRANITE_OAK);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_GRANITE_OAK);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_GRANITE_OAK);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_GRANITE_OAK);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_OAK);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DIORITE_OAK);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DIORITE_OAK);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DIORITE_OAK);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DIORITE_OAK);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_OAK);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_OAK);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_OAK);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_OAK);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_ANDESITE_OAK);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_ANDESITE_OAK);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_OAK);
+
+        for (int i = 0; i < itemconvert_from.size(); i++) {
+            ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, itemconvert_to.get(i))
+                    .input(itemconvert_from.get(i))
+                    .criterion(FabricRecipeProvider.hasItem(itemconvert_from.get(i)), FabricRecipeProvider.conditionsFromItem(itemconvert_from.get(i)))
+                    .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(itemconvert_to.get(i))+"_convert"));
+        }
+
+
         List<ItemConvertible> kitchendecor = new ArrayList<>();
         List<ItemConvertible> kitchendecor_wood = new ArrayList<>();
         List<ItemConvertible> kitchendecor_top = new ArrayList<>();
