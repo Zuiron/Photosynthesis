@@ -90,10 +90,6 @@ public class ModBlocks {
             new DryingRackBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
                     .strength(2f).nonOpaque()));
 
-    public static final Block KITCHENCOUNTER_POLISHED_DIORITE_OAK = registerBlock("kitchencounter_polished_diorite_oak",
-            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
-                    .strength(2f).nonOpaque()));
-
     public static final Block LATEX_EXTRACTOR = registerBlock("latex_extractor",
             new LatexExtractorBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
                     .strength(2f).nonOpaque()));
@@ -112,6 +108,14 @@ public class ModBlocks {
 
     public static final Block SHELF = registerBlock("shelf",
             new ShelfBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_DIORITE_OAK = registerBlock("kitchencounter_polished_diorite_oak",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_DEEPSLATE_OAK = registerBlock("kitchencounter_polished_deepslate_oak",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
                     .strength(2f).nonOpaque()));
 
 
