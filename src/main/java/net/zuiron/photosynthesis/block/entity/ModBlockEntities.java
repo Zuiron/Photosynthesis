@@ -112,8 +112,9 @@ public class ModBlockEntities {
                 FabricBlockEntityTypeBuilder.create(SingleDoubleChestBlockEntity::new,
                         //all kitchen counters or objects of SingleDoubleChest's goes here.
                         ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_OAK,
-                        ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_OAK)
-                        .build(null));
+                        ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_OAK,
+                        ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_OAK
+                ).build(null));
 
         FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidStorage, LATEX_EXTRACTOR); //ALL sides extract, ok.
 
