@@ -4,14 +4,22 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Block;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
+import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemConvertible;
+import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.zuiron.photosynthesis.block.ModBlocks;
+import net.zuiron.photosynthesis.item.ModItems;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.function.Consumer;
 
 public class ModRecipeGenerator extends FabricRecipeProvider {
@@ -34,6 +42,28 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                         FabricRecipeProvider.conditionsFromItem(ModItems.CITRINE))
                 .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(ModItems.RAW_CITRINE)));
          */
+        List<ItemConvertible> kitchendecor = new ArrayList<>();
+        List<ItemConvertible> kitchendecor_wood = new ArrayList<>();
+        List<ItemConvertible> kitchendecor_top = new ArrayList<>();
+
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_OAK);  kitchendecor_wood.add(Items.OAK_PLANKS); kitchendecor_top.add(Items.POLISHED_ANDESITE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_OAK);   kitchendecor_wood.add(Items.OAK_PLANKS); kitchendecor_top.add(Items.POLISHED_DIORITE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_GRANITE_OAK);   kitchendecor_wood.add(Items.OAK_PLANKS); kitchendecor_top.add(Items.POLISHED_GRANITE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_OAK); kitchendecor_wood.add(Items.OAK_PLANKS); kitchendecor_top.add(Items.POLISHED_DEEPSLATE_SLAB);
+
+        for (int i = 0; i < kitchendecor.size(); i++) {
+            ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, kitchendecor.get(i))
+                    .pattern("___")
+                    .pattern("BWB")
+                    .pattern("WWW")
+                    .input('_', kitchendecor_top.get(i))
+                    .input('B', Items.BARREL)
+                    .input('W', kitchendecor_wood.get(i))
+                    .criterion(FabricRecipeProvider.hasItem(kitchendecor_top.get(i)), FabricRecipeProvider.conditionsFromItem(kitchendecor_top.get(i)))
+                    .criterion(FabricRecipeProvider.hasItem(Items.BARREL), FabricRecipeProvider.conditionsFromItem(Items.BARREL))
+                    .criterion(FabricRecipeProvider.hasItem(kitchendecor_wood.get(i)), FabricRecipeProvider.conditionsFromItem(kitchendecor_wood.get(i)))
+                    .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(kitchendecor.get(i))));
+        }
 
         /*final TagKey<Item> APPLETREE_LOGS_ITEMS = TagKey.of(RegistryKeys.ITEM, new Identifier("photosynthesis", "appletree_logs"));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.APPLETREE_PLANKS, 4)
@@ -42,6 +72,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .criterion(FabricRecipeProvider.hasItem(ModBlocks.APPLETREE_LOG),FabricRecipeProvider.conditionsFromItem(ModBlocks.APPLETREE_LOG))
                 .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(ModBlocks.APPLETREE_PLANKS)));
         */
+
         final TagKey<Item> APPLETREE_LOGS_ITEMS = TagKey.of(RegistryKeys.ITEM, new Identifier("photosynthesis", "appletree_logs"));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.APPLETREE_PLANKS, 4)
                 .input(APPLETREE_LOGS_ITEMS)
