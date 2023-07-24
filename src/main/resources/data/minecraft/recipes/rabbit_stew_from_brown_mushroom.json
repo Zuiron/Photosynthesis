@@ -1,38 +1,6 @@
 {
-  "type": "photosynthesis:cookingpot",
-  "ingredients": [
-    {
-      "tag": "c:cookingpot_watercontainers",
-      "count": 1
-    },
-    {
-      "item": "minecraft:bowl",
-      "count": 6
-    },
-    {
-      "item": "minecraft:baked_potato",
-      "count": 2
-    },
-    {
-      "item": "minecraft:cooked_rabbit",
-      "count": 1
-    },
-    {
-      "item": "minecraft:carrot",
-      "count": 1
-    },
-    {
-      "item": "minecraft:brown_mushroom",
-      "count": 2
-    },
-    {
-      "item": "photosynthesis:salt",
-      "count": 1
-    }
-  ],
-  "output": {
-    "item": "minecraft:rabbit_stew",
-    "count": 6
-  },
-  "cookingtime": 100
+  "type": "minecraft:crafting_shaped",
+  "pattern": [],
+  "key": {},
+  "result": {}
 }
