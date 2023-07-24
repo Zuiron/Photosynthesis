@@ -10,6 +10,19 @@
   "text.autoconfig.photosynthesis.option.seasons.@Tooltip": "When YES, Seasons is enabled.",
   "text.autoconfig.photosynthesis.option.daysPerSeason": "Days Per Season",
 
+  "block.photosynthesis.kitchencounter_polished_diorite_oak": "Kitchen Countertop",
+  "block.photosynthesis.kitchencounter_drawers_polished_diorite_oak": "Kitchen Countertop",
+  "block.photosynthesis.kitchencounter_big_polished_diorite_oak": "Kitchen Countertop",
+  "block.photosynthesis.kitchencounter_polished_deepslate_oak": "Kitchen Countertop",
+  "block.photosynthesis.kitchencounter_drawers_polished_deepslate_oak": "Kitchen Countertop",
+  "block.photosynthesis.kitchencounter_big_polished_deepslate_oak": "Kitchen Countertop",
+  "block.photosynthesis.kitchencounter_polished_andesite_oak": "Kitchen Countertop",
+  "block.photosynthesis.kitchencounter_drawers_polished_andesite_oak": "Kitchen Countertop",
+  "block.photosynthesis.kitchencounter_big_polished_andesite_oak": "Kitchen Countertop",
+  "block.photosynthesis.kitchencounter_polished_granite_oak": "Kitchen Countertop",
+  "block.photosynthesis.kitchencounter_drawers_polished_granite_oak": "Kitchen Countertop",
+  "block.photosynthesis.kitchencounter_big_polished_granite_oak": "Kitchen Countertop",
+
   "block.photosynthesis.keg": "Keg",
   "block.photosynthesis.milk_seperator": "Milk Separator",
 
