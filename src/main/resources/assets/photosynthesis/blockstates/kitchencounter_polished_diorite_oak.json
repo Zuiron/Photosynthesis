@@ -1,18 +1,33 @@
 {
   "variants": {
-    "facing=north": {
+    "facing=north,open=false": {
       "model": "photosynthesis:block/kitchencounter_polished_diorite_oak"
     },
-    "facing=south": {
+    "facing=north,open=true": {
+      "model": "photosynthesis:block/kitchencounter_polished_diorite_oak_open"
+    },
+    "facing=south,open=false": {
       "model": "photosynthesis:block/kitchencounter_polished_diorite_oak",
       "y": 180
     },
-    "facing=west": {
+    "facing=south,open=true": {
+      "model": "photosynthesis:block/kitchencounter_polished_diorite_oak_open",
+      "y": 180
+    },
+    "facing=west,open=false": {
       "model": "photosynthesis:block/kitchencounter_polished_diorite_oak",
       "y": 270
     },
-    "facing=east": {
+    "facing=west,open=true": {
+      "model": "photosynthesis:block/kitchencounter_polished_diorite_oak_open",
+      "y": 270
+    },
+    "facing=east,open=false": {
       "model": "photosynthesis:block/kitchencounter_polished_diorite_oak",
+      "y": 90
+    },
+    "facing=east,open=true": {
+      "model": "photosynthesis:block/kitchencounter_polished_diorite_oak_open",
       "y": 90
     }
   }

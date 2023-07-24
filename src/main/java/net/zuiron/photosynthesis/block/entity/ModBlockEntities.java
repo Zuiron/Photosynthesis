@@ -111,9 +111,16 @@ public class ModBlockEntities {
                 new Identifier(Photosynthesis.MOD_ID, "singledoublechest"),
                 FabricBlockEntityTypeBuilder.create(SingleDoubleChestBlockEntity::new,
                         //all kitchen counters or objects of SingleDoubleChest's goes here.
+                        //Diorite
                         ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_OAK,
+                        //Deepslate
                         ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_OAK,
-                        ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_OAK
+                        //Andesite
+                        ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_OAK,
+                        ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_OAK,
+                        ModBlocks.KITCHENCOUNTER_BIG_POLISHED_ANDESITE_OAK,
+                        //Granite
+                        ModBlocks.KITCHENCOUNTER_POLISHED_GRANITE_OAK
                 ).build(null));
 
         FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidStorage, LATEX_EXTRACTOR); //ALL sides extract, ok.
