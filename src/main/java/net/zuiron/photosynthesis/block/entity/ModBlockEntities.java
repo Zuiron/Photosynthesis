@@ -117,6 +117,8 @@ public class ModBlockEntities {
                         ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DIORITE_OAK,
                         //Deepslate
                         ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_OAK,
+                        ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DEEPSLATE_OAK,
+                        ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DEEPSLATE_OAK,
                         //Andesite
                         ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_OAK,
                         ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_OAK,
