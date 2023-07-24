@@ -110,7 +110,10 @@ public class ModBlockEntities {
         SINGLEDOUBLECHEST = Registry.register(Registries.BLOCK_ENTITY_TYPE,
                 new Identifier(Photosynthesis.MOD_ID, "singledoublechest"),
                 FabricBlockEntityTypeBuilder.create(SingleDoubleChestBlockEntity::new,
-                        ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_OAK,ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_OAK).build(null));
+                        //all kitchen counters or objects of SingleDoubleChest's goes here.
+                        ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_OAK,
+                        ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_OAK)
+                        .build(null));
 
         FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidStorage, LATEX_EXTRACTOR); //ALL sides extract, ok.
 
