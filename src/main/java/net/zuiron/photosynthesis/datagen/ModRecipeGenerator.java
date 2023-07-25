@@ -46,7 +46,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
         List<ItemConvertible> itemconvert_from = new ArrayList<>();
         List<ItemConvertible> itemconvert_to = new ArrayList<>();
 
-        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_OAK);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DEEPSLATE_OAK);
+        /*itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_OAK);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DEEPSLATE_OAK);
         itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DEEPSLATE_OAK);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DEEPSLATE_OAK);
         itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DEEPSLATE_OAK);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_OAK);
 
@@ -60,7 +60,151 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
 
         itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_OAK);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_OAK);
         itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_OAK);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_ANDESITE_OAK);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_ANDESITE_OAK);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_OAK);*/
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_OAK);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DIORITE_OAK);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DIORITE_OAK);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DIORITE_OAK);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DIORITE_OAK);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_OAK);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_GRANITE_OAK);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_GRANITE_OAK);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_GRANITE_OAK);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_GRANITE_OAK);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_GRANITE_OAK);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_GRANITE_OAK);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_OAK);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DEEPSLATE_OAK);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DEEPSLATE_OAK);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DEEPSLATE_OAK);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DEEPSLATE_OAK);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_OAK);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_OAK);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_OAK);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_OAK);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_ANDESITE_OAK);
         itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_ANDESITE_OAK);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_OAK);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_SPRUCE);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DIORITE_SPRUCE);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DIORITE_SPRUCE);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DIORITE_SPRUCE);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DIORITE_SPRUCE);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_SPRUCE);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_GRANITE_SPRUCE);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_GRANITE_SPRUCE);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_GRANITE_SPRUCE);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_GRANITE_SPRUCE);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_GRANITE_SPRUCE);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_GRANITE_SPRUCE);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_SPRUCE);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DEEPSLATE_SPRUCE);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DEEPSLATE_SPRUCE);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DEEPSLATE_SPRUCE);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DEEPSLATE_SPRUCE);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_SPRUCE);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_SPRUCE);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_SPRUCE);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_SPRUCE);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_ANDESITE_SPRUCE);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_ANDESITE_SPRUCE);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_SPRUCE);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_BIRCH);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DIORITE_BIRCH);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DIORITE_BIRCH);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DIORITE_BIRCH);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DIORITE_BIRCH);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_BIRCH);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_GRANITE_BIRCH);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_GRANITE_BIRCH);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_GRANITE_BIRCH);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_GRANITE_BIRCH);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_GRANITE_BIRCH);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_GRANITE_BIRCH);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_BIRCH);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DEEPSLATE_BIRCH);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DEEPSLATE_BIRCH);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DEEPSLATE_BIRCH);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DEEPSLATE_BIRCH);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_BIRCH);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_BIRCH);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_BIRCH);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_BIRCH);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_ANDESITE_BIRCH);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_ANDESITE_BIRCH);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_BIRCH);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_JUNGLE);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DIORITE_JUNGLE);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DIORITE_JUNGLE);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DIORITE_JUNGLE);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DIORITE_JUNGLE);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_JUNGLE);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_GRANITE_JUNGLE);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_GRANITE_JUNGLE);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_GRANITE_JUNGLE);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_GRANITE_JUNGLE);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_GRANITE_JUNGLE);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_GRANITE_JUNGLE);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_JUNGLE);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DEEPSLATE_JUNGLE);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DEEPSLATE_JUNGLE);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DEEPSLATE_JUNGLE);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DEEPSLATE_JUNGLE);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_JUNGLE);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_JUNGLE);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_JUNGLE);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_JUNGLE);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_ANDESITE_JUNGLE);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_ANDESITE_JUNGLE);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_JUNGLE);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_ACACIA);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DIORITE_ACACIA);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DIORITE_ACACIA);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DIORITE_ACACIA);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DIORITE_ACACIA);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_ACACIA);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_GRANITE_ACACIA);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_GRANITE_ACACIA);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_GRANITE_ACACIA);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_GRANITE_ACACIA);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_GRANITE_ACACIA);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_GRANITE_ACACIA);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_ACACIA);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DEEPSLATE_ACACIA);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DEEPSLATE_ACACIA);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DEEPSLATE_ACACIA);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DEEPSLATE_ACACIA);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_ACACIA);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_ACACIA);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_ACACIA);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_ACACIA);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_ANDESITE_ACACIA);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_ANDESITE_ACACIA);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_ACACIA);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_CHERRY);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DIORITE_CHERRY);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DIORITE_CHERRY);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DIORITE_CHERRY);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DIORITE_CHERRY);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_CHERRY);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_GRANITE_CHERRY);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_GRANITE_CHERRY);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_GRANITE_CHERRY);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_GRANITE_CHERRY);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_GRANITE_CHERRY);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_GRANITE_CHERRY);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_CHERRY);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DEEPSLATE_CHERRY);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DEEPSLATE_CHERRY);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DEEPSLATE_CHERRY);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DEEPSLATE_CHERRY);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_CHERRY);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_CHERRY);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_CHERRY);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_CHERRY);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_ANDESITE_CHERRY);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_ANDESITE_CHERRY);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_CHERRY);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_DARKOAK);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DIORITE_DARKOAK);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DIORITE_DARKOAK);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DIORITE_DARKOAK);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DIORITE_DARKOAK);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_DARKOAK);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_GRANITE_DARKOAK);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_GRANITE_DARKOAK);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_GRANITE_DARKOAK);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_GRANITE_DARKOAK);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_GRANITE_DARKOAK);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_GRANITE_DARKOAK);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_DARKOAK);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DEEPSLATE_DARKOAK);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DEEPSLATE_DARKOAK);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DEEPSLATE_DARKOAK);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DEEPSLATE_DARKOAK);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_DARKOAK);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_DARKOAK);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_DARKOAK);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_DARKOAK);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_ANDESITE_DARKOAK);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_ANDESITE_DARKOAK);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_DARKOAK);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_MANGROVE);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DIORITE_MANGROVE);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DIORITE_MANGROVE);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DIORITE_MANGROVE);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DIORITE_MANGROVE);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_MANGROVE);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_GRANITE_MANGROVE);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_GRANITE_MANGROVE);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_GRANITE_MANGROVE);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_GRANITE_MANGROVE);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_GRANITE_MANGROVE);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_GRANITE_MANGROVE);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_MANGROVE);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DEEPSLATE_MANGROVE);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DEEPSLATE_MANGROVE);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DEEPSLATE_MANGROVE);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DEEPSLATE_MANGROVE);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_MANGROVE);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_MANGROVE);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_MANGROVE);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_MANGROVE);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_ANDESITE_MANGROVE);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_ANDESITE_MANGROVE);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_MANGROVE);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_BAMBOO);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DIORITE_BAMBOO);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DIORITE_BAMBOO);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DIORITE_BAMBOO);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DIORITE_BAMBOO);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_BAMBOO);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_GRANITE_BAMBOO);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_GRANITE_BAMBOO);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_GRANITE_BAMBOO);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_GRANITE_BAMBOO);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_GRANITE_BAMBOO);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_GRANITE_BAMBOO);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_BAMBOO);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DEEPSLATE_BAMBOO);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DEEPSLATE_BAMBOO);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DEEPSLATE_BAMBOO);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_DEEPSLATE_BAMBOO);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_BAMBOO);
+
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_BAMBOO);          itemconvert_to.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_BAMBOO);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_BAMBOO);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_ANDESITE_BAMBOO);
+        itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_ANDESITE_BAMBOO);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_BAMBOO);
 
         for (int i = 0; i < itemconvert_from.size(); i++) {
             ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, itemconvert_to.get(i))
@@ -74,10 +218,48 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
         List<ItemConvertible> kitchendecor_wood = new ArrayList<>();
         List<ItemConvertible> kitchendecor_top = new ArrayList<>();
 
-        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_OAK);  kitchendecor_wood.add(Items.OAK_PLANKS); kitchendecor_top.add(Items.POLISHED_ANDESITE_SLAB);
+        /*kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_OAK);  kitchendecor_wood.add(Items.OAK_PLANKS); kitchendecor_top.add(Items.POLISHED_ANDESITE_SLAB);
         kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_OAK);   kitchendecor_wood.add(Items.OAK_PLANKS); kitchendecor_top.add(Items.POLISHED_DIORITE_SLAB);
         kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_GRANITE_OAK);   kitchendecor_wood.add(Items.OAK_PLANKS); kitchendecor_top.add(Items.POLISHED_GRANITE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_OAK); kitchendecor_wood.add(Items.OAK_PLANKS); kitchendecor_top.add(Items.POLISHED_DEEPSLATE_SLAB);*/
+
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_OAK); kitchendecor_wood.add(Items.OAK_PLANKS); kitchendecor_top.add(Items.POLISHED_DIORITE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_GRANITE_OAK); kitchendecor_wood.add(Items.OAK_PLANKS); kitchendecor_top.add(Items.POLISHED_GRANITE_SLAB);
         kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_OAK); kitchendecor_wood.add(Items.OAK_PLANKS); kitchendecor_top.add(Items.POLISHED_DEEPSLATE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_OAK); kitchendecor_wood.add(Items.OAK_PLANKS); kitchendecor_top.add(Items.POLISHED_ANDESITE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_SPRUCE); kitchendecor_wood.add(Items.SPRUCE_PLANKS); kitchendecor_top.add(Items.POLISHED_DIORITE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_GRANITE_SPRUCE); kitchendecor_wood.add(Items.SPRUCE_PLANKS); kitchendecor_top.add(Items.POLISHED_GRANITE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_SPRUCE); kitchendecor_wood.add(Items.SPRUCE_PLANKS); kitchendecor_top.add(Items.POLISHED_DEEPSLATE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_SPRUCE); kitchendecor_wood.add(Items.SPRUCE_PLANKS); kitchendecor_top.add(Items.POLISHED_ANDESITE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_BIRCH); kitchendecor_wood.add(Items.BIRCH_PLANKS); kitchendecor_top.add(Items.POLISHED_DIORITE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_GRANITE_BIRCH); kitchendecor_wood.add(Items.BIRCH_PLANKS); kitchendecor_top.add(Items.POLISHED_GRANITE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_BIRCH); kitchendecor_wood.add(Items.BIRCH_PLANKS); kitchendecor_top.add(Items.POLISHED_DEEPSLATE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_BIRCH); kitchendecor_wood.add(Items.BIRCH_PLANKS); kitchendecor_top.add(Items.POLISHED_ANDESITE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_JUNGLE); kitchendecor_wood.add(Items.JUNGLE_PLANKS); kitchendecor_top.add(Items.POLISHED_DIORITE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_GRANITE_JUNGLE); kitchendecor_wood.add(Items.JUNGLE_PLANKS); kitchendecor_top.add(Items.POLISHED_GRANITE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_JUNGLE); kitchendecor_wood.add(Items.JUNGLE_PLANKS); kitchendecor_top.add(Items.POLISHED_DEEPSLATE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_JUNGLE); kitchendecor_wood.add(Items.JUNGLE_PLANKS); kitchendecor_top.add(Items.POLISHED_ANDESITE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_ACACIA); kitchendecor_wood.add(Items.ACACIA_PLANKS); kitchendecor_top.add(Items.POLISHED_DIORITE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_GRANITE_ACACIA); kitchendecor_wood.add(Items.ACACIA_PLANKS); kitchendecor_top.add(Items.POLISHED_GRANITE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_ACACIA); kitchendecor_wood.add(Items.ACACIA_PLANKS); kitchendecor_top.add(Items.POLISHED_DEEPSLATE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_ACACIA); kitchendecor_wood.add(Items.ACACIA_PLANKS); kitchendecor_top.add(Items.POLISHED_ANDESITE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_CHERRY); kitchendecor_wood.add(Items.CHERRY_PLANKS); kitchendecor_top.add(Items.POLISHED_DIORITE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_GRANITE_CHERRY); kitchendecor_wood.add(Items.CHERRY_PLANKS); kitchendecor_top.add(Items.POLISHED_GRANITE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_CHERRY); kitchendecor_wood.add(Items.CHERRY_PLANKS); kitchendecor_top.add(Items.POLISHED_DEEPSLATE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_CHERRY); kitchendecor_wood.add(Items.CHERRY_PLANKS); kitchendecor_top.add(Items.POLISHED_ANDESITE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_DARKOAK); kitchendecor_wood.add(Items.DARK_OAK_PLANKS); kitchendecor_top.add(Items.POLISHED_DIORITE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_GRANITE_DARKOAK); kitchendecor_wood.add(Items.DARK_OAK_PLANKS); kitchendecor_top.add(Items.POLISHED_GRANITE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_DARKOAK); kitchendecor_wood.add(Items.DARK_OAK_PLANKS); kitchendecor_top.add(Items.POLISHED_DEEPSLATE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_DARKOAK); kitchendecor_wood.add(Items.DARK_OAK_PLANKS); kitchendecor_top.add(Items.POLISHED_ANDESITE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_MANGROVE); kitchendecor_wood.add(Items.MANGROVE_PLANKS); kitchendecor_top.add(Items.POLISHED_DIORITE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_GRANITE_MANGROVE); kitchendecor_wood.add(Items.MANGROVE_PLANKS); kitchendecor_top.add(Items.POLISHED_GRANITE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_MANGROVE); kitchendecor_wood.add(Items.MANGROVE_PLANKS); kitchendecor_top.add(Items.POLISHED_DEEPSLATE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_MANGROVE); kitchendecor_wood.add(Items.MANGROVE_PLANKS); kitchendecor_top.add(Items.POLISHED_ANDESITE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_DIORITE_BAMBOO); kitchendecor_wood.add(Items.BAMBOO_PLANKS); kitchendecor_top.add(Items.POLISHED_DIORITE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_GRANITE_BAMBOO); kitchendecor_wood.add(Items.BAMBOO_PLANKS); kitchendecor_top.add(Items.POLISHED_GRANITE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_BAMBOO); kitchendecor_wood.add(Items.BAMBOO_PLANKS); kitchendecor_top.add(Items.POLISHED_DEEPSLATE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_BAMBOO); kitchendecor_wood.add(Items.BAMBOO_PLANKS); kitchendecor_top.add(Items.POLISHED_ANDESITE_SLAB);
+
 
         for (int i = 0; i < kitchendecor.size(); i++) {
             ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, kitchendecor.get(i))

@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=north,open=false": {
+      "model": "photosynthesis:block/kitchencounter_big_polished_andesite_spruce"
+    },
+    "facing=north,open=true": {
+      "model": "photosynthesis:block/kitchencounter_big_polished_andesite_spruce_open"
+    },
+    "facing=south,open=false": {
+      "model": "photosynthesis:block/kitchencounter_big_polished_andesite_spruce",
+      "y": 180
+    },
+    "facing=south,open=true": {
+      "model": "photosynthesis:block/kitchencounter_big_polished_andesite_spruce_open",
+      "y": 180
+    },
+    "facing=west,open=false": {
+      "model": "photosynthesis:block/kitchencounter_big_polished_andesite_spruce",
+      "y": 270
+    },
+    "facing=west,open=true": {
+      "model": "photosynthesis:block/kitchencounter_big_polished_andesite_spruce_open",
+      "y": 270
+    },
+    "facing=east,open=false": {
+      "model": "photosynthesis:block/kitchencounter_big_polished_andesite_spruce",
+      "y": 90
+    },
+    "facing=east,open=true": {
+      "model": "photosynthesis:block/kitchencounter_big_polished_andesite_spruce_open",
+      "y": 90
+    }
+  }
+}

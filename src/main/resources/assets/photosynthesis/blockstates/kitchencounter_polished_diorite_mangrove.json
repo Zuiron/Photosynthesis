@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=north,open=false": {
+      "model": "photosynthesis:block/kitchencounter_polished_diorite_mangrove"
+    },
+    "facing=north,open=true": {
+      "model": "photosynthesis:block/kitchencounter_polished_diorite_mangrove_open"
+    },
+    "facing=south,open=false": {
+      "model": "photosynthesis:block/kitchencounter_polished_diorite_mangrove",
+      "y": 180
+    },
+    "facing=south,open=true": {
+      "model": "photosynthesis:block/kitchencounter_polished_diorite_mangrove_open",
+      "y": 180
+    },
+    "facing=west,open=false": {
+      "model": "photosynthesis:block/kitchencounter_polished_diorite_mangrove",
+      "y": 270
+    },
+    "facing=west,open=true": {
+      "model": "photosynthesis:block/kitchencounter_polished_diorite_mangrove_open",
+      "y": 270
+    },
+    "facing=east,open=false": {
+      "model": "photosynthesis:block/kitchencounter_polished_diorite_mangrove",
+      "y": 90
+    },
+    "facing=east,open=true": {
+      "model": "photosynthesis:block/kitchencounter_polished_diorite_mangrove_open",
+      "y": 90
+    }
+  }
+}

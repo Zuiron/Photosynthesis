@@ -1,0 +1,6 @@
+{
+  "parent": "photosynthesis:block/blockmodels/uniqueallsides",
+  "textures": {
+    "0": "photosynthesis:block/kitchencounter_drawers_polished_granite_jungle_open"
+  }
+}

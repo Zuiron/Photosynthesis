@@ -110,7 +110,7 @@ public class ModBlocks {
             new ShelfBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
                     .strength(2f).nonOpaque()));
 
-    public static final Block KITCHENCOUNTER_POLISHED_DIORITE_OAK = registerBlock("kitchencounter_polished_diorite_oak",
+    /*public static final Block KITCHENCOUNTER_POLISHED_DIORITE_OAK = registerBlock("kitchencounter_polished_diorite_oak",
             new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
                     .strength(2f).nonOpaque()));
 
@@ -156,7 +156,442 @@ public class ModBlocks {
 
     public static final Block KITCHENCOUNTER_BIG_POLISHED_GRANITE_OAK = registerBlock("kitchencounter_big_polished_granite_oak",
             new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));*/
+
+
+
+    public static final Block KITCHENCOUNTER_POLISHED_DIORITE_OAK = registerBlock("kitchencounter_polished_diorite_oak",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
                     .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_DIORITE_OAK = registerBlock("kitchencounter_big_polished_diorite_oak",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_DIORITE_OAK = registerBlock("kitchencounter_drawers_polished_diorite_oak",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_GRANITE_OAK = registerBlock("kitchencounter_polished_granite_oak",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_GRANITE_OAK = registerBlock("kitchencounter_big_polished_granite_oak",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_GRANITE_OAK = registerBlock("kitchencounter_drawers_polished_granite_oak",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_DEEPSLATE_OAK = registerBlock("kitchencounter_polished_deepslate_oak",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_DEEPSLATE_OAK = registerBlock("kitchencounter_big_polished_deepslate_oak",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_DEEPSLATE_OAK = registerBlock("kitchencounter_drawers_polished_deepslate_oak",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_ANDESITE_OAK = registerBlock("kitchencounter_polished_andesite_oak",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_ANDESITE_OAK = registerBlock("kitchencounter_big_polished_andesite_oak",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_OAK = registerBlock("kitchencounter_drawers_polished_andesite_oak",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_DIORITE_SPRUCE = registerBlock("kitchencounter_polished_diorite_spruce",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_DIORITE_SPRUCE = registerBlock("kitchencounter_big_polished_diorite_spruce",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_DIORITE_SPRUCE = registerBlock("kitchencounter_drawers_polished_diorite_spruce",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_GRANITE_SPRUCE = registerBlock("kitchencounter_polished_granite_spruce",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_GRANITE_SPRUCE = registerBlock("kitchencounter_big_polished_granite_spruce",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_GRANITE_SPRUCE = registerBlock("kitchencounter_drawers_polished_granite_spruce",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_DEEPSLATE_SPRUCE = registerBlock("kitchencounter_polished_deepslate_spruce",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_DEEPSLATE_SPRUCE = registerBlock("kitchencounter_big_polished_deepslate_spruce",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_DEEPSLATE_SPRUCE = registerBlock("kitchencounter_drawers_polished_deepslate_spruce",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_ANDESITE_SPRUCE = registerBlock("kitchencounter_polished_andesite_spruce",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_ANDESITE_SPRUCE = registerBlock("kitchencounter_big_polished_andesite_spruce",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_SPRUCE = registerBlock("kitchencounter_drawers_polished_andesite_spruce",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_DIORITE_BIRCH = registerBlock("kitchencounter_polished_diorite_birch",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_DIORITE_BIRCH = registerBlock("kitchencounter_big_polished_diorite_birch",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_DIORITE_BIRCH = registerBlock("kitchencounter_drawers_polished_diorite_birch",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_GRANITE_BIRCH = registerBlock("kitchencounter_polished_granite_birch",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_GRANITE_BIRCH = registerBlock("kitchencounter_big_polished_granite_birch",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_GRANITE_BIRCH = registerBlock("kitchencounter_drawers_polished_granite_birch",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_DEEPSLATE_BIRCH = registerBlock("kitchencounter_polished_deepslate_birch",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_DEEPSLATE_BIRCH = registerBlock("kitchencounter_big_polished_deepslate_birch",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_DEEPSLATE_BIRCH = registerBlock("kitchencounter_drawers_polished_deepslate_birch",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_ANDESITE_BIRCH = registerBlock("kitchencounter_polished_andesite_birch",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_ANDESITE_BIRCH = registerBlock("kitchencounter_big_polished_andesite_birch",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_BIRCH = registerBlock("kitchencounter_drawers_polished_andesite_birch",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_DIORITE_JUNGLE = registerBlock("kitchencounter_polished_diorite_jungle",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_DIORITE_JUNGLE = registerBlock("kitchencounter_big_polished_diorite_jungle",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_DIORITE_JUNGLE = registerBlock("kitchencounter_drawers_polished_diorite_jungle",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_GRANITE_JUNGLE = registerBlock("kitchencounter_polished_granite_jungle",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_GRANITE_JUNGLE = registerBlock("kitchencounter_big_polished_granite_jungle",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_GRANITE_JUNGLE = registerBlock("kitchencounter_drawers_polished_granite_jungle",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_DEEPSLATE_JUNGLE = registerBlock("kitchencounter_polished_deepslate_jungle",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_DEEPSLATE_JUNGLE = registerBlock("kitchencounter_big_polished_deepslate_jungle",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_DEEPSLATE_JUNGLE = registerBlock("kitchencounter_drawers_polished_deepslate_jungle",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_ANDESITE_JUNGLE = registerBlock("kitchencounter_polished_andesite_jungle",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_ANDESITE_JUNGLE = registerBlock("kitchencounter_big_polished_andesite_jungle",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_JUNGLE = registerBlock("kitchencounter_drawers_polished_andesite_jungle",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_DIORITE_ACACIA = registerBlock("kitchencounter_polished_diorite_acacia",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_DIORITE_ACACIA = registerBlock("kitchencounter_big_polished_diorite_acacia",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_DIORITE_ACACIA = registerBlock("kitchencounter_drawers_polished_diorite_acacia",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_GRANITE_ACACIA = registerBlock("kitchencounter_polished_granite_acacia",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_GRANITE_ACACIA = registerBlock("kitchencounter_big_polished_granite_acacia",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_GRANITE_ACACIA = registerBlock("kitchencounter_drawers_polished_granite_acacia",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_DEEPSLATE_ACACIA = registerBlock("kitchencounter_polished_deepslate_acacia",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_DEEPSLATE_ACACIA = registerBlock("kitchencounter_big_polished_deepslate_acacia",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_DEEPSLATE_ACACIA = registerBlock("kitchencounter_drawers_polished_deepslate_acacia",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_ANDESITE_ACACIA = registerBlock("kitchencounter_polished_andesite_acacia",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_ANDESITE_ACACIA = registerBlock("kitchencounter_big_polished_andesite_acacia",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_ACACIA = registerBlock("kitchencounter_drawers_polished_andesite_acacia",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_DIORITE_CHERRY = registerBlock("kitchencounter_polished_diorite_cherry",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_DIORITE_CHERRY = registerBlock("kitchencounter_big_polished_diorite_cherry",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_DIORITE_CHERRY = registerBlock("kitchencounter_drawers_polished_diorite_cherry",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_GRANITE_CHERRY = registerBlock("kitchencounter_polished_granite_cherry",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_GRANITE_CHERRY = registerBlock("kitchencounter_big_polished_granite_cherry",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_GRANITE_CHERRY = registerBlock("kitchencounter_drawers_polished_granite_cherry",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_DEEPSLATE_CHERRY = registerBlock("kitchencounter_polished_deepslate_cherry",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_DEEPSLATE_CHERRY = registerBlock("kitchencounter_big_polished_deepslate_cherry",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_DEEPSLATE_CHERRY = registerBlock("kitchencounter_drawers_polished_deepslate_cherry",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_ANDESITE_CHERRY = registerBlock("kitchencounter_polished_andesite_cherry",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_ANDESITE_CHERRY = registerBlock("kitchencounter_big_polished_andesite_cherry",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_CHERRY = registerBlock("kitchencounter_drawers_polished_andesite_cherry",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_DIORITE_DARKOAK = registerBlock("kitchencounter_polished_diorite_darkoak",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_DIORITE_DARKOAK = registerBlock("kitchencounter_big_polished_diorite_darkoak",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_DIORITE_DARKOAK = registerBlock("kitchencounter_drawers_polished_diorite_darkoak",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_GRANITE_DARKOAK = registerBlock("kitchencounter_polished_granite_darkoak",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_GRANITE_DARKOAK = registerBlock("kitchencounter_big_polished_granite_darkoak",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_GRANITE_DARKOAK = registerBlock("kitchencounter_drawers_polished_granite_darkoak",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_DEEPSLATE_DARKOAK = registerBlock("kitchencounter_polished_deepslate_darkoak",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_DEEPSLATE_DARKOAK = registerBlock("kitchencounter_big_polished_deepslate_darkoak",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_DEEPSLATE_DARKOAK = registerBlock("kitchencounter_drawers_polished_deepslate_darkoak",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_ANDESITE_DARKOAK = registerBlock("kitchencounter_polished_andesite_darkoak",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_ANDESITE_DARKOAK = registerBlock("kitchencounter_big_polished_andesite_darkoak",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_DARKOAK = registerBlock("kitchencounter_drawers_polished_andesite_darkoak",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_DIORITE_MANGROVE = registerBlock("kitchencounter_polished_diorite_mangrove",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_DIORITE_MANGROVE = registerBlock("kitchencounter_big_polished_diorite_mangrove",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_DIORITE_MANGROVE = registerBlock("kitchencounter_drawers_polished_diorite_mangrove",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_GRANITE_MANGROVE = registerBlock("kitchencounter_polished_granite_mangrove",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_GRANITE_MANGROVE = registerBlock("kitchencounter_big_polished_granite_mangrove",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_GRANITE_MANGROVE = registerBlock("kitchencounter_drawers_polished_granite_mangrove",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_DEEPSLATE_MANGROVE = registerBlock("kitchencounter_polished_deepslate_mangrove",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_DEEPSLATE_MANGROVE = registerBlock("kitchencounter_big_polished_deepslate_mangrove",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_DEEPSLATE_MANGROVE = registerBlock("kitchencounter_drawers_polished_deepslate_mangrove",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_ANDESITE_MANGROVE = registerBlock("kitchencounter_polished_andesite_mangrove",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_ANDESITE_MANGROVE = registerBlock("kitchencounter_big_polished_andesite_mangrove",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_MANGROVE = registerBlock("kitchencounter_drawers_polished_andesite_mangrove",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_DIORITE_BAMBOO = registerBlock("kitchencounter_polished_diorite_bamboo",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_DIORITE_BAMBOO = registerBlock("kitchencounter_big_polished_diorite_bamboo",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_DIORITE_BAMBOO = registerBlock("kitchencounter_drawers_polished_diorite_bamboo",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_GRANITE_BAMBOO = registerBlock("kitchencounter_polished_granite_bamboo",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_GRANITE_BAMBOO = registerBlock("kitchencounter_big_polished_granite_bamboo",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_GRANITE_BAMBOO = registerBlock("kitchencounter_drawers_polished_granite_bamboo",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_DEEPSLATE_BAMBOO = registerBlock("kitchencounter_polished_deepslate_bamboo",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_DEEPSLATE_BAMBOO = registerBlock("kitchencounter_big_polished_deepslate_bamboo",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_DEEPSLATE_BAMBOO = registerBlock("kitchencounter_drawers_polished_deepslate_bamboo",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_POLISHED_ANDESITE_BAMBOO = registerBlock("kitchencounter_polished_andesite_bamboo",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_BIG_POLISHED_ANDESITE_BAMBOO = registerBlock("kitchencounter_big_polished_andesite_bamboo",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_BAMBOO = registerBlock("kitchencounter_drawers_polished_andesite_bamboo",
+            new SingleDoubleChestBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
 
 
     // CROP BLOCKS -----------------------------------------------------------------------------------------------------

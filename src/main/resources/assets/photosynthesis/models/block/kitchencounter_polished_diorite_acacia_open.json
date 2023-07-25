@@ -1,0 +1,6 @@
+{
+  "parent": "photosynthesis:block/blockmodels/uniqueallsides",
+  "textures": {
+    "0": "photosynthesis:block/kitchencounter_polished_diorite_acacia_open"
+  }
+}
