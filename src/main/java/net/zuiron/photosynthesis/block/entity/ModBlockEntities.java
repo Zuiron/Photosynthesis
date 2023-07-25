@@ -234,7 +234,37 @@ public class ModBlockEntities {
                         ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_DEEPSLATE_BAMBOO,
                         ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_BAMBOO,
                         ModBlocks.KITCHENCOUNTER_BIG_POLISHED_ANDESITE_BAMBOO,
-                        ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_BAMBOO
+                        ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_BAMBOO,
+
+                        //cabinets
+                        ModBlocks.KITCHENCABINET_SPLIT_OAK,
+                        ModBlocks.KITCHENCABINET_LEFT_OAK,
+                        ModBlocks.KITCHENCABINET_RIGHT_OAK,
+                        ModBlocks.KITCHENCABINET_SPLIT_SPRUCE,
+                        ModBlocks.KITCHENCABINET_LEFT_SPRUCE,
+                        ModBlocks.KITCHENCABINET_RIGHT_SPRUCE,
+                        ModBlocks.KITCHENCABINET_SPLIT_BIRCH,
+                        ModBlocks.KITCHENCABINET_LEFT_BIRCH,
+                        ModBlocks.KITCHENCABINET_RIGHT_BIRCH,
+                        ModBlocks.KITCHENCABINET_SPLIT_JUNGLE,
+                        ModBlocks.KITCHENCABINET_LEFT_JUNGLE,
+                        ModBlocks.KITCHENCABINET_RIGHT_JUNGLE,
+                        ModBlocks.KITCHENCABINET_SPLIT_ACACIA,
+                        ModBlocks.KITCHENCABINET_LEFT_ACACIA,
+                        ModBlocks.KITCHENCABINET_RIGHT_ACACIA,
+                        ModBlocks.KITCHENCABINET_SPLIT_CHERRY,
+                        ModBlocks.KITCHENCABINET_LEFT_CHERRY,
+                        ModBlocks.KITCHENCABINET_RIGHT_CHERRY,
+                        ModBlocks.KITCHENCABINET_SPLIT_DARKOAK,
+                        ModBlocks.KITCHENCABINET_LEFT_DARKOAK,
+                        ModBlocks.KITCHENCABINET_RIGHT_DARKOAK,
+                        ModBlocks.KITCHENCABINET_SPLIT_MANGROVE,
+                        ModBlocks.KITCHENCABINET_LEFT_MANGROVE,
+                        ModBlocks.KITCHENCABINET_RIGHT_MANGROVE,
+                        ModBlocks.KITCHENCABINET_SPLIT_BAMBOO,
+                        ModBlocks.KITCHENCABINET_LEFT_BAMBOO,
+                        ModBlocks.KITCHENCABINET_RIGHT_BAMBOO
+
                         ).build(null));
 
         FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidStorage, LATEX_EXTRACTOR); //ALL sides extract, ok.

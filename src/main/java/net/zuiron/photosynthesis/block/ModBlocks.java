@@ -594,6 +594,121 @@ public class ModBlocks {
 
 
 
+
+    //Cabinets
+
+    public static final Block KITCHENCABINET_SPLIT_OAK = registerBlock("kitchencabinet_split_oak",
+            new SingleDoubleChestBlockHalf(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCABINET_LEFT_OAK = registerBlock("kitchencabinet_left_oak",
+            new SingleDoubleChestBlockHalf(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCABINET_RIGHT_OAK = registerBlock("kitchencabinet_right_oak",
+            new SingleDoubleChestBlockHalf(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCABINET_SPLIT_SPRUCE = registerBlock("kitchencabinet_split_spruce",
+            new SingleDoubleChestBlockHalf(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCABINET_LEFT_SPRUCE = registerBlock("kitchencabinet_left_spruce",
+            new SingleDoubleChestBlockHalf(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCABINET_RIGHT_SPRUCE = registerBlock("kitchencabinet_right_spruce",
+            new SingleDoubleChestBlockHalf(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCABINET_SPLIT_BIRCH = registerBlock("kitchencabinet_split_birch",
+            new SingleDoubleChestBlockHalf(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCABINET_LEFT_BIRCH = registerBlock("kitchencabinet_left_birch",
+            new SingleDoubleChestBlockHalf(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCABINET_RIGHT_BIRCH = registerBlock("kitchencabinet_right_birch",
+            new SingleDoubleChestBlockHalf(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCABINET_SPLIT_JUNGLE = registerBlock("kitchencabinet_split_jungle",
+            new SingleDoubleChestBlockHalf(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCABINET_LEFT_JUNGLE = registerBlock("kitchencabinet_left_jungle",
+            new SingleDoubleChestBlockHalf(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCABINET_RIGHT_JUNGLE = registerBlock("kitchencabinet_right_jungle",
+            new SingleDoubleChestBlockHalf(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCABINET_SPLIT_ACACIA = registerBlock("kitchencabinet_split_acacia",
+            new SingleDoubleChestBlockHalf(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCABINET_LEFT_ACACIA = registerBlock("kitchencabinet_left_acacia",
+            new SingleDoubleChestBlockHalf(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCABINET_RIGHT_ACACIA = registerBlock("kitchencabinet_right_acacia",
+            new SingleDoubleChestBlockHalf(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCABINET_SPLIT_CHERRY = registerBlock("kitchencabinet_split_cherry",
+            new SingleDoubleChestBlockHalf(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCABINET_LEFT_CHERRY = registerBlock("kitchencabinet_left_cherry",
+            new SingleDoubleChestBlockHalf(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCABINET_RIGHT_CHERRY = registerBlock("kitchencabinet_right_cherry",
+            new SingleDoubleChestBlockHalf(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCABINET_SPLIT_DARKOAK = registerBlock("kitchencabinet_split_darkoak",
+            new SingleDoubleChestBlockHalf(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCABINET_LEFT_DARKOAK = registerBlock("kitchencabinet_left_darkoak",
+            new SingleDoubleChestBlockHalf(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCABINET_RIGHT_DARKOAK = registerBlock("kitchencabinet_right_darkoak",
+            new SingleDoubleChestBlockHalf(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCABINET_SPLIT_MANGROVE = registerBlock("kitchencabinet_split_mangrove",
+            new SingleDoubleChestBlockHalf(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCABINET_LEFT_MANGROVE = registerBlock("kitchencabinet_left_mangrove",
+            new SingleDoubleChestBlockHalf(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCABINET_RIGHT_MANGROVE = registerBlock("kitchencabinet_right_mangrove",
+            new SingleDoubleChestBlockHalf(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCABINET_SPLIT_BAMBOO = registerBlock("kitchencabinet_split_bamboo",
+            new SingleDoubleChestBlockHalf(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCABINET_LEFT_BAMBOO = registerBlock("kitchencabinet_left_bamboo",
+            new SingleDoubleChestBlockHalf(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+    public static final Block KITCHENCABINET_RIGHT_BAMBOO = registerBlock("kitchencabinet_right_bamboo",
+            new SingleDoubleChestBlockHalf(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
+
+
+
+
     // CROP BLOCKS -----------------------------------------------------------------------------------------------------
     public static final CropBlock TOMATO_CROP = registerCropBlockSimple("tomato_crop");
     public static final CropBlock BASIL_CROP = registerCropBlockSimple("basil_crop");

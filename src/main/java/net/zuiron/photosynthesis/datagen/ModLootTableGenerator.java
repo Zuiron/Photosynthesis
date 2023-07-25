@@ -157,6 +157,34 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_ANDESITE_BAMBOO);
         addDrop(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_BAMBOO);
 
+        //cabinets
+        addDrop(ModBlocks.KITCHENCABINET_SPLIT_OAK);
+        addDrop(ModBlocks.KITCHENCABINET_LEFT_OAK);
+        addDrop(ModBlocks.KITCHENCABINET_RIGHT_OAK);
+        addDrop(ModBlocks.KITCHENCABINET_SPLIT_SPRUCE);
+        addDrop(ModBlocks.KITCHENCABINET_LEFT_SPRUCE);
+        addDrop(ModBlocks.KITCHENCABINET_RIGHT_SPRUCE);
+        addDrop(ModBlocks.KITCHENCABINET_SPLIT_BIRCH);
+        addDrop(ModBlocks.KITCHENCABINET_LEFT_BIRCH);
+        addDrop(ModBlocks.KITCHENCABINET_RIGHT_BIRCH);
+        addDrop(ModBlocks.KITCHENCABINET_SPLIT_JUNGLE);
+        addDrop(ModBlocks.KITCHENCABINET_LEFT_JUNGLE);
+        addDrop(ModBlocks.KITCHENCABINET_RIGHT_JUNGLE);
+        addDrop(ModBlocks.KITCHENCABINET_SPLIT_ACACIA);
+        addDrop(ModBlocks.KITCHENCABINET_LEFT_ACACIA);
+        addDrop(ModBlocks.KITCHENCABINET_RIGHT_ACACIA);
+        addDrop(ModBlocks.KITCHENCABINET_SPLIT_CHERRY);
+        addDrop(ModBlocks.KITCHENCABINET_LEFT_CHERRY);
+        addDrop(ModBlocks.KITCHENCABINET_RIGHT_CHERRY);
+        addDrop(ModBlocks.KITCHENCABINET_SPLIT_DARKOAK);
+        addDrop(ModBlocks.KITCHENCABINET_LEFT_DARKOAK);
+        addDrop(ModBlocks.KITCHENCABINET_RIGHT_DARKOAK);
+        addDrop(ModBlocks.KITCHENCABINET_SPLIT_MANGROVE);
+        addDrop(ModBlocks.KITCHENCABINET_LEFT_MANGROVE);
+        addDrop(ModBlocks.KITCHENCABINET_RIGHT_MANGROVE);
+        addDrop(ModBlocks.KITCHENCABINET_SPLIT_BAMBOO);
+        addDrop(ModBlocks.KITCHENCABINET_LEFT_BAMBOO);
+        addDrop(ModBlocks.KITCHENCABINET_RIGHT_BAMBOO);
 
         //Saplings
         addDrop(ModBlocks.APPLETREE_SAPLING);

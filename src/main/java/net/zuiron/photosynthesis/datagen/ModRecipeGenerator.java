@@ -206,6 +206,45 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
         itemconvert_from.add(ModBlocks.KITCHENCOUNTER_DRAWERS_POLISHED_ANDESITE_BAMBOO);  itemconvert_to.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_ANDESITE_BAMBOO);
         itemconvert_from.add(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_ANDESITE_BAMBOO);      itemconvert_to.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_BAMBOO);
 
+        //Cabinets
+
+        itemconvert_from.add(ModBlocks.KITCHENCABINET_SPLIT_OAK); itemconvert_to.add(ModBlocks.KITCHENCABINET_LEFT_OAK);
+        itemconvert_from.add(ModBlocks.KITCHENCABINET_LEFT_OAK);  itemconvert_to.add(ModBlocks.KITCHENCABINET_RIGHT_OAK);
+        itemconvert_from.add(ModBlocks.KITCHENCABINET_RIGHT_OAK); itemconvert_to.add(ModBlocks.KITCHENCABINET_SPLIT_OAK);
+
+        itemconvert_from.add(ModBlocks.KITCHENCABINET_SPLIT_SPRUCE); itemconvert_to.add(ModBlocks.KITCHENCABINET_LEFT_SPRUCE);
+        itemconvert_from.add(ModBlocks.KITCHENCABINET_LEFT_SPRUCE);  itemconvert_to.add(ModBlocks.KITCHENCABINET_RIGHT_SPRUCE);
+        itemconvert_from.add(ModBlocks.KITCHENCABINET_RIGHT_SPRUCE); itemconvert_to.add(ModBlocks.KITCHENCABINET_SPLIT_SPRUCE);
+
+        itemconvert_from.add(ModBlocks.KITCHENCABINET_SPLIT_BIRCH); itemconvert_to.add(ModBlocks.KITCHENCABINET_LEFT_BIRCH);
+        itemconvert_from.add(ModBlocks.KITCHENCABINET_LEFT_BIRCH);  itemconvert_to.add(ModBlocks.KITCHENCABINET_RIGHT_BIRCH);
+        itemconvert_from.add(ModBlocks.KITCHENCABINET_RIGHT_BIRCH); itemconvert_to.add(ModBlocks.KITCHENCABINET_SPLIT_BIRCH);
+
+        itemconvert_from.add(ModBlocks.KITCHENCABINET_SPLIT_JUNGLE); itemconvert_to.add(ModBlocks.KITCHENCABINET_LEFT_JUNGLE);
+        itemconvert_from.add(ModBlocks.KITCHENCABINET_LEFT_JUNGLE);  itemconvert_to.add(ModBlocks.KITCHENCABINET_RIGHT_JUNGLE);
+        itemconvert_from.add(ModBlocks.KITCHENCABINET_RIGHT_JUNGLE); itemconvert_to.add(ModBlocks.KITCHENCABINET_SPLIT_JUNGLE);
+
+        itemconvert_from.add(ModBlocks.KITCHENCABINET_SPLIT_ACACIA); itemconvert_to.add(ModBlocks.KITCHENCABINET_LEFT_ACACIA);
+        itemconvert_from.add(ModBlocks.KITCHENCABINET_LEFT_ACACIA);  itemconvert_to.add(ModBlocks.KITCHENCABINET_RIGHT_ACACIA);
+        itemconvert_from.add(ModBlocks.KITCHENCABINET_RIGHT_ACACIA); itemconvert_to.add(ModBlocks.KITCHENCABINET_SPLIT_ACACIA);
+
+        itemconvert_from.add(ModBlocks.KITCHENCABINET_SPLIT_CHERRY); itemconvert_to.add(ModBlocks.KITCHENCABINET_LEFT_CHERRY);
+        itemconvert_from.add(ModBlocks.KITCHENCABINET_LEFT_CHERRY);  itemconvert_to.add(ModBlocks.KITCHENCABINET_RIGHT_CHERRY);
+        itemconvert_from.add(ModBlocks.KITCHENCABINET_RIGHT_CHERRY); itemconvert_to.add(ModBlocks.KITCHENCABINET_SPLIT_CHERRY);
+
+        itemconvert_from.add(ModBlocks.KITCHENCABINET_SPLIT_DARKOAK); itemconvert_to.add(ModBlocks.KITCHENCABINET_LEFT_DARKOAK);
+        itemconvert_from.add(ModBlocks.KITCHENCABINET_LEFT_DARKOAK);  itemconvert_to.add(ModBlocks.KITCHENCABINET_RIGHT_DARKOAK);
+        itemconvert_from.add(ModBlocks.KITCHENCABINET_RIGHT_DARKOAK); itemconvert_to.add(ModBlocks.KITCHENCABINET_SPLIT_DARKOAK);
+
+        itemconvert_from.add(ModBlocks.KITCHENCABINET_SPLIT_MANGROVE); itemconvert_to.add(ModBlocks.KITCHENCABINET_LEFT_MANGROVE);
+        itemconvert_from.add(ModBlocks.KITCHENCABINET_LEFT_MANGROVE);  itemconvert_to.add(ModBlocks.KITCHENCABINET_RIGHT_MANGROVE);
+        itemconvert_from.add(ModBlocks.KITCHENCABINET_RIGHT_MANGROVE); itemconvert_to.add(ModBlocks.KITCHENCABINET_SPLIT_MANGROVE);
+
+        itemconvert_from.add(ModBlocks.KITCHENCABINET_SPLIT_BAMBOO); itemconvert_to.add(ModBlocks.KITCHENCABINET_LEFT_BAMBOO);
+        itemconvert_from.add(ModBlocks.KITCHENCABINET_LEFT_BAMBOO);  itemconvert_to.add(ModBlocks.KITCHENCABINET_RIGHT_BAMBOO);
+        itemconvert_from.add(ModBlocks.KITCHENCABINET_RIGHT_BAMBOO); itemconvert_to.add(ModBlocks.KITCHENCABINET_SPLIT_BAMBOO);
+
+
         for (int i = 0; i < itemconvert_from.size(); i++) {
             ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, itemconvert_to.get(i))
                     .input(itemconvert_from.get(i))
@@ -259,6 +298,17 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
         kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_GRANITE_BAMBOO); kitchendecor_wood.add(Items.BAMBOO_PLANKS); kitchendecor_top.add(Items.POLISHED_GRANITE_SLAB);
         kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_DEEPSLATE_BAMBOO); kitchendecor_wood.add(Items.BAMBOO_PLANKS); kitchendecor_top.add(Items.POLISHED_DEEPSLATE_SLAB);
         kitchendecor.add(ModBlocks.KITCHENCOUNTER_POLISHED_ANDESITE_BAMBOO); kitchendecor_wood.add(Items.BAMBOO_PLANKS); kitchendecor_top.add(Items.POLISHED_ANDESITE_SLAB);
+
+        //cabinets
+        kitchendecor.add(ModBlocks.KITCHENCABINET_SPLIT_OAK); kitchendecor_wood.add(Items.OAK_PLANKS); kitchendecor_top.add(Items.OAK_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCABINET_SPLIT_SPRUCE); kitchendecor_wood.add(Items.SPRUCE_PLANKS); kitchendecor_top.add(Items.SPRUCE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCABINET_SPLIT_BIRCH); kitchendecor_wood.add(Items.BIRCH_PLANKS); kitchendecor_top.add(Items.BIRCH_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCABINET_SPLIT_JUNGLE); kitchendecor_wood.add(Items.JUNGLE_PLANKS); kitchendecor_top.add(Items.JUNGLE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCABINET_SPLIT_ACACIA); kitchendecor_wood.add(Items.ACACIA_PLANKS); kitchendecor_top.add(Items.ACACIA_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCABINET_SPLIT_CHERRY); kitchendecor_wood.add(Items.CHERRY_PLANKS); kitchendecor_top.add(Items.CHERRY_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCABINET_SPLIT_DARKOAK); kitchendecor_wood.add(Items.DARK_OAK_PLANKS); kitchendecor_top.add(Items.DARK_OAK_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCABINET_SPLIT_MANGROVE); kitchendecor_wood.add(Items.MANGROVE_PLANKS); kitchendecor_top.add(Items.MANGROVE_SLAB);
+        kitchendecor.add(ModBlocks.KITCHENCABINET_SPLIT_BAMBOO); kitchendecor_wood.add(Items.BAMBOO_PLANKS); kitchendecor_top.add(Items.BAMBOO_SLAB);
 
 
         for (int i = 0; i < kitchendecor.size(); i++) {

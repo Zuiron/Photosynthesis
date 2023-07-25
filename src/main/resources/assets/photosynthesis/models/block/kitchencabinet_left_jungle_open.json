@@ -1,0 +1,6 @@
+{
+  "parent": "photosynthesis:block/blockmodels/uniqueallsides_half",
+  "textures": {
+    "0": "photosynthesis:block/kitchencabinet_left_jungle_open"
+  }
+}
