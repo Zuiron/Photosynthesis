@@ -79,7 +79,7 @@ public abstract class ModStemBlock extends PlantBlock
                 float seasonPercentage = Seasons.getSeasonPercentage(world.getTimeOfDay());
                 int currentCropAge = state.get(AGE);
 
-                Photosynthesis.LOGGER.info("DEBUG::::: - "+this.getGourdsSpawned(state));
+                //Photosynthesis.LOGGER.info("DEBUG::::: - "+this.getGourdsSpawned(state));
 
                 if(this.getGourdsSpawned(state) >= 4) {
                     //we have spawned 4 gourds, reset crop to age 0.
