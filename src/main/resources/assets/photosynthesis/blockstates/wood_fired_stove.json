@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "photosynthesis:block/wood_fired_stove"
+    },
+    "facing=south": {
+      "model": "photosynthesis:block/wood_fired_stove",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "photosynthesis:block/wood_fired_stove",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "photosynthesis:block/wood_fired_stove",
+      "y": 90
+    }
+  }
+}

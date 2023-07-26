@@ -14,6 +14,7 @@ public class ModBlockEntities {
     public static BlockEntityType<CuttingBoardBlockEntity> CUTTING_BOARD;
     public static BlockEntityType<MortarBlockEntity> MORTAR;
     public static BlockEntityType<LatexExtractorBlockEntity> LATEX_EXTRACTOR;
+    public static BlockEntityType<WoodFiredStoveBlockEntity> WOOD_FIRED_STOVE;
     public static BlockEntityType<MapleExtractorBlockEntity> MAPLE_EXTRACTOR;
     public static BlockEntityType<SkilletBlockEntity> SKILLET;
     public static BlockEntityType<MixingBowlBlockEntity> MIXINGBOWL;
@@ -46,6 +47,11 @@ public class ModBlockEntities {
                 new Identifier(Photosynthesis.MOD_ID, "latex_extractor"),
                 FabricBlockEntityTypeBuilder.create(LatexExtractorBlockEntity::new,
                         ModBlocks.LATEX_EXTRACTOR).build(null));
+
+        WOOD_FIRED_STOVE = Registry.register(Registries.BLOCK_ENTITY_TYPE,
+                new Identifier(Photosynthesis.MOD_ID, "wood_fired_stove"),
+                FabricBlockEntityTypeBuilder.create(WoodFiredStoveBlockEntity::new,
+                        ModBlocks.WOOD_FIRED_STOVE).build(null));
 
         MAPLE_EXTRACTOR = Registry.register(Registries.BLOCK_ENTITY_TYPE,
                 new Identifier(Photosynthesis.MOD_ID, "maple_extractor"),
