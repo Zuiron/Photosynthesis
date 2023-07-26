@@ -32,6 +32,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.Photosynthesis;
+import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.block.custom.SkilletBlock;
 import net.zuiron.photosynthesis.networking.ModMessages;
 import net.zuiron.photosynthesis.recipe.SkilletRecipe;
@@ -223,7 +224,11 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
         BlockPos blockPosBelow = blockPos.down(); // assuming 'pos' is the BlockPos of your directional block
         BlockState blockStateBelow = world.getBlockState(blockPosBelow); // assuming 'world' is the World object
 
-        if (blockStateBelow.getBlock() == Blocks.FURNACE || blockStateBelow.getBlock() == Blocks.BLAST_FURNACE || blockStateBelow.getBlock() == Blocks.SMOKER || blockStateBelow.getBlock() == Blocks.CAMPFIRE) {
+        if (blockStateBelow.getBlock() == Blocks.FURNACE ||
+                blockStateBelow.getBlock() == Blocks.BLAST_FURNACE ||
+                blockStateBelow.getBlock() == Blocks.SMOKER ||
+                blockStateBelow.getBlock() == ModBlocks.WOOD_FIRED_STOVE ||
+            blockStateBelow.getBlock() == Blocks.CAMPFIRE) {
             // The block below your directional block is a furnace, blast furnace or smoker
             BlockEntity blockEntity = world.getBlockEntity(blockPosBelow);
                 //if (furnaceBlockEntity.isBurning()) {
