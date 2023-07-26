@@ -1,19 +1,20 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " #",
-    "/ "
+    " / ",
+    "SSS",
+    "SSS"
   ],
   "key": {
-    "#": {
-      "item": "photosynthesis:sharp_flint_fragment"
-    },
     "/": {
       "item": "minecraft:stick"
+    },
+    "S": {
+      "item": "minecraft:string"
     }
   },
   "result": {
-    "item": "photosynthesis:cutting_knife_flint",
+    "item": "photosynthesis:dryingnet",
     "count": 1
   }
 }

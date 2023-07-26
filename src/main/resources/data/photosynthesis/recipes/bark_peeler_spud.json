@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  X",
+    " # ",
+    "/  "
+  ],
+  "key": {
+    "X": {
+      "item": "photosynthesis:sharp_flint_fragment"
+    },
+    "#": {
+      "item": "photosynthesis:grass_fibre_piece"
+    },
+    "/": {
+      "item": "photosynthesis:sturdy_stick"
+    }
+  },
+  "result": {
+    "item": "photosynthesis:bark_peeler_spud",
+    "count": 1
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " / ",
+    "/S/",
+    "OOO"
+  ],
+  "key": {
+    "/": {
+      "item": "minecraft:stick"
+    },
+    "S": {
+      "item": "minecraft:string"
+    },
+    "O": {
+      "item": "minecraft:oak_fence"
+    }
+  },
+  "result": {
+    "item": "photosynthesis:dryingrack",
+    "count": 1
+  }
+}
