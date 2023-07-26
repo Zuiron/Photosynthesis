@@ -225,6 +225,19 @@ public class WoodFiredStoveBlockEntity extends BlockEntity implements ExtendedSc
 
 
     public static void tick(World world, BlockPos pos, BlockState state, WoodFiredStoveBlockEntity blockEntity) {
+        if(world.isReceivingRedstonePower(pos)) {
+            if(state.get(WoodFiredStoveBlock.LIT)) {
+                state = (BlockState) state.with(WoodFiredStoveBlock.LIT, false);
+                world.setBlockState(pos, state, Block.NOTIFY_ALL);
+            }
+            return;
+        } else {
+            if(!state.get(WoodFiredStoveBlock.LIT) && blockEntity.isBurning()) {
+                state = (BlockState) state.with(WoodFiredStoveBlock.LIT, true);
+                world.setBlockState(pos, state, Block.NOTIFY_ALL);
+            }
+        }
+
         boolean bl4;
         boolean bl = blockEntity.isBurning();
         boolean bl2 = false;
