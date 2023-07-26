@@ -960,6 +960,10 @@ public class ModItems {
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
+    public static final Item OMELETTE = registerItem("omelette",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
 
     public static final Item WHEAT_DOUGH = registerItem("wheat_dough",
             new Item(new FabricItemSettings()));
