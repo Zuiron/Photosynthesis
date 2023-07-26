@@ -88,4 +88,37 @@ public class WoodFiredStoveScreenHandler extends ScreenHandler {
             this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 144));
         }
     }
+
+    /*
+        FURNACE
+                case 0: {
+                    return AbstractFurnaceBlockEntity.this.burnTime;
+                }
+                case 1: {
+                    return AbstractFurnaceBlockEntity.this.fuelTime;
+                }
+                case 2: {
+                    return AbstractFurnaceBlockEntity.this.cookTime;
+                }
+                case 3: {
+                    return AbstractFurnaceBlockEntity.this.cookTimeTotal;
+
+        THIS --> ME
+                    case 0: return WoodFiredStoveBlockEntity.this.progress;
+                    case 1: return WoodFiredStoveBlockEntity.this.maxProgress;
+                    case 2: return WoodFiredStoveBlockEntity.this.burnTime;
+                    case 3: return WoodFiredStoveBlockEntity.this.fuelTime;
+     */
+
+    public int getFuelProgress() {
+        int i = this.propertyDelegate.get(3);
+        if (i == 0) {
+            i = 200;
+        }
+        return this.propertyDelegate.get(2) * 13 / i;
+    }
+
+    public boolean isBurning() {
+        return this.propertyDelegate.get(2) > 0;
+    }
 }

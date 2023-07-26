@@ -181,6 +181,7 @@ public class WoodFiredStoveBlockEntity extends BlockEntity implements ExtendedSc
         Inventories.writeNbt(nbt, inventory);
         nbt.putInt("wood_fired_stove.progress", progress);
         nbt.putShort("BurnTime", (short)this.burnTime);
+        nbt.putShort("FuelTime", (short)this.fuelTime);
     }
 
     @Override
@@ -189,7 +190,8 @@ public class WoodFiredStoveBlockEntity extends BlockEntity implements ExtendedSc
         super.readNbt(nbt);
         progress = nbt.getInt("wood_fired_stove.progress");
         this.burnTime = nbt.getShort("BurnTime");
-        this.fuelTime = this.getFuelTime(this.inventory.get(1));
+        //this.fuelTime = this.getFuelTime(this.inventory.get(1));
+        this.fuelTime = nbt.getShort("FuelTime");
     }
 
     private void resetProgress() {

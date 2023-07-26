@@ -5,6 +5,7 @@ import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.render.GameRenderer;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.screen.AbstractFurnaceScreenHandler;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.zuiron.photosynthesis.Photosynthesis;
@@ -31,6 +32,14 @@ public class WoodFiredStoveScreen extends HandledScreen<WoodFiredStoveScreenHand
         int x = (width - backgroundWidth) / 2;
         int y = (height - backgroundHeight) / 2;
         context.drawTexture(TEXTURE, x, y, 0, 0, backgroundWidth, backgroundHeight);
+
+        int k;
+        int i = this.x;
+        int j = this.y;
+        if (((WoodFiredStoveScreenHandler)this.handler).isBurning()) {
+            k = ((WoodFiredStoveScreenHandler)this.handler).getFuelProgress();
+            context.drawTexture(TEXTURE, i + 80, j + 55 + 12 - k, 176, 12 - k, 14, k + 1);
+        }
     }
 
     @Override
