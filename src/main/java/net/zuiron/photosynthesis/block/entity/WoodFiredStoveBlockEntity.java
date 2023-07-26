@@ -131,8 +131,8 @@ public class WoodFiredStoveBlockEntity extends BlockEntity implements ExtendedSc
 
     @Override
     public Text getDisplayName() {
-        return Text.literal("Wood Fired Stove");
-    }
+        return Text.literal("");
+    } //Wood Fired Stove
 
     @Nullable
     @Override
