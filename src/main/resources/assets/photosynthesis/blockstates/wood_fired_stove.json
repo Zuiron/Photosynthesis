@@ -1,18 +1,33 @@
 {
   "variants": {
-    "facing=north": {
+    "facing=north,lit=false": {
       "model": "photosynthesis:block/wood_fired_stove"
     },
-    "facing=south": {
+    "facing=north,lit=true": {
+      "model": "photosynthesis:block/wood_fired_stove_lit"
+    },
+    "facing=south,lit=false": {
       "model": "photosynthesis:block/wood_fired_stove",
       "y": 180
     },
-    "facing=west": {
+    "facing=south,lit=true": {
+      "model": "photosynthesis:block/wood_fired_stove_lit",
+      "y": 180
+    },
+    "facing=west,lit=false": {
       "model": "photosynthesis:block/wood_fired_stove",
       "y": 270
     },
-    "facing=east": {
+    "facing=west,lit=true": {
+      "model": "photosynthesis:block/wood_fired_stove_lit",
+      "y": 270
+    },
+    "facing=east,lit=false": {
       "model": "photosynthesis:block/wood_fired_stove",
+      "y": 90
+    },
+    "facing=east,lit=true": {
+      "model": "photosynthesis:block/wood_fired_stove_lit",
       "y": 90
     }
   }

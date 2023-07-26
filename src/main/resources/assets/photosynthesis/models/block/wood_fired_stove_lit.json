@@ -1,0 +1,6 @@
+{
+  "parent": "photosynthesis:block/wood_fired_stove",
+  "textures": {
+    "1": "photosynthesis:block/wood_fired_stove_lit"
+  }
+}
