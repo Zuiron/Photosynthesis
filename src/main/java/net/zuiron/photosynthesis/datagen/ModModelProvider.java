@@ -158,6 +158,8 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.BAGUETTE,
                 ModItems.OMELETTE,
                 ModItems.GARLIC_BREAD_SLICE,
+                ModItems.DUMPLING,
+
 
 
 
