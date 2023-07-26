@@ -153,7 +153,10 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.PIZZA,
                 ModItems.PANCAKES,
                 ModItems.PIE,
-                ModItems.CHICKEN_THIGH
+                ModItems.CHICKEN_THIGH,
+                ModItems.BAKED_SQUASH,
+
+
         };
         for (Item item : simple_items) {
             itemModelGenerator.register(item, Models.GENERATED);
