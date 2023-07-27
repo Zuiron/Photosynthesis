@@ -27,19 +27,31 @@ public class MixingBowlScreenHandler extends ScreenHandler {
 
     public MixingBowlScreenHandler(int syncId, PlayerInventory playerInventory, BlockEntity entity, PropertyDelegate delegate) {
         super(ModScreenHandlers.MIXINGBOWL_SCREEN_HANDLER, syncId);
-        checkSize(((Inventory) entity), 6);
+        checkSize(((Inventory) entity), 18);
         this.inventory = (Inventory)entity;
         inventory.onOpen(playerInventory.player);
         this.propertyDelegate = delegate;
         this.blockEntity = (MixingBowlBlockEntity) entity;
 
-        this.addSlot(new Slot(inventory, 0, 52, 27)); //input
-        this.addSlot(new Slot(inventory, 1, 70, 27)); //input
-        this.addSlot(new Slot(inventory, 2, 52, 45)); //input
-        this.addSlot(new Slot(inventory, 3, 70, 45)); //input
+        this.addSlot(new Slot(inventory, 0, 6, 7)); //input
+        this.addSlot(new Slot(inventory, 1, 26, 9)); //input
+        this.addSlot(new Slot(inventory, 2, 44, 9)); //input
+        this.addSlot(new Slot(inventory, 3, 8, 27)); //input
+        this.addSlot(new Slot(inventory, 4, 26, 27)); //input
+        this.addSlot(new Slot(inventory, 5, 44, 27)); //input
+        this.addSlot(new Slot(inventory, 6, 8, 45)); //input
+        this.addSlot(new Slot(inventory, 7, 26, 45)); //input
+        this.addSlot(new Slot(inventory, 8, 44, 45)); //input
 
-        this.addSlot(new OutputSlot(inventory, 4, 116, 45)); //output
-        this.addSlot(new OutputSlot(inventory, 5, 116, 27)); //output
+        this.addSlot(new OutputSlot(inventory, 9, 116, 9)); //output -- item output
+        this.addSlot(new OutputSlot(inventory, 10, 134, 9)); //output -- below is recipe remainders.
+        this.addSlot(new OutputSlot(inventory, 11, 152, 9)); //output
+        this.addSlot(new OutputSlot(inventory, 12, 116, 27)); //output
+        this.addSlot(new OutputSlot(inventory, 13, 134, 27)); //output
+        this.addSlot(new OutputSlot(inventory, 14, 152, 27)); //output
+        this.addSlot(new OutputSlot(inventory, 15, 116, 45)); //output
+        this.addSlot(new OutputSlot(inventory, 16, 134, 45)); //output
+        this.addSlot(new OutputSlot(inventory, 17, 152, 45)); //output
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);

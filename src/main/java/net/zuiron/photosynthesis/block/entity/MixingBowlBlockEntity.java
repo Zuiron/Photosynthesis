@@ -44,7 +44,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class MixingBowlBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
-    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(6, ItemStack.EMPTY);
+    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(18, ItemStack.EMPTY); //6
 
     public void setInventory(DefaultedList<ItemStack> inventory) {
         for (int i = 0; i < inventory.size(); i++) {
@@ -228,18 +228,32 @@ public class MixingBowlBlockEntity extends BlockEntity implements ExtendedScreen
 
         if(hasRecipe(entity)) {
             //empty recipe remainder items.
-            entity.setStack(5, new ItemStack(entity.getStack(0).getRecipeRemainder().getItem(), (Integer) recipe.get().getCounts().get(0)));
+            //entity.setStack(5, new ItemStack(entity.getStack(0).getRecipeRemainder().getItem(), (Integer) recipe.get().getCounts().get(0)));
 
-            entity.removeStack(0, (Integer) recipe.get().getCounts().get(0));   //input
+            entity.removeStack(0, (Integer) recipe.get().getCounts().get(0));   //input TOOL!
             entity.removeStack(1, (Integer) recipe.get().getCounts().get(1));   //input
             entity.removeStack(2, (Integer) recipe.get().getCounts().get(2));   //input
             entity.removeStack(3, (Integer) recipe.get().getCounts().get(3));   //input
-
-            int recipeOutputCount = recipe.get().getOutputStack().getCount();
-            int outputSlotCount = entity.getStack(4).getCount();
+            entity.removeStack(4, (Integer) recipe.get().getCounts().get(4));   //input
+            entity.removeStack(5, (Integer) recipe.get().getCounts().get(5));   //input
+            entity.removeStack(6, (Integer) recipe.get().getCounts().get(6));   //input
+            entity.removeStack(7, (Integer) recipe.get().getCounts().get(7));   //input
+            entity.removeStack(8, (Integer) recipe.get().getCounts().get(8));   //input
 
             //output
-            entity.setStack(4, new ItemStack(recipe.get().getOutputStack().getItem(), outputSlotCount + recipeOutputCount));
+            int recipeOutputCount = recipe.get().getOutputStack().getCount();
+            int outputSlotCount = entity.getStack(9).getCount();
+            entity.setStack(9, new ItemStack(recipe.get().getOutputStack().getItem(), outputSlotCount + recipeOutputCount));
+
+            //IF any items have recipe remainders, give here.
+            entity.setStack(10, new ItemStack(entity.getStack(1).getRecipeRemainder().getItem(), (Integer) recipe.get().getCounts().get(1)));
+            entity.setStack(11, new ItemStack(entity.getStack(2).getRecipeRemainder().getItem(), (Integer) recipe.get().getCounts().get(2)));
+            entity.setStack(12, new ItemStack(entity.getStack(3).getRecipeRemainder().getItem(), (Integer) recipe.get().getCounts().get(3)));
+            entity.setStack(13, new ItemStack(entity.getStack(4).getRecipeRemainder().getItem(), (Integer) recipe.get().getCounts().get(4)));
+            entity.setStack(14, new ItemStack(entity.getStack(5).getRecipeRemainder().getItem(), (Integer) recipe.get().getCounts().get(5)));
+            entity.setStack(15, new ItemStack(entity.getStack(6).getRecipeRemainder().getItem(), (Integer) recipe.get().getCounts().get(6)));
+            entity.setStack(16, new ItemStack(entity.getStack(7).getRecipeRemainder().getItem(), (Integer) recipe.get().getCounts().get(7)));
+            entity.setStack(17, new ItemStack(entity.getStack(8).getRecipeRemainder().getItem(), (Integer) recipe.get().getCounts().get(8)));
 
             entity.resetProgress();
         }
@@ -256,7 +270,16 @@ public class MixingBowlBlockEntity extends BlockEntity implements ExtendedScreen
 
         entity.maxProgress = match.map(MixingBowlRecipe::getCookTime).orElse(20);
 
-        if (match.isPresent() && inventory.getStack(4).isEmpty() && inventory.getStack(5).isEmpty()) {
+        if (match.isPresent() &&
+                inventory.getStack(9).isEmpty() &&
+                inventory.getStack(10).isEmpty() &&
+                inventory.getStack(11).isEmpty() &&
+                inventory.getStack(12).isEmpty() &&
+                inventory.getStack(13).isEmpty() &&
+                inventory.getStack(14).isEmpty() &&
+                inventory.getStack(15).isEmpty() &&
+                inventory.getStack(16).isEmpty() &&
+                inventory.getStack(17).isEmpty()) {
             //Photosynthesis.LOGGER.info("match is present! continue");
             MixingBowlRecipe recipe = match.get();
             List<Ingredient> ingredients = recipe.getIngredients();
@@ -292,13 +315,21 @@ public class MixingBowlBlockEntity extends BlockEntity implements ExtendedScreen
     private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, Item output) {
         //return inventory.getStack(2).getItem() == output || inventory.getStack(2).isEmpty(); //crafts up to a stack.
         //make it so output has to be empty. (more manual labor) *evil*
-        if(inventory.getStack(4).isEmpty()) {
+        if(inventory.getStack(9).isEmpty() &&
+                inventory.getStack(10).isEmpty() &&
+                inventory.getStack(11).isEmpty() &&
+                inventory.getStack(12).isEmpty() &&
+                inventory.getStack(13).isEmpty() &&
+                inventory.getStack(14).isEmpty() &&
+                inventory.getStack(15).isEmpty() &&
+                inventory.getStack(16).isEmpty() &&
+                inventory.getStack(17).isEmpty()) {
             return true;
         }
         return false;
     }
 
     private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory, int amount) {
-        return inventory.getStack(4).getMaxCount() >= inventory.getStack(4).getCount() + amount;
+        return inventory.getStack(9).getMaxCount() >= inventory.getStack(9).getCount() + amount;
     }
 }

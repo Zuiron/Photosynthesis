@@ -39,7 +39,13 @@ public class MixingBowlRecipe implements Recipe<SimpleInventory> {
         return recipeItems.get(0).test(inventory.getStack(0))
                 && recipeItems.get(1).test(inventory.getStack(1))
                 && recipeItems.get(2).test(inventory.getStack(2))
-                && recipeItems.get(3).test(inventory.getStack(3));
+                && recipeItems.get(3).test(inventory.getStack(3))
+                && recipeItems.get(4).test(inventory.getStack(4))
+                && recipeItems.get(5).test(inventory.getStack(5))
+                && recipeItems.get(6).test(inventory.getStack(6))
+                && recipeItems.get(7).test(inventory.getStack(7))
+                && recipeItems.get(8).test(inventory.getStack(8))
+                ;
     }
 
     @Override
@@ -106,8 +112,8 @@ public class MixingBowlRecipe implements Recipe<SimpleInventory> {
             //Photosynthesis.LOGGER.info("read cookingtime of: " + CookTime + ", for: " + output.getItem().getName().getString());
 
             JsonArray ingredients = JsonHelper.getArray(json, "ingredients");
-            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(4, Ingredient.EMPTY); //size: max number of possible input ingredients.
-            DefaultedList<Integer> counts = DefaultedList.ofSize(4, 0);
+            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(9, Ingredient.EMPTY); //size: max number of possible input ingredients.
+            DefaultedList<Integer> counts = DefaultedList.ofSize(9, 0);
 
             for (int i = 0; i < ingredients.size(); i++) {
                 if (i >= inputs.size()) {
@@ -130,7 +136,7 @@ public class MixingBowlRecipe implements Recipe<SimpleInventory> {
             }
 
             ItemStack output = buf.readItemStack();
-            return new MixingBowlRecipe(id, output, inputs, 0, DefaultedList.ofSize(4, 0));
+            return new MixingBowlRecipe(id, output, inputs, 0, DefaultedList.ofSize(9, 0));
         }
 
         @Override
