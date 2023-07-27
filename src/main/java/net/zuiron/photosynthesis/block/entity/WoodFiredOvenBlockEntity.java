@@ -211,7 +211,7 @@ public class WoodFiredOvenBlockEntity extends BlockEntity implements ExtendedScr
             state = (BlockState)state.with(WoodFiredOvenBlock.PROCESSING, true); world.setBlockState(blockPos, state, 3);
             markDirty(world, blockPos, state);
 
-            loopCookingPotSound(world, blockPos);
+            //loopCookingPotSound(world, blockPos);
 
             if(entity.progress >= entity.maxProgress) {
                 craftItem(entity);
@@ -269,7 +269,7 @@ public class WoodFiredOvenBlockEntity extends BlockEntity implements ExtendedScr
                 entity.setStack(8, new ItemStack(entity.getStack(0).getRecipeRemainder().getItem(), (Integer) recipe.get().getCounts().get(0)));
             }
 
-            entity.removeStack(0, (Integer) recipe.get().getCounts().get(0));   //fluid
+            //entity.removeStack(0, (Integer) recipe.get().getCounts().get(0));   //DO NOT REMOVE THIS FROM OVEN, ITS A TOOL SLOT
 
             entity.removeStack(1, (Integer) recipe.get().getCounts().get(1));   //input
             entity.removeStack(2, (Integer) recipe.get().getCounts().get(2));   //input

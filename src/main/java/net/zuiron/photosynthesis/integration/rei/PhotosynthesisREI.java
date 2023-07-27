@@ -149,19 +149,19 @@ public class PhotosynthesisREI implements REIClientPlugin {
     public void registerScreens(ScreenRegistry registry) {
         registry.registerContainerClickArea(new Rectangle(88, 44, 26, 17), SkilletScreen.class, SKILLET);
 
-        registry.registerContainerClickArea(new Rectangle(88, 44, 26, 17), MixingBowlScreen.class, MIXINGBOWL);
+        registry.registerContainerClickArea(new Rectangle(90, 37, 22, 15), MixingBowlScreen.class, MIXINGBOWL);
 
-        registry.registerContainerClickArea(new Rectangle(99, 25, 24, 17), CuttingBoardScreen.class, CUTTINGBOARD);
+        registry.registerContainerClickArea(new Rectangle(100, 27, 13, 26), CuttingBoardScreen.class, CUTTINGBOARD);
 
-        registry.registerContainerClickArea(new Rectangle(99, 25, 24, 17), MortarScreen.class, MORTAR);
+        registry.registerContainerClickArea(new Rectangle(100, 27, 13, 26), MortarScreen.class, MORTAR);
 
         registry.registerContainerClickArea(new Rectangle(88, 44, 26, 18), CookingPotScreen.class, COOKINGPOT);
 
         registry.registerContainerClickArea(new Rectangle(76, 47, 22, 15), KegScreen.class, KEG);
 
-        registry.registerContainerClickArea(new Rectangle(76, 47, 22, 15), FluidPressScreen.class, FLUIDPRESS);
+        registry.registerContainerClickArea(new Rectangle(85, 31, 22, 15), FluidPressScreen.class, FLUIDPRESS);
 
-        registry.registerContainerClickArea(new Rectangle(76, 47, 22, 15), MilkSeperatorScreen.class, MILKSEPARATOR);
+        registry.registerContainerClickArea(new Rectangle(85, 31, 22, 15), MilkSeperatorScreen.class, MILKSEPARATOR);
 
         registry.registerContainerClickArea(new Rectangle(77, 37, 22, 15), DryingNetScreen.class, DRYINGNET);
 

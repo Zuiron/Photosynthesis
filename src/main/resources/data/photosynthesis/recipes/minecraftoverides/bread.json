@@ -1,9 +1,18 @@
 {
-  "type": "minecraft:smelting",
-  "ingredient": {
-    "item": "photosynthesis:wheat_dough"
+  "type": "photosynthesis:woodfiredoven",
+  "ingredients": [
+    {
+      "item": "photosynthesis:bread_form",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:wheat_dough",
+      "count": 1
+    }
+  ],
+  "output": {
+    "item": "minecraft:bread",
+    "count": 1
   },
-  "result": "minecraft:bread",
-  "experience": 0.1,
-  "cookingtime": 200
+  "cookingtime": 150
 }
