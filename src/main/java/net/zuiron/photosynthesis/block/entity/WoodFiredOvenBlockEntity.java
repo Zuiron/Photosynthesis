@@ -50,10 +50,10 @@ public class WoodFiredOvenBlockEntity extends BlockEntity implements ExtendedScr
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(9, ItemStack.EMPTY);
 
     public ItemStack getRenderStack() {
-        if(!this.getStack(0).isEmpty()) {
-            return this.getStack(0);
+        if(this.getStack(7).isEmpty()) {
+            return this.getStack(1);
         } else {
-            return this.getStack(2);
+            return this.getStack(7);
         }
     }
 
