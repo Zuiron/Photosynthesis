@@ -11,6 +11,9 @@ import net.minecraft.screen.ArrayPropertyDelegate;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
+import net.minecraft.state.property.Properties;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import net.zuiron.photosynthesis.block.entity.LatexExtractorBlockEntity;
 import net.zuiron.photosynthesis.block.entity.SkilletBlockEntity;
 import net.zuiron.photosynthesis.screen.slot.OutputSlot;
@@ -114,5 +117,13 @@ public class SkilletScreenHandler extends ScreenHandler {
         for (int i = 0; i < 9; ++i) {
             this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 144));
         }
+    }
+
+    public boolean isLit() {
+        //return blockEntity.getCachedState().getProperties().contains(Properties.LIT);
+        BlockPos pos = blockEntity.getPos();
+        World world = blockEntity.getWorld();
+        assert world != null;
+        return world.getBlockState(pos).get(Properties.LIT);
     }
 }
