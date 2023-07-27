@@ -128,12 +128,14 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.WAFFLE,
 
                 ModItems.CUT_KIWI,
-                ModItems.MEASURING_CUP,
+                /*ModItems.MEASURING_CUP,
                 ModItems.MEASURING_CUP_WATER,
                 ModItems.MEASURING_CUP_MILK,
                 ModItems.MEASURING_CUP_MILK_CREAM,
                 ModItems.MEASURING_CUP_CANOLAOIL,
                 ModItems.MEASURING_CUP_SUNFLOWEROIL,
+                ModItems.MEASURING_CUP_MEAD,
+                */
 
                 ModItems.LEATHER_WATER_BLADDER,
                 ModItems.LEATHER_WATER_BLADDER_DIRTY,
@@ -149,7 +151,6 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.POWDERED_SUGAR,
                 ModItems.GELATIN_SHEET,
                 ModItems.VANILLA_POWDER,
-                ModItems.MEASURING_CUP_MEAD,
                 ModItems.PIZZA,
                 ModItems.PANCAKES,
                 ModItems.PIE,
