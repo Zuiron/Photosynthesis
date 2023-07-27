@@ -33,6 +33,17 @@ public class WoodFiredOvenScreen extends HandledScreen<WoodFiredOvenScreenHandle
         context.drawTexture(TEXTURE, x, y, 0, 0, backgroundWidth, backgroundHeight);
 
         renderProgressArrow(context, x, y);
+
+        int k;
+        int i = this.x;
+        int j = this.y;
+        if (((WoodFiredOvenScreenHandler)this.handler).isLit()) {
+            //k = ((WoodFiredStoveScreenHandler)this.handler).getFuelProgress();
+            k = 12;
+            x = 152;
+            y = 18;
+            context.drawTexture(TEXTURE, i + x, j + y + 12 - k, 176, 12 - k, 14, k + 1);
+        }
     }
 
     private void renderProgressArrow(DrawContext context, int x, int y) {

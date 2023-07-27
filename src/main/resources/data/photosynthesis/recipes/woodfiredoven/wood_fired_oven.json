@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GGG",
+    "#F#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stone"
+    },
+    "G": {
+      "item": "minecraft:glass_pane"
+    },
+    "F": {
+      "item": "minecraft:smoker"
+    }
+  },
+  "result": {
+    "item": "photosynthesis:wood_fired_oven",
+    "count": 1
+  }
+}

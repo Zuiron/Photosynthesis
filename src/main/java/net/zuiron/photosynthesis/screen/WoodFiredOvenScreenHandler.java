@@ -7,9 +7,13 @@ import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.screen.ArrayPropertyDelegate;
+import net.minecraft.screen.Property;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
+import net.minecraft.state.property.Properties;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import net.zuiron.photosynthesis.block.entity.CookingPotBlockEntity;
 import net.zuiron.photosynthesis.block.entity.WoodFiredOvenBlockEntity;
 import net.zuiron.photosynthesis.screen.slot.OutputSlot;
@@ -53,6 +57,14 @@ public class WoodFiredOvenScreenHandler extends ScreenHandler {
 
     public boolean isCrafting() {
         return propertyDelegate.get(0) > 0;
+    }
+
+    public boolean isLit() {
+        //return blockEntity.getCachedState().getProperties().contains(Properties.LIT);
+        BlockPos pos = blockEntity.getPos();
+        World world = blockEntity.getWorld();
+        assert world != null;
+        return world.getBlockState(pos).get(Properties.LIT);
     }
 
     public int getScaledProgress() {

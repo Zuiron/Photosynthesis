@@ -235,6 +235,7 @@ public class CookingPotBlockEntity extends BlockEntity implements ExtendedScreen
                 blockStateBelow.getBlock() == Blocks.BLAST_FURNACE ||
                 blockStateBelow.getBlock() == Blocks.SMOKER ||
                 blockStateBelow.getBlock() == ModBlocks.WOOD_FIRED_STOVE ||
+                blockStateBelow.getBlock() == ModBlocks.WOOD_FIRED_OVEN ||
             blockStateBelow.getBlock() == Blocks.CAMPFIRE) {
             // The block below your directional block is a furnace, blast furnace or smoker
             BlockEntity blockEntity = world.getBlockEntity(blockPosBelow);

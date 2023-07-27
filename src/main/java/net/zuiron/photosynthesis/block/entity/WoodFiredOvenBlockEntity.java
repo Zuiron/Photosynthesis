@@ -29,6 +29,7 @@ import net.minecraft.state.property.Properties;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.Photosynthesis;
@@ -227,24 +228,25 @@ public class WoodFiredOvenBlockEntity extends BlockEntity implements ExtendedScr
         //ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
         //if(!config.requireHeatUnder) { return true; }
 
-        BlockPos blockPosBelow = blockPos.down(); // assuming 'pos' is the BlockPos of your directional block
-        BlockState blockStateBelow = world.getBlockState(blockPosBelow); // assuming 'world' is the World object
+        //FOR OVEN, we check LEFT (WEST) is lit. confusing method name.
+        Direction localDir = world.getBlockState(blockPos).get(WoodFiredOvenBlock.FACING);
+        BlockPos relativeWest = blockPos.offset(localDir.rotateYCounterclockwise(), -1);
+        BlockPos relativeEast = blockPos.offset(localDir.rotateYClockwise(), -1);
+        BlockPos relativeSouth = blockPos.offset(localDir, -1);
+        BlockPos relativeNorth = blockPos.offset(localDir.getOpposite(), -1);
 
-        if (blockStateBelow.getBlock() == Blocks.FURNACE ||
-                blockStateBelow.getBlock() == Blocks.BLAST_FURNACE ||
-                blockStateBelow.getBlock() == Blocks.SMOKER ||
-                blockStateBelow.getBlock() == ModBlocks.WOOD_FIRED_STOVE ||
-            blockStateBelow.getBlock() == Blocks.CAMPFIRE) {
-            // The block below your directional block is a furnace, blast furnace or smoker
-            BlockEntity blockEntity = world.getBlockEntity(blockPosBelow);
-                //if (furnaceBlockEntity.isBurning()) {
-                if(blockStateBelow.get(Properties.LIT)) {
-                    // The furnace below your directional block is currently smelting
-                    //TODO -- if we decide to allow campfire, which is unlimited LIT. should we decrease cook time? YES!
-                    return true;
-                } else if(blockStateBelow.getBlock() == Blocks.CAMPFIRE && blockStateBelow.get(Properties.SIGNAL_FIRE)) {
-                    return true;
-                }
+        BlockState blockStateWest = world.getBlockState(relativeWest);
+        BlockState blockStateEast = world.getBlockState(relativeEast);
+        BlockState blockStateSouth = world.getBlockState(relativeSouth);
+
+        if (blockStateWest.getBlock() == ModBlocks.WOOD_FIRED_STOVE) {
+            return blockStateWest.get(Properties.LIT);
+        }
+        else if (blockStateEast.getBlock() == ModBlocks.WOOD_FIRED_STOVE) {
+            return blockStateEast.get(Properties.LIT);
+        }
+        else if (blockStateSouth.getBlock() == ModBlocks.WOOD_FIRED_STOVE) {
+            return blockStateSouth.get(Properties.LIT);
         }
 
         return false;
