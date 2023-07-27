@@ -239,7 +239,7 @@ public class WoodFiredOvenBlockEntity extends BlockEntity implements ExtendedScr
         BlockState blockStateEast = world.getBlockState(relativeEast);
         BlockState blockStateSouth = world.getBlockState(relativeSouth);
 
-        if (blockStateWest.getBlock() == ModBlocks.WOOD_FIRED_STOVE) {
+        /*if (blockStateWest.getBlock() == ModBlocks.WOOD_FIRED_STOVE) {
             return blockStateWest.get(Properties.LIT);
         }
         else if (blockStateEast.getBlock() == ModBlocks.WOOD_FIRED_STOVE) {
@@ -247,6 +247,13 @@ public class WoodFiredOvenBlockEntity extends BlockEntity implements ExtendedScr
         }
         else if (blockStateSouth.getBlock() == ModBlocks.WOOD_FIRED_STOVE) {
             return blockStateSouth.get(Properties.LIT);
+        }*/
+        if (
+                (blockStateWest.getBlock() == ModBlocks.WOOD_FIRED_STOVE && blockStateWest.get(Properties.LIT)) ||
+                (blockStateEast.getBlock() == ModBlocks.WOOD_FIRED_STOVE && blockStateEast.get(Properties.LIT)) ||
+                (blockStateSouth.getBlock() == ModBlocks.WOOD_FIRED_STOVE && blockStateSouth.get(Properties.LIT))
+        ) {
+            return true;
         }
 
         return false;
