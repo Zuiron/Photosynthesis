@@ -59,6 +59,9 @@ public class ModScreenHandlers {
     public static ScreenHandlerType<WoodFiredStoveScreenHandler> WOOD_FIRED_STOVE_SCREEN_HANDLER =
             new ExtendedScreenHandlerType<>(WoodFiredStoveScreenHandler::new);
 
+    public static ScreenHandlerType<WoodFiredOvenScreenHandler> WOOD_FIRED_OVEN_SCREEN_HANDLER =
+            new ExtendedScreenHandlerType<>(WoodFiredOvenScreenHandler::new);
+
     public static void registerAllScreenHandlers() {
         Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "cutting_board"),
                 CUTTING_BOARD_SCREEN_HANDLER);
@@ -94,5 +97,7 @@ public class ModScreenHandlers {
                 SINGLEDOUBLECHEST_SCREEN_HANDLER);
         Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "woodfiredstove"),
                 WOOD_FIRED_STOVE_SCREEN_HANDLER);
+        Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "woodfiredoven"),
+                WOOD_FIRED_OVEN_SCREEN_HANDLER);
     }
 }

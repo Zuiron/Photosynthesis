@@ -1,6 +1,6 @@
 {
   "parent": "photosynthesis:block/wood_fired_oven",
   "textures": {
-    "1": "photosynthesis:block/wood_fired_oven_lit"
+    "0": "photosynthesis:block/wood_fired_oven_lit"
   }
 }

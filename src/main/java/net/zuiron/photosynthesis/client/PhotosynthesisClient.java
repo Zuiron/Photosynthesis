@@ -408,6 +408,7 @@ public class PhotosynthesisClient implements ClientModInitializer {
         HandledScreens.register(ModScreenHandlers.DRYINGRACK_SCREEN_HANDLER, DryingRackScreen::new);
         HandledScreens.register(ModScreenHandlers.SINGLEDOUBLECHEST_SCREEN_HANDLER, SingleDoubleChestScreen::new);
         HandledScreens.register(ModScreenHandlers.WOOD_FIRED_STOVE_SCREEN_HANDLER, WoodFiredStoveScreen::new);
+        HandledScreens.register(ModScreenHandlers.WOOD_FIRED_OVEN_SCREEN_HANDLER, WoodFiredOvenScreen::new);
         ModMessages.registerS2CPackets();
 
         BlockEntityRendererFactories.register(ModBlockEntities.CUTTING_BOARD, CuttingBoardBlockEntityRenderer::new);

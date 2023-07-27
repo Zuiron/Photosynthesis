@@ -99,6 +99,10 @@ public class ModBlocks {
             new WoodFiredStoveBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
                     .strength(2f).nonOpaque()));
 
+    public static final Block WOOD_FIRED_OVEN = registerBlock("wood_fired_oven",
+            new WoodFiredOvenBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
     public static final Block PLATE = registerBlock("plate",
             new PlateBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
                     .strength(2f).nonOpaque()));
