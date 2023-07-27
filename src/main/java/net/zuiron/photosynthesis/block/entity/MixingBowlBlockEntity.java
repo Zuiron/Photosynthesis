@@ -230,16 +230,6 @@ public class MixingBowlBlockEntity extends BlockEntity implements ExtendedScreen
             //empty recipe remainder items.
             //entity.setStack(5, new ItemStack(entity.getStack(0).getRecipeRemainder().getItem(), (Integer) recipe.get().getCounts().get(0)));
 
-            //entity.removeStack(0, (Integer) recipe.get().getCounts().get(0));   //input TOOL! DO NOT REMOVE SLOT0, ITS TOOL SLOT
-            entity.removeStack(1, (Integer) recipe.get().getCounts().get(1));   //input
-            entity.removeStack(2, (Integer) recipe.get().getCounts().get(2));   //input
-            entity.removeStack(3, (Integer) recipe.get().getCounts().get(3));   //input
-            entity.removeStack(4, (Integer) recipe.get().getCounts().get(4));   //input
-            entity.removeStack(5, (Integer) recipe.get().getCounts().get(5));   //input
-            entity.removeStack(6, (Integer) recipe.get().getCounts().get(6));   //input
-            entity.removeStack(7, (Integer) recipe.get().getCounts().get(7));   //input
-            entity.removeStack(8, (Integer) recipe.get().getCounts().get(8));   //input
-
             //output
             int recipeOutputCount = recipe.get().getOutputStack().getCount();
             int outputSlotCount = entity.getStack(9).getCount();
@@ -254,6 +244,16 @@ public class MixingBowlBlockEntity extends BlockEntity implements ExtendedScreen
             entity.setStack(15, new ItemStack(entity.getStack(6).getRecipeRemainder().getItem(), (Integer) recipe.get().getCounts().get(6)));
             entity.setStack(16, new ItemStack(entity.getStack(7).getRecipeRemainder().getItem(), (Integer) recipe.get().getCounts().get(7)));
             entity.setStack(17, new ItemStack(entity.getStack(8).getRecipeRemainder().getItem(), (Integer) recipe.get().getCounts().get(8)));
+
+            //entity.removeStack(0, (Integer) recipe.get().getCounts().get(0));   //input TOOL! DO NOT REMOVE SLOT0, ITS TOOL SLOT
+            entity.removeStack(1, (Integer) recipe.get().getCounts().get(1));   //input
+            entity.removeStack(2, (Integer) recipe.get().getCounts().get(2));   //input
+            entity.removeStack(3, (Integer) recipe.get().getCounts().get(3));   //input
+            entity.removeStack(4, (Integer) recipe.get().getCounts().get(4));   //input
+            entity.removeStack(5, (Integer) recipe.get().getCounts().get(5));   //input
+            entity.removeStack(6, (Integer) recipe.get().getCounts().get(6));   //input
+            entity.removeStack(7, (Integer) recipe.get().getCounts().get(7));   //input
+            entity.removeStack(8, (Integer) recipe.get().getCounts().get(8));   //input
 
             entity.resetProgress();
         }

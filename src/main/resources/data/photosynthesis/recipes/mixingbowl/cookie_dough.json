@@ -2,6 +2,10 @@
   "type": "photosynthesis:mixingbowl",
   "ingredients": [
     {
+      "item": "photosynthesis:whisk",
+      "count": 1
+    },
+    {
       "item": "photosynthesis:butter",
       "count": 1
     },
