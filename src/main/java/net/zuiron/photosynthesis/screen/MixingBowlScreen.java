@@ -41,7 +41,7 @@ public class MixingBowlScreen extends HandledScreen<MixingBowlScreenHandler> {
     private void renderProgressArrow(DrawContext context, int x, int y) {
         if (handler.isCrafting()) {
             //context.drawTexture(TEXTURE, x + 103, y + 20, 176, 0, 8, handler.getScaledProgress());
-            context.drawTexture(TEXTURE, x + 90, y + 37, 177, 31, handler.getScaledProgress2(), 16);
+            context.drawTexture(TEXTURE, x + 77, y + 36, 177, 31, handler.getScaledProgress2(), 16);
         }
     }
 

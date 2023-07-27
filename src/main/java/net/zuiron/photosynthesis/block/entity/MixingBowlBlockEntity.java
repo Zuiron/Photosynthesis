@@ -230,7 +230,7 @@ public class MixingBowlBlockEntity extends BlockEntity implements ExtendedScreen
             //empty recipe remainder items.
             //entity.setStack(5, new ItemStack(entity.getStack(0).getRecipeRemainder().getItem(), (Integer) recipe.get().getCounts().get(0)));
 
-            entity.removeStack(0, (Integer) recipe.get().getCounts().get(0));   //input TOOL!
+            //entity.removeStack(0, (Integer) recipe.get().getCounts().get(0));   //input TOOL! DO NOT REMOVE SLOT0, ITS TOOL SLOT
             entity.removeStack(1, (Integer) recipe.get().getCounts().get(1));   //input
             entity.removeStack(2, (Integer) recipe.get().getCounts().get(2));   //input
             entity.removeStack(3, (Integer) recipe.get().getCounts().get(3));   //input
