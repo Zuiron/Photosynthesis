@@ -221,7 +221,7 @@
   "block.photosynthesis.appletree_planks": "Apple-tree Planks",
   "block.photosynthesis.appletree_leaves": "Apple-tree Leaves",
   "block.photosynthesis.appletree_sapling": "Apple-tree Sapling",
-  "block.photosynthesis.greenappletree_bushcrop": "Apple",
+  "block.photosynthesis.appletree_bushcrop": "Apple",
   "item.photosynthesis.greenapple": "Apple",
 
   "block.photosynthesis.cinnamon_log": "Cinnamon-tree Log",
