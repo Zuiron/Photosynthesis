@@ -12,6 +12,7 @@ import net.minecraft.item.Items;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
@@ -50,7 +51,7 @@ public class DatetreeBushCrop extends SweetBerryBushBlock {
 
     @Override
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-        if(world.getBlockState(pos.up(2)).isOf(ModBlocks.DATETREE_LEAVES)) {
+        if(world.getBlockState(pos.up(2)).isOf(ModBlocks.DATETREE_LEAVES) && !world.getBlockState(pos.up(2)).get(Properties.PERSISTENT)) {
             return true;
         } else {
             return false;

@@ -11,6 +11,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
@@ -46,7 +47,7 @@ public class KiwitreeBushCrop extends SweetBerryBushBlock {
 
     @Override
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-        if(world.getBlockState(pos.up(2)).isOf(ModBlocks.KIWITREE_LEAVES)) {
+        if(world.getBlockState(pos.up(2)).isOf(ModBlocks.KIWITREE_LEAVES) && !world.getBlockState(pos.up(2)).get(Properties.PERSISTENT)) {
             return true;
         } else {
             return false;
