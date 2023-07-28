@@ -508,10 +508,10 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.STRIPPED_MANGOTREE_WOOD);
 
         //dropschances
-        float chance1 = 0.05f * 2;
-        float chance2 = 0.0625f * 2;
-        float chance3 = 0.083333336f * 2;
-        float chance4 = 0.1f * 2;
+        float chance1 = 0.05f * 1.5f;
+        float chance2 = 0.0625f * 1.5f;
+        float chance3 = 0.083333336f * 1.5f;
+        float chance4 = 0.1f * 1.5f;
 
         //0.05f, 0.0625f, 0.083333336f, 0.1f //default oak
         //0.3f, 0.36f, 0.48f, 0.6f //very high
