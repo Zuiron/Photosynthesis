@@ -2,9 +2,14 @@ package net.zuiron.photosynthesis.event;
 
 import me.shedaniel.autoconfig.AutoConfig;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
+import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffectUtil;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
+import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.config.ModConfig;
 import net.zuiron.photosynthesis.util.IEntityDataSaver;
 import net.zuiron.photosynthesis.util.ThirstData;
@@ -42,8 +47,22 @@ public class PlayerTickHandler implements ServerTickEvents.StartTick {
                     probability = 0.01f;    //0.5% chance
                     amount = 60;
                 }
+                IEntityDataSaver dataPlayer = ((IEntityDataSaver) player);
+
+                //HURT the player
+                if (new Random().nextFloat() <= 0.01f) {
+                    if (ThirstData.getThirst(dataPlayer) <= 1) {
+                        player.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 500, 0));
+                        player.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 500, 0));
+                    }
+                    if (ThirstData.getThirst(dataPlayer) <= 0) {
+                        player.addStatusEffect(new StatusEffectInstance(StatusEffects.HUNGER, 500, 0));
+                        player.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE, 500, 0));
+                        player.damage(player.getDamageSources().starve(), 1);
+                    }
+                }
+
                 if (new Random().nextFloat() <= probability) {
-                    IEntityDataSaver dataPlayer = ((IEntityDataSaver) player);
 
                     if (ThirstData.getThirstSat(dataPlayer) >= 450) {
                         amount = amount / 8;
@@ -54,7 +73,8 @@ public class PlayerTickHandler implements ServerTickEvents.StartTick {
                     }
 
                     int Sat = ThirstData.removeThirstSaturation(dataPlayer, amount);
-                    player.sendMessage(Text.literal("Removed Thirst Saturation: " + Sat + " - amount: " + amount));
+                    //player.sendMessage(Text.literal("Removed Thirst Saturation: " + Sat + " - amount: " + amount));
+                    Photosynthesis.LOGGER.info("Removed Thirst Saturation: " + Sat + " - amount: " + amount);
                 }
             }
         }
