@@ -1,5 +1,7 @@
 package net.zuiron.photosynthesis.block.entity.client;
 
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.LightmapTextureManager;
 import net.minecraft.client.render.OverlayTexture;
@@ -9,6 +11,7 @@ import net.minecraft.client.render.block.entity.BlockEntityRendererFactory;
 import net.minecraft.client.render.item.ItemRenderer;
 import net.minecraft.client.render.model.json.ModelTransformationMode;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
@@ -35,9 +38,9 @@ public class ShelfBlockEntityRenderer implements BlockEntityRenderer<ShelfBlockE
         double x = 0.10f; //0 is LEFT, 1.0 is RIGHT edge.
         double y = 0.56f; //0 is BOTTOM, 1 is TOP.
         double z = 0.15f; //0, is BACK, 1.0 is FRONT outside of shelf. toward player when looking at shelf.
-        int rot = 30;
+        int rot = 150;
         double itemOffset = 0.16;
-        float scale = 0.25f;
+        float scale = 0.18f;
         int inventoryMaxSize = 6;
 
         for(int i = 0; i < inventoryMaxSize; i++) {
@@ -60,8 +63,9 @@ public class ShelfBlockEntityRenderer implements BlockEntityRenderer<ShelfBlockE
                     matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(-90+rot));
                 }
             }
+
             matrices.scale(scale, scale, scale);
-            itemRenderer.renderItem(inventoryList.get(i), ModelTransformationMode.FIXED, getLightLevel(entity.getWorld(), entity.getPos()), OverlayTexture.DEFAULT_UV, matrices, vertexConsumers, entity.getWorld(), 1);
+            itemRenderer.renderItem(inventoryList.get(i), ModelTransformationMode.NONE, getLightLevel(entity.getWorld(), entity.getPos()), OverlayTexture.DEFAULT_UV, matrices, vertexConsumers, entity.getWorld(), 1);
             matrices.pop();
 
             x += itemOffset; //offset for next loop run.
