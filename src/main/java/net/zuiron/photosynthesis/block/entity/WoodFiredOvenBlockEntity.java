@@ -36,6 +36,7 @@ import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.block.custom.CookingPotBlock;
 import net.zuiron.photosynthesis.block.custom.WoodFiredOvenBlock;
+import net.zuiron.photosynthesis.block.custom.WoodFiredStoveBlock;
 import net.zuiron.photosynthesis.networking.ModMessages;
 import net.zuiron.photosynthesis.recipe.CookingPotRecipe;
 import net.zuiron.photosynthesis.recipe.WoodFiredOvenRecipe;
@@ -248,11 +249,18 @@ public class WoodFiredOvenBlockEntity extends BlockEntity implements ExtendedScr
         else if (blockStateSouth.getBlock() == ModBlocks.WOOD_FIRED_STOVE) {
             return blockStateSouth.get(Properties.LIT);
         }*/
-        if (
+
+        //ALLOWS too much.
+        /*if (
                 (blockStateWest.getBlock() == ModBlocks.WOOD_FIRED_STOVE && blockStateWest.get(Properties.LIT)) ||
                 (blockStateEast.getBlock() == ModBlocks.WOOD_FIRED_STOVE && blockStateEast.get(Properties.LIT)) ||
                 (blockStateSouth.getBlock() == ModBlocks.WOOD_FIRED_STOVE && blockStateSouth.get(Properties.LIT))
         ) {
+            return true;
+        }*/
+        //ONLY allow oven to be used on RIGHT side of a stove.
+        if(blockStateWest.getBlock() == ModBlocks.WOOD_FIRED_STOVE && blockStateWest.get(Properties.LIT) &&
+                blockStateWest.get(WoodFiredStoveBlock.FACING).equals(world.getBlockState(blockPos).get(WoodFiredOvenBlock.FACING))) {
             return true;
         }
 
