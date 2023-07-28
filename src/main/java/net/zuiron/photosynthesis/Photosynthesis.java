@@ -156,7 +156,7 @@ public class Photosynthesis implements ModInitializer {
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
+		// Proceed with mild caution.0
 		AutoConfig.register(ModConfig.class, JanksonConfigSerializer::new);
 
 		Registry.register(Registries.SOUND_EVENT, Photosynthesis.SKILLET_SOUND_ID, SKILLET_SOUND_EVENT);
