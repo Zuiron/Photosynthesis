@@ -9,6 +9,7 @@ import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.zuiron.photosynthesis.Photosynthesis;
@@ -19,6 +20,8 @@ import net.zuiron.photosynthesis.block.cropblocks.CustomCropBlockWL;
 import net.zuiron.photosynthesis.block.custom.*;
 import net.zuiron.photosynthesis.block.decoration.*;
 import net.zuiron.photosynthesis.world.feature.tree.*;
+
+import java.util.function.ToIntFunction;
 
 public class ModBlocks {
 
@@ -97,11 +100,11 @@ public class ModBlocks {
 
     public static final Block WOOD_FIRED_STOVE = registerBlock("wood_fired_stove",
             new WoodFiredStoveBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
-                    .strength(2f).nonOpaque()));
+                    .strength(2f).nonOpaque().luminance(ModBlocks.createLightLevelFromLitBlockState(13)).sounds(BlockSoundGroup.STONE)));
 
     public static final Block WOOD_FIRED_OVEN = registerBlock("wood_fired_oven",
             new WoodFiredOvenBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
-                    .strength(2f).nonOpaque()));
+                    .strength(2f).nonOpaque().luminance(ModBlocks.createLightLevelFromLitBlockState(13)).sounds(BlockSoundGroup.STONE)));
 
     public static final Block PLATE = registerBlock("plate",
             new PlateBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
@@ -2031,6 +2034,10 @@ public class ModBlocks {
 
 
     // END OF BLOCKS ---------------------------------------------------------------------------------------------------
+
+    private static ToIntFunction<BlockState> createLightLevelFromLitBlockState(int litLevel) {
+        return state -> state.get(Properties.LIT) != false ? litLevel : 0;
+    }
 
     private static Block registerBlockWithoutBlockItem(String name, Block block) {
         return Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, name), block);
