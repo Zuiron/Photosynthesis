@@ -3,6 +3,7 @@ package net.zuiron.photosynthesis.client;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
+import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
@@ -26,6 +27,8 @@ import net.zuiron.photosynthesis.event.ClientPlayConnectionJoin;
 import net.zuiron.photosynthesis.event.KeyInputHandler;
 import net.zuiron.photosynthesis.fluid.ModFluids;
 import net.zuiron.photosynthesis.networking.ModMessages;
+import net.zuiron.photosynthesis.particle.BoilingBubblesParticles;
+import net.zuiron.photosynthesis.particle.ModParticles;
 import net.zuiron.photosynthesis.screen.*;
 import net.fabricmc.fabric.api.resource.*;
 
@@ -563,5 +566,9 @@ public class PhotosynthesisClient implements ClientModInitializer {
 
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),
                 ModFluids.STILL_SKIMMEDGOATMILK, ModFluids.FLOWING_SKIMMEDGOATMILK);
+
+
+        //particles
+        ParticleFactoryRegistry.getInstance().register(ModParticles.BOILING_BUBBLES_PARTICLES, BoilingBubblesParticles.Factory::new);
     }
 }

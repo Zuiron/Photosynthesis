@@ -160,22 +160,17 @@ public class CookingPotBlockEntity extends BlockEntity implements ExtendedScreen
             Random random = level.random;
             if (random.nextFloat() < 0.2F) {
                 double x = (double) pos.getX() + 0.5D + (random.nextDouble() * 0.4D - 0.2D);
-                double y = (double) pos.getY() + 1.1D;
+                double y = (double) pos.getY() + 1.3D;
                 double z = (double) pos.getZ() + 0.5D + (random.nextDouble() * 0.4D - 0.2D);
                 double motionY = random.nextBoolean() ? 0.015D : 0.005D;
                 level.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, x, y, z, 0.0D, motionY, 0.0D);
             }
             if (state.get(BooleanProperty.of("processing"))) {
-                double x = (double) pos.getX() + 0.5D + (random.nextDouble() * 0.4D - 0.2D);
+                /*double x = (double) pos.getX() + 0.5D + (random.nextDouble() * 0.4D - 0.2D);
                 double y = (double) pos.getY() + 0.1D;
                 double z = (double) pos.getZ() + 0.5D + (random.nextDouble() * 0.4D - 0.2D);
                 double motionY = random.nextBoolean() ? 0.015D : 0.005D;
-                level.addParticle(ParticleTypes.SMOKE, x, y, z, 0.0D, motionY, 0.0D); //ENCHANTED_HIT
-                //level.addParticle(ParticleTypes.SMOKE, x, y, z, 0.0D, motionY, 0.0D);
-                /*
-                world.addImportantParticle(ParticleTypes.BUBBLE_COLUMN_UP, d + 0.5, e, f + 0.5, 0.0, 0.04, 0.0);
-            world.addImportantParticle(ParticleTypes.BUBBLE_COLUMN_UP, d + (double)random.nextFloat(), e + (double)random.nextFloat(), f + (double)random.nextFloat(), 0.0, 0.04, 0.0);
-                 */
+                level.addParticle(ParticleTypes.SMOKE, x, y, z, 0.0D, motionY, 0.0D); */
             }
         }
     }

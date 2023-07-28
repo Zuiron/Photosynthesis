@@ -29,6 +29,7 @@ import net.minecraft.world.WorldAccess;
 import net.zuiron.photosynthesis.block.entity.CookingPotBlockEntity;
 import net.zuiron.photosynthesis.block.entity.ModBlockEntities;
 import net.zuiron.photosynthesis.block.entity.SkilletBlockEntity;
+import net.zuiron.photosynthesis.particle.ModParticles;
 import org.jetbrains.annotations.Nullable;
 
 public class CookingPotBlock extends BlockWithEntity implements BlockEntityProvider {
@@ -127,11 +128,30 @@ public class CookingPotBlock extends BlockWithEntity implements BlockEntityProvi
     @Override
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
         if(state.get(BooleanProperty.of("processing"))) {
+            /*
+
+                double x = (double) pos.getX() + 0.5D + (random.nextDouble() * 0.4D - 0.2D);
+                double y = (double) pos.getY() + 0.1D;
+                double z = (double) pos.getZ() + 0.5D + (random.nextDouble() * 0.4D - 0.2D);
+                double motionY = random.nextBoolean() ? 0.015D : 0.005D;
+                level.addParticle(ParticleTypes.SMOKE, x, y, z, 0.0D, motionY, 0.0D); //ENCHANTED_HIT
+
+             */
+
+            /*
             double d = pos.getX();
             double e = pos.getY();
             double f = pos.getZ();
-            world.addImportantParticle(ParticleTypes.BUBBLE_COLUMN_UP, d + 0.5, e, f + 0.5, 0.0, 0.04, 0.0);
-            world.addImportantParticle(ParticleTypes.BUBBLE_COLUMN_UP, d + (double) random.nextFloat(), e + (double) random.nextFloat(), f + (double) random.nextFloat(), 0.0, 0.04, 0.0);
+            world.addImportantParticle(ModParticles.BOILING_BUBBLES_PARTICLES, d + 0.5, e, f + 0.5, 0.0, 0.04, 0.0);
+            world.addImportantParticle(ModParticles.BOILING_BUBBLES_PARTICLES, d + (double) random.nextFloat(), e + (double) random.nextFloat(), f + (double) random.nextFloat(), 0.0, 0.04, 0.0);
+
+             */
+
+            double x = (double) pos.getX() + 0.5D + (random.nextDouble() * 0.4D - 0.2D);
+            double y = (double) pos.getY() + 0.7D;
+            double z = (double) pos.getZ() + 0.5D + (random.nextDouble() * 0.4D - 0.2D);
+            double motionY = random.nextBoolean() ? 0.015D : 0.005D;
+            world.addImportantParticle(ModParticles.BOILING_BUBBLES_PARTICLES, x, y, z, 0.0D, motionY, 0.0D); //ENCHANTED_HIT
         }
     }
 
