@@ -507,63 +507,69 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         //addDrop(ModBlocks.STRIPPED_KIWITREE_WOOD);
         addDrop(ModBlocks.STRIPPED_MANGOTREE_WOOD);
 
+        //dropschances
+        float chance1 = 0.05f * 2;
+        float chance2 = 0.0625f * 2;
+        float chance3 = 0.083333336f * 2;
+        float chance4 = 0.1f * 2;
+
+        //0.05f, 0.0625f, 0.083333336f, 0.1f //default oak
+        //0.3f, 0.36f, 0.48f, 0.6f //very high
+
         //Leaves
-        addDrop(ModBlocks.APPLETREE_LEAVES, leavesDrops(ModBlocks.APPLETREE_LEAVES, ModBlocks.APPLETREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.CINNAMON_LEAVES, leavesDrops(ModBlocks.CINNAMON_LEAVES, ModBlocks.CINNAMON_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.BANANATREE_LEAVES, leavesDrops(ModBlocks.BANANATREE_LEAVES, ModBlocks.BANANATREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.ORANGETREE_LEAVES, leavesDrops(ModBlocks.ORANGETREE_LEAVES, ModBlocks.ORANGETREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.PEARTREE_LEAVES, leavesDrops(ModBlocks.PEARTREE_LEAVES, ModBlocks.PEARTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.AVOCADOTREE_LEAVES, leavesDrops(ModBlocks.AVOCADOTREE_LEAVES, ModBlocks.AVOCADOTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.COCONUTTREE_LEAVES, leavesDrops(ModBlocks.COCONUTTREE_LEAVES, ModBlocks.COCONUTTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.CHERRYTREE_LEAVES, leavesDrops(ModBlocks.CHERRYTREE_LEAVES, ModBlocks.CHERRYTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.LEMONTREE_LEAVES, leavesDrops(ModBlocks.LEMONTREE_LEAVES, ModBlocks.LEMONTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.OLIVETREE_LEAVES, leavesDrops(ModBlocks.OLIVETREE_LEAVES, ModBlocks.OLIVETREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.RUBBERTREE_LEAVES, leavesDrops(ModBlocks.RUBBERTREE_LEAVES, ModBlocks.RUBBERTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.CANDLENUTTREE_LEAVES, leavesDrops(ModBlocks.CANDLENUTTREE_LEAVES, ModBlocks.CANDLENUTTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.CHESTNUTTREE_LEAVES, leavesDrops(ModBlocks.CHESTNUTTREE_LEAVES, ModBlocks.CHESTNUTTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.NUTMEGTREE_LEAVES, leavesDrops(ModBlocks.NUTMEGTREE_LEAVES, ModBlocks.NUTMEGTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.PEACHTREE_LEAVES, leavesDrops(ModBlocks.PEACHTREE_LEAVES, ModBlocks.PEACHTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.PLUMTREE_LEAVES, leavesDrops(ModBlocks.PLUMTREE_LEAVES, ModBlocks.PLUMTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.WALNUTTREE_LEAVES, leavesDrops(ModBlocks.WALNUTTREE_LEAVES, ModBlocks.WALNUTTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.HAZELNUTTREE_LEAVES, leavesDrops(ModBlocks.HAZELNUTTREE_LEAVES, ModBlocks.HAZELNUTTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.PAWPAWTREE_LEAVES, leavesDrops(ModBlocks.PAWPAWTREE_LEAVES, ModBlocks.PAWPAWTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.SOURSOPTREE_LEAVES, leavesDrops(ModBlocks.SOURSOPTREE_LEAVES, ModBlocks.SOURSOPTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.ALMONDTREE_LEAVES, leavesDrops(ModBlocks.ALMONDTREE_LEAVES, ModBlocks.ALMONDTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.APRICOTTREE_LEAVES, leavesDrops(ModBlocks.APRICOTTREE_LEAVES, ModBlocks.APRICOTTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.CASHEWTREE_LEAVES, leavesDrops(ModBlocks.CASHEWTREE_LEAVES, ModBlocks.CASHEWTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.DATETREE_LEAVES, leavesDrops(ModBlocks.DATETREE_LEAVES, ModBlocks.DATETREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.DRAGONFRUITTREE_LEAVES, leavesDrops(ModBlocks.DRAGONFRUITTREE_LEAVES, ModBlocks.DRAGONFRUITTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.DURIANTREE_LEAVES, leavesDrops(ModBlocks.DURIANTREE_LEAVES, ModBlocks.DURIANTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.FIGTREE_LEAVES, leavesDrops(ModBlocks.FIGTREE_LEAVES, ModBlocks.FIGTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.GRAPEFRUITTREE_LEAVES, leavesDrops(ModBlocks.GRAPEFRUITTREE_LEAVES, ModBlocks.GRAPEFRUITTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.LIMETREE_LEAVES, leavesDrops(ModBlocks.LIMETREE_LEAVES, ModBlocks.LIMETREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.PAPAYATREE_LEAVES, leavesDrops(ModBlocks.PAPAYATREE_LEAVES, ModBlocks.PAPAYATREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.PECANTREE_LEAVES, leavesDrops(ModBlocks.PECANTREE_LEAVES, ModBlocks.PECANTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.PERSIMMONTREE_LEAVES, leavesDrops(ModBlocks.PERSIMMONTREE_LEAVES, ModBlocks.PERSIMMONTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.PISTACHIOTREE_LEAVES, leavesDrops(ModBlocks.PISTACHIOTREE_LEAVES, ModBlocks.PISTACHIOTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.POMEGRANATETREE_LEAVES, leavesDrops(ModBlocks.POMEGRANATETREE_LEAVES, ModBlocks.POMEGRANATETREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.STARFRUITTREE_LEAVES, leavesDrops(ModBlocks.STARFRUITTREE_LEAVES, ModBlocks.STARFRUITTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.BREADFRUITTREE_LEAVES, leavesDrops(ModBlocks.BREADFRUITTREE_LEAVES, ModBlocks.BREADFRUITTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.GUAVATREE_LEAVES, leavesDrops(ModBlocks.GUAVATREE_LEAVES, ModBlocks.GUAVATREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.JACKFRUITTREE_LEAVES, leavesDrops(ModBlocks.JACKFRUITTREE_LEAVES, ModBlocks.JACKFRUITTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.LYCHEETREE_LEAVES, leavesDrops(ModBlocks.LYCHEETREE_LEAVES, ModBlocks.LYCHEETREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.PASSIONFRUITTREE_LEAVES, leavesDrops(ModBlocks.PASSIONFRUITTREE_LEAVES, ModBlocks.PASSIONFRUITTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.RAMBUTANTREE_LEAVES, leavesDrops(ModBlocks.RAMBUTANTREE_LEAVES, ModBlocks.RAMBUTANTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.TAMARINDTREE_LEAVES, leavesDrops(ModBlocks.TAMARINDTREE_LEAVES, ModBlocks.TAMARINDTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.MAPLETREE_LEAVES, leavesDrops(ModBlocks.MAPLETREE_LEAVES, ModBlocks.MAPLETREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.PEPPERCORNTREE_LEAVES, leavesDrops(ModBlocks.PEPPERCORNTREE_LEAVES, ModBlocks.PEPPERCORNTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.VANILLABEANTREE_LEAVES, leavesDrops(ModBlocks.VANILLABEANTREE_LEAVES, ModBlocks.VANILLABEANTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.PINENUTTREE_LEAVES, leavesDrops(ModBlocks.PINENUTTREE_LEAVES, ModBlocks.PINENUTTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-        addDrop(ModBlocks.GOOSEBERRYTREE_LEAVES, leavesDrops(ModBlocks.GOOSEBERRYTREE_LEAVES, ModBlocks.GOOSEBERRYTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
+        addDrop(ModBlocks.APPLETREE_LEAVES, leavesDrops(ModBlocks.APPLETREE_LEAVES, ModBlocks.APPLETREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.CINNAMON_LEAVES, leavesDrops(ModBlocks.CINNAMON_LEAVES, ModBlocks.CINNAMON_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.BANANATREE_LEAVES, leavesDrops(ModBlocks.BANANATREE_LEAVES, ModBlocks.BANANATREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.ORANGETREE_LEAVES, leavesDrops(ModBlocks.ORANGETREE_LEAVES, ModBlocks.ORANGETREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.PEARTREE_LEAVES, leavesDrops(ModBlocks.PEARTREE_LEAVES, ModBlocks.PEARTREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.AVOCADOTREE_LEAVES, leavesDrops(ModBlocks.AVOCADOTREE_LEAVES, ModBlocks.AVOCADOTREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.COCONUTTREE_LEAVES, leavesDrops(ModBlocks.COCONUTTREE_LEAVES, ModBlocks.COCONUTTREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.CHERRYTREE_LEAVES, leavesDrops(ModBlocks.CHERRYTREE_LEAVES, ModBlocks.CHERRYTREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.LEMONTREE_LEAVES, leavesDrops(ModBlocks.LEMONTREE_LEAVES, ModBlocks.LEMONTREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.OLIVETREE_LEAVES, leavesDrops(ModBlocks.OLIVETREE_LEAVES, ModBlocks.OLIVETREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.RUBBERTREE_LEAVES, leavesDrops(ModBlocks.RUBBERTREE_LEAVES, ModBlocks.RUBBERTREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.CANDLENUTTREE_LEAVES, leavesDrops(ModBlocks.CANDLENUTTREE_LEAVES, ModBlocks.CANDLENUTTREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.CHESTNUTTREE_LEAVES, leavesDrops(ModBlocks.CHESTNUTTREE_LEAVES, ModBlocks.CHESTNUTTREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.NUTMEGTREE_LEAVES, leavesDrops(ModBlocks.NUTMEGTREE_LEAVES, ModBlocks.NUTMEGTREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.PEACHTREE_LEAVES, leavesDrops(ModBlocks.PEACHTREE_LEAVES, ModBlocks.PEACHTREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.PLUMTREE_LEAVES, leavesDrops(ModBlocks.PLUMTREE_LEAVES, ModBlocks.PLUMTREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.WALNUTTREE_LEAVES, leavesDrops(ModBlocks.WALNUTTREE_LEAVES, ModBlocks.WALNUTTREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.HAZELNUTTREE_LEAVES, leavesDrops(ModBlocks.HAZELNUTTREE_LEAVES, ModBlocks.HAZELNUTTREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.PAWPAWTREE_LEAVES, leavesDrops(ModBlocks.PAWPAWTREE_LEAVES, ModBlocks.PAWPAWTREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.SOURSOPTREE_LEAVES, leavesDrops(ModBlocks.SOURSOPTREE_LEAVES, ModBlocks.SOURSOPTREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.ALMONDTREE_LEAVES, leavesDrops(ModBlocks.ALMONDTREE_LEAVES, ModBlocks.ALMONDTREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.APRICOTTREE_LEAVES, leavesDrops(ModBlocks.APRICOTTREE_LEAVES, ModBlocks.APRICOTTREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.CASHEWTREE_LEAVES, leavesDrops(ModBlocks.CASHEWTREE_LEAVES, ModBlocks.CASHEWTREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.DATETREE_LEAVES, leavesDrops(ModBlocks.DATETREE_LEAVES, ModBlocks.DATETREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.DRAGONFRUITTREE_LEAVES, leavesDrops(ModBlocks.DRAGONFRUITTREE_LEAVES, ModBlocks.DRAGONFRUITTREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.DURIANTREE_LEAVES, leavesDrops(ModBlocks.DURIANTREE_LEAVES, ModBlocks.DURIANTREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.FIGTREE_LEAVES, leavesDrops(ModBlocks.FIGTREE_LEAVES, ModBlocks.FIGTREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.GRAPEFRUITTREE_LEAVES, leavesDrops(ModBlocks.GRAPEFRUITTREE_LEAVES, ModBlocks.GRAPEFRUITTREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.LIMETREE_LEAVES, leavesDrops(ModBlocks.LIMETREE_LEAVES, ModBlocks.LIMETREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.PAPAYATREE_LEAVES, leavesDrops(ModBlocks.PAPAYATREE_LEAVES, ModBlocks.PAPAYATREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.PECANTREE_LEAVES, leavesDrops(ModBlocks.PECANTREE_LEAVES, ModBlocks.PECANTREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.PERSIMMONTREE_LEAVES, leavesDrops(ModBlocks.PERSIMMONTREE_LEAVES, ModBlocks.PERSIMMONTREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.PISTACHIOTREE_LEAVES, leavesDrops(ModBlocks.PISTACHIOTREE_LEAVES, ModBlocks.PISTACHIOTREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.POMEGRANATETREE_LEAVES, leavesDrops(ModBlocks.POMEGRANATETREE_LEAVES, ModBlocks.POMEGRANATETREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.STARFRUITTREE_LEAVES, leavesDrops(ModBlocks.STARFRUITTREE_LEAVES, ModBlocks.STARFRUITTREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.BREADFRUITTREE_LEAVES, leavesDrops(ModBlocks.BREADFRUITTREE_LEAVES, ModBlocks.BREADFRUITTREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.GUAVATREE_LEAVES, leavesDrops(ModBlocks.GUAVATREE_LEAVES, ModBlocks.GUAVATREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.JACKFRUITTREE_LEAVES, leavesDrops(ModBlocks.JACKFRUITTREE_LEAVES, ModBlocks.JACKFRUITTREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.LYCHEETREE_LEAVES, leavesDrops(ModBlocks.LYCHEETREE_LEAVES, ModBlocks.LYCHEETREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.PASSIONFRUITTREE_LEAVES, leavesDrops(ModBlocks.PASSIONFRUITTREE_LEAVES, ModBlocks.PASSIONFRUITTREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.RAMBUTANTREE_LEAVES, leavesDrops(ModBlocks.RAMBUTANTREE_LEAVES, ModBlocks.RAMBUTANTREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.TAMARINDTREE_LEAVES, leavesDrops(ModBlocks.TAMARINDTREE_LEAVES, ModBlocks.TAMARINDTREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.MAPLETREE_LEAVES, leavesDrops(ModBlocks.MAPLETREE_LEAVES, ModBlocks.MAPLETREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.PEPPERCORNTREE_LEAVES, leavesDrops(ModBlocks.PEPPERCORNTREE_LEAVES, ModBlocks.PEPPERCORNTREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.VANILLABEANTREE_LEAVES, leavesDrops(ModBlocks.VANILLABEANTREE_LEAVES, ModBlocks.VANILLABEANTREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.PINENUTTREE_LEAVES, leavesDrops(ModBlocks.PINENUTTREE_LEAVES, ModBlocks.PINENUTTREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.GOOSEBERRYTREE_LEAVES, leavesDrops(ModBlocks.GOOSEBERRYTREE_LEAVES, ModBlocks.GOOSEBERRYTREE_SAPLING, chance1, chance2, chance3, chance4));
+        addDrop(ModBlocks.MANGOTREE_LEAVES, leavesDrops(ModBlocks.MANGOTREE_LEAVES, ModBlocks.MANGOTREE_SAPLING, chance1, chance2, chance3, chance4));
+
+        //higher drop rates.
         addDrop(ModBlocks.GRAPETREE_LEAVES, leavesDrops(ModBlocks.GRAPETREE_LEAVES, ModBlocks.GRAPETREE_SAPLING, 0.3f, 0.36f, 0.48f, 0.6f));
         addDrop(ModBlocks.RED_GRAPETREE_LEAVES, leavesDrops(ModBlocks.RED_GRAPETREE_LEAVES, ModBlocks.RED_GRAPETREE_SAPLING, 0.3f, 0.36f, 0.48f, 0.6f));
         addDrop(ModBlocks.KIWITREE_LEAVES, leavesDrops(ModBlocks.KIWITREE_LEAVES, ModBlocks.KIWITREE_SAPLING, 0.3f, 0.36f, 0.48f, 0.6f));
-        addDrop(ModBlocks.MANGOTREE_LEAVES, leavesDrops(ModBlocks.MANGOTREE_LEAVES, ModBlocks.MANGOTREE_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
-
-
-        /*
-        0.05f, 0.0625f, 0.083333336f, 0.1f
-         */
 
 
 
