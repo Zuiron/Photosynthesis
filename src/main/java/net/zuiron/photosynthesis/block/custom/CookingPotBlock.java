@@ -8,7 +8,9 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
@@ -18,9 +20,12 @@ import net.minecraft.state.property.Property;
 import net.minecraft.util.*;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldAccess;
 import net.zuiron.photosynthesis.block.entity.CookingPotBlockEntity;
 import net.zuiron.photosynthesis.block.entity.ModBlockEntities;
 import net.zuiron.photosynthesis.block.entity.SkilletBlockEntity;
@@ -117,6 +122,17 @@ public class CookingPotBlock extends BlockWithEntity implements BlockEntityProvi
             entity.damage(world.getDamageSources().hotFloor(), 1.0f);
         }
         super.onSteppedOn(world, pos, state, entity);
+    }
+
+    @Override
+    public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
+        if(state.get(BooleanProperty.of("processing"))) {
+            double d = pos.getX();
+            double e = pos.getY();
+            double f = pos.getZ();
+            world.addImportantParticle(ParticleTypes.BUBBLE_COLUMN_UP, d + 0.5, e, f + 0.5, 0.0, 0.04, 0.0);
+            world.addImportantParticle(ParticleTypes.BUBBLE_COLUMN_UP, d + (double) random.nextFloat(), e + (double) random.nextFloat(), f + (double) random.nextFloat(), 0.0, 0.04, 0.0);
+        }
     }
 
     static {
