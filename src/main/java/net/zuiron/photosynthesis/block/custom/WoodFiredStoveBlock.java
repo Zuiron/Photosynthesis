@@ -4,8 +4,13 @@ import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.client.item.TooltipContext;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.sound.SoundCategory;
@@ -14,6 +19,8 @@ import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.Properties;
+import net.minecraft.text.Text;
+import net.minecraft.text.TextColor;
 import net.minecraft.util.*;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
@@ -25,6 +32,8 @@ import net.minecraft.world.World;
 import net.zuiron.photosynthesis.block.entity.WoodFiredStoveBlockEntity;
 import net.zuiron.photosynthesis.block.entity.ModBlockEntities;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class WoodFiredStoveBlock extends BlockWithEntity implements BlockEntityProvider {
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
@@ -128,5 +137,21 @@ public class WoodFiredStoveBlock extends BlockWithEntity implements BlockEntityP
         double k = axis == Direction.Axis.Z ? (double)direction.getOffsetZ() * 0.22 : h; //0.52
         world.addParticle(ParticleTypes.SMOKE, d + i, e + j, f + k, 0.0, 0.0, 0.0);
         world.addParticle(ParticleTypes.FLAME, d + i, e + j, f + k, 0.0, 0.0, 0.0);
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
+        super.appendTooltip(stack, world, tooltip, options);
+
+        tooltip.add(Text.literal("Provides ").append(Text.literal("Heat")).styled(style -> style.withColor(TextColor.fromRgb(0xc91111))));
+    }
+
+    @Override
+    public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
+        if (!entity.bypassesSteppingEffects() && entity instanceof LivingEntity && !EnchantmentHelper.hasFrostWalker((LivingEntity)entity)
+        && world.getBlockState(pos).get(WoodFiredStoveBlock.LIT)) {
+            entity.damage(world.getDamageSources().hotFloor(), 1.0f);
+        }
+        super.onSteppedOn(world, pos, state, entity);
     }
 }

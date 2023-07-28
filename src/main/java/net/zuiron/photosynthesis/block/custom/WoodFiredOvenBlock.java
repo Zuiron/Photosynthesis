@@ -4,14 +4,21 @@ import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.client.item.TooltipContext;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.item.ItemStack;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.state.property.Property;
+import net.minecraft.text.Text;
+import net.minecraft.text.TextColor;
 import net.minecraft.util.*;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
@@ -22,6 +29,8 @@ import net.zuiron.photosynthesis.block.entity.CookingPotBlockEntity;
 import net.zuiron.photosynthesis.block.entity.ModBlockEntities;
 import net.zuiron.photosynthesis.block.entity.WoodFiredOvenBlockEntity;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class WoodFiredOvenBlock extends BlockWithEntity implements BlockEntityProvider {
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
@@ -105,6 +114,22 @@ public class WoodFiredOvenBlock extends BlockWithEntity implements BlockEntityPr
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
         return checkType(type, ModBlockEntities.WOOD_FIRED_OVEN, WoodFiredOvenBlockEntity::tick);
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
+        super.appendTooltip(stack, world, tooltip, options);
+
+        tooltip.add(Text.literal("Stove ADDON, Requires heat input on left side."));
+    }
+
+    @Override
+    public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
+        if (!entity.bypassesSteppingEffects() && entity instanceof LivingEntity && !EnchantmentHelper.hasFrostWalker((LivingEntity)entity)
+                && world.getBlockState(pos).get(WoodFiredOvenBlock.LIT)) {
+            entity.damage(world.getDamageSources().hotFloor(), 1.0f);
+        }
+        super.onSteppedOn(world, pos, state, entity);
     }
 
     static {
