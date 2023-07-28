@@ -211,6 +211,9 @@ public class ModItems {
     public static final Item MEASURING_CUP_SUNFLOWEROIL = registerItem("measuring_cup_sunfloweroil",
             new Item(new FabricItemSettings().recipeRemainder(ModItems.MEASURING_CUP)));
 
+    public static final Item MEASURING_CUP_OLIVEOIL = registerItem("measuring_cup_oliveoil",
+            new Item(new FabricItemSettings().recipeRemainder(ModItems.MEASURING_CUP)));
+
     public static final Item MEASURING_CUP_MEAD = registerItem("measuring_cup_mead",
             new Item(new FabricItemSettings().recipeRemainder(ModItems.MEASURING_CUP)));
 
