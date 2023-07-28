@@ -61,7 +61,7 @@ public class ShelfBlockEntityRenderer implements BlockEntityRenderer<ShelfBlockE
                 }
             }
             matrices.scale(scale, scale, scale);
-            itemRenderer.renderItem(inventoryList.get(i), ModelTransformationMode.GUI, getLightLevel(entity.getWorld(), entity.getPos()), OverlayTexture.DEFAULT_UV, matrices, vertexConsumers, entity.getWorld(), 1);
+            itemRenderer.renderItem(inventoryList.get(i), ModelTransformationMode.FIXED, getLightLevel(entity.getWorld(), entity.getPos()), OverlayTexture.DEFAULT_UV, matrices, vertexConsumers, entity.getWorld(), 1);
             matrices.pop();
 
             x += itemOffset; //offset for next loop run.
