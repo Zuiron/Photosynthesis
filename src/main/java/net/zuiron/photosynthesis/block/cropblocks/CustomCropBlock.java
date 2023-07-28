@@ -109,6 +109,25 @@ public class CustomCropBlock extends CropBlock {
             case "papaver_somniferum_crop": return ModItems.PAPAVER_SOMNIFERUM;
             case "erythroxylum_coca_crop": return ModItems.ERYTHROXYLUM_COCA;
 
+            case "cactus_fruit": return ModItems.CACTUS_FRUIT;
+            case "cantaloupe": return ModItems.CANTALOUPE;
+            case "flax": return ModItems.FLAX;
+            case "jute": return ModItems.JUTE;
+            case "kenaf": return ModItems.KENAF;
+            case "sisal": return ModItems.SISAL;
+            case "amaranth": return ModItems.AMARANTH;
+            case "bean": return ModItems.BEAN;
+            case "chickpea": return ModItems.CHICKPEA;
+            case "lentil": return ModItems.LENTIL;
+            case "quinoa": return ModItems.QUINOA;
+            case "peanut": return ModItems.PEANUT;
+            case "taro": return ModItems.TARO;
+            case "tomatillo": return ModItems.TOMATILLO;
+            case "agave": return ModItems.AGAVE;
+            case "ginger": return ModItems.GINGER;
+            case "sesame": return ModItems.SESAME;
+            case "mustard": return ModItems.MUSTARD;
+
             default: return Items.AIR;
         }
     }
