@@ -254,7 +254,7 @@ public class CropData {
         cropDataMap.put("block.photosynthesis.raspberry_bush",          new CropData(new int[]{2, 7, 0, 1}, new int[]{1, 2, 7, 0}));    //plant spring, harvest autumn.
         cropDataMap.put("block.photosynthesis.cloudberry_bush",         new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
         cropDataMap.put("block.photosynthesis.wild_strawberry_bush",    new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
-        cropDataMap.put("block.photosynthesis.candleberry_bush",        new CropData(new int[]{2, 7, 0, 1}, new int[]{1, 2, 7, 0}));    //plant spring, harvest autumn.
+        cropDataMap.put("block.photosynthesis.lingonberry_bush",        new CropData(new int[]{2, 7, 0, 1}, new int[]{1, 2, 7, 0}));    //plant spring, harvest autumn.
         cropDataMap.put("block.photosynthesis.cranberry_bush",          new CropData(new int[]{2, 7, 0, 1}, new int[]{1, 2, 7, 0}));    //plant spring, harvest autumn.
         cropDataMap.put("block.photosynthesis.huckleberry_bush",        new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
         cropDataMap.put("block.photosynthesis.juniperberry_bush",       new CropData(new int[]{2, 7, 0, 1}, new int[]{1, 2, 7, 0}));    //plant spring, harvest autumn.
