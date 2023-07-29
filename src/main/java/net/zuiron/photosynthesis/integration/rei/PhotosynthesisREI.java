@@ -14,7 +14,9 @@ import me.shedaniel.rei.api.client.registry.display.DisplayRegistry;
 import me.shedaniel.rei.api.client.registry.screen.ScreenRegistry;
 import me.shedaniel.rei.api.client.util.ClientEntryStacks;
 import me.shedaniel.rei.api.common.category.CategoryIdentifier;
+import me.shedaniel.rei.api.common.entry.EntryIngredient;
 import me.shedaniel.rei.api.common.entry.EntryStack;
+import me.shedaniel.rei.api.common.util.EntryIngredients;
 import me.shedaniel.rei.api.common.util.EntryStacks;
 import me.shedaniel.rei.plugin.common.displays.DefaultInformationDisplay;
 import net.fabricmc.api.EnvType;
@@ -24,6 +26,7 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.Text;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
+import net.zuiron.photosynthesis.fluid.ModFluids;
 import net.zuiron.photosynthesis.integration.rei.cookingpot.CookingPotRecipeCategory;
 import net.zuiron.photosynthesis.integration.rei.cookingpot.CookingPotRecipeDisplay;
 import net.zuiron.photosynthesis.integration.rei.cutting_board.CuttingBoardRecipeCategory;
@@ -189,9 +192,30 @@ public class PhotosynthesisREI implements REIClientPlugin {
     }
 
     private void registerDescriptions(DisplayRegistry registry) {
-        //addDescription(registry, ModBlocks.MAPLE_EXTRACTOR, "this is a test");
-        DefaultInformationDisplay info = DefaultInformationDisplay.createFromEntry(EntryStacks.of(ModBlocks.MAPLE_EXTRACTOR), Text.literal("confused"));
+
+        /*DefaultInformationDisplay info = DefaultInformationDisplay.createFromEntry(EntryStacks.of(ModBlocks.MAPLE_EXTRACTOR), Text.literal("confused"));
         info.lines(Text.literal("Place on a maple tree (LOG), and it will produce Maple Sap!"));
+        registry.add(info);*/
+
+        addDescription(registry, EntryStacks.of(ModBlocks.MAPLE_EXTRACTOR), "Place on a maple tree (LOG), and it will produce Maple Sap.");
+        addDescription(registry, EntryStacks.of(ModBlocks.LATEX_EXTRACTOR), "Place on a rubber tree (LOG), and it will produce Latex. " +
+                "Make sure to strip the log ABOVE where you want to place the extractor!");
+
+        addDescription(registry, EntryStacks.of(ModFluids.LATEX_BUCKET), "Use the Latex Extractor to get latex!");
+        addDescription(registry, EntryStacks.of(ModFluids.MAPLE_BUCKET), "Use the Maple Extractor to get maple sap!");
+
+        addDescription2(registry, EntryIngredients.of(ModFluids.STILL_MAPLE.getDefaultState().getFluid(), 81000), "Use the Maple Extractor to get maple sap!");
+        //EntryIngredients.of(outputFluid.fluidVariant.getFluid(), outputFluid.amount)
+    }
+
+    private static void addDescription(DisplayRegistry registry, EntryStack entryStack, String message) {
+        DefaultInformationDisplay info = DefaultInformationDisplay.createFromEntry(entryStack, Text.literal("confused"));
+        info.lines(Text.literal(message));
+        registry.add(info);
+    }
+    private static void addDescription2(DisplayRegistry registry, EntryIngredient entryStacks, String message) {
+        DefaultInformationDisplay info = DefaultInformationDisplay.createFromEntries(entryStacks, Text.literal("confused"));
+        info.lines(Text.literal(message));
         registry.add(info);
     }
 }
