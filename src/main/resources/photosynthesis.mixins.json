@@ -17,7 +17,8 @@
     "ModStemBlock",
     "ModSugarCaneBlock",
     "ModCocoaBlock",
-    "ModPropaguleBlock"
+    "ModPropaguleBlock",
+    "MixinPlayerEntity"
   ],
   "client": [
     "PhotosynthesisMixin"
