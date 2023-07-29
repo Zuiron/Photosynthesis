@@ -289,7 +289,7 @@ public class ModItems {
 
     public static final Item STRAWBERRY = registerItem("strawberry",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+                    .food(new FoodComponent.Builder().hunger(1).alwaysEdible().snack().saturationModifier(0.1f).build())));
 
     public static final Item OAT = registerItem("oat",
             new Item(new FabricItemSettings()

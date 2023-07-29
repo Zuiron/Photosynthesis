@@ -18,7 +18,8 @@
     "ModSugarCaneBlock",
     "ModCocoaBlock",
     "ModPropaguleBlock",
-    "MixinPlayerEntity"
+    "MixinPlayerEntity",
+    "ModItemThirstDataTooltipMixin"
   ],
   "client": [
     "PhotosynthesisMixin"
