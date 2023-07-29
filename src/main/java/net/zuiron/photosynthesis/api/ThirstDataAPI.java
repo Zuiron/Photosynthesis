@@ -41,6 +41,18 @@ public class ThirstDataAPI {
         //Max Saturation: 600 - 60 per 1 ICON
         thirstDataMap.put("item.minecraft.cooked_beef",  new ThirstDataAPI(0, 0, 2, 180));
         thirstDataMap.put("item.photosynthesis.strawberry",  new ThirstDataAPI(0, 60, 0, 0));
+
+        //Berries
+        thirstDataMap.put("item.photosynthesis.blueberries",  new ThirstDataAPI(0, 60, 0, 0));
+        thirstDataMap.put("item.photosynthesis.blackberries",  new ThirstDataAPI(0, 60, 0, 0));
+        thirstDataMap.put("item.photosynthesis.raspberries",  new ThirstDataAPI(0, 60, 0, 0));
+        thirstDataMap.put("item.photosynthesis.cloudberries",  new ThirstDataAPI(0, 60, 0, 0));
+        thirstDataMap.put("item.photosynthesis.wild_strawberries",  new ThirstDataAPI(0, 60, 0, 0));
+        thirstDataMap.put("item.photosynthesis.lingonberries",  new ThirstDataAPI(0, 60, 0, 0));
+        thirstDataMap.put("item.photosynthesis.cranberries",  new ThirstDataAPI(0, 60, 0, 0));
+        thirstDataMap.put("item.photosynthesis.huckleberries",  new ThirstDataAPI(0, 60, 0, 0));
+        thirstDataMap.put("item.photosynthesis.juniperberries",  new ThirstDataAPI(0, 60, 0, 0));
+        thirstDataMap.put("item.photosynthesis.mulberries",  new ThirstDataAPI(0, 60, 0, 0));
     }
 
     public static ThirstDataAPI getThirstDataFor(String itemName) {

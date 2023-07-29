@@ -240,34 +240,34 @@ public class ModItems {
 
     // BERRIES ---------------------------------------------------------------------------------------------------------
     public static final Item BLUEBERRIES = registerBerryItem("blueberries", ModBlocks.BLUEBERRY_BUSH,
-            new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
+            new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).alwaysEdible().snack().saturationModifier(0.2f).build()));
 
     public static final Item BLACKBERRIES = registerBerryItem("blackberries", ModBlocks.BLACKBERRY_BUSH,
-            new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
+            new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).alwaysEdible().snack().saturationModifier(0.2f).build()));
 
     public static final Item RASPBERRIES = registerBerryItem("raspberries", ModBlocks.RASPBERRY_BUSH,
-            new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
+            new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).alwaysEdible().snack().saturationModifier(0.2f).build()));
 
     public static final Item CLOUDBERRIES = registerBerryItem("cloudberries", ModBlocks.CLOUDBERRY_BUSH,
-            new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
+            new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).alwaysEdible().snack().saturationModifier(0.2f).build()));
 
     public static final Item WILD_STRAWBERRIES = registerBerryItem("wild_strawberries", ModBlocks.WILD_STRAWBERRY_BUSH,
-            new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
+            new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).alwaysEdible().snack().saturationModifier(0.2f).build()));
 
     public static final Item LINGONBERRIES = registerBerryItem("lingonberries", ModBlocks.LINGONBERRY_BUSH,
-            new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
+            new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).alwaysEdible().snack().saturationModifier(0.2f).build()));
 
     public static final Item CRANBERRIES = registerBerryItem("cranberries", ModBlocks.CRANBERRY_BUSH,
-            new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
+            new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).alwaysEdible().snack().saturationModifier(0.2f).build()));
 
     public static final Item HUCKLEBERRIES = registerBerryItem("huckleberries", ModBlocks.HUCKLEBERRY_BUSH,
-            new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
+            new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).alwaysEdible().snack().saturationModifier(0.2f).build()));
 
     public static final Item JUNIPERBERRIES = registerBerryItem("juniperberries", ModBlocks.JUNIPERBERRY_BUSH,
-            new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
+            new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).alwaysEdible().snack().saturationModifier(0.2f).build()));
 
     public static final Item MULBERRIES = registerBerryItem("mulberries", ModBlocks.MULBERRY_BUSH,
-            new FabricItemSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build()));
+            new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).alwaysEdible().snack().saturationModifier(0.2f).build()));
 
 
 
