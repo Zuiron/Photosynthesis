@@ -3,7 +3,6 @@ package net.zuiron.photosynthesis;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -14,6 +13,7 @@ import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.block.entity.ModBlockEntities;
 import net.zuiron.photosynthesis.config.ModConfig;
 import net.zuiron.photosynthesis.event.PlayerTickHandler;
+import net.zuiron.photosynthesis.event.ModUseItemCallback;
 import net.zuiron.photosynthesis.fluid.ModFluids;
 import net.zuiron.photosynthesis.item.ModItemGroup;
 import net.zuiron.photosynthesis.item.ModItems;
@@ -183,6 +183,7 @@ public class Photosynthesis implements ModInitializer {
 		modifyLootTables.registerModifyLootTables();
 
 		ModParticles.registerParticles();
+		ModUseItemCallback.registerModUseItemCallback();
 
 		ModWorldGen.generateModWorldGen(); //last
 
