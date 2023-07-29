@@ -20,6 +20,27 @@
       "ascent": 9,
       "height": 9,
       "chars": ["\uE003"]
+    },
+    {
+      "type": "bitmap",
+      "file": "photosynthesis:thirst/thirst_contaminated_sat.png",
+      "ascent": 9,
+      "height": 9,
+      "chars": ["\uE004"]
+    },
+    {
+      "type": "bitmap",
+      "file": "photosynthesis:thirst/thirst_remove.png",
+      "ascent": 9,
+      "height": 9,
+      "chars": ["\uE005"]
+    },
+    {
+      "type": "bitmap",
+      "file": "photosynthesis:thirst/thirst_remove_sat.png",
+      "ascent": 9,
+      "height": 9,
+      "chars": ["\uE006"]
     }
   ]
 }

@@ -35,9 +35,12 @@ public class OnPlayerEatEvent {
                     player.sendMessage(Text.of("We have thirst data for this: thirst:"+thirst +", sat:"+thirstSat + " - " + stack.getItem().getTranslationKey()), false);
                 }
                 else if (thirstItemData == null && isThirstEnabled) {
+                    //NO DATA ON ITEM. DO SOMETHING OR NOT?
                     //DEFAULT remove thirst, unknown item. remove 2 thirst bars.
+                    /*
                     ThirstData.removeThirst((IEntityDataSaver)player, 1);
                     ThirstData.removeThirstSaturation((IEntityDataSaver)player, 120);
+                    */
                 }
             }
         });
