@@ -204,6 +204,7 @@ public class PhotosynthesisREI implements REIClientPlugin {
         addDescription(registry, EntryStacks.of(ModFluids.LATEX_BUCKET), "Use the Latex Extractor to get latex!");
         addDescription(registry, EntryStacks.of(ModFluids.MAPLE_BUCKET), "Use the Maple Extractor to get maple sap!");
 
+        addDescription2(registry, EntryIngredients.of(ModFluids.STILL_LATEX.getDefaultState().getFluid(), 81000), "Use the Latex Extractor to get latex!");
         addDescription2(registry, EntryIngredients.of(ModFluids.STILL_MAPLE.getDefaultState().getFluid(), 81000), "Use the Maple Extractor to get maple sap!");
         //EntryIngredients.of(outputFluid.fluidVariant.getFluid(), outputFluid.amount)
     }
