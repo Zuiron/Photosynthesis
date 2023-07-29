@@ -16,10 +16,12 @@ import me.shedaniel.rei.api.client.util.ClientEntryStacks;
 import me.shedaniel.rei.api.common.category.CategoryIdentifier;
 import me.shedaniel.rei.api.common.entry.EntryStack;
 import me.shedaniel.rei.api.common.util.EntryStacks;
+import me.shedaniel.rei.plugin.common.displays.DefaultInformationDisplay;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.text.Text;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.integration.rei.cookingpot.CookingPotRecipeCategory;
@@ -51,6 +53,9 @@ import net.zuiron.photosynthesis.screen.*;
 import net.zuiron.photosynthesis.screen.renderer.FluidStackRenderer;
 import net.zuiron.photosynthesis.util.FluidStack;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 @Environment(EnvType.CLIENT)
 public class PhotosynthesisREI implements REIClientPlugin {
@@ -152,6 +157,8 @@ public class PhotosynthesisREI implements REIClientPlugin {
         registry.registerRecipeFiller(DryingRackRecipe.class, DryingRackRecipe.Type.INSTANCE, DryingRackRecipeDisplay::new);
 
         registry.registerRecipeFiller(WoodFiredOvenRecipe.class, WoodFiredOvenRecipe.Type.INSTANCE, WoodFiredOvenRecipeDisplay::new);
+
+        registerDescriptions(registry);
     }
 
     @Override
@@ -179,5 +186,12 @@ public class PhotosynthesisREI implements REIClientPlugin {
         registry.registerContainerClickArea(new Rectangle(77, 37, 22, 15), DryingRackScreen.class, DRYINGRACK);
 
         registry.registerContainerClickArea(new Rectangle(90, 45, 22, 15), WoodFiredOvenScreen.class, WOOD_FIRED_OVEN);
+    }
+
+    private void registerDescriptions(DisplayRegistry registry) {
+        //addDescription(registry, ModBlocks.MAPLE_EXTRACTOR, "this is a test");
+        DefaultInformationDisplay info = DefaultInformationDisplay.createFromEntry(EntryStacks.of(ModBlocks.MAPLE_EXTRACTOR), Text.literal("confused"));
+        info.lines(Text.literal("Place on a maple tree (LOG), and it will produce Maple Sap!"));
+        registry.add(info);
     }
 }
