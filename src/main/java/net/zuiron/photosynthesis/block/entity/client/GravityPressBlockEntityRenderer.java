@@ -78,7 +78,7 @@ public class GravityPressBlockEntityRenderer implements BlockEntityRenderer<Grav
         }
 
         x = 0.5f; //0 is LEFT, 1.0 is RIGHT edge.
-        y = 0.3f; //0 is BOTTOM, 1 is TOP.
+        y = 0.29f; //0 is BOTTOM, 1 is TOP.
         z = 0.525f; //0, is BACK, 1.0 is FRONT outside of shelf. toward player when looking at shelf.
         rot = 0;
         scale = 0.3f;
