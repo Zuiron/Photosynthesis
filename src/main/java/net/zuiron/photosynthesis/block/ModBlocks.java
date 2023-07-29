@@ -82,6 +82,10 @@ public class ModBlocks {
             new MortarBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
                     .strength(2f).nonOpaque()));
 
+    public static final Block GRAVITYPRESS = registerBlock("gravity_press",
+            new GravityPressBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
     public static final Block DRYINGNET = registerBlock("dryingnet",
             new DryingNetBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
                     .strength(2f).nonOpaque()));

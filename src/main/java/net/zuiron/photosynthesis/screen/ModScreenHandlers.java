@@ -14,6 +14,9 @@ public class ModScreenHandlers {
     public static ScreenHandlerType<MortarScreenHandler> MORTAR_SCREEN_HANDLER =
             new ExtendedScreenHandlerType<>(MortarScreenHandler::new);
 
+    public static ScreenHandlerType<GravityPressScreenHandler> GRAVITYPRESS_SCREEN_HANDLER =
+            new ExtendedScreenHandlerType<>(GravityPressScreenHandler::new);
+
     public static ScreenHandlerType<LatexExtractorScreenHandler> LATEX_EXTRACTOR_SCREEN_HANDLER =
             new ExtendedScreenHandlerType<>(LatexExtractorScreenHandler::new);
 
@@ -67,6 +70,8 @@ public class ModScreenHandlers {
                 CUTTING_BOARD_SCREEN_HANDLER);
         Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "mortar"),
                 MORTAR_SCREEN_HANDLER);
+        Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "gravitypress"),
+                GRAVITYPRESS_SCREEN_HANDLER);
         Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "latex_extractor"),
                 LATEX_EXTRACTOR_SCREEN_HANDLER);
         Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "maple_extractor"),

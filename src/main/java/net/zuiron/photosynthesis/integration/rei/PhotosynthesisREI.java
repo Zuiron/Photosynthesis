@@ -32,6 +32,8 @@ import net.zuiron.photosynthesis.integration.rei.dryingrack.DryingRackRecipeCate
 import net.zuiron.photosynthesis.integration.rei.dryingrack.DryingRackRecipeDisplay;
 import net.zuiron.photosynthesis.integration.rei.fluidpress.FluidPressRecipeCategory;
 import net.zuiron.photosynthesis.integration.rei.fluidpress.FluidPressRecipeDisplay;
+import net.zuiron.photosynthesis.integration.rei.gravitypress.GravityPressRecipeCategory;
+import net.zuiron.photosynthesis.integration.rei.gravitypress.GravityPressRecipeDisplay;
 import net.zuiron.photosynthesis.integration.rei.keg.KegRecipeCategory;
 import net.zuiron.photosynthesis.integration.rei.keg.KegRecipeDisplay;
 import net.zuiron.photosynthesis.integration.rei.milkseparator.MilkSeparatorRecipeCategory;
@@ -57,6 +59,7 @@ public class PhotosynthesisREI implements REIClientPlugin {
     public static final CategoryIdentifier<MixingBowlRecipeDisplay> MIXINGBOWL = CategoryIdentifier.of(Photosynthesis.MOD_ID, "mixingbowl");
     public static final CategoryIdentifier<CuttingBoardRecipeDisplay> CUTTINGBOARD = CategoryIdentifier.of(Photosynthesis.MOD_ID, "cuttingboard");
     public static final CategoryIdentifier<MortarRecipeDisplay> MORTAR = CategoryIdentifier.of(Photosynthesis.MOD_ID, "mortar");
+    public static final CategoryIdentifier<GravityPressRecipeDisplay> GRAVITYPRESS = CategoryIdentifier.of(Photosynthesis.MOD_ID, "gravitypress");
     public static final CategoryIdentifier<CookingPotRecipeDisplay> COOKINGPOT = CategoryIdentifier.of(Photosynthesis.MOD_ID, "cookingpot");
     public static final CategoryIdentifier<KegRecipeDisplay> KEG = CategoryIdentifier.of(Photosynthesis.MOD_ID, "keg");
     public static final CategoryIdentifier<FluidPressRecipeDisplay> FLUIDPRESS = CategoryIdentifier.of(Photosynthesis.MOD_ID, "fluidpress");
@@ -90,6 +93,10 @@ public class PhotosynthesisREI implements REIClientPlugin {
         registry.add(
                 new MortarRecipeCategory());
         registry.addWorkstations(MORTAR, EntryStacks.of(ModBlocks.MORTAR));
+
+        registry.add(
+                new GravityPressRecipeCategory());
+        registry.addWorkstations(GRAVITYPRESS, EntryStacks.of(ModBlocks.GRAVITYPRESS));
 
         registry.add(
                 new CookingPotRecipeCategory());
@@ -130,6 +137,8 @@ public class PhotosynthesisREI implements REIClientPlugin {
 
         registry.registerRecipeFiller(MortarRecipe.class, MortarRecipe.Type.INSTANCE, MortarRecipeDisplay::new);
 
+        registry.registerRecipeFiller(GravityPressRecipe.class, GravityPressRecipe.Type.INSTANCE, GravityPressRecipeDisplay::new);
+
         registry.registerRecipeFiller(CookingPotRecipe.class, CookingPotRecipe.Type.INSTANCE, CookingPotRecipeDisplay::new);
 
         registry.registerRecipeFiller(KegRecipe.class, KegRecipe.Type.INSTANCE, KegRecipeDisplay::new);
@@ -154,6 +163,8 @@ public class PhotosynthesisREI implements REIClientPlugin {
         registry.registerContainerClickArea(new Rectangle(100, 27, 13, 26), CuttingBoardScreen.class, CUTTINGBOARD);
 
         registry.registerContainerClickArea(new Rectangle(100, 27, 13, 26), MortarScreen.class, MORTAR);
+
+        registry.registerContainerClickArea(new Rectangle(100, 27, 13, 26), GravityPressScreen.class, GRAVITYPRESS);
 
         registry.registerContainerClickArea(new Rectangle(88, 44, 26, 18), CookingPotScreen.class, COOKINGPOT);
 

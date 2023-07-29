@@ -13,6 +13,7 @@ import net.zuiron.photosynthesis.block.ModBlocks;
 public class ModBlockEntities {
     public static BlockEntityType<CuttingBoardBlockEntity> CUTTING_BOARD;
     public static BlockEntityType<MortarBlockEntity> MORTAR;
+    public static BlockEntityType<GravityPressBlockEntity> GRAVITYPRESS;
     public static BlockEntityType<LatexExtractorBlockEntity> LATEX_EXTRACTOR;
     public static BlockEntityType<WoodFiredStoveBlockEntity> WOOD_FIRED_STOVE;
     public static BlockEntityType<WoodFiredOvenBlockEntity> WOOD_FIRED_OVEN;
@@ -43,6 +44,11 @@ public class ModBlockEntities {
                 new Identifier(Photosynthesis.MOD_ID, "mortar"),
                 FabricBlockEntityTypeBuilder.create(MortarBlockEntity::new,
                         ModBlocks.MORTAR).build(null));
+
+        GRAVITYPRESS = Registry.register(Registries.BLOCK_ENTITY_TYPE,
+                new Identifier(Photosynthesis.MOD_ID, "gravitypress"),
+                FabricBlockEntityTypeBuilder.create(GravityPressBlockEntity::new,
+                        ModBlocks.GRAVITYPRESS).build(null));
 
         LATEX_EXTRACTOR = Registry.register(Registries.BLOCK_ENTITY_TYPE,
                 new Identifier(Photosynthesis.MOD_ID, "latex_extractor"),
