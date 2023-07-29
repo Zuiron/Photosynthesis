@@ -37,7 +37,7 @@ public class OnPlayerEatEvent {
                 else if (thirstItemData == null && isThirstEnabled) {
                     //DEFAULT remove thirst, unknown item. remove 2 thirst bars.
                     ThirstData.removeThirst((IEntityDataSaver)player, 1);
-                    ThirstData.removeThirstSaturation((IEntityDataSaver)player, 150);
+                    ThirstData.removeThirstSaturation((IEntityDataSaver)player, 120);
                 }
             }
         });

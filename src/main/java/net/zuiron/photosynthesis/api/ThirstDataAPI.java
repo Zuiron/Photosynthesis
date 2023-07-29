@@ -37,7 +37,9 @@ public class ThirstDataAPI {
     public static Map<String, ThirstDataAPI> thirstDataMap = new HashMap<>();
     static {
         //IF a food item is NOT in this list. you will lose 1 Thirst, and 150 Saturation.
-        thirstDataMap.put("item.minecraft.cooked_beef",  new ThirstDataAPI(0, 0, 2, 300));
+        //Max Thirst: 10
+        //Max Saturation: 600 - 60 per 1 ICON
+        thirstDataMap.put("item.minecraft.cooked_beef",  new ThirstDataAPI(0, 0, 2, 180));
         thirstDataMap.put("item.photosynthesis.strawberry",  new ThirstDataAPI(0, 60, 0, 0));
     }
 
