@@ -160,6 +160,8 @@ public class ModItems {
 
     public static final Item MORTAR = registerItem("mortar",
             new Item(new FabricItemSettings()));*/
+   public static final Item FIRESTARTER = registerItem("firestarter",
+           new DamageableItem(new FabricItemSettings().maxCount(1).maxDamage(4)));
 
     public static final Item PESTLE = registerItem("pestle",
             new DamageableItem(new FabricItemSettings().maxCount(1).maxDamage(45)));
