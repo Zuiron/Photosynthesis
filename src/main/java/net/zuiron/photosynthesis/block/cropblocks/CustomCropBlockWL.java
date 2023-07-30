@@ -97,12 +97,13 @@ public class CustomCropBlockWL extends CropBlock implements Waterloggable {
         return AGE_TO_SHAPE[(Integer)state.get(this.getAgeProperty())];
     }
 
-    @Override
+    //this fixes light issue. however. does not support seasons if we do this.
+    /*@Override
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         float f;
         int i;
-        if (world.getBaseLightLevel(pos.up(2), 0) >= 9 && (i = this.getAge(state)) < this.getMaxAge() && random.nextInt((int)(25.0f / (f = 7.0f)) + 1) == 0) {
+        if (world.getBaseLightLevel(pos.up(1), 0) >= 9 && (i = this.getAge(state)) < this.getMaxAge() && random.nextInt((int)(25.0f / (f = 7.0f)) + 1) == 0) {
             world.setBlockState(pos, this.withAge(i + 1), Block.NOTIFY_LISTENERS);
         }
-    }
+    }*/
 }
