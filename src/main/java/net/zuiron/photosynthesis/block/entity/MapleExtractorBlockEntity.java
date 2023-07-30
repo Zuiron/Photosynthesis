@@ -33,6 +33,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.api.Seasons;
 import net.zuiron.photosynthesis.block.ModBlocks;
+import net.zuiron.photosynthesis.block.custom.DryingNetBlock;
 import net.zuiron.photosynthesis.block.custom.MapleExtractorBlock;
 import net.zuiron.photosynthesis.fluid.ModFluids;
 import net.zuiron.photosynthesis.networking.ModMessages;
@@ -362,6 +363,73 @@ public class MapleExtractorBlockEntity extends BlockEntity implements ExtendedSc
             } else return false;
         }
         return true;
+    }
+
+    private static final int[] INPUT_SLOTS = {0};
+    @Override
+    public boolean canInsert(int slot, ItemStack stack, @Nullable Direction side) {
+        Direction localDir = this.getWorld().getBlockState(pos).get(MapleExtractorBlock.FACING);
+
+        if (side == Direction.DOWN) {
+            return false;
+        }
+
+        if (side == Direction.UP) {
+            return isInputSlot(slot);
+        }
+
+        //input top, left, back
+        return switch (localDir) {
+            default -> //NORTH
+                    (side.getOpposite() == Direction.NORTH || side.getOpposite() == Direction.WEST) && isInputSlot(slot);
+            case EAST ->
+                    (side.rotateYClockwise() == Direction.NORTH || side.rotateYClockwise() == Direction.WEST) && isInputSlot(slot);
+            case SOUTH ->
+                    (side == Direction.NORTH || side == Direction.WEST) && isInputSlot(slot);
+            case WEST ->
+                    (side.rotateYCounterclockwise() == Direction.NORTH || side.rotateYCounterclockwise() == Direction.WEST) && isInputSlot(slot);
+        };
+    }
+
+    private boolean isInputSlot(int slot) {
+        for (int inputSlot : INPUT_SLOTS) {
+            if (slot == inputSlot) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    private static final int[] OUTPUT_SLOTS = {1};
+    @Override
+    public boolean canExtract(int slot, ItemStack stack, Direction side) {
+        Direction localDir = this.getWorld().getBlockState(this.pos).get(MapleExtractorBlock.FACING);
+
+        if (side == Direction.UP) {
+            return false;
+        }
+
+        if (side == Direction.DOWN) {
+            return isOutputSlot(slot);
+        }
+
+        //extract front, right, and down.
+        return switch (localDir) {
+            default -> (side.getOpposite() == Direction.SOUTH || side.getOpposite() == Direction.EAST) && isOutputSlot(slot);
+            case EAST -> (side.rotateYClockwise() == Direction.SOUTH || side.rotateYClockwise() == Direction.EAST) && isOutputSlot(slot);
+            case SOUTH -> (side == Direction.SOUTH || side == Direction.EAST) && isOutputSlot(slot);
+            case WEST -> (side.rotateYCounterclockwise() == Direction.SOUTH || side.rotateYCounterclockwise() == Direction.EAST) && isOutputSlot(slot);
+        };
+    }
+
+    private boolean isOutputSlot(int slot) {
+        for (int outputSlot : OUTPUT_SLOTS) {
+            if (slot == outputSlot) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, Item output) {

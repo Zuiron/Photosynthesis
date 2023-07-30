@@ -31,9 +31,11 @@ import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.Photosynthesis;
+import net.zuiron.photosynthesis.block.custom.DryingNetBlock;
 import net.zuiron.photosynthesis.block.custom.FluidPressBlock;
 import net.zuiron.photosynthesis.block.custom.KegBlock;
 import net.zuiron.photosynthesis.networking.ModMessages;
@@ -435,6 +437,47 @@ public class FluidPressBlockEntity extends BlockEntity implements ExtendedScreen
             //Photosynthesis.LOGGER.info("no match is present...");
             return false;
         }
+    }
+
+    private static final int[] INPUT_SLOTS = {0};
+    @Override
+    public boolean canInsert(int slot, ItemStack stack, @Nullable Direction side) {
+        Direction localDir = this.getWorld().getBlockState(pos).get(FluidPressBlock.FACING);
+
+        if (side == Direction.DOWN) {
+            return false;
+        }
+
+        if (side == Direction.UP) {
+            return isInputSlot(slot);
+        }
+
+        //input top, left, back
+        return switch (localDir) {
+            default -> //NORTH
+                    (side.getOpposite() == Direction.NORTH || side.getOpposite() == Direction.WEST) && isInputSlot(slot);
+            case EAST ->
+                    (side.rotateYClockwise() == Direction.NORTH || side.rotateYClockwise() == Direction.WEST) && isInputSlot(slot);
+            case SOUTH ->
+                    (side == Direction.NORTH || side == Direction.WEST) && isInputSlot(slot);
+            case WEST ->
+                    (side.rotateYCounterclockwise() == Direction.NORTH || side.rotateYCounterclockwise() == Direction.WEST) && isInputSlot(slot);
+        };
+    }
+
+    private boolean isInputSlot(int slot) {
+        for (int inputSlot : INPUT_SLOTS) {
+            if (slot == inputSlot) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    @Override
+    public boolean canExtract(int slot, ItemStack stack, Direction side) {
+        return false;
     }
 
     /*private static boolean doesInputTankContainEnoughRecipeInputFluid(FluidPressBlockEntity entity, FluidStack inputFluid, long amount) {

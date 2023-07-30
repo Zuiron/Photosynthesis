@@ -38,6 +38,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.Photosynthesis;
+import net.zuiron.photosynthesis.block.custom.DryingNetBlock;
 import net.zuiron.photosynthesis.block.custom.KegBlock;
 import net.zuiron.photosynthesis.block.custom.MilkSeperatorBlock;
 import net.zuiron.photosynthesis.fluid.ModFluids;
@@ -476,6 +477,47 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
             //Photosynthesis.LOGGER.info("no match is present...");
             return false;
         }
+    }
+
+    private static final int[] INPUT_SLOTS = {1,2,3,4};
+    @Override
+    public boolean canInsert(int slot, ItemStack stack, @Nullable Direction side) {
+        Direction localDir = this.getWorld().getBlockState(pos).get(KegBlock.FACING);
+
+        if (side == Direction.DOWN) {
+            return false;
+        }
+
+        if (side == Direction.UP) {
+            return isInputSlot(slot);
+        }
+
+        //input top, left, back
+        return switch (localDir) {
+            default -> //NORTH
+                    (side.getOpposite() == Direction.NORTH || side.getOpposite() == Direction.WEST) && isInputSlot(slot);
+            case EAST ->
+                    (side.rotateYClockwise() == Direction.NORTH || side.rotateYClockwise() == Direction.WEST) && isInputSlot(slot);
+            case SOUTH ->
+                    (side == Direction.NORTH || side == Direction.WEST) && isInputSlot(slot);
+            case WEST ->
+                    (side.rotateYCounterclockwise() == Direction.NORTH || side.rotateYCounterclockwise() == Direction.WEST) && isInputSlot(slot);
+        };
+    }
+
+    private boolean isInputSlot(int slot) {
+        for (int inputSlot : INPUT_SLOTS) {
+            if (slot == inputSlot) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    @Override
+    public boolean canExtract(int slot, ItemStack stack, Direction side) {
+        return false;
     }
 
     private static boolean doesInputTankContainEnoughRecipeInputFluid(KegBlockEntity entity, FluidStack inputFluid, long amount) {
