@@ -128,6 +128,8 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.COW_STEAK,
                 ModItems.COOKED_COW_STEAK,
 
+                ModItems.FIRESTARTER,
+
                 ModItems.BOILED_EGG,
                 ModItems.WHEAT_DOUGH,
 
