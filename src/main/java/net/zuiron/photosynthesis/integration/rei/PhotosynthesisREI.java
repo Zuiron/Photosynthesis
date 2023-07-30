@@ -197,9 +197,11 @@ public class PhotosynthesisREI implements REIClientPlugin {
         info.lines(Text.literal("Place on a maple tree (LOG), and it will produce Maple Sap!"));
         registry.add(info);*/
 
-        addDescription(registry, EntryStacks.of(ModBlocks.MAPLE_EXTRACTOR), "Place on a maple tree (LOG), and it will produce Maple Sap.");
+        addDescription(registry, EntryStacks.of(ModBlocks.MAPLE_EXTRACTOR), "Place on a maple tree (LOG), and it will produce Maple Sap." +
+                "Also if Seasons is Enabled, Maple Sap will only be produced in the Spring Season.");
         addDescription(registry, EntryStacks.of(ModBlocks.LATEX_EXTRACTOR), "Place on a rubber tree (LOG), and it will produce Latex. " +
-                "Make sure to strip the log ABOVE where you want to place the extractor!");
+                "Make sure to strip the log ABOVE where you want to place the extractor!" +
+                "Also if Seasons is Enabled, Latex will only be produced in the Summer Season.");
 
         addDescription(registry, EntryStacks.of(ModFluids.LATEX_BUCKET), "Use the Latex Extractor to get latex!");
         addDescription(registry, EntryStacks.of(ModFluids.MAPLE_BUCKET), "Use the Maple Extractor to get maple sap!");

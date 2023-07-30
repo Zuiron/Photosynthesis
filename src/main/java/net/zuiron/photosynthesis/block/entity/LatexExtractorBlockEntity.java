@@ -34,6 +34,7 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
+import net.zuiron.photosynthesis.api.Seasons;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.block.custom.LatexExtractorBlock;
 import net.zuiron.photosynthesis.fluid.ModFluids;
@@ -41,6 +42,8 @@ import net.zuiron.photosynthesis.networking.ModMessages;
 import net.zuiron.photosynthesis.screen.LatexExtractorScreenHandler;
 import net.zuiron.photosynthesis.util.FluidStack;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Objects;
 
 public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(2, ItemStack.EMPTY); //N#:SLOTS
@@ -352,21 +355,15 @@ public class LatexExtractorBlockEntity extends BlockEntity implements ExtendedSc
             inventory.setStack(i, entity.getStack(i));
         }
 
-
+        assert entity.world != null;
+        long time = entity.world.getTimeOfDay();
+        if(Seasons.isSeasonsEnabled()) {
+            if(Objects.equals(Seasons.getSeasonString(Seasons.getCurrentSeason(time)), "Summer")) {
+                //only produce latex in summer.
+                return true;
+            } else return false;
+        }
         return true;
-        /*boolean hasRawSaltInFirstSlot = entity.getStack(1).getItem() == ModItems.RAW_SALT;
-        return hasRawSaltInFirstSlot && canInsertAmountIntoOutputSlot(inventory)
-                && canInsertItemIntoOutputSlot(inventory, ModItems.SALT);*/
-
-        /*
-        boolean hasCuttingKnifeInSlot0 = entity.getStack(0).getItem() == ModItems.CUTTING_KNIFE;
-
-        Optional<CuttingBoardRecipe> match = entity.getWorld().getRecipeManager()
-                .getFirstMatch(CuttingBoardRecipe.Type.INSTANCE, inventory, entity.getWorld());
-
-        return match.isPresent() && canInsertAmountIntoOutputSlot(inventory)
-                && canInsertItemIntoOutputSlot(inventory, match.get().getOutput().getItem()) && hasCuttingKnifeInSlot0;
-         */
     }
 
     private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, Item output) {
