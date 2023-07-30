@@ -1,7 +1,6 @@
 package net.zuiron.photosynthesis.event;
 
 import net.minecraft.text.Text;
-import net.zuiron.photosynthesis.api.CropData;
 import net.zuiron.photosynthesis.api.ThirstDataAPI;
 import net.zuiron.photosynthesis.util.IEntityDataSaver;
 import net.zuiron.photosynthesis.util.ThirstData;
