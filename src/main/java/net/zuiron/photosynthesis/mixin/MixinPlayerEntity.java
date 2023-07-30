@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(PlayerEntity.class)
 public class MixinPlayerEntity {
-    @Inject(method = "eatFood", at = @At("RETURN"))
+    @Inject(method = "eatFood", at = @At("HEAD"))
     private void onEatFood(World world, ItemStack stack, CallbackInfoReturnable<ItemStack> cir) {
         if (stack.getItem().isFood()) {
             // Cast 'this' to PlayerEntity since we're inside a Mixin

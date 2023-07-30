@@ -73,10 +73,9 @@ public class ThirstDataAPI {
         thirstDataMap.put("item.minecraft.cookie",  new ThirstDataAPI(0, 0, 1, 120));
         thirstDataMap.put("item.minecraft.pumpkin_pie",  new ThirstDataAPI(0, 0, 1, 120));
 
-        //Somehow this aint fooditem? or we aint catchin it right.
-        //thirstDataMap.put("item.minecraft.mushroom_stew",  new ThirstDataAPI(1, 60, 0, 0));
-        //thirstDataMap.put("item.minecraft.beetroot_soup",  new ThirstDataAPI(1, 60, 0, 0));
-        //thirstDataMap.put("item.minecraft.rabbit_stew",  new ThirstDataAPI(1, 60, 0, 0));
+        thirstDataMap.put("item.minecraft.mushroom_stew",  new ThirstDataAPI(1, 60, 0, 0));
+        thirstDataMap.put("item.minecraft.beetroot_soup",  new ThirstDataAPI(1, 60, 0, 0));
+        thirstDataMap.put("item.minecraft.rabbit_stew",  new ThirstDataAPI(1, 60, 0, 0));
 
 
 
