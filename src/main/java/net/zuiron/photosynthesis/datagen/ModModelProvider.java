@@ -115,6 +115,19 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.JUNIPERBERRIES,
                 ModItems.MULBERRIES,
 
+                ModItems.COW_BRISKET,
+                ModItems.COOKED_COW_BRISKET,
+                ModItems.COW_RIBS,
+                ModItems.COOKED_COW_RIBS,
+                ModItems.COOKED_COW_ROAST_BEEF,
+                ModItems.COW_HEARTH,
+                ModItems.COW_KIDNEY,
+                ModItems.COW_LIVER,
+                ModItems.COW_TONGUE,
+                ModItems.COW_TRIMMINGS,
+                ModItems.COW_STEAK,
+                ModItems.COOKED_COW_STEAK,
+
                 ModItems.BOILED_EGG,
                 ModItems.WHEAT_DOUGH,
 

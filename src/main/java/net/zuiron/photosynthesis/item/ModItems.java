@@ -793,6 +793,41 @@ public class ModItems {
     public static final Item SESAME_SEEDS = registerSeedItem("sesame_seeds", ModBlocks.SESAME_CROP);
     public static final Item MUSTARD_SEEDS = registerSeedItem("mustard_seeds", ModBlocks.MUSTARD_CROP);
 
+    // Meat's ----------------------------------------------------------------------------------------------------------
+    public static final Item COW_BRISKET = registerItem("cow_brisket",
+            new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+    public static final Item COOKED_COW_BRISKET = registerItem("cooked_cow_brisket",
+            new Item(new FabricItemSettings().food(FoodComponents.COOKED_BEEF)));
+
+    public static final Item COW_RIBS = registerItem("cow_ribs",
+            new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+    public static final Item COOKED_COW_RIBS = registerItem("cooked_cow_ribs",
+            new Item(new FabricItemSettings().food(FoodComponents.COOKED_BEEF)));
+
+    public static final Item COOKED_COW_ROAST_BEEF = registerItem("cooked_cow_roast_beef",
+            new Item(new FabricItemSettings().food(FoodComponents.COOKED_BEEF)));
+
+
+    public static final Item COW_STEAK = registerItem("cow_steak",
+            new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+    public static final Item COOKED_COW_STEAK = registerItem("cooked_cow_steak",
+            new Item(new FabricItemSettings().food(FoodComponents.COOKED_BEEF)));
+
+
+
+    public static final Item COW_HEARTH = registerItem("cow_hearth",
+            new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+    public static final Item COW_KIDNEY = registerItem("cow_kidney",
+            new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+    public static final Item COW_LIVER = registerItem("cow_liver",
+            new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+    public static final Item COW_TONGUE = registerItem("cow_tongue",
+            new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+    public static final Item COW_TRIMMINGS = registerItem("cow_trimmings",
+            new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+
+
     // Food's ----------------------------------------------------------------------------------------------------------
 
     /*public static final Item CANOLA_OIL_BOTTLE = registerItem("canola_oil_bottle",
