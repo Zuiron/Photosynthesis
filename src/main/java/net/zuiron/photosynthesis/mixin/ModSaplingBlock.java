@@ -90,15 +90,15 @@ public abstract class ModSaplingBlock extends PlantBlock
                 }*/
                 //if sapling is MAXAGE attempt to generate.
                 if (this.getAge(state) >= this.getMaxAge()) {
-                    Photosynthesis.LOGGER.info("Sapling is mature, attempt generate now!");
+                    //Photosynthesis.LOGGER.info("Sapling is mature, attempt generate now!");
                     this.generate(world, pos, state, random, ci);
                 }
 
                 if(currentCropAge >= minAge && currentCropAge < maxAge && seasonPercentage > 0.5f && world.getLightLevel(pos.up()) >= 9) { //0.5f = 50% "halfway thru season"
-                    Photosynthesis.LOGGER.info("Sapling: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NewCropAge: "+(this.getAge(state) + 1)+", %:"+seasonPercentage);
+                    //Photosynthesis.LOGGER.info("Sapling: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NewCropAge: "+(this.getAge(state) + 1)+", %:"+seasonPercentage);
                     world.setBlockState(pos, this.withAge(this.getAge(state) + 1), 2);
                 } else {
-                    Photosynthesis.LOGGER.info("Sapling: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NO GROW"+", %:"+seasonPercentage);
+                    //Photosynthesis.LOGGER.info("Sapling: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NO GROW"+", %:"+seasonPercentage);
                 }
 
                 ci.cancel(); //do not run vanilla code...
@@ -150,7 +150,7 @@ public abstract class ModSaplingBlock extends PlantBlock
     public void generate(ServerWorld world, BlockPos pos, BlockState state, Random random, CallbackInfo ci) {
         if(Seasons.isSeasonsEnabled()) {
             this.generator.generate(world, world.getChunkManager().getChunkGenerator(), pos, state, random);
-            Photosynthesis.LOGGER.info("Generating Tree!");
+            //Photosynthesis.LOGGER.info("Generating Tree!");
         /*if (state.get(STAGE) == 0) {
             world.setBlockState(pos, (BlockState)state.cycle(STAGE), Block.NO_REDRAW);
         } else {

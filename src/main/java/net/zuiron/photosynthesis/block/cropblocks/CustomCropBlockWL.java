@@ -87,9 +87,9 @@ public class CustomCropBlockWL extends CropBlock implements Waterloggable {
             Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D)
     };
 
+    //DOING THIS CAUSES issues with right click harvest. however. if we do not. icon is not present in WTHIT!
     @Override
     protected ItemConvertible getSeedsItem() {
-
         switch (seed) {
             case "rice_crop": return ModItems.RICE;
             default: return Items.AIR;
@@ -100,7 +100,7 @@ public class CustomCropBlockWL extends CropBlock implements Waterloggable {
         return AGE_TO_SHAPE[(Integer)state.get(this.getAgeProperty())];
     }
 
-    //this fixes light issue. however. does not support seasons if we do this.
+    //this fixes light issue. and seasons support.
     @Override
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         float f2;

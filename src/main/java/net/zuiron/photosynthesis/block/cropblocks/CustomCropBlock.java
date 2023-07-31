@@ -41,6 +41,7 @@ public class CustomCropBlock extends CropBlock {
             Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D)
     };
 
+    //DOING THIS CAUSES issues with right click harvest. however. if we do not. icon is not present in WTHIT!
     @Override
     protected ItemConvertible getSeedsItem() {
 

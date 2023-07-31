@@ -17,6 +17,7 @@ import net.zuiron.photosynthesis.block.berrybushblocks.*;
 import net.zuiron.photosynthesis.block.bushtreecrops.*;
 import net.zuiron.photosynthesis.block.cropblocks.CustomCropBlock;
 import net.zuiron.photosynthesis.block.cropblocks.CustomCropBlockWL;
+import net.zuiron.photosynthesis.block.cropblocks.CustomMushroomCropBlock;
 import net.zuiron.photosynthesis.block.custom.*;
 import net.zuiron.photosynthesis.block.decoration.*;
 import net.zuiron.photosynthesis.world.feature.tree.*;
@@ -752,6 +753,7 @@ public class ModBlocks {
     public static final CropBlock COTTON_CROP = registerCropBlockSimple("cotton_crop");
     public static final CropBlock SUGARBEET_CROP = registerCropBlockSimple("sugarbeet_crop");
     public static final CropBlock RICE_CROP = registerCropBlockSimpleWL("rice_crop");
+    public static final CropBlock WHITE_BUTTON_MUSHROOM_CROP = registerCropBlockSimpleMUSHROOM("white_button_mushroom_crop");
     public static final CropBlock SOYBEAN_CROP = registerCropBlockSimple("soybean_crop");
     public static final CropBlock SPINACH_CROP = registerCropBlockSimple("spinach_crop");
     public static final CropBlock ARROWROOT_CROP = registerCropBlockSimple("arrowroot_crop");
@@ -2075,8 +2077,13 @@ public class ModBlocks {
                 new CustomCropBlockWL(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                         .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),
                         name));
+    }
 
-        //TALL_GRASS = register("tall_grass", new TallPlantBlock(Settings.of(Material.REPLACEABLE_PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offsetType(OffsetType.XZ)));
+    private static CropBlock registerCropBlockSimpleMUSHROOM(String name){
+        return Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, name),
+                new CustomMushroomCropBlock(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
+                        .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),
+                        name));
     }
 
     private static SweetBerryBushBlock registerBushBlock(String name, SweetBerryBushBlock block){
