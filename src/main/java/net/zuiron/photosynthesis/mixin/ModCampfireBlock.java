@@ -1,6 +1,10 @@
 package net.zuiron.photosynthesis.mixin;
 
 import net.minecraft.block.*;
+import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.BlockEntityTicker;
+import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.block.entity.CampfireBlockEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -46,6 +50,8 @@ public abstract class ModCampfireBlock extends BlockWithEntity
         if(!state.get(LIT).booleanValue()) {
             if (player.getStackInHand(hand).getItem() == ModItems.FIRESTARTER) {
 
+                player.getStackInHand(hand).damage(1, Random.create(0), null);
+
                 if(player.getStackInHand(hand).getMaxDamage() - player.getStackInHand(hand).getDamage() < 1) {
                     player.setStackInHand(hand, ItemStack.EMPTY);
                     //play sound.
@@ -60,7 +66,6 @@ public abstract class ModCampfireBlock extends BlockWithEntity
                         );
                     }
                 }
-                player.getStackInHand(hand).damage(1, Random.create(0), null);
 
                 state = (BlockState) state.with(LIT, true).with(CHARCOALED, true);
                 world.setBlockState(pos, state, 3);
