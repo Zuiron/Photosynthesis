@@ -826,6 +826,7 @@
   "block.photosynthesis.ginger_crop": "Ginger",
   "block.photosynthesis.sesame_crop": "Sesame",
   "block.photosynthesis.mustard_crop": "Mustard",
+  "block.photosynthesis.white_button_mushroom_crop": "White Button Mushroom",
 
   "item.photosynthesis.tomato": "Tomato",
   "item.photosynthesis.basil": "Basil",
@@ -885,12 +886,10 @@
   "item.photosynthesis.pineapple": "Pineapple",
   "item.photosynthesis.hop": "Hop",
   "item.photosynthesis.filipendula": "Filipendula",
-
   "item.photosynthesis.camellia_sinensis": "Tea Leaves",
   "item.photosynthesis.nicotiana_rustica": "Nicotiana Rustica",
   "item.photosynthesis.papaver_somniferum": "Opium Poppy",
   "item.photosynthesis.erythroxylum_coca": "Coca Leaves",
-
   "item.photosynthesis.cactus_fruit": "Cactus Fruit",
   "item.photosynthesis.cantaloupe": "Cantaloupe",
   "item.photosynthesis.flax": "Flax",
@@ -909,6 +908,7 @@
   "item.photosynthesis.ginger": "Ginger",
   "item.photosynthesis.sesame": "Sesame",
   "item.photosynthesis.mustard": "Mustard",
+  "item.photosynthesis.white_button_mushroom": "White Button Mushroom",
 
   "item.photosynthesis.tomato_seeds": "Tomato Seeds",
   "item.photosynthesis.basil_seeds": "Basil Seeds",
