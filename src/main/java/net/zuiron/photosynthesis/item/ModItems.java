@@ -1024,10 +1024,15 @@ public class ModItems {
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
+ public static final Item CHICKEN_NUGGETS = registerItem("chicken_nuggets",
+         new Item(new FabricItemSettings()
+                 .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
 
 
-    public static final Item BREAD_FORM = registerItem("bread_form",
+
+
+ public static final Item BREAD_FORM = registerItem("bread_form",
             new Item(new FabricItemSettings()));
 
     public static final Item PIZZA_STONE = registerItem("pizza_stone",
