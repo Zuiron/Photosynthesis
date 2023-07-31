@@ -1,0 +1,16 @@
+{
+  "type": "photosynthesis:cutting_board",
+  "ingredients": [
+    {
+      "tag": "c:cutting_board_cutting_knifes"
+    },
+    {
+      "item": "photosynthesis:white_button_mushroom"
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:cut_white_button_mushroom",
+    "count": 2
+  },
+  "cookingtime": 30
+}
