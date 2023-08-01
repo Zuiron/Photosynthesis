@@ -43,7 +43,6 @@ public class CustomCropBlockWL2Tall extends CropBlock implements Waterloggable {
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        //builder.add(new Property[]{AGE}).add(new Property[]{WATERLOGGED}).add(HALF);
         builder.add(new Property[]{AGE}).add(new Property[]{Properties.WATERLOGGED});
     }
 
@@ -60,13 +59,12 @@ public class CustomCropBlockWL2Tall extends CropBlock implements Waterloggable {
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
         if (state.get(Properties.WATERLOGGED)) {
-            // This is for 1.17 and below: world.getFluidTickScheduler().schedule(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
             world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
         }
         return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
     }
 
-    //is this when player tries to plant?
+
     @Override
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
         switch (seed) {
@@ -79,7 +77,7 @@ public class CustomCropBlockWL2Tall extends CropBlock implements Waterloggable {
         }
     }
 
-    //block allowed? nothing to do with the player.
+
     @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
         switch (seed) {
@@ -107,11 +105,11 @@ public class CustomCropBlockWL2Tall extends CropBlock implements Waterloggable {
             Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D)
     };
 
-    //DOING THIS CAUSES issues with right click harvest. however. if we do not. icon is not present in WTHIT!
+
     @Override
     protected ItemConvertible getSeedsItem() {
         switch (seed) {
-            case "rice_crop": return ModItems.RICE;
+            case "rice_crop": return ModItems.RICE_SEEDS;
             default: return Items.AIR;
         }
     }
@@ -135,9 +133,7 @@ public class CustomCropBlockWL2Tall extends CropBlock implements Waterloggable {
 
                 if(currentCropAge >= minAge && currentCropAge < maxAge && seasonPercentage > 0.5f) { //0.5f = 50% "halfway thru season"
                     //Photosynthesis.LOGGER.info("CropWL: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NewCropAge: "+(this.getAge(state) + 1)+", %:"+seasonPercentage);
-                    //world.setBlockState(pos, this.withAge(this.getAge(state) + 1), 2);
                     if(currentCropAge < LOWER_HALF_MAX_AGE && !world.getBlockState(pos.up()).isOf(this)) {
-                        //world.setBlockState(pos, this.withAge(currentAge + 1), Block.NOTIFY_LISTENERS);
                         world.setBlockState(pos, withWaterloggedState(world, pos, this.withAge(currentCropAge + 1)), Block.NOTIFY_LISTENERS);
                     }
                     else if(currentCropAge == LOWER_HALF_MAX_AGE && !world.getBlockState(pos.up()).isOf(this)) {
@@ -160,7 +156,6 @@ public class CustomCropBlockWL2Tall extends CropBlock implements Waterloggable {
             if (world.getBaseLightLevel(pos.up(1), 0) >= 9 && (i = currentAge) < this.getMaxAge() && random.nextInt((int) (25.0f / (f = 7.0f)) + 1) == 0) {
 
                 if(currentAge < LOWER_HALF_MAX_AGE && !world.getBlockState(pos.up()).isOf(this)) {
-                    //world.setBlockState(pos, this.withAge(currentAge + 1), Block.NOTIFY_LISTENERS);
                     world.setBlockState(pos, withWaterloggedState(world, pos, this.withAge(currentAge + 1)), Block.NOTIFY_LISTENERS);
                 }
                 else if(currentAge == LOWER_HALF_MAX_AGE && !world.getBlockState(pos.up()).isOf(this)) {
