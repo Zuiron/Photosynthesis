@@ -4,11 +4,13 @@ import com.google.common.collect.ImmutableList;
 import net.minecraft.block.Blocks;
 import net.minecraft.registry.*;
 import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.state.property.Properties;
 import net.minecraft.structure.rule.BlockMatchRuleTest;
 import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.structure.rule.TagMatchRuleTest;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
+import net.minecraft.world.gen.ProbabilityConfig;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.*;
@@ -151,10 +153,24 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?,?>> KIWITREE_SPAWN_KEY = registerKey("kiwitree_spawn");
 
 
+    //CROPS
+    public static final RegistryKey<ConfiguredFeature<?,?>> BASIL_CROP_KEY = registerKey("basil_crop");
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
         var placedFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.PLACED_FEATURE);
         //register(context, KEY, );
+
+        //Crops
+        register(context, BASIL_CROP_KEY, Feature.FLOWER,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.BASIL_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
+
+
+
+
+
+
+
 
         RuleTest stoneReplaceables = new TagMatchRuleTest(BlockTags.STONE_ORE_REPLACEABLES);
         RuleTest deepslateReplaceables = new TagMatchRuleTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
@@ -893,11 +909,6 @@ public class ModConfiguredFeatures {
         register(context, KIWITREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.KIWITREE_CHECKED_KEY),
                         spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.KIWITREE_CHECKED_KEY)));
-
-
-
-
-
 
 
 

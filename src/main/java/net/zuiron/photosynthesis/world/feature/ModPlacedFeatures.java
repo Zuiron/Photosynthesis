@@ -16,6 +16,9 @@ import net.zuiron.photosynthesis.block.ModBlocks;
 import java.util.List;
 
 public class ModPlacedFeatures {
+    //crops
+    public static final RegistryKey<PlacedFeature> BASIL_CROP_PLACED_KEY = registerKey("basil_crop_placed");
+
     public static final RegistryKey<PlacedFeature> SALT_ORE_PLACED_KEY = registerKey("salt_ore_placed");
 
 
@@ -218,6 +221,22 @@ public class ModPlacedFeatures {
 
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
+
+        //Crops
+        register(context, BASIL_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BASIL_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+
+
+
+
+
+
+
+
+
+
+
 
         register(context, SALT_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.SALT_ORE_KEY),
                 modifiersWithCount(9, // VeinsPerChunk
