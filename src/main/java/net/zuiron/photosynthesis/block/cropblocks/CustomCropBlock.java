@@ -35,6 +35,7 @@ public class CustomCropBlock extends CropBlock {
     @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
         if(state.get(Properties.AGE_7) == 7 && world.getBlockState(pos.down()).isIn(BlockTags.DIRT)) {
+            //WE MUST DO THIS, IF WORLD-GEN CAN PLANT IT IN THE WILD!
             return true;
         }
         return (world.getBaseLightLevel(pos, 0) >= 8 || world.isSkyVisible(pos)) && super.canPlaceAt(state, world, pos);
