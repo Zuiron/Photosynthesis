@@ -125,7 +125,7 @@ public class CustomCropBlockWL2Tall extends CropBlock implements Waterloggable {
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         float f2;
         int i2;
-        if(Seasons.isSeasonsEnabled() && world.getBaseLightLevel(pos.up(2), 0) >= 9 && (i2 = this.getAge(state)) < this.getMaxAge() && random.nextInt((int) (25.0f / (f2 = 7.0f)) + 1) == 0) {
+        if(Seasons.isSeasonsEnabled() && world.getBaseLightLevel(pos.up(1), 0) >= 9 && (i2 = this.getAge(state)) < this.getMaxAge() && random.nextInt((int) (25.0f / (f2 = 7.0f)) + 1) == 0) {
             CropData cropData = CropData.getCropDataFor(state.getBlock().getTranslationKey());
             if(cropData != null) {
                 int minAge = cropData.getMinAge(Seasons.getCurrentSeason(world.getTimeOfDay()));
@@ -134,10 +134,22 @@ public class CustomCropBlockWL2Tall extends CropBlock implements Waterloggable {
                 int currentCropAge = this.getAge(state);
 
                 if(currentCropAge >= minAge && currentCropAge < maxAge && seasonPercentage > 0.5f) { //0.5f = 50% "halfway thru season"
-                    Photosynthesis.LOGGER.info("CropWL: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NewCropAge: "+(this.getAge(state) + 1)+", %:"+seasonPercentage);
-                    world.setBlockState(pos, this.withAge(this.getAge(state) + 1), 2);
+                    //Photosynthesis.LOGGER.info("CropWL: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NewCropAge: "+(this.getAge(state) + 1)+", %:"+seasonPercentage);
+                    //world.setBlockState(pos, this.withAge(this.getAge(state) + 1), 2);
+                    if(currentCropAge < LOWER_HALF_MAX_AGE && !world.getBlockState(pos.up()).isOf(this)) {
+                        //world.setBlockState(pos, this.withAge(currentAge + 1), Block.NOTIFY_LISTENERS);
+                        world.setBlockState(pos, withWaterloggedState(world, pos, this.withAge(currentCropAge + 1)), Block.NOTIFY_LISTENERS);
+                    }
+                    else if(currentCropAge == LOWER_HALF_MAX_AGE && !world.getBlockState(pos.up()).isOf(this)) {
+                        if(world.getBlockState(pos.up(1)).isOf(Blocks.AIR)) {
+                            world.setBlockState(pos.up(1), withWaterloggedState(world, pos.up(1), (BlockState)this.getDefaultState().with(AGE, currentCropAge+1)), Block.NOTIFY_LISTENERS);
+                        }
+                    }
+                    else if(world.getBlockState(pos.down()).isOf(this) && world.getBlockState(pos.down()).get(AGE) == LOWER_HALF_MAX_AGE && currentCropAge < UPPER_HALF_MAX_AGE) {
+                        world.setBlockState(pos, this.withAge(currentCropAge + 1), Block.NOTIFY_LISTENERS);
+                    }
                 } else {
-                    Photosynthesis.LOGGER.info("CropWL: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NO GROW"+", %:"+seasonPercentage);
+                    //Photosynthesis.LOGGER.info("CropWL: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NO GROW"+", %:"+seasonPercentage);
                 }
             }
         } else if(!Seasons.isSeasonsEnabled()) {
@@ -145,7 +157,7 @@ public class CustomCropBlockWL2Tall extends CropBlock implements Waterloggable {
             float f;
             int i;
             int currentAge = this.getAge(state);
-            if (world.getBaseLightLevel(pos.up(2), 0) >= 9 && (i = currentAge) < this.getMaxAge() && random.nextInt((int) (25.0f / (f = 7.0f)) + 1) == 0) {
+            if (world.getBaseLightLevel(pos.up(1), 0) >= 9 && (i = currentAge) < this.getMaxAge() && random.nextInt((int) (25.0f / (f = 7.0f)) + 1) == 0) {
 
                 if(currentAge < LOWER_HALF_MAX_AGE && !world.getBlockState(pos.up()).isOf(this)) {
                     //world.setBlockState(pos, this.withAge(currentAge + 1), Block.NOTIFY_LISTENERS);

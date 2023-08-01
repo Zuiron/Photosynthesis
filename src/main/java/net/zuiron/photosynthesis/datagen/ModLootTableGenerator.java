@@ -3,7 +3,11 @@ package net.zuiron.photosynthesis.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.item.Items;
+import net.minecraft.loot.condition.AnyOfLootCondition;
+import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
 import net.minecraft.loot.condition.LootCondition;
+import net.minecraft.predicate.StatePredicate;
+import net.minecraft.state.property.Properties;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.item.ModItems;
 
@@ -579,5 +583,10 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.DECORATION_SEASHELL, ModItems.SEASHELL);
 
         //cropDrops(ModBlocks.CACTUS_FRUIT_CROP, ModItems.CACTUS_FRUIT, ModItems.CACTUS_FRUIT_SEEDS, );
+
+        BlockStatePropertyLootCondition.Builder builder = BlockStatePropertyLootCondition.builder(ModBlocks.RICE_CROP)
+                 .properties(StatePredicate.Builder.create().exactMatch(Properties.AGE_7, 7));
+         this.addDrop(ModBlocks.RICE_CROP, this.cropDrops(ModBlocks.RICE_CROP, ModItems.RICE, ModItems.RICE_SEEDS, builder));
+
     }
 }
