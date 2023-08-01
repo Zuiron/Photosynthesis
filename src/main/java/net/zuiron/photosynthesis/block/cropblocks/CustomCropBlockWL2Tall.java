@@ -88,7 +88,7 @@ public class CustomCropBlockWL2Tall extends CropBlock implements Waterloggable {
                 {
                     return true;
                 }
-                else if (world.getBlockState(pos.down(1)).isOf(this)) {
+                else if (world.getBlockState(pos.down(1)).isOf(this) && world.getBlockState(pos.down(1)).contains(AGE) && world.getBlockState(pos.down(1)).get(AGE) == LOWER_HALF_MAX_AGE && state.get(AGE) >= LOWER_HALF_MAX_AGE + 1) {
                     return true;
                 }
             default: return false;
