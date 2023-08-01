@@ -405,6 +405,9 @@ public class ModItems {
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
+ public static final Item RICE_PANICLE = registerItem("rice_panicle",
+         new Item(new FabricItemSettings()));
+
     public static final Item SOYBEAN = registerItem("soybean",
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));

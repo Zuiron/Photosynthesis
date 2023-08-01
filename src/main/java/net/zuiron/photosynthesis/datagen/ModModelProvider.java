@@ -133,6 +133,7 @@ public class ModModelProvider extends FabricModelProvider {
 
                 ModItems.BOILED_EGG,
                 ModItems.WHEAT_DOUGH,
+                ModItems.RICE_PANICLE,
 
                 ModItems.BBQ_SKEWERS,
                 ModItems.MINCED_BEEF,

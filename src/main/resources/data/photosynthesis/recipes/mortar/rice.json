@@ -1,0 +1,16 @@
+{
+  "type": "photosynthesis:mortar",
+  "ingredients": [
+    {
+      "item": "photosynthesis:pestle"
+    },
+    {
+      "item": "photosynthesis:rice_panicle"
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:rice",
+    "count": 4
+  },
+  "cookingtime": 40
+}
