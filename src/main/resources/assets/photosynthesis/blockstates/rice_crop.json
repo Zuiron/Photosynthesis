@@ -16,13 +16,13 @@
       "model": "photosynthesis:block/rice_crop_stage4"
     },
     "age=5": {
-      "model": "photosynthesis:block/rice_crop_stage5_1"
+      "model": "photosynthesis:block/rice_crop_stage5"
     },
     "age=6": {
-      "model": "photosynthesis:block/rice_crop_stage6_1"
+      "model": "photosynthesis:block/rice_crop_stage6"
     },
     "age=7": {
-      "model": "photosynthesis:block/rice_crop_stage7_1"
+      "model": "photosynthesis:block/rice_crop_stage7"
     }
   }
 }

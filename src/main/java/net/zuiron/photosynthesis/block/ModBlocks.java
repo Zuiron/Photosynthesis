@@ -17,6 +17,7 @@ import net.zuiron.photosynthesis.block.berrybushblocks.*;
 import net.zuiron.photosynthesis.block.bushtreecrops.*;
 import net.zuiron.photosynthesis.block.cropblocks.CustomCropBlock;
 import net.zuiron.photosynthesis.block.cropblocks.CustomCropBlockWL;
+import net.zuiron.photosynthesis.block.cropblocks.CustomCropBlockWL2Tall;
 import net.zuiron.photosynthesis.block.cropblocks.CustomMushroomCropBlock;
 import net.zuiron.photosynthesis.block.custom.*;
 import net.zuiron.photosynthesis.block.decoration.*;
@@ -752,7 +753,7 @@ public class ModBlocks {
     public static final CropBlock BARLEY_CROP = registerCropBlockSimple("barley_crop");
     public static final CropBlock COTTON_CROP = registerCropBlockSimple("cotton_crop");
     public static final CropBlock SUGARBEET_CROP = registerCropBlockSimple("sugarbeet_crop");
-    public static final CropBlock RICE_CROP = registerCropBlockSimpleWL("rice_crop");
+    public static final CropBlock RICE_CROP = registerCropBlockSimpleWL2Tall("rice_crop");
     public static final CropBlock WHITE_BUTTON_MUSHROOM_CROP = registerCropBlockSimpleMUSHROOM("white_button_mushroom_crop");
     public static final CropBlock SOYBEAN_CROP = registerCropBlockSimple("soybean_crop");
     public static final CropBlock SPINACH_CROP = registerCropBlockSimple("spinach_crop");
@@ -2075,6 +2076,13 @@ public class ModBlocks {
     private static CropBlock registerCropBlockSimpleWL(String name){
         return Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, name),
                 new CustomCropBlockWL(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
+                        .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),
+                        name));
+    }
+
+    private static CropBlock registerCropBlockSimpleWL2Tall(String name){
+        return Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, name),
+                new CustomCropBlockWL2Tall(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                         .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),
                         name));
     }
