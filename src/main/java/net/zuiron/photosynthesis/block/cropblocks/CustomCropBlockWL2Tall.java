@@ -164,6 +164,44 @@ public class CustomCropBlockWL2Tall extends CropBlock implements Waterloggable {
     }
 
     @Override
+    public void applyGrowth(World world, BlockPos pos, BlockState state) {
+        int currentAge = this.getAge(state);
+        if(currentAge < LOWER_HALF_MAX_AGE && !world.getBlockState(pos.up()).isOf(this)) {
+            world.setBlockState(pos, withWaterloggedState(world, pos, this.withAge(currentAge + 1)), Block.NOTIFY_LISTENERS);
+        }
+        else if(currentAge == LOWER_HALF_MAX_AGE && !world.getBlockState(pos.up()).isOf(this)) {
+            if(world.getBlockState(pos.up(1)).isOf(Blocks.AIR)) {
+                world.setBlockState(pos.up(1), withWaterloggedState(world, pos.up(1), (BlockState)this.getDefaultState().with(AGE, currentAge+1)), Block.NOTIFY_LISTENERS);
+            }
+        }
+        else if(world.getBlockState(pos.down()).isOf(this) && world.getBlockState(pos.down()).get(AGE) == LOWER_HALF_MAX_AGE && currentAge < UPPER_HALF_MAX_AGE) {
+            world.setBlockState(pos, this.withAge(currentAge + 1), Block.NOTIFY_LISTENERS);
+        }
+    }
+
+    @Override
+    public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state, boolean isClient) {
+        if(Seasons.isSeasonsEnabled()) {
+            return false;
+        }
+
+        int currentAge = this.getAge(state);
+        if(currentAge < LOWER_HALF_MAX_AGE && !world.getBlockState(pos.up()).isOf(this)) {
+            return true;
+        }
+        else if(currentAge == LOWER_HALF_MAX_AGE && !world.getBlockState(pos.up()).isOf(this)) {
+            if(world.getBlockState(pos.up(1)).isOf(Blocks.AIR)) {
+                return true;
+            }
+        }
+        else if(world.getBlockState(pos.down()).isOf(this) && world.getBlockState(pos.down()).get(AGE) == LOWER_HALF_MAX_AGE && currentAge < UPPER_HALF_MAX_AGE) {
+            return true;
+        }
+
+        return false;
+    }
+
+    @Override
     public void onPlaced(World world, BlockPos pos, BlockState state, LivingEntity placer, ItemStack itemStack) {
         world.setBlockState(pos, withWaterloggedState(world, pos, (BlockState)this.getDefaultState()), 3);
     }
