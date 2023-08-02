@@ -9,6 +9,7 @@ import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
@@ -77,12 +78,29 @@ public class CustomCropBlockWL2Tall extends CropBlock implements Waterloggable {
         }
     }
 
+    @Override
+    public void onPlaced(World world, BlockPos pos, BlockState state, LivingEntity placer, ItemStack itemStack) {
+        if(state.get(Properties.AGE_7) == 3 && world.getBlockState(pos.down()).isIn(BlockTags.DIRT)) {
+            //WE MUST DO THIS, IF WORLD-GEN CAN PLANT IT IN THE WILD!
+            world.setBlockState(pos.up(), withWaterloggedState(world, pos.up(), (BlockState)this.getDefaultState().with(AGE, 7)), Block.NOTIFY_LISTENERS);
+        } else {
+            world.setBlockState(pos, withWaterloggedState(world, pos, (BlockState) this.getDefaultState()), 3);
+        }
+    }
 
     @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
         switch (seed) {
             case "rice_crop":
-                if(!world.getBlockState(pos.down(1)).isOf(this) && world.getBlockState(pos.up(-1)).isOf(Blocks.DIRT) && (world.getFluidState(pos.up(0)).isOf(Fluids.WATER) || world.getBlockState(pos.up(0)).isOf(this)) && (world.getBlockState(pos.up(1)).isOf(Blocks.AIR) || world.getBlockState(pos.up(1)).isOf(this)))
+                if(state.get(Properties.AGE_7) == 3 && world.getBlockState(pos.down()).isIn(BlockTags.DIRT)) {
+                    //WE MUST DO THIS, IF WORLD-GEN CAN PLANT IT IN THE WILD!
+                    return true;
+                }
+                else if(state.get(Properties.AGE_7) == 7 && world.getBlockState(pos.down()).isOf(this)) {
+                    //WE MUST DO THIS, IF WORLD-GEN CAN PLANT IT IN THE WILD!
+                    return true;
+                }
+                else if(!world.getBlockState(pos.down(1)).isOf(this) && world.getBlockState(pos.up(-1)).isOf(Blocks.DIRT) && (world.getFluidState(pos.up(0)).isOf(Fluids.WATER) || world.getBlockState(pos.up(0)).isOf(this)) && (world.getBlockState(pos.up(1)).isOf(Blocks.AIR) || world.getBlockState(pos.up(1)).isOf(this)))
                 {
                     return true;
                 }
@@ -206,11 +224,6 @@ public class CustomCropBlockWL2Tall extends CropBlock implements Waterloggable {
         }
 
         return false;
-    }
-
-    @Override
-    public void onPlaced(World world, BlockPos pos, BlockState state, LivingEntity placer, ItemStack itemStack) {
-        world.setBlockState(pos, withWaterloggedState(world, pos, (BlockState)this.getDefaultState()), 3);
     }
 
     public static BlockState withWaterloggedState(WorldView world, BlockPos pos, BlockState state) {

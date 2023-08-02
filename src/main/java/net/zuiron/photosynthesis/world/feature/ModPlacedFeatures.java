@@ -17,7 +17,85 @@ import java.util.List;
 
 public class ModPlacedFeatures {
     //crops
+    public static final RegistryKey<PlacedFeature> TOMATO_CROP_PLACED_KEY = registerKey("tomato_crop_placed");
     public static final RegistryKey<PlacedFeature> BASIL_CROP_PLACED_KEY = registerKey("basil_crop_placed");
+    public static final RegistryKey<PlacedFeature> OREGANO_CROP_PLACED_KEY = registerKey("oregano_crop_placed");
+    public static final RegistryKey<PlacedFeature> STRAWBERRY_CROP_PLACED_KEY = registerKey("strawberry_crop_placed");
+    public static final RegistryKey<PlacedFeature> OAT_CROP_PLACED_KEY = registerKey("oat_crop_placed");
+    public static final RegistryKey<PlacedFeature> JALAPENO_CROP_PLACED_KEY = registerKey("jalapeno_crop_placed");
+    public static final RegistryKey<PlacedFeature> CHILI_CROP_PLACED_KEY = registerKey("chili_crop_placed");
+    public static final RegistryKey<PlacedFeature> CUCUMBER_CROP_PLACED_KEY = registerKey("cucumber_crop_placed");
+    public static final RegistryKey<PlacedFeature> ONION_CROP_PLACED_KEY = registerKey("onion_crop_placed");
+    public static final RegistryKey<PlacedFeature> LEEK_CROP_PLACED_KEY = registerKey("leek_crop_placed");
+    public static final RegistryKey<PlacedFeature> CELERY_CROP_PLACED_KEY = registerKey("celery_crop_placed");
+    public static final RegistryKey<PlacedFeature> PEAS_CROP_PLACED_KEY = registerKey("peas_crop_placed");
+    public static final RegistryKey<PlacedFeature> SWEET_POTATO_CROP_PLACED_KEY = registerKey("sweet_potato_crop_placed");
+    public static final RegistryKey<PlacedFeature> ASPARAGUS_CROP_PLACED_KEY = registerKey("asparagus_crop_placed");
+    public static final RegistryKey<PlacedFeature> SCALLION_CROP_PLACED_KEY = registerKey("scallion_crop_placed");
+    public static final RegistryKey<PlacedFeature> GARLIC_CROP_PLACED_KEY = registerKey("garlic_crop_placed");
+    public static final RegistryKey<PlacedFeature> CHIVE_CROP_PLACED_KEY = registerKey("chive_crop_placed");
+    public static final RegistryKey<PlacedFeature> BROCCOLI_CROP_PLACED_KEY = registerKey("broccoli_crop_placed");
+    public static final RegistryKey<PlacedFeature> CAULIFLOWER_CROP_PLACED_KEY = registerKey("cauliflower_crop_placed");
+    public static final RegistryKey<PlacedFeature> CORN_CROP_PLACED_KEY = registerKey("corn_crop_placed");
+    public static final RegistryKey<PlacedFeature> CABBAGE_CROP_PLACED_KEY = registerKey("cabbage_crop_placed");
+    public static final RegistryKey<PlacedFeature> BELLPEPPER_CROP_PLACED_KEY = registerKey("bellpepper_crop_placed");
+    public static final RegistryKey<PlacedFeature> TURNIP_CROP_PLACED_KEY = registerKey("turnip_crop_placed");
+    public static final RegistryKey<PlacedFeature> RUTABAGA_CROP_PLACED_KEY = registerKey("rutabaga_crop_placed");
+    public static final RegistryKey<PlacedFeature> CANOLA_CROP_PLACED_KEY = registerKey("canola_crop_placed");
+    public static final RegistryKey<PlacedFeature> BARLEY_CROP_PLACED_KEY = registerKey("barley_crop_placed");
+    public static final RegistryKey<PlacedFeature> COTTON_CROP_PLACED_KEY = registerKey("cotton_crop_placed");
+    public static final RegistryKey<PlacedFeature> SUGARBEET_CROP_PLACED_KEY = registerKey("sugarbeet_crop_placed");
+    public static final RegistryKey<PlacedFeature> RICE_CROP_PLACED_KEY = registerKey("rice_crop_placed");
+    public static final RegistryKey<PlacedFeature> WHITE_BUTTON_MUSHROOM_CROP_PLACED_KEY = registerKey("white_button_mushroom_crop_placed");
+    public static final RegistryKey<PlacedFeature> SOYBEAN_CROP_PLACED_KEY = registerKey("soybean_crop_placed");
+    public static final RegistryKey<PlacedFeature> SPINACH_CROP_PLACED_KEY = registerKey("spinach_crop_placed");
+    public static final RegistryKey<PlacedFeature> ARROWROOT_CROP_PLACED_KEY = registerKey("arrowroot_crop_placed");
+    public static final RegistryKey<PlacedFeature> ARTICHOKE_CROP_PLACED_KEY = registerKey("artichoke_crop_placed");
+    public static final RegistryKey<PlacedFeature> BRUSSELS_SPROUTS_CROP_PLACED_KEY = registerKey("brussels_sprouts_crop_placed");
+    public static final RegistryKey<PlacedFeature> CASSAVA_CROP_PLACED_KEY = registerKey("cassava_crop_placed");
+    public static final RegistryKey<PlacedFeature> EGGPLANT_CROP_PLACED_KEY = registerKey("eggplant_crop_placed");
+    public static final RegistryKey<PlacedFeature> SUNFLOWER_CROP_PLACED_KEY = registerKey("sunflower_crop_placed");
+    public static final RegistryKey<PlacedFeature> JICAMA_CROP_PLACED_KEY = registerKey("jicama_crop_placed");
+    public static final RegistryKey<PlacedFeature> KALE_CROP_PLACED_KEY = registerKey("kale_crop_placed");
+    public static final RegistryKey<PlacedFeature> KOHLRABI_CROP_PLACED_KEY = registerKey("kohlrabi_crop_placed");
+    public static final RegistryKey<PlacedFeature> LETTUCE_CROP_PLACED_KEY = registerKey("lettuce_crop_placed");
+    public static final RegistryKey<PlacedFeature> OKRA_CROP_PLACED_KEY = registerKey("okra_crop_placed");
+    public static final RegistryKey<PlacedFeature> PARSNIP_CROP_PLACED_KEY = registerKey("parsnip_crop_placed");
+    public static final RegistryKey<PlacedFeature> RADISH_CROP_PLACED_KEY = registerKey("radish_crop_placed");
+    public static final RegistryKey<PlacedFeature> RHUBARB_CROP_PLACED_KEY = registerKey("rhubarb_crop_placed");
+    public static final RegistryKey<PlacedFeature> MILLET_CROP_PLACED_KEY = registerKey("millet_crop_placed");
+    public static final RegistryKey<PlacedFeature> RYE_CROP_PLACED_KEY = registerKey("rye_crop_placed");
+    public static final RegistryKey<PlacedFeature> SQUASH_CROP_PLACED_KEY = registerKey("squash_crop_placed");
+    public static final RegistryKey<PlacedFeature> ZUCCHINI_CROP_PLACED_KEY = registerKey("zucchini_crop_placed");
+    public static final RegistryKey<PlacedFeature> COFFEA_CROP_PLACED_KEY = registerKey("coffea_crop_placed");
+    public static final RegistryKey<PlacedFeature> PARSLEY_CROP_PLACED_KEY = registerKey("parsley_crop_placed");
+    public static final RegistryKey<PlacedFeature> MINT_CROP_PLACED_KEY = registerKey("mint_crop_placed");
+    public static final RegistryKey<PlacedFeature> PINEAPPLE_CROP_PLACED_KEY = registerKey("pineapple_crop_placed");
+    public static final RegistryKey<PlacedFeature> HOP_CROP_PLACED_KEY = registerKey("hop_crop_placed");
+    public static final RegistryKey<PlacedFeature> FILIPENDULA_CROP_PLACED_KEY = registerKey("filipendula_crop_placed");
+    public static final RegistryKey<PlacedFeature> CACTUS_FRUIT_CROP_PLACED_KEY = registerKey("cactus_fruit_crop_placed");
+    public static final RegistryKey<PlacedFeature> CANTALOUPE_CROP_PLACED_KEY = registerKey("cantaloupe_crop_placed");
+    public static final RegistryKey<PlacedFeature> FLAX_CROP_PLACED_KEY = registerKey("flax_crop_placed");
+    public static final RegistryKey<PlacedFeature> JUTE_CROP_PLACED_KEY = registerKey("jute_crop_placed");
+    public static final RegistryKey<PlacedFeature> KENAF_CROP_PLACED_KEY = registerKey("kenaf_crop_placed");
+    public static final RegistryKey<PlacedFeature> SISAL_CROP_PLACED_KEY = registerKey("sisal_crop_placed");
+    public static final RegistryKey<PlacedFeature> AMARANTH_CROP_PLACED_KEY = registerKey("amaranth_crop_placed");
+    public static final RegistryKey<PlacedFeature> BEAN_CROP_PLACED_KEY = registerKey("bean_crop_placed");
+    public static final RegistryKey<PlacedFeature> CHICKPEA_CROP_PLACED_KEY = registerKey("chickpea_crop_placed");
+    public static final RegistryKey<PlacedFeature> LENTIL_CROP_PLACED_KEY = registerKey("lentil_crop_placed");
+    public static final RegistryKey<PlacedFeature> QUINOA_CROP_PLACED_KEY = registerKey("quinoa_crop_placed");
+    public static final RegistryKey<PlacedFeature> PEANUT_CROP_PLACED_KEY = registerKey("peanut_crop_placed");
+    public static final RegistryKey<PlacedFeature> TARO_CROP_PLACED_KEY = registerKey("taro_crop_placed");
+    public static final RegistryKey<PlacedFeature> TOMATILLO_CROP_PLACED_KEY = registerKey("tomatillo_crop_placed");
+    public static final RegistryKey<PlacedFeature> AGAVE_CROP_PLACED_KEY = registerKey("agave_crop_placed");
+    public static final RegistryKey<PlacedFeature> GINGER_CROP_PLACED_KEY = registerKey("ginger_crop_placed");
+    public static final RegistryKey<PlacedFeature> SESAME_CROP_PLACED_KEY = registerKey("sesame_crop_placed");
+    public static final RegistryKey<PlacedFeature> MUSTARD_CROP_PLACED_KEY = registerKey("mustard_crop_placed");
+    public static final RegistryKey<PlacedFeature> CAMELLIA_SINENSIS_CROP_PLACED_KEY = registerKey("camellia_sinensis_crop_placed");
+    public static final RegistryKey<PlacedFeature> NICOTIANA_RUSTICA_CROP_PLACED_KEY = registerKey("nicotiana_rustica_crop_placed");
+    public static final RegistryKey<PlacedFeature> PAPAVER_SOMNIFERUM_CROP_PLACED_KEY = registerKey("papaver_somniferum_crop_placed");
+    public static final RegistryKey<PlacedFeature> ERYTHROXYLUM_COCA_CROP_PLACED_KEY = registerKey("erythroxylum_coca_crop_placed");
+
 
     public static final RegistryKey<PlacedFeature> SALT_ORE_PLACED_KEY = registerKey("salt_ore_placed");
 
@@ -223,7 +301,238 @@ public class ModPlacedFeatures {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
         //Crops
+        register(context, TOMATO_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.TOMATO_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
         register(context, BASIL_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BASIL_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, OREGANO_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.OREGANO_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, STRAWBERRY_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.STRAWBERRY_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, OAT_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.OAT_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, JALAPENO_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.JALAPENO_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, CHILI_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.CHILI_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, CUCUMBER_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.CUCUMBER_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, ONION_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.ONION_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, LEEK_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.LEEK_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, CELERY_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.CELERY_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, PEAS_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PEAS_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, SWEET_POTATO_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.SWEET_POTATO_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, ASPARAGUS_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.ASPARAGUS_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, SCALLION_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.SCALLION_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, GARLIC_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.GARLIC_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, CHIVE_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.CHIVE_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, BROCCOLI_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BROCCOLI_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, CAULIFLOWER_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.CAULIFLOWER_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, CORN_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.CORN_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, CABBAGE_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.CABBAGE_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, BELLPEPPER_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BELLPEPPER_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, TURNIP_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.TURNIP_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, RUTABAGA_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.RUTABAGA_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, CANOLA_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.CANOLA_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, BARLEY_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BARLEY_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, COTTON_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.COTTON_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, SUGARBEET_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.SUGARBEET_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, RICE_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.RICE_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, WHITE_BUTTON_MUSHROOM_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.WHITE_BUTTON_MUSHROOM_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, SOYBEAN_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.SOYBEAN_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, SPINACH_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.SPINACH_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, ARROWROOT_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.ARROWROOT_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, ARTICHOKE_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.ARTICHOKE_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, BRUSSELS_SPROUTS_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BRUSSELS_SPROUTS_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, CASSAVA_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.CASSAVA_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, EGGPLANT_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.EGGPLANT_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, SUNFLOWER_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.SUNFLOWER_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, JICAMA_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.JICAMA_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, KALE_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.KALE_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, KOHLRABI_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.KOHLRABI_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, LETTUCE_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.LETTUCE_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, OKRA_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.OKRA_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, PARSNIP_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PARSNIP_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, RADISH_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.RADISH_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, RHUBARB_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.RHUBARB_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, MILLET_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.MILLET_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, RYE_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.RYE_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, SQUASH_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.SQUASH_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, ZUCCHINI_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.ZUCCHINI_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, COFFEA_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.COFFEA_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, PARSLEY_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PARSLEY_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, MINT_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.MINT_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, PINEAPPLE_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PINEAPPLE_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, HOP_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.HOP_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, FILIPENDULA_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.FILIPENDULA_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, CACTUS_FRUIT_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.CACTUS_FRUIT_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, CANTALOUPE_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.CANTALOUPE_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, FLAX_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.FLAX_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, JUTE_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.JUTE_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, KENAF_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.KENAF_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, SISAL_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.SISAL_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, AMARANTH_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.AMARANTH_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, BEAN_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BEAN_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, CHICKPEA_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.CHICKPEA_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, LENTIL_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.LENTIL_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, QUINOA_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.QUINOA_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, PEANUT_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PEANUT_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, TARO_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.TARO_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, TOMATILLO_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.TOMATILLO_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, AGAVE_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.AGAVE_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, GINGER_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.GINGER_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, SESAME_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.SESAME_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, MUSTARD_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.MUSTARD_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, CAMELLIA_SINENSIS_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.CAMELLIA_SINENSIS_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, NICOTIANA_RUSTICA_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.NICOTIANA_RUSTICA_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, PAPAVER_SOMNIFERUM_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PAPAVER_SOMNIFERUM_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, ERYTHROXYLUM_COCA_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.ERYTHROXYLUM_COCA_CROP_KEY),
                 VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
 
 
