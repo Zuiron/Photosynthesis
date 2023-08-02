@@ -238,317 +238,318 @@ public class ModConfiguredFeatures {
         var placedFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.PLACED_FEATURE);
         //register(context, KEY, );
 
+        int crop_tries = 1;
         //Crops
         register(context, TOMATO_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.TOMATO_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, BASIL_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.BASIL_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, OREGANO_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.OREGANO_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, STRAWBERRY_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.STRAWBERRY_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, OAT_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.OAT_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, JALAPENO_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.JALAPENO_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, CHILI_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.CHILI_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, CUCUMBER_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.CUCUMBER_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, ONION_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.ONION_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, LEEK_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.LEEK_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, CELERY_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.CELERY_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, PEAS_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.PEAS_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, SWEET_POTATO_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.SWEET_POTATO_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, ASPARAGUS_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.ASPARAGUS_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, SCALLION_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.SCALLION_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, GARLIC_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.GARLIC_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, CHIVE_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.CHIVE_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, BROCCOLI_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.BROCCOLI_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, CAULIFLOWER_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.CAULIFLOWER_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, CORN_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.CORN_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, CABBAGE_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.CABBAGE_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, BELLPEPPER_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.BELLPEPPER_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, TURNIP_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.TURNIP_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, RUTABAGA_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.RUTABAGA_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, CANOLA_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.CANOLA_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, BARLEY_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.BARLEY_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, COTTON_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.COTTON_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, SUGARBEET_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.SUGARBEET_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, RICE_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.RICE_CROP.getDefaultState().with(Properties.AGE_7, 3))))));
 
         register(context, WHITE_BUTTON_MUSHROOM_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.WHITE_BUTTON_MUSHROOM_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, SOYBEAN_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.SOYBEAN_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, SPINACH_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.SPINACH_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, ARROWROOT_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.ARROWROOT_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, ARTICHOKE_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.ARTICHOKE_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, BRUSSELS_SPROUTS_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.BRUSSELS_SPROUTS_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, CASSAVA_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.CASSAVA_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, EGGPLANT_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.EGGPLANT_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, SUNFLOWER_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.SUNFLOWER_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, JICAMA_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.JICAMA_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, KALE_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.KALE_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, KOHLRABI_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.KOHLRABI_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, LETTUCE_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.LETTUCE_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, OKRA_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.OKRA_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, PARSNIP_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.PARSNIP_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, RADISH_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.RADISH_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, RHUBARB_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.RHUBARB_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, MILLET_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.MILLET_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, RYE_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.RYE_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, SQUASH_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.SQUASH_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, ZUCCHINI_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.ZUCCHINI_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, COFFEA_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.COFFEA_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, PARSLEY_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.PARSLEY_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, MINT_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.MINT_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, PINEAPPLE_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.PINEAPPLE_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, HOP_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.HOP_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, FILIPENDULA_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.FILIPENDULA_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, CACTUS_FRUIT_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.CACTUS_FRUIT_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, CANTALOUPE_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.CANTALOUPE_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, FLAX_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.FLAX_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, JUTE_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.JUTE_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, KENAF_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.KENAF_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, SISAL_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.SISAL_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, AMARANTH_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.AMARANTH_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, BEAN_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.BEAN_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, CHICKPEA_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.CHICKPEA_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, LENTIL_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.LENTIL_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, QUINOA_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.QUINOA_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, PEANUT_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.PEANUT_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, TARO_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.TARO_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, TOMATILLO_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.TOMATILLO_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, AGAVE_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.AGAVE_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, GINGER_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.GINGER_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, SESAME_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.SESAME_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, MUSTARD_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.MUSTARD_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, CAMELLIA_SINENSIS_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.CAMELLIA_SINENSIS_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, NICOTIANA_RUSTICA_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.NICOTIANA_RUSTICA_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, PAPAVER_SOMNIFERUM_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.PAPAVER_SOMNIFERUM_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, ERYTHROXYLUM_COCA_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.ERYTHROXYLUM_COCA_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
 
@@ -597,36 +598,36 @@ public class ModConfiguredFeatures {
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.DECORATION_SEASHELL)))));
 
 
-
+        int berry_tries = 8; //was 16
         register(context, BLUEBERRYBUSH_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(berry_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.BLUEBERRY_BUSH.getDefaultState().with(BlueberryBush.AGE, 3))))));
         register(context, BLACKBERRY_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(berry_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.BLACKBERRY_BUSH.getDefaultState().with(BlackberryBush.AGE, 3))))));
         register(context, RASPBERRY_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(berry_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.RASPBERRY_BUSH.getDefaultState().with(RaspberryBush.AGE, 3))))));
         register(context, CLOUDBERRY_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(berry_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.CLOUDBERRY_BUSH.getDefaultState().with(CloudberryBush.AGE, 3))))));
         register(context, WILDSTRAWBERRY_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(berry_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.WILD_STRAWBERRY_BUSH.getDefaultState().with(Wild_StrawberryBush.AGE, 3))))));
         register(context, LINGONBERRY_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(berry_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.LINGONBERRY_BUSH.getDefaultState().with(LingonberryBush.AGE, 3))))));
         register(context, CRANBERRY_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(berry_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.CRANBERRY_BUSH.getDefaultState().with(CranberryBush.AGE, 3))))));
         register(context, HUCKLEBERRY_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(berry_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.HUCKLEBERRY_BUSH.getDefaultState().with(HuckleberryBush.AGE, 3))))));
         register(context, JUNIPERBERRY_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(berry_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.JUNIPERBERRY_BUSH.getDefaultState().with(JuniperberryBush.AGE, 3))))));
         register(context, MULBERRY_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(berry_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.MULBERRY_BUSH.getDefaultState().with(MulberryBush.AGE, 3))))));
 
 
