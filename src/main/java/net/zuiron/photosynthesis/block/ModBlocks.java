@@ -15,10 +15,7 @@ import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.berrybushblocks.*;
 import net.zuiron.photosynthesis.block.bushtreecrops.*;
-import net.zuiron.photosynthesis.block.cropblocks.CustomCropBlock;
-import net.zuiron.photosynthesis.block.cropblocks.CustomCropBlockWL;
-import net.zuiron.photosynthesis.block.cropblocks.CustomCropBlockWL2Tall;
-import net.zuiron.photosynthesis.block.cropblocks.CustomMushroomCropBlock;
+import net.zuiron.photosynthesis.block.cropblocks.*;
 import net.zuiron.photosynthesis.block.custom.*;
 import net.zuiron.photosynthesis.block.decoration.*;
 import net.zuiron.photosynthesis.world.feature.tree.*;
@@ -724,7 +721,7 @@ public class ModBlocks {
 
 
     // CROP BLOCKS -----------------------------------------------------------------------------------------------------
-    public static final CropBlock TOMATO_CROP = registerCropBlockSimple("tomato_crop");
+    public static final CropBlock TOMATO_CROP = registerCropBlockSimple2Tall("tomato_crop");
     public static final CropBlock BASIL_CROP = registerCropBlockSimple("basil_crop");
     public static final CropBlock OREGANO_CROP = registerCropBlockSimple("oregano_crop");
     public static final CropBlock STRAWBERRY_CROP = registerCropBlockSimple("strawberry_crop");
@@ -2071,6 +2068,13 @@ public class ModBlocks {
                 new CustomCropBlock(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                 .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),
                 name));
+    }
+
+    private static CropBlock registerCropBlockSimple2Tall(String name){
+        return Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, name),
+                new CustomCropBlock2Tall(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
+                        .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),
+                        name));
     }
 
     private static CropBlock registerCropBlockSimpleWL(String name){
