@@ -3,6 +3,7 @@ package net.zuiron.photosynthesis.block.cropblocks;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.DoubleBlockHalf;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemConvertible;
@@ -136,9 +137,23 @@ public class CustomCropBlockWL2Tall extends CropBlock implements Waterloggable {
         return AGE_TO_SHAPE[(Integer)state.get(this.getAgeProperty())];
     }
 
+    @Override
+    public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
+        super.onBreak(world, pos, state, player);
+        //fixes world genned crops
+        if(world.getBlockState(pos.down()).isOf(this) && !world.getBlockState(pos.down()).get(WATERLOGGED)) {
+            world.breakBlock(pos.down(), true);
+        }
+    }
+
     //this fixes light issue. and seasons support.
     @Override
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+        if(state.get(Properties.AGE_7) == 3 && world.getBlockState(pos.down()).isIn(BlockTags.DIRT) && !world.getBlockState(pos).get(WATERLOGGED)) {
+            //WE MUST DO THIS, IF WORLD-GEN CAN PLANT IT IN THE WILD!
+            world.setBlockState(pos.up(1), (BlockState)this.getDefaultState().with(AGE, 7), Block.NOTIFY_LISTENERS);
+        }
+
         float f2;
         int i2;
         if(Seasons.isSeasonsEnabled() && world.getBaseLightLevel(pos.up(1), 0) >= 9 && (i2 = this.getAge(state)) < this.getMaxAge() && random.nextInt((int) (25.0f / (f2 = 7.0f)) + 1) == 0) {

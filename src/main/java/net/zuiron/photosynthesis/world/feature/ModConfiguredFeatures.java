@@ -241,8 +241,8 @@ public class ModConfiguredFeatures {
         int crop_tries = 1;
         //Crops
         register(context, TOMATO_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.TOMATO_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
+                ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.TOMATO_CROP.getDefaultState().with(Properties.AGE_7, 3))))));
 
         register(context, BASIL_CROP_KEY, Feature.FLOWER,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
@@ -257,8 +257,8 @@ public class ModConfiguredFeatures {
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.STRAWBERRY_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, OAT_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.OAT_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
+                ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.OAT_CROP.getDefaultState().with(Properties.AGE_7, 3))))));
 
         register(context, JALAPENO_CROP_KEY, Feature.FLOWER,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
@@ -353,7 +353,7 @@ public class ModConfiguredFeatures {
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.SUGARBEET_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, RICE_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.RICE_CROP.getDefaultState().with(Properties.AGE_7, 3))))));
 
         register(context, WHITE_BUTTON_MUSHROOM_CROP_KEY, Feature.FLOWER,

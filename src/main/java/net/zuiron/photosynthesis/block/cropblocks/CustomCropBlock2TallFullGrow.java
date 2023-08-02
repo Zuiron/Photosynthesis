@@ -2,6 +2,7 @@ package net.zuiron.photosynthesis.block.cropblocks;
 
 import net.minecraft.block.*;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -27,35 +28,34 @@ public class CustomCropBlock2TallFullGrow extends CropBlock implements Waterlogg
         seed = itemname;
     }
 
-    @Override
+    /*@Override
     public void onPlaced(World world, BlockPos pos, BlockState state, LivingEntity placer, ItemStack itemStack) {
-        if(state.get(Properties.AGE_7) == 7 && world.getBlockState(pos.down()).isIn(BlockTags.DIRT)) {
-            //WE MUST DO THIS, IF WORLD-GEN CAN PLANT IT IN THE WILD!
-            world.setBlockState(pos.up(), (BlockState)this.getDefaultState().with(AGE, 7), Block.NOTIFY_LISTENERS);
+        if(!world.isClient()) {
+            if (state.get(Properties.AGE_7) == 7 && world.getBlockState(pos.down()).isIn(BlockTags.DIRT)) {
+                //WE MUST DO THIS, IF WORLD-GEN CAN PLANT IT IN THE WILD!
+                world.setBlockState(pos.up(1), (BlockState) this.getDefaultState().with(AGE, 7), 3);
+            }
         }
-    }
+    }*/
 
     @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
-        switch (seed) {
-            case "tomato_crop":
-                if(state.get(Properties.AGE_7) == 3 && world.getBlockState(pos.down()).isIn(BlockTags.DIRT)) {
-                    //WE MUST DO THIS, IF WORLD-GEN CAN PLANT IT IN THE WILD!
-                    return true;
-                }
-                else if(state.get(Properties.AGE_7) == 7 && world.getBlockState(pos.down()).isOf(this)) {
-                    //WE MUST DO THIS, IF WORLD-GEN CAN PLANT IT IN THE WILD!
-                    return true;
-                }
-                else if(!world.getBlockState(pos.down(1)).isOf(this) && world.getBlockState(pos.up(-1)).isOf(Blocks.FARMLAND) && (world.getBlockState(pos.up(1)).isOf(Blocks.AIR) || world.getBlockState(pos.up(1)).isOf(this)))
-                {
-                    return true;
-                }
-                else if (world.getBlockState(pos.down(1)).isOf(this) && world.getBlockState(pos.down(1)).contains(AGE) && world.getBlockState(pos.down(1)).get(AGE) == LOWER_HALF_MAX_AGE && state.get(AGE) >= LOWER_HALF_MAX_AGE + 1) {
-                    return true;
-                }
-            default: return false;
+        if(state.get(Properties.AGE_7) == 3 && world.getBlockState(pos.down()).isIn(BlockTags.DIRT)) {
+            //WE MUST DO THIS, IF WORLD-GEN CAN PLANT IT IN THE WILD!
+            return true;
         }
+        if(state.get(Properties.AGE_7) == 7 && world.getBlockState(pos.down()).isOf(this)) {
+            //WE MUST DO THIS, IF WORLD-GEN CAN PLANT IT IN THE WILD!
+            return true;
+        }
+        else if(!world.getBlockState(pos.down(1)).isOf(this) && world.getBlockState(pos.up(-1)).isOf(Blocks.FARMLAND) && (world.getBlockState(pos.up(1)).isOf(Blocks.AIR) || world.getBlockState(pos.up(1)).isOf(this)))
+        {
+            return true;
+        }
+        else if (world.getBlockState(pos.down(1)).isOf(this) && world.getBlockState(pos.down(1)).contains(AGE) && world.getBlockState(pos.down(1)).get(AGE) == LOWER_HALF_MAX_AGE && state.get(AGE) >= LOWER_HALF_MAX_AGE + 1) {
+            return true;
+        }
+        return false;
     }
 
     private static final VoxelShape[] AGE_TO_SHAPE = new VoxelShape[]{
@@ -83,9 +83,23 @@ public class CustomCropBlock2TallFullGrow extends CropBlock implements Waterlogg
         return AGE_TO_SHAPE[(Integer)state.get(this.getAgeProperty())];
     }
 
-    //this fixes light issue. and seasons support.
+    @Override
+    public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
+        super.onBreak(world, pos, state, player);
+        //fixes world genned crops, and full-grow breaks no matter what bottom part. (otherwise it won't re-grow).
+        if(world.getBlockState(pos.down()).isOf(this) && world.getBlockState(pos.down(2)).isIn(BlockTags.DIRT) || world.getBlockState(pos.down(2)).isOf(Blocks.FARMLAND)) {
+            world.breakBlock(pos.down(), true);
+        }
+    }
+
     @Override
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+        if(state.get(Properties.AGE_7) == 3 && world.getBlockState(pos.down()).isIn(BlockTags.DIRT)) {
+            //WE MUST DO THIS, IF WORLD-GEN CAN PLANT IT IN THE WILD!
+            world.setBlockState(pos.up(1), (BlockState)this.getDefaultState().with(AGE, 7), Block.NOTIFY_LISTENERS);
+            world.setBlockState(pos, this.withAge(7), Block.NOTIFY_LISTENERS);
+        }
+
         float f2;
         int i2;
         if(Seasons.isSeasonsEnabled() && world.getBaseLightLevel(pos.up(1), 0) >= 9 && (i2 = this.getAge(state)) < this.getMaxAge() && random.nextInt((int) (25.0f / (f2 = 7.0f)) + 1) == 0) {
