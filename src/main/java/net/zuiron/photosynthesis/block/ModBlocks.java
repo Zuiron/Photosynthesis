@@ -725,7 +725,7 @@ public class ModBlocks {
     public static final CropBlock BASIL_CROP = registerCropBlockSimple("basil_crop");
     public static final CropBlock OREGANO_CROP = registerCropBlockSimple("oregano_crop");
     public static final CropBlock STRAWBERRY_CROP = registerCropBlockSimple("strawberry_crop");
-    public static final CropBlock OAT_CROP = registerCropBlockSimple2Tall("oat_crop");
+    public static final CropBlock OAT_CROP = registerCropBlockSimple("oat_crop");
     public static final CropBlock JALAPENO_CROP = registerCropBlockSimple("jalapeno_crop");
     public static final CropBlock CHILI_CROP = registerCropBlockSimple("chili_crop");
     public static final CropBlock CUCUMBER_CROP = registerCropBlockSimple("cucumber_crop");
@@ -740,7 +740,7 @@ public class ModBlocks {
     public static final CropBlock CHIVE_CROP = registerCropBlockSimple("chive_crop");
     public static final CropBlock BROCCOLI_CROP = registerCropBlockSimple("broccoli_crop");
     public static final CropBlock CAULIFLOWER_CROP = registerCropBlockSimple("cauliflower_crop");
-    public static final CropBlock CORN_CROP = registerCropBlockSimple("corn_crop");
+    public static final CropBlock CORN_CROP = registerCropBlockSimple2Tall("corn_crop");
     //public static final CropBlock BLACK_PEPPER_CROP = registerCropBlockSimple("black_pepper_crop");
     public static final CropBlock CABBAGE_CROP = registerCropBlockSimple("cabbage_crop");
     public static final CropBlock BELLPEPPER_CROP = registerCropBlockSimple("bellpepper_crop");

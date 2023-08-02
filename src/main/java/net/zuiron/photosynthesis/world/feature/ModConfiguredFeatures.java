@@ -258,7 +258,7 @@ public class ModConfiguredFeatures {
 
         register(context, OAT_CROP_KEY, Feature.FLOWER,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.OAT_CROP.getDefaultState().with(Properties.AGE_7, 3))))));
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.OAT_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, JALAPENO_CROP_KEY, Feature.FLOWER,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
@@ -318,7 +318,7 @@ public class ModConfiguredFeatures {
 
         register(context, CORN_CROP_KEY, Feature.FLOWER,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.CORN_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.CORN_CROP.getDefaultState().with(Properties.AGE_7, 3))))));
 
         register(context, CABBAGE_CROP_KEY, Feature.FLOWER,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
