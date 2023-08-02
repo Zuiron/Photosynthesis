@@ -352,7 +352,7 @@ public class ModConfiguredFeatures {
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.SUGARBEET_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, RICE_CROP_KEY, Feature.FLOWER,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.RICE_CROP.getDefaultState().with(Properties.AGE_7, 3))))));
 
         register(context, WHITE_BUTTON_MUSHROOM_CROP_KEY, Feature.FLOWER,
