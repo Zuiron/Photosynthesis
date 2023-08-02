@@ -80,7 +80,7 @@ public class CustomCropBlock2Tall extends CropBlock implements Waterloggable {
     @Override
     protected ItemConvertible getSeedsItem() {
         switch (seed) {
-            case "tomato_crop": return ModItems.TOMATO_SEEDS;
+            case "corn_crop": return ModItems.CORN_SEEDS;
             default: return Items.AIR;
         }
     }
