@@ -41,6 +41,10 @@ public class CustomMushroomCropBlock extends CropBlock {
 
     @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
+        if(state.get(Properties.AGE_7) == 7 && world.getBlockState(pos.down()).isIn(BlockTags.DIRT)) {
+            //WE MUST DO THIS, IF WORLD-GEN CAN PLANT IT IN THE WILD!
+            return true;
+        }
         BlockPos blockPos = pos.down();
         BlockState blockState = world.getBlockState(blockPos);
         if (blockState.isIn(BlockTags.MUSHROOM_GROW_BLOCK)) {
