@@ -73,7 +73,7 @@ public class CustomMushroomCropBlock extends CropBlock {
     @Override
     protected ItemConvertible getSeedsItem() {
         switch (seed) {
-            case "white_button_mushroom_crop": return ModItems.WHITE_BUTTON_MUSHROOM;
+            case "white_button_mushroom_crop": return ModItems.WHITE_BUTTON_MUSHROOM_SPORES;
             default: return Items.AIR;
         }
     }
