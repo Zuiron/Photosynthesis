@@ -87,7 +87,7 @@ public class CustomCropBlock2TallFullGrow extends CropBlock implements Waterlogg
     public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
         super.onBreak(world, pos, state, player);
         //fixes world genned crops, and full-grow breaks no matter what bottom part. (otherwise it won't re-grow).
-        if(world.getBlockState(pos.down()).isOf(this) && world.getBlockState(pos.down(2)).isIn(BlockTags.DIRT) || world.getBlockState(pos.down(2)).isOf(Blocks.FARMLAND)) {
+        if(world.getBlockState(pos.down()).isOf(this)) {
             world.breakBlock(pos.down(), true);
         }
     }

@@ -141,7 +141,7 @@ public class CustomCropBlockWL2Tall extends CropBlock implements Waterloggable {
     public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
         super.onBreak(world, pos, state, player);
         //fixes world genned crops
-        if(world.getBlockState(pos.down()).isOf(this) && !world.getBlockState(pos.down()).get(WATERLOGGED)) {
+        if(world.getBlockState(pos.down()).isOf(this)) {
             world.breakBlock(pos.down(), true);
         }
     }

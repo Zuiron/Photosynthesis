@@ -2,10 +2,22 @@ package net.zuiron.photosynthesis.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.CocoaBlock;
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
+import net.minecraft.loot.LootPool;
+import net.minecraft.loot.LootTable;
 import net.minecraft.loot.condition.AnyOfLootCondition;
 import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
 import net.minecraft.loot.condition.LootCondition;
+import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.loot.entry.LootPoolEntry;
+import net.minecraft.loot.function.LootFunction;
+import net.minecraft.loot.function.SetCountLootFunction;
+import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
+import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.predicate.StatePredicate;
 import net.minecraft.state.property.Properties;
 import net.zuiron.photosynthesis.block.ModBlocks;
@@ -584,9 +596,12 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
 
         //cropDrops(ModBlocks.CACTUS_FRUIT_CROP, ModItems.CACTUS_FRUIT, ModItems.CACTUS_FRUIT_SEEDS, );
 
-        BlockStatePropertyLootCondition.Builder builder = BlockStatePropertyLootCondition.builder(ModBlocks.RICE_CROP)
+        /*BlockStatePropertyLootCondition.Builder builder = BlockStatePropertyLootCondition.builder(ModBlocks.RICE_CROP)
                  .properties(StatePredicate.Builder.create().exactMatch(Properties.AGE_7, 7));
-         this.addDrop(ModBlocks.RICE_CROP, this.cropDrops(ModBlocks.RICE_CROP, ModItems.RICE_PANICLE, ModItems.RICE_SEEDS, builder));
+         this.addDrop(ModBlocks.RICE_CROP, this.cropDrops(ModBlocks.RICE_CROP, ModItems.RICE_PANICLE, ModItems.RICE_SEEDS, builder));*/
 
+
+        //DOESN'T QUIET WORK RIGHT...
+        //this.addDrop(ModBlocks.RICE_CROP, (Block block) -> LootTable.builder().pool(LootPool.builder().rolls(ConstantLootNumberProvider.create(1.0f)).with((LootPoolEntry.Builder)this.applyExplosionDecay((ItemConvertible)block, ItemEntry.builder(ModItems.RICE_PANICLE).apply((LootFunction.Builder)((Object)SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 3.0f)).conditionally(BlockStatePropertyLootCondition.builder(block).properties(StatePredicate.Builder.create().exactMatch(Properties.AGE_7, 7)))))))));
     }
 }
