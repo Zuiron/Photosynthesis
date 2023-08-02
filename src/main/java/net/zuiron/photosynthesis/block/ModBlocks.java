@@ -721,7 +721,7 @@ public class ModBlocks {
 
 
     // CROP BLOCKS -----------------------------------------------------------------------------------------------------
-    public static final CropBlock TOMATO_CROP = registerCropBlockSimple2Tall("tomato_crop");
+    public static final CropBlock TOMATO_CROP = registerCropBlockSimple2TallFullGrow("tomato_crop");
     public static final CropBlock BASIL_CROP = registerCropBlockSimple("basil_crop");
     public static final CropBlock OREGANO_CROP = registerCropBlockSimple("oregano_crop");
     public static final CropBlock STRAWBERRY_CROP = registerCropBlockSimple("strawberry_crop");
@@ -2073,6 +2073,13 @@ public class ModBlocks {
     private static CropBlock registerCropBlockSimple2Tall(String name){
         return Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, name),
                 new CustomCropBlock2Tall(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
+                        .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),
+                        name));
+    }
+
+    private static CropBlock registerCropBlockSimple2TallFullGrow(String name){
+        return Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, name),
+                new CustomCropBlock2TallFullGrow(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                         .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),
                         name));
     }
