@@ -68,7 +68,7 @@ public class ToolRackBlockEntity extends BlockEntity implements ExtendedScreenHa
     }
 
     @Override
-    public DefaultedList<ItemStack> getItems() {
+    public DefaultedList<ItemStack> getItemsNoConflicts() {
         return this.inventory;
     }
 

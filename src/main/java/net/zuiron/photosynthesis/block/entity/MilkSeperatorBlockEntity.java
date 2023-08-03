@@ -223,7 +223,7 @@ public class MilkSeperatorBlockEntity extends BlockEntity implements ExtendedScr
     }
 
     @Override
-    public DefaultedList<ItemStack> getItems() {
+    public DefaultedList<ItemStack> getItemsNoConflicts() {
         return this.inventory;
     }
 

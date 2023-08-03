@@ -17,7 +17,7 @@ import java.util.List;
  *
  * <h2>Reading and writing to tags</h2>
  * Use {@link Inventories#writeNbt(NbtCompound, DefaultedList)} and {@link Inventories#readNbt(NbtCompound, DefaultedList)}
- * on {@linkplain #getItems() the item list}.
+ * on {@linkplain #getItemsNoConflicts() the item list}.
  *
  * License: <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>
  * @author Juuz
@@ -30,7 +30,7 @@ public interface ImplementedInventory extends SidedInventory {
      *
      * @return the item list
      */
-    DefaultedList<ItemStack> getItems();
+    DefaultedList<ItemStack> getItemsNoConflicts();
 
     /**
      * Creates an inventory from the item list.
@@ -64,7 +64,7 @@ public interface ImplementedInventory extends SidedInventory {
      */
     @Override
     default int[] getAvailableSlots(Direction side) {
-        int[] result = new int[getItems().size()];
+        int[] result = new int[getItemsNoConflicts().size()];
         for (int i = 0; i < result.length; i++) {
             result[i] = i;
         }
@@ -107,13 +107,13 @@ public interface ImplementedInventory extends SidedInventory {
     /**
      * Returns the inventory size.
      *
-     * <p>The default implementation returns the size of {@link #getItems()}.
+     * <p>The default implementation returns the size of {@link #getItemsNoConflicts()}.
      *
      * @return the inventory size
      */
     @Override
     default int size() {
-        return getItems().size();
+        return getItemsNoConflicts().size();
     }
 
     /**
@@ -139,7 +139,7 @@ public interface ImplementedInventory extends SidedInventory {
      */
     @Override
     default ItemStack getStack(int slot) {
-        return getItems().get(slot);
+        return getItemsNoConflicts().get(slot);
     }
 
     /**
@@ -154,7 +154,7 @@ public interface ImplementedInventory extends SidedInventory {
      */
     @Override
     default ItemStack removeStack(int slot, int count) {
-        ItemStack result = Inventories.splitStack(getItems(), slot, count);
+        ItemStack result = Inventories.splitStack(getItemsNoConflicts(), slot, count);
         if (!result.isEmpty()) {
             markDirty();
         }
@@ -172,7 +172,7 @@ public interface ImplementedInventory extends SidedInventory {
      */
     @Override
     default ItemStack removeStack(int slot) {
-        return Inventories.removeStack(getItems(), slot);
+        return Inventories.removeStack(getItemsNoConflicts(), slot);
     }
 
     /**
@@ -186,18 +186,18 @@ public interface ImplementedInventory extends SidedInventory {
      */
     @Override
     default void setStack(int slot, ItemStack stack) {
-        getItems().set(slot, stack);
+        getItemsNoConflicts().set(slot, stack);
         if (stack.getCount() > getMaxCountPerStack()) {
             stack.setCount(getMaxCountPerStack());
         }
     }
 
     /**
-     * Clears {@linkplain #getItems() the item list}}.
+     * Clears {@linkplain #getItemsNoConflicts() the item list}}.
      */
     @Override
     default void clear() {
-        getItems().clear();
+        getItemsNoConflicts().clear();
     }
 
     @Override

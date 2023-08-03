@@ -116,7 +116,7 @@ public class CuttingBoardBlockEntity extends BlockEntity implements ExtendedScre
     }
 
     @Override
-    public DefaultedList<ItemStack> getItems() {
+    public DefaultedList<ItemStack> getItemsNoConflicts() {
         return this.inventory;
     }
 

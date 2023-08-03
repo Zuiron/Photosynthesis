@@ -156,7 +156,7 @@ public class FluidPressBlockEntity extends BlockEntity implements ExtendedScreen
     }
 
     @Override
-    public DefaultedList<ItemStack> getItems() {
+    public DefaultedList<ItemStack> getItemsNoConflicts() {
         return this.inventory;
     }
 

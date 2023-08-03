@@ -81,7 +81,7 @@ public class PlateBlockEntity extends BlockEntity implements ExtendedScreenHandl
     }
 
     @Override
-    public DefaultedList<ItemStack> getItems() {
+    public DefaultedList<ItemStack> getItemsNoConflicts() {
         return this.inventory;
     }
 
