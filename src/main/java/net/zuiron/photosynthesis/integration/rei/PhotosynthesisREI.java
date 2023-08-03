@@ -1,18 +1,11 @@
 package net.zuiron.photosynthesis.integration.rei;
 
-import com.mojang.blaze3d.systems.RenderSystem;
 import me.shedaniel.math.Point;
 import me.shedaniel.math.Rectangle;
-import me.shedaniel.rei.api.client.entry.renderer.EntryRenderer;
-import me.shedaniel.rei.api.client.gui.widgets.Tooltip;
-import me.shedaniel.rei.api.client.gui.widgets.TooltipContext;
-import me.shedaniel.rei.api.client.gui.widgets.Widget;
-import me.shedaniel.rei.api.client.gui.widgets.Widgets;
 import me.shedaniel.rei.api.client.plugins.REIClientPlugin;
 import me.shedaniel.rei.api.client.registry.category.CategoryRegistry;
 import me.shedaniel.rei.api.client.registry.display.DisplayRegistry;
 import me.shedaniel.rei.api.client.registry.screen.ScreenRegistry;
-import me.shedaniel.rei.api.client.util.ClientEntryStacks;
 import me.shedaniel.rei.api.common.category.CategoryIdentifier;
 import me.shedaniel.rei.api.common.entry.EntryIngredient;
 import me.shedaniel.rei.api.common.entry.EntryStack;
@@ -21,8 +14,6 @@ import me.shedaniel.rei.api.common.util.EntryStacks;
 import me.shedaniel.rei.plugin.common.displays.DefaultInformationDisplay;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-
-import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.Text;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
@@ -53,12 +44,6 @@ import net.zuiron.photosynthesis.integration.rei.woodfiredoven.WoodFiredOvenReci
 import net.zuiron.photosynthesis.integration.rei.woodfiredoven.WoodFiredOvenRecipeDisplay;
 import net.zuiron.photosynthesis.recipe.*;
 import net.zuiron.photosynthesis.screen.*;
-import net.zuiron.photosynthesis.screen.renderer.FluidStackRenderer;
-import net.zuiron.photosynthesis.util.FluidStack;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.Arrays;
-import java.util.stream.Collectors;
 
 @Environment(EnvType.CLIENT)
 public class PhotosynthesisREI implements REIClientPlugin {

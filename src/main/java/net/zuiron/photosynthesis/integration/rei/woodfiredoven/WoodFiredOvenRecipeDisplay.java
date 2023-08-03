@@ -9,7 +9,6 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.util.collection.DefaultedList;
 import net.zuiron.photosynthesis.integration.rei.PhotosynthesisREI;
-import net.zuiron.photosynthesis.recipe.CookingPotRecipe;
 import net.zuiron.photosynthesis.recipe.WoodFiredOvenRecipe;
 
 import java.util.ArrayList;

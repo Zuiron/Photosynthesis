@@ -18,7 +18,6 @@ import net.minecraft.util.Identifier;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.integration.rei.PhotosynthesisREI;
-import net.zuiron.photosynthesis.integration.rei.cutting_board.CuttingBoardRecipeDisplay;
 
 import java.util.ArrayList;
 import java.util.List;

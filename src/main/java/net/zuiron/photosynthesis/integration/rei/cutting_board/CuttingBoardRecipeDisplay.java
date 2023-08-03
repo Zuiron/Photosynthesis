@@ -9,7 +9,6 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.zuiron.photosynthesis.integration.rei.PhotosynthesisREI;
 import net.zuiron.photosynthesis.recipe.CuttingBoardRecipe;
-import net.zuiron.photosynthesis.recipe.SkilletRecipe;
 
 import java.util.ArrayList;
 import java.util.Collections;

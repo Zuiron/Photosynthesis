@@ -7,7 +7,6 @@ import me.shedaniel.rei.api.common.entry.EntryIngredient;
 import me.shedaniel.rei.api.common.util.EntryIngredients;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.recipe.Ingredient;
 import net.minecraft.util.collection.DefaultedList;
 import net.zuiron.photosynthesis.integration.rei.PhotosynthesisREI;
 import net.zuiron.photosynthesis.recipe.CookingPotRecipe;
