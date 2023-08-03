@@ -7,15 +7,11 @@ import me.shedaniel.rei.api.common.entry.EntryIngredient;
 import me.shedaniel.rei.api.common.util.EntryIngredients;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.collection.DefaultedList;
 import net.zuiron.photosynthesis.integration.rei.PhotosynthesisREI;
-import net.zuiron.photosynthesis.recipe.KegRecipe;
 import net.zuiron.photosynthesis.recipe.MilkSeperatorRecipe;
 import net.zuiron.photosynthesis.util.FluidStack;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 

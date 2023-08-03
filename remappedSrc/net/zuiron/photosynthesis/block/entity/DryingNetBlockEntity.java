@@ -104,7 +104,7 @@ public class DryingNetBlockEntity extends BlockEntity implements ExtendedScreenH
     }
 
     @Override
-    public DefaultedList<ItemStack> getItems() {
+    public DefaultedList<ItemStack> getItemsNoConflicts() {
         return this.inventory;
     }
 

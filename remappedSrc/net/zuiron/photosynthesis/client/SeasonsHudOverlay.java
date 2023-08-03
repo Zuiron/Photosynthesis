@@ -1,22 +1,17 @@
 package net.zuiron.photosynthesis.client;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import me.shedaniel.rei.api.client.gui.DrawableConsumer;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawContext;
-import net.minecraft.client.model.ModelPart;
 import net.minecraft.client.render.GameRenderer;
-import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.text.LiteralTextContent;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.api.Seasons;
-import org.joml.Matrix4f;
 
 public class SeasonsHudOverlay implements HudRenderCallback {
     private static final Identifier CALENDAR = new Identifier(Photosynthesis.MOD_ID,

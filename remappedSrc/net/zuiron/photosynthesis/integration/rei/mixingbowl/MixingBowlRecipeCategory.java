@@ -21,7 +21,6 @@ import net.minecraft.util.collection.DefaultedList;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.integration.rei.PhotosynthesisREI;
-import net.zuiron.photosynthesis.integration.rei.skillet.SkilletRecipeDisplay;
 
 import java.util.ArrayList;
 import java.util.List;

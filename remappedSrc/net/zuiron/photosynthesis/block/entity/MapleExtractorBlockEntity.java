@@ -146,7 +146,7 @@ public class MapleExtractorBlockEntity extends BlockEntity implements ExtendedSc
     }
 
     @Override
-    public DefaultedList<ItemStack> getItems() {
+    public DefaultedList<ItemStack> getItemsNoConflicts() {
         return this.inventory;
     }
 

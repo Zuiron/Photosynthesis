@@ -116,7 +116,7 @@ public class MortarBlockEntity extends BlockEntity implements ExtendedScreenHand
     }
 
     @Override
-    public DefaultedList<ItemStack> getItems() {
+    public DefaultedList<ItemStack> getItemsNoConflicts() {
         return this.inventory;
     }
 

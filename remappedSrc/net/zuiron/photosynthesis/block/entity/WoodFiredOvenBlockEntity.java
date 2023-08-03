@@ -116,7 +116,7 @@ public class WoodFiredOvenBlockEntity extends BlockEntity implements ExtendedScr
     }
 
     @Override
-    public DefaultedList<ItemStack> getItems() {
+    public DefaultedList<ItemStack> getItemsNoConflicts() {
         return this.inventory;
     }
 
@@ -160,13 +160,13 @@ public class WoodFiredOvenBlockEntity extends BlockEntity implements ExtendedScr
     public static void animationTick(World level, BlockPos pos, BlockState state) {
         if (isBlockBelowBurning(level, pos) && level.isClient()) {
             Random random = level.random;
-            if (random.nextFloat() < 0.2F) {
+            /*if (random.nextFloat() < 0.2F) {
                 double x = (double) pos.getX() + 0.5D + (random.nextDouble() * 0.4D - 0.2D);
                 double y = (double) pos.getY() + 1.1D;
                 double z = (double) pos.getZ() + 0.5D + (random.nextDouble() * 0.4D - 0.2D);
                 double motionY = random.nextBoolean() ? 0.015D : 0.005D;
                 level.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, x, y, z, 0.0D, motionY, 0.0D);
-            }
+            }*/
             if (state.get(BooleanProperty.of("processing"))) {
                 double x = (double) pos.getX() + 0.5D + (random.nextDouble() * 0.4D - 0.2D);
                 double y = (double) pos.getY() + 0.1D;

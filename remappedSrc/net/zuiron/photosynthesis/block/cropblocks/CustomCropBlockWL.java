@@ -18,6 +18,9 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
+import net.zuiron.photosynthesis.Photosynthesis;
+import net.zuiron.photosynthesis.api.CropData;
+import net.zuiron.photosynthesis.api.Seasons;
 import net.zuiron.photosynthesis.item.ModItems;
 
 public class CustomCropBlockWL extends CropBlock implements Waterloggable {
@@ -84,9 +87,9 @@ public class CustomCropBlockWL extends CropBlock implements Waterloggable {
             Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D)
     };
 
+    //DOING THIS CAUSES issues with right click harvest. however. if we do not. icon is not present in WTHIT!
     @Override
     protected ItemConvertible getSeedsItem() {
-
         switch (seed) {
             case "rice_crop": return ModItems.RICE;
             default: return Items.AIR;
@@ -97,13 +100,33 @@ public class CustomCropBlockWL extends CropBlock implements Waterloggable {
         return AGE_TO_SHAPE[(Integer)state.get(this.getAgeProperty())];
     }
 
-    //this fixes light issue. however. does not support seasons if we do this.
-    /*@Override
+    //this fixes light issue. and seasons support.
+    @Override
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        float f;
-        int i;
-        if (world.getBaseLightLevel(pos.up(1), 0) >= 9 && (i = this.getAge(state)) < this.getMaxAge() && random.nextInt((int)(25.0f / (f = 7.0f)) + 1) == 0) {
-            world.setBlockState(pos, this.withAge(i + 1), Block.NOTIFY_LISTENERS);
+        float f2;
+        int i2;
+        if(Seasons.isSeasonsEnabled() && world.getBaseLightLevel(pos.up(1), 0) >= 9 && (i2 = this.getAge(state)) < this.getMaxAge() && random.nextInt((int) (25.0f / (f2 = 7.0f)) + 1) == 0) {
+            CropData cropData = CropData.getCropDataFor(state.getBlock().getTranslationKey());
+            if(cropData != null) {
+                int minAge = cropData.getMinAge(Seasons.getCurrentSeason(world.getTimeOfDay()));
+                int maxAge = cropData.getMaxAge(Seasons.getCurrentSeason(world.getTimeOfDay()));
+                float seasonPercentage = Seasons.getSeasonPercentage(world.getTimeOfDay());
+                int currentCropAge = this.getAge(state);
+
+                if(currentCropAge >= minAge && currentCropAge < maxAge && seasonPercentage > 0.5f) { //0.5f = 50% "halfway thru season"
+                    Photosynthesis.LOGGER.info("CropWL: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NewCropAge: "+(this.getAge(state) + 1)+", %:"+seasonPercentage);
+                    world.setBlockState(pos, this.withAge(this.getAge(state) + 1), 2);
+                } else {
+                    Photosynthesis.LOGGER.info("CropWL: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NO GROW"+", %:"+seasonPercentage);
+                }
+            }
+        } else if(!Seasons.isSeasonsEnabled()) {
+            //SEASONS DISABLED
+            float f;
+            int i;
+            if (world.getBaseLightLevel(pos.up(1), 0) >= 9 && (i = this.getAge(state)) < this.getMaxAge() && random.nextInt((int) (25.0f / (f = 7.0f)) + 1) == 0) {
+                world.setBlockState(pos, this.withAge(i + 1), Block.NOTIFY_LISTENERS);
+            }
         }
-    }*/
+    }
 }

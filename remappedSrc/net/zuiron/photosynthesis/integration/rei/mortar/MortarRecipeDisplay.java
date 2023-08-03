@@ -8,7 +8,6 @@ import me.shedaniel.rei.api.common.util.EntryIngredients;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.zuiron.photosynthesis.integration.rei.PhotosynthesisREI;
-import net.zuiron.photosynthesis.recipe.CuttingBoardRecipe;
 import net.zuiron.photosynthesis.recipe.MortarRecipe;
 
 import java.util.ArrayList;

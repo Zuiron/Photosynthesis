@@ -2,13 +2,10 @@ package net.zuiron.photosynthesis.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.client.util.ModelIdentifier;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
-import net.minecraft.data.client.ModelIds;
 import net.minecraft.data.client.Models;
 import net.minecraft.item.Item;
-import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.item.ModItems;
 
 public class ModModelProvider extends FabricModelProvider {
@@ -108,6 +105,7 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.SESAME_SEEDS,
                 ModItems.MUSTARD,
                 ModItems.MUSTARD_SEEDS,
+                ModItems.WHITE_BUTTON_MUSHROOM_SPORES,
 
                 ModItems.LINGONBERRIES,
                 ModItems.CRANBERRIES,
@@ -132,6 +130,7 @@ public class ModModelProvider extends FabricModelProvider {
 
                 ModItems.BOILED_EGG,
                 ModItems.WHEAT_DOUGH,
+                ModItems.RICE_PANICLE,
 
                 ModItems.BBQ_SKEWERS,
                 ModItems.MINCED_BEEF,
@@ -143,6 +142,7 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.WAFFLE,
 
                 ModItems.CUT_KIWI,
+                ModItems.CUT_WHITE_BUTTON_MUSHROOM,
                 /*ModItems.MEASURING_CUP,
                 ModItems.MEASURING_CUP_WATER,
                 ModItems.MEASURING_CUP_MILK,
@@ -179,6 +179,7 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.BREAD_FORM,
                 ModItems.BACON,
                 ModItems.CHOCOLATE_CUPCAKE,
+                ModItems.CHICKEN_NUGGETS
 
 
 

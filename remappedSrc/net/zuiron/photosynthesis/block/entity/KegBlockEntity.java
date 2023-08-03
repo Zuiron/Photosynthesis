@@ -185,7 +185,7 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
     }
 
     @Override
-    public DefaultedList<ItemStack> getItems() {
+    public DefaultedList<ItemStack> getItemsNoConflicts() {
         return this.inventory;
     }
 

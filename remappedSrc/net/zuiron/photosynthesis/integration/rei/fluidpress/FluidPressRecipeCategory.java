@@ -22,7 +22,6 @@ import net.minecraft.util.collection.DefaultedList;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.integration.rei.PhotosynthesisREI;
-import net.zuiron.photosynthesis.integration.rei.keg.KegRecipeDisplay;
 import net.zuiron.photosynthesis.util.FluidStack;
 
 import java.util.ArrayList;

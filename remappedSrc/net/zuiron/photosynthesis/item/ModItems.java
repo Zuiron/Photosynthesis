@@ -405,6 +405,9 @@ public class ModItems {
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
+ public static final Item RICE_PANICLE = registerItem("rice_panicle",
+         new Item(new FabricItemSettings()));
+
     public static final Item SOYBEAN = registerItem("soybean",
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
@@ -602,6 +605,10 @@ public class ModItems {
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
+    public static final Item WHITE_BUTTON_MUSHROOM = registerItem("white_button_mushroom",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
     // TREE PRODUCE ----------------------------------------------------------------------------------------------------
 
     public static final Item CINNAMON_RAW = registerItem("cinnamon_raw",
@@ -794,6 +801,7 @@ public class ModItems {
     public static final Item GINGER_SEEDS = registerSeedItem("ginger_seeds", ModBlocks.GINGER_CROP);
     public static final Item SESAME_SEEDS = registerSeedItem("sesame_seeds", ModBlocks.SESAME_CROP);
     public static final Item MUSTARD_SEEDS = registerSeedItem("mustard_seeds", ModBlocks.MUSTARD_CROP);
+    public static final Item WHITE_BUTTON_MUSHROOM_SPORES = registerSeedItem("white_button_mushroom_spores", ModBlocks.WHITE_BUTTON_MUSHROOM_CROP);
 
     // Meat's ----------------------------------------------------------------------------------------------------------
     public static final Item COW_BRISKET = registerItem("cow_brisket",
@@ -855,6 +863,10 @@ public class ModItems {
     public static final Item CUT_KIWI = registerItem("cut_kiwi",
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+ public static final Item CUT_WHITE_BUTTON_MUSHROOM = registerItem("cut_white_button_mushroom",
+         new Item(new FabricItemSettings()
+                 .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item BREAD_SLICE = registerItem("bread_slice",
             new Item(new FabricItemSettings()
@@ -1024,10 +1036,15 @@ public class ModItems {
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
+ public static final Item CHICKEN_NUGGETS = registerItem("chicken_nuggets",
+         new Item(new FabricItemSettings()
+                 .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
 
 
-    public static final Item BREAD_FORM = registerItem("bread_form",
+
+
+ public static final Item BREAD_FORM = registerItem("bread_form",
             new Item(new FabricItemSettings()));
 
     public static final Item PIZZA_STONE = registerItem("pizza_stone",

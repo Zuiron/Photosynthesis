@@ -10,7 +10,6 @@ import net.fabricmc.api.Environment;
 import net.minecraft.util.collection.DefaultedList;
 import net.zuiron.photosynthesis.integration.rei.PhotosynthesisREI;
 import net.zuiron.photosynthesis.recipe.MixingBowlRecipe;
-import net.zuiron.photosynthesis.recipe.SkilletRecipe;
 
 import java.util.ArrayList;
 import java.util.Collections;

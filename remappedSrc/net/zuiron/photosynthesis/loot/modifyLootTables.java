@@ -119,7 +119,7 @@ public class modifyLootTables {
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 3.0f)).build());
                 tableBuilder.pool(poolBuilder);
             }
-            if (source.isBuiltin() && GRASS_ID.equals(id) || TALL_GRASS_ID.equals(id)) {
+            /*if (source.isBuiltin() && GRASS_ID.equals(id) || TALL_GRASS_ID.equals(id)) {
                 //seeds drop from grass if hit with garden grubbers
                 final TagKey<Item> GARDEN_GRUBBERS = TagKey.of(RegistryKeys.ITEM, new Identifier("photosynthesis", "garden_grubbers"));
                 LootPool.Builder poolBuilder = LootPool.builder()
@@ -208,7 +208,7 @@ public class modifyLootTables {
                         .conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().tag(GARDEN_GRUBBERS)).build())
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
                 tableBuilder.pool(poolBuilder);
-            }
+            }*/
         });
     }
 }
