@@ -2,9 +2,25 @@ package net.zuiron.photosynthesis.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
+import net.minecraft.block.Block;
+import net.minecraft.block.SweetBerryBushBlock;
+import net.minecraft.enchantment.Enchantments;
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
+import net.minecraft.loot.LootPool;
+import net.minecraft.loot.LootTable;
+import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
+import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.loot.function.ApplyBonusLootFunction;
+import net.minecraft.loot.function.SetCountLootFunction;
+import net.minecraft.loot.provider.number.UniformLootNumberProvider;
+import net.minecraft.predicate.StatePredicate;
 import net.zuiron.photosynthesis.block.ModBlocks;
+import net.zuiron.photosynthesis.datagen.entry.BerryAndBushDropEntry;
 import net.zuiron.photosynthesis.item.ModItems;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ModLootTableGenerator extends FabricBlockLootTableProvider {
     public ModLootTableGenerator(FabricDataOutput dataOutput) {
@@ -576,6 +592,99 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.DECORATION_ROCKS_RANDOM, ModItems.STONE_SMALL);
         addDrop(ModBlocks.DECORATION_STICKS_RANDOM, Items.STICK);
         addDrop(ModBlocks.DECORATION_SEASHELL, ModItems.SEASHELL);
+
+        /*Block[] BerryBushes = {
+                ModBlocks.WILD_STRAWBERRY_BUSH
+        };
+        Item[] BerryDrops = {
+                ModItems.WILD_STRAWBERRIES
+        };
+
+        //Berry loot tables
+        for (Block blockMod : BerryBushes) {
+            this.addDrop(Blocks.SWEET_BERRY_BUSH, (Block block) -> this.applyExplosionDecay((ItemConvertible) block,
+                    LootTable.builder().pool(LootPool.builder()
+                        .conditionally(BlockStatePropertyLootCondition.builder(Blocks.SWEET_BERRY_BUSH)
+                        .properties(StatePredicate.Builder.create()
+                        .exactMatch(SweetBerryBushBlock.AGE, 3)))
+                        .with(ItemEntry.builder(Items.SWEET_BERRIES))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 3.0f)))
+                        .apply(ApplyBonusLootFunction.uniformBonusCount(Enchantments.FORTUNE)))));
+        }*/
+
+        List<BerryAndBushDropEntry> berryAndBushDrops = new ArrayList<>();
+        //Berries
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.BLACKBERRY_BUSH, ModItems.BLACKBERRIES, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.BLUEBERRY_BUSH, ModItems.BLUEBERRIES, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.CLOUDBERRY_BUSH, ModItems.CLOUDBERRIES, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.CRANBERRY_BUSH, ModItems.CRANBERRIES, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.HUCKLEBERRY_BUSH, ModItems.HUCKLEBERRIES, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.JUNIPERBERRY_BUSH, ModItems.JUNIPERBERRIES, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.LINGONBERRY_BUSH, ModItems.LINGONBERRIES, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.MULBERRY_BUSH, ModItems.MULBERRIES, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.RASPBERRY_BUSH, ModItems.RASPBERRIES, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.WILD_STRAWBERRY_BUSH, ModItems.WILD_STRAWBERRIES, 3, 2.0f, 3.0f));
+
+        //Tree-crops
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.ALMONDTREE_BUSHCROP, ModItems.ALMOND, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.APPLETREE_BUSHCROP, ModItems.GREENAPPLE, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.APRICOTTREE_BUSHCROP, ModItems.APRICOT, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.AVOCADOTREE_BUSHCROP, ModItems.AVOCADO, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.BANANATREE_BUSHCROP, ModItems.BANANA, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.BREADFRUITTREE_BUSHCROP, ModItems.BREADFRUIT, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.CANDLENUTTREE_BUSHCROP, ModItems.CANDLENUT, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.CASHEWTREE_BUSHCROP, ModItems.CASHEW, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.CHERRYTREE_BUSHCROP, ModItems.CHERRY, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.CHESTNUTTREE_BUSHCROP, ModItems.CHESTNUT, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.COCONUTTREE_BUSHCROP, ModItems.COCONUT, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.DATETREE_BUSHCROP, ModItems.DATE, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.DRAGONFRUITTREE_BUSHCROP, ModItems.DRAGONFRUIT, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.DURIANTREE_BUSHCROP, ModItems.DURIAN, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.FIGTREE_BUSHCROP, ModItems.FIG, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.GOOSEBERRYTREE_BUSHCROP, ModItems.GOOSEBERRY, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.GRAPEFRUITTREE_BUSHCROP, ModItems.GRAPEFRUIT, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.GRAPETREE_BUSHCROP, ModItems.GRAPE, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.GUAVATREE_BUSHCROP, ModItems.GUAVA, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.HAZELNUTTREE_BUSHCROP, ModItems.HAZELNUT, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.JACKFRUITTREE_BUSHCROP, ModItems.JACKFRUIT, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.KIWITREE_BUSHCROP, ModItems.KIWI, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.LEMONTREE_BUSHCROP, ModItems.LEMON, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.LIMETREE_BUSHCROP, ModItems.LIME, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.LYCHEETREE_BUSHCROP, ModItems.LYCHEE, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.MANGOTREE_BUSHCROP, ModItems.MANGO, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.NUTMEGTREE_BUSHCROP, ModItems.NUTMEG, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.OLIVETREE_BUSHCROP, ModItems.OLIVE, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.ORANGETREE_BUSHCROP, ModItems.ORANGE, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.PAPAYATREE_BUSHCROP, ModItems.PAPAYA, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.PASSIONFRUITTREE_BUSHCROP, ModItems.PASSIONFRUIT, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.PAWPAWTREE_BUSHCROP, ModItems.PAWPAW, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.PEACHTREE_BUSHCROP, ModItems.PEACH, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.PEARTREE_BUSHCROP, ModItems.PEAR, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.PECANTREE_BUSHCROP, ModItems.PECAN, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.PEPPERCORNTREE_BUSHCROP, ModItems.PEPPERCORN, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.PERSIMMONTREE_BUSHCROP, ModItems.PERSIMMON, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.PINENUTTREE_BUSHCROP, ModItems.PINENUT, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.PISTACHIOTREE_BUSHCROP, ModItems.PISTACHIO, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.PLUMTREE_BUSHCROP, ModItems.PLUM, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.POMEGRANATETREE_BUSHCROP, ModItems.POMEGRANATE, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.RAMBUTANTREE_BUSHCROP, ModItems.RAMBUTAN, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.RED_GRAPETREE_BUSHCROP, ModItems.RED_GRAPE, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.SOURSOPTREE_BUSHCROP, ModItems.SOURSOP, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.STARFRUITTREE_BUSHCROP, ModItems.STARFRUIT, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.TAMARINDTREE_BUSHCROP, ModItems.TAMARIND, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.VANILLABEANTREE_BUSHCROP, ModItems.VANILLABEAN, 3, 2.0f, 3.0f));
+        berryAndBushDrops.add(new BerryAndBushDropEntry(ModBlocks.WALNUTTREE_BUSHCROP, ModItems.WALNUT, 3, 2.0f, 3.0f));
+
+        for (BerryAndBushDropEntry entry : berryAndBushDrops) {
+            this.addDrop(entry.getBerryBush(), (Block block) -> this.applyExplosionDecay((ItemConvertible) block,
+                    LootTable.builder().pool(LootPool.builder()
+                            .conditionally(BlockStatePropertyLootCondition.builder(entry.getBerryBush())
+                            .properties(StatePredicate.Builder.create()
+                            .exactMatch(SweetBerryBushBlock.AGE, entry.getAge())))
+                            .with(ItemEntry.builder(entry.getBerryDrop()))
+                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(entry.getMinCount(), entry.getMaxCount())))
+                            .apply(ApplyBonusLootFunction.uniformBonusCount(Enchantments.FORTUNE)))));
+        }
 
         //cropDrops(ModBlocks.CACTUS_FRUIT_CROP, ModItems.CACTUS_FRUIT, ModItems.CACTUS_FRUIT_SEEDS, );
 

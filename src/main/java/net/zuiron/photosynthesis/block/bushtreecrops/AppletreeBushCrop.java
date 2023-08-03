@@ -83,11 +83,6 @@ public class AppletreeBushCrop extends SweetBerryBushBlock {
     }
 
     @Override
-    public void onBlockBreakStart(BlockState state, World world, BlockPos pos, PlayerEntity player) {
-        onUse(state, world, pos, player, player.getActiveHand(), null);
-    }
-
-    @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
 
     }
