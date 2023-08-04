@@ -92,14 +92,18 @@ public class CustomCropBlock2TallFullGrowHalf extends CropBlock implements Water
             world.breakBlock(pos, false);
             world.breakBlock(pos.down(), false);
             //right click harvest compat
-            world.setBlockState(pos.down(), this.withAge(0).with(HALF, DoubleBlockHalf.LOWER), Block.NOTIFY_LISTENERS);
+            if(world.getBlockState(pos.down(2)).isOf(Blocks.FARMLAND)) {
+                world.setBlockState(pos.down(), this.withAge(0).with(HALF, DoubleBlockHalf.LOWER), Block.NOTIFY_LISTENERS);
+            }
         }
         //right click lowered. (right click harvest or create harvested)
         else if(world.getBlockState(pos.up()).isOf(this) && newState.get(Properties.AGE_7) < state.get(Properties.AGE_7)) {
             world.breakBlock(pos.up(), false);
             world.breakBlock(pos, false);
             //right click harvest compat
-            world.setBlockState(pos, this.withAge(0).with(HALF, DoubleBlockHalf.LOWER), Block.NOTIFY_LISTENERS);
+            if(world.getBlockState(pos.down(1)).isOf(Blocks.FARMLAND)) {
+                world.setBlockState(pos, this.withAge(0).with(HALF, DoubleBlockHalf.LOWER), Block.NOTIFY_LISTENERS);
+            }
         }
     }
 
