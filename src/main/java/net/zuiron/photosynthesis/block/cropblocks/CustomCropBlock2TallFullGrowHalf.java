@@ -81,6 +81,7 @@ public class CustomCropBlock2TallFullGrowHalf extends CropBlock implements Water
                     case "corn_crop": {
                         if(state.get(HALF) == DoubleBlockHalf.UPPER) {
                             world.breakBlock(pos.down(), true);
+                            //TODO not working right
                         }
                     }
                     case "tomato_crop": world.setBlockState(pos, this.withAge(3).with(HALF, state.get(HALF)), Block.NOTIFY_LISTENERS);
