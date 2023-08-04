@@ -7,13 +7,13 @@
       "model": "photosynthesis:block/corn_crop_stage1"
     },
     "age=2,half=lower": {
-      "model": "photosynthesis:block/corn_crop_stage1"
+      "model": "photosynthesis:block/corn_crop_stage2"
     },
     "age=3,half=lower": {
-      "model": "photosynthesis:block/corn_crop_stage2"
+      "model": "photosynthesis:block/corn_crop_stage3"
     },
     "age=4,half=lower": {
-      "model": "photosynthesis:block/corn_crop_stage2"
+      "model": "photosynthesis:block/corn_crop_stage3"
     },
     "age=5,half=lower": {
       "model": "photosynthesis:block/corn_crop_stage3"
