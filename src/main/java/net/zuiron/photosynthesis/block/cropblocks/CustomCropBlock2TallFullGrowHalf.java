@@ -84,10 +84,11 @@ public class CustomCropBlock2TallFullGrowHalf extends CropBlock implements Water
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
         //super.onStateReplaced(state, world, pos, newState, moved);
         if(Objects.equals(seed, "corn_crop")) {
-            //broke top. (hand or machine break blocked)
+            //broke upper. (hand or machine break blocked)
             if(!newState.contains(Properties.AGE_7) && world.getBlockState(pos.down()).isOf(this)) {
                 world.breakBlock(pos.down(), true);
             }
+            //broke lower. (hand or machine break blocked)
             else if(!newState.contains(Properties.AGE_7)) {
                 world.breakBlock(pos, true);
             }
