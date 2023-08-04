@@ -120,8 +120,11 @@ public class CustomCropBlock2TallFullGrowHalf extends CropBlock implements Water
 
                 if(currentCropAge >= minAge && currentCropAge < maxAge && seasonPercentage > 0.5f) { //0.5f = 50% "halfway thru season"
                     //Photosynthesis.LOGGER.info("CropWL: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NewCropAge: "+(this.getAge(state) + 1)+", %:"+seasonPercentage);
-                    if(currentCropAge < 7) {
-                        world.setBlockState(pos, this.withAge(currentCropAge + 1).with(HALF, state.get(HALF)), Block.NOTIFY_LISTENERS);
+                    if(currentCropAge < 7 && state.get(HALF) == DoubleBlockHalf.LOWER) {
+                        world.setBlockState(pos, this.withAge(currentCropAge + 1).with(HALF, DoubleBlockHalf.LOWER), Block.NOTIFY_LISTENERS);
+                        if(world.getBlockState(pos.up()).isOf(this)) {
+                            world.setBlockState(pos.up(), this.withAge(currentCropAge + 1).with(HALF, DoubleBlockHalf.UPPER), Block.NOTIFY_LISTENERS);
+                        }
                     }
                     if(state.get(HALF) == DoubleBlockHalf.LOWER && currentCropAge >= 3 && world.getBlockState(pos.up(1)).isOf(Blocks.AIR) && world.getBlockState(pos.down(1)).isOf(Blocks.FARMLAND)) {
                         world.setBlockState(pos.up(1), (BlockState)this.getDefaultState().with(AGE, 3).with(HALF, DoubleBlockHalf.UPPER), Block.NOTIFY_LISTENERS);
