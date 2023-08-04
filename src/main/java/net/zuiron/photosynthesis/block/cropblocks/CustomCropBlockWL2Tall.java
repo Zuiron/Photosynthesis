@@ -1,6 +1,7 @@
 package net.zuiron.photosynthesis.block.cropblocks;
 
 import net.minecraft.block.*;
+import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.enums.DoubleBlockHalf;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -17,6 +18,7 @@ import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.state.property.Property;
+import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
@@ -28,6 +30,7 @@ import net.minecraft.world.WorldView;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.api.CropData;
 import net.zuiron.photosynthesis.api.Seasons;
+import net.zuiron.photosynthesis.block.entity.CookingPotBlockEntity;
 import net.zuiron.photosynthesis.item.ModItems;
 
 public class CustomCropBlockWL2Tall extends CropBlock implements Waterloggable {
@@ -65,7 +68,6 @@ public class CustomCropBlockWL2Tall extends CropBlock implements Waterloggable {
         }
         return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
     }
-
 
     @Override
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
@@ -137,13 +139,21 @@ public class CustomCropBlockWL2Tall extends CropBlock implements Waterloggable {
         return AGE_TO_SHAPE[(Integer)state.get(this.getAgeProperty())];
     }
 
-    @Override
+    /*@Override
     public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
         super.onBreak(world, pos, state, player);
         //fixes world genned crops
         if(world.getBlockState(pos.down()).isOf(this)) {
             world.breakBlock(pos.down(), true);
         }
+    }*/
+
+    @Override
+    public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
+        if(world.getBlockState(pos.down()).isOf(this)) {
+            world.breakBlock(pos.down(), true);
+        }
+        super.onStateReplaced(state, world, pos, newState, moved);
     }
 
     //this fixes light issue. and seasons support.
