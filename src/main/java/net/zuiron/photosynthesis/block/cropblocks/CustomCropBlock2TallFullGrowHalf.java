@@ -79,20 +79,23 @@ public class CustomCropBlock2TallFullGrowHalf extends CropBlock implements Water
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
         //broke upper. (hand or machine break blocked)
         if(!newState.contains(Properties.AGE_7) && world.getBlockState(pos.down()).isOf(this)) {
-            world.breakBlock(pos.down(), true);
+            world.breakBlock(pos, false);
+            world.breakBlock(pos.down(), false);
         }
         //broke lower. (hand or machine break blocked)
         else if(!newState.contains(Properties.AGE_7)) {
-            world.breakBlock(pos, true);
+            world.breakBlock(pos.up(), false);
+            world.breakBlock(pos, false);
         }
         //right click upper. (right click harvest or create harvested)
         else if(world.getBlockState(pos.down()).isOf(this) && newState.get(Properties.AGE_7) < state.get(Properties.AGE_7)) {
-            world.breakBlock(pos, true);
-            world.breakBlock(pos.down(), true);
+            world.breakBlock(pos, false);
+            world.breakBlock(pos.down(), false);
         }
         //right click lowered. (right click harvest or create harvested)
         else if(world.getBlockState(pos.up()).isOf(this) && newState.get(Properties.AGE_7) < state.get(Properties.AGE_7)) {
-            world.breakBlock(pos.up(), true);
+            world.breakBlock(pos.up(), false);
+            world.breakBlock(pos, false);
         }
     }
 
