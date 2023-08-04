@@ -36,16 +36,11 @@ public class CustomCropBlock2TallFullGrowHalf extends CropBlock implements Water
     }
 
     @Override
-    protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-        return floor.isOf(Blocks.FARMLAND);
-    }
-
-    @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
-        /*if(state.get(Properties.AGE_7) == 7 && (world.getBlockState(pos.down()).isIn(BlockTags.DIRT) || world.getBlockState(pos.down()).isOf(Blocks.FARMLAND)) || world.getBlockState(pos.down()).isOf(this)) {
+        if(state.get(Properties.AGE_7) == 7 && (world.getBlockState(pos.down()).isIn(BlockTags.DIRT) || world.getBlockState(pos.down()).isOf(Blocks.FARMLAND) || world.getBlockState(pos.down()).isOf(this))) {
             //WE MUST DO THIS, IF WORLD-GEN CAN PLANT IT IN THE WILD!
             return true;
-        }*/
+        }
         if (state.get(HALF) == DoubleBlockHalf.LOWER && world.getBlockState(pos.down()).isOf(Blocks.FARMLAND)) {
             return true;
         }
@@ -82,33 +77,22 @@ public class CustomCropBlock2TallFullGrowHalf extends CropBlock implements Water
 
     @Override
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
-        //super.onStateReplaced(state, world, pos, newState, moved);
-        if(Objects.equals(seed, "corn_crop")) {
-            //broke upper. (hand or machine break blocked)
-            if(!newState.contains(Properties.AGE_7) && world.getBlockState(pos.down()).isOf(this)) {
-                world.breakBlock(pos.down(), true);
-            }
-            //broke lower. (hand or machine break blocked)
-            else if(!newState.contains(Properties.AGE_7)) {
-                world.breakBlock(pos, true);
-            }
-            //right click upper. (right click harvest or create harvested)
-            else if(world.getBlockState(pos.down()).isOf(this) && newState.get(Properties.AGE_7) < state.get(Properties.AGE_7)) {
-                world.breakBlock(pos, true);
-                world.breakBlock(pos.down(), true);
-            }
-            //right click lowered. (right click harvest or create harvested)
-            else if(world.getBlockState(pos.up()).isOf(this) && newState.get(Properties.AGE_7) < state.get(Properties.AGE_7)) {
-                world.breakBlock(pos.up(), true);
-            }
+        //broke upper. (hand or machine break blocked)
+        if(!newState.contains(Properties.AGE_7) && world.getBlockState(pos.down()).isOf(this)) {
+            world.breakBlock(pos.down(), true);
         }
-
-        if(Objects.equals(seed, "tomato_crop")) {
-            //broke upper. (hand or machine break blocked)
-            if (!newState.contains(Properties.AGE_7) && world.getBlockState(pos.down()).isOf(this)) {
-                //if we break upper on tomato plant, replant with lower age? nah. would break other stuff i think, weird behavior.
-                //world.setBlockState(pos, this.withAge(0).with(HALF, DoubleBlockHalf.UPPER), Block.NOTIFY_LISTENERS);
-            }
+        //broke lower. (hand or machine break blocked)
+        else if(!newState.contains(Properties.AGE_7)) {
+            world.breakBlock(pos, true);
+        }
+        //right click upper. (right click harvest or create harvested)
+        else if(world.getBlockState(pos.down()).isOf(this) && newState.get(Properties.AGE_7) < state.get(Properties.AGE_7)) {
+            world.breakBlock(pos, true);
+            world.breakBlock(pos.down(), true);
+        }
+        //right click lowered. (right click harvest or create harvested)
+        else if(world.getBlockState(pos.up()).isOf(this) && newState.get(Properties.AGE_7) < state.get(Properties.AGE_7)) {
+            world.breakBlock(pos.up(), true);
         }
     }
 
