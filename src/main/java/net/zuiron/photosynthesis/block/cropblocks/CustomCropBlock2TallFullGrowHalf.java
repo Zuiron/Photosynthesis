@@ -101,17 +101,15 @@ public class CustomCropBlock2TallFullGrowHalf extends CropBlock implements Water
             else if(world.getBlockState(pos.up()).isOf(this) && newState.get(Properties.AGE_7) < state.get(Properties.AGE_7)) {
                 world.breakBlock(pos.up(), true);
             }
-            //super.onStateReplaced(state, world, pos, newState, moved);
         }
 
-        if(state.getBlock() == newState.getBlock()) {
-            if(state.get(Properties.AGE_7) == 7 && newState.get(Properties.AGE_7) < 7) {
-                switch (seed) {
-                    case "tomato_crop": world.setBlockState(pos, this.withAge(3).with(HALF, state.get(HALF)), Block.NOTIFY_LISTENERS);
-                }
+        if(Objects.equals(seed, "tomato_crop")) {
+            //broke upper. (hand or machine break blocked)
+            if (!newState.contains(Properties.AGE_7) && world.getBlockState(pos.down()).isOf(this)) {
+                //if we break upper on tomato plant, replant with lower age? nah. would break other stuff i think, weird behavior.
+                //world.setBlockState(pos, this.withAge(0).with(HALF, DoubleBlockHalf.UPPER), Block.NOTIFY_LISTENERS);
             }
         }
-        //super.onStateReplaced(state, world, pos, newState, moved);
     }
 
     @Override
