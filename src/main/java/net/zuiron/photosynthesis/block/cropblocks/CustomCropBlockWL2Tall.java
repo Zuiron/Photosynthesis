@@ -150,7 +150,10 @@ public class CustomCropBlockWL2Tall extends CropBlock implements Waterloggable {
 
     @Override
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
-        if(world.getBlockState(pos.down()).isOf(this)) {
+        if(!newState.contains(Properties.AGE_7) && world.getBlockState(pos.down()).isOf(this)) {
+            world.breakBlock(pos.down(), true);
+        }
+        else if(world.getBlockState(pos.down()).isOf(this) && newState.get(Properties.AGE_7) < state.get(Properties.AGE_7)) {
             world.breakBlock(pos.down(), true);
         }
         super.onStateReplaced(state, world, pos, newState, moved);
