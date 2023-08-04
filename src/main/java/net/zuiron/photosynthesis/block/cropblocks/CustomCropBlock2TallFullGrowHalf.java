@@ -82,15 +82,14 @@ public class CustomCropBlock2TallFullGrowHalf extends CropBlock implements Water
 
     @Override
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
-        //Photosynthesis.LOGGER.info("age: "+state.get(Properties.AGE_7)+", new age: "+newState.get(Properties.AGE_7));
-        /*if(world.getBlockState(pos.down()).isOf(this)) {
-            world.breakBlock(pos.down(), true);
-        }*/
         //super.onStateReplaced(state, world, pos, newState, moved);
         if(Objects.equals(seed, "corn_crop")) {
             //broke top. (hand or machine break blocked)
             if(!newState.contains(Properties.AGE_7) && world.getBlockState(pos.down()).isOf(this)) {
                 world.breakBlock(pos.down(), true);
+            }
+            else if(!newState.contains(Properties.AGE_7)) {
+                world.breakBlock(pos, true);
             }
             //right click upper. (right click harvest or create harvested)
             else if(world.getBlockState(pos.down()).isOf(this) && newState.get(Properties.AGE_7) < state.get(Properties.AGE_7)) {
@@ -101,7 +100,7 @@ public class CustomCropBlock2TallFullGrowHalf extends CropBlock implements Water
             else if(world.getBlockState(pos.up()).isOf(this) && newState.get(Properties.AGE_7) < state.get(Properties.AGE_7)) {
                 world.breakBlock(pos.up(), true);
             }
-            super.onStateReplaced(state, world, pos, newState, moved);
+            //super.onStateReplaced(state, world, pos, newState, moved);
         }
 
         if(state.getBlock() == newState.getBlock()) {
@@ -111,6 +110,7 @@ public class CustomCropBlock2TallFullGrowHalf extends CropBlock implements Water
                 }
             }
         }
+        //super.onStateReplaced(state, world, pos, newState, moved);
     }
 
     @Override
