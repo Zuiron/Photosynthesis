@@ -242,7 +242,7 @@ public class ModConfiguredFeatures {
         //Crops
         register(context, TOMATO_CROP_KEY, Feature.FLOWER,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.TOMATO_CROP.getDefaultState().with(Properties.AGE_7, 3))))));
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.TOMATO_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, BASIL_CROP_KEY, Feature.FLOWER,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
@@ -318,7 +318,7 @@ public class ModConfiguredFeatures {
 
         register(context, CORN_CROP_KEY, Feature.FLOWER,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.CORN_CROP.getDefaultState().with(Properties.AGE_7, 3))))));
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.CORN_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, CABBAGE_CROP_KEY, Feature.FLOWER,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
@@ -354,7 +354,7 @@ public class ModConfiguredFeatures {
 
         register(context, RICE_CROP_KEY, Feature.FLOWER,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.RICE_CROP.getDefaultState().with(Properties.AGE_7, 3))))));
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.RICE_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, WHITE_BUTTON_MUSHROOM_CROP_KEY, Feature.FLOWER,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
