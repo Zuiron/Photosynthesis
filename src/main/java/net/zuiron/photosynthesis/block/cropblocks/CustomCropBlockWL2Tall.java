@@ -151,13 +151,13 @@ public class CustomCropBlockWL2Tall extends CropBlock implements Waterloggable {
     @Override
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
         if(!newState.contains(Properties.AGE_7) && world.getBlockState(pos.down()).isOf(this)) {
-            //break by hand or by machine
-            world.breakBlock(pos.down(), false);
+            //break by hand or by machine - commented out, otherwise incompatible with create.
+            //world.breakBlock(pos.down(), false);
         }
         else if(world.getBlockState(pos.down()).isOf(this) && newState.get(Properties.AGE_7) < state.get(Properties.AGE_7)) {
-            world.breakBlock(pos.down(), false);
-            //right click harvest compat
-            world.setBlockState(pos.down(), withWaterloggedState(world, pos.down(), this.withAge(0)), Block.NOTIFY_LISTENERS);
+            //world.breakBlock(pos.down(), false);
+            //right click harvest compat - fixes weirdness.
+            world.setBlockState(pos, withWaterloggedState(world, pos, this.withAge(4)), Block.NOTIFY_LISTENERS);
         }
         super.onStateReplaced(state, world, pos, newState, moved);
     }
