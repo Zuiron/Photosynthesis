@@ -721,7 +721,7 @@ public class ModBlocks {
 
 
     // CROP BLOCKS -----------------------------------------------------------------------------------------------------
-    public static final CropBlock TOMATO_CROP = registerCropBlockSimple2TallFullGrow("tomato_crop");
+    public static final CropBlock TOMATO_CROP = registerCropBlockSimple2TallFullGrowHalf("tomato_crop");
     public static final CropBlock BASIL_CROP = registerCropBlockSimple("basil_crop");
     public static final CropBlock OREGANO_CROP = registerCropBlockSimple("oregano_crop");
     public static final CropBlock STRAWBERRY_CROP = registerCropBlockSimple("strawberry_crop");
@@ -740,7 +740,7 @@ public class ModBlocks {
     public static final CropBlock CHIVE_CROP = registerCropBlockSimple("chive_crop");
     public static final CropBlock BROCCOLI_CROP = registerCropBlockSimple("broccoli_crop");
     public static final CropBlock CAULIFLOWER_CROP = registerCropBlockSimple("cauliflower_crop");
-    public static final CropBlock CORN_CROP = registerCropBlockSimple2Tall("corn_crop");
+    public static final CropBlock CORN_CROP = registerCropBlockSimple2TallFullGrowHalf("corn_crop");
     //public static final CropBlock BLACK_PEPPER_CROP = registerCropBlockSimple("black_pepper_crop");
     public static final CropBlock CABBAGE_CROP = registerCropBlockSimple("cabbage_crop");
     public static final CropBlock BELLPEPPER_CROP = registerCropBlockSimple("bellpepper_crop");
@@ -2080,6 +2080,13 @@ public class ModBlocks {
     private static CropBlock registerCropBlockSimple2TallFullGrow(String name){
         return Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, name),
                 new CustomCropBlock2TallFullGrow(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
+                        .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),
+                        name));
+    }
+
+    private static CropBlock registerCropBlockSimple2TallFullGrowHalf(String name){
+        return Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, name),
+                new CustomCropBlock2TallFullGrowHalf(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                         .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),
                         name));
     }
