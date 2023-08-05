@@ -248,6 +248,7 @@ public class CropData {
 
         //Mushrooms
         cropDataMap.put("block.photosynthesis.white_button_mushroom_crop",  new CropData(new int[]{7, 1, 2, 5}, new int[]{4, 0, 1, 2}));    //plant autumn, harvest summer.
+        cropDataMap.put("block.photosynthesis.porcini_mushroom_crop",       new CropData(new int[]{7, 1, 2, 5}, new int[]{4, 0, 1, 2}));    //plant autumn, harvest summer.
 
         //Berries - where you want it to grow to max, use 7 not 3 as max, because 7 is identifier as "harvest season"
                                                                         //maxAge Summer, Autumn, Winter, Spring ---- minAge Summer, Autumn, Winter, Spring

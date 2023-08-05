@@ -47,6 +47,7 @@ public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> SUGARBEET_CROP_PLACED_KEY = registerKey("sugarbeet_crop_placed");
     public static final RegistryKey<PlacedFeature> RICE_CROP_PLACED_KEY = registerKey("rice_crop_placed");
     public static final RegistryKey<PlacedFeature> WHITE_BUTTON_MUSHROOM_CROP_PLACED_KEY = registerKey("white_button_mushroom_crop_placed");
+    public static final RegistryKey<PlacedFeature> PORCINI_MUSHROOM_CROP_PLACED_KEY = registerKey("porcini_mushroom_crop_placed");
     public static final RegistryKey<PlacedFeature> SOYBEAN_CROP_PLACED_KEY = registerKey("soybean_crop_placed");
     public static final RegistryKey<PlacedFeature> SPINACH_CROP_PLACED_KEY = registerKey("spinach_crop_placed");
     public static final RegistryKey<PlacedFeature> ARROWROOT_CROP_PLACED_KEY = registerKey("arrowroot_crop_placed");
@@ -389,6 +390,9 @@ public class ModPlacedFeatures {
                 VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
 
         register(context, WHITE_BUTTON_MUSHROOM_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.WHITE_BUTTON_MUSHROOM_CROP_KEY),
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
+
+        register(context, PORCINI_MUSHROOM_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PORCINI_MUSHROOM_CROP_KEY),
                 VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.2f, 1)));
 
         register(context, SOYBEAN_CROP_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.SOYBEAN_CROP_KEY),

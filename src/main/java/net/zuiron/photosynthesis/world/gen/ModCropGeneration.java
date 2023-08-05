@@ -132,6 +132,10 @@ public class ModCropGeneration {
 
         BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.5 && context.getBiome().getTemperature() <= 2.0
                         && !BiomeKeys.PLAINS.equals(context.getBiomeKey()) && context.hasTag(BiomeTags.IS_OVERWORLD) && !context.hasTag(BiomeTags.IS_BEACH),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.PORCINI_MUSHROOM_CROP_PLACED_KEY);
+
+        BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.5 && context.getBiome().getTemperature() <= 2.0
+                        && !BiomeKeys.PLAINS.equals(context.getBiomeKey()) && context.hasTag(BiomeTags.IS_OVERWORLD) && !context.hasTag(BiomeTags.IS_BEACH),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.SOYBEAN_CROP_PLACED_KEY);
 
         BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.5 && context.getBiome().getTemperature() <= 2.0

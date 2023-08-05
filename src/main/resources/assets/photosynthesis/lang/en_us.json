@@ -826,7 +826,6 @@
   "block.photosynthesis.ginger_crop": "Ginger",
   "block.photosynthesis.sesame_crop": "Sesame",
   "block.photosynthesis.mustard_crop": "Mustard",
-  "block.photosynthesis.white_button_mushroom_crop": "White Button Mushroom",
 
   "item.photosynthesis.tomato": "Tomato",
   "item.photosynthesis.basil": "Basil",
@@ -909,9 +908,16 @@
   "item.photosynthesis.ginger": "Ginger",
   "item.photosynthesis.sesame": "Sesame",
   "item.photosynthesis.mustard": "Mustard",
+
+  "block.photosynthesis.white_button_mushroom_crop": "White Button Mushroom",
   "item.photosynthesis.white_button_mushroom": "White Button Mushroom",
   "item.photosynthesis.cut_white_button_mushroom": "Cut White Button Mushroom",
   "item.photosynthesis.white_button_mushroom_spores": "White Button Mushroom Spores",
+
+  "block.photosynthesis.porcini_mushroom_crop": "Porcini Mushroom",
+  "item.photosynthesis.porcini_mushroom": "Porcini Mushroom",
+  "item.photosynthesis.cut_porcini_mushroom": "Cut Porcini Mushroom",
+  "item.photosynthesis.porcini_mushroom_spores": "Porcini Mushroom Spores",
 
   "item.photosynthesis.tomato_seeds": "Tomato Seeds",
   "item.photosynthesis.basil_seeds": "Basil Seeds",
