@@ -31,7 +31,7 @@ public class OnPlayerEatEvent {
                     ThirstData.removeThirst((IEntityDataSaver)player, remThirst);
                     ThirstData.removeThirstSaturation((IEntityDataSaver)player, remThirstSat);
 
-                    player.sendMessage(Text.of("We have thirst data for this: thirst:"+thirst +", sat:"+thirstSat + " - " + stack.getItem().getTranslationKey()), false);
+                    //player.sendMessage(Text.of("We have thirst data for this: thirst:"+thirst +", sat:"+thirstSat + " - " + stack.getItem().getTranslationKey()), false);
                 }
                 else if (thirstItemData == null && isThirstEnabled) {
                     //NO DATA ON ITEM. DO SOMETHING OR NOT?
@@ -48,7 +48,7 @@ public class OnPlayerEatEvent {
     public static void ModOnPlayerEatEvent() {
         PlayerEatEvent.EVENT.register((world, player, stack) -> {
             if(!world.isClient) {
-                player.sendMessage(Text.of("You just ate: " + stack.getItem().getName().getString()+" "+stack.getItem().getTranslationKey()), false);
+                //player.sendMessage(Text.of("You just ate: " + stack.getItem().getName().getString()+" "+stack.getItem().getTranslationKey()), false);
             }
         });
     }
