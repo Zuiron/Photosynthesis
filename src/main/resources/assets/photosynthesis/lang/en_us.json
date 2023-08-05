@@ -924,6 +924,11 @@
   "item.photosynthesis.cut_chanterelle_mushroom": "Cut Chanterelle Mushroom",
   "item.photosynthesis.chanterelle_mushroom_spores": "Chanterelle Mushroom Spores",
 
+  "block.photosynthesis.morel_mushroom_crop": "Morel Mushroom",
+  "item.photosynthesis.morel_mushroom": "Morel Mushroom",
+  "item.photosynthesis.cut_morel_mushroom": "Cut Morel Mushroom",
+  "item.photosynthesis.morel_mushroom_spores": "Morel Mushroom Spores",
+
   "item.photosynthesis.tomato_seeds": "Tomato Seeds",
   "item.photosynthesis.basil_seeds": "Basil Seeds",
   "item.photosynthesis.oregano_seeds": "Oregano Seeds",

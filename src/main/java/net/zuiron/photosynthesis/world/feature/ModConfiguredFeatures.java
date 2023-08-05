@@ -186,6 +186,7 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> WHITE_BUTTON_MUSHROOM_CROP_KEY = registerKey("white_button_mushroom_crop");
     public static final RegistryKey<ConfiguredFeature<?, ?>> PORCINI_MUSHROOM_CROP_KEY = registerKey("porcini_mushroom_crop");
     public static final RegistryKey<ConfiguredFeature<?, ?>> CHANTERELLE_MUSHROOM_CROP_KEY = registerKey("chanterelle_mushroom_crop");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> MOREL_MUSHROOM_CROP_KEY = registerKey("morel_mushroom_crop");
     public static final RegistryKey<ConfiguredFeature<?, ?>> SOYBEAN_CROP_KEY = registerKey("soybean_crop");
     public static final RegistryKey<ConfiguredFeature<?, ?>> SPINACH_CROP_KEY = registerKey("spinach_crop");
     public static final RegistryKey<ConfiguredFeature<?, ?>> ARROWROOT_CROP_KEY = registerKey("arrowroot_crop");
@@ -369,6 +370,10 @@ public class ModConfiguredFeatures {
         register(context, CHANTERELLE_MUSHROOM_CROP_KEY, Feature.FLOWER,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.CHANTERELLE_MUSHROOM_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
+
+        register(context, MOREL_MUSHROOM_CROP_KEY, Feature.FLOWER,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.MOREL_MUSHROOM_CROP.getDefaultState().with(Properties.AGE_7, 7))))));
 
         register(context, SOYBEAN_CROP_KEY, Feature.FLOWER,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(crop_tries, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "photosynthesis:morel_mushroom"
+    }
+  ],
+  "result": {
+    "item": "photosynthesis:morel_mushroom_spores",
+    "count": 2
+  }
+}

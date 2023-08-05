@@ -754,6 +754,7 @@ public class ModBlocks {
     public static final CropBlock WHITE_BUTTON_MUSHROOM_CROP = registerCropBlockSimpleMUSHROOM("white_button_mushroom_crop");
     public static final CropBlock PORCINI_MUSHROOM_CROP = registerCropBlockSimpleMUSHROOM("porcini_mushroom_crop");
     public static final CropBlock CHANTERELLE_MUSHROOM_CROP = registerCropBlockSimpleMUSHROOM("chanterelle_mushroom_crop");
+    public static final CropBlock MOREL_MUSHROOM_CROP = registerCropBlockSimpleMUSHROOM("morel_mushroom_crop");
     public static final CropBlock SOYBEAN_CROP = registerCropBlockSimple("soybean_crop");
     public static final CropBlock SPINACH_CROP = registerCropBlockSimple("spinach_crop");
     public static final CropBlock ARROWROOT_CROP = registerCropBlockSimple("arrowroot_crop");

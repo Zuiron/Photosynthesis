@@ -108,6 +108,7 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.WHITE_BUTTON_MUSHROOM_SPORES,
                 ModItems.PORCINI_MUSHROOM_SPORES,
                 ModItems.CHANTERELLE_MUSHROOM_SPORES,
+                ModItems.MOREL_MUSHROOM_SPORES,
 
                 ModItems.LINGONBERRIES,
                 ModItems.CRANBERRIES,
@@ -147,6 +148,7 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.CUT_WHITE_BUTTON_MUSHROOM,
                 ModItems.CUT_PORCINI_MUSHROOM,
                 ModItems.CUT_CHANTERELLE_MUSHROOM,
+                ModItems.CUT_MOREL_MUSHROOM,
 
                 /*ModItems.MEASURING_CUP,
                 ModItems.MEASURING_CUP_WATER,
