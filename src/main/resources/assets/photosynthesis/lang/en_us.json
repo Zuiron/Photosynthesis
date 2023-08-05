@@ -919,6 +919,11 @@
   "item.photosynthesis.cut_porcini_mushroom": "Cut Porcini Mushroom",
   "item.photosynthesis.porcini_mushroom_spores": "Porcini Mushroom Spores",
 
+  "block.photosynthesis.chanterelle_mushroom_crop": "Chanterelle Mushroom",
+  "item.photosynthesis.chanterelle_mushroom": "Chanterelle Mushroom",
+  "item.photosynthesis.cut_chanterelle_mushroom": "Cut Chanterelle Mushroom",
+  "item.photosynthesis.chanterelle_mushroom_spores": "Chanterelle Mushroom Spores",
+
   "item.photosynthesis.tomato_seeds": "Tomato Seeds",
   "item.photosynthesis.basil_seeds": "Basil Seeds",
   "item.photosynthesis.oregano_seeds": "Oregano Seeds",

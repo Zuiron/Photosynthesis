@@ -75,6 +75,7 @@ public class CustomMushroomCropBlock extends CropBlock {
         switch (seed) {
             case "white_button_mushroom_crop": return ModItems.WHITE_BUTTON_MUSHROOM_SPORES;
             case "porcini_mushroom_crop": return ModItems.PORCINI_MUSHROOM_SPORES;
+            case "chanterelle_mushroom_crop": return ModItems.CHANTERELLE_MUSHROOM_SPORES;
             default: return Items.AIR;
         }
     }

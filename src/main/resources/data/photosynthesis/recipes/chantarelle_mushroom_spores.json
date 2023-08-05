@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "photosynthesis:chanterelle_mushroom"
+    }
+  ],
+  "result": {
+    "item": "photosynthesis:chanterelle_mushroom_spores",
+    "count": 2
+  }
+}
