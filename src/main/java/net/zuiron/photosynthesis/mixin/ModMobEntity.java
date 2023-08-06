@@ -23,7 +23,7 @@ public class ModMobEntity {
         //BlockPos blockPos = pos.down();
         //return spawnReason == SpawnReason.SPAWNER || world.getBlockState(blockPos).allowsSpawning(world, blockPos, type);
 
-        Photosynthesis.LOGGER.info("trying spawning: "+type+" at: "+pos+", reason: "+spawnReason);
+        //Photosynthesis.LOGGER.info("trying spawning: "+type+" at: "+pos+", reason: "+spawnReason);
         if(     type.equals(EntityType.CREEPER) ||
                 type.equals(EntityType.ZOMBIE) ||
                 type.equals(EntityType.ZOMBIE_VILLAGER) ||
@@ -31,7 +31,7 @@ public class ModMobEntity {
                 type.equals(EntityType.SKELETON) ||
                 type.equals(EntityType.SKELETON_HORSE)) {
             if(spawnReason == SpawnReason.CHUNK_GENERATION || spawnReason == SpawnReason.NATURAL) {
-                Photosynthesis.LOGGER.info("Prevented " + type + " from spawning @" + pos + ", it's from chunkgen, or natural reasons!");
+                //Photosynthesis.LOGGER.info("Prevented " + type + " from spawning @" + pos + ", it's from chunkgen, or natural reasons!");
                 cir.setReturnValue(false);
             } else {
                 //allow structure and spawnegg, spawners etc. but not natural or chunk gen.

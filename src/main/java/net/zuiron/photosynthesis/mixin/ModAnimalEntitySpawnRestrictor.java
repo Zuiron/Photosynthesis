@@ -23,7 +23,7 @@ public class ModAnimalEntitySpawnRestrictor {
         //vanilla code
         //return world.getBlockState(pos.down()).isIn(BlockTags.ANIMALS_SPAWNABLE_ON) && AnimalEntity.isLightLevelValidForNaturalSpawn(world, pos);
 
-        Photosynthesis.LOGGER.info("trying spawning: "+type+" at: "+pos+", reason: "+spawnReason);
+        //Photosynthesis.LOGGER.info("trying spawning: "+type+" at: "+pos+", reason: "+spawnReason);
         if(     type.equals(EntityType.PIG) ||
                 type.equals(EntityType.COW) ||
                 type.equals(EntityType.SHEEP) ||
@@ -33,7 +33,7 @@ public class ModAnimalEntitySpawnRestrictor {
             if(spawnReason == SpawnReason.SPAWN_EGG || spawnReason == SpawnReason.BREEDING) {
                 cir.setReturnValue(true);
             } else {
-                Photosynthesis.LOGGER.info("Prevented " + type + " from spawning @" + pos + ", it's not from breeding, or spawn-egg!");
+                //Photosynthesis.LOGGER.info("Prevented " + type + " from spawning @" + pos + ", it's not from breeding, or spawn-egg!");
                 cir.setReturnValue(false);
             }
         }
