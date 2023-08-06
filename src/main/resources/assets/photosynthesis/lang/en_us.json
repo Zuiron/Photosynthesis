@@ -826,6 +826,7 @@
   "block.photosynthesis.ginger_crop": "Ginger",
   "block.photosynthesis.sesame_crop": "Sesame",
   "block.photosynthesis.mustard_crop": "Mustard",
+  "block.photosynthesis.grass_crop": "Grass",
 
   "item.photosynthesis.tomato": "Tomato",
   "item.photosynthesis.basil": "Basil",
@@ -1010,6 +1011,7 @@
   "item.photosynthesis.ginger_seeds": "Ginger Seeds",
   "item.photosynthesis.sesame_seeds": "Sesame Seeds",
   "item.photosynthesis.mustard_seeds": "Mustard Seeds",
+  "item.photosynthesis.grass_seeds": "Grass Seeds",
 
   "item.photosynthesis.tomatosoup": "Tomato Soup",
   "item.photosynthesis.beefstew": "Beefstew",

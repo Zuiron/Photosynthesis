@@ -802,6 +802,7 @@ public class ModBlocks {
     public static final CropBlock GINGER_CROP = registerCropBlockSimple("ginger_crop");
     public static final CropBlock SESAME_CROP = registerCropBlockSimple("sesame_crop");
     public static final CropBlock MUSTARD_CROP = registerCropBlockSimple("mustard_crop");
+    public static final CropBlock GRASS_CROP = registerGrassCropBlockSimple("grass_crop");
 
 
     public static final CropBlock CAMELLIA_SINENSIS_CROP = registerCropBlockSimple("camellia_sinensis_crop");
@@ -2071,6 +2072,13 @@ public class ModBlocks {
                 new CustomCropBlock(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
                 .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP),
                 name));
+    }
+
+    private static CropBlock registerGrassCropBlockSimple(String name){
+        return Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, name),
+                new CustomGrassCropBlock(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
+                        .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.GRASS).offset(AbstractBlock.OffsetType.XZ),
+                        name));
     }
 
     private static CropBlock registerCropBlockSimple2Tall(String name){

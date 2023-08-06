@@ -105,6 +105,7 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.SESAME_SEEDS,
                 ModItems.MUSTARD,
                 ModItems.MUSTARD_SEEDS,
+                ModItems.GRASS_SEEDS,
                 ModItems.WHITE_BUTTON_MUSHROOM_SPORES,
                 ModItems.PORCINI_MUSHROOM_SPORES,
                 ModItems.CHANTERELLE_MUSHROOM_SPORES,

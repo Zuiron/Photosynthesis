@@ -813,6 +813,7 @@ public class ModItems {
     public static final Item GINGER_SEEDS = registerSeedItem("ginger_seeds", ModBlocks.GINGER_CROP);
     public static final Item SESAME_SEEDS = registerSeedItem("sesame_seeds", ModBlocks.SESAME_CROP);
     public static final Item MUSTARD_SEEDS = registerSeedItem("mustard_seeds", ModBlocks.MUSTARD_CROP);
+    public static final Item GRASS_SEEDS = registerSeedItem("grass_seeds", ModBlocks.GRASS_CROP);
     public static final Item WHITE_BUTTON_MUSHROOM_SPORES = registerSeedItem("white_button_mushroom_spores", ModBlocks.WHITE_BUTTON_MUSHROOM_CROP);
     public static final Item PORCINI_MUSHROOM_SPORES = registerSeedItem("porcini_mushroom_spores", ModBlocks.PORCINI_MUSHROOM_CROP);
     public static final Item CHANTERELLE_MUSHROOM_SPORES = registerSeedItem("chanterelle_mushroom_spores", ModBlocks.CHANTERELLE_MUSHROOM_CROP);
