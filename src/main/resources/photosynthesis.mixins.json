@@ -18,7 +18,9 @@
     "ModCocoaBlock",
     "ModPropaguleBlock",
     "MixinPlayerEntity",
-    "ModItemThirstDataTooltipMixin"
+    "ModItemThirstDataTooltipMixin",
+    "ModSpawnRestriction",
+    "ModAnimalEntitySpawnRestrictor"
   ],
   "client": [
     "PhotosynthesisMixin"
