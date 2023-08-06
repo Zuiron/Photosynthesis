@@ -20,7 +20,8 @@
     "MixinPlayerEntity",
     "ModItemThirstDataTooltipMixin",
     "ModSpawnRestriction",
-    "ModAnimalEntitySpawnRestrictor"
+    "ModAnimalEntitySpawnRestrictor",
+    "ModMobEntity"
   ],
   "client": [
     "PhotosynthesisMixin"
