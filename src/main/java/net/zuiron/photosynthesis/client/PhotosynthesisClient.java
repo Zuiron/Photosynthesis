@@ -577,7 +577,7 @@ public class PhotosynthesisClient implements ClientModInitializer {
         //this is for LEAVES
         /*ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> world != null && pos != null ? BiomeColors.getFoliageColor(world, pos)
                 : FoliageColors.getDefaultColor(), ModBlocks.GRASS_CROP);*/
-        //reference: @BlockColors
+        //reference: @net.minecraft.client.color.block.BlockColors
         ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> world != null && pos != null ? BiomeColors.getGrassColor(world, pos)
                 : GrassColors.getDefaultColor(), ModBlocks.GRASS_CROP);
 
