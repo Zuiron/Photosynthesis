@@ -74,7 +74,13 @@ public class MilkSeperatorRecipe implements Recipe<SimpleInventory> {
 
     @Override
     public ItemStack getOutput(DynamicRegistryManager registryManager) {
-        return new ItemStack(output.fluidVariant.getFluid().getBucketItem());
+        //return new ItemStack(output.fluidVariant.getFluid().getBucketItem());
+        if (output != null && output.fluidVariant != null && output.fluidVariant.getFluid() != null) {
+            return new ItemStack(output.fluidVariant.getFluid().getBucketItem());
+        } else {
+            // Return a default ItemStack or handle the situation as appropriate for your context.
+            return ItemStack.EMPTY; // Example: Returning an empty ItemStack.
+        }
     }
 
     /*public ItemStack getOutputStack() {
@@ -86,7 +92,12 @@ public class MilkSeperatorRecipe implements Recipe<SimpleInventory> {
     }
 
     public DefaultedList<Ingredient> getOutputsBuckets() {
-        return recipeOutputBuckets;
+        //return recipeOutputBuckets;
+        if (recipeOutputBuckets == null) {
+            return DefaultedList.ofSize(1, Ingredient.EMPTY);
+        } else {
+            return recipeOutputBuckets;
+        }
     }
 
     public FluidStack getOutputFluid() {
@@ -109,7 +120,12 @@ public class MilkSeperatorRecipe implements Recipe<SimpleInventory> {
 
     @Override
     public DefaultedList<Ingredient> getIngredients() {
-        return recipeItems;
+        //return recipeItems;
+        if (recipeItems == null) {
+            return DefaultedList.ofSize(1, Ingredient.EMPTY);
+        } else {
+            return recipeItems;
+        }
         //return null;
     } //IMPORTANT FOR REI
 

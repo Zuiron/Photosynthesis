@@ -65,11 +65,23 @@ public class KegRecipe implements Recipe<SimpleInventory> {
 
     @Override
     public ItemStack getOutput(DynamicRegistryManager registryManager) {
-        return new ItemStack(output.fluidVariant.getFluid().getBucketItem());
+        //return new ItemStack(output.fluidVariant.getFluid().getBucketItem());
+        if (output != null && output.fluidVariant != null && output.fluidVariant.getFluid() != null) {
+            return new ItemStack(output.fluidVariant.getFluid().getBucketItem());
+        } else {
+            // Return a default ItemStack or handle the situation as appropriate for your context.
+            return ItemStack.EMPTY; // Example: Returning an empty ItemStack.
+        }
     }
 
     public ItemStack getOutputStack() {
-        return new ItemStack(output.fluidVariant.getFluid().getBucketItem());
+        //return new ItemStack(output.fluidVariant.getFluid().getBucketItem());
+        if (output != null && output.fluidVariant != null && output.fluidVariant.getFluid() != null) {
+            return new ItemStack(output.fluidVariant.getFluid().getBucketItem());
+        } else {
+            // Return a default ItemStack or handle the situation as appropriate for your context.
+            return ItemStack.EMPTY; // Example: Returning an empty ItemStack.
+        }
     }
 
     public FluidStack getOutputFluid() {
