@@ -107,7 +107,7 @@ public class DebugItem extends Item {
         }
         if(Objects.equals(s, "kindled")) {
             Photosynthesis.LOGGER.info("and its HIGH HEAT!");
-        } //String.valueOf("test").equals(comparable)
+        }
 
         return property.getName() + ": " + s;
     }
