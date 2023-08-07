@@ -9,6 +9,9 @@ import net.zuiron.photosynthesis.util.IEntityDataSaver;
 public class ThirstSyncDataS2CPacket {
     public static void receive(MinecraftClient client, ClientPlayNetworkHandler handler,
                                PacketByteBuf buf, PacketSender responseSender) {
-        ((IEntityDataSaver) client.player).getPersistentData().putInt("thirst", buf.readInt());
+        //((IEntityDataSaver) client.player).getPersistentData().putInt("thirst", buf.readInt());
+        if (client.player instanceof IEntityDataSaver) {
+            ((IEntityDataSaver) client.player).getPersistentData().putInt("thirst", buf.readInt());
+        }
     }
 }

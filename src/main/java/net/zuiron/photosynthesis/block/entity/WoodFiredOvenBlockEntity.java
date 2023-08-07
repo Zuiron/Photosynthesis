@@ -230,6 +230,10 @@ public class WoodFiredOvenBlockEntity extends BlockEntity implements ExtendedScr
         //ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
         //if(!config.requireHeatUnder) { return true; }
 
+        if(!world.getBlockState(blockPos).contains(WoodFiredOvenBlock.FACING) || !world.getBlockState(blockPos).contains(Properties.LIT)) {
+            return false;
+        }
+
         //FOR OVEN, we check LEFT (WEST) is lit. confusing method name.
         Direction localDir = world.getBlockState(blockPos).get(WoodFiredOvenBlock.FACING);
         BlockPos relativeWest = blockPos.offset(localDir.rotateYCounterclockwise(), -1);
