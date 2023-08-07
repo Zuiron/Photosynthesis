@@ -39,6 +39,7 @@ import net.zuiron.photosynthesis.block.custom.SkilletBlock;
 import net.zuiron.photosynthesis.networking.ModMessages;
 import net.zuiron.photosynthesis.recipe.SkilletRecipe;
 import net.zuiron.photosynthesis.screen.SkilletScreenHandler;
+import net.zuiron.photosynthesis.util.ModUtil;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -154,7 +155,7 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
     }
 
     public static void animationTick(World level, BlockPos pos, BlockState state) {
-        if (isBlockBelowBurning(level, pos) && level.isClient()) {
+        if (ModUtil.isBlockBelowBurning(level, pos) && level.isClient()) {
             Random random = level.random;
             if (random.nextFloat() < 0.2F) {
                 double x = (double) pos.getX() + 0.5D + (random.nextDouble() * 0.4D - 0.2D);
@@ -195,7 +196,7 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
         if(world.isClient()) {
             return;
         }
-        boolean isBelowHeat = isBlockBelowBurning(world, blockPos);
+        boolean isBelowHeat = ModUtil.isBlockBelowBurning(world, blockPos);
 
         //check see if belowblock is burning, if so. enable hot texture!
         state = (BlockState)state.with(SkilletBlock.LIT, isBelowHeat);
@@ -220,31 +221,6 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
             state = (BlockState)state.with(SkilletBlock.PROCESSING, false); world.setBlockState(blockPos, state, 3);
             markDirty(world, blockPos, state);
         }
-    }
-
-    private static boolean isBlockBelowBurning(World world, BlockPos blockPos) {
-        BlockPos blockPosBelow = blockPos.down(); // assuming 'pos' is the BlockPos of your directional block
-        BlockState blockStateBelow = world.getBlockState(blockPosBelow); // assuming 'world' is the World object
-
-        if (blockStateBelow.getBlock() == Blocks.FURNACE ||
-                blockStateBelow.getBlock() == Blocks.BLAST_FURNACE ||
-                blockStateBelow.getBlock() == Blocks.SMOKER ||
-                blockStateBelow.getBlock() == ModBlocks.WOOD_FIRED_STOVE ||
-                blockStateBelow.getBlock() == ModBlocks.WOOD_FIRED_OVEN ||
-            blockStateBelow.getBlock() == Blocks.CAMPFIRE) {
-            // The block below your directional block is a furnace, blast furnace or smoker
-            BlockEntity blockEntity = world.getBlockEntity(blockPosBelow);
-                //if (furnaceBlockEntity.isBurning()) {
-                if(blockStateBelow.get(Properties.LIT)) {
-                    // The furnace below your directional block is currently smelting
-                    //TODO -- if we decide to allow campfire, which is unlimited LIT. should we decrease cook time? YES!
-                    return true;
-                } else if(blockStateBelow.getBlock() == Blocks.CAMPFIRE && blockStateBelow.get(Properties.SIGNAL_FIRE)) {
-                    return true;
-                }
-        }
-
-        return false;
     }
 
     private static void craftItem(SkilletBlockEntity entity) {
