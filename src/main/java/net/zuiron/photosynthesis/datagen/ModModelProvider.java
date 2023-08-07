@@ -159,6 +159,7 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.MEASURING_CUP_SUNFLOWEROIL,
                 ModItems.MEASURING_CUP_MEAD,
                 */
+                ModItems.DEBUG_ITEM,
 
                 ModItems.LEATHER_WATER_BLADDER,
                 ModItems.LEATHER_WATER_BLADDER_DIRTY,
