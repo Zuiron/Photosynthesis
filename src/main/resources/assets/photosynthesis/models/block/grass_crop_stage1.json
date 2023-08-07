@@ -1,6 +1,6 @@
 
 {
-  "parent": "minecraft:block/cross",
+  "parent": "minecraft:block/tinted_cross",
   "textures": {
     "cross": "photosynthesis:block/grass_crop_stage1"
   }

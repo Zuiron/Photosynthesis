@@ -2076,8 +2076,8 @@ public class ModBlocks {
 
     private static CropBlock registerGrassCropBlockSimple(String name){
         return Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, name),
-                new CustomGrassCropBlock(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
-                        .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.GRASS).offset(AbstractBlock.OffsetType.XZ),
+                new CustomGrassCropBlock(AbstractBlock.Settings.copy(Blocks.GRASS)
+                        .nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.GRASS).offset(AbstractBlock.OffsetType.XYZ).mapColor(MapColor.DARK_GREEN),
                         name));
     }
 
