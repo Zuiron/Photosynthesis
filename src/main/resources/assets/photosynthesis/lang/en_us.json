@@ -1132,6 +1132,8 @@
   "block.photosynthesis.shelf": "Shelf",
   "item.photosynthesis.firestarter": "Fire Starter",
 
+  "entity.minecraft.villager.livestocktrader": "Livestock Trader",
+
   "item.photosynthesis.cow_brisket": "Cow Brisket",
   "item.photosynthesis.cooked_cow_brisket": "Cooked Cow Brisket",
   "item.photosynthesis.cow_ribs": "Cow Ribs",
