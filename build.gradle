@@ -38,8 +38,15 @@ dependencies {
 	//HELLO!!! this causes crash. but only in runClient in IntelliJ
 	//modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:$rei_version"
 	// REI API for Fabric
-	modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:$rei_version"
-	modCompileOnly "me.shedaniel:RoughlyEnoughItems-default-plugin-fabric:$rei_version"
+	modCompileOnly ("me.shedaniel:RoughlyEnoughItems-api-fabric:$rei_version") {
+		exclude(group: "net.fabricmc.fabric-api")
+	}
+	modRuntimeOnly ("me.shedaniel:RoughlyEnoughItems-fabric:$rei_version") {
+		exclude(group: "net.fabricmc.fabric-api")
+	}
+	modCompileOnly ("me.shedaniel:RoughlyEnoughItems-default-plugin-fabric:$rei_version") {
+		exclude(group: "net.fabricmc.fabric-api")
+	}
 	//Cloth Config
 	modApi("me.shedaniel.cloth:cloth-config-fabric:$cloth_config_version") {
 		exclude(group: "net.fabricmc.fabric-api")
