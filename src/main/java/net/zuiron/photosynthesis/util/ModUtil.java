@@ -37,9 +37,6 @@ public class ModUtil {
     }
 
     public static boolean isBlockBelowBurning(World world, BlockPos blockPos) {
-        //ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
-        //if(!config.requireHeatUnder) { return true; }
-
         BlockPos blockPosBelow = blockPos.down(); // assuming 'pos' is the BlockPos of your directional block
         BlockState blockStateBelow = world.getBlockState(blockPosBelow); // assuming 'world' is the World object
 
@@ -57,7 +54,6 @@ public class ModUtil {
             //if (furnaceBlockEntity.isBurning()) {
             if(blockStateBelow.contains(Properties.LIT) && blockStateBelow.get(Properties.LIT)) {
                 // The furnace below your directional block is currently smelting
-                //TODO -- if we decide to allow campfire, which is unlimited LIT. should we decrease cook time? YES!
                 return true;
             } else if(blockStateBelow.getBlock() == Blocks.CAMPFIRE && blockStateBelow.contains(Properties.SIGNAL_FIRE) && blockStateBelow.get(Properties.SIGNAL_FIRE)) {
                 return true;
