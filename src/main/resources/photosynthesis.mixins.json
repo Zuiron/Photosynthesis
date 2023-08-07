@@ -21,7 +21,8 @@
     "ModItemThirstDataTooltipMixin",
     "ModSpawnRestriction",
     "ModAnimalEntitySpawnRestrictor",
-    "ModMobEntity"
+    "ModMobEntity",
+    "ModBoneMealItem"
   ],
   "client": [
     "PhotosynthesisMixin"
