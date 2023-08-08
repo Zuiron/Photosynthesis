@@ -98,7 +98,12 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
                 //if(mcdaysold < days_to_mature_cow) {
                 if(mcdaysold < name2days2mature.get(entityname)) {
                     Photosynthesis.LOGGER.info(entityname+" baby is not old enough yet. prevent maturing... I am: "+mcdaysold+", req: "+name2days2mature.get(entityname));
-                    this.setBreedingAge(-24000);
+                    int daysleft = (int) (name2days2mature.get(entityname) - mcdaysold);
+                    long days2ticks = 24000L * daysleft;
+                    long ticksleft = -days2ticks;
+                    this.setBreedingAge((int) ticksleft);
+                    //Photosynthesis.LOGGER.info("ticks left?"+ticksleft);
+                    //this.setBreedingAge(-24000);
                 } else {
                     Photosynthesis.LOGGER.info(entityname+" baby is ready to mature!!! I am: "+mcdaysold+", req: "+name2days2mature.get(entityname));
                     this.setBreedingAge(0);
