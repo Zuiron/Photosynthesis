@@ -5,6 +5,7 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
@@ -18,6 +19,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
+import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.block.entity.BaleBlockEntity;
 import net.zuiron.photosynthesis.block.entity.KegBlockEntity;
@@ -86,7 +88,7 @@ public class ModBaleBlock extends BlockWithEntity implements BlockEntityProvider
                 //nbtCompound.putInt("Damage", 500);
                 //baleStack.setNbt(nbtCompound);
 
-                baleStack.setDamage(500);
+                baleStack.setDamage(1000 - BaleBlockEntity.getDurability((BaleBlockEntity) blockEntity));
                 itemStacks.add(baleStack);
                 ItemScatterer.spawn(world, pos, itemStacks);
 
@@ -107,6 +109,19 @@ public class ModBaleBlock extends BlockWithEntity implements BlockEntityProvider
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
         return new BaleBlockEntity(pos, state);
+    }
+
+    @Override
+    public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
+        int actualDamage = (1000-itemStack.getDamage());
+        Photosynthesis.LOGGER.info("now: "+actualDamage);
+
+        BlockEntity blockEntity = world.getBlockEntity(pos);
+        if (blockEntity instanceof BaleBlockEntity) {
+            BaleBlockEntity.setDurability((BaleBlockEntity) blockEntity, actualDamage);
+        }
+
+        super.onPlaced(world, pos, state, placer, itemStack);
     }
 
     @Nullable
