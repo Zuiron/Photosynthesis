@@ -1,0 +1,13 @@
+{
+  "type": "photosynthesis:hayrack",
+  "ingredients": [
+    {
+      "item": "photosynthesis:grass_bundle"
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:hay_bundle",
+    "count": 1
+  },
+  "cookingtime": 100
+}

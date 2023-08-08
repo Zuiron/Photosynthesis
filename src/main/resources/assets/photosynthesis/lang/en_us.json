@@ -1078,6 +1078,11 @@
   "item.photosynthesis.dried_black_pepper": "Dried Black Pepper",
 
   "item.photosynthesis.foresty_bundle": "Foresty Bundle",
+
+  "item.photosynthesis.grass_bundle": "Grass Bundle",
+  "item.photosynthesis.hay_bundle": "Hay Bundle",
+  "item.photosynthesis.straw_bundle": "Straw Bundle",
+
   "item.photosynthesis.grass_fibre_piece": "Grass Fibre Piece",
   "item.photosynthesis.grass_twine": "Grass Twine",
   "item.photosynthesis.grass_twine_dry": "Dry Grass Twine",

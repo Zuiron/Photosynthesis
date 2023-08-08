@@ -25,6 +25,8 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.block.custom.DryingRackBlock;
 import net.zuiron.photosynthesis.block.custom.HayRackBlock;
+import net.zuiron.photosynthesis.block.custom.WoodFiredOvenBlock;
+import net.zuiron.photosynthesis.item.ModItems;
 import net.zuiron.photosynthesis.networking.ModMessages;
 import net.zuiron.photosynthesis.recipe.DryingRackRecipe;
 import net.zuiron.photosynthesis.recipe.HayRackRecipe;
@@ -148,6 +150,20 @@ public class HayRackBlockEntity extends BlockEntity implements ExtendedScreenHan
         if(world.isClient()) {
             return;
         }
+
+        //state changer
+        if(!world.isClient()) {
+            if (entity.getStack(1).isOf(ModItems.HAY_BUNDLE) && entity.getStack(0).isEmpty()) {
+                world.setBlockState(blockPos, state.with(HayRackBlock.CRAFT_STATE, 2), 3);
+            }
+            else if (entity.getStack(0).isOf(ModItems.GRASS_BUNDLE)) {
+                world.setBlockState(blockPos, state.with(HayRackBlock.CRAFT_STATE, 1), 3);
+            }
+            else if (entity.getStack(0).isEmpty() && entity.getStack(1).isEmpty()) {
+                world.setBlockState(blockPos, state.with(HayRackBlock.CRAFT_STATE, 0), 3);
+            }
+        }
+        //state changer END
 
         if(hasRecipe(entity)) {
             entity.progress++;

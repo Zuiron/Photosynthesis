@@ -24,6 +24,9 @@ public class ModModelProvider extends FabricModelProvider {
         //itemModelGenerator.register(ModItems.CACTUS_FRUIT, );
         Item[] simple_items = {
                 ModItems.FORESTY_BUNDLE,
+                ModItems.GRASS_BUNDLE,
+                ModItems.HAY_BUNDLE,
+                ModItems.STRAW_BUNDLE,
                 ModItems.GRASS_FIBRE_PIECE,
                 ModItems.GRASS_TWINE,
                 ModItems.GRASS_TWINE_DRY,
