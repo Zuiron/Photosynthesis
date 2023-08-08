@@ -1,18 +1,50 @@
 {
   "variants": {
-    "facing=north": {
+    "facing=north,craft_state=0": {
       "model": "photosynthesis:block/hayrack"
     },
-    "facing=south": {
+    "facing=south,craft_state=0": {
       "model": "photosynthesis:block/hayrack",
       "y": 180
     },
-    "facing=west": {
+    "facing=west,craft_state=0": {
       "model": "photosynthesis:block/hayrack",
       "y": 270
     },
-    "facing=east": {
+    "facing=east,craft_state=0": {
       "model": "photosynthesis:block/hayrack",
+      "y": 90
+    },
+
+    "facing=north,craft_state=1": {
+      "model": "photosynthesis:block/hayrack_grass"
+    },
+    "facing=south,craft_state=1": {
+      "model": "photosynthesis:block/hayrack_grass",
+      "y": 180
+    },
+    "facing=west,craft_state=1": {
+      "model": "photosynthesis:block/hayrack_grass",
+      "y": 270
+    },
+    "facing=east,craft_state=1": {
+      "model": "photosynthesis:block/hayrack_grass",
+      "y": 90
+    },
+
+    "facing=north,craft_state=2": {
+      "model": "photosynthesis:block/hayrack_hay"
+    },
+    "facing=south,craft_state=2": {
+      "model": "photosynthesis:block/hayrack_hay",
+      "y": 180
+    },
+    "facing=west,craft_state=2": {
+      "model": "photosynthesis:block/hayrack_hay",
+      "y": 270
+    },
+    "facing=east,craft_state=2": {
+      "model": "photosynthesis:block/hayrack_hay",
       "y": 90
     }
   }

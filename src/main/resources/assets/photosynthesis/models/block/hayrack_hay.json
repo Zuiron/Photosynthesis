@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"textures": {
 		"0": "photosynthesis:block/stripped_oak_log",
-		"1": "photosynthesis:block/transparent",
-		"2": "photosynthesis:block/transparent",
+		"1": "photosynthesis:block/hay_block_top",
+		"2": "photosynthesis:block/hay_block_cuts",
 		"particle": "photosynthesis:block/stripped_oak_log"
 	},
 	"elements": [

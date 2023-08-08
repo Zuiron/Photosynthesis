@@ -9,10 +9,12 @@ import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.DirectionProperty;
+import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.*;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
@@ -23,9 +25,11 @@ import org.jetbrains.annotations.Nullable;
 
 public class HayRackBlock extends BlockWithEntity implements BlockEntityProvider {
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
+    public static final IntProperty CRAFT_STATE = IntProperty.of("craft_state", 0, 2);
 
     public HayRackBlock(Settings settings) {
         super(settings);
+        this.setDefaultState((BlockState)((BlockState)this.stateManager.getDefaultState()).with(CRAFT_STATE, 0));
     }
 
     private static VoxelShape SHAPE = Block.createCuboidShape(1, 0, 7, 15, 16, 9);
@@ -60,7 +64,7 @@ public class HayRackBlock extends BlockWithEntity implements BlockEntityProvider
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(FACING);
+        builder.add(FACING,CRAFT_STATE);
     }
 
     /* BLOCK ENTITY */
