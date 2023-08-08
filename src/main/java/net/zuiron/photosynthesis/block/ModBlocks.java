@@ -18,6 +18,7 @@ import net.zuiron.photosynthesis.block.bushtreecrops.*;
 import net.zuiron.photosynthesis.block.cropblocks.*;
 import net.zuiron.photosynthesis.block.custom.*;
 import net.zuiron.photosynthesis.block.decoration.*;
+import net.zuiron.photosynthesis.item.DamageableBlockItem;
 import net.zuiron.photosynthesis.world.feature.tree.*;
 
 import java.util.function.ToIntFunction;
@@ -49,13 +50,13 @@ public class ModBlocks {
                     UniformIntProvider.create(1, 2)));
 
     // Bales
-    public static final Block GRASS_BALE = registerBlock("grass_bale",
+    public static final Block GRASS_BALE = registerBaleBlock("grass_bale",
             new ModGrassBaleBlock(FabricBlockSettings.copyOf(Blocks.HAY_BLOCK)));
 
-    public static final Block HAY_BALE = registerBlock("hay_bale",
+    public static final Block HAY_BALE = registerBaleBlock("hay_bale",
             new ModHayBaleBlock(FabricBlockSettings.copyOf(Blocks.HAY_BLOCK)));
 
-    public static final Block STRAW_BALE = registerBlock("straw_bale",
+    public static final Block STRAW_BALE = registerBaleBlock("straw_bale",
             new ModStrawBaleBlock(FabricBlockSettings.copyOf(Blocks.HAY_BLOCK)));
 
     // "Machines"
@@ -2067,6 +2068,13 @@ public class ModBlocks {
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
+        return Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, name), block);
+    }
+
+    private static Block registerBaleBlock(String name, Block block) {
+        Item item = Registry.register(Registries.ITEM, new Identifier(Photosynthesis.MOD_ID, name),
+                new DamageableBlockItem(block, new FabricItemSettings().maxCount(1).maxDamage(1000)));
+
         return Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, name), block);
     }
 
