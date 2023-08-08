@@ -119,12 +119,14 @@ public class modifyLootTables {
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 3.0f)).build());
                 tableBuilder.pool(poolBuilder);
             }
-            /*if (source.isBuiltin() && GRASS_ID.equals(id) || TALL_GRASS_ID.equals(id)) {
-                //seeds drop from grass if hit with garden grubbers
+            if (source.isBuiltin() && GRASS_ID.equals(id) || TALL_GRASS_ID.equals(id)) {
+                //seeds drop from grass if hit with garden grubbers - NOPE
+                //just grass seeds drop from punching grass.
                 final TagKey<Item> GARDEN_GRUBBERS = TagKey.of(RegistryKeys.ITEM, new Identifier("photosynthesis", "garden_grubbers"));
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .with(ItemEntry.builder(ModItems.TOMATO_SEEDS))
+                        .with(ItemEntry.builder(ModItems.GRASS_SEEDS))
+                        /*.with(ItemEntry.builder(ModItems.TOMATO_SEEDS))
                         .with(ItemEntry.builder(ModItems.BASIL_SEEDS))
                         .with(ItemEntry.builder(ModItems.OREGANO_SEEDS))
                         .with(ItemEntry.builder(ModItems.STRAWBERRY_SEEDS))
@@ -204,11 +206,11 @@ public class modifyLootTables {
                         .with(ItemEntry.builder(ModItems.GINGER_SEEDS))
 
                         .with(ItemEntry.builder(ModItems.SESAME_SEEDS))
-                        .with(ItemEntry.builder(ModItems.MUSTARD_SEEDS))
-                        .conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().tag(GARDEN_GRUBBERS)).build())
+                        .with(ItemEntry.builder(ModItems.MUSTARD_SEEDS))*/
+                        //.conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().tag(GARDEN_GRUBBERS)).build())
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
                 tableBuilder.pool(poolBuilder);
-            }*/
+            }
         });
     }
 }
