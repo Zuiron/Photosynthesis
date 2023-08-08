@@ -19,6 +19,10 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+
 @Mixin(PassiveEntity.class)
 public abstract class ModPassiveEntity extends PathAwareEntity {
 
@@ -76,22 +80,32 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
 
 
 
-        //prevent growing until ready.
+        //prevent growing until ready. -- getDaysPerSeasonMod == one month.
         int days_to_mature_cow = Seasons.getDaysPerSeasonMod()*8; //2 years to maturity
         long mcdaysold = calculateEntityAge(this.mob_tick_born, this.getWorld().getTimeOfDay());
         String entityname = this.getWorld().getEntityById(this.getId()).getName().getString();
 
+        //Photosynthesis.LOGGER.info(entityname+", "+this.getBreedingAge());
+
+        Map<String, Integer> name2days2mature = new HashMap<>();
+        name2days2mature.put("Cow", Seasons.getDaysPerSeasonMod()*8); //2years
+        name2days2mature.put("Pig", (int) (Seasons.getDaysPerSeasonMod()*1.5)); //6months
+
         //isbaby, lower than 0 its a baby.
         if(this.getBreedingAge() < 0) {
-            if(entityname == "Cow") {
-                if(mcdaysold < days_to_mature_cow) {
-                    Photosynthesis.LOGGER.info("cow baby is not old enough yet. prevent maturing... I am: "+mcdaysold+", req: "+days_to_mature_cow);
+            //if(Objects.equals(entityname, "Cow")) {
+            if(name2days2mature.containsKey(entityname)) {
+                //if(mcdaysold < days_to_mature_cow) {
+                if(mcdaysold < name2days2mature.get(entityname)) {
+                    Photosynthesis.LOGGER.info(entityname+" baby is not old enough yet. prevent maturing... I am: "+mcdaysold+", req: "+name2days2mature.get(entityname));
                     this.setBreedingAge(-24000);
                 } else {
-                    Photosynthesis.LOGGER.info("cow baby is ready to mature!!! I am: "+mcdaysold+", req: "+days_to_mature_cow);
+                    Photosynthesis.LOGGER.info(entityname+" baby is ready to mature!!! I am: "+mcdaysold+", req: "+name2days2mature.get(entityname));
                     this.setBreedingAge(0);
                 }
+                //Photosynthesis.LOGGER.info("Cow yes.");
             }
+            //Photosynthesis.LOGGER.info("baby yes.");
         }
 
         super.mobTick();
@@ -100,7 +114,7 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
     @Unique
     private static long calculateEntityAge(long birthTick, long currentTick) {
         //returns total minecraft days old.
-        int TICKS_PER_DAY = 24000;
+        long TICKS_PER_DAY = 24000;
         return (currentTick - birthTick) / TICKS_PER_DAY;
     }
 
