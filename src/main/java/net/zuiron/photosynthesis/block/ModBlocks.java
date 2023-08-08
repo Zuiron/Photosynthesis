@@ -48,6 +48,16 @@ public class ModBlocks {
             new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.STONE).strength(2f).requiresTool(),
                     UniformIntProvider.create(1, 2)));
 
+    // Bales
+    public static final Block GRASS_BALE = registerBlock("grass_bale",
+            new ModGrassBaleBlock(FabricBlockSettings.copyOf(Blocks.HAY_BLOCK)));
+
+    public static final Block HAY_BALE = registerBlock("hay_bale",
+            new ModHayBaleBlock(FabricBlockSettings.copyOf(Blocks.HAY_BLOCK)));
+
+    public static final Block STRAW_BALE = registerBlock("straw_bale",
+            new ModStrawBaleBlock(FabricBlockSettings.copyOf(Blocks.HAY_BLOCK)));
+
     // "Machines"
     public static final Block SKILLET = registerBlock("skillet",
             new SkilletBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)

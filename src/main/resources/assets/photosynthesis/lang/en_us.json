@@ -1134,6 +1134,10 @@
 
   "entity.minecraft.villager.livestocktrader": "Livestock Trader",
 
+  "block.photosynthesis.grass_bale": "Grass Bale",
+  "block.photosynthesis.straw_bale": "Straw Bale",
+  "block.photosynthesis.hay_bale": "Hay Bale",
+
   "item.photosynthesis.cow_brisket": "Cow Brisket",
   "item.photosynthesis.cooked_cow_brisket": "Cooked Cow Brisket",
   "item.photosynthesis.cow_ribs": "Cow Ribs",

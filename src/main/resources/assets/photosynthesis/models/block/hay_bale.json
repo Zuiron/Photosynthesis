@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "photosynthesis:block/hay_bale_top",
+    "side": "photosynthesis:block/hay_bale_side"
+  }
+}

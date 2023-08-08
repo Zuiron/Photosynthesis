@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "photosynthesis:block/straw_bale_top",
+    "side": "photosynthesis:block/straw_bale_side"
+  }
+}
