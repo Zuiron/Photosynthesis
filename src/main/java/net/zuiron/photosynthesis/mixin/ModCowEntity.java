@@ -44,10 +44,12 @@ public abstract class ModCowEntity extends AnimalEntity {
     }
 
     public void writeCustomDataToNbt(NbtCompound nbt) {
+        super.writeCustomDataToNbt(nbt);
         nbt.putInt("milkablecooldown", this.milkablecooldown);
     }
 
     public void readCustomDataFromNbt(NbtCompound nbt) {
+        super.readCustomDataFromNbt(nbt);
         this.milkablecooldown = nbt.getInt("milkablecooldown");
     }
 
