@@ -6,18 +6,24 @@ import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.BlockRotation;
 import net.minecraft.util.ItemScatterer;
+import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldAccess;
+import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.block.entity.BaleBlockEntity;
 import net.zuiron.photosynthesis.block.entity.KegBlockEntity;
 import net.zuiron.photosynthesis.block.entity.MixingBowlBlockEntity;
 import net.zuiron.photosynthesis.block.entity.ModBlockEntities;
+import net.zuiron.photosynthesis.item.ModItems;
 import org.jetbrains.annotations.Nullable;
 
 public class ModBaleBlock extends BlockWithEntity implements BlockEntityProvider {
@@ -69,14 +75,25 @@ public class ModBaleBlock extends BlockWithEntity implements BlockEntityProvider
     @Override
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
         //TODO - drop itemform BUT. with tag damage based on food left in block.
-        /*if (state.getBlock() != newState.getBlock()) {
+        if (state.getBlock() != newState.getBlock()) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
-            if (blockEntity instanceof KegBlockEntity) {
-                ItemScatterer.spawn(world, pos, (KegBlockEntity)blockEntity);
+            if (blockEntity instanceof BaleBlockEntity) {
+
+                DefaultedList<ItemStack> itemStacks = DefaultedList.of();
+                ItemStack baleStack = state.getBlock().asItem().getDefaultStack();
+
+                //NbtCompound nbtCompound = new NbtCompound();
+                //nbtCompound.putInt("Damage", 500);
+                //baleStack.setNbt(nbtCompound);
+
+                baleStack.setDamage(500);
+                itemStacks.add(baleStack);
+                ItemScatterer.spawn(world, pos, itemStacks);
+
                 world.updateComparators(pos,this);
             }
             super.onStateReplaced(state, world, pos, newState, moved);
-        }*/
+        }
     }
 
     //entity
