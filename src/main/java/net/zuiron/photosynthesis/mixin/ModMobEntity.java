@@ -29,6 +29,9 @@ public class ModMobEntity {
                 type.equals(EntityType.ZOMBIE_VILLAGER) ||
                 type.equals(EntityType.ZOMBIE_HORSE) ||
                 type.equals(EntityType.SKELETON) ||
+                type.equals(EntityType.HUSK) ||
+                type.equals(EntityType.WITCH) ||
+                type.equals(EntityType.SPIDER) ||
                 type.equals(EntityType.SKELETON_HORSE)) {
             if(spawnReason == SpawnReason.CHUNK_GENERATION || spawnReason == SpawnReason.NATURAL) {
                 //Photosynthesis.LOGGER.info("Prevented " + type + " from spawning @" + pos + ", it's from chunkgen, or natural reasons!");
