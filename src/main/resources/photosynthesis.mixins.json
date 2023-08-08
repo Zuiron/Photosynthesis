@@ -22,7 +22,8 @@
     "ModSpawnRestriction",
     "ModAnimalEntitySpawnRestrictor",
     "ModMobEntity",
-    "ModBoneMealItem"
+    "ModBoneMealItem",
+    "ModPassiveEntity"
   ],
   "client": [
     "PhotosynthesisMixin"

@@ -22,14 +22,14 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(MobEntity.class)
 public abstract class ModMobEntity extends LivingEntity {
 
-    @Unique
-    public long mob_tick_born = 0;
+    /*@Unique
+    public long mob_tick_born = 0;*/
 
     protected ModMobEntity(EntityType<? extends LivingEntity> entityType, World world) {
         super(entityType, world);
     }
 
-    public void writeCustomDataToNbt(NbtCompound nbt) {
+    /*public void writeCustomDataToNbt(NbtCompound nbt) {
         nbt.putLong("timeofdayborntime", this.mob_tick_born);
     }
     public void readCustomDataFromNbt(NbtCompound nbt) {
@@ -42,7 +42,7 @@ public abstract class ModMobEntity extends LivingEntity {
             this.mob_tick_born = this.getWorld().getTimeOfDay();
             Photosynthesis.LOGGER.info("setting mob borntime to: "+this.getWorld().getTimeOfDay()+", for: "+this.getWorld().getEntityById(this.getId()).getName().getString());
         }
-    }
+    }*/
 
     @Inject(method = "canMobSpawn", at = @At("HEAD"), cancellable = true)
     private static void canMobSpawn(EntityType<? extends MobEntity> type, WorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random, CallbackInfoReturnable<Boolean> cir) {
