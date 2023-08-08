@@ -40,6 +40,7 @@ public abstract class ModCowEntity extends AnimalEntity {
             this.milkablecooldown += 1;
         }
         //Photosynthesis.LOGGER.info("cow MobTick: "+this.milkablecooldown);
+        super.mobTick();
     }
 
     public void writeCustomDataToNbt(NbtCompound nbt) {
