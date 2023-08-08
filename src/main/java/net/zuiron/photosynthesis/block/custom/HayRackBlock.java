@@ -38,10 +38,10 @@ public class HayRackBlock extends BlockWithEntity implements BlockEntityProvider
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         VoxelShape SHAPE2 = Block.createCuboidShape(0, 0, 0, 16, 16, 16);
         switch (state.get(FACING)) {
-            case NORTH -> SHAPE2 = Block.createCuboidShape(1, 0, 7, 15, 16, 9);
-            case EAST -> SHAPE2 = Block.createCuboidShape(7, 0, 1, 9, 16, 15);
-            case SOUTH -> SHAPE2 = Block.createCuboidShape(1, 0, 7, 15, 16, 9);
-            case WEST -> SHAPE2 = Block.createCuboidShape(7, 0, 1, 9, 16, 15);
+            case NORTH -> SHAPE2 = Block.createCuboidShape(1, 1, 4.5, 15, 17, 11.5);
+            case EAST -> SHAPE2 = Block.createCuboidShape(4.5, 1, 1, 11.5, 17, 15);
+            case SOUTH -> SHAPE2 = Block.createCuboidShape(1, 1, 4.5, 15, 17, 11.5);
+            case WEST -> SHAPE2 = Block.createCuboidShape(4.5, 1, 1, 11.5, 17, 15);
         }
         return SHAPE2;
     }
