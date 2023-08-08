@@ -22,12 +22,6 @@ public class DamageableBlockItem extends BlockItem {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-
-
-
-        //tooltip.add(Text.literal("damage: "));
-
-
         int remain = stack.getMaxDamage() - stack.getDamage();
         tooltip.add(Text.literal("Durability: "+remain+"/"+stack.getMaxDamage()));
         super.appendTooltip(stack, world, tooltip, context);
