@@ -30,6 +30,8 @@ import net.zuiron.photosynthesis.integration.rei.fluidpress.FluidPressRecipeCate
 import net.zuiron.photosynthesis.integration.rei.fluidpress.FluidPressRecipeDisplay;
 import net.zuiron.photosynthesis.integration.rei.gravitypress.GravityPressRecipeCategory;
 import net.zuiron.photosynthesis.integration.rei.gravitypress.GravityPressRecipeDisplay;
+import net.zuiron.photosynthesis.integration.rei.hayrack.HayRackRecipeCategory;
+import net.zuiron.photosynthesis.integration.rei.hayrack.HayRackRecipeDisplay;
 import net.zuiron.photosynthesis.integration.rei.keg.KegRecipeCategory;
 import net.zuiron.photosynthesis.integration.rei.keg.KegRecipeDisplay;
 import net.zuiron.photosynthesis.integration.rei.milkseparator.MilkSeparatorRecipeCategory;
@@ -59,6 +61,7 @@ public class PhotosynthesisREI implements REIClientPlugin {
     public static final CategoryIdentifier<MilkSeparatorRecipeDisplay> MILKSEPARATOR = CategoryIdentifier.of(Photosynthesis.MOD_ID, "milkseparator");
     public static final CategoryIdentifier<DryingNetRecipeDisplay> DRYINGNET = CategoryIdentifier.of(Photosynthesis.MOD_ID, "dryingnet");
     public static final CategoryIdentifier<DryingRackRecipeDisplay> DRYINGRACK = CategoryIdentifier.of(Photosynthesis.MOD_ID, "dryingrack");
+    public static final CategoryIdentifier<HayRackRecipeDisplay> HAYRACK = CategoryIdentifier.of(Photosynthesis.MOD_ID, "hayrack");
     public static final CategoryIdentifier<WoodFiredOvenRecipeDisplay> WOOD_FIRED_OVEN = CategoryIdentifier.of(Photosynthesis.MOD_ID, "woodfiredoven");
 
     public static Rectangle centeredIntoRecipeBase(Point origin, int width, int height) {
@@ -116,6 +119,10 @@ public class PhotosynthesisREI implements REIClientPlugin {
         registry.addWorkstations(DRYINGRACK, EntryStacks.of(ModBlocks.DRYINGRACK));
 
         registry.add(
+                new HayRackRecipeCategory());
+        registry.addWorkstations(HAYRACK, EntryStacks.of(ModBlocks.HAYRACK));
+
+        registry.add(
                 new WoodFiredOvenRecipeCategory());
         registry.addWorkstations(WOOD_FIRED_OVEN, EntryStacks.of(ModBlocks.WOOD_FIRED_OVEN));
     }
@@ -143,6 +150,8 @@ public class PhotosynthesisREI implements REIClientPlugin {
         registry.registerRecipeFiller(DryingNetRecipe.class, DryingNetRecipe.Type.INSTANCE, DryingNetRecipeDisplay::new);
 
         registry.registerRecipeFiller(DryingRackRecipe.class, DryingRackRecipe.Type.INSTANCE, DryingRackRecipeDisplay::new);
+
+        registry.registerRecipeFiller(HayRackRecipe.class, HayRackRecipe.Type.INSTANCE, HayRackRecipeDisplay::new);
 
         registry.registerRecipeFiller(WoodFiredOvenRecipe.class, WoodFiredOvenRecipe.Type.INSTANCE, WoodFiredOvenRecipeDisplay::new);
 
@@ -172,6 +181,8 @@ public class PhotosynthesisREI implements REIClientPlugin {
         registry.registerContainerClickArea(new Rectangle(77, 37, 22, 15), DryingNetScreen.class, DRYINGNET);
 
         registry.registerContainerClickArea(new Rectangle(77, 37, 22, 15), DryingRackScreen.class, DRYINGRACK);
+
+        registry.registerContainerClickArea(new Rectangle(77, 37, 22, 15), HayRackScreen.class, HAYRACK);
 
         registry.registerContainerClickArea(new Rectangle(90, 45, 22, 15), WoodFiredOvenScreen.class, WOOD_FIRED_OVEN);
     }

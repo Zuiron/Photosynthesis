@@ -1,0 +1,13 @@
+{
+  "type": "photosynthesis:hayrack",
+  "ingredients": [
+    {
+      "item": "photosynthesis:peppercorn"
+    }
+  ],
+  "output": {
+    "item": "minecraft:wheat",
+    "count": 2
+  },
+  "cookingtime": 30
+}

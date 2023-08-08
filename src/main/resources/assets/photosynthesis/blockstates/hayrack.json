@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "photosynthesis:block/hayrack"
+    },
+    "facing=south": {
+      "model": "photosynthesis:block/hayrack",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "photosynthesis:block/hayrack",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "photosynthesis:block/hayrack",
+      "y": 90
+    }
+  }
+}

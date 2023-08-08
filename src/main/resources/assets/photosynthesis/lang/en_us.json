@@ -1045,6 +1045,7 @@
   "item.photosynthesis.cutting_board": "Cutting Board",
   "item.photosynthesis.dryingnet": "Drying Net",
   "item.photosynthesis.dryingrack": "Drying Rack",
+  "item.photosynthesis.hayrack": "Hay Rack",
   "item.photosynthesis.squeezer": "Squeezer",
 
   "item.photosynthesis.squeezer_part": "Squeezer Part",
@@ -1123,6 +1124,7 @@
   "block.photosynthesis.cutting_board": "Cutting Board",
   "block.photosynthesis.dryingnet": "Drying Net",
   "block.photosynthesis.dryingrack": "Drying Rack",
+  "block.photosynthesis.hayrack": "Hay Rack",
   "block.photosynthesis.mortar": "Mortar",
   "block.photosynthesis.gravity_press": "Gravity Press",
   "block.photosynthesis.latex_extractor": "Latex Extractor",

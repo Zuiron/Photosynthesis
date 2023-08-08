@@ -32,6 +32,7 @@ public class ModBlockEntities {
 
     public static BlockEntityType<DryingNetBlockEntity> DRYINGNET;
     public static BlockEntityType<DryingRackBlockEntity> DRYINGRACK;
+    public static BlockEntityType<HayRackBlockEntity> HAYRACK;
     public static BlockEntityType<SingleDoubleChestBlockEntity> SINGLEDOUBLECHEST;
 
     public static void registerBlockEntities() {
@@ -124,6 +125,11 @@ public class ModBlockEntities {
                 new Identifier(Photosynthesis.MOD_ID, "dryingrack"),
                 FabricBlockEntityTypeBuilder.create(DryingRackBlockEntity::new,
                         ModBlocks.DRYINGRACK).build(null));
+
+        HAYRACK = Registry.register(Registries.BLOCK_ENTITY_TYPE,
+                new Identifier(Photosynthesis.MOD_ID, "hayrack"),
+                FabricBlockEntityTypeBuilder.create(HayRackBlockEntity::new,
+                        ModBlocks.HAYRACK).build(null));
 
         SINGLEDOUBLECHEST = Registry.register(Registries.BLOCK_ENTITY_TYPE,
                 new Identifier(Photosynthesis.MOD_ID, "singledoublechest"),

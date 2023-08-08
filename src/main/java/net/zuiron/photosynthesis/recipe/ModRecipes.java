@@ -77,6 +77,12 @@ public class ModRecipes {
         Registry.register(Registries.RECIPE_TYPE, new Identifier(Photosynthesis.MOD_ID, DryingRackRecipe.Type.ID),
                 DryingRackRecipe.Type.INSTANCE);
 
+        //Hay Rack
+        Registry.register(Registries.RECIPE_SERIALIZER, new Identifier(Photosynthesis.MOD_ID, HayRackRecipe.Serializer.ID),
+                HayRackRecipe.Serializer.INSTANCE);
+        Registry.register(Registries.RECIPE_TYPE, new Identifier(Photosynthesis.MOD_ID, HayRackRecipe.Type.ID),
+                HayRackRecipe.Type.INSTANCE);
+
         //WOOD FIRED OVEN
         Registry.register(Registries.RECIPE_SERIALIZER, new Identifier(Photosynthesis.MOD_ID, WoodFiredOvenRecipe.Serializer.ID),
                 WoodFiredOvenRecipe.Serializer.INSTANCE);

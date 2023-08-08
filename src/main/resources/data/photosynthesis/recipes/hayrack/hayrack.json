@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#/#",
+    "#C#",
+    "#/#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stripped_oak_log"
+    },
+    "/": {
+      "item": "minecraft:stick"
+    },
+    "C": {
+      "item": "photosynthesis:grass_twine_dry"
+    }
+  },
+  "result": {
+    "item": "photosynthesis:hayrack",
+    "count": 6
+  }
+}

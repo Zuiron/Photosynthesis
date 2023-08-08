@@ -56,6 +56,9 @@ public class ModScreenHandlers {
     public static ScreenHandlerType<DryingRackScreenHandler> DRYINGRACK_SCREEN_HANDLER =
             new ExtendedScreenHandlerType<>(DryingRackScreenHandler::new);
 
+    public static ScreenHandlerType<HayRackScreenHandler> HAYRACK_SCREEN_HANDLER =
+            new ExtendedScreenHandlerType<>(HayRackScreenHandler::new);
+
     public static ScreenHandlerType<SingleDoubleChestScreenHandler> SINGLEDOUBLECHEST_SCREEN_HANDLER =
             new ExtendedScreenHandlerType<>(SingleDoubleChestScreenHandler::new);
 
@@ -98,6 +101,8 @@ public class ModScreenHandlers {
                 DRYINGNET_SCREEN_HANDLER);
         Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "dryingrack"),
                 DRYINGRACK_SCREEN_HANDLER);
+        Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "hayrack"),
+                HAYRACK_SCREEN_HANDLER);
         Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "singledoublechest"),
                 SINGLEDOUBLECHEST_SCREEN_HANDLER);
         Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "woodfiredstove"),
