@@ -28,6 +28,7 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.HAY_BUNDLE,
                 ModItems.STRAW_BUNDLE,
                 ModItems.GRASS_FIBRE_PIECE,
+                ModItems.STRAW_PIECE,
                 ModItems.GRASS_TWINE,
                 ModItems.GRASS_TWINE_DRY,
                 ModItems.SHARP_FLINT_FRAGMENT,

@@ -39,6 +39,9 @@ public class ModItems {
     public static final Item GRASS_FIBRE_PIECE = registerItem("grass_fibre_piece",
             new Item(new FabricItemSettings()));
 
+    public static final Item STRAW_PIECE = registerItem("straw_piece",
+            new Item(new FabricItemSettings()));
+
     public static final Item GRASS_TWINE = registerItem("grass_twine",
             new Item(new FabricItemSettings()));
 
