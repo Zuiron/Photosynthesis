@@ -207,7 +207,7 @@ public class modifyLootTables {
 
                         .with(ItemEntry.builder(ModItems.SESAME_SEEDS))
                         .with(ItemEntry.builder(ModItems.MUSTARD_SEEDS))*/
-                        //.conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().tag(GARDEN_GRUBBERS)).build())
+                        .conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().tag(GARDEN_GRUBBERS)).build())
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
                 tableBuilder.pool(poolBuilder);
             }
