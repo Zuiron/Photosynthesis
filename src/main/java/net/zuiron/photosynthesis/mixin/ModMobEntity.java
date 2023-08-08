@@ -1,21 +1,48 @@
 package net.zuiron.photosynthesis.mixin;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.mob.MobEntity;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
+import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.dimension.DimensionType;
 import net.minecraft.world.dimension.DimensionTypes;
 import net.zuiron.photosynthesis.Photosynthesis;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(MobEntity.class)
-public class ModMobEntity {
+public abstract class ModMobEntity extends LivingEntity {
+
+    @Unique
+    public long mob_tick_born = 0;
+
+    protected ModMobEntity(EntityType<? extends LivingEntity> entityType, World world) {
+        super(entityType, world);
+    }
+
+    public void writeCustomDataToNbt(NbtCompound nbt) {
+        nbt.putLong("timeofdayborntime", this.mob_tick_born);
+    }
+    public void readCustomDataFromNbt(NbtCompound nbt) {
+        this.mob_tick_born = nbt.getLong("timeofdayborntime");
+    }
+
+    @Inject(method = "mobTick", at = @At("HEAD"))
+    protected void mobTick(CallbackInfo ci) {
+        if(this.mob_tick_born == 0) {
+            this.mob_tick_born = this.getWorld().getTimeOfDay();
+            Photosynthesis.LOGGER.info("setting mob borntime to: "+this.getWorld().getTimeOfDay()+", for: "+this.getWorld().getEntityById(this.getId()).getName().getString());
+        }
+    }
 
     @Inject(method = "canMobSpawn", at = @At("HEAD"), cancellable = true)
     private static void canMobSpawn(EntityType<? extends MobEntity> type, WorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random, CallbackInfoReturnable<Boolean> cir) {
