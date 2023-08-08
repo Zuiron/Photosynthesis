@@ -87,8 +87,9 @@ public class ModBaleBlock extends BlockWithEntity implements BlockEntityProvider
                 //NbtCompound nbtCompound = new NbtCompound();
                 //nbtCompound.putInt("Damage", 500);
                 //baleStack.setNbt(nbtCompound);
+                int actualDamage = 1000 - BaleBlockEntity.getDurability((BaleBlockEntity) blockEntity);
 
-                baleStack.setDamage(1000 - BaleBlockEntity.getDurability((BaleBlockEntity) blockEntity));
+                baleStack.setDamage(actualDamage);
                 itemStacks.add(baleStack);
                 ItemScatterer.spawn(world, pos, itemStacks);
 

@@ -39,7 +39,7 @@ public class BaleBlockEntity extends BlockEntity {
     }
 
     public static void tick(World world, BlockPos blockPos, BlockState blockState, BaleBlockEntity baleBlockEntity) {
-        //Photosynthesis.LOGGER.info("i am ticking. "+blockState.getBlock().getName()+", dura: "+ baleBlockEntity.durability);
+        Photosynthesis.LOGGER.info("i am ticking. "+blockState.getBlock().getName()+", dura: "+ baleBlockEntity.durability);
         baleBlockEntity.durability--;
     }
 }
