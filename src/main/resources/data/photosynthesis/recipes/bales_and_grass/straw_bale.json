@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#/#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "photosynthesis:straw_bundle"
+    },
+    "/": {
+      "item": "photosynthesis:grass_twine_dry"
+    }
+  },
+  "result": {
+    "item": "photosynthesis:straw_bale",
+    "count": 1
+  }
+}
