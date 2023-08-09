@@ -70,7 +70,15 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
             //get some data.
             if (player.isPlayer()) {
                 if (player.getStackInHand(hand).isOf(Items.STICK)) {
-                    player.sendMessage(Text.literal("test"),true);
+                    String entityname = this.getWorld().getEntityById(this.getId()).getName().getString(); //gets name, or if tagged tag name.
+
+                    String string = entityname + ": ";
+
+                    string += "test1";
+                    string += "test3";
+
+
+                    player.sendMessage(Text.literal(string),false);
                 }
             }
         }
@@ -101,7 +109,8 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
         //Photosynthesis.LOGGER.info("transkey: "+type.getTranslationKey());
         String transkey = Objects.requireNonNull(this.getWorld().getEntityById(this.getId())).getType().getTranslationKey();
 
-        //we have to calculate age stuff here because its configurable via config. game restart would be required if we move it outside. we might.
+        //we have to calculate age stuff here because its configurable via config. game restart would be required if we move it outside. we should!
+        //for development purposes im going to keep it here awhile.
         Map<String, Integer> name2days2mature = new HashMap<>();
         name2days2mature.put("entity.minecraft.cow", Seasons.getDaysPerSeasonMod()*8); //2years
         name2days2mature.put("entity.minecraft.pig", (int) (Seasons.getDaysPerSeasonMod()*1.5)); //6months
