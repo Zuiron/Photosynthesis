@@ -119,7 +119,7 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
 
                     player.sendMessage(Text.literal(string),false);
                 } else if (player.getStackInHand(hand).isOf(Items.ROTTEN_FLESH)) {
-                    this.mod_Water -= 10000;
+                    this.mod_Milk += 24000;
                 }
             }
         }
