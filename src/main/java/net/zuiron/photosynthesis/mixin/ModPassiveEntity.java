@@ -6,7 +6,12 @@ import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.text.Text;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
 import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
@@ -35,15 +40,17 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
     public long mob_tick_born = -1;
 
     @Unique
-    public long mod_Water = 8000;
+    public int mod_Water = 96000; //4 days (minecraft days) -- one day = 24000
     @Unique
-    public long mod_Grass = 8000;
+    public int mod_Grass = 168000; //7 days (minecraft days)
     @Unique
-    public long mod_Hay = 8000;
+    public int mod_Hay = 168000; //7 days (minecraft days)
+    @Unique
+    public int mod_Straw = 168000; //7 days (minecraft days)
+    @Unique
+    public int mod_Food = 168000; //7 days (minecraft days)
 
-    /*protected ModPassiveEntity(EntityType<? extends PathAwareEntity> entityType, World world) {
-        super(entityType, world);
-    }*/
+
     protected ModPassiveEntity(EntityType<? extends PassiveEntity> entityType, World world) {
         super((EntityType<? extends PathAwareEntity>)entityType, world);
     }
@@ -55,6 +62,20 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
     @Inject(method = "readCustomDataFromNbt", at = @At("HEAD"))
     public void readCustomDataFromNbt(NbtCompound nbt, CallbackInfo ci) {
         this.mob_tick_born = nbt.getLong("timeofdayborntime");
+    }
+
+    @Override
+    protected ActionResult interactMob(PlayerEntity player, Hand hand) {
+        if (!player.getWorld().isClient()) {
+            //get some data.
+            if (player.isPlayer()) {
+                if (player.getStackInHand(hand).isOf(Items.STICK)) {
+                    player.sendMessage(Text.literal("test"),true);
+                }
+            }
+        }
+
+        return super.interactMob(player, hand);
     }
 
     @Nullable
