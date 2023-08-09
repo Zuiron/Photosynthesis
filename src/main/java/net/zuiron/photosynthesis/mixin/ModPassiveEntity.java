@@ -4,6 +4,7 @@ import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.mob.PathAwareEntity;
+import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.world.LocalDifficulty;
@@ -21,6 +22,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 @Mixin(PassiveEntity.class)
 public abstract class ModPassiveEntity extends PathAwareEntity {
@@ -74,16 +76,24 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
 
         long mcdaysold = calculateEntityAge(this.mob_tick_born, this.getWorld().getTimeOfDay());
         String entityname = this.getWorld().getEntityById(this.getId()).getName().getString();
+        //EntityType<? extends AnimalEntity> type = (EntityType<? extends AnimalEntity>) this.getWorld().getEntityById(this.getId()).getType();
+        //Photosynthesis.LOGGER.info("transkey: "+type.getTranslationKey());
+        String transkey = Objects.requireNonNull(this.getWorld().getEntityById(this.getId())).getType().getTranslationKey();
 
+        //we have to calculate age stuff here because its configurable via config. game restart would be required if we move it outside. we might.
         Map<String, Integer> name2days2mature = new HashMap<>();
-        name2days2mature.put("Cow", Seasons.getDaysPerSeasonMod()*8); //2years
-        name2days2mature.put("Pig", (int) (Seasons.getDaysPerSeasonMod()*1.5)); //6months
+        name2days2mature.put("entity.minecraft.cow", Seasons.getDaysPerSeasonMod()*8); //2years
+        name2days2mature.put("entity.minecraft.pig", (int) (Seasons.getDaysPerSeasonMod()*1.5)); //6months
+        name2days2mature.put("entity.minecraft.sheep", Seasons.getDaysPerSeasonMod()*4); //1years
+        name2days2mature.put("entity.minecraft.chicken", (int) (Seasons.getDaysPerSeasonMod()*1.25)); //5months
+        name2days2mature.put("entity.minecraft.horse", Seasons.getDaysPerSeasonMod()*16); //4years
+        name2days2mature.put("entity.minecraft.goat", Seasons.getDaysPerSeasonMod()*12); //3years
 
         if(this.getBreedingAge() < 0) { //isbaby, lower than 0 its a baby.
-            if(name2days2mature.containsKey(entityname)) {
-                if(mcdaysold < name2days2mature.get(entityname)) {
+            if(name2days2mature.containsKey(transkey)) {
+                if(mcdaysold < name2days2mature.get(transkey)) {
                     //Photosynthesis.LOGGER.info(entityname+" baby is not old enough yet. prevent maturing... I am: "+mcdaysold+", req: "+name2days2mature.get(entityname));
-                    int daysleft = (int) (name2days2mature.get(entityname) - mcdaysold);
+                    int daysleft = (int) (name2days2mature.get(transkey) - mcdaysold);
                     long days2ticks = 24000L * daysleft;
                     long ticksleft = -days2ticks;
                     this.setBreedingAge((int) ticksleft);
