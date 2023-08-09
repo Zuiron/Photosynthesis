@@ -21,7 +21,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 @Mixin(PassiveEntity.class)
 public abstract class ModPassiveEntity extends PathAwareEntity {
@@ -40,8 +39,11 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
     @Unique
     public long mod_Hay = 8000;
 
-    protected ModPassiveEntity(EntityType<? extends PathAwareEntity> entityType, World world) {
+    /*protected ModPassiveEntity(EntityType<? extends PathAwareEntity> entityType, World world) {
         super(entityType, world);
+    }*/
+    protected ModPassiveEntity(EntityType<? extends PassiveEntity> entityType, World world) {
+        super((EntityType<? extends PathAwareEntity>)entityType, world);
     }
 
     @Inject(method = "writeCustomDataToNbt", at = @At("TAIL"))
@@ -70,47 +72,26 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
             this.mob_tick_born = this.getWorld().getTimeOfDay();
         }
 
-        //Photosynthesis.LOGGER.info("DEBUG borntime: "+this.mob_tick_born);
-        //this.setBreedingAge(0); //now, they should NEVER grow up ? right? //0 is grows to mature. and -whatever or -24000. isbaby(). its baby if its not 0.
-        /*Photosynthesis.LOGGER.info(
-                "current time: " + this.getWorld().getTimeOfDay() +
-                ", entity born time: " + this.mob_tick_born +
-                ", mob: "+ this.getWorld().getEntityById(this.getId()).getName().getString()+
-                ", days old: "+calculateEntityAge(this.mob_tick_born, this.getWorld().getTimeOfDay()));*/
-
-
-
-        //prevent growing until ready. -- getDaysPerSeasonMod == one month.
-        int days_to_mature_cow = Seasons.getDaysPerSeasonMod()*8; //2 years to maturity
         long mcdaysold = calculateEntityAge(this.mob_tick_born, this.getWorld().getTimeOfDay());
         String entityname = this.getWorld().getEntityById(this.getId()).getName().getString();
-
-        //Photosynthesis.LOGGER.info(entityname+", "+this.getBreedingAge());
 
         Map<String, Integer> name2days2mature = new HashMap<>();
         name2days2mature.put("Cow", Seasons.getDaysPerSeasonMod()*8); //2years
         name2days2mature.put("Pig", (int) (Seasons.getDaysPerSeasonMod()*1.5)); //6months
 
-        //isbaby, lower than 0 its a baby.
-        if(this.getBreedingAge() < 0) {
-            //if(Objects.equals(entityname, "Cow")) {
+        if(this.getBreedingAge() < 0) { //isbaby, lower than 0 its a baby.
             if(name2days2mature.containsKey(entityname)) {
-                //if(mcdaysold < days_to_mature_cow) {
                 if(mcdaysold < name2days2mature.get(entityname)) {
-                    Photosynthesis.LOGGER.info(entityname+" baby is not old enough yet. prevent maturing... I am: "+mcdaysold+", req: "+name2days2mature.get(entityname));
+                    //Photosynthesis.LOGGER.info(entityname+" baby is not old enough yet. prevent maturing... I am: "+mcdaysold+", req: "+name2days2mature.get(entityname));
                     int daysleft = (int) (name2days2mature.get(entityname) - mcdaysold);
                     long days2ticks = 24000L * daysleft;
                     long ticksleft = -days2ticks;
                     this.setBreedingAge((int) ticksleft);
-                    //Photosynthesis.LOGGER.info("ticks left?"+ticksleft);
-                    //this.setBreedingAge(-24000);
                 } else {
-                    Photosynthesis.LOGGER.info(entityname+" baby is ready to mature!!! I am: "+mcdaysold+", req: "+name2days2mature.get(entityname));
+                    //Photosynthesis.LOGGER.info(entityname+" baby is ready to mature!!! I am: "+mcdaysold+", req: "+name2days2mature.get(entityname));
                     this.setBreedingAge(0);
                 }
-                //Photosynthesis.LOGGER.info("Cow yes.");
             }
-            //Photosynthesis.LOGGER.info("baby yes.");
         }
 
         super.mobTick();
