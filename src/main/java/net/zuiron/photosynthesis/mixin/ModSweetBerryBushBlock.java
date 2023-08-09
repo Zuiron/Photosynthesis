@@ -49,13 +49,13 @@ public abstract class ModSweetBerryBushBlock {
 
                 if(currentCropAge >= minAge && currentCropAge < maxAge && seasonPercentage > 0.5f) { //0.5f = 50% "halfway thru season"
                     if (currentCropAge < 3 && random.nextInt(5) == 0 && world.getBaseLightLevel(pos.up(), 0) >= 9) {
-                        Photosynthesis.LOGGER.info("BushCrop/Berry: " + state.getBlock().getTranslationKey() + ", minAge:" + minAge + ", maxAge:" + maxAge + ", CurrentCropAge: " + currentCropAge + ", NewCropAge: " + (currentCropAge + 1) + ", %:" + seasonPercentage);
+                        //Photosynthesis.LOGGER.info("BushCrop/Berry: " + state.getBlock().getTranslationKey() + ", minAge:" + minAge + ", maxAge:" + maxAge + ", CurrentCropAge: " + currentCropAge + ", NewCropAge: " + (currentCropAge + 1) + ", %:" + seasonPercentage);
                         BlockState blockState = (BlockState) state.with(AGE, currentCropAge + 1);
                         world.setBlockState(pos, blockState, 2);
                         world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Emitter.of(blockState));
                     }
                 } else {
-                    Photosynthesis.LOGGER.info("BushCrop/Berry: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NO GROW"+", %:"+seasonPercentage);
+                    //Photosynthesis.LOGGER.info("BushCrop/Berry: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NO GROW"+", %:"+seasonPercentage);
                 }
 
                 cir.cancel(); //DO NOT run vanilla code.
