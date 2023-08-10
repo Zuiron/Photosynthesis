@@ -67,9 +67,9 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
     @Unique
     protected final int mod_Straw_max = 168000;
     @Unique
-    public int mod_Food = 168000; //7 days (minecraft days)
+    public int mod_Food = 24000; //spawns with: 1 days worth (minecraft days)
     @Unique
-    protected final int mod_Food_max = 168000;
+    protected final int mod_Food_max = 168000; //7 days (minecraft days)
     @Unique
     public int mod_Milk = 0; //this is 4 buckets worth of milk. each grass,hay,straw,food(TMR). adds +1 every tick if above 50%.
     @Unique
@@ -118,7 +118,7 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
                         string += "Grass: "+this.mod_Grass+"/"+mod_Grass_max+" \n";
                         string += "Hay: "+this.mod_Hay+"/"+mod_Hay_max+" \n";
                         string += "Straw: "+this.mod_Straw+"/"+mod_Straw_max+" \n";
-                        string += "Milk: "+this.mod_Milk+"/"+mod_Milk_max+", Buckets: "+getAvailBucketsMilk();
+                        string += "Milk: "+this.mod_Milk+"/"+mod_Milk_max+", Buckets: "+getAvailBucketsMilk()+", Productivity: "+getMilkProductivity()+"%.";
                     }
 
 
@@ -248,6 +248,19 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
         if(this.mod_Milk >= 24000)       { return 1; }
 
         return 0;
+    }
+
+    private float getMilkProductivity() {
+        float productivity = 0.0f;
+
+        if(!this.isBaby() && this.mod_Water >= (this.mod_Water_max/2)) {
+            if(this.mod_Grass > (this.mod_Grass_max/2)) { productivity += 25f; }
+            if(this.mod_Hay   > (this.mod_Hay_max/2)  ) { productivity += 25f; }
+            if(this.mod_Straw > (this.mod_Straw_max/2)) { productivity += 25f; }
+            if(this.mod_Food  > (this.mod_Food_max/2) ) { productivity += 25f; }
+        }
+
+        return productivity;
     }
 
     @Unique
