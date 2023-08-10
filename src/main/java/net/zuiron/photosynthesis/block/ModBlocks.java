@@ -2073,7 +2073,7 @@ public class ModBlocks {
 
     private static Block registerBaleBlock(String name, Block block) {
         Item item = Registry.register(Registries.ITEM, new Identifier(Photosynthesis.MOD_ID, name),
-                new DamageableBlockItem(block, new FabricItemSettings().maxCount(1).maxDamage(1000)));
+                new DamageableBlockItem(block, new FabricItemSettings().maxCount(1).maxDamage(168000)));
 
         return Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, name), block);
     }

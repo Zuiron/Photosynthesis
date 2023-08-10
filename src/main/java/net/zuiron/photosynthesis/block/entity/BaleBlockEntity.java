@@ -13,7 +13,7 @@ import net.minecraft.world.World;
 import net.zuiron.photosynthesis.Photosynthesis;
 
 public class BaleBlockEntity extends BlockEntity {
-    private int durability = 1000; //max 1000
+    private int durability = 168000; //max 1000
     public BaleBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.BALE, pos, state);
     }
@@ -40,6 +40,6 @@ public class BaleBlockEntity extends BlockEntity {
 
     public static void tick(World world, BlockPos blockPos, BlockState blockState, BaleBlockEntity baleBlockEntity) {
         Photosynthesis.LOGGER.info("i am ticking. "+blockState.getBlock().getName()+", dura: "+ baleBlockEntity.durability);
-        //baleBlockEntity.durability--;
+        baleBlockEntity.durability--;
     }
 }

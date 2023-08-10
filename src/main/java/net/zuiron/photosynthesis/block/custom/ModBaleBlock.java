@@ -87,7 +87,7 @@ public class ModBaleBlock extends BlockWithEntity implements BlockEntityProvider
                 //NbtCompound nbtCompound = new NbtCompound();
                 //nbtCompound.putInt("Damage", 500);
                 //baleStack.setNbt(nbtCompound);
-                int actualDamage = 1000 - BaleBlockEntity.getDurability((BaleBlockEntity) blockEntity);
+                int actualDamage = 168000 - BaleBlockEntity.getDurability((BaleBlockEntity) blockEntity);
 
                 baleStack.setDamage(actualDamage);
                 itemStacks.add(baleStack);
@@ -114,7 +114,7 @@ public class ModBaleBlock extends BlockWithEntity implements BlockEntityProvider
 
     @Override
     public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
-        int actualDamage = (1000-itemStack.getDamage());
+        int actualDamage = (168000-itemStack.getDamage());
         Photosynthesis.LOGGER.info("now: "+actualDamage);
 
         BlockEntity blockEntity = world.getBlockEntity(pos);
