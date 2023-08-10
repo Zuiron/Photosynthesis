@@ -118,7 +118,8 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
                         string += "Grass: "+this.mod_Grass+"/"+mod_Grass_max+" \n";
                         string += "Hay: "+this.mod_Hay+"/"+mod_Hay_max+" \n";
                         string += "Straw: "+this.mod_Straw+"/"+mod_Straw_max+" \n";
-                        string += "Milk: "+this.mod_Milk+"/"+mod_Milk_max+", Buckets: "+getAvailBucketsMilk()+", Productivity: "+getMilkProductivity()+"%.";
+                        string += "Milk: "+this.mod_Milk+"/"+mod_Milk_max+", Buckets: "+getAvailBucketsMilk()+" \n";
+                        string += "Productivity: "+getMilkProductivity()+"%";
                     }
 
 
@@ -135,7 +136,7 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
         if (itemStack.isOf(Items.BUCKET) && !this.isBaby() && this.mod_Milk < 24000) {
             if(!player.getWorld().isClient) {
                 this.getWorld().playSound(null, this.getBlockPos(), SoundEvents.ENTITY_COW_HURT, SoundCategory.NEUTRAL, 1.0F, 1.0F);
-                player.sendMessage(Text.literal("Not Enough Milk: " + this.mod_Milk + "/" + this.mod_Milk_max + ", " + getAvailBucketsMilk() + " Buckets."), false);
+                player.sendMessage(Text.literal("Not Enough Milk: " + this.mod_Milk + "/" + this.mod_Milk_max + ", " + getAvailBucketsMilk() + " Buckets. \n Productivity: "+getMilkProductivity()+"%"), false);
             }
         }
         if (itemStack.isOf(Items.BUCKET) && !this.isBaby() && this.mod_Milk >= 24000) {
@@ -148,7 +149,7 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
             this.mod_Milk -= 24000;
 
             if(!player.getWorld().isClient) {
-                player.sendMessage(Text.literal("Milk: " + this.mod_Milk + "/" + this.mod_Milk_max + ", " + getAvailBucketsMilk() + " Buckets Left."), false);
+                player.sendMessage(Text.literal("Milk: " + this.mod_Milk + "/" + this.mod_Milk_max + ", " + getAvailBucketsMilk() + " Buckets Left. \n Productivity: "+getMilkProductivity()+"%"), false);
             }
 
             return ActionResult.success(this.getWorld().isClient);
