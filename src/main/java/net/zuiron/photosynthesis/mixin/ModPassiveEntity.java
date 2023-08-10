@@ -3,12 +3,20 @@ package net.zuiron.photosynthesis.mixin;
 import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
+import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.damage.DamageSources;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemUsage;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
@@ -17,6 +25,7 @@ import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.api.Seasons;
+import net.zuiron.photosynthesis.fluid.ModFluids;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -36,19 +45,35 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
 
     @Shadow public abstract int getBreedingAge();
 
+    @Shadow public abstract boolean isBaby();
+
     @Unique
     public long mob_tick_born = -1;
 
     @Unique
     public int mod_Water = 96000; //4 days (minecraft days) -- one day = 24000
     @Unique
+    protected final int mod_Water_max = 96000;
+    @Unique
     public int mod_Grass = 168000; //7 days (minecraft days)
+    @Unique
+    protected final int mod_Grass_max = 168000;
     @Unique
     public int mod_Hay = 168000; //7 days (minecraft days)
     @Unique
+    protected final int mod_Hay_max = 168000;
+    @Unique
     public int mod_Straw = 168000; //7 days (minecraft days)
     @Unique
-    public int mod_Food = 168000; //7 days (minecraft days)
+    protected final int mod_Straw_max = 168000;
+    @Unique
+    public int mod_Food = 24000; //spawns with: 1 days worth (minecraft days)
+    @Unique
+    protected final int mod_Food_max = 168000; //7 days (minecraft days)
+    @Unique
+    public int mod_Milk = 0; //this is 4 buckets worth of milk. each grass,hay,straw,food(TMR). adds +1 every tick if above 50%.
+    @Unique
+    protected final int mod_Milk_max = 96000; //24000 = one bucket.
 
 
     protected ModPassiveEntity(EntityType<? extends PassiveEntity> entityType, World world) {
@@ -57,11 +82,25 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
 
     @Inject(method = "writeCustomDataToNbt", at = @At("TAIL"))
     public void writeCustomDataToNbt(NbtCompound nbt, CallbackInfo ci) {
-        nbt.putLong("timeofdayborntime", this.mob_tick_born);
+        nbt.putLong("photosynthesis_timeofdayborntime", this.mob_tick_born);
+
+        nbt.putInt("photosynthesis_water",this.mod_Water);
+        nbt.putInt("photosynthesis_grass",this.mod_Grass);
+        nbt.putInt("photosynthesis_hay",this.mod_Hay);
+        nbt.putInt("photosynthesis_straw",this.mod_Straw);
+        nbt.putInt("photosynthesis_food",this.mod_Food);
+        nbt.putInt("photosynthesis_milk",this.mod_Milk);
     }
     @Inject(method = "readCustomDataFromNbt", at = @At("HEAD"))
     public void readCustomDataFromNbt(NbtCompound nbt, CallbackInfo ci) {
-        this.mob_tick_born = nbt.getLong("timeofdayborntime");
+        this.mob_tick_born = nbt.getLong("photosynthesis_timeofdayborntime");
+
+        this.mod_Water = nbt.getInt("photosynthesis_water");
+        this.mod_Grass = nbt.getInt("photosynthesis_grass");
+        this.mod_Hay = nbt.getInt("photosynthesis_hay");
+        this.mod_Straw = nbt.getInt("photosynthesis_straw");
+        this.mod_Food = nbt.getInt("photosynthesis_food");
+        this.mod_Milk = nbt.getInt("photosynthesis_milk");
     }
 
     @Override
@@ -71,19 +110,52 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
             if (player.isPlayer()) {
                 if (player.getStackInHand(hand).isOf(Items.STICK)) {
                     String entityname = this.getWorld().getEntityById(this.getId()).getName().getString(); //gets name, or if tagged tag name.
+                    String transkey = Objects.requireNonNull(this.getWorld().getEntityById(this.getId())).getType().getTranslationKey();
+                    String string = "Entity: "+entityname + " \n";
 
-                    String string = entityname + ": ";
-
-                    string += "test1";
-                    string += "test3";
+                    if(Objects.equals(transkey, "entity.minecraft.cow")) {
+                        string += "Water: "+this.mod_Water+"/"+mod_Water_max+" \n";
+                        string += "Grass: "+this.mod_Grass+"/"+mod_Grass_max+" \n";
+                        string += "Hay: "+this.mod_Hay+"/"+mod_Hay_max+" \n";
+                        string += "Straw: "+this.mod_Straw+"/"+mod_Straw_max+" \n";
+                        string += "Milk: "+this.mod_Milk+"/"+mod_Milk_max+", Buckets: "+getAvailBucketsMilk()+" \n";
+                        string += "Productivity: "+getMilkProductivity()+"%";
+                    }
 
 
                     player.sendMessage(Text.literal(string),false);
+                } else if (player.getStackInHand(hand).isOf(Items.ROTTEN_FLESH)) {
+                    this.mod_Milk = this.mod_Milk_max;
                 }
             }
         }
 
-        return super.interactMob(player, hand);
+        //MILK BUCKET STUFF
+        ItemStack itemStack = player.getStackInHand(hand);
+
+        if (itemStack.isOf(Items.BUCKET) && !this.isBaby() && this.mod_Milk < 24000) {
+            if(!player.getWorld().isClient) {
+                this.getWorld().playSound(null, this.getBlockPos(), SoundEvents.ENTITY_COW_HURT, SoundCategory.NEUTRAL, 1.0F, 1.0F);
+                player.sendMessage(Text.literal("Not Enough Milk: " + this.mod_Milk + "/" + this.mod_Milk_max + ", " + getAvailBucketsMilk() + " Buckets. \n Productivity: "+getMilkProductivity()+"%"), false);
+            }
+        }
+        if (itemStack.isOf(Items.BUCKET) && !this.isBaby() && this.mod_Milk >= 24000) {
+            if(!player.getWorld().isClient) {
+                this.getWorld().playSound(null, this.getBlockPos(), SoundEvents.ENTITY_COW_MILK, SoundCategory.NEUTRAL, 1.0F, 1.0F);
+            }
+            ItemStack itemStack2 = ItemUsage.exchangeStack(itemStack, player, ModFluids.MILK_BUCKET.getDefaultStack()); //we give our own milk bucket instead
+            player.getItemCooldownManager().set(itemStack2.getItem(), 40); //fixes weird issue with reactivating immediately.
+            player.setStackInHand(hand, itemStack2);
+            this.mod_Milk -= 24000;
+
+            if(!player.getWorld().isClient) {
+                player.sendMessage(Text.literal("Milk: " + this.mod_Milk + "/" + this.mod_Milk_max + ", " + getAvailBucketsMilk() + " Buckets Left. \n Productivity: "+getMilkProductivity()+"%"), false);
+            }
+
+            return ActionResult.success(this.getWorld().isClient);
+        } else {
+            return super.interactMob(player, hand);
+        }
     }
 
     @Nullable
@@ -109,15 +181,47 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
         //Photosynthesis.LOGGER.info("transkey: "+type.getTranslationKey());
         String transkey = Objects.requireNonNull(this.getWorld().getEntityById(this.getId())).getType().getTranslationKey();
 
+
+
+
+        //Food Control -------------------------------------------------------------------------------------------------
+        if(Objects.equals(transkey, "entity.minecraft.cow")) {
+            //remove food and waters.
+            if(this.mod_Water > 0)  { this.mod_Water--; }
+            if(this.mod_Grass > 0)  { this.mod_Grass--; }
+            if(this.mod_Hay > 0)    { this.mod_Hay--;   }
+            if(this.mod_Straw > 0)  { this.mod_Straw--; }
+            if(this.mod_Food > 0)   { this.mod_Food--;  } //for cows. TMR. total mixed rations.
+
+            //milk control.
+            if(!this.isBaby() && this.mod_Water >= (this.mod_Water_max/2)) {
+                if(this.mod_Grass > (this.mod_Grass_max/2) && this.mod_Milk < this.mod_Milk_max) { this.mod_Milk++; }
+                if(this.mod_Hay   > (this.mod_Hay_max/2)   && this.mod_Milk < this.mod_Milk_max) { this.mod_Milk++; }
+                if(this.mod_Straw > (this.mod_Straw_max/2) && this.mod_Milk < this.mod_Milk_max) { this.mod_Milk++; }
+                if(this.mod_Food  > (this.mod_Food_max/2)  && this.mod_Milk < this.mod_Milk_max) { this.mod_Milk++; }
+            }
+
+            //damage missing water or food.
+            if(this.mod_Water <= 0) {
+                this.damage(this.getDamageSources().dryOut(), 2);
+            } else if (this.mod_Food <= 0) {
+                if (this.mod_Grass <= 0 || this.mod_Hay <= 0) {
+                    this.damage(this.getDamageSources().starve(), 1);
+                }
+            }
+        }
+
+
+        // Baby -> Mature Control --------------------------------------------------------------------------------------
         //we have to calculate age stuff here because its configurable via config. game restart would be required if we move it outside. we should!
         //for development purposes im going to keep it here awhile.
         Map<String, Integer> name2days2mature = new HashMap<>();
-        name2days2mature.put("entity.minecraft.cow", Seasons.getDaysPerSeasonMod()*8); //2years
-        name2days2mature.put("entity.minecraft.pig", (int) (Seasons.getDaysPerSeasonMod()*1.5)); //6months
-        name2days2mature.put("entity.minecraft.sheep", Seasons.getDaysPerSeasonMod()*4); //1years
-        name2days2mature.put("entity.minecraft.chicken", (int) (Seasons.getDaysPerSeasonMod()*1.25)); //5months
-        name2days2mature.put("entity.minecraft.horse", Seasons.getDaysPerSeasonMod()*16); //4years
-        name2days2mature.put("entity.minecraft.goat", Seasons.getDaysPerSeasonMod()*12); //3years
+        name2days2mature.put("entity.minecraft.cow", Seasons.getDaysPerSeasonMod()*8);                  //2years
+        name2days2mature.put("entity.minecraft.pig", (int) (Seasons.getDaysPerSeasonMod()*1.5));        //6months
+        name2days2mature.put("entity.minecraft.sheep", Seasons.getDaysPerSeasonMod()*4);                //1years
+        name2days2mature.put("entity.minecraft.chicken", (int) (Seasons.getDaysPerSeasonMod()*1.25));   //5months
+        name2days2mature.put("entity.minecraft.horse", Seasons.getDaysPerSeasonMod()*16);               //4years
+        name2days2mature.put("entity.minecraft.goat", Seasons.getDaysPerSeasonMod()*12);                //3years
 
         if(this.getBreedingAge() < 0) { //isbaby, lower than 0 its a baby.
             if(name2days2mature.containsKey(transkey)) {
@@ -135,6 +239,29 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
         }
 
         super.mobTick();
+    }
+
+    @Unique
+    private int getAvailBucketsMilk() {
+        if(this.mod_Milk >= (24000 * 4)) { return 4; }
+        if(this.mod_Milk >= (24000 * 3)) { return 3; }
+        if(this.mod_Milk >= (24000 * 2)) { return 2; }
+        if(this.mod_Milk >= 24000)       { return 1; }
+
+        return 0;
+    }
+
+    private float getMilkProductivity() {
+        float productivity = 0.0f;
+
+        if(!this.isBaby() && this.mod_Water >= (this.mod_Water_max/2)) {
+            if(this.mod_Grass > (this.mod_Grass_max/2)) { productivity += 25f; }
+            if(this.mod_Hay   > (this.mod_Hay_max/2)  ) { productivity += 25f; }
+            if(this.mod_Straw > (this.mod_Straw_max/2)) { productivity += 25f; }
+            if(this.mod_Food  > (this.mod_Food_max/2) ) { productivity += 25f; }
+        }
+
+        return productivity;
     }
 
     @Unique
