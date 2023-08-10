@@ -75,6 +75,11 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
     @Unique
     protected final int mod_Milk_max = 96000; //24000 = one bucket.
 
+    @Unique
+    public int mod_Wool = 0;
+    @Unique
+    protected final int mod_Wool_max = 24000 * (Seasons.getDaysPerSeasonMod() * 4); //takes one full season year.
+
 
     protected ModPassiveEntity(EntityType<? extends PassiveEntity> entityType, World world) {
         super((EntityType<? extends PathAwareEntity>)entityType, world);
@@ -90,6 +95,7 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
         nbt.putInt("photosynthesis_straw",this.mod_Straw);
         nbt.putInt("photosynthesis_food",this.mod_Food);
         nbt.putInt("photosynthesis_milk",this.mod_Milk);
+        nbt.putInt("photosynthesis_wool",this.mod_Wool);
     }
     @Inject(method = "readCustomDataFromNbt", at = @At("HEAD"))
     public void readCustomDataFromNbt(NbtCompound nbt, CallbackInfo ci) {
@@ -101,6 +107,7 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
         this.mod_Straw = nbt.getInt("photosynthesis_straw");
         this.mod_Food = nbt.getInt("photosynthesis_food");
         this.mod_Milk = nbt.getInt("photosynthesis_milk");
+        this.mod_Wool = nbt.getInt("photosynthesis_wool");
     }
 
     @Override
@@ -209,6 +216,25 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
                     this.damage(this.getDamageSources().starve(), 1);
                 }
             }
+        } else if (Objects.equals(transkey, "entity.minecraft.sheep")) {
+            //remove food and waters.
+            if(this.mod_Water > 0)  { this.mod_Water--; }
+            if(this.mod_Grass > 0)  { this.mod_Grass--; }
+            if(this.mod_Hay > 0)    { this.mod_Hay--;   }
+
+            //wool control.
+            if(!this.isBaby() && this.mod_Water >= (this.mod_Water_max/2)) {
+                if(this.mod_Grass > (this.mod_Grass_max/2) || this.mod_Hay > (this.mod_Hay_max/2) && this.mod_Wool < this.mod_Wool_max) {
+                    this.mod_Wool++;
+                }
+            }
+
+            //damage missing water or food.
+            if(this.mod_Water <= 0) {
+                this.damage(this.getDamageSources().dryOut(), 2);
+            } else if (this.mod_Grass <= 0 && this.mod_Hay <= 0) {
+                this.damage(this.getDamageSources().starve(), 1);
+            }
         }
 
 
@@ -259,6 +285,16 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
             if(this.mod_Hay   > (this.mod_Hay_max/2)  ) { productivity += 25f; }
             if(this.mod_Straw > (this.mod_Straw_max/2)) { productivity += 25f; }
             if(this.mod_Food  > (this.mod_Food_max/2) ) { productivity += 25f; }
+        }
+
+        return productivity;
+    }
+
+    private float getWoolProductivity() {
+        float productivity = 0.0f;
+
+        if(!this.isBaby() && this.mod_Water >= (this.mod_Water_max/2)) {
+            if(this.mod_Grass > (this.mod_Grass_max/2) || this.mod_Hay > (this.mod_Hay_max/2)) { productivity += 100f; }
         }
 
         return productivity;
