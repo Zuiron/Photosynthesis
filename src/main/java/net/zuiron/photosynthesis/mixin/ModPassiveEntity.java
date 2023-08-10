@@ -6,13 +6,7 @@ import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemUsage;
-import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.LocalDifficulty;
@@ -20,7 +14,6 @@ import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.api.Seasons;
-import net.zuiron.photosynthesis.fluid.ModFluids;
 import net.zuiron.photosynthesis.util.getCustomVarsPassiveEntity;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
@@ -63,18 +56,18 @@ public abstract class ModPassiveEntity extends PathAwareEntity implements getCus
     @Unique
     protected final int mod_Straw_max = 168000;
     @Unique
-    public int mod_Food = 24000; //spawns with: 1 days worth (minecraft days)
+    public int mod_Food = 168000; //spawns with: 1 days worth (minecraft days)
     @Unique
     protected final int mod_Food_max = 168000; //7 days (minecraft days)
-    @Unique
+    /*@Unique
     public int mod_Milk = 0; //this is 4 buckets worth of milk. each grass,hay,straw,food(TMR). adds +1 every tick if above 50%.
     @Unique
-    protected final int mod_Milk_max = 96000; //24000 = one bucket.
+    protected final int mod_Milk_max = 96000; //24000 = one bucket.*/
 
-    @Unique
+    /*@Unique
     public int mod_Wool = 0;
     @Unique
-    protected final int mod_Wool_max = 24000 * (Seasons.getDaysPerSeasonMod() * 4); //takes one full season year.
+    protected final int mod_Wool_max = 24000 * (Seasons.getDaysPerSeasonMod() * 4); //takes one full season year.*/
 
 
     protected ModPassiveEntity(EntityType<? extends PassiveEntity> entityType, World world) {
@@ -84,7 +77,33 @@ public abstract class ModPassiveEntity extends PathAwareEntity implements getCus
     @Unique
     public int getMod_Water() { return this.mod_Water; }
     @Unique
+    public void setMod_Water(int amount) { this.mod_Water = amount; }
+    @Unique
     public int getMod_Water_max() { return this.mod_Water_max; }
+    @Unique
+    public int getMod_Grass() { return this.mod_Grass; }
+    @Unique
+    public void setMod_Grass(int amount) { this.mod_Grass = amount; }
+    @Unique
+    public int getMod_Grass_max() { return this.mod_Grass_max; }
+    @Unique
+    public int getMod_Hay() { return this.mod_Hay; }
+    @Unique
+    public void setMod_Hay(int amount) { this.mod_Hay = amount; }
+    @Unique
+    public int getMod_Hay_max() { return this.mod_Hay_max; }
+    @Unique
+    public int getMod_Straw() { return this.mod_Straw; }
+    @Unique
+    public void setMod_Straw(int amount) { this.mod_Straw = amount; }
+    @Unique
+    public int getMod_Straw_max() { return this.mod_Straw_max; }
+    @Unique
+    public int getMod_Food() { return this.mod_Food; }
+    @Unique
+    public void setMod_Food(int amount) { this.mod_Food = amount; }
+    @Unique
+    public int getMod_Food_max() { return this.mod_Food_max; }
 
     @Inject(method = "writeCustomDataToNbt", at = @At("TAIL"))
     public void writeCustomDataToNbt(NbtCompound nbt, CallbackInfo ci) {
@@ -95,8 +114,8 @@ public abstract class ModPassiveEntity extends PathAwareEntity implements getCus
         nbt.putInt("photosynthesis_hay",this.mod_Hay);
         nbt.putInt("photosynthesis_straw",this.mod_Straw);
         nbt.putInt("photosynthesis_food",this.mod_Food);
-        nbt.putInt("photosynthesis_milk",this.mod_Milk);
-        nbt.putInt("photosynthesis_wool",this.mod_Wool);
+        //nbt.putInt("photosynthesis_milk",this.mod_Milk);
+        //nbt.putInt("photosynthesis_wool",this.mod_Wool);
     }
     @Inject(method = "readCustomDataFromNbt", at = @At("HEAD"))
     public void readCustomDataFromNbt(NbtCompound nbt, CallbackInfo ci) {
@@ -107,13 +126,13 @@ public abstract class ModPassiveEntity extends PathAwareEntity implements getCus
         this.mod_Hay = nbt.getInt("photosynthesis_hay");
         this.mod_Straw = nbt.getInt("photosynthesis_straw");
         this.mod_Food = nbt.getInt("photosynthesis_food");
-        this.mod_Milk = nbt.getInt("photosynthesis_milk");
-        this.mod_Wool = nbt.getInt("photosynthesis_wool");
+        //this.mod_Milk = nbt.getInt("photosynthesis_milk");
+        //this.mod_Wool = nbt.getInt("photosynthesis_wool");
     }
 
     @Override
     protected ActionResult interactMob(PlayerEntity player, Hand hand) {
-        if (!player.getWorld().isClient()) {
+        /*if (!player.getWorld().isClient()) {
             //get some data.
             if (player.isPlayer()) {
                 if (player.getStackInHand(hand).isOf(Items.STICK)) {
@@ -163,7 +182,8 @@ public abstract class ModPassiveEntity extends PathAwareEntity implements getCus
             return ActionResult.success(this.getWorld().isClient);
         } else {
             return super.interactMob(player, hand);
-        }
+        }*/
+        return super.interactMob(player, hand);
     }
 
     @Nullable
@@ -193,7 +213,7 @@ public abstract class ModPassiveEntity extends PathAwareEntity implements getCus
 
 
         //Food Control -------------------------------------------------------------------------------------------------
-        if(Objects.equals(transkey, "entity.minecraft.cow")) {
+        /*if(Objects.equals(transkey, "entity.minecraft.cow")) {
             //remove food and waters.
             if(this.mod_Water > 0)  { this.mod_Water--; }
             if(this.mod_Grass > 0)  { this.mod_Grass--; }
@@ -236,7 +256,7 @@ public abstract class ModPassiveEntity extends PathAwareEntity implements getCus
             } else if (this.mod_Grass <= 0 && this.mod_Hay <= 0) {
                 this.damage(this.getDamageSources().starve(), 1);
             }
-        }
+        }*/
 
 
         // Baby -> Mature Control --------------------------------------------------------------------------------------
@@ -268,7 +288,7 @@ public abstract class ModPassiveEntity extends PathAwareEntity implements getCus
         super.mobTick();
     }
 
-    @Unique
+    /*@Unique
     public int photosynthesis$getAvailBucketsMilk() {
         if(this.mod_Milk >= (24000 * 4)) { return 4; }
         if(this.mod_Milk >= (24000 * 3)) { return 3; }
@@ -289,9 +309,9 @@ public abstract class ModPassiveEntity extends PathAwareEntity implements getCus
         }
 
         return productivity;
-    }
+    }*/
 
-    public float photosynthesis$getWoolProductivity() {
+    /*public float photosynthesis$getWoolProductivity() {
         float productivity = 0.0f;
 
         if(!this.isBaby() && this.mod_Water >= (this.mod_Water_max/2)) {
@@ -299,7 +319,7 @@ public abstract class ModPassiveEntity extends PathAwareEntity implements getCus
         }
 
         return productivity;
-    }
+    }*/
 
     @Unique
     private static long calculateEntityAge(long birthTick, long currentTick) {
