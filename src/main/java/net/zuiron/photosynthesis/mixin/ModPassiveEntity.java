@@ -193,7 +193,7 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
             if(this.mod_Food > 0)   { this.mod_Food--;  } //for cows. TMR. total mixed rations.
 
             //milk control.
-            if(!this.isBaby()) {
+            if(!this.isBaby() && this.mod_Water >= (this.mod_Water_max/2)) {
                 if(this.mod_Grass > (this.mod_Grass_max/2) && this.mod_Milk < this.mod_Milk_max) { this.mod_Milk++; }
                 if(this.mod_Hay   > (this.mod_Hay_max/2)   && this.mod_Milk < this.mod_Milk_max) { this.mod_Milk++; }
                 if(this.mod_Straw > (this.mod_Straw_max/2) && this.mod_Milk < this.mod_Milk_max) { this.mod_Milk++; }
