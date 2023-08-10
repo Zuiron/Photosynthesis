@@ -51,7 +51,9 @@ public class BaleBlockEntity extends BlockEntity {
     }
 
     public static void tick(World world, BlockPos blockPos, BlockState blockState, BaleBlockEntity baleBlockEntity) {
-        Photosynthesis.LOGGER.info("i am ticking. "+blockState.getBlock().getName()+", dura: "+ baleBlockEntity.durability);
+        if(!world.isClient()) {
+            Photosynthesis.LOGGER.info("i am ticking. " + blockState.getBlock().toString() + ", dura: " + baleBlockEntity.durability);
+        }
         //baleBlockEntity.durability--; //just testing.
 
         // Get the range in which you want to scan for entities
