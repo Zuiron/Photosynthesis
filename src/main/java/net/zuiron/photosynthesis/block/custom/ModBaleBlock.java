@@ -9,6 +9,8 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
@@ -91,7 +93,15 @@ public class ModBaleBlock extends BlockWithEntity implements BlockEntityProvider
 
                 baleStack.setDamage(actualDamage);
                 itemStacks.add(baleStack);
-                ItemScatterer.spawn(world, pos, itemStacks);
+
+                //only drop if durability is higher than 0.
+                if(BaleBlockEntity.getDurability((BaleBlockEntity) blockEntity) > 0) {
+                    ItemScatterer.spawn(world, pos, itemStacks);
+                } else {
+                    if(!world.isClient()) {
+                        world.playSound(null, pos, SoundEvents.BLOCK_GRASS_HIT, SoundCategory.BLOCKS, 1.0F, 1.0F);
+                    }
+                }
 
                 world.updateComparators(pos,this);
             }
