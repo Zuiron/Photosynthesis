@@ -56,7 +56,7 @@ public class BaleBlockEntity extends BlockEntity {
         }
 
         Photosynthesis.LOGGER.info("i am ticking. "+blockState.getBlock().getName()+", dura: "+ baleBlockEntity.durability);
-        //baleBlockEntity.durability--; //working.
+        //baleBlockEntity.durability--; //just testing.
 
         // Get the range in which you want to scan for entities
         double range = 10.0; // Adjust this value as needed
@@ -67,17 +67,13 @@ public class BaleBlockEntity extends BlockEntity {
                 blockPos.getX() + range, blockPos.getY() + range, blockPos.getZ() + range
         );
 
+        // Look for passiveEntity entities
         Predicate<Entity> entityPredicate = entity -> {
             return entity instanceof PassiveEntity;
         };
 
-
-        //world.getEntitiesByClass(PassiveEntity.class, boundingBox,
         List<Entity> filteredEntities = world.getEntitiesByClass(Entity.class, boundingBox, entityPredicate);
         for (Entity entity : filteredEntities) {
-            // Do something with the entity
-            //Photosynthesis.LOGGER.info("entity: "+entity+", name: "+entity.getName().getString());
-            //((getCustomVarsPassiveEntity) entity).setMod_Hay(2);
 
             if(entity instanceof CowEntity) {
                 if (blockState.getBlock() == ModBlocks.GRASS_BALE) {
@@ -95,9 +91,7 @@ public class BaleBlockEntity extends BlockEntity {
                         ((getCustomVarsPassiveEntity) entity).setMod_Grass(mod_Grass + baleBlockEntity.durability);
                         baleBlockEntity.durability -= baleBlockEntity.durability;
                         world.breakBlock(blockPos, false);
-                    } else {
-                        world.breakBlock(blockPos, false);
-                    }
+                    } else { world.breakBlock(blockPos, false); } //ehh just in case.
                 }
             }
 
