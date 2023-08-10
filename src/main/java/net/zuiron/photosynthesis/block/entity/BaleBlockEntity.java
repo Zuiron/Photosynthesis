@@ -41,13 +41,13 @@ public class BaleBlockEntity extends BlockEntity {
     @Override
     protected void writeNbt(NbtCompound nbt) {
         super.writeNbt(nbt);
-        nbt.putInt("bale.durability", durability);
+        nbt.putInt("bale.durability", this.durability);
     }
 
     @Override
     public void readNbt(NbtCompound nbt) {
         super.readNbt(nbt);
-        durability = nbt.getInt("bale.durability");
+        this.durability = nbt.getInt("bale.durability");
     }
 
     public static void tick(World world, BlockPos blockPos, BlockState blockState, BaleBlockEntity baleBlockEntity) {
