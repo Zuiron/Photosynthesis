@@ -3,12 +3,7 @@ package net.zuiron.photosynthesis.mixin;
 import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
-import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.damage.DamageSources;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.PathAwareEntity;
-import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -26,6 +21,7 @@ import net.minecraft.world.World;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.api.Seasons;
 import net.zuiron.photosynthesis.fluid.ModFluids;
+import net.zuiron.photosynthesis.util.getCustomVarsPassiveEntity;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -39,7 +35,7 @@ import java.util.Map;
 import java.util.Objects;
 
 @Mixin(PassiveEntity.class)
-public abstract class ModPassiveEntity extends PathAwareEntity {
+public abstract class ModPassiveEntity extends PathAwareEntity implements getCustomVarsPassiveEntity {
 
     @Shadow public abstract void setBreedingAge(int age);
 
@@ -85,6 +81,11 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
         super((EntityType<? extends PathAwareEntity>)entityType, world);
     }
 
+    @Unique
+    public int getMod_Water() { return this.mod_Water; }
+    @Unique
+    public int getMod_Water_max() { return this.mod_Water_max; }
+
     @Inject(method = "writeCustomDataToNbt", at = @At("TAIL"))
     public void writeCustomDataToNbt(NbtCompound nbt, CallbackInfo ci) {
         nbt.putLong("photosynthesis_timeofdayborntime", this.mob_tick_born);
@@ -125,8 +126,8 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
                         string += "Grass: "+this.mod_Grass+"/"+mod_Grass_max+" \n";
                         string += "Hay: "+this.mod_Hay+"/"+mod_Hay_max+" \n";
                         string += "Straw: "+this.mod_Straw+"/"+mod_Straw_max+" \n";
-                        string += "Milk: "+this.mod_Milk+"/"+mod_Milk_max+", Buckets: "+getAvailBucketsMilk()+" \n";
-                        string += "Productivity: "+getMilkProductivity()+"%";
+                        string += "Milk: "+this.mod_Milk+"/"+mod_Milk_max+", Buckets: "+ photosynthesis$getAvailBucketsMilk()+" \n";
+                        string += "Productivity: "+ photosynthesis$getMilkProductivity()+"%";
                     }
 
 
@@ -143,7 +144,7 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
         if (itemStack.isOf(Items.BUCKET) && !this.isBaby() && this.mod_Milk < 24000) {
             if(!player.getWorld().isClient) {
                 this.getWorld().playSound(null, this.getBlockPos(), SoundEvents.ENTITY_COW_HURT, SoundCategory.NEUTRAL, 1.0F, 1.0F);
-                player.sendMessage(Text.literal("Not Enough Milk: " + this.mod_Milk + "/" + this.mod_Milk_max + ", " + getAvailBucketsMilk() + " Buckets. \n Productivity: "+getMilkProductivity()+"%"), false);
+                player.sendMessage(Text.literal("Not Enough Milk: " + this.mod_Milk + "/" + this.mod_Milk_max + ", " + photosynthesis$getAvailBucketsMilk() + " Buckets. \n Productivity: "+ photosynthesis$getMilkProductivity()+"%"), false);
             }
         }
         if (itemStack.isOf(Items.BUCKET) && !this.isBaby() && this.mod_Milk >= 24000) {
@@ -156,7 +157,7 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
             this.mod_Milk -= 24000;
 
             if(!player.getWorld().isClient) {
-                player.sendMessage(Text.literal("Milk: " + this.mod_Milk + "/" + this.mod_Milk_max + ", " + getAvailBucketsMilk() + " Buckets Left. \n Productivity: "+getMilkProductivity()+"%"), false);
+                player.sendMessage(Text.literal("Milk: " + this.mod_Milk + "/" + this.mod_Milk_max + ", " + photosynthesis$getAvailBucketsMilk() + " Buckets Left. \n Productivity: "+ photosynthesis$getMilkProductivity()+"%"), false);
             }
 
             return ActionResult.success(this.getWorld().isClient);
@@ -268,7 +269,7 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
     }
 
     @Unique
-    private int getAvailBucketsMilk() {
+    public int photosynthesis$getAvailBucketsMilk() {
         if(this.mod_Milk >= (24000 * 4)) { return 4; }
         if(this.mod_Milk >= (24000 * 3)) { return 3; }
         if(this.mod_Milk >= (24000 * 2)) { return 2; }
@@ -277,7 +278,7 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
         return 0;
     }
 
-    private float getMilkProductivity() {
+    public float photosynthesis$getMilkProductivity() {
         float productivity = 0.0f;
 
         if(!this.isBaby() && this.mod_Water >= (this.mod_Water_max/2)) {
@@ -290,7 +291,7 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
         return productivity;
     }
 
-    private float getWoolProductivity() {
+    public float photosynthesis$getWoolProductivity() {
         float productivity = 0.0f;
 
         if(!this.isBaby() && this.mod_Water >= (this.mod_Water_max/2)) {
