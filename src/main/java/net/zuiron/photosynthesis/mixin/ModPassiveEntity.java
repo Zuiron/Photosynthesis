@@ -11,8 +11,12 @@ import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemUsage;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
@@ -21,6 +25,7 @@ import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.api.Seasons;
+import net.zuiron.photosynthesis.fluid.ModFluids;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -119,12 +124,37 @@ public abstract class ModPassiveEntity extends PathAwareEntity {
 
                     player.sendMessage(Text.literal(string),false);
                 } else if (player.getStackInHand(hand).isOf(Items.ROTTEN_FLESH)) {
-                    this.mod_Milk += 24000;
+                    this.mod_Milk = this.mod_Milk_max;
                 }
             }
         }
 
-        return super.interactMob(player, hand);
+        //MILK BUCKET STUFF
+        ItemStack itemStack = player.getStackInHand(hand);
+
+        if (itemStack.isOf(Items.BUCKET) && !this.isBaby() && this.mod_Milk < 24000) {
+            if(!player.getWorld().isClient) {
+                this.getWorld().playSound(null, this.getBlockPos(), SoundEvents.ENTITY_COW_HURT, SoundCategory.NEUTRAL, 1.0F, 1.0F);
+                player.sendMessage(Text.literal("Not Enough Milk: " + this.mod_Milk + "/" + this.mod_Milk_max + ", " + getAvailBucketsMilk() + " Buckets."), false);
+            }
+        }
+        if (itemStack.isOf(Items.BUCKET) && !this.isBaby() && this.mod_Milk >= 24000) {
+            if(!player.getWorld().isClient) {
+                this.getWorld().playSound(null, this.getBlockPos(), SoundEvents.ENTITY_COW_MILK, SoundCategory.NEUTRAL, 1.0F, 1.0F);
+            }
+            ItemStack itemStack2 = ItemUsage.exchangeStack(itemStack, player, ModFluids.MILK_BUCKET.getDefaultStack()); //we give our own milk bucket instead
+            player.getItemCooldownManager().set(itemStack2.getItem(), 40); //fixes weird issue with reactivating immediately.
+            player.setStackInHand(hand, itemStack2);
+            this.mod_Milk -= 24000;
+
+            if(!player.getWorld().isClient) {
+                player.sendMessage(Text.literal("Milk: " + this.mod_Milk + "/" + this.mod_Milk_max + ", " + getAvailBucketsMilk() + " Buckets Left."), false);
+            }
+
+            return ActionResult.success(this.getWorld().isClient);
+        } else {
+            return super.interactMob(player, hand);
+        }
     }
 
     @Nullable
