@@ -26,6 +26,7 @@ import java.util.function.Predicate;
 
 public class BaleBlockEntity extends BlockEntity {
     private int durability = 168000; //max 1000
+    private boolean durability_set = false;
     public BaleBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.BALE, pos, state);
     }
@@ -36,6 +37,7 @@ public class BaleBlockEntity extends BlockEntity {
 
     public static void setDurability(BaleBlockEntity baleBlockEntity, int durability) {
         baleBlockEntity.durability = durability;
+        baleBlockEntity.durability_set = true;
     }
 
     @Override
@@ -51,6 +53,10 @@ public class BaleBlockEntity extends BlockEntity {
     }
 
     public static void tick(World world, BlockPos blockPos, BlockState blockState, BaleBlockEntity baleBlockEntity) {
+        if(!baleBlockEntity.durability_set) {
+            return;
+        }
+
         if(!world.isClient()) {
             Photosynthesis.LOGGER.info("i am ticking. " + blockState.getBlock().toString() + ", dura: " + baleBlockEntity.durability);
         }
