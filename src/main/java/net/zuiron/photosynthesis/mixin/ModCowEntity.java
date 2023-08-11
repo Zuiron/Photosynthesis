@@ -40,6 +40,11 @@ public abstract class ModCowEntity extends AnimalEntity {
     protected void mobTick() {
         //String transkey = Objects.requireNonNull(this.getWorld().getEntityById(this.getId())).getType().getTranslationKey();
 
+        //50% if actually ticking. making food last what, 7+7 days on average? so 14 mc days.
+        /*if (getWorld().random.nextInt(2) != 0) {
+            return;
+        }*/
+
         int mod_Water = ((getCustomVarsPassiveEntity) this).getMod_Water();
         int mod_Water_max = ((getCustomVarsPassiveEntity) this).getMod_Water_max();
 
