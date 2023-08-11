@@ -43,12 +43,14 @@ public class BaleBlockEntity extends BlockEntity {
     @Override
     protected void writeNbt(NbtCompound nbt) {
         nbt.putInt("bale.durability", durability);
+        nbt.putBoolean("bale.durability_set", durability_set);
         super.writeNbt(nbt);
     }
 
     @Override
     public void readNbt(NbtCompound nbt) {
         durability = nbt.getInt("bale.durability");
+        durability_set = nbt.getBoolean("bale.durability_set");
         super.readNbt(nbt);
     }
 
@@ -81,7 +83,7 @@ public class BaleBlockEntity extends BlockEntity {
 
             if(entity instanceof CowEntity) {
                 if (blockState.getBlock() == ModBlocks.GRASS_BALE) {
-                    int mod_Grass = ((getCustomVarsPassiveEntity) entity).getMod_Grass();
+                    /*int mod_Grass = ((getCustomVarsPassiveEntity) entity).getMod_Grass();
                     int mod_Grass_max = ((getCustomVarsPassiveEntity) entity).getMod_Grass_max();
 
                     int missing = mod_Grass_max - mod_Grass;
@@ -95,10 +97,11 @@ public class BaleBlockEntity extends BlockEntity {
                         ((getCustomVarsPassiveEntity) entity).setMod_Grass(mod_Grass + baleBlockEntity.durability);
                         baleBlockEntity.durability -= baleBlockEntity.durability;
                         world.breakBlock(blockPos, false);
-                    } else { world.breakBlock(blockPos, false); } //ehh just in case.
+                    } else { world.breakBlock(blockPos, false); } //ehh just in case.*/
+                    onTickGrassBale(world, blockPos, entity, baleBlockEntity);
                 }
                 else if (blockState.getBlock() == ModBlocks.HAY_BALE) {
-                    int mod_Hay = ((getCustomVarsPassiveEntity) entity).getMod_Hay();
+                    /*int mod_Hay = ((getCustomVarsPassiveEntity) entity).getMod_Hay();
                     int mod_Hay_max = ((getCustomVarsPassiveEntity) entity).getMod_Hay_max();
 
                     int missing = mod_Hay_max - mod_Hay;
@@ -112,10 +115,11 @@ public class BaleBlockEntity extends BlockEntity {
                         ((getCustomVarsPassiveEntity) entity).setMod_Hay(mod_Hay + baleBlockEntity.durability);
                         baleBlockEntity.durability -= baleBlockEntity.durability;
                         world.breakBlock(blockPos, false);
-                    } else { world.breakBlock(blockPos, false); } //ehh just in case.
+                    } else { world.breakBlock(blockPos, false); } //ehh just in case.*/
+                    onTickHayBale(world, blockPos, entity, baleBlockEntity);
                 }
                 else if (blockState.getBlock() == ModBlocks.STRAW_BALE) {
-                    int mod_Straw = ((getCustomVarsPassiveEntity) entity).getMod_Straw();
+                    /*int mod_Straw = ((getCustomVarsPassiveEntity) entity).getMod_Straw();
                     int mod_Straw_max = ((getCustomVarsPassiveEntity) entity).getMod_Straw_max();
 
                     int missing = mod_Straw_max - mod_Straw;
@@ -129,10 +133,65 @@ public class BaleBlockEntity extends BlockEntity {
                         ((getCustomVarsPassiveEntity) entity).setMod_Straw(mod_Straw + baleBlockEntity.durability);
                         baleBlockEntity.durability -= baleBlockEntity.durability;
                         world.breakBlock(blockPos, false);
-                    } else { world.breakBlock(blockPos, false); } //ehh just in case.
+                    } else { world.breakBlock(blockPos, false); } //ehh just in case.*/
+                    onTickStrawBale(world, blockPos, entity, baleBlockEntity);
                 }
             }
 
         }
+    }
+
+    public static void onTickGrassBale(World world, BlockPos blockPos, Entity entity, BaleBlockEntity baleBlockEntity) {
+        int mod_Grass = ((getCustomVarsPassiveEntity) entity).getMod_Grass();
+        int mod_Grass_max = ((getCustomVarsPassiveEntity) entity).getMod_Grass_max();
+
+        int missing = mod_Grass_max - mod_Grass;
+
+        if (baleBlockEntity.durability >= missing) {
+            //add missing difference.
+            ((getCustomVarsPassiveEntity) entity).setMod_Grass(mod_Grass + missing);
+            baleBlockEntity.durability -= missing;
+        } else if (baleBlockEntity.durability > 0) {
+            //didnt have enough for missing, but giving rest of durability.
+            ((getCustomVarsPassiveEntity) entity).setMod_Grass(mod_Grass + baleBlockEntity.durability);
+            baleBlockEntity.durability -= baleBlockEntity.durability;
+            world.breakBlock(blockPos, false);
+        } else { world.breakBlock(blockPos, false); } //ehh just in case.
+    }
+
+    public static void onTickHayBale(World world, BlockPos blockPos, Entity entity, BaleBlockEntity baleBlockEntity) {
+        int mod_Hay = ((getCustomVarsPassiveEntity) entity).getMod_Hay();
+        int mod_Hay_max = ((getCustomVarsPassiveEntity) entity).getMod_Hay_max();
+
+        int missing = mod_Hay_max - mod_Hay;
+
+        if (baleBlockEntity.durability >= missing) {
+            //add missing difference.
+            ((getCustomVarsPassiveEntity) entity).setMod_Hay(mod_Hay + missing);
+            baleBlockEntity.durability -= missing;
+        } else if (baleBlockEntity.durability > 0) {
+            //didnt have enough for missing, but giving rest of durability.
+            ((getCustomVarsPassiveEntity) entity).setMod_Hay(mod_Hay + baleBlockEntity.durability);
+            baleBlockEntity.durability -= baleBlockEntity.durability;
+            world.breakBlock(blockPos, false);
+        } else { world.breakBlock(blockPos, false); } //ehh just in case.
+    }
+
+    public static void onTickStrawBale(World world, BlockPos blockPos, Entity entity, BaleBlockEntity baleBlockEntity) {
+        int mod_Straw = ((getCustomVarsPassiveEntity) entity).getMod_Straw();
+        int mod_Straw_max = ((getCustomVarsPassiveEntity) entity).getMod_Straw_max();
+
+        int missing = mod_Straw_max - mod_Straw;
+
+        if (baleBlockEntity.durability >= missing) {
+            //add missing difference.
+            ((getCustomVarsPassiveEntity) entity).setMod_Straw(mod_Straw + missing);
+            baleBlockEntity.durability -= missing;
+        } else if (baleBlockEntity.durability > 0) {
+            //didnt have enough for missing, but giving rest of durability.
+            ((getCustomVarsPassiveEntity) entity).setMod_Straw(mod_Straw + baleBlockEntity.durability);
+            baleBlockEntity.durability -= baleBlockEntity.durability;
+            world.breakBlock(blockPos, false);
+        } else { world.breakBlock(blockPos, false); } //ehh just in case.
     }
 }
