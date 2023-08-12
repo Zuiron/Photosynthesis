@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "photosynthesis:block/feedingtrough"
+    },
+    "facing=south": {
+      "model": "photosynthesis:block/feedingtrough",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "photosynthesis:block/feedingtrough",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "photosynthesis:block/feedingtrough",
+      "y": 90
+    }
+  }
+}

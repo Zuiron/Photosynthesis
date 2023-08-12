@@ -391,6 +391,7 @@ public class PhotosynthesisClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.LATEX_EXTRACTOR);
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.MAPLE_EXTRACTOR);
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.PLATE);
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.FEEDINGTROUGH);
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.TOOLRACK);
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.DRYINGNET);
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.DRYINGRACK);
@@ -411,6 +412,7 @@ public class PhotosynthesisClient implements ClientModInitializer {
         HandledScreens.register(ModScreenHandlers.FLUID_PRESS_SCREEN_HANDLER, FluidPressScreen::new);
         HandledScreens.register(ModScreenHandlers.MILKSEPERATOR_SCREEN_HANDLER, MilkSeperatorScreen::new);
         HandledScreens.register(ModScreenHandlers.PLATE_SCREEN_HANDLER, PlateScreen::new);
+        HandledScreens.register(ModScreenHandlers.FEEDINGTROUGH_SCREEN_HANDLER, FeedingTroughScreen::new);
         HandledScreens.register(ModScreenHandlers.TOOLRACK_SCREEN_HANDLER, ToolRackScreen::new);
         HandledScreens.register(ModScreenHandlers.SHELF_SCREEN_HANDLER, ShelfScreen::new);
         HandledScreens.register(ModScreenHandlers.DRYINGNET_SCREEN_HANDLER, DryingNetScreen::new);
@@ -424,6 +426,7 @@ public class PhotosynthesisClient implements ClientModInitializer {
         BlockEntityRendererFactories.register(ModBlockEntities.CUTTING_BOARD, CuttingBoardBlockEntityRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.SKILLET, SkilletBlockEntityRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.PLATE, PlateBlockEntityRenderer::new);
+        //BlockEntityRendererFactories.register(ModBlockEntities.FEEDINGTROUGH, FeedingTroughBlockEntityRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.TOOLRACK, ToolRackBlockEntityRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.SHELF, ShelfBlockEntityRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.DRYINGNET, DryingNetBlockEntityRenderer::new);

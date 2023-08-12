@@ -36,6 +36,8 @@ public class ModBlockEntities {
     public static BlockEntityType<SingleDoubleChestBlockEntity> SINGLEDOUBLECHEST;
     public static BlockEntityType<BaleBlockEntity> BALE;
 
+    public static BlockEntityType<FeedingTroughBlockEntity> FEEDINGTROUGH;
+
     public static void registerBlockEntities() {
         CUTTING_BOARD = Registry.register(Registries.BLOCK_ENTITY_TYPE,
                 new Identifier(Photosynthesis.MOD_ID, "cutting_board"),
@@ -136,6 +138,11 @@ public class ModBlockEntities {
                 new Identifier(Photosynthesis.MOD_ID, "bale"),
                 FabricBlockEntityTypeBuilder.create(BaleBlockEntity::new,
                         ModBlocks.GRASS_BALE,ModBlocks.HAY_BALE,ModBlocks.STRAW_BALE).build(null));
+
+        FEEDINGTROUGH = Registry.register(Registries.BLOCK_ENTITY_TYPE,
+                new Identifier(Photosynthesis.MOD_ID, "feedingtrough"),
+                FabricBlockEntityTypeBuilder.create(FeedingTroughBlockEntity::new,
+                        ModBlocks.FEEDINGTROUGH).build(null));
 
         SINGLEDOUBLECHEST = Registry.register(Registries.BLOCK_ENTITY_TYPE,
                 new Identifier(Photosynthesis.MOD_ID, "singledoublechest"),
