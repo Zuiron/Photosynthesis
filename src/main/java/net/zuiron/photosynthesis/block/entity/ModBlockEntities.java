@@ -37,6 +37,7 @@ public class ModBlockEntities {
     public static BlockEntityType<BaleBlockEntity> BALE;
 
     public static BlockEntityType<FeedingTroughBlockEntity> FEEDINGTROUGH;
+    public static BlockEntityType<WaterTroughBlockEntity> WATERTROUGH;
 
     public static void registerBlockEntities() {
         CUTTING_BOARD = Registry.register(Registries.BLOCK_ENTITY_TYPE,
@@ -143,6 +144,11 @@ public class ModBlockEntities {
                 new Identifier(Photosynthesis.MOD_ID, "feedingtrough"),
                 FabricBlockEntityTypeBuilder.create(FeedingTroughBlockEntity::new,
                         ModBlocks.FEEDINGTROUGH).build(null));
+
+        WATERTROUGH = Registry.register(Registries.BLOCK_ENTITY_TYPE,
+                new Identifier(Photosynthesis.MOD_ID, "watertrough"),
+                FabricBlockEntityTypeBuilder.create(WaterTroughBlockEntity::new,
+                        ModBlocks.WATERTROUGH).build(null));
 
         SINGLEDOUBLECHEST = Registry.register(Registries.BLOCK_ENTITY_TYPE,
                 new Identifier(Photosynthesis.MOD_ID, "singledoublechest"),
@@ -307,6 +313,8 @@ public class ModBlockEntities {
         FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidStorage, LATEX_EXTRACTOR); //ALL sides extract, ok.
 
         FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidStorage, MAPLE_EXTRACTOR); //ALL sides extract, ok.
+
+        FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidStorage, WATERTROUGH); //ALL sides extract, ok.
 
         FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> null, KEG);
         //FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidOutput, KEG);

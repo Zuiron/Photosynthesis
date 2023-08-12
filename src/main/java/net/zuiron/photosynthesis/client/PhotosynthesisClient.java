@@ -392,6 +392,7 @@ public class PhotosynthesisClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.MAPLE_EXTRACTOR);
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.PLATE);
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.FEEDINGTROUGH);
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.WATERTROUGH);
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.TOOLRACK);
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.DRYINGNET);
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.DRYINGRACK);
@@ -413,6 +414,7 @@ public class PhotosynthesisClient implements ClientModInitializer {
         HandledScreens.register(ModScreenHandlers.MILKSEPERATOR_SCREEN_HANDLER, MilkSeperatorScreen::new);
         HandledScreens.register(ModScreenHandlers.PLATE_SCREEN_HANDLER, PlateScreen::new);
         HandledScreens.register(ModScreenHandlers.FEEDINGTROUGH_SCREEN_HANDLER, FeedingTroughScreen::new);
+        HandledScreens.register(ModScreenHandlers.WATERTROUGH_SCREEN_HANDLER, WaterTroughScreen::new);
         HandledScreens.register(ModScreenHandlers.TOOLRACK_SCREEN_HANDLER, ToolRackScreen::new);
         HandledScreens.register(ModScreenHandlers.SHELF_SCREEN_HANDLER, ShelfScreen::new);
         HandledScreens.register(ModScreenHandlers.DRYINGNET_SCREEN_HANDLER, DryingNetScreen::new);

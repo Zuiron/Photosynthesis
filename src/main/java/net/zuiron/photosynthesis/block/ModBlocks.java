@@ -132,6 +132,10 @@ public class ModBlocks {
             new FeedingTroughBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
                     .strength(2f).nonOpaque()));
 
+    public static final Block WATERTROUGH = registerBlock("watertrough",
+            new WaterTroughBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
     public static final Block TOOLRACK = registerBlock("toolrack",
             new ToolRackBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
                     .strength(2f).nonOpaque()));

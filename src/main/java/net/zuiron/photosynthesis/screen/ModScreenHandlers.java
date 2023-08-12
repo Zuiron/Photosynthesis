@@ -47,6 +47,9 @@ public class ModScreenHandlers {
     public static ScreenHandlerType<FeedingTroughScreenHandler> FEEDINGTROUGH_SCREEN_HANDLER =
             new ExtendedScreenHandlerType<>(FeedingTroughScreenHandler::new);
 
+    public static ScreenHandlerType<WaterTroughScreenHandler> WATERTROUGH_SCREEN_HANDLER =
+            new ExtendedScreenHandlerType<>(WaterTroughScreenHandler::new);
+
     public static ScreenHandlerType<ToolRackScreenHandler> TOOLRACK_SCREEN_HANDLER =
             new ExtendedScreenHandlerType<>(ToolRackScreenHandler::new);
 
@@ -98,6 +101,8 @@ public class ModScreenHandlers {
                 PLATE_SCREEN_HANDLER);
         Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "feedingtrough"),
                 FEEDINGTROUGH_SCREEN_HANDLER);
+        Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "watertrough"),
+                WATERTROUGH_SCREEN_HANDLER);
         Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "toolrack"),
                 TOOLRACK_SCREEN_HANDLER);
         Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "shelf"),
