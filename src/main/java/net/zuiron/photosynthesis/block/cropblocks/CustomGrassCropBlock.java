@@ -10,6 +10,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldView;
+import net.zuiron.photosynthesis.api.Seasons;
 import net.zuiron.photosynthesis.item.ModItems;
 
 public class CustomGrassCropBlock extends CropBlock {
@@ -56,6 +57,13 @@ public class CustomGrassCropBlock extends CropBlock {
 
             default: return Items.AIR;
         }
+    }
+
+    @Override
+    public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state, boolean isClient) {
+        if (Seasons.isSeasonsEnabled()) {
+            return false;
+        } else return this.getAge(state) < 7;
     }
 
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
