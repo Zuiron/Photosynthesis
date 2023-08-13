@@ -60,7 +60,7 @@ public class BaleBlockEntity extends BlockEntity {
         }
 
         if(!world.isClient()) {
-            Photosynthesis.LOGGER.info("i am ticking. " + blockState.getBlock().toString() + ", dura: " + baleBlockEntity.durability);
+            //Photosynthesis.LOGGER.info("i am ticking. " + blockState.getBlock().toString() + ", dura: " + baleBlockEntity.durability);
         }
         //baleBlockEntity.durability--; //just testing.
 

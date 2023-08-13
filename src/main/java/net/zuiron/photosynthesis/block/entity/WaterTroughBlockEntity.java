@@ -11,7 +11,10 @@ import net.fabricmc.fabric.api.transfer.v1.transaction.Transaction;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.ItemEntity;
+import net.minecraft.entity.passive.CowEntity;
+import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.fluid.Fluids;
@@ -26,10 +29,13 @@ import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.api.Seasons;
@@ -37,12 +43,16 @@ import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.block.custom.MapleExtractorBlock;
 import net.zuiron.photosynthesis.block.custom.WaterTroughBlock;
 import net.zuiron.photosynthesis.fluid.ModFluids;
+import net.zuiron.photosynthesis.item.ModItems;
 import net.zuiron.photosynthesis.networking.ModMessages;
 import net.zuiron.photosynthesis.screen.MapleExtractorScreenHandler;
 import net.zuiron.photosynthesis.screen.WaterTroughScreenHandler;
+import net.zuiron.photosynthesis.util.getCustomVarsPassiveEntity;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Predicate;
 
 public class WaterTroughBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(2, ItemStack.EMPTY); //N#:SLOTS
@@ -200,19 +210,55 @@ public class WaterTroughBlockEntity extends BlockEntity implements ExtendedScree
         if(world.isClient()) {
             return;
         }
-        /*
-        if(hasRecipe(entity) && canHarvestMaple(world, blockPos, entity)) {
-            entity.progress++;
-            markDirty(world, blockPos, state);
-            if(entity.progress >= entity.maxProgress) {
-                craftItem(entity);
-            }
-        } else {
-            entity.resetProgress();
-            markDirty(world, blockPos, state);
+
+        //if tank doesnt hold water or atleast one droplet. dont even tick. (lets try reduce lag)
+        /*if(entity.fluidStorage.amount < FluidConstants.DROPLET && !entity.fluidStorage.variant.isOf(Fluids.WATER)) {
+            return;
         }*/
 
-        //if we have a maple bucket in input slot TOP.
+
+
+        // Get the range in which you want to scan for entities
+        double range = 10.0; // Adjust this value as needed
+
+        // Calculate the bounding box around the block position
+        Box boundingBox = new Box(
+                blockPos.getX() - range, blockPos.getY() - range, blockPos.getZ() - range,
+                blockPos.getX() + range, blockPos.getY() + range, blockPos.getZ() + range
+        );
+
+        // Look for passiveEntity entities
+        Predicate<Entity> entityPredicate = entityP -> {
+            return entityP instanceof PassiveEntity;
+        };
+
+        //if tank doesnt hold water or atleast one droplet. dont even scan. (lets try reduce lag)
+        if(entity.fluidStorage.amount > FluidConstants.DROPLET && entity.fluidStorage.variant.isOf(Fluids.WATER)) {
+            List<Entity> filteredEntities = world.getEntitiesByClass(Entity.class, boundingBox, entityPredicate);
+            for (Entity ScannedPassiveEntity : filteredEntities) {
+
+                if (ScannedPassiveEntity instanceof CowEntity) {
+                    int mod_Water = ((getCustomVarsPassiveEntity) ScannedPassiveEntity).getMod_Water();
+                    int mod_Water_max = ((getCustomVarsPassiveEntity) ScannedPassiveEntity).getMod_Water_max();
+
+                    int missing = mod_Water_max - mod_Water;
+                    int amount = 4000; //how much the entity gets of water per extracted water.
+                    if (missing >= amount) { //how much does one item give?
+                        //entity.getStack(0).decrement(1);
+                        if (extractFluid(entity, FluidConstants.NUGGET)) {
+                            //we had enough water, it IS extracted/removed.
+                            ((getCustomVarsPassiveEntity) ScannedPassiveEntity).setMod_Water(mod_Water + amount);
+                            world.playSound(null, blockPos, SoundEvents.ENTITY_GENERIC_DRINK, SoundCategory.NEUTRAL, 0.5F, 1.0F);
+                        }
+                    }
+                }
+
+            }
+        }
+
+
+
+
         if(hasFluidSourceInSlot(entity)) {
             transferFluidToFluidStorage(entity);
         }
