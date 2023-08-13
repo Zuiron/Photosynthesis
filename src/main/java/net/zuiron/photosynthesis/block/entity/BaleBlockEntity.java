@@ -67,7 +67,7 @@ public class BaleBlockEntity extends BlockEntity {
 
         if(blockState.getBlock() == ModBlocks.WRAPPED_GRASS_BALE) {
             if(baleBlockEntity.durability > 0) {
-                baleBlockEntity.durability--;
+                baleBlockEntity.durability = baleBlockEntity.durability - 2;
             } else {
                 //replace with silage bale.
                 world.setBlockState(blockPos, ModBlocks.SILAGE_BALE.getDefaultState(), 2);

@@ -6,6 +6,7 @@ import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
@@ -14,9 +15,12 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.BlockRotation;
+import net.minecraft.util.Hand;
 import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.collection.DefaultedList;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
@@ -80,6 +84,9 @@ public class ModBaleBlock extends BlockWithEntity implements BlockEntityProvider
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
         //TODO - drop itemform BUT. with tag damage based on food left in block.
         if (state.getBlock() != newState.getBlock()) {
+            if(newState.getBlock() == ModBlocks.WRAPPED_GRASS_BALE) {
+                return;
+            }
             BlockEntity blockEntity = world.getBlockEntity(pos);
             if (blockEntity instanceof BaleBlockEntity) {
 
@@ -133,6 +140,17 @@ public class ModBaleBlock extends BlockWithEntity implements BlockEntityProvider
         }
 
         super.onPlaced(world, pos, state, placer, itemStack);
+    }
+
+    @Override
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+
+        if(player.getStackInHand(hand).isOf(ModItems.PLASTIC_WRAP) && state.getBlock() == ModBlocks.GRASS_BALE) {
+            player.getStackInHand(hand).decrement(1);
+            world.setBlockState(pos, ModBlocks.WRAPPED_GRASS_BALE.getDefaultState(), 2);
+        }
+
+        return super.onUse(state, world, pos, player, hand, hit);
     }
 
     @Nullable
