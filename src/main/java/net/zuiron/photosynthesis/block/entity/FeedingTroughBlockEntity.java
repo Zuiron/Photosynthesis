@@ -6,6 +6,9 @@ import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.passive.CowEntity;
+import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
@@ -18,10 +21,17 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Box;
 import net.minecraft.world.World;
+import net.zuiron.photosynthesis.block.ModBlocks;
+import net.zuiron.photosynthesis.item.ModItems;
 import net.zuiron.photosynthesis.networking.ModMessages;
 import net.zuiron.photosynthesis.screen.FeedingTroughScreenHandler;
+import net.zuiron.photosynthesis.util.getCustomVarsPassiveEntity;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
+import java.util.function.Predicate;
 
 public class FeedingTroughBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(1, ItemStack.EMPTY); //N#:SLOTS
@@ -108,6 +118,41 @@ public class FeedingTroughBlockEntity extends BlockEntity implements ExtendedScr
         if(world.isClient()) {
             return;
         }
+
+        // Get the range in which you want to scan for entities
+        double range = 10.0; // Adjust this value as needed
+
+        // Calculate the bounding box around the block position
+        Box boundingBox = new Box(
+                blockPos.getX() - range, blockPos.getY() - range, blockPos.getZ() - range,
+                blockPos.getX() + range, blockPos.getY() + range, blockPos.getZ() + range
+        );
+
+        // Look for passiveEntity entities
+        Predicate<Entity> entityPredicate = entityP -> {
+            return entityP instanceof PassiveEntity;
+        };
+
+        List<Entity> filteredEntities = world.getEntitiesByClass(Entity.class, boundingBox, entityPredicate);
+        for (Entity ScannedPassiveEntity : filteredEntities) {
+
+            ItemStack itemStack = entity.getStack(0);
+            if(ScannedPassiveEntity instanceof CowEntity) {
+                if(itemStack.isOf(ModItems.GRASS_BUNDLE)) {
+                    int mod_Food = ((getCustomVarsPassiveEntity) ScannedPassiveEntity).getMod_Food();
+                    int mod_Food_max = ((getCustomVarsPassiveEntity) ScannedPassiveEntity).getMod_Food_max();
+
+                    int missing = mod_Food_max - mod_Food;
+                    if(missing >= 1000) { //how much does one item give?
+                        ((getCustomVarsPassiveEntity) ScannedPassiveEntity).setMod_Food(mod_Food + missing);
+                        entity.getStack(0).decrement(1);
+                    }
+                }
+            }
+
+        }
+
+
 
         entity.syncItems();
         markDirty(world, blockPos, state);
