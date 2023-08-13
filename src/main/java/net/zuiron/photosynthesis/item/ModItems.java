@@ -28,6 +28,8 @@ public class ModItems {
     public static final Item FORESTY_BUNDLE = registerItem("foresty_bundle",
             new Item(new FabricItemSettings()));
 
+    public static final Item PLASTIC_WRAP = registerItem("plastic_wrap",
+            new Item(new FabricItemSettings()));
 
     public static final Item GRASS_BUNDLE = registerItem("grass_bundle",
             new Item(new FabricItemSettings()));
