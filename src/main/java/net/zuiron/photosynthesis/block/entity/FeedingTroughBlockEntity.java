@@ -144,7 +144,7 @@ public class FeedingTroughBlockEntity extends BlockEntity implements ExtendedScr
 
                     int missing = mod_Food_max - mod_Food;
                     if(missing >= 1000) { //how much does one item give?
-                        ((getCustomVarsPassiveEntity) ScannedPassiveEntity).setMod_Food(mod_Food + missing);
+                        ((getCustomVarsPassiveEntity) ScannedPassiveEntity).setMod_Food(mod_Food + 1000);
                         entity.getStack(0).decrement(1);
                     }
                 }
