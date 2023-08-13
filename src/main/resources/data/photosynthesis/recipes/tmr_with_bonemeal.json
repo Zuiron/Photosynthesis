@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##S",
+    "GD "
+  ],
+  "key": {
+    "#": {
+      "item": "photosynthesis:straw_bundle"
+    },
+    "G": {
+      "item": "photosynthesis:hay_bale"
+    },
+    "D": {
+      "item": "photosynthesis:silage_bale"
+    },
+    "S": {
+      "item": "minecraft:bone_meal"
+    }
+  },
+  "result": {
+    "item": "photosynthesis:tmr",
+    "count": 10
+  }
+}

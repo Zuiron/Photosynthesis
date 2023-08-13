@@ -144,10 +144,17 @@ public class ModBaleBlock extends BlockWithEntity implements BlockEntityProvider
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+        if(world.isClient()) {
+            return super.onUse(state, world, pos, player, hand, hit);
+        }
+        BlockEntity blockEntity = world.getBlockEntity(pos);
+        assert blockEntity != null;
+        int dmg = BaleBlockEntity.getDurability((BaleBlockEntity) blockEntity);
 
-        if(player.getStackInHand(hand).isOf(ModItems.PLASTIC_WRAP) && state.getBlock() == ModBlocks.GRASS_BALE) {
+        if (player.getStackInHand(hand).isOf(ModItems.PLASTIC_WRAP) && state.getBlock() == ModBlocks.GRASS_BALE && dmg == 168000) {
             player.getStackInHand(hand).decrement(1);
             world.setBlockState(pos, ModBlocks.WRAPPED_GRASS_BALE.getDefaultState(), 2);
+            world.playSound(null, pos, SoundEvents.BLOCK_WET_GRASS_PLACE, SoundCategory.BLOCKS, 1.0F, 1.0F);
         }
 
         return super.onUse(state, world, pos, player, hand, hit);

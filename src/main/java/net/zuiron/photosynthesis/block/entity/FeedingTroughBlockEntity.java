@@ -119,6 +119,10 @@ public class FeedingTroughBlockEntity extends BlockEntity implements ExtendedScr
             return;
         }
 
+        if(entity.getStack(0).isEmpty()) {
+            return;
+        }
+
         // Get the range in which you want to scan for entities
         double range = 10.0; // Adjust this value as needed
 
@@ -138,13 +142,13 @@ public class FeedingTroughBlockEntity extends BlockEntity implements ExtendedScr
 
             ItemStack itemStack = entity.getStack(0);
             if(ScannedPassiveEntity instanceof CowEntity) {
-                if(itemStack.isOf(ModItems.GRASS_BUNDLE)) {
+                if(itemStack.isOf(ModItems.TMR)) {
                     int mod_Food = ((getCustomVarsPassiveEntity) ScannedPassiveEntity).getMod_Food();
                     int mod_Food_max = ((getCustomVarsPassiveEntity) ScannedPassiveEntity).getMod_Food_max();
 
                     int missing = mod_Food_max - mod_Food;
-                    if(missing >= 1000) { //how much does one item give?
-                        ((getCustomVarsPassiveEntity) ScannedPassiveEntity).setMod_Food(mod_Food + 1000);
+                    if(missing >= 33600) { //how much does one item give?
+                        ((getCustomVarsPassiveEntity) ScannedPassiveEntity).setMod_Food(mod_Food + 33600);
                         entity.getStack(0).decrement(1);
                     }
                 }

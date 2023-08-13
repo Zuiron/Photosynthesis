@@ -25,6 +25,7 @@ public class ModModelProvider extends FabricModelProvider {
         Item[] simple_items = {
                 ModItems.FORESTY_BUNDLE,
                 ModItems.PLASTIC_WRAP,
+                ModItems.TMR,
                 ModItems.GRASS_BUNDLE,
                 ModItems.HAY_BUNDLE,
                 ModItems.STRAW_BUNDLE,
