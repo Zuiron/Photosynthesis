@@ -53,6 +53,12 @@ public class ModBlocks {
     public static final Block GRASS_BALE = registerBaleBlock("grass_bale",
             new ModGrassBaleBlock(FabricBlockSettings.copyOf(Blocks.HAY_BLOCK)));
 
+    public static final Block WRAPPED_GRASS_BALE = registerBaleBlock("wrapped_grass_bale",
+            new ModWrappedGrassBaleBlock(FabricBlockSettings.copyOf(Blocks.HAY_BLOCK)));
+
+    public static final Block SILAGE_BALE = registerBaleBlock("silage_bale",
+            new ModSilageBaleBlock(FabricBlockSettings.copyOf(Blocks.HAY_BLOCK)));
+
     public static final Block HAY_BALE = registerBaleBlock("hay_bale",
             new ModHayBaleBlock(FabricBlockSettings.copyOf(Blocks.HAY_BLOCK)));
 

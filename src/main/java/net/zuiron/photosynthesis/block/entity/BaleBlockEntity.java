@@ -64,36 +64,51 @@ public class BaleBlockEntity extends BlockEntity {
         }
         //baleBlockEntity.durability--; //just testing.
 
-        // Get the range in which you want to scan for entities
-        double range = 10.0; // Adjust this value as needed
 
-        // Calculate the bounding box around the block position
-        Box boundingBox = new Box(
-                blockPos.getX() - range, blockPos.getY() - range, blockPos.getZ() - range,
-                blockPos.getX() + range, blockPos.getY() + range, blockPos.getZ() + range
-        );
-
-        // Look for passiveEntity entities
-        Predicate<Entity> entityPredicate = entity -> {
-            return entity instanceof PassiveEntity;
-        };
-
-        List<Entity> filteredEntities = world.getEntitiesByClass(Entity.class, boundingBox, entityPredicate);
-        for (Entity entity : filteredEntities) {
-
-            if(entity instanceof CowEntity) {
-                if (blockState.getBlock() == ModBlocks.GRASS_BALE) {
-                    onTickGrassBale(world, blockPos, entity, baleBlockEntity);
-                }
-                else if (blockState.getBlock() == ModBlocks.HAY_BALE) {
-                    onTickHayBale(world, blockPos, entity, baleBlockEntity);
-                }
-                else if (blockState.getBlock() == ModBlocks.STRAW_BALE) {
-                    onTickStrawBale(world, blockPos, entity, baleBlockEntity);
-                }
+        if(blockState.getBlock() == ModBlocks.WRAPPED_GRASS_BALE) {
+            if(baleBlockEntity.durability > 0) {
+                baleBlockEntity.durability--;
+            } else {
+                //replace with silage bale.
+                world.setBlockState(blockPos, ModBlocks.SILAGE_BALE.getDefaultState(), 2);
             }
-
         }
+
+
+        if(blockState.getBlock() == ModBlocks.GRASS_BALE || blockState.getBlock() == ModBlocks.HAY_BALE || blockState.getBlock() == ModBlocks.STRAW_BALE) {
+            // Get the range in which you want to scan for entities
+            double range = 10.0; // Adjust this value as needed
+
+            // Calculate the bounding box around the block position
+            Box boundingBox = new Box(
+                    blockPos.getX() - range, blockPos.getY() - range, blockPos.getZ() - range,
+                    blockPos.getX() + range, blockPos.getY() + range, blockPos.getZ() + range
+            );
+
+            // Look for passiveEntity entities
+            Predicate<Entity> entityPredicate = entity -> {
+                return entity instanceof PassiveEntity;
+            };
+
+            List<Entity> filteredEntities = world.getEntitiesByClass(Entity.class, boundingBox, entityPredicate);
+            for (Entity entity : filteredEntities) {
+
+                if (entity instanceof CowEntity) {
+                    if (blockState.getBlock() == ModBlocks.GRASS_BALE) {
+                        onTickGrassBale(world, blockPos, entity, baleBlockEntity);
+                    } else if (blockState.getBlock() == ModBlocks.HAY_BALE) {
+                        onTickHayBale(world, blockPos, entity, baleBlockEntity);
+                    } else if (blockState.getBlock() == ModBlocks.STRAW_BALE) {
+                        onTickStrawBale(world, blockPos, entity, baleBlockEntity);
+                    }
+                }
+
+            }
+        }
+
+
+
+
     }
 
     public static void onTickGrassBale(World world, BlockPos blockPos, Entity entity, BaleBlockEntity baleBlockEntity) {

@@ -1146,7 +1146,12 @@
 
   "entity.minecraft.villager.livestocktrader": "Livestock Trader",
 
+  "item.photosynthesis.plastic_wrap": "Plastic Wrap",
+
   "block.photosynthesis.grass_bale": "Grass Bale",
+  "block.photosynthesis.wrapped_grass_bale": "Wrapped Grass Bale",
+  "block.photosynthesis.silage_bale": "Silage Bale",
+
   "block.photosynthesis.straw_bale": "Straw Bale",
   "block.photosynthesis.hay_bale": "Hay Bale",
 

@@ -138,7 +138,7 @@ public class ModBlockEntities {
         BALE = Registry.register(Registries.BLOCK_ENTITY_TYPE,
                 new Identifier(Photosynthesis.MOD_ID, "bale"),
                 FabricBlockEntityTypeBuilder.create(BaleBlockEntity::new,
-                        ModBlocks.GRASS_BALE,ModBlocks.HAY_BALE,ModBlocks.STRAW_BALE).build(null));
+                        ModBlocks.GRASS_BALE,ModBlocks.HAY_BALE,ModBlocks.STRAW_BALE,ModBlocks.WRAPPED_GRASS_BALE).build(null));
 
         FEEDINGTROUGH = Registry.register(Registries.BLOCK_ENTITY_TYPE,
                 new Identifier(Photosynthesis.MOD_ID, "feedingtrough"),

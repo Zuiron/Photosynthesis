@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "photosynthesis:block/wrapped_grass_bale_top",
+    "side": "photosynthesis:block/wrapped_grass_bale_side"
+  }
+}
