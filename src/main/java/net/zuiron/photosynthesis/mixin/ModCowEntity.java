@@ -178,7 +178,8 @@ public abstract class ModCowEntity extends AnimalEntity {
                     player.sendMessage(Text.literal(string),false);
                 } else if (player.getStackInHand(hand).isOf(Items.ROTTEN_FLESH)) {
                     //this.mod_Milk = this.mod_Milk_max;
-                    ((getCustomVarsPassiveEntity) this).setMod_Grass(mod_Grass-24000);
+                    //((getCustomVarsPassiveEntity) this).setMod_Grass(mod_Grass-24000);
+                    ((getCustomVarsPassiveEntity) this).addMod_LivingTicks(480000);
                 }
             }
         }
@@ -252,7 +253,7 @@ public abstract class ModCowEntity extends AnimalEntity {
     public float photosynthesis$getMilkProductivity(int mod_Water, int mod_Water_max, int mod_Grass, int mod_Grass_max, int mod_Straw, int mod_Straw_max, int mod_Hay, int mod_Hay_max, int mod_Food, int mod_Food_max) {
         float productivity = 0.0f;
 
-        if(!this.isBaby() && mod_Water >= (mod_Water_max/2)) {
+        if(mod_Water >= (mod_Water_max/2)) {
             if(mod_Grass > (mod_Grass_max/2)) { productivity += 25f; }
             if(mod_Hay   > (mod_Hay_max/2)  ) { productivity += 25f; }
             if(mod_Straw > (mod_Straw_max/2)) { productivity += 25f; }
