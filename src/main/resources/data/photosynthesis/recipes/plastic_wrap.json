@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#K#",
+    "DWD",
+    "#K#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:paper"
+    },
+    "K": {
+      "item": "minecraft:kelp"
+    },
+    "D": {
+      "item": "minecraft:dried_kelp"
+    },
+    "W": {
+      "item": "minecraft:white_dye"
+    }
+  },
+  "result": {
+    "item": "photosynthesis:plastic_wrap",
+    "count": 16
+  }
+}
