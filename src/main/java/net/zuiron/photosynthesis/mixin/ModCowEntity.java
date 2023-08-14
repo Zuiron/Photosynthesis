@@ -152,15 +152,26 @@ public abstract class ModCowEntity extends AnimalEntity {
                     //String transkey = Objects.requireNonNull(this.getWorld().getEntityById(this.getId())).getType().getTranslationKey();
                     String string = "Entity: "+entityname + " \n";
 
+                    float cowProductivity = photosynthesis$getMilkProductivity(mod_Water, mod_Water_max, mod_Grass, mod_Grass_max, mod_Straw, mod_Straw_max, mod_Hay, mod_Hay_max, mod_Food, mod_Food_max);
+
                     //if(Objects.equals(transkey, "entity.minecraft.cow")) {
                         string += "LivingTicks: "+mod_LivingTicks+" \n";
+
+                        if(this.isBaby()) {
+                            if(cowProductivity >= 75.0f) {
+                                string += "Growing: TRUE \n";
+                            } else {
+                                string += "Growing: FALSE \n";
+                            }
+                        }
+
                         string += "Water: "+mod_Water+"/"+mod_Water_max+" \n";
                         string += "Grass: "+mod_Grass+"/"+mod_Grass_max+" \n";
                         string += "Hay: "+mod_Hay+"/"+mod_Hay_max+" \n";
                         string += "Straw: "+mod_Straw+"/"+mod_Straw_max+" \n";
                         string += "TMR: "+mod_Food+"/"+mod_Food_max+" \n";
                         string += "Milk: "+this.mod_Milk+"/"+mod_Milk_max+", Buckets: "+ photosynthesis$getAvailBucketsMilk()+" \n";
-                        string += "Productivity: "+ photosynthesis$getMilkProductivity(mod_Water, mod_Water_max, mod_Grass, mod_Grass_max, mod_Straw, mod_Straw_max, mod_Hay, mod_Hay_max, mod_Food, mod_Food_max)+"%";
+                        string += "Productivity: "+ cowProductivity +"%";
                     //}
 
 
