@@ -15,6 +15,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
+import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.registry.tag.ItemTags;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
@@ -153,6 +156,19 @@ public class FeedingTroughBlockEntity extends BlockEntity implements ExtendedScr
                         ((getCustomVarsPassiveEntity) ScannedPassiveEntity).setMod_Food(mod_Food + 16800);
                         entity.getStack(0).decrement(1);
                         world.playSound(null, blockPos, SoundEvents.ENTITY_GENERIC_EAT, SoundCategory.NEUTRAL, 0.5F, 1.0F);
+                    }
+                }
+            }
+            else if(ScannedPassiveEntity instanceof GoatEntity) {
+                if(itemStack.isIn(ItemTags.SAPLINGS) || itemStack.isIn(ItemTags.LEAVES)) {
+                    int mod_Food = ((getCustomVarsPassiveEntity) ScannedPassiveEntity).getMod_Food();
+                    int mod_Food_max = ((getCustomVarsPassiveEntity) ScannedPassiveEntity).getMod_Food_max();
+
+                    int missing = mod_Food_max - mod_Food;
+                    if(missing >= 16800) { //how much does one item give?
+                        ((getCustomVarsPassiveEntity) ScannedPassiveEntity).setMod_Food(mod_Food + 16800);
+                        entity.getStack(0).decrement(1);
+                        world.playSound(null, blockPos, SoundEvents.ENTITY_GOAT_EAT, SoundCategory.NEUTRAL, 0.5F, 1.0F);
                     }
                 }
             }
