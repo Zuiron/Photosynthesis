@@ -247,7 +247,7 @@ public class WaterTroughBlockEntity extends BlockEntity implements ExtendedScree
                         if (extractFluid(entity, FluidConstants.NUGGET)) {
                             //we had enough water, it IS extracted/removed.
                             ((getCustomVarsPassiveEntity) ScannedPassiveEntity).setMod_Water(mod_Water + amount);
-                            world.playSound(null, blockPos, SoundEvents.ENTITY_GENERIC_DRINK, SoundCategory.NEUTRAL, 0.5F, 1.0F);
+                            world.playSound(null, ScannedPassiveEntity.getBlockPos(), SoundEvents.ENTITY_GENERIC_DRINK, SoundCategory.NEUTRAL, 0.5F, 1.0F);
                         }
                     }
                 }

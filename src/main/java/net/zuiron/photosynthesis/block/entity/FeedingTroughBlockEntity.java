@@ -155,7 +155,7 @@ public class FeedingTroughBlockEntity extends BlockEntity implements ExtendedScr
                     if(missing >= 16800) { //how much does one item give?
                         ((getCustomVarsPassiveEntity) ScannedPassiveEntity).setMod_Food(mod_Food + 16800);
                         entity.getStack(0).decrement(1);
-                        world.playSound(null, blockPos, SoundEvents.ENTITY_GENERIC_EAT, SoundCategory.NEUTRAL, 0.5F, 1.0F);
+                        world.playSound(null, ScannedPassiveEntity.getBlockPos(), SoundEvents.ENTITY_GENERIC_EAT, SoundCategory.NEUTRAL, 0.5F, 1.0F);
                     }
                 }
             }
@@ -168,7 +168,7 @@ public class FeedingTroughBlockEntity extends BlockEntity implements ExtendedScr
                     if(missing >= 16800) { //how much does one item give?
                         ((getCustomVarsPassiveEntity) ScannedPassiveEntity).setMod_Food(mod_Food + 16800);
                         entity.getStack(0).decrement(1);
-                        world.playSound(null, blockPos, SoundEvents.ENTITY_GOAT_EAT, SoundCategory.NEUTRAL, 0.5F, 1.0F);
+                        world.playSound(null, ScannedPassiveEntity.getBlockPos(), SoundEvents.ENTITY_GOAT_EAT, SoundCategory.NEUTRAL, 0.5F, 1.0F);
                     }
                 }
             }
@@ -181,7 +181,7 @@ public class FeedingTroughBlockEntity extends BlockEntity implements ExtendedScr
                     if(missing >= 16800) { //how much does one item give?
                         ((getCustomVarsPassiveEntity) ScannedPassiveEntity).setMod_Food(mod_Food + 16800);
                         entity.getStack(0).decrement(1);
-                        world.playSound(null, blockPos, SoundEvents.ENTITY_GENERIC_EAT, SoundCategory.NEUTRAL, 0.5F, 1.0F);
+                        world.playSound(null, ScannedPassiveEntity.getBlockPos(), SoundEvents.ENTITY_GENERIC_EAT, SoundCategory.NEUTRAL, 0.5F, 1.0F);
                     }
                 }
             }
@@ -194,7 +194,7 @@ public class FeedingTroughBlockEntity extends BlockEntity implements ExtendedScr
                     if(missing >= 16800) { //how much does one item give?
                         ((getCustomVarsPassiveEntity) ScannedPassiveEntity).setMod_Food(mod_Food + 16800);
                         entity.getStack(0).decrement(1);
-                        world.playSound(null, blockPos, SoundEvents.ENTITY_GENERIC_EAT, SoundCategory.NEUTRAL, 0.5F, 1.0F);
+                        world.playSound(null, ScannedPassiveEntity.getBlockPos(), SoundEvents.ENTITY_GENERIC_EAT, SoundCategory.NEUTRAL, 0.5F, 1.0F);
                     }
                 }
             }
@@ -207,7 +207,7 @@ public class FeedingTroughBlockEntity extends BlockEntity implements ExtendedScr
                     if(missing >= 16800) { //how much does one item give?
                         ((getCustomVarsPassiveEntity) ScannedPassiveEntity).setMod_Food(mod_Food + 16800);
                         entity.getStack(0).decrement(1);
-                        world.playSound(null, blockPos, SoundEvents.ENTITY_GENERIC_EAT, SoundCategory.NEUTRAL, 0.5F, 1.0F);
+                        world.playSound(null, ScannedPassiveEntity.getBlockPos(), SoundEvents.ENTITY_GENERIC_EAT, SoundCategory.NEUTRAL, 0.5F, 1.0F);
                     }
                 }
             }
