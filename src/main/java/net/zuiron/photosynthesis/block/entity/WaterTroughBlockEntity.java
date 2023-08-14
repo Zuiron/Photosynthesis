@@ -13,8 +13,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ItemEntity;
-import net.minecraft.entity.passive.CowEntity;
-import net.minecraft.entity.passive.PassiveEntity;
+import net.minecraft.entity.passive.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.fluid.Fluids;
@@ -237,7 +236,7 @@ public class WaterTroughBlockEntity extends BlockEntity implements ExtendedScree
             List<Entity> filteredEntities = world.getEntitiesByClass(Entity.class, boundingBox, entityPredicate);
             for (Entity ScannedPassiveEntity : filteredEntities) {
 
-                if (ScannedPassiveEntity instanceof CowEntity) {
+                if (ScannedPassiveEntity instanceof CowEntity || ScannedPassiveEntity instanceof SheepEntity || ScannedPassiveEntity instanceof ChickenEntity || ScannedPassiveEntity instanceof PigEntity || ScannedPassiveEntity instanceof HorseEntity || ScannedPassiveEntity instanceof GoatEntity) {
                     int mod_Water = ((getCustomVarsPassiveEntity) ScannedPassiveEntity).getMod_Water();
                     int mod_Water_max = ((getCustomVarsPassiveEntity) ScannedPassiveEntity).getMod_Water_max();
 
