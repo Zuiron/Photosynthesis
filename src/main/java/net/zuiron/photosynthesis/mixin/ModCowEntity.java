@@ -44,8 +44,6 @@ public abstract class ModCowEntity extends AnimalEntity {
         /*if (getWorld().random.nextInt(2) != 0) {
             return;
         }*/
-        long mod_LivingTicks = ((getCustomVarsPassiveEntity) this).getMod_LivingTicks();
-
         int mod_Water = ((getCustomVarsPassiveEntity) this).getMod_Water();
         int mod_Water_max = ((getCustomVarsPassiveEntity) this).getMod_Water_max();
 
@@ -127,6 +125,8 @@ public abstract class ModCowEntity extends AnimalEntity {
     @Inject(method = "interactMob", at = @At("HEAD"), cancellable = true)
     public void interactMob(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
 
+        long mod_LivingTicks = ((getCustomVarsPassiveEntity) this).getMod_LivingTicks();
+
         int mod_Water = ((getCustomVarsPassiveEntity) this).getMod_Water();
         int mod_Water_max = ((getCustomVarsPassiveEntity) this).getMod_Water_max();
 
@@ -153,6 +153,7 @@ public abstract class ModCowEntity extends AnimalEntity {
                     String string = "Entity: "+entityname + " \n";
 
                     //if(Objects.equals(transkey, "entity.minecraft.cow")) {
+                        string += "LivingTicks: "+mod_LivingTicks+" \n";
                         string += "Water: "+mod_Water+"/"+mod_Water_max+" \n";
                         string += "Grass: "+mod_Grass+"/"+mod_Grass_max+" \n";
                         string += "Hay: "+mod_Hay+"/"+mod_Hay_max+" \n";
