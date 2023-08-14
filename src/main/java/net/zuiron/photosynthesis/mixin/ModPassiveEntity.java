@@ -40,6 +40,9 @@ public abstract class ModPassiveEntity extends PathAwareEntity implements getCus
     public long mob_tick_born = -1;
 
     @Unique
+    public long mob_living_ticks = 0;
+
+    @Unique
     public int mod_Water = 96000; //4 days (minecraft days) -- one day = 24000
     @Unique
     protected final int mod_Water_max = 96000;
@@ -139,7 +142,15 @@ public abstract class ModPassiveEntity extends PathAwareEntity implements getCus
             this.mob_tick_born = this.getWorld().getTimeOfDay();
         }
 
-        long mcdaysold = calculateEntityAge(this.mob_tick_born, this.getWorld().getTimeOfDay());
+        //DO NOT uncomment this. living ticks needs to be added by for example CowEntity Mixin. needs values to calculate if it grows or not. like. does it have the
+        // -required food? grass? hay, straw etc....
+        //mob_living_ticks++;
+
+        //this doesnt require ticks. can be cheated and works even if mob is not ticking or loaded by game.
+        //long mcdaysold = calculateEntityAge(this.mob_tick_born, this.getWorld().getTimeOfDay());
+        //this is ticks based
+        long mcdaysold = calculateEntityAgeFromLivingTicks(this.mob_living_ticks);
+
         String entityname = this.getWorld().getEntityById(this.getId()).getName().getString();
         String transkey = Objects.requireNonNull(this.getWorld().getEntityById(this.getId())).getType().getTranslationKey();
 
@@ -178,6 +189,25 @@ public abstract class ModPassiveEntity extends PathAwareEntity implements getCus
         //returns total minecraft days old.
         long TICKS_PER_DAY = 24000;
         return (currentTick - birthTick) / TICKS_PER_DAY;
+    }
+
+    @Unique
+    private static long calculateEntityAgeFromLivingTicks(long livingTicks) {
+        // Define the constants
+        long TICKS_PER_DAY = 24000;
+        long DAYS_PER_YEAR = Seasons.getDaysPerYear(); //365 real life.
+
+        // Calculate the age in days
+        long totalDays = livingTicks / TICKS_PER_DAY;
+
+        // Calculate the years and remaining days
+        long years = totalDays / DAYS_PER_YEAR;
+        long remainingDays = totalDays % DAYS_PER_YEAR;
+
+        // Print the result or use it as needed
+        //System.out.println("Years: " + years + ", Days: " + remainingDays);
+
+        return totalDays;
     }
 
 }
