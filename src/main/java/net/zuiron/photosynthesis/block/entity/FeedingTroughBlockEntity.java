@@ -7,12 +7,12 @@ import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.passive.CowEntity;
-import net.minecraft.entity.passive.PassiveEntity;
+import net.minecraft.entity.passive.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.screen.ScreenHandler;
@@ -145,6 +145,45 @@ public class FeedingTroughBlockEntity extends BlockEntity implements ExtendedScr
             ItemStack itemStack = entity.getStack(0);
             if(ScannedPassiveEntity instanceof CowEntity) {
                 if(itemStack.isOf(ModItems.TMR)) {
+                    int mod_Food = ((getCustomVarsPassiveEntity) ScannedPassiveEntity).getMod_Food();
+                    int mod_Food_max = ((getCustomVarsPassiveEntity) ScannedPassiveEntity).getMod_Food_max();
+
+                    int missing = mod_Food_max - mod_Food;
+                    if(missing >= 16800) { //how much does one item give?
+                        ((getCustomVarsPassiveEntity) ScannedPassiveEntity).setMod_Food(mod_Food + 16800);
+                        entity.getStack(0).decrement(1);
+                        world.playSound(null, blockPos, SoundEvents.ENTITY_GENERIC_EAT, SoundCategory.NEUTRAL, 0.5F, 1.0F);
+                    }
+                }
+            }
+            else if(ScannedPassiveEntity instanceof ChickenEntity) {
+                if(itemStack.isOf(Items.WHEAT) || itemStack.isOf(ModItems.BARLEY)) {
+                    int mod_Food = ((getCustomVarsPassiveEntity) ScannedPassiveEntity).getMod_Food();
+                    int mod_Food_max = ((getCustomVarsPassiveEntity) ScannedPassiveEntity).getMod_Food_max();
+
+                    int missing = mod_Food_max - mod_Food;
+                    if(missing >= 16800) { //how much does one item give?
+                        ((getCustomVarsPassiveEntity) ScannedPassiveEntity).setMod_Food(mod_Food + 16800);
+                        entity.getStack(0).decrement(1);
+                        world.playSound(null, blockPos, SoundEvents.ENTITY_GENERIC_EAT, SoundCategory.NEUTRAL, 0.5F, 1.0F);
+                    }
+                }
+            }
+            else if(ScannedPassiveEntity instanceof PigEntity) {
+                if(itemStack.isOf(Items.WHEAT) || itemStack.isOf(ModItems.BARLEY) || itemStack.isOf(ModItems.CORN) || itemStack.isOf(ModItems.SOYBEAN) || itemStack.isOf(ModItems.CANOLA) || itemStack.isOf(Items.POTATO) || itemStack.isOf(ModItems.SUGARBEET)) {
+                    int mod_Food = ((getCustomVarsPassiveEntity) ScannedPassiveEntity).getMod_Food();
+                    int mod_Food_max = ((getCustomVarsPassiveEntity) ScannedPassiveEntity).getMod_Food_max();
+
+                    int missing = mod_Food_max - mod_Food;
+                    if(missing >= 16800) { //how much does one item give?
+                        ((getCustomVarsPassiveEntity) ScannedPassiveEntity).setMod_Food(mod_Food + 16800);
+                        entity.getStack(0).decrement(1);
+                        world.playSound(null, blockPos, SoundEvents.ENTITY_GENERIC_EAT, SoundCategory.NEUTRAL, 0.5F, 1.0F);
+                    }
+                }
+            }
+            else if(ScannedPassiveEntity instanceof HorseEntity) {
+                if(itemStack.isOf(ModItems.OAT)) {
                     int mod_Food = ((getCustomVarsPassiveEntity) ScannedPassiveEntity).getMod_Food();
                     int mod_Food_max = ((getCustomVarsPassiveEntity) ScannedPassiveEntity).getMod_Food_max();
 
