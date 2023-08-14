@@ -44,6 +44,7 @@ public abstract class ModCowEntity extends AnimalEntity {
         /*if (getWorld().random.nextInt(2) != 0) {
             return;
         }*/
+        long mod_LivingTicks = ((getCustomVarsPassiveEntity) this).getMod_LivingTicks();
 
         int mod_Water = ((getCustomVarsPassiveEntity) this).getMod_Water();
         int mod_Water_max = ((getCustomVarsPassiveEntity) this).getMod_Water_max();
@@ -76,13 +77,27 @@ public abstract class ModCowEntity extends AnimalEntity {
             if(mod_Straw > 0)  { ((getCustomVarsPassiveEntity) this).setMod_Straw(mod_Straw-1); }
             if(mod_Food > 0)   { ((getCustomVarsPassiveEntity) this).setMod_Food(mod_Food-1);  } //for cows. TMR. total mixed rations.
 
+            float cowProductivity = photosynthesis$getMilkProductivity(mod_Water, mod_Water_max, mod_Grass, mod_Grass_max, mod_Straw, mod_Straw_max, mod_Hay, mod_Hay_max, mod_Food, mod_Food_max);
+
+            //livingTicks
+            if(cowProductivity >= 75.0f) {
+                ((getCustomVarsPassiveEntity) this).addMod_LivingTicks(1);
+            }
+
             //milk control.
+            if(!this.isBaby() && cowProductivity >= 25.0f) {
+                this.mod_Milk++;
+                if(cowProductivity >= 50.0f) { this.mod_Milk++; }
+                if(cowProductivity >= 75.0f) { this.mod_Milk++; }
+                if(cowProductivity >= 100.0f) { this.mod_Milk++; }
+            }
+            /*
             if(!this.isBaby() && mod_Water >= (mod_Water_max/2)) {
                 if(mod_Grass > (mod_Grass_max/2) && this.mod_Milk < this.mod_Milk_max) { this.mod_Milk++; }
                 if(mod_Hay   > (mod_Hay_max/2)   && this.mod_Milk < this.mod_Milk_max) { this.mod_Milk++; }
                 if(mod_Straw > (mod_Straw_max/2) && this.mod_Milk < this.mod_Milk_max) { this.mod_Milk++; }
                 if(mod_Food  > (mod_Food_max/2)  && this.mod_Milk < this.mod_Milk_max) { this.mod_Milk++; }
-            }
+            }*/
 
             //damage missing water or food.
             if(mod_Water <= 0) {
