@@ -40,7 +40,7 @@ public abstract class ModPassiveEntity extends PathAwareEntity implements getCus
     public long mob_tick_born = -1;
 
     @Unique
-    public long mob_living_ticks = 0;
+    public long mod_living_ticks = 0;
 
     @Unique
     public int mod_Water = 96000; //4 days (minecraft days) -- one day = 24000
@@ -98,10 +98,15 @@ public abstract class ModPassiveEntity extends PathAwareEntity implements getCus
     public void setMod_Food(int amount) { this.mod_Food = amount; }
     @Unique
     public int getMod_Food_max() { return this.mod_Food_max; }
+    @Unique
+    public long getMod_LivingTicks() { return this.mod_living_ticks; }
+    @Unique
+    public void addMod_LivingTicks(long amount) { this.mod_living_ticks += amount; }
 
     @Inject(method = "writeCustomDataToNbt", at = @At("TAIL"))
     public void writeCustomDataToNbt(NbtCompound nbt, CallbackInfo ci) {
         nbt.putLong("photosynthesis_timeofdayborntime", this.mob_tick_born);
+        nbt.putLong("photosynthesis_livingticks", this.mod_living_ticks);
 
         nbt.putInt("photosynthesis_water",this.mod_Water);
         nbt.putInt("photosynthesis_grass",this.mod_Grass);
@@ -112,6 +117,7 @@ public abstract class ModPassiveEntity extends PathAwareEntity implements getCus
     @Inject(method = "readCustomDataFromNbt", at = @At("HEAD"))
     public void readCustomDataFromNbt(NbtCompound nbt, CallbackInfo ci) {
         this.mob_tick_born = nbt.getLong("photosynthesis_timeofdayborntime");
+        this.mod_living_ticks = nbt.getLong("photosynthesis_livingticks");
 
         this.mod_Water = nbt.getInt("photosynthesis_water");
         this.mod_Grass = nbt.getInt("photosynthesis_grass");
@@ -149,7 +155,7 @@ public abstract class ModPassiveEntity extends PathAwareEntity implements getCus
         //this doesnt require ticks. can be cheated and works even if mob is not ticking or loaded by game.
         //long mcdaysold = calculateEntityAge(this.mob_tick_born, this.getWorld().getTimeOfDay());
         //this is ticks based
-        long mcdaysold = calculateEntityAgeFromLivingTicks(this.mob_living_ticks);
+        long mcdaysold = calculateEntityAgeFromLivingTicks(this.mod_living_ticks);
 
         String entityname = this.getWorld().getEntityById(this.getId()).getName().getString();
         String transkey = Objects.requireNonNull(this.getWorld().getEntityById(this.getId())).getType().getTranslationKey();

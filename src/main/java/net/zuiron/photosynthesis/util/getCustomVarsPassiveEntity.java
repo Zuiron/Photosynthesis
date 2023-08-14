@@ -26,4 +26,7 @@ public interface getCustomVarsPassiveEntity {
     int getMod_Food();
     int getMod_Food_max();
     void setMod_Food(int amount);
+
+    long getMod_LivingTicks();
+    void addMod_LivingTicks(long amount);
 }
