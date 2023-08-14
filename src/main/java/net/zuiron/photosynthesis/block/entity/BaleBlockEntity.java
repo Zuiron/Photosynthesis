@@ -108,6 +108,11 @@ public class BaleBlockEntity extends BlockEntity {
                         onTickHayBale(world, blockPos, entity, baleBlockEntity);
                     }
                 }
+                else if (entity instanceof ChickenEntity) {
+                    if (blockState.getBlock() == ModBlocks.STRAW_BALE) {
+                        onTickStrawBale(world, blockPos, entity, baleBlockEntity);
+                    }
+                }
                 else if (entity instanceof PigEntity) {
                     if (blockState.getBlock() == ModBlocks.STRAW_BALE) {
                         onTickStrawBale(world, blockPos, entity, baleBlockEntity);

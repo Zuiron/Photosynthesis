@@ -178,8 +178,8 @@ public class FeedingTroughBlockEntity extends BlockEntity implements ExtendedScr
                     int mod_Food_max = ((getCustomVarsPassiveEntity) ScannedPassiveEntity).getMod_Food_max();
 
                     int missing = mod_Food_max - mod_Food;
-                    if(missing >= 16800) { //how much does one item give?
-                        ((getCustomVarsPassiveEntity) ScannedPassiveEntity).setMod_Food(mod_Food + 16800);
+                    if(missing >= 33600) { //how much does one item give?
+                        ((getCustomVarsPassiveEntity) ScannedPassiveEntity).setMod_Food(mod_Food + 33600);
                         entity.getStack(0).decrement(1);
                         world.playSound(null, ScannedPassiveEntity.getBlockPos(), SoundEvents.ENTITY_GENERIC_EAT, SoundCategory.NEUTRAL, 0.5F, 1.0F);
                     }
