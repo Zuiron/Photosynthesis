@@ -9,6 +9,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.CowEntity;
 import net.minecraft.entity.passive.PassiveEntity;
+import net.minecraft.entity.passive.SheepEntity;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
@@ -100,6 +101,13 @@ public class BaleBlockEntity extends BlockEntity {
                         onTickHayBale(world, blockPos, entity, baleBlockEntity);
                     } else if (blockState.getBlock() == ModBlocks.STRAW_BALE) {
                         onTickStrawBale(world, blockPos, entity, baleBlockEntity);
+                    }
+                }
+                else if (entity instanceof SheepEntity) {
+                    if (blockState.getBlock() == ModBlocks.GRASS_BALE) {
+                        onTickGrassBale(world, blockPos, entity, baleBlockEntity);
+                    } else if (blockState.getBlock() == ModBlocks.HAY_BALE) {
+                        onTickHayBale(world, blockPos, entity, baleBlockEntity);
                     }
                 }
 
