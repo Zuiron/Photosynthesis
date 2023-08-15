@@ -172,7 +172,7 @@ public abstract class ModPassiveEntity extends PathAwareEntity implements getCus
         name2days2mature.put("entity.minecraft.horse", Seasons.getDaysPerSeasonMod()*8);                //4years //horse animations interrupt ticks?, so half this. should be:*16
         name2days2mature.put("entity.minecraft.goat", Seasons.getDaysPerSeasonMod()*12);                //3years
 
-        if(this.getBreedingAge() < 0) { //isbaby, lower than 0 its a baby.
+        if(this.getBreedingAge() < 0 && Seasons.isSeasonsEnabled()) { //isbaby, lower than 0 its a baby.
             if(name2days2mature.containsKey(transkey)) {
                 if(mcdaysold < name2days2mature.get(transkey)) {
                     //Photosynthesis.LOGGER.info(entityname+" baby is not old enough yet. prevent maturing... I am: "+mcdaysold+", req: "+name2days2mature.get(entityname));
