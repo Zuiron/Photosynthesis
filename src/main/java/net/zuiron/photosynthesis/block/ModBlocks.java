@@ -1939,7 +1939,7 @@ public class ModBlocks {
                     .nonOpaque().noCollision().ticksRandomly().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
 
     public static final Block GRAPETREE_LOG = registerBlock("grapetree_log",
-            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG).nonOpaque()));
+            new ModPillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG).nonOpaque()));
     /*public static final Block GRAPETREE_WOOD = registerBlock("grapetree_wood",
             new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
     public static final Block STRIPPED_GRAPETREE_LOG = registerBlock("stripped_grapetree_log",
@@ -1963,7 +1963,7 @@ public class ModBlocks {
 
 
     public static final Block RED_GRAPETREE_LOG = registerBlock("red_grapetree_log",
-            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG).nonOpaque()));
+            new ModPillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG).nonOpaque()));
     public static final Block RED_GRAPETREE_LEAVES = registerBlock("red_grapetree_leaves",
             new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
 
@@ -1978,7 +1978,7 @@ public class ModBlocks {
 
 
     public static final Block KIWITREE_LOG = registerBlock("kiwitree_log",
-            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG).nonOpaque()));
+            new ModPillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG).nonOpaque()));
     /*public static final Block KIWITREE_WOOD = registerBlock("kiwitree_wood",
             new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)));
     public static final Block STRIPPED_KIWITREE_LOG = registerBlock("stripped_kiwitree_log",
