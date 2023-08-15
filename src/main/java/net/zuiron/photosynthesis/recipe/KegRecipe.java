@@ -206,7 +206,9 @@ public class KegRecipe implements Recipe<SimpleInventory> {
             FluidStack fluidInputStack = new FluidStack(FluidVariant.of(fluidInput.getFluid()), FluidConstants.BUCKET);
             FluidStack fluidOutputStack = new FluidStack(FluidVariant.of(fluidOutput.getFluid()), FluidConstants.BUCKET);
 
-            return new KegRecipe(id, fluidOutputStack, inputs, 0, DefaultedList.ofSize(7, 0), fluidInputStack);
+            int cookingTime = buf.readInt();
+
+            return new KegRecipe(id, fluidOutputStack, inputs, cookingTime, DefaultedList.ofSize(7, 1), fluidInputStack);
         }
 
         @Override
@@ -218,6 +220,8 @@ public class KegRecipe implements Recipe<SimpleInventory> {
             }
             recipe.getFluidInput().getFluidVariant().toPacket(buf);
             recipe.getOutputFluid().getFluidVariant().toPacket(buf);
+
+            buf.writeInt(recipe.getCookTime());
         }
     }
 }

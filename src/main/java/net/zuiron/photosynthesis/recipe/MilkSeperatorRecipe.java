@@ -262,11 +262,12 @@ public class MilkSeperatorRecipe implements Recipe<SimpleInventory> {
             FluidStack fluidOutputStack = new FluidStack(FluidVariant.of(fluidOutput.getFluid()), FluidConstants.BUCKET);
             FluidStack fluidOutputStack2 = new FluidStack(FluidVariant.of(fluidOutput2.getFluid()), FluidConstants.BUCKET);
 
-            //outputBuckets.add(Ingredient.ofStacks(fluidOutput.getFluid().getBucketItem().getDefaultStack(), fluidOutput2.getFluid().getBucketItem().getDefaultStack()));
             outputBuckets.set(0, Ingredient.ofItems(fluidOutput.getFluid().getBucketItem()));
             outputBuckets.set(1, Ingredient.ofItems(fluidOutput2.getFluid().getBucketItem()));
 
-            return new MilkSeperatorRecipe(id, fluidOutputStack, fluidOutputStack2, inputs, 0, fluidInputStack, outputBuckets);
+            int cookingTime = buf.readInt();
+
+            return new MilkSeperatorRecipe(id, fluidOutputStack, fluidOutputStack2, inputs, cookingTime, fluidInputStack, outputBuckets);
         }
 
         @Override
@@ -278,6 +279,8 @@ public class MilkSeperatorRecipe implements Recipe<SimpleInventory> {
             recipe.getFluidInput().getFluidVariant().toPacket(buf);
             recipe.getOutputFluid().getFluidVariant().toPacket(buf);
             recipe.getOutputFluid2().getFluidVariant().toPacket(buf);
+
+            buf.writeInt(recipe.getCookTime());
         }
     }
 }

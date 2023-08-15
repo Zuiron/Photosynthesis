@@ -200,7 +200,9 @@ public class FluidPressRecipe implements Recipe<SimpleInventory> {
             FluidVariant fluidOutput = FluidVariant.fromPacket(buf);
             FluidStack fluidOutputStack = new FluidStack(FluidVariant.of(fluidOutput.getFluid()), FluidConstants.BUCKET);
 
-            return new FluidPressRecipe(id, fluidOutputStack, inputs, 0, DefaultedList.ofSize(7, 0));
+            int cookingTime = buf.readInt();
+
+            return new FluidPressRecipe(id, fluidOutputStack, inputs, cookingTime, DefaultedList.ofSize(7, 1));
         }
 
         @Override
@@ -210,6 +212,8 @@ public class FluidPressRecipe implements Recipe<SimpleInventory> {
                 ing.write(buf);
             }
             recipe.getOutputFluid().getFluidVariant().toPacket(buf);
+
+            buf.writeInt(recipe.getCookTime());
         }
     }
 }
