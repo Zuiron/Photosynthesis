@@ -26,7 +26,8 @@
     "ModPassiveEntity",
     "Animals.ModChickenEntity",
     "Animals.ModPigEntity",
-    "Animals.ModHorseEntity"
+    "Animals.ModHorseEntity",
+    "Animals.ModSheepEntity"
   ],
   "client": [
     "PhotosynthesisMixin"
