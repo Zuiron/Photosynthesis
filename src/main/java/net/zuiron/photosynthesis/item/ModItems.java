@@ -898,6 +898,26 @@ public class ModItems {
     public static final Item CHICKEN_TRIMMINGS = registerItem("chicken_trimmings",
             new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
+
+
+    public static final Item RAW_BACON = registerItem("raw_bacon",
+            new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item PIG_BELLY = registerItem("pig_belly",
+            new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item RAW_HAM = registerItem("raw_ham",
+            new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item PIG_SKIN = registerItem("pig_skin",
+            new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item PIG_BONES = registerItem("pig_bones",
+            new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item PIG_TRIMMINGS = registerItem("pig_trimmings",
+            new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
     // Food's ----------------------------------------------------------------------------------------------------------
 
     /*public static final Item CANOLA_OIL_BOTTLE = registerItem("canola_oil_bottle",
