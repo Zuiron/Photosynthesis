@@ -25,7 +25,8 @@
     "ModBoneMealItem",
     "ModPassiveEntity",
     "Animals.ModChickenEntity",
-    "Animals.ModPigEntity"
+    "Animals.ModPigEntity",
+    "Animals.ModHorseEntity"
   ],
   "client": [
     "PhotosynthesisMixin"
