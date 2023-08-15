@@ -17,18 +17,31 @@ Whether you're a seasoned farmer or just starting out, Photosynthesis offers a f
 > **Warning**
 > This project is still in heavy development! You are free to compile yourself and try it out, but keep in mind that there will be missing blockmodels, textures, features etc... **This mod is not in a playable state!**
 
-# Changed Mob Behavior
-When milking cows, it gets a cooldown of 8000 ticks, 1/3 of a minecraft day. Meaning
-you can only milk a cow 3 times a day. Also you get Cows Milk instead of regular milk (Minecraft Milk).
+# Changed Animal Behavior
+A single Cow can at max productivity produces 4 buckets of milk per mc day. Also you get Cows Milk instead of regular milk (Minecraft Milk).
 
-When milking goats, it gets a cooldown of 8000 ticks, 1/3 of a minecraft day. Meaning
-you can only milk a cow 3 times a day. Also you get Goats Milk instead of regular milk (Minecraft Milk).
+A single Goat can at max productivity produces 4 buckets of milk per mc day. Also you get Goats Milk instead of regular milk (Minecraft Milk).
+
+You can only shear a sheep once every 2 mc days.
+
+And chickens only drop one egg per mc day.
+
+Also, animals now require water and some require hay, grass and other types of food.
+If not being fed or they have access to water, they will die.
+
+Remember, if the animal is frequently low on a required food. they will produce less and if they are low over a longer period.
+the will not produce anything, that goes for milk, goat milk, wool and eggs.
 
 # Seasons
 When seasons is enabled. crops grow in specific fashion based on the crop. Hover over seeds or produce to see which season
 it should be planted and when it will mature.
 
 Also BONEMEAL is disabled if seasons is enabled.
+
+When seasons is enabled. growth time for these animals is greatly increased.
+Cow: 2 years, Pigs 6 months, Sheep 1 year, Chicken 5 months, Horse 4 years, Goat 3 years.
+
+Also, if they are frequently low on food or water, their growth will take longer.
 
 # Tree's
 
