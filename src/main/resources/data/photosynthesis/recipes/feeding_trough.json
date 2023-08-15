@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "# #",
+    "###",
+    "O O"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stripped_oak_wood"
+    },
+    "O": {
+      "item": "minecraft:oak_fence"
+    }
+  },
+  "result": {
+    "item": "photosynthesis:feedingtrough",
+    "count": 1
+  }
+}
