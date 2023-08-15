@@ -40,7 +40,27 @@ public class modifyLootTables {
                         .conditionally(RandomChanceLootCondition.builder(1f)) // Drops 100% of the time
                         .with(ItemEntry.builder(ModItems.SHEEP_BONES))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
 
+                poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(1f))
+                        .with(ItemEntry.builder(ModItems.SHEEP_TRIMMINGS))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(10.0f, 12.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+
+                poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(1f))
+                        .with(ItemEntry.builder(ModItems.SHEEP_RIBS))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 4.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+
+                poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(1f))
+                        .with(ItemEntry.builder(ModItems.SHEEP_LEGS))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(3.0f, 4.0f)).build());
                 tableBuilder.pool(poolBuilder.build());
             }
 
@@ -56,7 +76,7 @@ public class modifyLootTables {
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(1f))
                         .with(ItemEntry.builder(ModItems.COW_RIBS))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)).build());
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 4.0f)).build());
                 tableBuilder.pool(poolBuilder.build());
 
                 poolBuilder = LootPool.builder()
@@ -77,7 +97,7 @@ public class modifyLootTables {
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(1f))
                         .with(ItemEntry.builder(ModItems.COW_BRISKET))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1f, 1f)).build());
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1f, 2f)).build());
                 tableBuilder.pool(poolBuilder.build());
 
                 poolBuilder = LootPool.builder()
