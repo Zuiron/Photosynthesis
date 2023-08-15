@@ -882,6 +882,22 @@ public class ModItems {
     public static final Item SHEEP_LEGS = registerItem("sheep_legs",
             new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
+
+    public static final Item CHICKEN_LIVER = registerItem("chicken_liver",
+            new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item CHICKEN_BONES = registerItem("chicken_bones",
+            new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item CHICKEN_FEET = registerItem("chicken_feet",
+            new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item CHICKEN_WINGS = registerItem("chicken_wings",
+            new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item CHICKEN_TRIMMINGS = registerItem("chicken_trimmings",
+            new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
     // Food's ----------------------------------------------------------------------------------------------------------
 
     /*public static final Item CANOLA_OIL_BOTTLE = registerItem("canola_oil_bottle",

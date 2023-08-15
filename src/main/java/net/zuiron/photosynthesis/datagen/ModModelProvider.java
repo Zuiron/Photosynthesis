@@ -140,6 +140,12 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.SHEEP_RIBS,
                 ModItems.SHEEP_LEGS,
 
+                ModItems.CHICKEN_BONES,
+                ModItems.CHICKEN_FEET,
+                ModItems.CHICKEN_LIVER,
+                ModItems.CHICKEN_WINGS,
+                ModItems.CHICKEN_TRIMMINGS,
+
                 ModItems.FIRESTARTER,
 
                 ModItems.BOILED_EGG,
