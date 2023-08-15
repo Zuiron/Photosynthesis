@@ -179,7 +179,7 @@ public abstract class ModCowEntity extends AnimalEntity {
                 } else if (player.getStackInHand(hand).isOf(Items.ROTTEN_FLESH)) {
                     //this.mod_Milk = this.mod_Milk_max;
                     //((getCustomVarsPassiveEntity) this).setMod_Grass(mod_Grass-24000);
-                    ((getCustomVarsPassiveEntity) this).addMod_LivingTicks(480000);
+                    //((getCustomVarsPassiveEntity) this).addMod_LivingTicks(480000);
                 }
             }
         }

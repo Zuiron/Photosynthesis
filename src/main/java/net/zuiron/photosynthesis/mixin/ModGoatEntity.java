@@ -128,7 +128,7 @@ public abstract class ModGoatEntity extends AnimalEntity {
                     player.sendMessage(Text.literal(string),false);
                 } else if (player.getStackInHand(hand).isOf(Items.ROTTEN_FLESH)) {
                     //this.mod_Milk = this.mod_Milk_max;
-                    ((getCustomVarsPassiveEntity) this).setMod_Food(mod_Food-24000);
+                    //((getCustomVarsPassiveEntity) this).setMod_Food(mod_Food-24000);
                     //((getCustomVarsPassiveEntity) this).setMod_Water(mod_Water-24000);
                     //((getCustomVarsPassiveEntity) this).addMod_LivingTicks(480000);
                 }
