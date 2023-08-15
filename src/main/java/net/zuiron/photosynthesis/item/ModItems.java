@@ -918,6 +918,18 @@ public class ModItems {
     public static final Item PIG_TRIMMINGS = registerItem("pig_trimmings",
             new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
+
+    public static final Item HORSE_MEAT = registerItem("horse_meat",
+            new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item HORSE_BONES = registerItem("horse_bones",
+            new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item HORSE_HAIR = registerItem("horse_hair",
+            new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item HORSE_LEATHER = registerItem("horse_leather",
+            new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
     // Food's ----------------------------------------------------------------------------------------------------------
 
     /*public static final Item CANOLA_OIL_BOTTLE = registerItem("canola_oil_bottle",

@@ -29,12 +29,42 @@ public class modifyLootTables {
     private static final Identifier COMMON_SHEEP_LOOT_TABLE_ID = new Identifier("minecraft", "entities/sheep");
     private static final Identifier COMMON_CHICKEN_LOOT_TABLE_ID = new Identifier("minecraft", "entities/chicken");
     private static final Identifier COMMON_PIG_LOOT_TABLE_ID = new Identifier("minecraft", "entities/pig");
+    private static final Identifier COMMON_HORSE_LOOT_TABLE_ID = new Identifier("minecraft", "entities/horse");
 
 
     public static void registerModifyLootTables() {
         LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
             // Let's only modify built-in loot tables and leave data pack loot tables untouched by checking the source.
             // We also check that the loot table ID is equal to the ID we want.
+            if(source.isBuiltin() && COMMON_HORSE_LOOT_TABLE_ID.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(1f)) // Drops 100% of the time
+                        .with(ItemEntry.builder(ModItems.HORSE_MEAT))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(14.0f, 20.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+
+                poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(1f))
+                        .with(ItemEntry.builder(ModItems.HORSE_BONES))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+
+                poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(1f))
+                        .with(ItemEntry.builder(ModItems.HORSE_HAIR))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+
+                poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(1f))
+                        .with(ItemEntry.builder(ModItems.HORSE_LEATHER))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 3.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
             if(source.isBuiltin() && COMMON_PIG_LOOT_TABLE_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
