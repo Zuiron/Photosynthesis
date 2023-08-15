@@ -3,6 +3,7 @@ package net.zuiron.photosynthesis.recipe;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
+import net.fabricmc.fabric.api.transfer.v1.fluid.FluidConstants;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.inventory.SimpleInventory;
@@ -196,9 +197,10 @@ public class FluidPressRecipe implements Recipe<SimpleInventory> {
             for (int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.fromPacket(buf));
             }
+            FluidVariant fluidOutput = FluidVariant.fromPacket(buf);
+            FluidStack fluidOutputStack = new FluidStack(FluidVariant.of(fluidOutput.getFluid()), FluidConstants.BUCKET);
 
-            //FluidStack output = buf.readItemStack();
-            return new FluidPressRecipe(id, null, inputs, 0, DefaultedList.ofSize(7, 0));
+            return new FluidPressRecipe(id, fluidOutputStack, inputs, 0, DefaultedList.ofSize(7, 0));
         }
 
         @Override
@@ -207,7 +209,7 @@ public class FluidPressRecipe implements Recipe<SimpleInventory> {
             for (Ingredient ing : recipe.getIngredients()) {
                 ing.write(buf);
             }
-            //buf.writeItemStack(recipe.getOutput());
+            recipe.getOutputFluid().getFluidVariant().toPacket(buf);
         }
     }
 }

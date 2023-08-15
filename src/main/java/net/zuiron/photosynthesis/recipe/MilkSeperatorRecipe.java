@@ -3,6 +3,7 @@ package net.zuiron.photosynthesis.recipe;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
+import net.fabricmc.fabric.api.transfer.v1.fluid.FluidConstants;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.inventory.SimpleInventory;
@@ -247,14 +248,23 @@ public class MilkSeperatorRecipe implements Recipe<SimpleInventory> {
         @Override
         public MilkSeperatorRecipe read(Identifier id, PacketByteBuf buf) {
             DefaultedList<Ingredient> inputs = DefaultedList.ofSize(buf.readInt(), Ingredient.EMPTY);
+            DefaultedList<Ingredient> outputBuckets = DefaultedList.ofSize(2, Ingredient.EMPTY);
 
             for (int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.fromPacket(buf));
             }
 
-            //FluidStack output = buf.readItemStack();
-            //return new MilkSeperatorRecipe(id, null, null, inputs, 0, DefaultedList.ofSize(7, 0), null);
-            return new MilkSeperatorRecipe(id, null, null, inputs, 0, null, null);
+            FluidVariant fluidInput = FluidVariant.fromPacket(buf);
+            FluidVariant fluidOutput = FluidVariant.fromPacket(buf);
+            FluidVariant fluidOutput2 = FluidVariant.fromPacket(buf);
+
+            FluidStack fluidInputStack = new FluidStack(FluidVariant.of(fluidInput.getFluid()), FluidConstants.BUCKET);
+            FluidStack fluidOutputStack = new FluidStack(FluidVariant.of(fluidOutput.getFluid()), FluidConstants.BUCKET);
+            FluidStack fluidOutputStack2 = new FluidStack(FluidVariant.of(fluidOutput2.getFluid()), FluidConstants.BUCKET);
+
+            outputBuckets.add(Ingredient.ofStacks(fluidOutput.getFluid().getBucketItem().getDefaultStack(), fluidOutput2.getFluid().getBucketItem().getDefaultStack()));
+
+            return new MilkSeperatorRecipe(id, fluidOutputStack, fluidOutputStack2, inputs, 0, fluidInputStack, outputBuckets);
         }
 
         @Override
@@ -263,7 +273,9 @@ public class MilkSeperatorRecipe implements Recipe<SimpleInventory> {
             for (Ingredient ing : recipe.getIngredients()) {
                 ing.write(buf);
             }
-            //buf.writeItemStack(recipe.getOutput());
+            recipe.getFluidInput().getFluidVariant().toPacket(buf);
+            recipe.getOutputFluid().getFluidVariant().toPacket(buf);
+            recipe.getOutputFluid2().getFluidVariant().toPacket(buf);
         }
     }
 }

@@ -3,6 +3,7 @@ package net.zuiron.photosynthesis.recipe;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
+import net.fabricmc.fabric.api.transfer.v1.fluid.FluidConstants;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.inventory.SimpleInventory;
@@ -199,17 +200,24 @@ public class KegRecipe implements Recipe<SimpleInventory> {
                 inputs.set(i, Ingredient.fromPacket(buf));
             }
 
-            //FluidStack output = buf.readItemStack();
-            return new KegRecipe(id, null, inputs, 0, DefaultedList.ofSize(7, 0), null);
+            FluidVariant fluidInput = FluidVariant.fromPacket(buf);
+            FluidVariant fluidOutput = FluidVariant.fromPacket(buf);
+
+            FluidStack fluidInputStack = new FluidStack(FluidVariant.of(fluidInput.getFluid()), FluidConstants.BUCKET);
+            FluidStack fluidOutputStack = new FluidStack(FluidVariant.of(fluidOutput.getFluid()), FluidConstants.BUCKET);
+
+            return new KegRecipe(id, fluidOutputStack, inputs, 0, DefaultedList.ofSize(7, 0), fluidInputStack);
         }
 
         @Override
         public void write(PacketByteBuf buf, KegRecipe recipe) {
             buf.writeInt(recipe.getIngredients().size());
+
             for (Ingredient ing : recipe.getIngredients()) {
                 ing.write(buf);
             }
-            //buf.writeItemStack(recipe.getOutput());
+            recipe.getFluidInput().getFluidVariant().toPacket(buf);
+            recipe.getOutputFluid().getFluidVariant().toPacket(buf);
         }
     }
 }
