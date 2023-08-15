@@ -169,7 +169,7 @@ public abstract class ModPassiveEntity extends PathAwareEntity implements getCus
         name2days2mature.put("entity.minecraft.pig", (int) (Seasons.getDaysPerSeasonMod()*1.5));        //6months
         name2days2mature.put("entity.minecraft.sheep", Seasons.getDaysPerSeasonMod()*4);                //1years
         name2days2mature.put("entity.minecraft.chicken", (int) (Seasons.getDaysPerSeasonMod()*1.25));   //5months
-        name2days2mature.put("entity.minecraft.horse", Seasons.getDaysPerSeasonMod()*16);               //4years
+        name2days2mature.put("entity.minecraft.horse", Seasons.getDaysPerSeasonMod()*8);                //4years //horse animations interrupt ticks?, so half this. should be:*16
         name2days2mature.put("entity.minecraft.goat", Seasons.getDaysPerSeasonMod()*12);                //3years
 
         if(this.getBreedingAge() < 0) { //isbaby, lower than 0 its a baby.
