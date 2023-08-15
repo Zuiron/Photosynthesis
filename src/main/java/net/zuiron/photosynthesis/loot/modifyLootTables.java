@@ -62,6 +62,13 @@ public class modifyLootTables {
                         .with(ItemEntry.builder(ModItems.SHEEP_LEGS))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(3.0f, 4.0f)).build());
                 tableBuilder.pool(poolBuilder.build());
+
+                poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(1f))
+                        .with(ItemEntry.builder(Items.MUTTON))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(6.0f, 8.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
             }
 
             if(source.isBuiltin() && COMMON_COW_LOOT_TABLE_ID.equals(id)) {
