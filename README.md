@@ -43,6 +43,8 @@ Cow: 2 years, Pigs 6 months, Sheep 1 year, Chicken 5 months, Horse 4 years, Goat
 
 Also, if they are frequently low on food or water, their growth will take longer.
 
+Grass crop is NOT affected by seasons and will grow "slowly" all year round.
+
 # Tree's
 
 
