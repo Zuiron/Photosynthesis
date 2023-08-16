@@ -1038,7 +1038,7 @@ public class ModItems {
 
     public static final Item TOMATOSOUP = registerItem("tomatosoup",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+                    .food(new FoodComponent.Builder().hunger(5).saturationModifier(0.4f).build())));
 
     public static final Item BEEFSTEW = registerItem("beefstew",
             new Item(new FabricItemSettings()
