@@ -60,6 +60,7 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.WOOL_RAW_WHITE,
                 ModItems.WOOL_RAW_YELLOW,*/
                 ModItems.SEASHELL,
+                ModItems.GRILLED_SALMON,
 
                 ModItems.GARDEN_GRUBBER_FLINT,
                 ModItems.GARDEN_GRUBBER_IRON,
