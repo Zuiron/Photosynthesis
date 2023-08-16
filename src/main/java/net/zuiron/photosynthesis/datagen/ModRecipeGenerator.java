@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
+import net.minecraft.data.server.recipe.VanillaRecipeProvider;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
@@ -13,6 +14,7 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.zuiron.photosynthesis.block.ModBlocks;
+import net.zuiron.photosynthesis.item.ModItems;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -320,6 +322,28 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                     .criterion(FabricRecipeProvider.hasItem(kitchendecor_wood.get(i)), FabricRecipeProvider.conditionsFromItem(kitchendecor_wood.get(i)))
                     .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(kitchendecor.get(i))));
         }
+
+        int seedsCount = 16;
+        String strCategory = "seeds";
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.AGAVE_SEEDS, ModItems.AGAVE, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.AMARANTH_SEEDS, ModItems.AMARANTH, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.ARROWROOT_SEEDS, ModItems.ARROWROOT, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.ARTICHOKE_SEEDS, ModItems.ARTICHOKE, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.ASPARAGUS_SEEDS, ModItems.ASPARAGUS, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.BARLEY_SEEDS, ModItems.BARLEY, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.BASIL_SEEDS, ModItems.BASIL, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.BEAN_SEEDS, ModItems.BEAN, strCategory, seedsCount);
+
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.BELLPEPPER_SEEDS, ModItems.GREEN_BELLPEPPER, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.BELLPEPPER_SEEDS, ModItems.RED_BELLPEPPER, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.BELLPEPPER_SEEDS, ModItems.YELLOW_BELLPEPPER, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.BROCCOLI_SEEDS, ModItems.BROCCOLI, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.BRUSSELS_SPROUTS_SEEDS, ModItems.BRUSSELS_SPROUTS, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.CABBAGE_SEEDS, ModItems.CABBAGE, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.CACTUS_FRUIT_SEEDS, ModItems.CACTUS_FRUIT, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.CAMELLIA_SINENSIS_SEEDS, ModItems.CAMELLIA_SINENSIS, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.CANOLA_SEEDS, ModItems.CANOLA, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.CANTALOUPE_SEEDS, ModItems.CANTALOUPE, strCategory, seedsCount);
 
         /*final TagKey<Item> APPLETREE_LOGS_ITEMS = TagKey.of(RegistryKeys.ITEM, new Identifier("photosynthesis", "appletree_logs"));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.APPLETREE_PLANKS, 4)
