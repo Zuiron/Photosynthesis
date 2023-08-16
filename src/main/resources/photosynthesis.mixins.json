@@ -27,7 +27,8 @@
     "Animals.ModChickenEntity",
     "Animals.ModPigEntity",
     "Animals.ModHorseEntity",
-    "Animals.ModSheepEntity"
+    "Animals.ModSheepEntity",
+    "ModItemAnimalDataTooltipMixin"
   ],
   "client": [
     "PhotosynthesisMixin"
