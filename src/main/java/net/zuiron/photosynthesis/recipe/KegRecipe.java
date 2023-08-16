@@ -203,12 +203,20 @@ public class KegRecipe implements Recipe<SimpleInventory> {
             FluidVariant fluidInput = FluidVariant.fromPacket(buf);
             FluidVariant fluidOutput = FluidVariant.fromPacket(buf);
 
-            FluidStack fluidInputStack = new FluidStack(FluidVariant.of(fluidInput.getFluid()), FluidConstants.BUCKET);
-            FluidStack fluidOutputStack = new FluidStack(FluidVariant.of(fluidOutput.getFluid()), FluidConstants.BUCKET);
+            long amount1 = buf.readLong();
+            long amount2 = buf.readLong();
+
+            FluidStack fluidInputStack = new FluidStack(FluidVariant.of(fluidInput.getFluid()), amount1);
+            FluidStack fluidOutputStack = new FluidStack(FluidVariant.of(fluidOutput.getFluid()), amount2);
 
             int cookingTime = buf.readInt();
 
-            return new KegRecipe(id, fluidOutputStack, inputs, cookingTime, DefaultedList.ofSize(7, 1), fluidInputStack);
+            DefaultedList counts = DefaultedList.ofSize(buf.readInt(), 0);
+            for (int i = 0; i < counts.size(); i++) {
+                counts.set(i, buf.readInt());
+            }
+
+            return new KegRecipe(id, fluidOutputStack, inputs, cookingTime, counts, fluidInputStack);
         }
 
         @Override
@@ -221,7 +229,16 @@ public class KegRecipe implements Recipe<SimpleInventory> {
             recipe.getFluidInput().getFluidVariant().toPacket(buf);
             recipe.getOutputFluid().getFluidVariant().toPacket(buf);
 
+            buf.writeLong(recipe.getFluidInput().amount);
+            buf.writeLong(recipe.getOutputFluid().amount);
+
             buf.writeInt(recipe.getCookTime());
+
+            buf.writeInt(recipe.getCounts().size());
+            DefaultedList counts = recipe.getCounts();
+            for (Object count : counts) {
+                buf.writeInt((Integer) count);
+            }
         }
     }
 }

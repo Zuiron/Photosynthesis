@@ -125,7 +125,9 @@ public class MortarRecipe implements Recipe<SimpleInventory> {
             }
 
             ItemStack output = buf.readItemStack();
-            return new MortarRecipe(id, output, inputs, 0);
+
+            int cookingTime = buf.readInt();
+            return new MortarRecipe(id, output, inputs, cookingTime);
         }
 
         @Override
@@ -135,6 +137,8 @@ public class MortarRecipe implements Recipe<SimpleInventory> {
                 ing.write(buf);
             }
             buf.writeItemStack(recipe.getOutputStack());
+
+            buf.writeInt(recipe.getCookTime());
         }
     }
 }

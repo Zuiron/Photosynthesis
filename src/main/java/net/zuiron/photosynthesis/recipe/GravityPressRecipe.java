@@ -125,7 +125,9 @@ public class GravityPressRecipe implements Recipe<SimpleInventory> {
             }
 
             ItemStack output = buf.readItemStack();
-            return new GravityPressRecipe(id, output, inputs, 0);
+
+            int cookingTime = buf.readInt();
+            return new GravityPressRecipe(id, output, inputs, cookingTime);
         }
 
         @Override
@@ -135,6 +137,8 @@ public class GravityPressRecipe implements Recipe<SimpleInventory> {
                 ing.write(buf);
             }
             buf.writeItemStack(recipe.getOutputStack());
+
+            buf.writeInt(recipe.getCookTime());
         }
     }
 }

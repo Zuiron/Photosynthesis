@@ -114,7 +114,9 @@ public class DryingNetRecipe implements Recipe<SimpleInventory> {
             }
 
             ItemStack output = buf.readItemStack();
-            return new DryingNetRecipe(id, output, inputs, 0);
+
+            int cookingTime = buf.readInt();
+            return new DryingNetRecipe(id, output, inputs, cookingTime);
         }
 
         @Override
@@ -124,6 +126,8 @@ public class DryingNetRecipe implements Recipe<SimpleInventory> {
                 ing.write(buf);
             }
             buf.writeItemStack(recipe.getOutputStack());
+
+            buf.writeInt(recipe.getCookTime());
         }
     }
 }

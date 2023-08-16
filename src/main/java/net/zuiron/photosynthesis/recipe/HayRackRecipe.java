@@ -114,7 +114,9 @@ public class HayRackRecipe implements Recipe<SimpleInventory> {
             }
 
             ItemStack output = buf.readItemStack();
-            return new HayRackRecipe(id, output, inputs, 0);
+
+            int cookingTime = buf.readInt();
+            return new HayRackRecipe(id, output, inputs, cookingTime);
         }
 
         @Override
@@ -124,6 +126,8 @@ public class HayRackRecipe implements Recipe<SimpleInventory> {
                 ing.write(buf);
             }
             buf.writeItemStack(recipe.getOutputStack());
+
+            buf.writeInt(recipe.getCookTime());
         }
     }
 }

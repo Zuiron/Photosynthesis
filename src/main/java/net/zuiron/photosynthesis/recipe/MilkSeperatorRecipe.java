@@ -258,9 +258,13 @@ public class MilkSeperatorRecipe implements Recipe<SimpleInventory> {
             FluidVariant fluidOutput = FluidVariant.fromPacket(buf);
             FluidVariant fluidOutput2 = FluidVariant.fromPacket(buf);
 
-            FluidStack fluidInputStack = new FluidStack(FluidVariant.of(fluidInput.getFluid()), FluidConstants.BUCKET);
-            FluidStack fluidOutputStack = new FluidStack(FluidVariant.of(fluidOutput.getFluid()), FluidConstants.BUCKET);
-            FluidStack fluidOutputStack2 = new FluidStack(FluidVariant.of(fluidOutput2.getFluid()), FluidConstants.BUCKET);
+            long amount1 = buf.readLong();
+            long amount2 = buf.readLong();
+            long amount3 = buf.readLong();
+
+            FluidStack fluidInputStack = new FluidStack(FluidVariant.of(fluidInput.getFluid()), amount1);
+            FluidStack fluidOutputStack = new FluidStack(FluidVariant.of(fluidOutput.getFluid()), amount2);
+            FluidStack fluidOutputStack2 = new FluidStack(FluidVariant.of(fluidOutput2.getFluid()), amount3);
 
             outputBuckets.set(0, Ingredient.ofItems(fluidOutput.getFluid().getBucketItem()));
             outputBuckets.set(1, Ingredient.ofItems(fluidOutput2.getFluid().getBucketItem()));
@@ -279,6 +283,10 @@ public class MilkSeperatorRecipe implements Recipe<SimpleInventory> {
             recipe.getFluidInput().getFluidVariant().toPacket(buf);
             recipe.getOutputFluid().getFluidVariant().toPacket(buf);
             recipe.getOutputFluid2().getFluidVariant().toPacket(buf);
+
+            buf.writeLong(recipe.getFluidInput().amount);
+            buf.writeLong(recipe.getOutputFluid().amount);
+            buf.writeLong(recipe.getOutputFluid2().amount);
 
             buf.writeInt(recipe.getCookTime());
         }

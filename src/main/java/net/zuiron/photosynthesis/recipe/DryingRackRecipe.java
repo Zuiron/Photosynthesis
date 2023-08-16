@@ -114,7 +114,9 @@ public class DryingRackRecipe implements Recipe<SimpleInventory> {
             }
 
             ItemStack output = buf.readItemStack();
-            return new DryingRackRecipe(id, output, inputs, 0);
+
+            int cookingTime = buf.readInt();
+            return new DryingRackRecipe(id, output, inputs, cookingTime);
         }
 
         @Override
@@ -124,6 +126,8 @@ public class DryingRackRecipe implements Recipe<SimpleInventory> {
                 ing.write(buf);
             }
             buf.writeItemStack(recipe.getOutputStack());
+
+            buf.writeInt(recipe.getCookTime());
         }
     }
 }

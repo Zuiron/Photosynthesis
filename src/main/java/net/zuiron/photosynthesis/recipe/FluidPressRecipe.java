@@ -198,11 +198,17 @@ public class FluidPressRecipe implements Recipe<SimpleInventory> {
                 inputs.set(i, Ingredient.fromPacket(buf));
             }
             FluidVariant fluidOutput = FluidVariant.fromPacket(buf);
-            FluidStack fluidOutputStack = new FluidStack(FluidVariant.of(fluidOutput.getFluid()), FluidConstants.BUCKET);
+            long amount = buf.readLong();
+            FluidStack fluidOutputStack = new FluidStack(FluidVariant.of(fluidOutput.getFluid()), amount);
 
             int cookingTime = buf.readInt();
 
-            return new FluidPressRecipe(id, fluidOutputStack, inputs, cookingTime, DefaultedList.ofSize(7, 1));
+            DefaultedList counts = DefaultedList.ofSize(buf.readInt(), 0);
+            for (int i = 0; i < counts.size(); i++) {
+                counts.set(i, buf.readInt());
+            }
+
+            return new FluidPressRecipe(id, fluidOutputStack, inputs, cookingTime, counts);
         }
 
         @Override
@@ -212,8 +218,15 @@ public class FluidPressRecipe implements Recipe<SimpleInventory> {
                 ing.write(buf);
             }
             recipe.getOutputFluid().getFluidVariant().toPacket(buf);
+            buf.writeLong(recipe.getOutputFluid().amount);
 
             buf.writeInt(recipe.getCookTime());
+
+            buf.writeInt(recipe.getCounts().size());
+            DefaultedList counts = recipe.getCounts();
+            for (Object count : counts) {
+                buf.writeInt((Integer) count);
+            }
         }
     }
 }

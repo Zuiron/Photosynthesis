@@ -134,7 +134,14 @@ public class SkilletRecipe implements Recipe<SimpleInventory> {
             }
 
             ItemStack output = buf.readItemStack();
-            return new SkilletRecipe(id, output, inputs, 0, DefaultedList.ofSize(7, 0));
+
+            int cookingTime = buf.readInt();
+
+            DefaultedList counts = DefaultedList.ofSize(buf.readInt(), 0);
+            for (int i = 0; i < counts.size(); i++) {
+                counts.set(i, buf.readInt());
+            }
+            return new SkilletRecipe(id, output, inputs, cookingTime, counts);
         }
 
         @Override
@@ -144,6 +151,14 @@ public class SkilletRecipe implements Recipe<SimpleInventory> {
                 ing.write(buf);
             }
             buf.writeItemStack(recipe.getOutputStack());
+
+            buf.writeInt(recipe.getCookTime());
+
+            buf.writeInt(recipe.getCounts().size());
+            DefaultedList counts = recipe.getCounts();
+            for (Object count : counts) {
+                buf.writeInt((Integer) count);
+            }
         }
     }
 }
