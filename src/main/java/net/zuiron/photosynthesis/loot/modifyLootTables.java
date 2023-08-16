@@ -2,28 +2,38 @@ package net.zuiron.photosynthesis.loot;
 
 import net.fabricmc.fabric.api.loot.v2.FabricLootPoolBuilder;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.loot.LootPool;
+import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
 import net.minecraft.loot.condition.MatchToolLootCondition;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
+import net.minecraft.predicate.BlockPredicate;
+import net.minecraft.predicate.StatePredicate;
 import net.minecraft.predicate.item.ItemPredicate;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
 import net.zuiron.photosynthesis.Photosynthesis;
+import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.item.ModItems;
 
 public class modifyLootTables {
     private static final Identifier GRASS_ID1 = new Identifier("minecraft", "blocks/grass");
     private static final Identifier GRASS_ID = Blocks.GRASS.getLootTableId();
     private static final Identifier TALL_GRASS_ID = Blocks.TALL_GRASS.getLootTableId();
+
+    private static final Identifier WHEAT_ID = Blocks.WHEAT.getLootTableId();
+    private static final Identifier BARLEY_ID = ModBlocks.BARLEY_CROP.getLootTableId();
+    private static final Identifier OAT_ID = ModBlocks.OAT_CROP.getLootTableId();
 
     private static final Identifier COMMON_COW_LOOT_TABLE_ID = new Identifier("minecraft", "entities/cow");
     private static final Identifier COMMON_SHEEP_LOOT_TABLE_ID = new Identifier("minecraft", "entities/sheep");
@@ -259,6 +269,33 @@ public class modifyLootTables {
                         .with(ItemEntry.builder(ModItems.COW_TONGUE))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
                 tableBuilder.pool(poolBuilder.build());
+            }
+
+            if (source.isBuiltin() && WHEAT_ID.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .with(ItemEntry.builder(ModItems.STRAW_PIECE))
+                        .conditionally(BlockStatePropertyLootCondition.builder(Blocks.WHEAT).properties(StatePredicate.Builder.create().exactMatch(Properties.AGE_7, 7)))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(3.0f, 6.0f)).build());
+                tableBuilder.pool(poolBuilder);
+            }
+
+            if (source.isBuiltin() && BARLEY_ID.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .with(ItemEntry.builder(ModItems.STRAW_PIECE))
+                        .conditionally(BlockStatePropertyLootCondition.builder(ModBlocks.BARLEY_CROP).properties(StatePredicate.Builder.create().exactMatch(Properties.AGE_7, 7)))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(3.0f, 6.0f)).build());
+                tableBuilder.pool(poolBuilder);
+            }
+
+            if (source.isBuiltin() && OAT_ID.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .with(ItemEntry.builder(ModItems.STRAW_PIECE))
+                        .conditionally(BlockStatePropertyLootCondition.builder(ModBlocks.OAT_CROP).properties(StatePredicate.Builder.create().exactMatch(Properties.AGE_7, 7)))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(3.0f, 6.0f)).build());
+                tableBuilder.pool(poolBuilder);
             }
 
             if (source.isBuiltin() && GRASS_ID.equals(id) || TALL_GRASS_ID.equals(id)) {
