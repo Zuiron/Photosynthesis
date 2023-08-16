@@ -345,6 +345,79 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
         VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.CANOLA_SEEDS, ModItems.CANOLA, strCategory, seedsCount);
         VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.CANTALOUPE_SEEDS, ModItems.CANTALOUPE, strCategory, seedsCount);
 
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.CASSAVA_SEEDS, ModItems.CASSAVA, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.CAULIFLOWER_SEEDS, ModItems.CAULIFLOWER, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.CELERY_SEEDS, ModItems.CELERY, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.CHANTERELLE_MUSHROOM_SPORES, ModItems.CHANTERELLE_MUSHROOM, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.CHICKPEA_SEEDS, ModItems.CHICKPEA, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.CHILI_SEEDS, ModItems.CHILI, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.CHIVE_SEEDS, ModItems.CHIVE, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.COFFEA_SEEDS, ModItems.COFFEA, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.CORN_SEEDS, ModItems.CORN, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.COTTON_SEEDS, ModItems.COTTON, strCategory, seedsCount);
+
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.CUCUMBER_SEEDS, ModItems.CUCUMBER, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.EGGPLANT_SEEDS, ModItems.EGGPLANT, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.ERYTHROXYLUM_COCA_SEEDS, ModItems.ERYTHROXYLUM_COCA, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.FILIPENDULA_SEEDS, ModItems.FILIPENDULA, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.FLAX_SEEDS, ModItems.FLAX, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.GARLIC_SEEDS, ModItems.GARLIC, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.GINGER_SEEDS, ModItems.GINGER, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.GRASS_SEEDS, Items.GRASS, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.HOP_SEEDS, ModItems.HOP, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.JALAPENO_SEEDS, ModItems.JALAPENO, strCategory, seedsCount);
+
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.JICAMA_SEEDS, ModItems.JICAMA, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.JUTE_SEEDS, ModItems.JUTE, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.KALE_SEEDS, ModItems.KALE, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.KENAF_SEEDS, ModItems.KENAF, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.KOHLRABI_SEEDS, ModItems.KOHLRABI, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.LEEK_SEEDS, ModItems.LEEK, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.LENTIL_SEEDS, ModItems.LENTIL, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.LETTUCE_SEEDS, ModItems.LETTUCE, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.MILLET_SEEDS, ModItems.MILLET, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.MINT_SEEDS, ModItems.MINT, strCategory, seedsCount);
+
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.MOREL_MUSHROOM_SPORES, ModItems.MOREL_MUSHROOM, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.MUSTARD_SEEDS, ModItems.MUSTARD, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.NICOTIANA_RUSTICA_SEEDS, ModItems.NICOTIANA_RUSTICA, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.OAT_SEEDS, ModItems.OAT, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.OKRA_SEEDS, ModItems.OKRA, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.ONION_SEEDS, ModItems.ONION, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.OREGANO_SEEDS, ModItems.OREGANO, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.PAPAVER_SOMNIFERUM_SEEDS, ModItems.PAPAVER_SOMNIFERUM, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.PARSLEY_SEEDS, ModItems.PARSLEY, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.PARSNIP_SEEDS, ModItems.PARSNIP, strCategory, seedsCount);
+
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.PEANUT_SEEDS, ModItems.PEANUT, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.PEAS_SEEDS, ModItems.PEAS, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.PINEAPPLE_SEEDS, ModItems.PINEAPPLE, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.PORCINI_MUSHROOM_SPORES, ModItems.PORCINI_MUSHROOM, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.QUINOA_SEEDS, ModItems.QUINOA, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.RADISH_SEEDS, ModItems.RADISH, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.RHUBARB_SEEDS, ModItems.RHUBARB, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.RICE_SEEDS, ModItems.RICE_PANICLE, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.RUTABAGA_SEEDS, ModItems.RUTABAGA, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.RYE_SEEDS, ModItems.RYE, strCategory, seedsCount);
+
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.SCALLION_SEEDS, ModItems.SCALLION, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.SESAME_SEEDS, ModItems.SESAME, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.SISAL_SEEDS, ModItems.SISAL, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.SOYBEAN_SEEDS, ModItems.SOYBEAN, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.SPINACH_SEEDS, ModItems.SPINACH, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.SQUASH_SEEDS, ModItems.SQUASH, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.STRAWBERRY_SEEDS, ModItems.STRAWBERRY, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.SUGARBEET_SEEDS, ModItems.SUGARBEET, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.SUNFLOWER_SEEDS, ModItems.SUNFLOWER, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.SWEET_POTATO_SEEDS, ModItems.SWEET_POTATO, strCategory, seedsCount);
+
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.TARO_SEEDS, ModItems.TARO, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.TOMATILLO_SEEDS, ModItems.TOMATILLO, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.TOMATO_SEEDS, ModItems.TOMATO, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.TURNIP_SEEDS, ModItems.TURNIP, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.ZUCCHINI_SEEDS, ModItems.ZUCCHINI, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.WHITE_BUTTON_MUSHROOM_SPORES, ModItems.WHITE_BUTTON_MUSHROOM, strCategory, seedsCount);
+
         /*final TagKey<Item> APPLETREE_LOGS_ITEMS = TagKey.of(RegistryKeys.ITEM, new Identifier("photosynthesis", "appletree_logs"));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.APPLETREE_PLANKS, 4)
                 .input(APPLETREE_LOGS_ITEMS)
