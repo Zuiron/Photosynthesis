@@ -298,7 +298,7 @@ public class ModItems {
     // CROP PRODUCE ----------------------------------------------------------------------------------------------------
     public static final Item TOMATO = registerItem("tomato",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+                    .food(new FoodComponent.Builder().hunger(3).saturationModifier(0.3f).build())));
 
     public static final Item BASIL = registerItem("basil",
             new Item(new FabricItemSettings()
@@ -1042,7 +1042,7 @@ public class ModItems {
 
     public static final Item BEEFSTEW = registerItem("beefstew",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+                    .food(new FoodComponent.Builder().hunger(9).saturationModifier(0.9f).build())));
 
     public static final Item MASHEDPOTATOES = registerItem("mashedpotatoes",
             new Item(new FabricItemSettings()
@@ -1054,7 +1054,7 @@ public class ModItems {
 
     public static final Item RICE_PORRIDGE = registerItem("rice_porridge",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+                    .food(new FoodComponent.Builder().hunger(4).saturationModifier(0.4f).build())));
 
     public static final Item SALAD = registerItem("salad",
             new Item(new FabricItemSettings()
@@ -1140,16 +1140,19 @@ public class ModItems {
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
- public static final Item CHICKEN_NUGGETS = registerItem("chicken_nuggets",
+    public static final Item CHICKEN_NUGGETS = registerItem("chicken_nuggets",
          new Item(new FabricItemSettings()
                  .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
 
+    public static final Item GRILLED_SALMON = registerItem("grilled_salmon",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(6).saturationModifier(0.8f).build())));
 
 
 
- public static final Item BREAD_FORM = registerItem("bread_form",
-            new Item(new FabricItemSettings()));
+     public static final Item BREAD_FORM = registerItem("bread_form",
+                new Item(new FabricItemSettings()));
 
     public static final Item PIZZA_STONE = registerItem("pizza_stone",
             new Item(new FabricItemSettings()));
