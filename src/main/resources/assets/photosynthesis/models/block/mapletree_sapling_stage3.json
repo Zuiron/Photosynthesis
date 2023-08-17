@@ -1,7 +1,6 @@
-
 {
   "parent": "minecraft:block/cross",
   "textures": {
-    "cross": "photosynthesis:block/mapletree_sapling"
+    "cross": "photosynthesis:block/mapletree_sapling_stage3"
   }
 }
