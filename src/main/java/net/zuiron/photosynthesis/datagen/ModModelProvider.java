@@ -62,6 +62,7 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.SEASHELL,
                 ModItems.GRILLED_SALMON,
                 ModItems.GRILLED_COD,
+                ModItems.MANURE,
 
                 ModItems.GARDEN_GRUBBER_FLINT,
                 ModItems.GARDEN_GRUBBER_IRON,

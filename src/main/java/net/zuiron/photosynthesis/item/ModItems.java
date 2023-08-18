@@ -34,6 +34,9 @@ public class ModItems {
     public static final Item TMR = registerItem("tmr",
             new Item(new FabricItemSettings()));
 
+    public static final Item MANURE = registerItem("manure",
+            new Item(new FabricItemSettings()));
+
     public static final Item GRASS_BUNDLE = registerItem("grass_bundle",
             new Item(new FabricItemSettings()));
     public static final Item HAY_BUNDLE = registerItem("hay_bundle",
