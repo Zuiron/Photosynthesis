@@ -14,8 +14,10 @@ import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
+import net.minecraft.world.event.GameEvent;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.fluid.ModFluids;
+import net.zuiron.photosynthesis.item.ModItems;
 import net.zuiron.photosynthesis.util.getCustomVarsPassiveEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -32,6 +34,11 @@ public abstract class ModCowEntity extends AnimalEntity {
     public int mod_Milk = 0; //this is 4 buckets worth of milk. each grass,hay,straw,food(TMR). adds +1 every tick if above 50%.
     @Unique
     protected final int mod_Milk_max = 96000; //24000 = one bucket.
+
+    @Unique
+    public int mod_Manure = 0;
+    @Unique
+    protected final int mod_Manure_max = 24000; //drop every mc day.
 
     protected ModCowEntity(EntityType<? extends AnimalEntity> entityType, World world) {
         super(entityType, world);
@@ -89,13 +96,27 @@ public abstract class ModCowEntity extends AnimalEntity {
                 if(cowProductivity >= 75.0f) { this.mod_Milk++; }
                 if(cowProductivity >= 100.0f) { this.mod_Milk++; }
             }
-            /*
-            if(!this.isBaby() && mod_Water >= (mod_Water_max/2)) {
-                if(mod_Grass > (mod_Grass_max/2) && this.mod_Milk < this.mod_Milk_max) { this.mod_Milk++; }
-                if(mod_Hay   > (mod_Hay_max/2)   && this.mod_Milk < this.mod_Milk_max) { this.mod_Milk++; }
-                if(mod_Straw > (mod_Straw_max/2) && this.mod_Milk < this.mod_Milk_max) { this.mod_Milk++; }
-                if(mod_Food  > (mod_Food_max/2)  && this.mod_Milk < this.mod_Milk_max) { this.mod_Milk++; }
-            }*/
+
+            //Manure control.
+            if(!this.getWorld().isClient) {
+                if (this.mod_Manure < this.mod_Manure_max) {
+                    mod_Manure++;
+                }
+                else if (this.mod_Manure == this.mod_Manure_max) {
+                    if (mod_Straw > (mod_Straw_max / 2)) {
+                        //drop more
+                        this.playSound(SoundEvents.ENTITY_SNIFFER_DROP_SEED, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
+                        this.dropStack(new ItemStack(ModItems.MANURE,8));
+                        this.emitGameEvent(GameEvent.ENTITY_PLACE);
+                    } else {
+                        //drop less
+                        this.playSound(SoundEvents.ENTITY_SNIFFER_DROP_SEED, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
+                        this.dropStack(new ItemStack(ModItems.MANURE,4));
+                        this.emitGameEvent(GameEvent.ENTITY_PLACE);
+                    }
+                    this.mod_Manure = 0;
+                }
+            }
 
             //damage missing water or food.
             if(mod_Water <= 0) {
