@@ -4,17 +4,25 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PigEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
+import net.minecraft.world.event.GameEvent;
+import net.zuiron.photosynthesis.item.ModItems;
 import net.zuiron.photosynthesis.util.getCustomVarsPassiveEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 
 @Mixin(PigEntity.class)
 public abstract class ModPigEntity extends AnimalEntity {
+    @Unique
+    public int mod_Manure = 0;
+    @Unique
+    protected final int mod_Manure_max = 24000; //drop every mc day.
     protected ModPigEntity(EntityType<? extends AnimalEntity> entityType, World world) {
         super(entityType, world);
     }
@@ -41,6 +49,25 @@ public abstract class ModPigEntity extends AnimalEntity {
         //livingTicks
         if(PigProductivity >= 100.0f) {
             ((getCustomVarsPassiveEntity) this).addMod_LivingTicks(1);
+        }
+
+        //Manure control.
+        if(!this.getWorld().isClient) {
+            if (this.mod_Manure < this.mod_Manure_max) {
+                mod_Manure++;
+            }
+            else if (this.mod_Manure == this.mod_Manure_max) {
+                this.playSound(SoundEvents.ENTITY_SNIFFER_DROP_SEED, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
+                if (mod_Straw > (mod_Straw_max / 2)) {
+                    //drop more
+                    this.dropStack(new ItemStack(ModItems.MANURE,8));
+                } else {
+                    //drop less
+                    this.dropStack(new ItemStack(ModItems.MANURE,4));
+                }
+                this.emitGameEvent(GameEvent.ENTITY_PLACE);
+                this.mod_Manure = 0;
+            }
         }
 
         //damage missing water or food.
