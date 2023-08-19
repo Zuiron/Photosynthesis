@@ -2,7 +2,12 @@ package net.zuiron.photosynthesis.mixin;
 
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.BoneMealItem;
+import net.minecraft.item.Items;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
@@ -13,8 +18,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
-import net.minecraft.world.biome.Biome;
-import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.api.CropData;
 import net.zuiron.photosynthesis.api.Seasons;
 import net.zuiron.photosynthesis.item.ModItems;
@@ -56,18 +59,26 @@ public abstract class ModCropBlock extends PlantBlock
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         //if MATURE, disallow any interactions.
-        if(state.get(Properties.AGE_7) < 7) {
+        if(state.get(Properties.AGE_7) < 7 && state.contains(ModProperties.MOD_PESTICIDED) && state.contains(ModProperties.MOD_FERTILIZED)) {
             if (player.getStackInHand(hand).isOf(ModItems.MANURE)) {
                 //you can only apply first stage fertilizer at below age 3.
                 if (state.get(MOD_FERTILIZED) == 0 && state.get(Properties.AGE_7) < 3) {
                     world.setBlockState(pos, state.with(MOD_FERTILIZED, 1), 2);
                     player.getStackInHand(hand).decrement(1);
+                    if(world.isClient) {
+                        BoneMealItem.createParticles(world, pos, 20);
+                        world.playSoundAtBlockCenter(pos, SoundEvents.ITEM_BONE_MEAL_USE, SoundCategory.BLOCKS, 1.0f, 1.0f, false);
+                    }
                     return ActionResult.SUCCESS;
                 }
                 //you can only apply second stage fertilizer at above age 3. requires pesticide applied.
                 else if (state.get(MOD_FERTILIZED) == 1 && state.get(MOD_PESTICIDED) == 1 && state.get(Properties.AGE_7) > 3) {
                     world.setBlockState(pos, state.with(MOD_FERTILIZED, 2), 2);
                     player.getStackInHand(hand).decrement(1);
+                    if(world.isClient) {
+                        BoneMealItem.createParticles(world, pos, 20);
+                        world.playSoundAtBlockCenter(pos, SoundEvents.ITEM_BONE_MEAL_USE, SoundCategory.BLOCKS, 1.0f, 1.0f, false);
+                    }
                     return ActionResult.SUCCESS;
                 }
             }
@@ -76,9 +87,23 @@ public abstract class ModCropBlock extends PlantBlock
                 if (state.get(MOD_PESTICIDED) == 0 && state.get(MOD_FERTILIZED) == 1) {
                     world.setBlockState(pos, state.with(MOD_PESTICIDED, 1), 2);
                     player.getStackInHand(hand).decrement(1);
+                    if(world.isClient) {
+                        BoneMealItem.createParticles(world, pos, 20);
+                        world.playSoundAtBlockCenter(pos, SoundEvents.ITEM_BONE_MEAL_USE, SoundCategory.BLOCKS, 1.0f, 1.0f, false);
+                    }
                     return ActionResult.SUCCESS;
                 }
             }
+        }
+        //custom fixed bone mealing code.
+        if(state.get(Properties.AGE_7) < 7 && player.getStackInHand(hand).isOf(Items.BONE_MEAL) && !Seasons.isSeasonsEnabled()) {
+            world.setBlockState(pos, state.with(AGE, state.get(AGE) + 1), 2);
+            player.getStackInHand(hand).decrement(1);
+            if(world.isClient) {
+                BoneMealItem.createParticles(world, pos, 20);
+                world.playSoundAtBlockCenter(pos, SoundEvents.ITEM_BONE_MEAL_USE, SoundCategory.BLOCKS, 1.0f, 1.0f, false);
+            }
+            return ActionResult.SUCCESS;
         }
         return super.onUse(state, world, pos, player, hand, hit);
     }
@@ -93,6 +118,9 @@ public abstract class ModCropBlock extends PlantBlock
                 cir.cancel();
             }
         }
+        //disable bonemeal completely, it ruins our properties. withAge fucks it up.
+        cir.setReturnValue(false);
+        cir.cancel();
     }
 
     @Inject(method = "randomTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/CropBlock;withAge(I)Lnet/minecraft/block/BlockState;", ordinal = 0), cancellable = true)
