@@ -54,11 +54,11 @@ public abstract class ModCropBlock extends PlantBlock
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if(state.get(Properties.AGE_7) < 7) { //has to be applied before mature.
             if (player.getStackInHand(hand).isOf(ModItems.MANURE)) {
-                if (state.get(MOD_FERTILIZED) == 0) {
+                if (state.get(MOD_FERTILIZED) == 0 && state.get(Properties.AGE_7) < 3) {
                     world.setBlockState(pos, state.with(MOD_FERTILIZED, 1), 2);
                     player.getStackInHand(hand).decrement(1);
                     return ActionResult.SUCCESS;
-                } else if (state.get(MOD_FERTILIZED) == 1 && state.get(MOD_PESTICIDED) == 1) {
+                } else if (state.get(MOD_FERTILIZED) == 1 && state.get(MOD_PESTICIDED) == 1 && state.get(Properties.AGE_7) >= 3) {
                     world.setBlockState(pos, state.with(MOD_FERTILIZED, 2), 2);
                     player.getStackInHand(hand).decrement(1);
                     return ActionResult.SUCCESS;
