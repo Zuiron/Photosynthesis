@@ -49,8 +49,7 @@ public class FeedingTroughBlockEntity extends BlockEntity implements ExtendedScr
         }
     }*/
 
-    public ItemStack getRenderStack0() {
-        //return this.getStack(0);
+    public ItemStack getRenderStack() {
         return this.inventory.get(0);
     }
 

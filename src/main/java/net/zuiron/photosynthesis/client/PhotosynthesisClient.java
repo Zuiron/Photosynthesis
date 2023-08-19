@@ -435,6 +435,7 @@ public class PhotosynthesisClient implements ClientModInitializer {
         BlockEntityRendererFactories.register(ModBlockEntities.DRYINGRACK, DryingRackBlockEntityRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.WOOD_FIRED_OVEN, WoodFiredOvenBlockEntityRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.GRAVITYPRESS, GravityPressBlockEntityRenderer::new);
+        BlockEntityRendererFactories.register(ModBlockEntities.FEEDINGTROUGH, FeedingTroughBlockEntityRenderer::new);
 
         //LATEX
         FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_LATEX, ModFluids.FLOWING_LATEX,
