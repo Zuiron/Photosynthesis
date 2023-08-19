@@ -162,7 +162,8 @@ public class CustomCropBlockWL2Tall extends CropBlock implements Waterloggable {
             //world.breakBlock(pos.down(), false);
             //right click harvest compat - fixes weirdness.
             if(world.getBlockState(pos.down()).get(WATERLOGGED)) {
-                world.setBlockState(pos, withWaterloggedState(world, pos, this.withAge(4)), Block.NOTIFY_LISTENERS);
+                //world.setBlockState(pos, withWaterloggedState(world, pos, this.withAge(4)), Block.NOTIFY_LISTENERS);
+                world.setBlockState(pos, withWaterloggedState(world, pos, state.with(AGE, 4)), Block.NOTIFY_LISTENERS);
             } else {
                 //break, we are world genned. or missing water.
                 world.breakBlock(pos.down(), false);
@@ -192,15 +193,18 @@ public class CustomCropBlockWL2Tall extends CropBlock implements Waterloggable {
                 if(currentCropAge >= minAge && currentCropAge < maxAge && seasonPercentage > 0.5f) { //0.5f = 50% "halfway thru season"
                     //Photosynthesis.LOGGER.info("CropWL: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NewCropAge: "+(this.getAge(state) + 1)+", %:"+seasonPercentage);
                     if(currentCropAge < LOWER_HALF_MAX_AGE && !world.getBlockState(pos.up()).isOf(this)) {
-                        world.setBlockState(pos, withWaterloggedState(world, pos, this.withAge(currentCropAge + 1)), Block.NOTIFY_LISTENERS);
+                        //world.setBlockState(pos, withWaterloggedState(world, pos, this.withAge(currentCropAge + 1)), Block.NOTIFY_LISTENERS);
+                        world.setBlockState(pos, withWaterloggedState(world, pos, state.with(AGE, currentCropAge + 1)), Block.NOTIFY_LISTENERS);
                     }
                     else if(currentCropAge == LOWER_HALF_MAX_AGE && !world.getBlockState(pos.up()).isOf(this)) {
                         if(world.getBlockState(pos.up(1)).isOf(Blocks.AIR)) {
-                            world.setBlockState(pos.up(1), withWaterloggedState(world, pos.up(1), (BlockState)this.getDefaultState().with(AGE, currentCropAge+1)), Block.NOTIFY_LISTENERS);
+                            //world.setBlockState(pos.up(1), withWaterloggedState(world, pos.up(1), (BlockState)this.getDefaultState().with(AGE, currentCropAge+1)), Block.NOTIFY_LISTENERS);
+                            world.setBlockState(pos.up(1), withWaterloggedState(world, pos.up(1), state.with(AGE, currentCropAge+1)), Block.NOTIFY_LISTENERS);
                         }
                     }
                     else if(world.getBlockState(pos.down()).isOf(this) && world.getBlockState(pos.down()).get(AGE) == LOWER_HALF_MAX_AGE && currentCropAge < UPPER_HALF_MAX_AGE) {
-                        world.setBlockState(pos, this.withAge(currentCropAge + 1), Block.NOTIFY_LISTENERS);
+                        //world.setBlockState(pos, this.withAge(currentCropAge + 1), Block.NOTIFY_LISTENERS);
+                        world.setBlockState(pos, state.with(AGE, currentCropAge + 1), Block.NOTIFY_LISTENERS);
                     }
                 } else {
                     //Photosynthesis.LOGGER.info("CropWL: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NO GROW"+", %:"+seasonPercentage);
@@ -214,15 +218,18 @@ public class CustomCropBlockWL2Tall extends CropBlock implements Waterloggable {
             if (world.getBaseLightLevel(pos.up(1), 0) >= 9 && (i = currentAge) < this.getMaxAge() && random.nextInt((int) (25.0f / (f = 7.0f)) + 1) == 0) {
 
                 if(currentAge < LOWER_HALF_MAX_AGE && !world.getBlockState(pos.up()).isOf(this)) {
-                    world.setBlockState(pos, withWaterloggedState(world, pos, this.withAge(currentAge + 1)), Block.NOTIFY_LISTENERS);
+                    //world.setBlockState(pos, withWaterloggedState(world, pos, this.withAge(currentAge + 1)), Block.NOTIFY_LISTENERS);
+                    world.setBlockState(pos, withWaterloggedState(world, pos, state.with(AGE, currentAge + 1)), Block.NOTIFY_LISTENERS);
                 }
                 else if(currentAge == LOWER_HALF_MAX_AGE && !world.getBlockState(pos.up()).isOf(this)) {
                     if(world.getBlockState(pos.up(1)).isOf(Blocks.AIR)) {
-                        world.setBlockState(pos.up(1), withWaterloggedState(world, pos.up(1), (BlockState)this.getDefaultState().with(AGE, currentAge+1)), Block.NOTIFY_LISTENERS);
+                        //world.setBlockState(pos.up(1), withWaterloggedState(world, pos.up(1), (BlockState)this.getDefaultState().with(AGE, currentAge+1)), Block.NOTIFY_LISTENERS);
+                        world.setBlockState(pos.up(1), withWaterloggedState(world, pos.up(1), state.with(AGE, currentAge+1)), Block.NOTIFY_LISTENERS);
                     }
                 }
                 else if(world.getBlockState(pos.down()).isOf(this) && world.getBlockState(pos.down()).get(AGE) == LOWER_HALF_MAX_AGE && currentAge < UPPER_HALF_MAX_AGE) {
-                    world.setBlockState(pos, this.withAge(currentAge + 1), Block.NOTIFY_LISTENERS);
+                    //world.setBlockState(pos, this.withAge(currentAge + 1), Block.NOTIFY_LISTENERS);
+                    world.setBlockState(pos, state.with(AGE, currentAge + 1), Block.NOTIFY_LISTENERS);
                 }
             }
         }
@@ -232,15 +239,18 @@ public class CustomCropBlockWL2Tall extends CropBlock implements Waterloggable {
     public void applyGrowth(World world, BlockPos pos, BlockState state) {
         int currentAge = this.getAge(state);
         if(currentAge < LOWER_HALF_MAX_AGE && !world.getBlockState(pos.up()).isOf(this)) {
-            world.setBlockState(pos, withWaterloggedState(world, pos, this.withAge(currentAge + 1)), Block.NOTIFY_LISTENERS);
+            //world.setBlockState(pos, withWaterloggedState(world, pos, this.withAge(currentAge + 1)), Block.NOTIFY_LISTENERS);
+            world.setBlockState(pos, withWaterloggedState(world, pos, state.with(AGE, currentAge + 1)), Block.NOTIFY_LISTENERS);
         }
         else if(currentAge == LOWER_HALF_MAX_AGE && !world.getBlockState(pos.up()).isOf(this)) {
             if(world.getBlockState(pos.up(1)).isOf(Blocks.AIR)) {
-                world.setBlockState(pos.up(1), withWaterloggedState(world, pos.up(1), (BlockState)this.getDefaultState().with(AGE, currentAge+1)), Block.NOTIFY_LISTENERS);
+                //world.setBlockState(pos.up(1), withWaterloggedState(world, pos.up(1), (BlockState)this.getDefaultState().with(AGE, currentAge+1)), Block.NOTIFY_LISTENERS);
+                world.setBlockState(pos.up(1), withWaterloggedState(world, pos.up(1), state.with(AGE, currentAge+1)), Block.NOTIFY_LISTENERS);
             }
         }
         else if(world.getBlockState(pos.down()).isOf(this) && world.getBlockState(pos.down()).get(AGE) == LOWER_HALF_MAX_AGE && currentAge < UPPER_HALF_MAX_AGE) {
-            world.setBlockState(pos, this.withAge(currentAge + 1), Block.NOTIFY_LISTENERS);
+            //world.setBlockState(pos, this.withAge(currentAge + 1), Block.NOTIFY_LISTENERS);
+            world.setBlockState(pos, state.with(AGE, state.get(AGE) + 1), Block.NOTIFY_LISTENERS);
         }
     }
 

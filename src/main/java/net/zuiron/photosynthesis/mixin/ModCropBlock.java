@@ -20,6 +20,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 import net.zuiron.photosynthesis.api.CropData;
 import net.zuiron.photosynthesis.api.Seasons;
+import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.item.ModItems;
 import net.zuiron.photosynthesis.state.property.ModProperties;
 import org.spongepowered.asm.mixin.Final;
@@ -45,6 +46,9 @@ public abstract class ModCropBlock extends PlantBlock
     @Shadow public abstract BlockState withAge(int age);
 
     @Shadow @Final public static IntProperty AGE;
+
+    //@Shadow public abstract void applyGrowth(World world, BlockPos pos, BlockState state);
+
     @Unique
     private static final IntProperty MOD_FERTILIZED = ModProperties.MOD_FERTILIZED;
 
@@ -97,15 +101,22 @@ public abstract class ModCropBlock extends PlantBlock
         }
         //custom fixed bone mealing code.
         if(state.get(Properties.AGE_7) < 7 && player.getStackInHand(hand).isOf(Items.BONE_MEAL) && !Seasons.isSeasonsEnabled()) {
-            world.setBlockState(pos, state.with(AGE, state.get(AGE) + 1), 2);
+            /*world.setBlockState(pos, state.with(AGE, state.get(AGE) + 1), 2);
             player.getStackInHand(hand).decrement(1);
             if(world.isClient) {
                 BoneMealItem.createParticles(world, pos, 20);
                 world.playSoundAtBlockCenter(pos, SoundEvents.ITEM_BONE_MEAL_USE, SoundCategory.BLOCKS, 1.0f, 1.0f, false);
             }
-            return ActionResult.SUCCESS;
+            return ActionResult.SUCCESS;*/
         }
         return super.onUse(state, world, pos, player, hand, hit);
+    }
+
+    @Inject(method = "applyGrowth", at = @At("HEAD"), cancellable = true)
+    public void applyGrowth(World world, BlockPos pos, BlockState state, CallbackInfo ci) {
+        //fix vanilla code!
+        world.setBlockState(pos, state.with(AGE, state.get(AGE) + 1), Block.NOTIFY_LISTENERS);
+        ci.cancel(); //cancel vanilla code.
     }
 
     @Inject(method = "isFertilizable", at = @At("HEAD"), cancellable = true)
@@ -119,8 +130,8 @@ public abstract class ModCropBlock extends PlantBlock
             }
         }
         //disable bonemeal completely, it ruins our properties. withAge fucks it up.
-        cir.setReturnValue(false);
-        cir.cancel();
+        //cir.setReturnValue(false);
+        //cir.cancel();
     }
 
     @Inject(method = "randomTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/CropBlock;withAge(I)Lnet/minecraft/block/BlockState;", ordinal = 0), cancellable = true)
