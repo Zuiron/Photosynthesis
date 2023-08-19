@@ -40,7 +40,7 @@ public class ModItems {
     public static final Item RAW_SULFUR = registerItem("raw_sulfur",
             new Item(new FabricItemSettings()));
     public static final Item SULFUR_DUST = registerItem("sulfur_dust",
-            new Item(new FabricItemSettings()));
+            new TooltippedItem(new FabricItemSettings(), "Organic Pesticide"));
 
     public static final Item GRASS_BUNDLE = registerItem("grass_bundle",
             new Item(new FabricItemSettings()));

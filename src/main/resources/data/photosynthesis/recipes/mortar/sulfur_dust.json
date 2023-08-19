@@ -1,0 +1,16 @@
+{
+  "type": "photosynthesis:mortar",
+  "ingredients": [
+    {
+      "item": "photosynthesis:pestle"
+    },
+    {
+      "item": "photosynthesis:raw_sulfur"
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:sulfur_dust",
+    "count": 6
+  },
+  "cookingtime": 15
+}
