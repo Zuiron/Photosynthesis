@@ -18,6 +18,7 @@ import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.api.CropData;
 import net.zuiron.photosynthesis.api.Seasons;
 import net.zuiron.photosynthesis.item.ModItems;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
@@ -39,6 +40,7 @@ public abstract class ModCropBlock extends PlantBlock
 
     @Shadow public abstract BlockState withAge(int age);
 
+    @Shadow @Final public static IntProperty AGE;
     @Unique
     private static final IntProperty MOD_FERTILIZED = IntProperty.of("mod_fertilized", 0, 2);
 
@@ -109,13 +111,18 @@ public abstract class ModCropBlock extends PlantBlock
 
                 if(currentCropAge >= minAge && currentCropAge < maxAge && seasonPercentage > 0.5f) { //0.5f = 50% "halfway thru season"
                     //Photosynthesis.LOGGER.info("Crop: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NewCropAge: "+(this.getAge(state) + 1)+", %:"+seasonPercentage);
-                    world.setBlockState(pos, this.withAge(this.getAge(state) + 1), 2);
+                    //world.setBlockState(pos, this.withAge(this.getAge(state) + 1), 2);
+                    world.setBlockState(pos, state.with(AGE, this.getAge(state) + 1), 2);
                 } else {
                     //Photosynthesis.LOGGER.info("Crop: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NO GROW"+", %:"+seasonPercentage);
                 }
                 ci.cancel(); //cancel, do not run vanilla code.
                 //Note we only cancel IF we found seasons data for the crop. otherwise vanilla code runs.
             }
+        } else {
+            //fix vanilla code to not mess with our fertilizer properties...
+            world.setBlockState(pos, state.with(AGE, this.getAge(state) + 1), 2);
+            ci.cancel(); //cancel, do not run vanilla code.
         }
         //world.setBlockState(pos, this.withAge(i + 1), 2); //Original MC Code
     }
