@@ -103,17 +103,15 @@ public abstract class ModCowEntity extends AnimalEntity {
                     mod_Manure++;
                 }
                 else if (this.mod_Manure == this.mod_Manure_max) {
+                    this.playSound(SoundEvents.ENTITY_SNIFFER_DROP_SEED, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
                     if (mod_Straw > (mod_Straw_max / 2)) {
                         //drop more
-                        this.playSound(SoundEvents.ENTITY_SNIFFER_DROP_SEED, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
                         this.dropStack(new ItemStack(ModItems.MANURE,8));
-                        this.emitGameEvent(GameEvent.ENTITY_PLACE);
                     } else {
                         //drop less
-                        this.playSound(SoundEvents.ENTITY_SNIFFER_DROP_SEED, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
                         this.dropStack(new ItemStack(ModItems.MANURE,4));
-                        this.emitGameEvent(GameEvent.ENTITY_PLACE);
                     }
+                    this.emitGameEvent(GameEvent.ENTITY_PLACE);
                     this.mod_Manure = 0;
                 }
             }
