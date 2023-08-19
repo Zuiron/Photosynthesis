@@ -5,6 +5,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
@@ -51,23 +52,23 @@ public abstract class ModCropBlock extends PlantBlock
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if(player.getStackInHand(hand).isOf(ModItems.MANURE)) {
-            if(state.get(MOD_FERTILIZED) == 0) {
-                world.setBlockState(pos, state.with(MOD_FERTILIZED, 1), 2);
-                player.getStackInHand(hand).decrement(1);
-                return ActionResult.SUCCESS;
-            }
-            else if(state.get(MOD_FERTILIZED) == 1 && state.get(MOD_PESTICIDED) == 1) {
-                world.setBlockState(pos, state.with(MOD_FERTILIZED, 2), 2);
-                player.getStackInHand(hand).decrement(1);
-                return ActionResult.SUCCESS;
-            }
-        }
-        else if(player.getStackInHand(hand).isOf(ModItems.SULFUR_DUST)) {
-            if(state.get(MOD_PESTICIDED) == 0 && state.get(MOD_FERTILIZED) == 1) {
-                world.setBlockState(pos, state.with(MOD_PESTICIDED, 1), 2);
-                player.getStackInHand(hand).decrement(1);
-                return ActionResult.SUCCESS;
+        if(state.get(Properties.AGE_7) < 7) { //has to be applied before mature.
+            if (player.getStackInHand(hand).isOf(ModItems.MANURE)) {
+                if (state.get(MOD_FERTILIZED) == 0) {
+                    world.setBlockState(pos, state.with(MOD_FERTILIZED, 1), 2);
+                    player.getStackInHand(hand).decrement(1);
+                    return ActionResult.SUCCESS;
+                } else if (state.get(MOD_FERTILIZED) == 1 && state.get(MOD_PESTICIDED) == 1) {
+                    world.setBlockState(pos, state.with(MOD_FERTILIZED, 2), 2);
+                    player.getStackInHand(hand).decrement(1);
+                    return ActionResult.SUCCESS;
+                }
+            } else if (player.getStackInHand(hand).isOf(ModItems.SULFUR_DUST)) {
+                if (state.get(MOD_PESTICIDED) == 0 && state.get(MOD_FERTILIZED) == 1) {
+                    world.setBlockState(pos, state.with(MOD_PESTICIDED, 1), 2);
+                    player.getStackInHand(hand).decrement(1);
+                    return ActionResult.SUCCESS;
+                }
             }
         }
         return super.onUse(state, world, pos, player, hand, hit);
