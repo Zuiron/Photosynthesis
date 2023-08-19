@@ -1,28 +1,74 @@
 package net.zuiron.photosynthesis.mixin;
 
-import net.minecraft.block.BlockState;
-import net.minecraft.block.CropBlock;
+import net.minecraft.block.*;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.state.StateManager;
+import net.minecraft.state.property.IntProperty;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
+import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 import net.minecraft.world.biome.Biome;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.api.CropData;
 import net.zuiron.photosynthesis.api.Seasons;
+import net.zuiron.photosynthesis.item.ModItems;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(CropBlock.class)
-public abstract class ModCropBlock {
+public abstract class ModCropBlock extends PlantBlock
+        implements Fertilizable {
+
+    public ModCropBlock(Settings settings) {
+        super(settings);
+        this.setDefaultState((BlockState)((BlockState)this.stateManager.getDefaultState()).with(MOD_FERTILIZED, 0).with(MOD_PESTICIDED,0));
+    }
 
     @Shadow protected abstract int getAge(BlockState state);
 
     @Shadow public abstract BlockState withAge(int age);
+
+    @Unique
+    private static final IntProperty MOD_FERTILIZED = IntProperty.of("mod_fertilized", 0, 2);
+
+    @Unique
+    private static final IntProperty MOD_PESTICIDED = IntProperty.of("mod_pesticided", 0, 1);
+
+    @Inject(method = "appendProperties", at = @At("TAIL"), cancellable = true)
+    protected void appendProperties(StateManager.Builder<Block, BlockState> builder, CallbackInfo ci) {
+        builder.add(MOD_FERTILIZED,MOD_PESTICIDED);
+    }
+
+    @Override
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+        if(player.getStackInHand(hand).isOf(ModItems.MANURE)) {
+            if(state.get(MOD_FERTILIZED) == 0) {
+                world.setBlockState(pos, state.with(MOD_FERTILIZED, 1), 2);
+                player.getStackInHand(hand).decrement(1);
+            }
+            else if(state.get(MOD_FERTILIZED) == 1 && state.get(MOD_PESTICIDED) == 1) {
+                world.setBlockState(pos, state.with(MOD_FERTILIZED, 2), 2);
+                player.getStackInHand(hand).decrement(1);
+            }
+        }
+        else if(player.getStackInHand(hand).isOf(ModItems.SULFUR_DUST)) {
+            if(state.get(MOD_PESTICIDED) == 0 && state.get(MOD_FERTILIZED) == 1) {
+                world.setBlockState(pos, state.with(MOD_PESTICIDED, 1), 2);
+                player.getStackInHand(hand).decrement(1);
+            }
+        }
+        return super.onUse(state, world, pos, player, hand, hit);
+    }
 
     @Inject(method = "isFertilizable", at = @At("HEAD"), cancellable = true)
     public void isFertilizable(WorldView world, BlockPos pos, BlockState state, boolean isClient, CallbackInfoReturnable<Boolean> cir) {
