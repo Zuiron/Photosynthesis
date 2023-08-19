@@ -1,17 +1,47 @@
 {
   "variants": {
-    "facing=north": {
+    "facing=north,water_amount=0": {
+      "model": "photosynthesis:block/watertrough_0"
+    },
+    "facing=north,water_amount=1": {
+      "model": "photosynthesis:block/watertrough_1"
+    },
+    "facing=north,water_amount=2": {
       "model": "photosynthesis:block/watertrough"
     },
-    "facing=south": {
+    "facing=south,water_amount=0": {
+      "model": "photosynthesis:block/watertrough_0",
+      "y": 180
+    },
+    "facing=south,water_amount=1": {
+      "model": "photosynthesis:block/watertrough_1",
+      "y": 180
+    },
+    "facing=south,water_amount=2": {
       "model": "photosynthesis:block/watertrough",
       "y": 180
     },
-    "facing=west": {
+    "facing=west,water_amount=0": {
+      "model": "photosynthesis:block/watertrough_0",
+      "y": 270
+    },
+    "facing=west,water_amount=1": {
+      "model": "photosynthesis:block/watertrough_1",
+      "y": 270
+    },
+    "facing=west,water_amount=2": {
       "model": "photosynthesis:block/watertrough",
       "y": 270
     },
-    "facing=east": {
+    "facing=east,water_amount=0": {
+      "model": "photosynthesis:block/watertrough_0",
+      "y": 90
+    },
+    "facing=east,water_amount=1": {
+      "model": "photosynthesis:block/watertrough_1",
+      "y": 90
+    },
+    "facing=east,water_amount=2": {
       "model": "photosynthesis:block/watertrough",
       "y": 90
     }
