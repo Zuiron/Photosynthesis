@@ -18,6 +18,7 @@ import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.api.CropData;
 import net.zuiron.photosynthesis.api.Seasons;
 import net.zuiron.photosynthesis.item.ModItems;
+import net.zuiron.photosynthesis.state.property.ModProperties;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -42,10 +43,10 @@ public abstract class ModCropBlock extends PlantBlock
 
     @Shadow @Final public static IntProperty AGE;
     @Unique
-    private static final IntProperty MOD_FERTILIZED = IntProperty.of("mod_fertilized", 0, 2);
+    private static final IntProperty MOD_FERTILIZED = ModProperties.MOD_FERTILIZED;
 
     @Unique
-    private static final IntProperty MOD_PESTICIDED = IntProperty.of("mod_pesticided", 0, 1);
+    private static final IntProperty MOD_PESTICIDED = ModProperties.MOD_PESTICIDED;
 
     @Inject(method = "appendProperties", at = @At("TAIL"), cancellable = true)
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder, CallbackInfo ci) {
