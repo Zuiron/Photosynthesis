@@ -9,6 +9,7 @@ import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.DirectionProperty;
+import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.*;
 import net.minecraft.util.hit.BlockHitResult;
@@ -25,8 +26,11 @@ import org.jetbrains.annotations.Nullable;
 public class WaterTroughBlock extends BlockWithEntity implements BlockEntityProvider {
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
 
+    public static final IntProperty WATER_AMOUNT = IntProperty.of("water_amount", 0, 2);
+
     public WaterTroughBlock(Settings settings) {
         super(settings);
+        this.setDefaultState(this.stateManager.getDefaultState().with(WATER_AMOUNT, 0));
     }
 
     private static VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 6, 16);
@@ -54,7 +58,7 @@ public class WaterTroughBlock extends BlockWithEntity implements BlockEntityProv
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(FACING);
+        builder.add(FACING,WATER_AMOUNT);
     }
 
     /* BLOCK ENTITY */

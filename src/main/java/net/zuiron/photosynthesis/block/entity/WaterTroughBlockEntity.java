@@ -215,6 +215,19 @@ public class WaterTroughBlockEntity extends BlockEntity implements ExtendedScree
             return;
         }*/
 
+        //property water level control.
+        long water = entity.fluidStorage.amount;
+        long maxWater = entity.fluidStorage.getCapacity();
+        double water_percentage = (double) water / maxWater * 100;
+        if(water_percentage > 50 && state.get(WaterTroughBlock.WATER_AMOUNT) != 2) {
+            world.setBlockState(blockPos, state.with(WaterTroughBlock.WATER_AMOUNT, 2), 2);
+        }
+        else if(water_percentage <= 50 && water > 0 && state.get(WaterTroughBlock.WATER_AMOUNT) != 1) {
+            world.setBlockState(blockPos, state.with(WaterTroughBlock.WATER_AMOUNT, 1), 2);
+        }
+        else if(water == 0 && state.get(WaterTroughBlock.WATER_AMOUNT) != 0) {
+            world.setBlockState(blockPos, state.with(WaterTroughBlock.WATER_AMOUNT, 0), 2);
+        }
 
 
         // Get the range in which you want to scan for entities
