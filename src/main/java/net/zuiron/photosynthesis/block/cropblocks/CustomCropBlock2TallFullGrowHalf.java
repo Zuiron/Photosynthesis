@@ -22,6 +22,7 @@ import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.api.CropData;
 import net.zuiron.photosynthesis.api.Seasons;
 import net.zuiron.photosynthesis.item.ModItems;
+import net.zuiron.photosynthesis.state.property.ModProperties;
 
 import java.util.Objects;
 
@@ -132,13 +133,16 @@ public class CustomCropBlock2TallFullGrowHalf extends CropBlock implements Water
                 if(currentCropAge >= minAge && currentCropAge < maxAge && seasonPercentage > 0.5f) { //0.5f = 50% "halfway thru season"
                     //Photosynthesis.LOGGER.info("CropWL: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NewCropAge: "+(this.getAge(state) + 1)+", %:"+seasonPercentage);
                     if(currentCropAge < 7 && state.get(HALF) == DoubleBlockHalf.LOWER) {
-                        world.setBlockState(pos, this.withAge(currentCropAge + 1).with(HALF, DoubleBlockHalf.LOWER), Block.NOTIFY_LISTENERS);
+                        //world.setBlockState(pos, this.withAge(currentCropAge + 1).with(HALF, DoubleBlockHalf.LOWER), Block.NOTIFY_LISTENERS);
+                        world.setBlockState(pos, state.with(AGE, currentCropAge + 1).with(HALF, DoubleBlockHalf.LOWER), Block.NOTIFY_LISTENERS);
                         if(world.getBlockState(pos.up()).isOf(this)) {
-                            world.setBlockState(pos.up(), this.withAge(currentCropAge + 1).with(HALF, DoubleBlockHalf.UPPER), Block.NOTIFY_LISTENERS);
+                            //world.setBlockState(pos.up(), this.withAge(currentCropAge + 1).with(HALF, DoubleBlockHalf.UPPER), Block.NOTIFY_LISTENERS);
+                            world.setBlockState(pos.up(), state.with(AGE, currentCropAge + 1).with(HALF, DoubleBlockHalf.UPPER), Block.NOTIFY_LISTENERS);
                         }
                     }
                     if(state.get(HALF) == DoubleBlockHalf.LOWER && currentCropAge >= 3 && world.getBlockState(pos.up(1)).isOf(Blocks.AIR) && world.getBlockState(pos.down(1)).isOf(Blocks.FARMLAND)) {
-                        world.setBlockState(pos.up(1), (BlockState)this.getDefaultState().with(AGE, 3).with(HALF, DoubleBlockHalf.UPPER), Block.NOTIFY_LISTENERS);
+                        //world.setBlockState(pos.up(1), (BlockState)this.getDefaultState().with(AGE, 3).with(HALF, DoubleBlockHalf.UPPER), Block.NOTIFY_LISTENERS);
+                        world.setBlockState(pos.up(1), state.with(AGE, 3).with(HALF, DoubleBlockHalf.UPPER), Block.NOTIFY_LISTENERS);
                     }
                 } else {
                     //Photosynthesis.LOGGER.info("CropWL: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NO GROW"+", %:"+seasonPercentage);
@@ -152,13 +156,16 @@ public class CustomCropBlock2TallFullGrowHalf extends CropBlock implements Water
             if (world.getBaseLightLevel(pos.up(1), 0) >= 9 && (i = currentCropAge) < this.getMaxAge() && random.nextInt((int) (25.0f / (f = 7.0f)) + 1) == 0) {
 
                 if(currentCropAge < 7 && state.get(HALF) == DoubleBlockHalf.LOWER) {
-                    world.setBlockState(pos, this.withAge(currentCropAge + 1).with(HALF, DoubleBlockHalf.LOWER), Block.NOTIFY_LISTENERS);
+                    //world.setBlockState(pos, this.withAge(currentCropAge + 1).with(HALF, DoubleBlockHalf.LOWER), Block.NOTIFY_LISTENERS);
+                    world.setBlockState(pos, state.with(AGE, currentCropAge + 1).with(HALF, DoubleBlockHalf.LOWER), Block.NOTIFY_LISTENERS);
                     if(world.getBlockState(pos.up()).isOf(this)) {
-                        world.setBlockState(pos.up(), this.withAge(currentCropAge + 1).with(HALF, DoubleBlockHalf.UPPER), Block.NOTIFY_LISTENERS);
+                        //world.setBlockState(pos.up(), this.withAge(currentCropAge + 1).with(HALF, DoubleBlockHalf.UPPER), Block.NOTIFY_LISTENERS);
+                        world.setBlockState(pos.up(), state.with(AGE, currentCropAge + 1).with(HALF, DoubleBlockHalf.UPPER), Block.NOTIFY_LISTENERS);
                     }
                 }
                 if(state.get(HALF) == DoubleBlockHalf.LOWER && currentCropAge >= 3 && world.getBlockState(pos.up(1)).isOf(Blocks.AIR) && world.getBlockState(pos.down(1)).isOf(Blocks.FARMLAND)) {
-                    world.setBlockState(pos.up(1), (BlockState)this.getDefaultState().with(AGE, 3).with(HALF, DoubleBlockHalf.UPPER), Block.NOTIFY_LISTENERS);
+                    //world.setBlockState(pos.up(1), (BlockState)this.getDefaultState().with(AGE, 3).with(HALF, DoubleBlockHalf.UPPER), Block.NOTIFY_LISTENERS);
+                    world.setBlockState(pos.up(1), state.with(AGE, 3).with(HALF, DoubleBlockHalf.UPPER), Block.NOTIFY_LISTENERS);
                 }
 
             }
@@ -169,13 +176,16 @@ public class CustomCropBlock2TallFullGrowHalf extends CropBlock implements Water
     public void applyGrowth(World world, BlockPos pos, BlockState state) {
         int currentCropAge = this.getAge(state);
         if(currentCropAge < 7 && state.get(HALF) == DoubleBlockHalf.LOWER) {
-            world.setBlockState(pos, this.withAge(currentCropAge + 1).with(HALF, DoubleBlockHalf.LOWER), Block.NOTIFY_LISTENERS);
+            //world.setBlockState(pos, this.withAge(currentCropAge + 1).with(HALF, DoubleBlockHalf.LOWER), Block.NOTIFY_LISTENERS);
+            world.setBlockState(pos, state.with(AGE, currentCropAge + 1).with(HALF, DoubleBlockHalf.LOWER), Block.NOTIFY_LISTENERS);
             if(world.getBlockState(pos.up()).isOf(this)) {
-                world.setBlockState(pos.up(), this.withAge(currentCropAge + 1).with(HALF, DoubleBlockHalf.UPPER), Block.NOTIFY_LISTENERS);
+                //world.setBlockState(pos.up(), this.withAge(currentCropAge + 1).with(HALF, DoubleBlockHalf.UPPER), Block.NOTIFY_LISTENERS);
+                world.setBlockState(pos.up(), state.with(AGE, currentCropAge + 1).with(HALF, DoubleBlockHalf.UPPER), Block.NOTIFY_LISTENERS);
             }
         }
         if(state.get(HALF) == DoubleBlockHalf.LOWER && currentCropAge >= 3 && world.getBlockState(pos.up(1)).isOf(Blocks.AIR) && world.getBlockState(pos.down(1)).isOf(Blocks.FARMLAND)) {
-            world.setBlockState(pos.up(1), (BlockState)this.getDefaultState().with(AGE, 3).with(HALF, DoubleBlockHalf.UPPER), Block.NOTIFY_LISTENERS);
+            //world.setBlockState(pos.up(1), (BlockState)this.getDefaultState().with(AGE, 3).with(HALF, DoubleBlockHalf.UPPER), Block.NOTIFY_LISTENERS);
+            world.setBlockState(pos.up(1), state.with(AGE, 3).with(HALF, DoubleBlockHalf.UPPER), Block.NOTIFY_LISTENERS);
         }
     }
 
@@ -194,7 +204,7 @@ public class CustomCropBlock2TallFullGrowHalf extends CropBlock implements Water
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(new Property[]{HALF}).add(new Property[]{AGE});
+        builder.add(new Property[]{HALF}).add(new Property[]{AGE}).add(ModProperties.MOD_PESTICIDED).add(ModProperties.MOD_FERTILIZED);
     }
 
     static {
