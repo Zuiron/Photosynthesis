@@ -19,6 +19,7 @@ import net.minecraft.predicate.StatePredicate;
 import net.minecraft.state.property.Properties;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.datagen.entry.BerryAndBushDropEntry;
+import net.zuiron.photosynthesis.datagen.entry.CropEntry;
 import net.zuiron.photosynthesis.item.ModItems;
 import net.zuiron.photosynthesis.state.property.ModProperties;
 
@@ -698,55 +699,73 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
                  .properties(StatePredicate.Builder.create().exactMatch(Properties.AGE_7, 7));
          this.addDrop(ModBlocks.RICE_CROP, this.cropDrops(ModBlocks.RICE_CROP, ModItems.RICE_PANICLE, ModItems.RICE_SEEDS, builder));*/
 
-        BlockStatePropertyLootCondition.Builder max_age_condition = BlockStatePropertyLootCondition
-                .builder(ModBlocks.BARLEY_CROP).properties(StatePredicate.Builder.create()
-                        .exactMatch(Properties.AGE_7, 7)
-                        .exactMatch(ModProperties.MOD_FERTILIZED, 0)
-                        .exactMatch(ModProperties.MOD_PESTICIDED, 0));
 
-        BlockStatePropertyLootCondition.Builder max_age_condition_fertilized_1 = BlockStatePropertyLootCondition
-                .builder(ModBlocks.BARLEY_CROP)
-                .properties(StatePredicate.Builder.create()
-                        .exactMatch(Properties.AGE_7, 7)
-                        .exactMatch(ModProperties.MOD_FERTILIZED, 1)
-                        .exactMatch(ModProperties.MOD_PESTICIDED, 0));
 
-        BlockStatePropertyLootCondition.Builder max_age_condition_fertilized_1_pesticided_1 = BlockStatePropertyLootCondition
-                .builder(ModBlocks.BARLEY_CROP)
-                .properties(StatePredicate.Builder.create()
-                        .exactMatch(Properties.AGE_7, 7)
-                        .exactMatch(ModProperties.MOD_FERTILIZED, 1)
-                        .exactMatch(ModProperties.MOD_PESTICIDED, 1));
 
-        BlockStatePropertyLootCondition.Builder max_age_condition_fertilized_2_pesticided_1 = BlockStatePropertyLootCondition
-                .builder(ModBlocks.BARLEY_CROP)
-                .properties(StatePredicate.Builder.create()
-                        .exactMatch(Properties.AGE_7, 7)
-                        .exactMatch(ModProperties.MOD_FERTILIZED, 2)
-                        .exactMatch(ModProperties.MOD_PESTICIDED, 1));
+        //Loot Table Builder for CROPS.
+        List<CropEntry> listCrops = new ArrayList<>();
+        listCrops.add(new CropEntry(ModBlocks.BARLEY_CROP, ModItems.BARLEY));
+        listCrops.add(new CropEntry(ModBlocks.TOMATO_CROP, ModItems.TOMATO));
 
-        this.addDrop(ModBlocks.BARLEY_CROP, this.applyExplosionDecay(ModBlocks.BARLEY_CROP,
-                LootTable.builder()
-                        .pool(LootPool.builder()
-                        .with(ItemEntry.builder(ModItems.BARLEY))).pool(LootPool.builder().conditionally(max_age_condition)
-                        .with((LootPoolEntry.Builder<?>)((Object)ItemEntry.builder(ModItems.BARLEY)
-                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1, 1)))))) //should drop x2
+        for (CropEntry entry : listCrops) {
+            BlockStatePropertyLootCondition.Builder max_age_condition = BlockStatePropertyLootCondition
+                    .builder(entry.getCropBlock()).properties(StatePredicate.Builder.create()
+                            .exactMatch(Properties.AGE_7, 7)
+                            .exactMatch(ModProperties.MOD_FERTILIZED, 0)
+                            .exactMatch(ModProperties.MOD_PESTICIDED, 0));
 
-                        .pool(LootPool.builder()
-                                .conditionally(max_age_condition_fertilized_1)
-                                .with((LootPoolEntry.Builder<?>)ItemEntry.builder(ModItems.BARLEY)
-                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2, 2), true)))) //should drop x4
+            BlockStatePropertyLootCondition.Builder max_age_condition_fertilized_1 = BlockStatePropertyLootCondition
+                    .builder(entry.getCropBlock())
+                    .properties(StatePredicate.Builder.create()
+                            .exactMatch(Properties.AGE_7, 7)
+                            .exactMatch(ModProperties.MOD_FERTILIZED, 1)
+                            .exactMatch(ModProperties.MOD_PESTICIDED, 0));
 
-                        .pool(LootPool.builder()
-                                .conditionally(max_age_condition_fertilized_1_pesticided_1)
-                                .with((LootPoolEntry.Builder<?>)ItemEntry.builder(ModItems.BARLEY)
-                                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(4, 4), true)))) //should drop x6
+            BlockStatePropertyLootCondition.Builder max_age_condition_fertilized_1_pesticided_1 = BlockStatePropertyLootCondition
+                    .builder(entry.getCropBlock())
+                    .properties(StatePredicate.Builder.create()
+                            .exactMatch(Properties.AGE_7, 7)
+                            .exactMatch(ModProperties.MOD_FERTILIZED, 1)
+                            .exactMatch(ModProperties.MOD_PESTICIDED, 1));
 
-                        .pool(LootPool.builder()
-                                .conditionally(max_age_condition_fertilized_2_pesticided_1)
-                                .with((LootPoolEntry.Builder<?>)ItemEntry.builder(ModItems.BARLEY)
-                                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(6, 6), true)))) //should drop x8
-        ));
+            BlockStatePropertyLootCondition.Builder max_age_condition_fertilized_2_pesticided_1 = BlockStatePropertyLootCondition
+                    .builder(entry.getCropBlock())
+                    .properties(StatePredicate.Builder.create()
+                            .exactMatch(Properties.AGE_7, 7)
+                            .exactMatch(ModProperties.MOD_FERTILIZED, 2)
+                            .exactMatch(ModProperties.MOD_PESTICIDED, 1));
+
+            this.addDrop(entry.getCropBlock(), this.applyExplosionDecay(entry.getCropBlock(),
+                    LootTable.builder()
+                            .pool(LootPool.builder()
+                                    .with(ItemEntry.builder(entry.getDropItem()))).pool(LootPool.builder().conditionally(max_age_condition)
+                                    .with((LootPoolEntry.Builder<?>) ((Object) ItemEntry.builder(entry.getDropItem())
+                                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1, 1)))))) //should drop x2
+
+                            .pool(LootPool.builder()
+                                    .conditionally(max_age_condition_fertilized_1)
+                                    .with((LootPoolEntry.Builder<?>) ItemEntry.builder(entry.getDropItem())
+                                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2, 2), true)))) //should drop x4
+
+                            .pool(LootPool.builder()
+                                    .conditionally(max_age_condition_fertilized_1_pesticided_1)
+                                    .with((LootPoolEntry.Builder<?>) ItemEntry.builder(entry.getDropItem())
+                                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(4, 4), true)))) //should drop x6
+
+                            .pool(LootPool.builder()
+                                    .conditionally(max_age_condition_fertilized_2_pesticided_1)
+                                    .with((LootPoolEntry.Builder<?>) ItemEntry.builder(entry.getDropItem())
+                                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(6, 6), true)))) //should drop x8
+            ));
+        }
+
+
+
+
+
+
+
+
 
 
 
