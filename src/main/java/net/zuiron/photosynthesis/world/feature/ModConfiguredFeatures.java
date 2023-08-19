@@ -589,7 +589,7 @@ public class ModConfiguredFeatures {
         List<OreFeatureConfig.Target> overworldSulfurOres =
                 List.of(OreFeatureConfig.createTarget(deepslateReplaceables, ModBlocks.SULFUR_ORE.getDefaultState()));
 
-        register(context, SULFUR_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldSulfurOres, 16)); //size: vein size??? default: 9
+        register(context, SULFUR_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldSulfurOres, 8)); //size: vein size??? default: 9
         //size is basically, how many ores per started generation?
 
 
