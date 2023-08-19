@@ -32,6 +32,7 @@ import net.zuiron.photosynthesis.api.CropData;
 import net.zuiron.photosynthesis.api.Seasons;
 import net.zuiron.photosynthesis.block.entity.CookingPotBlockEntity;
 import net.zuiron.photosynthesis.item.ModItems;
+import net.zuiron.photosynthesis.state.property.ModProperties;
 
 public class CustomCropBlockWL2Tall extends CropBlock implements Waterloggable {
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
@@ -48,7 +49,7 @@ public class CustomCropBlockWL2Tall extends CropBlock implements Waterloggable {
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(new Property[]{AGE}).add(new Property[]{Properties.WATERLOGGED});
+        builder.add(new Property[]{AGE}).add(new Property[]{Properties.WATERLOGGED}).add(ModProperties.MOD_FERTILIZED).add(ModProperties.MOD_PESTICIDED);
     }
 
     @Override
