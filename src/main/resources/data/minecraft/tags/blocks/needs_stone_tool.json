@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "photosynthesis:salt_ore"
+    "photosynthesis:salt_ore",
+    "photosynthesis:sulfur_ore"
   ]
 }

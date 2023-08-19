@@ -47,7 +47,11 @@ public class ModBlocks {
     // ORES
     public static final Block SALT_ORE = registerBlock("salt_ore",
             new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.STONE).strength(2f).requiresTool(),
-                    UniformIntProvider.create(1, 2)));
+                    UniformIntProvider.create(1, 2))); //exp
+
+    public static final Block SULFUR_ORE = registerBlock("sulfur_ore",
+            new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.STONE).strength(2f).requiresTool(),
+                    UniformIntProvider.create(1, 2))); //exp
 
     // Bales
     public static final Block GRASS_BALE = registerBaleBlock("grass_bale",

@@ -31,6 +31,7 @@ import java.util.OptionalInt;
 
 public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?,?>> SALT_ORE_KEY = registerKey("salt_ore");
+    public static final RegistryKey<ConfiguredFeature<?,?>> SULFUR_ORE_KEY = registerKey("sulfur_ore");
     public static final RegistryKey<ConfiguredFeature<?,?>> DECO_ROCKS_RANDOM_KEY = registerKey("deco_rocks_random");
     public static final RegistryKey<ConfiguredFeature<?,?>> DECO_STICKS_RANDOM_KEY = registerKey("deco_sticks_random");
     public static final RegistryKey<ConfiguredFeature<?,?>> DECO_BEACHGRASS_KEY = registerKey("deco_beachgrass");
@@ -583,6 +584,12 @@ public class ModConfiguredFeatures {
                 List.of(OreFeatureConfig.createTarget(stoneReplaceables, ModBlocks.SALT_ORE.getDefaultState()));
 
         register(context, SALT_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldSaltOres, 16)); //size: vein size??? default: 9
+        //size is basically, how many ores per started generation?
+
+        List<OreFeatureConfig.Target> overworldSulfurOres =
+                List.of(OreFeatureConfig.createTarget(deepslateReplaceables, ModBlocks.SULFUR_ORE.getDefaultState()));
+
+        register(context, SULFUR_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldSulfurOres, 16)); //size: vein size??? default: 9
         //size is basically, how many ores per started generation?
 
 

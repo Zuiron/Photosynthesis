@@ -1077,6 +1077,8 @@
   "item.photosynthesis.scrambled_egg_mix": "Scrambled Egg Mix",
   "item.photosynthesis.salt": "Salt",
   "item.photosynthesis.raw_salt": "Raw Salt",
+  "item.photosynthesis.sulfur_dust": "Sulfur Dust",
+  "item.photosynthesis.raw_sulfur": "Raw Sulfur",
   "item.photosynthesis.dried_black_pepper": "Dried Black Pepper",
 
   "item.photosynthesis.foresty_bundle": "Foresty Bundle",
@@ -1123,6 +1125,7 @@
   "block.photosynthesis.decoration_rocks_random": "Rocks",
   "block.photosynthesis.decoration_sticks_random": "Sticks",
   "block.photosynthesis.salt_ore": "Salt Ore",
+  "block.photosynthesis.sulfur_ore": "Sulfur Ore",
   "block.photosynthesis.skillet": "Skillet",
   "block.photosynthesis.mixing_bowl": "Mixing Bowl",
   "block.photosynthesis.fluid_press": "Fluid Press",

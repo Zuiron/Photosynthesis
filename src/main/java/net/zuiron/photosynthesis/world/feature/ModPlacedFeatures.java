@@ -101,6 +101,7 @@ public class ModPlacedFeatures {
 
 
     public static final RegistryKey<PlacedFeature> SALT_ORE_PLACED_KEY = registerKey("salt_ore_placed");
+    public static final RegistryKey<PlacedFeature> SULFUR_ORE_PLACED_KEY = registerKey("sulfur_ore_placed");
 
 
     public static final RegistryKey<PlacedFeature> APPLETREE_CHECKED_KEY = registerKey("appletree_checked");
@@ -563,6 +564,11 @@ public class ModPlacedFeatures {
                 modifiersWithCount(9, // VeinsPerChunk
                         HeightRangePlacementModifier.trapezoid(YOffset.fixed(0), YOffset.fixed(90))));
         //from -80 to +80, most in middle, meaning mining level 0.
+
+
+        register(context, SULFUR_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.SULFUR_ORE_KEY),
+                modifiersWithCount(9, // VeinsPerChunk
+                        HeightRangePlacementModifier.trapezoid(YOffset.fixed(-80), YOffset.fixed(80))));
 
 
 
