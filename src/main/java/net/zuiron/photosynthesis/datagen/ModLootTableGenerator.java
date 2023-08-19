@@ -706,6 +706,7 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         List<CropEntry> listCrops = new ArrayList<>();
         listCrops.add(new CropEntry(ModBlocks.BARLEY_CROP, ModItems.BARLEY));
         listCrops.add(new CropEntry(ModBlocks.TOMATO_CROP, ModItems.TOMATO));
+        listCrops.add(new CropEntry(ModBlocks.RICE_CROP, ModItems.RICE_PANICLE));
 
         for (CropEntry entry : listCrops) {
             BlockStatePropertyLootCondition.Builder max_age_condition = BlockStatePropertyLootCondition
