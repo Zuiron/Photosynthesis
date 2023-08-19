@@ -52,18 +52,24 @@ public abstract class ModCropBlock extends PlantBlock
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if(state.get(Properties.AGE_7) < 7) { //has to be applied before mature.
+        //if MATURE, disallow any interactions.
+        if(state.get(Properties.AGE_7) < 7) {
             if (player.getStackInHand(hand).isOf(ModItems.MANURE)) {
+                //you can only apply first stage fertilizer at below age 3.
                 if (state.get(MOD_FERTILIZED) == 0 && state.get(Properties.AGE_7) < 3) {
                     world.setBlockState(pos, state.with(MOD_FERTILIZED, 1), 2);
                     player.getStackInHand(hand).decrement(1);
                     return ActionResult.SUCCESS;
-                } else if (state.get(MOD_FERTILIZED) == 1 && state.get(MOD_PESTICIDED) == 1 && state.get(Properties.AGE_7) >= 3) {
+                }
+                //you can only apply second stage fertilizer at above age 3. requires pesticide applied.
+                else if (state.get(MOD_FERTILIZED) == 1 && state.get(MOD_PESTICIDED) == 1 && state.get(Properties.AGE_7) > 3) {
                     world.setBlockState(pos, state.with(MOD_FERTILIZED, 2), 2);
                     player.getStackInHand(hand).decrement(1);
                     return ActionResult.SUCCESS;
                 }
-            } else if (player.getStackInHand(hand).isOf(ModItems.SULFUR_DUST)) {
+            }
+            //you can only apply pesticide if one stage of fertilizer is applied.
+            else if (player.getStackInHand(hand).isOf(ModItems.SULFUR_DUST)) {
                 if (state.get(MOD_PESTICIDED) == 0 && state.get(MOD_FERTILIZED) == 1) {
                     world.setBlockState(pos, state.with(MOD_PESTICIDED, 1), 2);
                     player.getStackInHand(hand).decrement(1);
