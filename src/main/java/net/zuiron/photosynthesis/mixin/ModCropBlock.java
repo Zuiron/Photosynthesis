@@ -55,16 +55,19 @@ public abstract class ModCropBlock extends PlantBlock
             if(state.get(MOD_FERTILIZED) == 0) {
                 world.setBlockState(pos, state.with(MOD_FERTILIZED, 1), 2);
                 player.getStackInHand(hand).decrement(1);
+                return ActionResult.SUCCESS;
             }
             else if(state.get(MOD_FERTILIZED) == 1 && state.get(MOD_PESTICIDED) == 1) {
                 world.setBlockState(pos, state.with(MOD_FERTILIZED, 2), 2);
                 player.getStackInHand(hand).decrement(1);
+                return ActionResult.SUCCESS;
             }
         }
         else if(player.getStackInHand(hand).isOf(ModItems.SULFUR_DUST)) {
             if(state.get(MOD_PESTICIDED) == 0 && state.get(MOD_FERTILIZED) == 1) {
                 world.setBlockState(pos, state.with(MOD_PESTICIDED, 1), 2);
                 player.getStackInHand(hand).decrement(1);
+                return ActionResult.SUCCESS;
             }
         }
         return super.onUse(state, world, pos, player, hand, hit);
