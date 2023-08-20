@@ -704,11 +704,15 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
 
         //Loot Table Builder for CROPS.
         List<CropEntry> listCrops = new ArrayList<>();
-        listCrops.add(new CropEntry(ModBlocks.BARLEY_CROP, ModItems.BARLEY));
-        listCrops.add(new CropEntry(ModBlocks.TOMATO_CROP, ModItems.TOMATO));
-        listCrops.add(new CropEntry(ModBlocks.RICE_CROP, ModItems.RICE_PANICLE));
+        listCrops.add(new CropEntry(ModBlocks.BARLEY_CROP, ModItems.BARLEY, ModItems.BARLEY_SEEDS));
+        listCrops.add(new CropEntry(ModBlocks.TOMATO_CROP, ModItems.TOMATO, ModItems.TOMATO_SEEDS));
+        listCrops.add(new CropEntry(ModBlocks.RICE_CROP, ModItems.RICE_PANICLE, ModItems.RICE_SEEDS));
 
         for (CropEntry entry : listCrops) {
+            BlockStatePropertyLootCondition.Builder no_age_condition = BlockStatePropertyLootCondition
+                    .builder(entry.getCropBlock()).properties(StatePredicate.Builder.create()
+                            .exactMatch(Properties.AGE_7, 0));
+
             BlockStatePropertyLootCondition.Builder max_age_condition = BlockStatePropertyLootCondition
                     .builder(entry.getCropBlock()).properties(StatePredicate.Builder.create()
                             .exactMatch(Properties.AGE_7, 7)
@@ -738,25 +742,27 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
 
             this.addDrop(entry.getCropBlock(), this.applyExplosionDecay(entry.getCropBlock(),
                     LootTable.builder()
-                            .pool(LootPool.builder()
-                                    .with(ItemEntry.builder(entry.getDropItem()))).pool(LootPool.builder().conditionally(max_age_condition)
+                            .pool(LootPool.builder().conditionally(no_age_condition) //only drop seed, IF age is still 0.
+                                    .with(ItemEntry.builder(entry.getSeedItem())))
+
+                            .pool(LootPool.builder().conditionally(max_age_condition)
                                     .with((LootPoolEntry.Builder<?>) ((Object) ItemEntry.builder(entry.getDropItem())
-                                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1, 1)))))) //should drop x2
+                                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2, 2), true))))) //should drop x2
 
                             .pool(LootPool.builder()
                                     .conditionally(max_age_condition_fertilized_1)
                                     .with((LootPoolEntry.Builder<?>) ItemEntry.builder(entry.getDropItem())
-                                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2, 2), true)))) //should drop x4
+                                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(3, 3), true)))) //should drop x4
 
                             .pool(LootPool.builder()
                                     .conditionally(max_age_condition_fertilized_1_pesticided_1)
                                     .with((LootPoolEntry.Builder<?>) ItemEntry.builder(entry.getDropItem())
-                                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(4, 4), true)))) //should drop x6
+                                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(5, 5), true)))) //should drop x6
 
                             .pool(LootPool.builder()
                                     .conditionally(max_age_condition_fertilized_2_pesticided_1)
                                     .with((LootPoolEntry.Builder<?>) ItemEntry.builder(entry.getDropItem())
-                                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(6, 6), true)))) //should drop x8
+                                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(7, 7), true)))) //should drop x8
             ));
         }
 
