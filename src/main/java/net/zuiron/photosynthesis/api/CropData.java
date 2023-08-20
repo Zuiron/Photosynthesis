@@ -87,7 +87,7 @@ public class CropData {
         cropDataMap.put("block.minecraft.wheat",                        new CropData(new int[]{7, 1, 2, 5}, new int[]{4, 0, 1, 2}));    //plant autumn, harvest summer.
         cropDataMap.put("block.minecraft.carrots",                      new CropData(new int[]{4, 7, 1, 1}, new int[]{1, 4, 7, 0}));    //plant spring, harvest autumn.
         cropDataMap.put("block.minecraft.potatoes",                     new CropData(new int[]{4, 7, 1, 1}, new int[]{1, 4, 7, 0}));    //plant spring, harvest autumn.
-        cropDataMap.put("block.minecraft.beetroots",                    new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
+        cropDataMap.put("block.minecraft.beetroots",                    new CropData(new int[]{7, 0, 0, 4}, new int[]{4, 7, 7, 0}));    //plant spring, harvest summer.
         cropDataMap.put("block.minecraft.sweet_berry_bush",             new CropData(new int[]{7, 0, 0, 1}, new int[]{1, 7, 7, 0}));    //plant spring, harvest summer.
         cropDataMap.put("block.minecraft.melon_stem",                   new CropData(new int[]{7, 0, 0, 4}, new int[]{4, 7, 7, 0}));    //plant spring, harvest summer.
         cropDataMap.put("block.minecraft.pumpkin_stem",                 new CropData(new int[]{4, 7, 0, 0}, new int[]{0, 4, 7, 7}));    //plant summer, harvest autumn.
