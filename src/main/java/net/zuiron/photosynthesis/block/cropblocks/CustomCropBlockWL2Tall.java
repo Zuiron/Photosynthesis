@@ -154,6 +154,9 @@ public class CustomCropBlockWL2Tall extends CropBlock implements Waterloggable {
         if(!newState.contains(Properties.AGE_7) && world.getBlockState(pos.down()).isOf(this)) {
             //break by hand or by machine - commented out, otherwise incompatible with create.
             //world.breakBlock(pos.down(), false);
+
+            //NEW reset age and properties to defaults.
+            world.setBlockState(pos.down(), withWaterloggedState(world, pos.down(), this.getDefaultState()));
             if(!world.getBlockState(pos.down()).get(WATERLOGGED)) {
                 //break, we are world genned. or missing water.
                 world.breakBlock(pos.down(), false);
