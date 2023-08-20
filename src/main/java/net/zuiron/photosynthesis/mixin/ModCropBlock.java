@@ -161,8 +161,10 @@ public abstract class ModCropBlock extends PlantBlock
             }
         } else {
             //fix vanilla code to not mess with our fertilizer properties...
-            world.setBlockState(pos, state.with(AGE, this.getAge(state) + 1), 2);
-            ci.cancel(); //cancel, do not run vanilla code.
+            if(world.getBlockState(pos).contains(AGE)) { //check first in case it doesn't have age7 property.
+                world.setBlockState(pos, state.with(AGE, this.getAge(state) + 1), 2);
+                ci.cancel(); //cancel, do not run vanilla code.
+            }
         }
         //world.setBlockState(pos, this.withAge(i + 1), 2); //Original MC Code
     }
