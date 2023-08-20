@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "# B",
+    "_BC",
+    "SO_"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:bamboo_fence"
+    },
+    "B": {
+      "item": "minecraft:bamboo"
+    },
+    "_": {
+      "item": "minecraft:oak_slab"
+    },
+    "C": {
+      "item": "minecraft:chain"
+    },
+    "S": {
+      "item": "minecraft:spruce_planks"
+    },
+    "O": {
+      "item": "minecraft:oak_stairs"
+    }
+  },
+  "result": {
+    "item": "photosynthesis:gravity_press",
+    "count": 1
+  }
+}

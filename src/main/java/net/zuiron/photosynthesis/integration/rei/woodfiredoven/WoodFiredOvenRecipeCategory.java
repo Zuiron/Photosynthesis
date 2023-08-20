@@ -27,7 +27,7 @@ import java.util.List;
 
 @Environment(EnvType.CLIENT)
 public class WoodFiredOvenRecipeCategory implements DisplayCategory<WoodFiredOvenRecipeDisplay> {
-    private static final Identifier GUI_TEXTURE = new Identifier(Photosynthesis.MOD_ID, "textures/gui/cookingpot_gui_rei.png");
+    private static final Identifier GUI_TEXTURE = new Identifier(Photosynthesis.MOD_ID, "textures/gui/wood_fired_oven_gui_rei.png");
 
     @Override
     public Renderer getIcon() {
@@ -52,7 +52,7 @@ public class WoodFiredOvenRecipeCategory implements DisplayCategory<WoodFiredOve
 
         widgets.add(Widgets.createRecipeBase(bounds));
         Rectangle bgBounds = PhotosynthesisREI.centeredIntoRecipeBase(origin, 125, 63);
-        //widgets.add(Widgets.createTexturedWidget(GUI_TEXTURE, bgBounds, 29, 3));
+        widgets.add(Widgets.createTexturedWidget(GUI_TEXTURE, bgBounds, 29, 3));
 
 
         List<EntryIngredient> ingredientEntries = display.getIngredientEntries();
