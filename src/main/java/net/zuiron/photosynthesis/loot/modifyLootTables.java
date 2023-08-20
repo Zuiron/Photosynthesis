@@ -34,6 +34,7 @@ public class modifyLootTables {
     private static final Identifier WHEAT_ID = Blocks.WHEAT.getLootTableId();
     private static final Identifier BARLEY_ID = ModBlocks.BARLEY_CROP.getLootTableId();
     private static final Identifier OAT_ID = ModBlocks.OAT_CROP.getLootTableId();
+    private static final Identifier RICE_ID = ModBlocks.RICE_CROP.getLootTableId();
 
     private static final Identifier COMMON_COW_LOOT_TABLE_ID = new Identifier("minecraft", "entities/cow");
     private static final Identifier COMMON_SHEEP_LOOT_TABLE_ID = new Identifier("minecraft", "entities/sheep");
@@ -294,6 +295,15 @@ public class modifyLootTables {
                         .rolls(ConstantLootNumberProvider.create(1))
                         .with(ItemEntry.builder(ModItems.STRAW_PIECE))
                         .conditionally(BlockStatePropertyLootCondition.builder(ModBlocks.OAT_CROP).properties(StatePredicate.Builder.create().exactMatch(Properties.AGE_7, 7)))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(3.0f, 6.0f)).build());
+                tableBuilder.pool(poolBuilder);
+            }
+
+            if (source.isBuiltin() && RICE_ID.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .with(ItemEntry.builder(ModItems.STRAW_PIECE))
+                        .conditionally(BlockStatePropertyLootCondition.builder(ModBlocks.RICE_CROP).properties(StatePredicate.Builder.create().exactMatch(Properties.AGE_7, 7)))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(3.0f, 6.0f)).build());
                 tableBuilder.pool(poolBuilder);
             }
