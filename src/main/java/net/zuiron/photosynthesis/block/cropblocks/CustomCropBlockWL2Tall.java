@@ -166,8 +166,9 @@ public class CustomCropBlockWL2Tall extends CropBlock implements Waterloggable {
             //world.breakBlock(pos.down(), false);
             //right click harvest compat - fixes weirdness.
             if(world.getBlockState(pos.down()).get(WATERLOGGED)) {
-                //world.setBlockState(pos, withWaterloggedState(world, pos, this.withAge(4)), Block.NOTIFY_LISTENERS);
-                world.setBlockState(pos, withWaterloggedState(world, pos, state.with(AGE, 4)), Block.NOTIFY_LISTENERS);
+                //world.setBlockState(pos, withWaterloggedState(world, pos, state.with(AGE, 4)), Block.NOTIFY_LISTENERS);
+                world.breakBlock(pos,false);
+                world.setBlockState(pos.down(), withWaterloggedState(world, pos.down(), this.getDefaultState()));
             } else {
                 //break, we are world genned. or missing water.
                 world.breakBlock(pos.down(), false);

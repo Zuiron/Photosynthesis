@@ -747,7 +747,7 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
 
                             .pool(LootPool.builder().conditionally(max_age_condition)
                                     .with((LootPoolEntry.Builder<?>) ((Object) ItemEntry.builder(entry.getDropItem())
-                                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2, 2), true))))) //should drop x2
+                                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1, 1), true))))) //should drop x2
 
                             .pool(LootPool.builder()
                                     .conditionally(max_age_condition_fertilized_1)
