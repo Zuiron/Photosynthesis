@@ -250,7 +250,7 @@ public class CuttingBoardBlockEntity extends BlockEntity implements ExtendedScre
                 && canInsertItemIntoOutputSlot(inventory, match.get().getOutputStack().getItem());
     }
 
-    private static final int[] INPUT_SLOTS = {0, 1};
+    private static final int[] INPUT_SLOTS = {1};
     @Override
     public boolean canInsert(int slot, ItemStack stack, @Nullable Direction side) {
         Direction localDir = this.getWorld().getBlockState(pos).get(CuttingBoardBlock.FACING);
@@ -260,7 +260,8 @@ public class CuttingBoardBlockEntity extends BlockEntity implements ExtendedScre
         }
 
         if (side == Direction.UP) {
-            return isInputSlot(slot);
+            //return isInputSlot(slot);
+            return slot == 0;
         }
 
         //input top, left, back

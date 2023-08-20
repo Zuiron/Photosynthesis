@@ -313,7 +313,7 @@ public class MixingBowlBlockEntity extends BlockEntity implements ExtendedScreen
 
 
 
-    private static final int[] INPUT_SLOTS = {0,1,2,3,4,5,6,7,8};
+    private static final int[] INPUT_SLOTS = {1,2,3,4,5,6,7,8};
     @Override
     public boolean canInsert(int slot, ItemStack stack, @Nullable Direction side) {
         Direction localDir = this.getWorld().getBlockState(pos).get(MixingBowlBlock.FACING);
@@ -323,7 +323,8 @@ public class MixingBowlBlockEntity extends BlockEntity implements ExtendedScreen
         }
 
         if (side == Direction.UP) {
-            return isInputSlot(slot);
+            //return isInputSlot(slot);
+            return slot == 0;
         }
 
         //input top, left, back
