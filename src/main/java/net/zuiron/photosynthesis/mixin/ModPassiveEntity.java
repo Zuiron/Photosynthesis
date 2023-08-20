@@ -136,7 +136,7 @@ public abstract class ModPassiveEntity extends PathAwareEntity implements getCus
     public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable NbtCompound entityNbt) {
 
         this.mob_tick_born = this.getWorld().getTimeOfDay();
-        Photosynthesis.LOGGER.info("Initializing entity with borntick: "+this.getWorld().getTimeOfDay());
+        //Photosynthesis.LOGGER.info("Initializing entity with borntick: "+this.getWorld().getTimeOfDay());
 
         //fixes entities from structures and other sources from dying because they are saved without these variables.
         if(this.mod_Water == 0) {
@@ -148,7 +148,7 @@ public abstract class ModPassiveEntity extends PathAwareEntity implements getCus
             this.mod_Grass = mod_Grass_max / 3;
             this.mod_Hay = mod_Hay_max / 3;
             this.mod_Straw = mod_Straw_max / 3;
-            Photosynthesis.LOGGER.info("Initializing entity without water,food,straw,grass,hay values.");
+            //Photosynthesis.LOGGER.info("Initializing entity without water,food,straw,grass,hay values.");
         }
 
         return super.initialize(world, difficulty, spawnReason, entityData, entityNbt);
