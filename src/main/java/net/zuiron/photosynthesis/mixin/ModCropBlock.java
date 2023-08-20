@@ -55,7 +55,7 @@ public abstract class ModCropBlock extends PlantBlock
     @Unique
     private static final IntProperty MOD_PESTICIDED = ModProperties.MOD_PESTICIDED;
 
-    @Inject(method = "appendProperties", at = @At("TAIL"), cancellable = true)
+    @Inject(method = "appendProperties", at = @At("HEAD"), cancellable = true)
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder, CallbackInfo ci) {
         builder.add(MOD_FERTILIZED,MOD_PESTICIDED,AGE);
         ci.cancel();
