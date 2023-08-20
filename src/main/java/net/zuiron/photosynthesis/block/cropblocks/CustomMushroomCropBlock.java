@@ -59,14 +59,14 @@ public class CustomMushroomCropBlock extends CropBlock {
     }
 
     private static final VoxelShape[] AGE_TO_SHAPE = new VoxelShape[]{
-            Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D),
-            Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D),
-            Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 6.0D, 16.0D),
-            Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D),
-            Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D),
-            Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D),
-            Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 14.0D, 16.0D),
-            Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D)
+            Block.createCuboidShape(3, 0, 3, 13, 2, 13),
+            Block.createCuboidShape(3, 0, 3, 13, 4, 13),
+            Block.createCuboidShape(3, 0, 3, 13, 4, 13),
+            Block.createCuboidShape(3, 0, 3, 13, 6, 13),
+            Block.createCuboidShape(3, 0, 3, 13, 6, 13),
+            Block.createCuboidShape(3, 0, 3, 13, 8, 13),
+            Block.createCuboidShape(3, 0, 3, 13, 8, 13),
+            Block.createCuboidShape(3, 0, 3, 13, 10, 13)
     };
 
     //DOING THIS CAUSES issues with right click harvest. however. if we do not. icon is not present in WTHIT!
@@ -89,6 +89,12 @@ public class CustomMushroomCropBlock extends CropBlock {
     public boolean hasRandomTicks(BlockState state) {
         //return !this.isMature(state);
         return true;
+    }
+
+    @Override
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+        //prevent fertilizer use.
+        return ActionResult.FAIL;
     }
 
     @Override
