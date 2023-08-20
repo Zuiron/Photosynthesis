@@ -1,0 +1,16 @@
+{
+  "type": "photosynthesis:cutting_board",
+  "ingredients": [
+    {
+      "tag": "c:cutting_board_cutting_knifes"
+    },
+    {
+      "item": "photosynthesis:chicken_trimmings"
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:chicken_nuggets",
+    "count": 4
+  },
+  "cookingtime": 40
+}
