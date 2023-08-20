@@ -69,20 +69,16 @@ public abstract class ModCropBlock extends PlantBlock
                 if (state.get(MOD_FERTILIZED) == 0 && state.get(Properties.AGE_7) < 3) {
                     world.setBlockState(pos, state.with(MOD_FERTILIZED, 1), 2);
                     player.getStackInHand(hand).decrement(1);
-                    if(world.isClient) {
                         BoneMealItem.createParticles(world, pos, 20);
                         world.playSoundAtBlockCenter(pos, SoundEvents.ITEM_BONE_MEAL_USE, SoundCategory.BLOCKS, 1.0f, 1.0f, false);
-                    }
                     return ActionResult.SUCCESS;
                 }
                 //you can only apply second stage fertilizer at above age 3. requires pesticide applied.
                 else if (state.get(MOD_FERTILIZED) == 1 && state.get(MOD_PESTICIDED) == 1 && state.get(Properties.AGE_7) > 3) {
                     world.setBlockState(pos, state.with(MOD_FERTILIZED, 2), 2);
                     player.getStackInHand(hand).decrement(1);
-                    if(world.isClient) {
                         BoneMealItem.createParticles(world, pos, 20);
                         world.playSoundAtBlockCenter(pos, SoundEvents.ITEM_BONE_MEAL_USE, SoundCategory.BLOCKS, 1.0f, 1.0f, false);
-                    }
                     return ActionResult.SUCCESS;
                 }
             }
@@ -91,10 +87,8 @@ public abstract class ModCropBlock extends PlantBlock
                 if (state.get(MOD_PESTICIDED) == 0 && state.get(MOD_FERTILIZED) == 1) {
                     world.setBlockState(pos, state.with(MOD_PESTICIDED, 1), 2);
                     player.getStackInHand(hand).decrement(1);
-                    if(world.isClient) {
                         BoneMealItem.createParticles(world, pos, 20);
                         world.playSoundAtBlockCenter(pos, SoundEvents.ITEM_BONE_MEAL_USE, SoundCategory.BLOCKS, 1.0f, 1.0f, false);
-                    }
                     return ActionResult.SUCCESS;
                 }
             }
