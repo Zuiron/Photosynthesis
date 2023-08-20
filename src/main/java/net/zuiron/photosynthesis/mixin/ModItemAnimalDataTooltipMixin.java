@@ -18,22 +18,27 @@ public abstract class ModItemAnimalDataTooltipMixin {
     @Inject(method = "appendTooltip", at = @At("HEAD"))
     public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context, CallbackInfo ci) {
         if(stack.isOf(Items.PIG_SPAWN_EGG)) {
-            tooltip.add(Text.literal("Requires: Water, Straw, Food.\nFeed: Wheat, Barley, Corn, Soybean, Canola, Potato, Sugarbeet."));
+            tooltip.add(Text.literal("Requires: Water, Food, Straw (Optional)"));
+            tooltip.add(Text.literal("Feed: Wheat, Barley, Corn, Soybean, Canola, Potato, Sugarbeet."));
         }
         else if(stack.isOf(Items.CHICKEN_SPAWN_EGG)) {
-            tooltip.add(Text.literal("Requires: Water, Straw, Food.\nFeed: Wheat, Barley."));
+            tooltip.add(Text.literal("Requires: Water, Food, Straw (Optional)"));
+            tooltip.add(Text.literal("Feed: Wheat, Barley."));
         }
         else if(stack.isOf(Items.GOAT_SPAWN_EGG)) {
-            tooltip.add(Text.literal("Requires: Water, Grass, Food.\nFeed: Saplings, Leaves."));
+            tooltip.add(Text.literal("Requires: Water, Grass, Food."));
+            tooltip.add(Text.literal("Feed: Saplings, Leaves."));
         }
         else if(stack.isOf(Items.COW_SPAWN_EGG)) {
-            tooltip.add(Text.literal("Requires: Water, Grass, Hay, Straw, Food.\nFeed: TMR - Total Mixed Ration."));
+            tooltip.add(Text.literal("Requires: Water, Grass, Hay. Food/TMR & Straw (Optional)"));
+            tooltip.add(Text.literal("Feed: TMR - Total Mixed Ration. (Optional)"));
         }
         else if(stack.isOf(Items.SHEEP_SPAWN_EGG)) {
             tooltip.add(Text.literal("Requires: Water, Grass."));
         }
         else if(stack.isOf(Items.HORSE_SPAWN_EGG)) {
-            tooltip.add(Text.literal("Requires: Water, Hay, Straw, Food.\nFeed: Oat."));
+            tooltip.add(Text.literal("Requires: Water, Hay, Food, Straw (Optional)"));
+            tooltip.add(Text.literal("Feed: Oat."));
         }
     }
 }
