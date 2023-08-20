@@ -7,6 +7,7 @@ import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
+import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -39,6 +40,12 @@ public abstract class ModBeetrootsBlock extends CropBlock {
         //builder.add(AGE);
         super.appendProperties(builder);
         ci.cancel();
+    }
+
+    @Inject(method = "getGrowthAmount", at = @At("HEAD"), cancellable = true)
+    protected void getGrowthAmount(World world, CallbackInfoReturnable<Integer> cir) {
+        cir.setReturnValue(super.getGrowthAmount(world));
+        cir.cancel();
     }
 
     @Override
