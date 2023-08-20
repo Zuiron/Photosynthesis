@@ -300,18 +300,25 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
         }
     }
 
+    //THIS IS A TEST!!!
+    private boolean slotLock = true;
 
-    private static final int[] INPUT_SLOTS = {0,1,2,3,4,5,6};
+    private static final int[] INPUT_SLOTS = {1,2,3,4,5,6};
     @Override
     public boolean canInsert(int slot, ItemStack stack, @Nullable Direction side) {
         Direction localDir = this.getWorld().getBlockState(pos).get(SkilletBlock.FACING);
+
+        //Experiment Success! this works! but needs abit more work.
+        /*if(slotLock) {
+            return inventory.get(slot).isOf(stack.getItem());
+        }*/
 
         if (side == Direction.DOWN) {
             return false;
         }
 
         if (side == Direction.UP) {
-            return isInputSlot(slot);
+            return slot == 0;
         }
 
         //input top, left, back
