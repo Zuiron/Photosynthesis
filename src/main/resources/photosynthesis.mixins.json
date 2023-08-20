@@ -28,7 +28,8 @@
     "Animals.ModPigEntity",
     "Animals.ModHorseEntity",
     "Animals.ModSheepEntity",
-    "ModItemAnimalDataTooltipMixin"
+    "ModItemAnimalDataTooltipMixin",
+    "ModBeetrootsBlock"
   ],
   "client": [
     "PhotosynthesisMixin"

@@ -38,7 +38,7 @@ public abstract class ModCropBlock extends PlantBlock
 
     public ModCropBlock(Settings settings) {
         super(settings);
-        this.setDefaultState((BlockState)((BlockState)this.stateManager.getDefaultState()).with(MOD_FERTILIZED, 0).with(MOD_PESTICIDED,0).with(AGE, 0));
+        this.setDefaultState((BlockState)((BlockState)this.stateManager.getDefaultState()).with(MOD_FERTILIZED, 0).with(MOD_PESTICIDED,0));
     }
 
     @Shadow protected abstract int getAge(BlockState state);
@@ -57,14 +57,13 @@ public abstract class ModCropBlock extends PlantBlock
 
     @Inject(method = "appendProperties", at = @At("HEAD"), cancellable = true)
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder, CallbackInfo ci) {
-        builder.add(MOD_FERTILIZED,MOD_PESTICIDED,AGE);
-        ci.cancel();
+        builder.add(MOD_FERTILIZED,MOD_PESTICIDED);
     }
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         //if MATURE, disallow any interactions.
-        if(state.get(Properties.AGE_7) < 7 && state.contains(ModProperties.MOD_PESTICIDED) && state.contains(ModProperties.MOD_FERTILIZED)) {
+        if(state.contains(AGE) && state.get(Properties.AGE_7) < 7 && state.contains(ModProperties.MOD_PESTICIDED) && state.contains(ModProperties.MOD_FERTILIZED)) {
             if (player.getStackInHand(hand).isOf(ModItems.MANURE)) {
                 //you can only apply first stage fertilizer at below age 3.
                 if (state.get(MOD_FERTILIZED) == 0 && state.get(Properties.AGE_7) < 3) {
