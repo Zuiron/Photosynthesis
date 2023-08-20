@@ -38,7 +38,7 @@ public abstract class ModCropBlock extends PlantBlock
 
     public ModCropBlock(Settings settings) {
         super(settings);
-        this.setDefaultState((BlockState)((BlockState)this.stateManager.getDefaultState()).with(MOD_FERTILIZED, 0).with(MOD_PESTICIDED,0));
+        this.setDefaultState((BlockState)((BlockState)this.stateManager.getDefaultState()).with(MOD_FERTILIZED, 0).with(MOD_PESTICIDED,0).with(AGE, 0));
     }
 
     @Shadow protected abstract int getAge(BlockState state);
