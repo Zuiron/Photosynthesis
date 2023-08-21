@@ -333,7 +333,7 @@ public class WoodFiredOvenBlockEntity extends BlockEntity implements ExtendedScr
                 int reqCount = (int) counts.get(i);
 
                 //Slot Lock - needs ATleast +1 of recipe requirement count.
-                if(entity.getWorld().getBlockState(entity.getPos()).get(ModProperties.SLOT_LOCKED)) {
+                if(entity.getWorld().getBlockState(entity.getPos()).get(ModProperties.SLOT_LOCKED) && i != 0) { //ignore slot0 since its non consume.
                     reqCount = reqCount+1;
                 }
 
