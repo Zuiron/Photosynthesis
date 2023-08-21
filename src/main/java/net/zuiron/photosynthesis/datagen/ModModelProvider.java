@@ -226,7 +226,7 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.CHOCOLATE_CUPCAKE,
                 ModItems.CHICKEN_NUGGETS,
                 ModItems.CALIFLOWER_SOUP,
-                ModItems.RAW_HAM
+                ModItems.HAM
 
 
 
