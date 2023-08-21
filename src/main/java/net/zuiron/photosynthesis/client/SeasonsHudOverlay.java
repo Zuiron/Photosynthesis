@@ -33,7 +33,7 @@ public class SeasonsHudOverlay implements HudRenderCallback {
 
     @Override
     public void onHudRender(DrawContext context, float tickDelta) {
-        if(Seasons.isSeasonsEnabled()) {
+        if(Seasons.isSeasonsEnabled() && MinecraftClient.isHudEnabled()) {
             int x = 0;
             int y = 0;
             MinecraftClient client = MinecraftClient.getInstance();
