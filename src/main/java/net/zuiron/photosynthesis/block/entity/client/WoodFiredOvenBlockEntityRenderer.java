@@ -30,8 +30,15 @@ public class WoodFiredOvenBlockEntityRenderer implements BlockEntityRenderer<Woo
 
         ItemRenderer itemRenderer = MinecraftClient.getInstance().getItemRenderer();
 
-        ItemStack itemStack = entity.getRenderStack();
+        //render slot lock
+        double x = 0.9f; //0 is LEFT, 1.0 is RIGHT edge.
+        double y = 0.1f; //0 is BOTTOM, 1 is TOP.
+        double z = 1.0f; //0, is BACK, 1.0 is FRONT outside of shelf. toward player when looking at block.
+        int rot = 0;
+        float scale2 = 0.15f;
+        renderSlotLock.render(entity,itemRenderer,tickDelta,matrices,vertexConsumers,light,overlay, x, y, z, rot, scale2);
 
+        ItemStack itemStack = entity.getRenderStack();
         //TOOL
         matrices.push();
         float scale = 0.6f;
