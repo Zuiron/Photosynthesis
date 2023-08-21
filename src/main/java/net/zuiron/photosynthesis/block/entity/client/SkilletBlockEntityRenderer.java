@@ -34,10 +34,13 @@ public class SkilletBlockEntityRenderer implements BlockEntityRenderer<SkilletBl
         ItemRenderer itemRenderer = MinecraftClient.getInstance().getItemRenderer();
 
         ItemStack itemStack = entity.getRenderStack();
-        boolean slotLock = entity.getSlotLockState();
-        ItemStack itemStackSlotLocked = Items.AIR.getDefaultStack();
+        /*boolean slotLock = entity.getSlotLockState();
+        ItemStack itemStackSlotLocked = Items.AIR.getDefaultStack();*/
 
-        assert MinecraftClient.getInstance().player != null;
+        //render slot lock
+        renderSlotLock.render(entity,itemRenderer,tickDelta,matrices,vertexConsumers,light,overlay);
+
+        /*assert MinecraftClient.getInstance().player != null;
         ItemStack handStack = MinecraftClient.getInstance().player.getStackInHand(MinecraftClient.getInstance().player.getActiveHand());
 
         if(handStack.isOf(ModItems.WRENCH)) {
@@ -80,7 +83,7 @@ public class SkilletBlockEntityRenderer implements BlockEntityRenderer<SkilletBl
         matrices.scale(scale2, scale2, scale2);
         itemRenderer.renderItem(itemStackSlotLocked, ModelTransformationMode.NONE, getLightLevel(entity.getWorld(), entity.getPos()), OverlayTexture.DEFAULT_UV, matrices, vertexConsumers, entity.getWorld(), 1);
         matrices.pop();
-
+*/
 
 
         //TOOL
