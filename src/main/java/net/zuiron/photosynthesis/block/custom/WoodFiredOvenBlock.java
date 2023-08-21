@@ -28,11 +28,12 @@ import net.minecraft.world.World;
 import net.zuiron.photosynthesis.block.entity.CookingPotBlockEntity;
 import net.zuiron.photosynthesis.block.entity.ModBlockEntities;
 import net.zuiron.photosynthesis.block.entity.WoodFiredOvenBlockEntity;
+import net.zuiron.photosynthesis.state.property.ModProperties;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class WoodFiredOvenBlock extends BlockWithEntity implements BlockEntityProvider {
+public class WoodFiredOvenBlock extends AbstractMachineBlock implements BlockEntityProvider {
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
     public static BooleanProperty LIT;
     public static BooleanProperty PROCESSING;
@@ -40,7 +41,7 @@ public class WoodFiredOvenBlock extends BlockWithEntity implements BlockEntityPr
     public WoodFiredOvenBlock(Settings settings) {
         super(settings);
         this.setDefaultState(this.stateManager.getDefaultState().with(LIT, false));
-        this.setDefaultState(this.stateManager.getDefaultState().with(PROCESSING, false));
+        this.setDefaultState(this.stateManager.getDefaultState().with(PROCESSING, false).with(ModProperties.SLOT_LOCKED,false));
     }
 
     private static VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 16, 16);
@@ -69,6 +70,7 @@ public class WoodFiredOvenBlock extends BlockWithEntity implements BlockEntityPr
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(new Property[]{FACING, LIT, PROCESSING});
+        super.appendProperties(builder);
     }
 
     /* BLOCK ENTITY */
@@ -93,7 +95,8 @@ public class WoodFiredOvenBlock extends BlockWithEntity implements BlockEntityPr
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos,
                               PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if (!world.isClient) {
+        ActionResult as = super.onUse(state, world, pos, player, hand, hit);
+        if (!world.isClient && as != ActionResult.SUCCESS) {
             NamedScreenHandlerFactory screenHandlerFactory = ((WoodFiredOvenBlockEntity) world.getBlockEntity(pos));
 
             if (screenHandlerFactory != null) {
@@ -120,7 +123,7 @@ public class WoodFiredOvenBlock extends BlockWithEntity implements BlockEntityPr
     public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
         super.appendTooltip(stack, world, tooltip, options);
 
-        tooltip.add(Text.literal("Stove ADDON, Requires heat input on left side."));
+        tooltip.add(Text.literal("Stove Addon, Place on the right side of a Stove."));
     }
 
     @Override
