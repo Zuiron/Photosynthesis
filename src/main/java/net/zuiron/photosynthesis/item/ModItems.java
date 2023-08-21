@@ -23,7 +23,7 @@ public class ModItems {
 
     public static final Item SLOT_LOCKED_LOCKED = registerItem("slot_locked_locked",
             new Item(new FabricItemSettings()));
-    public static final Item SLOT_LOCKED_UNLOCKED = registerItem("slot_locked_locked",
+    public static final Item SLOT_LOCKED_UNLOCKED = registerItem("slot_locked_unlocked",
             new Item(new FabricItemSettings()));
 
     // ORES
