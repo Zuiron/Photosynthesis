@@ -39,6 +39,7 @@ import net.zuiron.photosynthesis.block.custom.SkilletBlock;
 import net.zuiron.photosynthesis.networking.ModMessages;
 import net.zuiron.photosynthesis.recipe.SkilletRecipe;
 import net.zuiron.photosynthesis.screen.SkilletScreenHandler;
+import net.zuiron.photosynthesis.state.property.ModProperties;
 import net.zuiron.photosynthesis.util.ModUtil;
 import org.jetbrains.annotations.Nullable;
 
@@ -387,5 +388,13 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
 
     private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory, int amount) {
         return inventory.getStack(7).getMaxCount() >= inventory.getStack(7).getCount() + amount;
+    }
+
+    public boolean getSlotLockState() {
+        assert world != null;
+        if(world.getBlockState(pos).contains(ModProperties.SLOT_LOCKED)) {
+            return world.getBlockState(pos).get(ModProperties.SLOT_LOCKED);
+        }
+        return false;
     }
 }

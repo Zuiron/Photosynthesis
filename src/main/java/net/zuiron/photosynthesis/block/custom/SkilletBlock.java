@@ -100,8 +100,9 @@ public class SkilletBlock extends BlockWithEntity implements BlockEntityProvider
             }
             else { //wrench in hand.
                 //toggle slot_locked.
-                world.setBlockState(pos, state.with(SLOT_LOCKED, !state.get(SLOT_LOCKED)),2);
-                player.sendMessage(Text.literal("Slot Lock: "+state.get(SLOT_LOCKED)));
+                boolean slot_lock = !state.get(SLOT_LOCKED); //toggle
+                world.setBlockState(pos, state.with(SLOT_LOCKED, slot_lock),2);
+                player.sendMessage(Text.literal("Slot Lock: "+slot_lock));
             }
         }
 
