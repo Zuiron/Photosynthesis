@@ -18,6 +18,9 @@ import net.zuiron.photosynthesis.mixin.ItemAccessor;
 
 
 public class ModItems {
+    public static final Item WRENCH = registerItem("wrench",
+            new TooltippedItem(new FabricItemSettings(), "Changes machine behavior."));
+
     // ORES
     public static final Item RAW_SALT = registerItem("raw_salt",
             new Item(new FabricItemSettings()));
@@ -29,7 +32,7 @@ public class ModItems {
             new Item(new FabricItemSettings()));
 
     public static final Item PLASTIC_WRAP = registerItem("plastic_wrap",
-            new TooltippedItem(new FabricItemSettings(), "Use on Grass Bale's to wrap them. \nTurns into Silage (over time)."));
+            new TooltippedItem(new FabricItemSettings(), "Use on Grass Bale's to wrap them. Turns into Silage (over time)."));
 
     public static final Item TMR = registerItem("tmr",
             new Item(new FabricItemSettings()));

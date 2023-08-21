@@ -3,6 +3,8 @@
 
   "block.minecraft.empty": "Empty",
 
+  "item.photosynthesis.wrench": "Wrench",
+
   "text.autoconfig.photosynthesis.title": "Photosynthesis Config",
   "text.autoconfig.photosynthesis.option.thirst": "Enable Thirst",
   "text.autoconfig.photosynthesis.option.thirst.@Tooltip": "When YES, Thirst is enabled.",
