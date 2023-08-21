@@ -283,6 +283,11 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
 
                 int reqCount = (int) counts.get(i);
 
+                //needs ATleast +1 of recipe requirement count.
+                if(entity.getSlotLockState()) {
+                    reqCount = reqCount+1;
+                }
+
                 if (ingredient.isEmpty() || itemStack.isEmpty()) {
                     continue;
                 } else if (ingredient.test(itemStack) && itemStack.getCount() >= reqCount) {
@@ -301,18 +306,16 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
         }
     }
 
-    //THIS IS A TEST!!!
-    private boolean slotLock = true;
-
     private static final int[] INPUT_SLOTS = {1,2,3,4,5,6};
     @Override
     public boolean canInsert(int slot, ItemStack stack, @Nullable Direction side) {
         Direction localDir = this.getWorld().getBlockState(pos).get(SkilletBlock.FACING);
 
         //Experiment Success! this works! but needs abit more work.
-        /*if(slotLock) {
+        if(getSlotLockState()) {
+            //only allow insert into slot if slot stack is same as input stack.
             return inventory.get(slot).isOf(stack.getItem());
-        }*/
+        }
 
         if (side == Direction.DOWN) {
             return false;
