@@ -35,7 +35,7 @@ public class MixingBowlBlock extends AbstractMachineBlock implements BlockEntity
         this.setDefaultState(this.stateManager.getDefaultState().with(PROCESSING, false).with(ModProperties.SLOT_LOCKED,false));
     }
 
-    private static VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 3, 16);
+    private static VoxelShape SHAPE = Block.createCuboidShape(1, 0, 1, 15, 5, 15);
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {

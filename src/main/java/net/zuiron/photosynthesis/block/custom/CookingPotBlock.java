@@ -43,7 +43,7 @@ public class CookingPotBlock extends AbstractMachineBlock implements BlockEntity
         this.setDefaultState(this.stateManager.getDefaultState().with(LIT, false).with(PROCESSING, false).with(ModProperties.SLOT_LOCKED,false));
     }
 
-    private static VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 16, 16);
+    private static VoxelShape SHAPE = Block.createCuboidShape(2, 0, 2, 14, 11, 14);
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {

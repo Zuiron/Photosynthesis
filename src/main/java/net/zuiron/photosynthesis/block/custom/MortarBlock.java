@@ -28,7 +28,7 @@ public class MortarBlock extends BlockWithEntity implements BlockEntityProvider 
         super(settings);
     }
 
-    private static VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 1, 16);
+    private static VoxelShape SHAPE = Block.createCuboidShape(4, 0, 4, 12, 4, 12);
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
