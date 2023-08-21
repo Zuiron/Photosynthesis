@@ -1,5 +1,6 @@
 package net.zuiron.photosynthesis.block.entity.client;
 
+import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.LightmapTextureManager;
 import net.minecraft.client.render.OverlayTexture;
@@ -21,7 +22,7 @@ import net.zuiron.photosynthesis.state.property.ModProperties;
 import java.util.Objects;
 
 public class renderSlotLock {
-    public static void render(SkilletBlockEntity entity, ItemRenderer itemRenderer, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
+    public static void render(BlockEntity entity, ItemRenderer itemRenderer, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
         //boolean slotLock = entity.getSlotLockState();
 
         if(!Objects.requireNonNull(entity.getWorld()).getBlockState(entity.getPos()).contains(ModProperties.SLOT_LOCKED)) {
