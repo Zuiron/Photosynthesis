@@ -34,6 +34,7 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
+import net.zuiron.photosynthesis.block.custom.AbstractMachineBlock;
 import net.zuiron.photosynthesis.block.custom.DryingNetBlock;
 import net.zuiron.photosynthesis.block.custom.SkilletBlock;
 import net.zuiron.photosynthesis.networking.ModMessages;
@@ -283,8 +284,8 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
 
                 int reqCount = (int) counts.get(i);
 
-                //needs ATleast +1 of recipe requirement count.
-                if(entity.getSlotLockState()) {
+                //Slot Lock - needs ATleast +1 of recipe requirement count.
+                if(entity.getWorld().getBlockState(entity.getPos()).get(ModProperties.SLOT_LOCKED)) {
                     reqCount = reqCount+1;
                 }
 
@@ -311,8 +312,8 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
     public boolean canInsert(int slot, ItemStack stack, @Nullable Direction side) {
         Direction localDir = this.getWorld().getBlockState(pos).get(SkilletBlock.FACING);
 
-        //Experiment Success! this works! but needs abit more work.
-        if(getSlotLockState()) {
+        //Slot Lock
+        if(this.getWorld().getBlockState(this.getPos()).get(ModProperties.SLOT_LOCKED)) {
             //only allow insert into slot if slot stack is same as input stack.
             return inventory.get(slot).isOf(stack.getItem());
         }
@@ -391,13 +392,5 @@ public class SkilletBlockEntity extends BlockEntity implements ExtendedScreenHan
 
     private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory, int amount) {
         return inventory.getStack(7).getMaxCount() >= inventory.getStack(7).getCount() + amount;
-    }
-
-    public boolean getSlotLockState() {
-        assert world != null;
-        if(world.getBlockState(pos).contains(ModProperties.SLOT_LOCKED)) {
-            return world.getBlockState(pos).get(ModProperties.SLOT_LOCKED);
-        }
-        return false;
     }
 }
