@@ -22,6 +22,10 @@ public class renderSlotLock {
     public static void render(SkilletBlockEntity entity, ItemRenderer itemRenderer, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
         //boolean slotLock = entity.getSlotLockState();
 
+        if(!entity.getCachedState().contains(ModProperties.SLOT_LOCKED)) {
+            return;
+        }
+
         boolean slotLock = entity.getCachedState().get(ModProperties.SLOT_LOCKED);
 
         ItemStack itemStackSlotLocked = Items.AIR.getDefaultStack();
