@@ -428,6 +428,7 @@ public class PhotosynthesisClient implements ClientModInitializer {
         BlockEntityRendererFactories.register(ModBlockEntities.CUTTING_BOARD, CuttingBoardBlockEntityRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.SKILLET, SkilletBlockEntityRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.COOKINGPOT, CookingPotBlockEntityRenderer::new);
+        BlockEntityRendererFactories.register(ModBlockEntities.MIXINGBOWL, MixingBowlBlockEntityRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.PLATE, PlateBlockEntityRenderer::new);
         //BlockEntityRendererFactories.register(ModBlockEntities.FEEDINGTROUGH, FeedingTroughBlockEntityRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.TOOLRACK, ToolRackBlockEntityRenderer::new);
