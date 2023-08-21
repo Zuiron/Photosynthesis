@@ -30,17 +30,17 @@ import net.zuiron.photosynthesis.block.entity.CookingPotBlockEntity;
 import net.zuiron.photosynthesis.block.entity.ModBlockEntities;
 import net.zuiron.photosynthesis.block.entity.SkilletBlockEntity;
 import net.zuiron.photosynthesis.particle.ModParticles;
+import net.zuiron.photosynthesis.state.property.ModProperties;
 import org.jetbrains.annotations.Nullable;
 
-public class CookingPotBlock extends BlockWithEntity implements BlockEntityProvider {
+public class CookingPotBlock extends AbstractMachineBlock implements BlockEntityProvider {
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
     public static BooleanProperty LIT;
     public static BooleanProperty PROCESSING;
 
     public CookingPotBlock(Settings settings) {
         super(settings);
-        this.setDefaultState(this.stateManager.getDefaultState().with(LIT, false));
-        this.setDefaultState(this.stateManager.getDefaultState().with(PROCESSING, false));
+        this.setDefaultState(this.stateManager.getDefaultState().with(LIT, false).with(PROCESSING, false).with(ModProperties.SLOT_LOCKED,false));
     }
 
     private static VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 16, 16);
@@ -69,6 +69,7 @@ public class CookingPotBlock extends BlockWithEntity implements BlockEntityProvi
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(new Property[]{FACING, LIT, PROCESSING});
+        super.appendProperties(builder);
     }
 
     /* BLOCK ENTITY */
@@ -93,7 +94,8 @@ public class CookingPotBlock extends BlockWithEntity implements BlockEntityProvi
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos,
                               PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if (!world.isClient) {
+        ActionResult as = super.onUse(state, world, pos, player, hand, hit);
+        if (!world.isClient && as != ActionResult.SUCCESS) {
             NamedScreenHandlerFactory screenHandlerFactory = ((CookingPotBlockEntity) world.getBlockEntity(pos));
 
             if (screenHandlerFactory != null) {
