@@ -24,8 +24,8 @@ public class ModModelProvider extends FabricModelProvider {
         //itemModelGenerator.register(ModItems.CACTUS_FRUIT, );
         Item[] simple_items = {
                 ModItems.WRENCH,
-                ModItems.SLOT_LOCKED_LOCKED,
-                ModItems.SLOT_LOCKED_UNLOCKED,
+                ModItems.SLOT_LOCK_LOCKED,
+                ModItems.SLOT_LOCK_UNLOCKED,
                 ModItems.FORESTY_BUNDLE,
                 ModItems.PLASTIC_WRAP,
                 ModItems.TMR,

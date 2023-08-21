@@ -21,9 +21,9 @@ public class ModItems {
     public static final Item WRENCH = registerItem("wrench",
             new TooltippedItem(new FabricItemSettings(), "Changes machine behavior."));
 
-    public static final Item SLOT_LOCKED_LOCKED = registerItem("slot_locked_locked",
+    public static final Item SLOT_LOCK_LOCKED = registerItem("slot_lock_locked",
             new Item(new FabricItemSettings()));
-    public static final Item SLOT_LOCKED_UNLOCKED = registerItem("slot_locked_unlocked",
+    public static final Item SLOT_LOCK_UNLOCKED = registerItem("slot_lock_unlocked",
             new Item(new FabricItemSettings()));
 
     // ORES
