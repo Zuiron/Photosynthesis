@@ -45,6 +45,7 @@ import net.zuiron.photosynthesis.fluid.ModFluids;
 import net.zuiron.photosynthesis.networking.ModMessages;
 import net.zuiron.photosynthesis.recipe.KegRecipe;
 import net.zuiron.photosynthesis.screen.KegScreenHandler;
+import net.zuiron.photosynthesis.state.property.ModProperties;
 import net.zuiron.photosynthesis.util.FluidStack;
 import org.jetbrains.annotations.Nullable;
 
@@ -458,6 +459,11 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
 
                 int reqCount = (int) counts.get(i);
 
+                //Slot Lock - needs ATleast +1 of recipe requirement count.
+                if(entity.getWorld().getBlockState(entity.getPos()).get(ModProperties.SLOT_LOCKED)) {
+                    reqCount = reqCount+1;
+                }
+
                 if (ingredient.isEmpty() || itemStack.isEmpty()) {
                     continue;
                 } else if (ingredient.test(itemStack) && itemStack.getCount() >= reqCount) {
@@ -483,6 +489,12 @@ public class KegBlockEntity extends BlockEntity implements ExtendedScreenHandler
     @Override
     public boolean canInsert(int slot, ItemStack stack, @Nullable Direction side) {
         Direction localDir = this.getWorld().getBlockState(pos).get(KegBlock.FACING);
+
+        //Slot Lock
+        if(this.getWorld().getBlockState(this.getPos()).get(ModProperties.SLOT_LOCKED)) {
+            //only allow insert into slot if slot stack is same as input stack.
+            return inventory.get(slot).isOf(stack.getItem());
+        }
 
         if (side == Direction.DOWN) {
             return false;
