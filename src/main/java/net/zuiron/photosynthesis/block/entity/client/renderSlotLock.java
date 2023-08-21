@@ -22,7 +22,8 @@ import net.zuiron.photosynthesis.state.property.ModProperties;
 import java.util.Objects;
 
 public class renderSlotLock {
-    public static void render(BlockEntity entity, ItemRenderer itemRenderer, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
+    public static void render(BlockEntity entity, ItemRenderer itemRenderer, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay,
+    double x, double y, double z, int rot, float scale2) {
         //boolean slotLock = entity.getSlotLockState();
 
         if(!Objects.requireNonNull(entity.getWorld()).getBlockState(entity.getPos()).contains(ModProperties.SLOT_LOCKED)) {
@@ -46,12 +47,6 @@ public class renderSlotLock {
 
         //SLOTLOCK
         double max = 1.0f;
-        //case: SOUTH: player looking north
-        double x = 0.845f; //0 is LEFT, 1.0 is RIGHT edge.
-        double y = 0.1f; //0 is BOTTOM, 1 is TOP.
-        double z = 0.94f; //0, is BACK, 1.0 is FRONT outside of shelf. toward player when looking at block.
-        int rot = 0;
-        float scale2 = 0.15f;
 
         matrices.push();
         switch (entity.getCachedState().get(ShelfBlock.FACING)) {

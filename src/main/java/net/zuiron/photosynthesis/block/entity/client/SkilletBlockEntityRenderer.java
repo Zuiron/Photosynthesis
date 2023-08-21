@@ -38,7 +38,12 @@ public class SkilletBlockEntityRenderer implements BlockEntityRenderer<SkilletBl
         ItemStack itemStackSlotLocked = Items.AIR.getDefaultStack();*/
 
         //render slot lock
-        renderSlotLock.render(entity,itemRenderer,tickDelta,matrices,vertexConsumers,light,overlay);
+        double x = 0.845f; //0 is LEFT, 1.0 is RIGHT edge.
+        double y = 0.1f; //0 is BOTTOM, 1 is TOP.
+        double z = 0.94f; //0, is BACK, 1.0 is FRONT outside of shelf. toward player when looking at block.
+        int rot = 0;
+        float scale2 = 0.15f;
+        renderSlotLock.render(entity,itemRenderer,tickDelta,matrices,vertexConsumers,light,overlay, x, y, z, rot, scale2);
 
         /*assert MinecraftClient.getInstance().player != null;
         ItemStack handStack = MinecraftClient.getInstance().player.getStackInHand(MinecraftClient.getInstance().player.getActiveHand());

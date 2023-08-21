@@ -30,7 +30,12 @@ public class CookingPotBlockEntityRenderer implements BlockEntityRenderer<Cookin
         ItemRenderer itemRenderer = MinecraftClient.getInstance().getItemRenderer();
 
         //render slot lock
-        renderSlotLock.render(entity,itemRenderer,tickDelta,matrices,vertexConsumers,light,overlay);
+        double x = 0.8f; //0 is LEFT, 1.0 is RIGHT edge.
+        double y = 0.1f; //0 is BOTTOM, 1 is TOP.
+        double z = 0.88f; //0, is BACK, 1.0 is FRONT outside of shelf. toward player when looking at block.
+        int rot = 0;
+        float scale2 = 0.15f;
+        renderSlotLock.render(entity,itemRenderer,tickDelta,matrices,vertexConsumers,light,overlay, x, y, z, rot, scale2);
     }
 
     private int getLightLevel(World world, BlockPos pos) {
