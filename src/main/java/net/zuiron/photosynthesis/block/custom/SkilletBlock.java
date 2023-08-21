@@ -21,6 +21,7 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.Photosynthesis;
+import net.zuiron.photosynthesis.block.entity.CookingPotBlockEntity;
 import net.zuiron.photosynthesis.block.entity.CuttingBoardBlockEntity;
 import net.zuiron.photosynthesis.block.entity.ModBlockEntities;
 import net.zuiron.photosynthesis.block.entity.SkilletBlockEntity;
@@ -28,11 +29,10 @@ import net.zuiron.photosynthesis.item.ModItems;
 import net.zuiron.photosynthesis.state.property.ModProperties;
 import org.jetbrains.annotations.Nullable;
 
-public class SkilletBlock extends BlockWithEntity implements BlockEntityProvider {
+public class SkilletBlock extends AbstractMachineBlock implements BlockEntityProvider {
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
     public static BooleanProperty LIT;
     public static BooleanProperty PROCESSING;
-    public static BooleanProperty SLOT_LOCKED = ModProperties.SLOT_LOCKED;
 
     public SkilletBlock(Settings settings) {
         super(settings);
@@ -65,7 +65,8 @@ public class SkilletBlock extends BlockWithEntity implements BlockEntityProvider
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(new Property[]{FACING, LIT, PROCESSING, SLOT_LOCKED});
+        builder.add(new Property[]{FACING, LIT, PROCESSING});
+        super.appendProperties(builder);
     }
 
     /* BLOCK ENTITY */
@@ -90,19 +91,12 @@ public class SkilletBlock extends BlockWithEntity implements BlockEntityProvider
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos,
                               PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if (!world.isClient) {
-            if(!player.getStackInHand(hand).isOf(ModItems.WRENCH)) {
-                NamedScreenHandlerFactory screenHandlerFactory = ((SkilletBlockEntity) world.getBlockEntity(pos));
+        ActionResult as = super.onUse(state, world, pos, player, hand, hit);
+        if (!world.isClient && as != ActionResult.SUCCESS) {
+            NamedScreenHandlerFactory screenHandlerFactory = ((SkilletBlockEntity) world.getBlockEntity(pos));
 
-                if (screenHandlerFactory != null) {
-                    player.openHandledScreen(screenHandlerFactory);
-                }
-            }
-            else { //wrench in hand.
-                //toggle slot_locked.
-                boolean slot_lock = !state.get(SLOT_LOCKED); //toggle
-                world.setBlockState(pos, state.with(SLOT_LOCKED, slot_lock),2);
-                player.sendMessage(Text.literal("Slot Lock: "+slot_lock));
+            if (screenHandlerFactory != null) {
+                player.openHandledScreen(screenHandlerFactory);
             }
         }
 
