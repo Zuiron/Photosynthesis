@@ -12,6 +12,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
+import net.zuiron.photosynthesis.item.advanced.WrenchItem;
 import net.zuiron.photosynthesis.mixin.ItemAccessor;
 
 
@@ -19,7 +20,7 @@ import net.zuiron.photosynthesis.mixin.ItemAccessor;
 
 public class ModItems {
     public static final Item WRENCH = registerItem("wrench",
-            new TooltippedItem(new FabricItemSettings(), "Changes machine behavior."));
+            new WrenchItem(new FabricItemSettings()));
 
     public static final Item SLOT_LOCK_LOCKED = registerItem("slot_lock_locked",
             new Item(new FabricItemSettings()));
