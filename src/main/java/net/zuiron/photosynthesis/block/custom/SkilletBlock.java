@@ -11,10 +11,8 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.state.StateManager;
-import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.state.property.DirectionProperty;
-import net.minecraft.state.property.Properties;
-import net.minecraft.state.property.Property;
+import net.minecraft.state.property.*;
+import net.minecraft.text.Text;
 import net.minecraft.util.*;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
@@ -22,23 +20,27 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.entity.CuttingBoardBlockEntity;
 import net.zuiron.photosynthesis.block.entity.ModBlockEntities;
 import net.zuiron.photosynthesis.block.entity.SkilletBlockEntity;
+import net.zuiron.photosynthesis.item.ModItems;
+import net.zuiron.photosynthesis.state.property.ModProperties;
 import org.jetbrains.annotations.Nullable;
 
 public class SkilletBlock extends BlockWithEntity implements BlockEntityProvider {
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
     public static BooleanProperty LIT;
     public static BooleanProperty PROCESSING;
+    public static BooleanProperty SLOT_LOCKED = ModProperties.SLOT_LOCKED;
 
     public SkilletBlock(Settings settings) {
         super(settings);
         this.setDefaultState(this.stateManager.getDefaultState().with(LIT, false));
-        this.setDefaultState(this.stateManager.getDefaultState().with(PROCESSING, false));
+        this.setDefaultState(this.stateManager.getDefaultState().with(PROCESSING, false).with(SLOT_LOCKED, false));
     }
 
-    private static VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 3, 16);
+    private static VoxelShape SHAPE = Block.createCuboidShape(1, 0, 1, 15, 3, 15);
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
@@ -63,7 +65,7 @@ public class SkilletBlock extends BlockWithEntity implements BlockEntityProvider
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(new Property[]{FACING, LIT, PROCESSING});
+        builder.add(new Property[]{FACING, LIT, PROCESSING, SLOT_LOCKED});
     }
 
     /* BLOCK ENTITY */
@@ -89,10 +91,17 @@ public class SkilletBlock extends BlockWithEntity implements BlockEntityProvider
     public ActionResult onUse(BlockState state, World world, BlockPos pos,
                               PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (!world.isClient) {
-            NamedScreenHandlerFactory screenHandlerFactory = ((SkilletBlockEntity) world.getBlockEntity(pos));
+            if(!player.getStackInHand(hand).isOf(ModItems.WRENCH)) {
+                NamedScreenHandlerFactory screenHandlerFactory = ((SkilletBlockEntity) world.getBlockEntity(pos));
 
-            if (screenHandlerFactory != null) {
-                player.openHandledScreen(screenHandlerFactory);
+                if (screenHandlerFactory != null) {
+                    player.openHandledScreen(screenHandlerFactory);
+                }
+            }
+            else { //wrench in hand.
+                //toggle slot_locked.
+                world.setBlockState(pos, state.with(SLOT_LOCKED, !state.get(SLOT_LOCKED)),2);
+                player.sendMessage(Text.literal("Slot Lock: "+state.get(SLOT_LOCKED)));
             }
         }
 
