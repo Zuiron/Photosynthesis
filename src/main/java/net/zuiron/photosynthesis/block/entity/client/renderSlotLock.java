@@ -18,15 +18,17 @@ import net.zuiron.photosynthesis.block.entity.SkilletBlockEntity;
 import net.zuiron.photosynthesis.item.ModItems;
 import net.zuiron.photosynthesis.state.property.ModProperties;
 
+import java.util.Objects;
+
 public class renderSlotLock {
     public static void render(SkilletBlockEntity entity, ItemRenderer itemRenderer, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
         //boolean slotLock = entity.getSlotLockState();
 
-        if(!entity.getCachedState().contains(ModProperties.SLOT_LOCKED)) {
+        if(!Objects.requireNonNull(entity.getWorld()).getBlockState(entity.getPos()).contains(ModProperties.SLOT_LOCKED)) {
             return;
         }
 
-        boolean slotLock = entity.getCachedState().get(ModProperties.SLOT_LOCKED);
+        boolean slotLock = entity.getWorld().getBlockState(entity.getPos()).get(ModProperties.SLOT_LOCKED);
 
         ItemStack itemStackSlotLocked = Items.AIR.getDefaultStack();
 
