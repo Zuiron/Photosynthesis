@@ -11,6 +11,7 @@ import net.minecraft.client.render.model.json.ModelTransformation;
 import net.minecraft.client.render.model.json.ModelTransformationMode;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.util.math.AxisTransformation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RotationAxis;
@@ -34,11 +35,17 @@ public class SkilletBlockEntityRenderer implements BlockEntityRenderer<SkilletBl
 
         ItemStack itemStack = entity.getRenderStack();
         boolean slotLock = entity.getSlotLockState();
-        ItemStack itemStackSlotLocked;
-        if(slotLock) {
-            itemStackSlotLocked = ModItems.SLOT_LOCK_LOCKED.getDefaultStack();
-        } else {
-            itemStackSlotLocked = ModItems.SLOT_LOCK_UNLOCKED.getDefaultStack();
+        ItemStack itemStackSlotLocked = Items.AIR.getDefaultStack();
+
+        assert MinecraftClient.getInstance().player != null;
+        ItemStack handStack = MinecraftClient.getInstance().player.getStackInHand(MinecraftClient.getInstance().player.getActiveHand());
+
+        if(handStack.isOf(ModItems.WRENCH)) {
+            if (slotLock) {
+                itemStackSlotLocked = ModItems.SLOT_LOCK_LOCKED.getDefaultStack();
+            } else {
+                itemStackSlotLocked = ModItems.SLOT_LOCK_UNLOCKED.getDefaultStack();
+            }
         }
 
         //SLOTLOCK
