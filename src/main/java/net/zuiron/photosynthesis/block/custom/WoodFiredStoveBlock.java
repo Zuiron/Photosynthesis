@@ -144,6 +144,7 @@ public class WoodFiredStoveBlock extends BlockWithEntity implements BlockEntityP
         super.appendTooltip(stack, world, tooltip, options);
 
         tooltip.add(Text.literal("Provides ").append(Text.literal("Heat")).styled(style -> style.withColor(TextColor.fromRgb(0xc91111))));
+        tooltip.add(Text.literal("Supply redstone signal to Pause burn."));
     }
 
     @Override
