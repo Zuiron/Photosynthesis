@@ -161,18 +161,28 @@ public class GravityPressBlockEntity extends BlockEntity implements ExtendedScre
             return;
         }
 
-        float progress_pct = ((float) entity.progress / entity.maxProgress) * 100;
-        if(entity.getStack(2).isEmpty() && !entity.getStack(1).isEmpty() && world.getBlockState(blockPos).get(ModProperties.PROGRESS3) != 0) {
+        if(entity.getStack(2).isEmpty() && state.get(ModProperties.PROGRESS3) != 0 && entity.progress == 0) {
             world.setBlockState(blockPos, state.with(ModProperties.PROGRESS3,0),2);
-        } else if(!entity.getStack(2).isEmpty() && world.getBlockState(blockPos).get(ModProperties.PROGRESS3) != 2) {
-            world.setBlockState(blockPos, state.with(ModProperties.PROGRESS3,2),2);
         }
 
         if(hasRecipe(entity)) {
             entity.progress++;
 
-            if(entity.getStack(2).isEmpty() && progress_pct > 40.0f && world.getBlockState(blockPos).get(ModProperties.PROGRESS3) != 1) {
+            if(entity.progress >= entity.maxProgress && state.get(ModProperties.PROGRESS3) != 2) {
+                world.setBlockState(blockPos, state.with(ModProperties.PROGRESS3,2),2);
+            }
+            if(entity.getStack(2).isEmpty() && entity.progress > (entity.maxProgress/4) && state.get(ModProperties.PROGRESS3) != 1) {
                 world.setBlockState(blockPos, state.with(ModProperties.PROGRESS3,1),2);
+                if (!world.isClient) {
+                    world.playSound(
+                            null, // Player - if non-null, will play sound for every nearby player *except* the specified player
+                            blockPos, // The position of where the sound will come from
+                            SoundEvents.BLOCK_COMPOSTER_READY, // The sound that will play, in this case, the sound the anvil plays when it lands.
+                            SoundCategory.BLOCKS, // This determines which of the volume sliders affect this sound
+                            1f, //Volume multiplier, 1 is normal, 0.5 is half volume, etc
+                            1f // Pitch multiplier, 1 is normal, 0.5 is half pitch, etc
+                    );
+                }
             }
 
             markDirty(world, blockPos, state);
