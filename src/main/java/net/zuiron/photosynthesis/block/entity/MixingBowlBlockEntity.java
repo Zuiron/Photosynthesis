@@ -414,4 +414,8 @@ public class MixingBowlBlockEntity extends BlockEntity implements ExtendedScreen
     private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory, int amount) {
         return inventory.getStack(9).getMaxCount() >= inventory.getStack(9).getCount() + amount;
     }
+
+    public DefaultedList<ItemStack> getInventoryMod() {
+        return this.inventory;
+    }
 }
