@@ -327,4 +327,8 @@ public class MortarBlockEntity extends BlockEntity implements ExtendedScreenHand
     private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory, int amount) {
         return inventory.getStack(2).getMaxCount() >= inventory.getStack(2).getCount() + amount;
     }
+
+    public DefaultedList<ItemStack> getInventoryMod() {
+        return this.inventory;
+    }
 }

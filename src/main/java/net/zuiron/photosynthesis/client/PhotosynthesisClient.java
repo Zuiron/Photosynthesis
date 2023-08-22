@@ -430,7 +430,6 @@ public class PhotosynthesisClient implements ClientModInitializer {
         BlockEntityRendererFactories.register(ModBlockEntities.COOKINGPOT, CookingPotBlockEntityRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.MIXINGBOWL, MixingBowlBlockEntityRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.PLATE, PlateBlockEntityRenderer::new);
-        //BlockEntityRendererFactories.register(ModBlockEntities.FEEDINGTROUGH, FeedingTroughBlockEntityRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.TOOLRACK, ToolRackBlockEntityRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.SHELF, ShelfBlockEntityRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.DRYINGNET, DryingNetBlockEntityRenderer::new);
@@ -439,6 +438,7 @@ public class PhotosynthesisClient implements ClientModInitializer {
         BlockEntityRendererFactories.register(ModBlockEntities.GRAVITYPRESS, GravityPressBlockEntityRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.FEEDINGTROUGH, FeedingTroughBlockEntityRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.KEG, KegBlockEntityRenderer::new);
+        BlockEntityRendererFactories.register(ModBlockEntities.MORTAR, MortarBlockEntityRenderer::new);
 
         //LATEX
         FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_LATEX, ModFluids.FLOWING_LATEX,
