@@ -31,6 +31,7 @@ import net.zuiron.photosynthesis.block.custom.GravityPressBlock;
 import net.zuiron.photosynthesis.networking.ModMessages;
 import net.zuiron.photosynthesis.recipe.GravityPressRecipe;
 import net.zuiron.photosynthesis.screen.GravityPressScreenHandler;
+import net.zuiron.photosynthesis.state.property.ModProperties;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
@@ -160,8 +161,20 @@ public class GravityPressBlockEntity extends BlockEntity implements ExtendedScre
             return;
         }
 
+        float progress_pct = ((float) entity.progress / entity.maxProgress) * 100;
+        if(entity.getStack(2).isEmpty() && !entity.getStack(1).isEmpty() && world.getBlockState(blockPos).get(ModProperties.PROGRESS3) != 0) {
+            world.setBlockState(blockPos, state.with(ModProperties.PROGRESS3,0),2);
+        } else if(!entity.getStack(2).isEmpty() && world.getBlockState(blockPos).get(ModProperties.PROGRESS3) != 2) {
+            world.setBlockState(blockPos, state.with(ModProperties.PROGRESS3,2),2);
+        }
+
         if(hasRecipe(entity)) {
             entity.progress++;
+
+            if(entity.getStack(2).isEmpty() && progress_pct > 40.0f && world.getBlockState(blockPos).get(ModProperties.PROGRESS3) != 1) {
+                world.setBlockState(blockPos, state.with(ModProperties.PROGRESS3,1),2);
+            }
+
             markDirty(world, blockPos, state);
             if(entity.progress >= entity.maxProgress) {
                 craftItem(entity);

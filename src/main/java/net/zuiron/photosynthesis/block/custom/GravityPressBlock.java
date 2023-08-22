@@ -9,6 +9,7 @@ import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.DirectionProperty;
+import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.*;
 import net.minecraft.util.hit.BlockHitResult;
@@ -18,13 +19,16 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.block.entity.GravityPressBlockEntity;
 import net.zuiron.photosynthesis.block.entity.ModBlockEntities;
+import net.zuiron.photosynthesis.state.property.ModProperties;
 import org.jetbrains.annotations.Nullable;
 
 public class GravityPressBlock extends BlockWithEntity implements BlockEntityProvider {
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
+    public static final IntProperty PROGRESS3 = ModProperties.PROGRESS3;
 
     public GravityPressBlock(Settings settings) {
         super(settings);
+        this.setDefaultState(this.stateManager.getDefaultState().with(PROGRESS3,0));
     }
 
     private static VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 16, 16);
@@ -52,7 +56,7 @@ public class GravityPressBlock extends BlockWithEntity implements BlockEntityPro
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(FACING);
+        builder.add(FACING).add(PROGRESS3);
     }
 
     /* BLOCK ENTITY */

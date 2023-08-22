@@ -1,18 +1,54 @@
 {
   "variants": {
-    "facing=north": {
+    "facing=north,progress3=0": {
       "model": "photosynthesis:block/gravity_press"
     },
-    "facing=south": {
+    "facing=north,progress3=1": {
+      "model": "photosynthesis:block/gravity_press_1"
+    },
+    "facing=north,progress3=2": {
+      "model": "photosynthesis:block/gravity_press_2"
+    },
+
+
+    "facing=south,progress3=0": {
       "model": "photosynthesis:block/gravity_press",
       "y": 180
     },
-    "facing=west": {
+    "facing=south,progress3=1": {
+      "model": "photosynthesis:block/gravity_press_1",
+      "y": 180
+    },
+    "facing=south,progress3=2": {
+      "model": "photosynthesis:block/gravity_press_2",
+      "y": 180
+    },
+
+
+    "facing=west,progress3=0": {
       "model": "photosynthesis:block/gravity_press",
       "y": 270
     },
-    "facing=east": {
+    "facing=west,progress3=1": {
+      "model": "photosynthesis:block/gravity_press_1",
+      "y": 270
+    },
+    "facing=west,progress3=2": {
+      "model": "photosynthesis:block/gravity_press_2",
+      "y": 270
+    },
+
+
+    "facing=east,progress3=0": {
       "model": "photosynthesis:block/gravity_press",
+      "y": 90
+    },
+    "facing=east,progress3=1": {
+      "model": "photosynthesis:block/gravity_press_1",
+      "y": 90
+    },
+    "facing=east,progress3=2": {
+      "model": "photosynthesis:block/gravity_press_2",
       "y": 90
     }
   }
