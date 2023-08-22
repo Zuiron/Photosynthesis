@@ -1194,6 +1194,10 @@ public class ModItems {
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(6).saturationModifier(0.8f).build())));
 
+    public static final Item SALMON_SUSHI = registerItem("salmon_sushi",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(6).saturationModifier(0.8f).build())));
+
 
 
 
