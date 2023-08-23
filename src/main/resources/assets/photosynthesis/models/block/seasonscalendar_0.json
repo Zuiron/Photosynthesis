@@ -1,0 +1,6 @@
+{
+  "parent": "photosynthesis:block/seasonscalendar",
+  "textures": {
+    "0": "photosynthesis:block/seasonscalendar_0"
+  }
+}

@@ -1,55 +1,258 @@
 {
   "variants": {
-    "face=ceiling,facing=east": {
-      "model": "photosynthesis:block/seasonscalendar",
+    "face=ceiling,facing=east,season=0": {
+      "model": "photosynthesis:block/seasonscalendar_0",
       "x": 180,
       "y": 270
     },
-    "face=ceiling,facing=north": {
-      "model": "photosynthesis:block/seasonscalendar",
+    "face=ceiling,facing=east,season=1": {
+      "model": "photosynthesis:block/seasonscalendar_1",
+      "x": 180,
+      "y": 270
+    },
+    "face=ceiling,facing=east,season=2": {
+      "model": "photosynthesis:block/seasonscalendar_2",
+      "x": 180,
+      "y": 270
+    },
+    "face=ceiling,facing=east,season=3": {
+      "model": "photosynthesis:block/seasonscalendar_3",
+      "x": 180,
+      "y": 270
+    },
+
+
+
+
+    "face=ceiling,facing=north,season=0": {
+      "model": "photosynthesis:block/seasonscalendar_0",
       "x": 180,
       "y": 180
     },
-    "face=ceiling,facing=south": {
-      "model": "photosynthesis:block/seasonscalendar",
+    "face=ceiling,facing=north,season=1": {
+      "model": "photosynthesis:block/seasonscalendar_1",
+      "x": 180,
+      "y": 180
+    },
+    "face=ceiling,facing=north,season=2": {
+      "model": "photosynthesis:block/seasonscalendar_2",
+      "x": 180,
+      "y": 180
+    },
+    "face=ceiling,facing=north,season=3": {
+      "model": "photosynthesis:block/seasonscalendar_3",
+      "x": 180,
+      "y": 180
+    },
+
+
+
+
+    "face=ceiling,facing=south,season=0": {
+      "model": "photosynthesis:block/seasonscalendar_0",
       "x": 180
     },
-    "face=ceiling,facing=west": {
-      "model": "photosynthesis:block/seasonscalendar",
+    "face=ceiling,facing=south,season=1": {
+      "model": "photosynthesis:block/seasonscalendar_1",
+      "x": 180
+    },
+    "face=ceiling,facing=south,season=2": {
+      "model": "photosynthesis:block/seasonscalendar_2",
+      "x": 180
+    },
+    "face=ceiling,facing=south,season=3": {
+      "model": "photosynthesis:block/seasonscalendar_3",
+      "x": 180
+    },
+
+
+
+
+    "face=ceiling,facing=west,season=0": {
+      "model": "photosynthesis:block/seasonscalendar_0",
       "x": 180,
       "y": 90
     },
-    "face=floor,facing=east": {
-      "model": "photosynthesis:block/seasonscalendar",
+    "face=ceiling,facing=west,season=1": {
+      "model": "photosynthesis:block/seasonscalendar_1",
+      "x": 180,
       "y": 90
     },
-    "face=floor,facing=north": {
-      "model": "photosynthesis:block/seasonscalendar"
+    "face=ceiling,facing=west,season=2": {
+      "model": "photosynthesis:block/seasonscalendar_2",
+      "x": 180,
+      "y": 90
     },
-    "face=floor,facing=south": {
-      "model": "photosynthesis:block/seasonscalendar",
+    "face=ceiling,facing=west,season=3": {
+      "model": "photosynthesis:block/seasonscalendar_3",
+      "x": 180,
+      "y": 90
+    },
+
+
+
+
+    "face=floor,facing=east,season=0": {
+      "model": "photosynthesis:block/seasonscalendar_0",
+      "y": 90
+    },
+    "face=floor,facing=east,season=1": {
+      "model": "photosynthesis:block/seasonscalendar_1",
+      "y": 90
+    },
+    "face=floor,facing=east,season=2": {
+      "model": "photosynthesis:block/seasonscalendar_2",
+      "y": 90
+    },
+    "face=floor,facing=east,season=3": {
+      "model": "photosynthesis:block/seasonscalendar_3",
+      "y": 90
+    },
+
+
+
+
+    "face=floor,facing=north,season=0": {
+      "model": "photosynthesis:block/seasonscalendar_0"
+    },
+    "face=floor,facing=north,season=1": {
+      "model": "photosynthesis:block/seasonscalendar_1"
+    },
+    "face=floor,facing=north,season=2": {
+      "model": "photosynthesis:block/seasonscalendar_2"
+    },
+    "face=floor,facing=north,season=3": {
+      "model": "photosynthesis:block/seasonscalendar_3"
+    },
+
+
+
+
+    "face=floor,facing=south,season=0": {
+      "model": "photosynthesis:block/seasonscalendar_0",
       "y": 180
     },
-    "face=floor,facing=west": {
-      "model": "photosynthesis:block/seasonscalendar",
+    "face=floor,facing=south,season=1": {
+      "model": "photosynthesis:block/seasonscalendar_1",
+      "y": 180
+    },
+    "face=floor,facing=south,season=2": {
+      "model": "photosynthesis:block/seasonscalendar_2",
+      "y": 180
+    },
+    "face=floor,facing=south,season=3": {
+      "model": "photosynthesis:block/seasonscalendar_3",
+      "y": 180
+    },
+
+
+
+
+    "face=floor,facing=west,season=0": {
+      "model": "photosynthesis:block/seasonscalendar_0",
       "y": 270
     },
-    "face=wall,facing=east": {
-      "model": "photosynthesis:block/seasonscalendar",
+    "face=floor,facing=west,season=1": {
+      "model": "photosynthesis:block/seasonscalendar_1",
+      "y": 270
+    },
+    "face=floor,facing=west,season=2": {
+      "model": "photosynthesis:block/seasonscalendar_2",
+      "y": 270
+    },
+    "face=floor,facing=west,season=3": {
+      "model": "photosynthesis:block/seasonscalendar_3",
+      "y": 270
+    },
+
+
+
+
+    "face=wall,facing=east,season=0": {
+      "model": "photosynthesis:block/seasonscalendar_0",
       "x": 90,
       "y": 90
     },
-    "face=wall,facing=north": {
-      "model": "photosynthesis:block/seasonscalendar",
+    "face=wall,facing=east,season=1": {
+      "model": "photosynthesis:block/seasonscalendar_1",
+      "x": 90,
+      "y": 90
+    },
+    "face=wall,facing=east,season=2": {
+      "model": "photosynthesis:block/seasonscalendar_2",
+      "x": 90,
+      "y": 90
+    },
+    "face=wall,facing=east,season=3": {
+      "model": "photosynthesis:block/seasonscalendar_3",
+      "x": 90,
+      "y": 90
+    },
+
+
+
+
+    "face=wall,facing=north,season=0": {
+      "model": "photosynthesis:block/seasonscalendar_0",
       "x": 90
     },
-    "face=wall,facing=south": {
-      "model": "photosynthesis:block/seasonscalendar",
+    "face=wall,facing=north,season=1": {
+      "model": "photosynthesis:block/seasonscalendar_1",
+      "x": 90
+    },
+    "face=wall,facing=north,season=2": {
+      "model": "photosynthesis:block/seasonscalendar_2",
+      "x": 90
+    },
+    "face=wall,facing=north,season=3": {
+      "model": "photosynthesis:block/seasonscalendar_3",
+      "x": 90
+    },
+
+
+
+
+    "face=wall,facing=south,season=0": {
+      "model": "photosynthesis:block/seasonscalendar_0",
       "x": 90,
       "y": 180
     },
-    "face=wall,facing=west": {
-      "model": "photosynthesis:block/seasonscalendar",
+    "face=wall,facing=south,season=1": {
+      "model": "photosynthesis:block/seasonscalendar_1",
+      "x": 90,
+      "y": 180
+    },
+    "face=wall,facing=south,season=2": {
+      "model": "photosynthesis:block/seasonscalendar_2",
+      "x": 90,
+      "y": 180
+    },
+    "face=wall,facing=south,season=3": {
+      "model": "photosynthesis:block/seasonscalendar_3",
+      "x": 90,
+      "y": 180
+    },
+
+
+
+
+    "face=wall,facing=west,season=0": {
+      "model": "photosynthesis:block/seasonscalendar_0",
+      "x": 90,
+      "y": 270
+    },
+    "face=wall,facing=west,season=1": {
+      "model": "photosynthesis:block/seasonscalendar_1",
+      "x": 90,
+      "y": 270
+    },
+    "face=wall,facing=west,season=2": {
+      "model": "photosynthesis:block/seasonscalendar_2",
+      "x": 90,
+      "y": 270
+    },
+    "face=wall,facing=west,season=3": {
+      "model": "photosynthesis:block/seasonscalendar_3",
       "x": 90,
       "y": 270
     }
