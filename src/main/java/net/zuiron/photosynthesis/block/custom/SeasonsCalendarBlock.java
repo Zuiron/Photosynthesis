@@ -44,14 +44,14 @@ public class SeasonsCalendarBlock extends BlockWithEntity implements BlockEntity
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;                    //HorizontalFacingBlock
     public static final EnumProperty<WallMountLocation> FACE = Properties.WALL_MOUNT_LOCATION;      //WallMountedBlock
 
-    protected static final VoxelShape NORTH_WALL_SHAPE = Block.createCuboidShape(5.0, 4.0, 10.0, 11.0, 12.0, 16.0);
-    protected static final VoxelShape SOUTH_WALL_SHAPE = Block.createCuboidShape(5.0, 4.0, 0.0, 11.0, 12.0, 6.0);
-    protected static final VoxelShape WEST_WALL_SHAPE = Block.createCuboidShape(10.0, 4.0, 5.0, 16.0, 12.0, 11.0);
-    protected static final VoxelShape EAST_WALL_SHAPE = Block.createCuboidShape(0.0, 4.0, 5.0, 6.0, 12.0, 11.0);
-    protected static final VoxelShape FLOOR_Z_AXIS_SHAPE = Block.createCuboidShape(5.0, 0.0, 4.0, 11.0, 6.0, 12.0);
-    protected static final VoxelShape FLOOR_X_AXIS_SHAPE = Block.createCuboidShape(4.0, 0.0, 5.0, 12.0, 6.0, 11.0);
-    protected static final VoxelShape CEILING_Z_AXIS_SHAPE = Block.createCuboidShape(5.0, 10.0, 4.0, 11.0, 16.0, 12.0);
-    protected static final VoxelShape CEILING_X_AXIS_SHAPE = Block.createCuboidShape(4.0, 10.0, 5.0, 12.0, 16.0, 11.0);
+    protected static final VoxelShape NORTH_WALL_SHAPE = Block.createCuboidShape(1, 1, 15, 15, 15, 16);
+    protected static final VoxelShape SOUTH_WALL_SHAPE = Block.createCuboidShape(1, 1, 0, 15, 15, 1);
+    protected static final VoxelShape EAST_WALL_SHAPE = Block.createCuboidShape(0, 1, 1, 1, 15, 15);
+    protected static final VoxelShape WEST_WALL_SHAPE = Block.createCuboidShape(15, 1, 1, 16, 15, 15);
+    protected static final VoxelShape FLOOR_Z_AXIS_SHAPE = Block.createCuboidShape(1, 0, 1, 15, 1, 15);
+    protected static final VoxelShape FLOOR_X_AXIS_SHAPE = Block.createCuboidShape(1, 0, 1, 15, 1, 15);
+    protected static final VoxelShape CEILING_Z_AXIS_SHAPE = Block.createCuboidShape(1, 15, 1, 15, 16, 15);
+    protected static final VoxelShape CEILING_X_AXIS_SHAPE = Block.createCuboidShape(1, 15, 1, 15, 16, 15);
 
     public SeasonsCalendarBlock(Settings settings) {
         super(settings);
