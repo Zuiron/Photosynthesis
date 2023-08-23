@@ -20,13 +20,18 @@ public class SeasonsCalendarBlockEntity extends BlockEntity {
 
     public static void tick(World world, BlockPos blockPos, BlockState state, SeasonsCalendarBlockEntity entity) {
         if(Seasons.isSeasonsEnabled()) {
-            if(state.contains(ModProperties.RPOWER) && state.contains(Properties.POWERED)) {
+            if(state.contains(ModProperties.RPOWER) && state.contains(Properties.POWERED) && state.contains(ModProperties.SEASON)) {
+                //set red-stone power based on time of year.
                 if(state.get(Properties.POWERED)) {
                     if (state.get(ModProperties.RPOWER) != entity.getSeasonRedstonePower(world)) {
                         world.setBlockState(blockPos, state.with(ModProperties.RPOWER, entity.getSeasonRedstonePower(world)), Block.NOTIFY_ALL);
                     }
                 }
-                //TODO set season state to current season.
+                //set season state to current season.
+                int currentSeason = Seasons.getCurrentSeason(world.getTimeOfDay());
+                if(state.get(ModProperties.SEASON) != currentSeason) {
+                    world.setBlockState(blockPos, state.with(ModProperties.SEASON, currentSeason), 2);
+                }
             }
         }
     }
