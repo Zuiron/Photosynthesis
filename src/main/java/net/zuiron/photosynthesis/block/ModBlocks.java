@@ -138,6 +138,10 @@ public class ModBlocks {
             new PlateBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
                     .strength(2f).nonOpaque()));
 
+    public static final Block SEASONSCALENDAR = registerBlock("seasonscalendar",
+            new SeasonsCalendarBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
     public static final Block FEEDINGTROUGH = registerBlock("feedingtrough",
             new FeedingTroughBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
                     .strength(2f).nonOpaque()));

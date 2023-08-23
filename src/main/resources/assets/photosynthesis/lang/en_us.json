@@ -12,6 +12,8 @@
   "text.autoconfig.photosynthesis.option.seasons.@Tooltip": "When YES, Seasons is enabled.",
   "text.autoconfig.photosynthesis.option.daysPerSeason": "Days Per Season",
 
+  "block.photosynthesis.seasonscalendar": "Seasons Calendar",
+
   "block.photosynthesis.kitchencounter_polished_diorite_oak": "Kitchen Countertop Diorite & Oak",
   "block.photosynthesis.kitchencounter_big_polished_diorite_oak": "Kitchen Countertop Big Diorite & Oak",
   "block.photosynthesis.kitchencounter_drawers_polished_diorite_oak": "Kitchen Countertop Drawers Diorite & Oak",

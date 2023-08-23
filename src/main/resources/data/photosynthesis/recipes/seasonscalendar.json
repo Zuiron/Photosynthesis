@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "PCP",
+    "RRR"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:lever"
+    },
+    "P": {
+      "item": "minecraft:paper"
+    },
+    "C": {
+      "item": "minecraft:clock"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result": {
+    "item": "photosynthesis:seasonscalendar",
+    "count": 1
+  }
+}
