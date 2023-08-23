@@ -5,13 +5,9 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.api.Seasons;
-import net.zuiron.photosynthesis.block.custom.SeasonsCalendarBlock;
 import net.zuiron.photosynthesis.state.property.ModProperties;
-
-import java.util.Objects;
 
 public class SeasonsCalendarBlockEntity extends BlockEntity {
     public SeasonsCalendarBlockEntity(BlockPos pos, BlockState state) {
