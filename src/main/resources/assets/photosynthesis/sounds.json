@@ -8,6 +8,11 @@
     "sounds": [
       "photosynthesis:cookingpot"
     ]
+  },
+  "mortar": {
+    "sounds": [
+      "photosynthesis:mortar"
+    ]
   }
 }
 
