@@ -11,7 +11,7 @@ public class ModConfig implements ConfigData {
     //@Comment("test")
     //public boolean requireHeatUnder = true;
 
-    @ConfigEntry.Category("Client")
+    //@ConfigEntry.Category("Client")
     @ConfigEntry.Gui.Tooltip
     @Comment("enable or disable thirst")
     public boolean thirst = true;
@@ -20,7 +20,7 @@ public class ModConfig implements ConfigData {
     @Comment("enable or disable seasons")
     public boolean seasons = true;
 
-    @ConfigEntry.Category("Server")
+    //@ConfigEntry.Category("Server")
     public int daysPerSeason = 18;
 
     //https://www.curseforge.com/minecraft/texture-packs/seasons-data-pack

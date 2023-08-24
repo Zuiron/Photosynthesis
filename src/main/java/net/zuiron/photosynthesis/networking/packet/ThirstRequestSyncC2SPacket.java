@@ -13,6 +13,7 @@ import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.math.BlockPos;
+import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.util.IEntityDataSaver;
 import net.zuiron.photosynthesis.util.ThirstData;
 
@@ -22,8 +23,9 @@ public class ThirstRequestSyncC2SPacket {
                                PacketByteBuf buf, PacketSender responseSender) {
 
         // outputting the current thirst level of player
-        player.sendMessage(Text.literal("Thirst request sync: " + ((IEntityDataSaver) player).getPersistentData().getInt("thirst"))
-                .fillStyle(Style.EMPTY.withColor(Formatting.DARK_BLUE)), true);
+        /*player.sendMessage(Text.literal("Thirst request sync: " + ((IEntityDataSaver) player).getPersistentData().getInt("thirst"))
+                .fillStyle(Style.EMPTY.withColor(Formatting.DARK_BLUE)), true);*/
+        Photosynthesis.LOGGER.info("Thirst request sync: " + ((IEntityDataSaver) player).getPersistentData().getInt("thirst"));
 
         // Sync thirst
         ThirstData.syncThirst(((IEntityDataSaver) player).getPersistentData().getInt("thirst"), player);
