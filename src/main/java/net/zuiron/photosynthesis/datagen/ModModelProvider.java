@@ -232,7 +232,12 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.SUSHI_ROLL2,
                 ModItems.SUSHI_ROLL,
                 ModItems.SALMON_SUSHI,
-                ModItems.PIZZA_SAUCE
+                ModItems.PIZZA_SAUCE,
+                ModItems.OAT_BREAD,
+                ModItems.RYE_BREAD,
+                ModItems.TACO_SHELL,
+                ModItems.RAW_CHICKEN_NUGGETS
+
 
 
 
