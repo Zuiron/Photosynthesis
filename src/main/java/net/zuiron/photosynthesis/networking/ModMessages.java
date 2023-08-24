@@ -19,10 +19,17 @@ public class ModMessages {
     public static final Identifier FLUID_SYNC3 = new Identifier(Photosynthesis.MOD_ID, "fluid_sync3");
     public static final Identifier ITEM_SYNC = new Identifier(Photosynthesis.MOD_ID, "item_sync");
 
+
+
+    public static final Identifier CONFIG_SYNC_ID = new Identifier(Photosynthesis.MOD_ID, "config_sync");
+    public static final Identifier CONFIG_REQ_SYNC_ID = new Identifier(Photosynthesis.MOD_ID, "config_request_sync");
+
     public static void registerC2SPackets() { //SERVER?
         //ServerPlayNetworking.registerGlobalReceiver(EXAMPLE_ID, ExampleC2SPacket::receive);
         ServerPlayNetworking.registerGlobalReceiver(DRINKING_ID, DrinkingC2SPacket::receive);
         ServerPlayNetworking.registerGlobalReceiver(THIRST_REQ_SYNC_ID, ThirstRequestSyncC2SPacket::receive);
+
+        ServerPlayNetworking.registerGlobalReceiver(CONFIG_REQ_SYNC_ID, ConfigRequestSyncC2SPacket::receive);
     }
 
     public static void registerS2CPackets() { //CLIENT
@@ -33,5 +40,7 @@ public class ModMessages {
         ClientPlayNetworking.registerGlobalReceiver(FLUID_SYNC2, FluidSyncS2CPacket2::receive);
         ClientPlayNetworking.registerGlobalReceiver(FLUID_SYNC3, FluidSyncS2CPacket3::receive);
         ClientPlayNetworking.registerGlobalReceiver(ITEM_SYNC, ItemStackSyncS2CPacket::receive);
+
+        ClientPlayNetworking.registerGlobalReceiver(CONFIG_SYNC_ID, ConfigSyncS2CPacket::receive);
     }
 }
