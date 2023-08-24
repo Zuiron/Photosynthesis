@@ -117,13 +117,14 @@ public class SeasonsCalendarBlock extends BlockWithEntity implements BlockEntity
         return 0;
     }
 
-    @Override
+    //kinda works, but not. so it works. but doesn't update correctly. look at this later, maybe.
+    /*@Override
     public int getStrongRedstonePower(BlockState state, BlockView world, BlockPos pos, Direction direction) {
         if (state.get(POWERED).booleanValue() && SeasonsCalendarBlock.getDirection(state) == direction) {
             return state.get(RPOWER);
         }
         return 0;
-    }
+    }*/
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
