@@ -103,17 +103,17 @@ public abstract class ModStemBlock extends PlantBlock
                         state = (BlockState) state.with(GOURDS_SPAWNED, this.getGourdsSpawned(state) + 1);
                         world.setBlockState(pos, state, Block.NOTIFY_LISTENERS);
 
-                        Photosynthesis.LOGGER.info("gourd grows... like magic!");
+                        //Photosynthesis.LOGGER.info("gourd grows... like magic!");
                     }
 
                 }
 
                 if(currentCropAge >= minAge && currentCropAge < maxAge && seasonPercentage > 0.5f) { //0.5f = 50% "halfway thru season"
-                    Photosynthesis.LOGGER.info("Crop: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NewCropAge: "+(currentCropAge + 1)+", %:"+seasonPercentage);
+                    //Photosynthesis.LOGGER.info("Crop: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NewCropAge: "+(currentCropAge + 1)+", %:"+seasonPercentage);
                     state = (BlockState) state.with(AGE, currentCropAge + 1);
                     world.setBlockState(pos, state, Block.NOTIFY_LISTENERS);
                 } else {
-                    Photosynthesis.LOGGER.info("Crop: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NO GROW"+", %:"+seasonPercentage);
+                    //Photosynthesis.LOGGER.info("Crop: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NO GROW"+", %:"+seasonPercentage);
                 }
 
                 //we got seasons data, do not run vanilla code.
