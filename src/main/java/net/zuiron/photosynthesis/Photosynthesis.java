@@ -1,12 +1,16 @@
 package net.zuiron.photosynthesis;
 
 import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.example.ExampleConfig;
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
+import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.treedecorator.TreeDecoratorType;
 import net.zuiron.photosynthesis.block.ModBlocks;
@@ -160,6 +164,14 @@ public class Photosynthesis implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.0
 		AutoConfig.register(ModConfig.class, JanksonConfigSerializer::new);
+		/*AutoConfig.getConfigHolder(ModConfig.class).registerSaveListener((manager, data) -> {
+			Photosynthesis.LOGGER.info("saved?");
+			//sync config
+			Photosynthesis.LOGGER.info("Sending config request to server...");
+			ClientPlayNetworking.send(ModMessages.CONFIG_REQ_SYNC_ID, PacketByteBufs.create());
+
+			return ActionResult.SUCCESS;
+		});*/
 
 		Registry.register(Registries.SOUND_EVENT, Photosynthesis.SKILLET_SOUND_ID, SKILLET_SOUND_EVENT);
 		Registry.register(Registries.SOUND_EVENT, Photosynthesis.MIXINGBOWL_SOUND_ID, MIXINGBOWL_SOUND_EVENT);
