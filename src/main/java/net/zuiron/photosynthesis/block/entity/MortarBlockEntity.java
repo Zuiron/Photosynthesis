@@ -26,6 +26,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
+import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.custom.DryingNetBlock;
 import net.zuiron.photosynthesis.block.custom.MortarBlock;
 import net.zuiron.photosynthesis.networking.ModMessages;
@@ -171,7 +172,7 @@ public class MortarBlockEntity extends BlockEntity implements ExtendedScreenHand
                     world.playSound(
                             null, // Player - if non-null, will play sound for every nearby player *except* the specified player
                             blockPos, // The position of where the sound will come from
-                            SoundEvents.BLOCK_BEEHIVE_SHEAR, // The sound that will play, in this case, the sound the anvil plays when it lands.
+                            Photosynthesis.MORTAR_SOUND_EVENT, // The sound that will play, in this case, the sound the anvil plays when it lands.
                             SoundCategory.BLOCKS, // This determines which of the volume sliders affect this sound
                             1f, //Volume multiplier, 1 is normal, 0.5 is half volume, etc
                             1f // Pitch multiplier, 1 is normal, 0.5 is half pitch, etc
