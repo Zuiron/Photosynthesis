@@ -1214,6 +1214,11 @@ public class ModItems {
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
+    public static final Item RAW_CHICKEN_NUGGETS = registerItem("raw_chicken_nuggets",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+
 
 
 
