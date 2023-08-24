@@ -3,12 +3,12 @@
   "ingredients": [
     {
       "item": "photosynthesis:sunflower_seeds",
-      "count": 2
+      "count": 16
     }
   ],
   "output": {
     "fluid": "photosynthesis:sunfloweroil",
-    "amount": 8100
+    "amount": 4050
   },
   "cookingtime": 100
 }
