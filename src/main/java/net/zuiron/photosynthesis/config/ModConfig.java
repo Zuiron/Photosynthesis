@@ -11,7 +11,6 @@ public class ModConfig implements ConfigData {
     //@Comment("test")
     //public boolean requireHeatUnder = true;
 
-    //@ConfigEntry.Category("Client")
     @ConfigEntry.Gui.Tooltip
     @Comment("enable or disable thirst")
     public boolean thirst = true;
@@ -20,10 +19,50 @@ public class ModConfig implements ConfigData {
     @Comment("enable or disable seasons")
     public boolean seasons = true;
 
-    //@ConfigEntry.Category("Server")
+    @ConfigEntry.Gui.Tooltip
+    @Comment("Days per season")
     public int daysPerSeason = 18;
 
     //https://www.curseforge.com/minecraft/texture-packs/seasons-data-pack
+
+    // CLIENT side-only SETTINGS
+    @ConfigEntry.Category("Client")
+    @ConfigEntry.Gui.Tooltip
+    @Comment("enable or disable season timeline")
+    public boolean seasonDisplayTimeline = true;
+
+    @ConfigEntry.Category("Client")
+    @Comment("Season Timeline text scale")
+    public float seasonTimelineTextScale = 0.5f;
+
+    @ConfigEntry.Category("Client")
+    @Comment("Season Timeline text Y offset")
+    public int seasonTimelineTextYOffset = 20;
+
+
+
+
+    @ConfigEntry.Category("Client")
+    @ConfigEntry.Gui.Tooltip
+    @Comment("enable or disable season icon")
+    public boolean seasonDisplayIcon = true;
+
+    @ConfigEntry.Category("Client")
+    @ConfigEntry.Gui.Tooltip
+    @Comment("enable or disable season info")
+    public boolean seasonDisplayInfo = true;
+
+    @ConfigEntry.Category("Client")
+    @Comment("Season Info text scale")
+    public float seasonDisplayInfoScale = 0.5f;
+
+    @ConfigEntry.Category("Client")
+    @Comment("Season Info text X offset")
+    public int seasonDisplayInfoXOffset = 0;
+
+    @ConfigEntry.Category("Client")
+    @Comment("Season Info text Y offset")
+    public int seasonDisplayInfoYOffset = 0;
 
     /*boolean toggleA = true;
     boolean toggleB = false;

@@ -5,12 +5,31 @@
 
   "item.photosynthesis.wrench": "Wrench",
 
+  "text.autoconfig.photosynthesis.category.default": "Features",
+  "text.autoconfig.photosynthesis.category.Client": "Client",
+
   "text.autoconfig.photosynthesis.title": "Photosynthesis Config",
   "text.autoconfig.photosynthesis.option.thirst": "Enable Thirst",
-  "text.autoconfig.photosynthesis.option.thirst.@Tooltip": "When YES, Thirst is enabled.",
+  "text.autoconfig.photosynthesis.option.thirst.@Tooltip": "When YES, Thirst is enabled. \n (If on server, edit server config file manually, requires server restart)",
   "text.autoconfig.photosynthesis.option.seasons": "Enable Seasons",
-  "text.autoconfig.photosynthesis.option.seasons.@Tooltip": "When YES, Seasons is enabled.",
+  "text.autoconfig.photosynthesis.option.seasons.@Tooltip": "When YES, Seasons is enabled. \n (If on server, edit server config file manually, requires server restart)",
   "text.autoconfig.photosynthesis.option.daysPerSeason": "Days Per Season",
+  "text.autoconfig.photosynthesis.option.daysPerSeason.@Tooltip": "Days per season. \n (If on server, edit server config file manually, requires server restart)",
+
+  "text.autoconfig.photosynthesis.option.seasonDisplayTimeline": "Show Season Timeline Indicator",
+  "text.autoconfig.photosynthesis.option.seasonDisplayTimeline.@Tooltip": "Shows the season timeline indicator (top center of screen)",
+  "text.autoconfig.photosynthesis.option.seasonTimelineTextScale": "Season Timeline Text Scale",
+  "text.autoconfig.photosynthesis.option.seasonTimelineTextYOffset": "Season Timeline Y Offset",
+
+  "text.autoconfig.photosynthesis.option.seasonDisplayIcon": "Show Season Icon",
+  "text.autoconfig.photosynthesis.option.seasonDisplayIcon.@Tooltip": "Shows the season icon (top left of screen)",
+
+  "text.autoconfig.photosynthesis.option.seasonDisplayInfo": "Show Season Info",
+  "text.autoconfig.photosynthesis.option.seasonDisplayInfo.@Tooltip": "Shows the season info (top left of screen, below icon)",
+  "text.autoconfig.photosynthesis.option.seasonDisplayInfoScale": "Season Info Text Scale",
+  "text.autoconfig.photosynthesis.option.seasonDisplayInfoXOffset": "Season Info text X offset",
+  "text.autoconfig.photosynthesis.option.seasonDisplayInfoYOffset": "Season Info text Y offset",
+
 
   "block.photosynthesis.seasonscalendar": "Seasons Calendar",
 
