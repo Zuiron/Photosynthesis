@@ -154,6 +154,10 @@ public class ModBlocks {
             new EggBasketBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
                     .strength(2f).nonOpaque()));
 
+    public static final Block MANUREBUCKET = registerBlock("manure_bucket",
+            new ManureBucketBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
     public static final Block TOOLRACK = registerBlock("toolrack",
             new ToolRackBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
                     .strength(2f).nonOpaque()));

@@ -53,6 +53,9 @@ public class ModScreenHandlers {
     public static ScreenHandlerType<EggBasketScreenHandler> EGGBASKET_SCREEN_HANDLER =
             new ExtendedScreenHandlerType<>(EggBasketScreenHandler::new);
 
+    public static ScreenHandlerType<ManureBucketScreenHandler> MANUREBUCKET_SCREEN_HANDLER =
+            new ExtendedScreenHandlerType<>(ManureBucketScreenHandler::new);
+
     public static ScreenHandlerType<ToolRackScreenHandler> TOOLRACK_SCREEN_HANDLER =
             new ExtendedScreenHandlerType<>(ToolRackScreenHandler::new);
 
@@ -108,6 +111,8 @@ public class ModScreenHandlers {
                 WATERTROUGH_SCREEN_HANDLER);
         Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "egg_basket"),
                 EGGBASKET_SCREEN_HANDLER);
+        Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "manure_bucket"),
+                MANUREBUCKET_SCREEN_HANDLER);
         Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "toolrack"),
                 TOOLRACK_SCREEN_HANDLER);
         Registry.register(Registries.SCREEN_HANDLER, new Identifier(Photosynthesis.MOD_ID, "shelf"),

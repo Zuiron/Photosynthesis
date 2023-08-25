@@ -1073,6 +1073,7 @@
   "item.photosynthesis.hayrack": "Hay Rack",
   "item.photosynthesis.squeezer": "Squeezer",
   "item.photosynthesis.egg_basket": "Egg Basket",
+  "item.photosynthesis.manure_bucket": "Manure Bucket",
 
   "item.photosynthesis.squeezer_part": "Squeezer Part",
   "item.photosynthesis.cutting_knife_blade": "Cutting Knife Blade",
@@ -1171,6 +1172,7 @@
   "block.photosynthesis.shelf": "Shelf",
   "item.photosynthesis.firestarter": "Fire Starter",
   "block.photosynthesis.egg_basket": "Egg Basket",
+  "block.photosynthesis.manure_bucket": "Manure Bucket",
 
   "entity.minecraft.villager.livestocktrader": "Livestock Trader",
 

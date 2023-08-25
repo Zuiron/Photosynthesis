@@ -42,6 +42,7 @@ public class ModBlockEntities {
     public static BlockEntityType<SeasonsCalendarBlockEntity> SEASONSCALENDAR;
 
     public static BlockEntityType<EggBasketBlockEntity> EGGBASKET;
+    public static BlockEntityType<ManureBucketBlockEntity> MANUREBUCKET;
 
     public static void registerBlockEntities() {
         CUTTING_BOARD = Registry.register(Registries.BLOCK_ENTITY_TYPE,
@@ -158,6 +159,11 @@ public class ModBlockEntities {
                 new Identifier(Photosynthesis.MOD_ID, "egg_basket"),
                 FabricBlockEntityTypeBuilder.create(EggBasketBlockEntity::new,
                         ModBlocks.EGGBASKET).build(null));
+
+        MANUREBUCKET = Registry.register(Registries.BLOCK_ENTITY_TYPE,
+                new Identifier(Photosynthesis.MOD_ID, "manure_bucket"),
+                FabricBlockEntityTypeBuilder.create(ManureBucketBlockEntity::new,
+                        ModBlocks.MANUREBUCKET).build(null));
 
         SEASONSCALENDAR = Registry.register(Registries.BLOCK_ENTITY_TYPE,
                 new Identifier(Photosynthesis.MOD_ID, "seasonscalendar"),
