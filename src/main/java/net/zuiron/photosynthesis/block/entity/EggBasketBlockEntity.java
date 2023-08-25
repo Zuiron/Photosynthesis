@@ -41,6 +41,7 @@ import java.util.function.Predicate;
 
 public class EggBasketBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(1, ItemStack.EMPTY); //N#:SLOTS
+    private int cooldown = 0;
 
     /*public ItemStack getRenderStack() {
         if(this.getStack(2).isEmpty()) {
@@ -111,16 +112,29 @@ public class EggBasketBlockEntity extends BlockEntity implements ExtendedScreenH
     protected void writeNbt(NbtCompound nbt) {
         super.writeNbt(nbt);
         Inventories.writeNbt(nbt, inventory);
+        nbt.putInt("eggbasket.cooldown", cooldown);
     }
 
     @Override
     public void readNbt(NbtCompound nbt) {
         Inventories.readNbt(nbt, inventory);
+        cooldown = nbt.getInt("eggbasket.cooldown");
         super.readNbt(nbt);
+    }
+
+    private void resetCooldown() {
+        this.cooldown = 0;
+        syncItems();
     }
 
     public static void tick(World world, BlockPos blockPos, BlockState state, EggBasketBlockEntity entity) {
         if(world.isClient()) {
+            return;
+        }
+
+        entity.cooldown++;
+
+        if(entity.cooldown < 20*3) { //20 ticks per second. 1 item transfer per 3 seconds.
             return;
         }
 
@@ -151,14 +165,14 @@ public class EggBasketBlockEntity extends BlockEntity implements ExtendedScreenH
                     if(maxCount > entity.getStack(0).getCount()) { //can we fit item?
                         entity.setStack(0, new ItemStack(itemStack.getItem(), entity.getStack(0).getCount() + 1));
                         itemStack.decrement(1);
+                        entity.resetCooldown();
+                        break;
                     }
                 }
             }
 
         }
-
-
-
+        entity.resetCooldown();
         entity.syncItems();
         markDirty(world, blockPos, state);
     }
