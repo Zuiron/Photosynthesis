@@ -236,7 +236,9 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.OAT_BREAD,
                 ModItems.RYE_BREAD,
                 ModItems.TACO_SHELL,
-                ModItems.RAW_CHICKEN_NUGGETS
+                ModItems.RAW_CHICKEN_NUGGETS,
+                ModItems.CORN_FLOUR,
+                ModItems.FISH_SOUP
 
 
 
