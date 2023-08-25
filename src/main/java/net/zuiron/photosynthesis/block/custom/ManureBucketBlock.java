@@ -32,7 +32,7 @@ public class ManureBucketBlock extends BlockWithEntity implements BlockEntityPro
         super(settings);
     }
 
-    private static VoxelShape SHAPE = Block.createCuboidShape(3, 0, 3, 13, 3, 13);
+    private static VoxelShape SHAPE = Block.createCuboidShape(2, 0, 2, 14, 12, 14);
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
