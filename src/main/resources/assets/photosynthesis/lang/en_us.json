@@ -9,8 +9,11 @@
   "text.autoconfig.photosynthesis.category.Client": "Client",
 
   "text.autoconfig.photosynthesis.title": "Photosynthesis Config",
+  "text.autoconfig.photosynthesis.option.thirst.@PrefixText": "Thirst",
   "text.autoconfig.photosynthesis.option.thirst": "Enable Thirst",
   "text.autoconfig.photosynthesis.option.thirst.@Tooltip": "When YES, Thirst is enabled. \n (If on server, edit server config file manually, requires server restart)",
+
+  "text.autoconfig.photosynthesis.option.seasons.@PrefixText": "Seasons",
   "text.autoconfig.photosynthesis.option.seasons": "Enable Seasons",
   "text.autoconfig.photosynthesis.option.seasons.@Tooltip": "When YES, Seasons is enabled. \n (If on server, edit server config file manually, requires server restart)",
   "text.autoconfig.photosynthesis.option.daysPerSeason": "Days Per Season",

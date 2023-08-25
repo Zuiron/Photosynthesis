@@ -10,11 +10,12 @@ import net.zuiron.photosynthesis.Photosynthesis;
 public class ModConfig implements ConfigData {
     //@Comment("test")
     //public boolean requireHeatUnder = true;
-
+    @ConfigEntry.Gui.PrefixText
     @ConfigEntry.Gui.Tooltip
     @Comment("enable or disable thirst")
     public boolean thirst = true;
 
+    @ConfigEntry.Gui.PrefixText
     @ConfigEntry.Gui.Tooltip
     @Comment("enable or disable seasons")
     public boolean seasons = true;
