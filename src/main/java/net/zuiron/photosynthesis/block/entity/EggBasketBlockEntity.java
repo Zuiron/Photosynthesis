@@ -143,8 +143,12 @@ public class EggBasketBlockEntity extends BlockEntity implements ExtendedScreenH
             if(itemStack.isOf(Items.EGG)) {
                 Photosynthesis.LOGGER.info(itemStack);
                 //itemStack.decrement(1); //works.
+
+                int maxCount = entity.getStack(0).getMaxCount();
+                //int maxCount = 9;
+
                 if(entity.getStack(0).isEmpty() || entity.getStack(0).isOf(itemStack.getItem())) { //is inventory empty or has same item?
-                    if(entity.getStack(0).getMaxCount() > entity.getStack(0).getCount()) { //can we fit item?
+                    if(maxCount > entity.getStack(0).getCount()) { //can we fit item?
                         entity.setStack(0, new ItemStack(itemStack.getItem(), entity.getStack(0).getCount() + 1));
                         itemStack.decrement(1);
                     }
@@ -159,4 +163,7 @@ public class EggBasketBlockEntity extends BlockEntity implements ExtendedScreenH
         markDirty(world, blockPos, state);
     }
 
+    public DefaultedList<ItemStack> getInventoryMod() {
+        return this.inventory;
+    }
 }
