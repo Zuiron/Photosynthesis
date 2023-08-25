@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "photosynthesis:block/egg_basket"
+    },
+    "facing=south": {
+      "model": "photosynthesis:block/egg_basket",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "photosynthesis:block/egg_basket",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "photosynthesis:block/egg_basket",
+      "y": 90
+    }
+  }
+}
