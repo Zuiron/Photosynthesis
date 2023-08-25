@@ -128,7 +128,7 @@ public class ManureBucketBlockEntity extends BlockEntity implements ExtendedScre
 
         entity.cooldown++;
 
-        if(entity.cooldown < 20*2) { //20 ticks per second. 1 item transfer per 2 seconds.
+        if(entity.cooldown < 20) { //20 ticks per second. 1 item transfer per 1 seconds.
             return;
         }
 
