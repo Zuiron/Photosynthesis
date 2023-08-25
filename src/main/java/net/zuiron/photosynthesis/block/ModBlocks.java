@@ -150,6 +150,10 @@ public class ModBlocks {
             new WaterTroughBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
                     .strength(2f).nonOpaque()));
 
+    public static final Block EGGBASKET = registerBlock("egg_basket",
+            new EggBasketBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
+                    .strength(2f).nonOpaque()));
+
     public static final Block TOOLRACK = registerBlock("toolrack",
             new ToolRackBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
                     .strength(2f).nonOpaque()));

@@ -400,6 +400,7 @@ public class PhotosynthesisClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.WOOD_FIRED_STOVE);
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.WOOD_FIRED_OVEN);
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.GRAVITYPRESS);
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.EGGBASKET);
 
         HandledScreens.register(ModScreenHandlers.CUTTING_BOARD_SCREEN_HANDLER, CuttingBoardScreen::new);
         HandledScreens.register(ModScreenHandlers.MORTAR_SCREEN_HANDLER, MortarScreen::new);
@@ -423,6 +424,7 @@ public class PhotosynthesisClient implements ClientModInitializer {
         HandledScreens.register(ModScreenHandlers.SINGLEDOUBLECHEST_SCREEN_HANDLER, SingleDoubleChestScreen::new);
         HandledScreens.register(ModScreenHandlers.WOOD_FIRED_STOVE_SCREEN_HANDLER, WoodFiredStoveScreen::new);
         HandledScreens.register(ModScreenHandlers.WOOD_FIRED_OVEN_SCREEN_HANDLER, WoodFiredOvenScreen::new);
+        HandledScreens.register(ModScreenHandlers.EGGBASKET_SCREEN_HANDLER, EggBasketScreen::new);
         ModMessages.registerS2CPackets();
 
         BlockEntityRendererFactories.register(ModBlockEntities.CUTTING_BOARD, CuttingBoardBlockEntityRenderer::new);
