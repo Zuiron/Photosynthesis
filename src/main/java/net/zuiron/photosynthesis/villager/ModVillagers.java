@@ -28,7 +28,7 @@ public class ModVillagers {
 
     private static PointOfInterestType registerPoi(String name, Block block) {
         return PointOfInterestHelper.register(new Identifier(Photosynthesis.MOD_ID, name),
-                1,2, block);
+                1,3, block);
     }
 
     private static RegistryKey<PointOfInterestType> registerPoiKey(String name) {

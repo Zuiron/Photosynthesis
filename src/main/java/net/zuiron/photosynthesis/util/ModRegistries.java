@@ -34,48 +34,48 @@ public class ModRegistries {
         TradeOfferHelper.registerVillagerOffers(ModVillagers.LIVESTOCK_TRADER, 1,
                 factories -> {
                     factories.add((entity, random) -> new TradeOffer(
-                            new ItemStack(ModItems.GRASS_FIBRE_PIECE, 4),
-                            new ItemStack(Items.COW_SPAWN_EGG, 1), 2, 19, 0.08f
+                            new ItemStack(Items.EMERALD, 1),
+                            new ItemStack(Items.CHICKEN_SPAWN_EGG, 1), 2, 100, 0.0f
                     ));
                 });
 
         TradeOfferHelper.registerVillagerOffers(ModVillagers.LIVESTOCK_TRADER, 1,
                 factories -> {
                     factories.add((entity, random) -> new TradeOffer(
-                            new ItemStack(ModItems.GRASS_FIBRE_PIECE, 4),
-                            new ItemStack(Items.SHEEP_SPAWN_EGG, 1), 2, 19, 0.08f
-                    ));
-                });
-
-        TradeOfferHelper.registerVillagerOffers(ModVillagers.LIVESTOCK_TRADER, 1,
-                factories -> {
-                    factories.add((entity, random) -> new TradeOffer(
-                            new ItemStack(ModItems.GRASS_FIBRE_PIECE, 4),
-                            new ItemStack(Items.PIG_SPAWN_EGG, 1), 2, 19, 0.08f
-                    ));
-                });
-
-        TradeOfferHelper.registerVillagerOffers(ModVillagers.LIVESTOCK_TRADER, 1,
-                factories -> {
-                    factories.add((entity, random) -> new TradeOffer(
-                            new ItemStack(ModItems.GRASS_FIBRE_PIECE, 4),
-                            new ItemStack(Items.CHICKEN_SPAWN_EGG, 1), 2, 19, 0.08f
-                    ));
-                });
-
-        TradeOfferHelper.registerVillagerOffers(ModVillagers.LIVESTOCK_TRADER, 1,
-                factories -> {
-                    factories.add((entity, random) -> new TradeOffer(
-                            new ItemStack(ModItems.GRASS_FIBRE_PIECE, 4),
-                            new ItemStack(Items.GOAT_SPAWN_EGG, 1), 2, 19, 0.08f
+                            new ItemStack(Items.EMERALD, 1),
+                            new ItemStack(Items.SHEEP_SPAWN_EGG, 1), 2, 100, 0.0f
                     ));
                 });
 
         TradeOfferHelper.registerVillagerOffers(ModVillagers.LIVESTOCK_TRADER, 2,
                 factories -> {
                     factories.add((entity, random) -> new TradeOffer(
+                            new ItemStack(Items.EMERALD, 1),
+                            new ItemStack(Items.PIG_SPAWN_EGG, 1), 2, 100, 0.0f
+                    ));
+                });
+
+        TradeOfferHelper.registerVillagerOffers(ModVillagers.LIVESTOCK_TRADER, 2,
+                factories -> {
+                    factories.add((entity, random) -> new TradeOffer(
+                            new ItemStack(Items.EMERALD, 1),
+                            new ItemStack(Items.COW_SPAWN_EGG, 1), 2, 100, 0.0f
+                    ));
+                });
+
+        TradeOfferHelper.registerVillagerOffers(ModVillagers.LIVESTOCK_TRADER, 3,
+                factories -> {
+                    factories.add((entity, random) -> new TradeOffer(
+                            new ItemStack(Items.EMERALD, 1),
+                            new ItemStack(Items.GOAT_SPAWN_EGG, 1), 2, 100, 0.0f
+                    ));
+                });
+
+        TradeOfferHelper.registerVillagerOffers(ModVillagers.LIVESTOCK_TRADER, 3,
+                factories -> {
+                    factories.add((entity, random) -> new TradeOffer(
                             new ItemStack(ModItems.GRASS_FIBRE_PIECE, 16),
-                            new ItemStack(Items.HORSE_SPAWN_EGG, 1), 1, 5, 0.08f
+                            new ItemStack(Items.HORSE_SPAWN_EGG, 1), 1, 100, 0.08f
                     ));
                 });
     }
