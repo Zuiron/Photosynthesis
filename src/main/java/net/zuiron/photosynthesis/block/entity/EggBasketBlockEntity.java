@@ -134,7 +134,7 @@ public class EggBasketBlockEntity extends BlockEntity implements ExtendedScreenH
 
         entity.cooldown++;
 
-        if(entity.cooldown < 20*3) { //20 ticks per second. 1 item transfer per 3 seconds.
+        if(entity.cooldown < 20*2) { //20 ticks per second. 1 item transfer per 3 seconds.
             return;
         }
 
