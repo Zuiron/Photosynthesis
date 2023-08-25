@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#H#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "photosynthesis:straw_bundle"
+    },
+    "H": {
+      "item": "photosynthesis:straw_bale"
+    }
+  },
+  "result": {
+    "item": "photosynthesis:egg_basket",
+    "count": 1
+  }
+}
