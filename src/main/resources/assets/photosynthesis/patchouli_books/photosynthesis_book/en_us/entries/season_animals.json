@@ -10,7 +10,8 @@
       "text": "When seasons is enabled, some animals will take a lot longer to grow to maturity."
     },
     {
-      "type": "patchouli:text",
+      "type": "patchouli:spotlight",
+      "item": "minecraft:clock",
       "text": "$(li)Pigs: 6 season months. $(li)Sheep: 1 season year. $(li)Cows: 2 season years. $(li)Chickens: 5 season months. $(li)Horses: 2 season years. $(li)Goats: 3 season years."
     }
   ]
