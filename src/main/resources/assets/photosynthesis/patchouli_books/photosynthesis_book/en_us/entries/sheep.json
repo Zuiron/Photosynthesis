@@ -1,0 +1,17 @@
+{
+  "name": "Sheep",
+  "icon": "minecraft:sheep_spawn_egg",
+  "category": "photosynthesis:animals",
+  "pages": [
+    {
+      "type": "patchouli:entity",
+      "entity": "minecraft:sheep",
+      "scale": 0.8,
+      "text": "If Seasons is enabled, Sheep take 1 season year to mature."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Chickens require $(li)Water $(li)Grass $(br2)If sheep are missing water and grass, they will eventually die. $(br2)At max production, sheep grow wool every other minecraft day. $(br)"
+    }
+  ]
+}

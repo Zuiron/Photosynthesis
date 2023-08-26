@@ -1,0 +1,37 @@
+{
+  "name": "Animal Care",
+  "icon": "photosynthesis:watertrough",
+  "category": "photosynthesis:animals",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "photosynthesis:watertrough",
+      "text": "To give Water to animals you need a Water Trough. and fill it with water, manually with bucket or via pipes (from other mods)."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "photosynthesis:feedingtrough",
+      "text": "To give Food to animals you need a Feeding Trough. simply put feed into inventory."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "photosynthesis:grass_bale",
+      "text": "For animals that require Grass, simply craft a Grass Bale and place it nearby your animal. Working Range is 10x10x10."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "photosynthesis:hay_bale",
+      "text": "For animals that require Hay, simply craft a Hay Bale and place it nearby your animal. Working Range is 10x10x10."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "photosynthesis:straw_bale",
+      "text": "For animals that require Straw, simply craft a Straw Bale and place it nearby your animal. Working Range is 10x10x10."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:stick",
+      "text": "To get useful information from an animal, Hold a Stick in your hand while right clicking on an animal."
+    }
+  ]
+}

@@ -60,10 +60,10 @@ public abstract class ModPigEntity extends AnimalEntity {
                 this.playSound(SoundEvents.ENTITY_SNIFFER_DROP_SEED, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
                 if (mod_Straw > (mod_Straw_max / 2)) {
                     //drop more
-                    this.dropStack(new ItemStack(ModItems.MANURE,8));
+                    this.dropStack(new ItemStack(ModItems.MANURE,6));
                 } else {
                     //drop less
-                    this.dropStack(new ItemStack(ModItems.MANURE,4));
+                    this.dropStack(new ItemStack(ModItems.MANURE,3));
                 }
                 this.emitGameEvent(GameEvent.ENTITY_PLACE);
                 this.mod_Manure = 0;

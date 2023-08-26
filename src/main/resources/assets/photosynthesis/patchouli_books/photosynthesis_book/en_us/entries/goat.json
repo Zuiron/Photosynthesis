@@ -1,0 +1,17 @@
+{
+  "name": "Goat",
+  "icon": "minecraft:goat_spawn_egg",
+  "category": "photosynthesis:animals",
+  "pages": [
+    {
+      "type": "patchouli:entity",
+      "entity": "minecraft:goat",
+      "scale": 0.8,
+      "text": "If Seasons is enabled, Goats take 3 season years to mature."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Goats require $(li)Water $(li)Grass $(li)Food $(br2)If goats are missing water,grass and food, they will eventually die. $(br2)Feed: $(li)Saplings $(li)Leaves $(br2)At max production, goats can be milked up to 4 times per minecraft day. $(br)"
+    }
+  ]
+}

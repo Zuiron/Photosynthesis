@@ -1,0 +1,11 @@
+{
+  "name": "Bonemeal",
+  "icon": "minecraft:bone_meal",
+  "category": "photosynthesis:seasons",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "When seasons is enabled, Bone meal is disabled for crops and grass."
+    }
+  ]
+}

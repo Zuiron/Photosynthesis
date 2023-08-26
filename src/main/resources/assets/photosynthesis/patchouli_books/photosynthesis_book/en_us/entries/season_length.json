@@ -5,7 +5,11 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Seasons length is configurable via the config (mod-menu), you can also completely disable seasons if you do not like it."
+      "text": "Seasons length is configurable via the config or (mod-menu) if installed. $(br2)You can also completely disable seasons if you do not like it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "By default, Days per Season is set to 18, which means 72 days per season year. $(br2)In REAL TIME, this equals to exactly 24hours"
     }
   ]
 }
