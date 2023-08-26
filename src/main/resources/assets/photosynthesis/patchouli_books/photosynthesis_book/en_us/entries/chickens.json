@@ -1,0 +1,17 @@
+{
+  "name": "Chickens",
+  "icon": "minecraft:chicken_spawn_egg",
+  "category": "photosynthesis:animals",
+  "pages": [
+    {
+      "type": "patchouli:entity",
+      "entity": "minecraft:chicken",
+      "scale": 0.8,
+      "text": "If Seasons is enabled, Cows take 5 season months to mature."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Chickens require $(li)Water $(li)Food $(li)Straw(optional) $(br2)Egg production is increased with straw. $(br2)If chickens are missing water and food, they will eventually die. $(br2)Feed: $(li)Wheat $(li)Barley $(br2)At max production, chickens drop 1 Egg per minecraft day."
+    }
+  ]
+}

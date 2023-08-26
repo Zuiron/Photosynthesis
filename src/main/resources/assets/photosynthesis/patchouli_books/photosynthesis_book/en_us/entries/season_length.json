@@ -1,0 +1,11 @@
+{
+  "name": "Seasons Length",
+  "icon": "minecraft:clock",
+  "category": "photosynthesis:seasons",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Seasons length is configurable via the config (mod-menu), you can also completely disable seasons if you do not like it."
+    }
+  ]
+}

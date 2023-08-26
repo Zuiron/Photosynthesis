@@ -1,0 +1,17 @@
+{
+  "name": "Horses",
+  "icon": "minecraft:horse_spawn_egg",
+  "category": "photosynthesis:animals",
+  "pages": [
+    {
+      "type": "patchouli:entity",
+      "entity": "minecraft:horse",
+      "scale": 0.8,
+      "text": "If Seasons is enabled, Horses take 2 season years to mature."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Horses require $(li)Water $(li)Hay $(li)Food $(li)Straw(optional) $(br2)If Horses are missing water, Hay and food, they will eventually die.$(br2)Feed: $(li)Oat"
+    }
+  ]
+}

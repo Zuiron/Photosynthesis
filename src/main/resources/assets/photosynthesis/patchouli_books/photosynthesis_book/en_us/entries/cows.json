@@ -1,0 +1,17 @@
+{
+  "name": "Cows",
+  "icon": "minecraft:cow_spawn_egg",
+  "category": "photosynthesis:animals",
+  "pages": [
+    {
+      "type": "patchouli:entity",
+      "entity": "minecraft:cow",
+      "scale": 0.8,
+      "text": "If Seasons is enabled, Cows take 2 season years to mature."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Cows require $(li)Water $(li)Grass $(li)Hay $(li)Straw(optional) $(li)TMR(optional) $(br2)Milk production is increased with straw and TMR. $(br2)If cows are missing water,grass and hay, they will eventually die. $(br2)Manure drop is doubled if cows are given straw. $(br2)At max production, cows can be milked up to 4 times per minecraft day."
+    }
+  ]
+}
