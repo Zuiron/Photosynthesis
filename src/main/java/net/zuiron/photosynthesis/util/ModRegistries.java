@@ -74,8 +74,8 @@ public class ModRegistries {
         TradeOfferHelper.registerVillagerOffers(ModVillagers.LIVESTOCK_TRADER, 3,
                 factories -> {
                     factories.add((entity, random) -> new TradeOffer(
-                            new ItemStack(ModItems.GRASS_FIBRE_PIECE, 16),
-                            new ItemStack(Items.HORSE_SPAWN_EGG, 1), 1, 100, 0.08f
+                            new ItemStack(Items.EMERALD, 1),
+                            new ItemStack(Items.HORSE_SPAWN_EGG, 1), 2, 100, 0.0f
                     ));
                 });
     }
