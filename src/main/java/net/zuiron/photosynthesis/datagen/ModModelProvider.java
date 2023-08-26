@@ -239,7 +239,8 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.TACO_SHELL,
                 ModItems.RAW_CHICKEN_NUGGETS,
                 ModItems.CORN_FLOUR,
-                ModItems.FISH_SOUP
+                ModItems.FISH_SOUP,
+                ModItems.GARLIC_BREAD
 
 
 

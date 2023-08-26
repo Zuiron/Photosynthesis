@@ -1226,6 +1226,11 @@ public class ModItems {
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(6).saturationModifier(0.8f).build())));
 
+    public static final Item GARLIC_BREAD = registerItem("garlic_bread",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(6).saturationModifier(0.8f).build())));
+
+
 
 
 
