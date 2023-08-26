@@ -1,5 +1,7 @@
 {
   "name": "Photosynthesis",
   "landing_text": "Welcome to Photosynthesis guide book! Follow this book and you will succeed with this mod. Enjoy!",
-  "version": 1
+  "version": 1,
+  "creative_tab": "minecraft:tools_and_utilities",
+  "use_resource_pack": true
 }
