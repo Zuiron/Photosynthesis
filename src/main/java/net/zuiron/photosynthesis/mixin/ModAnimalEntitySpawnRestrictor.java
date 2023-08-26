@@ -37,12 +37,12 @@ public class ModAnimalEntitySpawnRestrictor {
             } else {
                 //Photosynthesis.LOGGER.info("Prevented " + type + " from spawning @" + pos + ", it's not from breeding, or spawn-egg!");
                 if(config.doPigSpawn && type.equals(EntityType.PIG)) { cir.setReturnValue(true); }
-                if(config.doCowSpawn && type.equals(EntityType.COW)) { cir.setReturnValue(true); }
-                if(config.doSheepSpawn && type.equals(EntityType.SHEEP)) { cir.setReturnValue(true); }
-                if(config.doChickenSpawn && type.equals(EntityType.CHICKEN)) { cir.setReturnValue(true); }
-                if(config.doHorseSpawn && type.equals(EntityType.HORSE)) { cir.setReturnValue(true); }
-                if(config.doGoatSpawn && type.equals(EntityType.GOAT)) { cir.setReturnValue(true); }
-                cir.setReturnValue(false);
+                else if(config.doCowSpawn && type.equals(EntityType.COW)) { cir.setReturnValue(true); }
+                else if(config.doSheepSpawn && type.equals(EntityType.SHEEP)) { cir.setReturnValue(true); }
+                else if(config.doChickenSpawn && type.equals(EntityType.CHICKEN)) { cir.setReturnValue(true); }
+                else if(config.doHorseSpawn && type.equals(EntityType.HORSE)) { cir.setReturnValue(true); }
+                else if(config.doGoatSpawn && type.equals(EntityType.GOAT)) { cir.setReturnValue(true); }
+                else { cir.setReturnValue(false); }
             }
         }
 

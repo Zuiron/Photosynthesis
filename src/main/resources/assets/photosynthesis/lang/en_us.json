@@ -19,6 +19,10 @@
   "text.autoconfig.photosynthesis.option.daysPerSeason": "Days Per Season",
   "text.autoconfig.photosynthesis.option.daysPerSeason.@Tooltip": "Days per season. \n (If on server, edit server config file manually, requires server restart)",
 
+  "text.autoconfig.photosynthesis.option.spawnEggBaby.@PrefixText": "Animal Egg Spawning",
+  "text.autoconfig.photosynthesis.option.spawnEggBaby.@Tooltip": "When YES Animals from egg spawn as baby. \n (If on server, edit server config file manually, requires server restart)",
+  "text.autoconfig.photosynthesis.option.spawnEggBaby": "Spawn baby from egg",
+
   "text.autoconfig.photosynthesis.option.doPigSpawn.@PrefixText": "Animal Spawning",
   "text.autoconfig.photosynthesis.option.doPigSpawn.@Tooltip": "When NO, Pigs wont spawn naturally. \n (If on server, edit server config file manually, requires server restart)",
   "text.autoconfig.photosynthesis.option.doPigSpawn": "Enable Natural Pig Spawn",

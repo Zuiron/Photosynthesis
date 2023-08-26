@@ -1,5 +1,6 @@
 package net.zuiron.photosynthesis.mixin;
 
+import me.shedaniel.autoconfig.AutoConfig;
 import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
@@ -14,6 +15,7 @@ import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.api.Seasons;
+import net.zuiron.photosynthesis.config.ModConfig;
 import net.zuiron.photosynthesis.util.getCustomVarsPassiveEntity;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
@@ -137,6 +139,12 @@ public abstract class ModPassiveEntity extends PathAwareEntity implements getCus
 
         this.mob_tick_born = this.getWorld().getTimeOfDay();
         //Photosynthesis.LOGGER.info("Initializing entity with borntick: "+this.getWorld().getTimeOfDay());
+
+        //hard mode? spawn as baby not mature if egg.
+        ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
+        if(config.spawnEggBaby && spawnReason == SpawnReason.SPAWN_EGG) {
+            this.setBreedingAge(-1000); //sets to baby?
+        }
 
         //fixes entities from structures and other sources from dying because they are saved without these variables.
         if(this.mod_Water == 0) {

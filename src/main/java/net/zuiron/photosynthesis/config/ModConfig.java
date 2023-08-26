@@ -27,6 +27,10 @@ public class ModConfig implements ConfigData {
 
     @ConfigEntry.Gui.PrefixText
     @ConfigEntry.Gui.Tooltip
+    @Comment("enable or disable spawn egg baby animal (animals from egg spawn as baby)")
+    public boolean spawnEggBaby = true;
+    @ConfigEntry.Gui.PrefixText
+    @ConfigEntry.Gui.Tooltip
     @Comment("enable or disable natural Pig spawning")
     public boolean doPigSpawn = false;
 
