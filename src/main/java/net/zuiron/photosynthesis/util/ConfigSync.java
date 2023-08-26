@@ -15,6 +15,24 @@ public class ConfigSync {
         buffer.writeInt(serverConfig.daysPerSeason);
         buffer.writeBoolean(serverConfig.thirst);
         buffer.writeBoolean(serverConfig.seasons);
+
+        buffer.writeBoolean(serverConfig.doPigSpawn);
+        buffer.writeBoolean(serverConfig.doCowSpawn);
+        buffer.writeBoolean(serverConfig.doSheepSpawn);
+        buffer.writeBoolean(serverConfig.doChickenSpawn);
+        buffer.writeBoolean(serverConfig.doHorseSpawn);
+        buffer.writeBoolean(serverConfig.doGoatSpawn);
+
+        buffer.writeBoolean(serverConfig.doCreeperSpawn);
+        buffer.writeBoolean(serverConfig.doZombieSpawn);
+        buffer.writeBoolean(serverConfig.doZombieVillagerSpawn);
+        buffer.writeBoolean(serverConfig.doZombieHorseSpawn);
+        buffer.writeBoolean(serverConfig.doSkeletonSpawn);
+        buffer.writeBoolean(serverConfig.doHuskSpawn);
+        buffer.writeBoolean(serverConfig.doWitchSpawn);
+        buffer.writeBoolean(serverConfig.doSpiderSpawn);
+        buffer.writeBoolean(serverConfig.doSkeletonHorseSpawn);
+
         ServerPlayNetworking.send(player, ModMessages.CONFIG_SYNC_ID, buffer);
     }
 }

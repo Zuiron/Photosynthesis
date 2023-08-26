@@ -1,5 +1,6 @@
 package net.zuiron.photosynthesis.mixin;
 
+import me.shedaniel.autoconfig.AutoConfig;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.SpawnReason;
@@ -12,6 +13,7 @@ import net.minecraft.world.WorldAccess;
 import net.minecraft.world.dimension.DimensionType;
 import net.minecraft.world.dimension.DimensionTypes;
 import net.zuiron.photosynthesis.Photosynthesis;
+import net.zuiron.photosynthesis.config.ModConfig;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -49,7 +51,7 @@ public abstract class ModMobEntity extends LivingEntity {
         //vanilla code.
         //BlockPos blockPos = pos.down();
         //return spawnReason == SpawnReason.SPAWNER || world.getBlockState(blockPos).allowsSpawning(world, blockPos, type);
-
+        ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
         //Photosynthesis.LOGGER.info("trying spawning: "+type+" at: "+pos+", reason: "+spawnReason);
         if(     type.equals(EntityType.CREEPER) ||
                 type.equals(EntityType.ZOMBIE) ||
@@ -62,6 +64,15 @@ public abstract class ModMobEntity extends LivingEntity {
                 type.equals(EntityType.SKELETON_HORSE)) {
             if(spawnReason == SpawnReason.CHUNK_GENERATION || spawnReason == SpawnReason.NATURAL) {
                 //Photosynthesis.LOGGER.info("Prevented " + type + " from spawning @" + pos + ", it's from chunkgen, or natural reasons!");
+                if(config.doCreeperSpawn && type.equals(EntityType.CREEPER)) { cir.setReturnValue(true); }
+                if(config.doZombieSpawn && type.equals(EntityType.ZOMBIE)) { cir.setReturnValue(true); }
+                if(config.doZombieVillagerSpawn && type.equals(EntityType.ZOMBIE_VILLAGER)) { cir.setReturnValue(true); }
+                if(config.doZombieHorseSpawn && type.equals(EntityType.ZOMBIE_HORSE)) { cir.setReturnValue(true); }
+                if(config.doSkeletonSpawn && type.equals(EntityType.SKELETON)) { cir.setReturnValue(true); }
+                if(config.doHuskSpawn && type.equals(EntityType.HUSK)) { cir.setReturnValue(true); }
+                if(config.doWitchSpawn && type.equals(EntityType.WITCH)) { cir.setReturnValue(true); }
+                if(config.doSpiderSpawn && type.equals(EntityType.SPIDER)) { cir.setReturnValue(true); }
+                if(config.doSkeletonHorseSpawn && type.equals(EntityType.SKELETON_HORSE)) { cir.setReturnValue(true); }
                 cir.setReturnValue(false);
             } else {
                 //allow structure and spawnegg, spawners etc. but not natural or chunk gen.

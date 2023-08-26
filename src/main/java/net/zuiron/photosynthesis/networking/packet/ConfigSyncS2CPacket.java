@@ -22,11 +22,45 @@ public class ConfigSyncS2CPacket {
         boolean thirstEnabled = buf.readBoolean();
         boolean seasonsEnabled = buf.readBoolean();
 
+        boolean doPigSpawn = buf.readBoolean();
+        boolean doCowSpawn = buf.readBoolean();
+        boolean doSheepSpawn = buf.readBoolean();
+        boolean doChickenSpawn = buf.readBoolean();
+        boolean doHorseSpawn = buf.readBoolean();
+        boolean doGoatSpawn = buf.readBoolean();
+
+        boolean doCreeperSpawn = buf.readBoolean();
+        boolean doZombieSpawn = buf.readBoolean();
+        boolean doZombieVillagerSpawn = buf.readBoolean();
+        boolean doZombieHorseSpawn = buf.readBoolean();
+        boolean doSkeletonSpawn = buf.readBoolean();
+        boolean doHuskSpawn = buf.readBoolean();
+        boolean doWitchSpawn = buf.readBoolean();
+        boolean doSpiderSpawn = buf.readBoolean();
+        boolean doSkeletonHorseSpawn = buf.readBoolean();
+
         //set config.
         ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
         config.daysPerSeason = daysPerSeason;
         config.thirst = thirstEnabled;
         config.seasons = seasonsEnabled;
+
+        config.doPigSpawn = doPigSpawn;
+        config.doCowSpawn = doCowSpawn;
+        config.doSheepSpawn = doSheepSpawn;
+        config.doChickenSpawn = doChickenSpawn;
+        config.doHorseSpawn = doHorseSpawn;
+        config.doGoatSpawn = doGoatSpawn;
+
+        config.doCreeperSpawn = doCreeperSpawn;
+        config.doZombieSpawn = doZombieSpawn;
+        config.doZombieVillagerSpawn = doZombieVillagerSpawn;
+        config.doZombieHorseSpawn = doZombieHorseSpawn;
+        config.doSkeletonSpawn = doSkeletonSpawn;
+        config.doHuskSpawn = doHuskSpawn;
+        config.doWitchSpawn = doWitchSpawn;
+        config.doSpiderSpawn = doSpiderSpawn;
+        config.doSkeletonHorseSpawn = doSkeletonHorseSpawn;
 
         //actually set config.
         AutoConfig.getConfigHolder(ModConfig.class).setConfig(config);
