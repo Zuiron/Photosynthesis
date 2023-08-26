@@ -20,6 +20,7 @@ repositories {
 	maven { url "https://maven.shedaniel.me/" }
 	maven { url "https://maven.terraformersmc.com/releases/" }
 	maven { url "https://maven.architectury.dev/" }
+	maven { url 'https://maven.blamejared.com' }
 }
 
 dependencies {
@@ -33,6 +34,9 @@ dependencies {
 
 	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
 	// You may need to force-disable transitiveness on them.
+
+	//patchouli //cant get you to work. = ModelLoadingRegistry errors
+	//modImplementation "vazkii.patchouli:Patchouli:$patchouli_version"
 
 	// REI Runtime for Fabric
 	//HELLO!!! this causes crash. but only in runClient in IntelliJ
