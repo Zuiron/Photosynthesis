@@ -2,6 +2,7 @@
   "name": "Animal Care",
   "icon": "photosynthesis:watertrough",
   "category": "photosynthesis:animals",
+  "priority": true,
   "pages": [
     {
       "type": "patchouli:spotlight",

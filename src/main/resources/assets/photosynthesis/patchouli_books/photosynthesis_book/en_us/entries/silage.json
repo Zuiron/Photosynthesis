@@ -2,6 +2,7 @@
   "name": "Silage",
   "icon": "photosynthesis:wrapped_grass_bale",
   "category": "photosynthesis:animals",
+  "priority": true,
   "pages": [
     {
       "type": "patchouli:spotlight",

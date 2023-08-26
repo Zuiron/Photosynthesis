@@ -1,0 +1,19 @@
+{
+  "name": "Livestock Trader",
+  "icon": "minecraft:emerald",
+  "category": "photosynthesis:animals",
+  "priority": true,
+  "pages": [
+    {
+      "type": "patchouli:entity",
+      "entity": "minecraft:villager",
+      "scale": 0.8,
+      "text": "Buy your animals here."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "photosynthesis:cutting_board",
+      "text": "If you find yourself missing some animals. there is a solution! Buy them at a Livestock Trader. $(br2)To turn a villager into a livestock trader use the Cutting Board."
+    }
+  ]
+}
