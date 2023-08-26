@@ -1,0 +1,17 @@
+{
+  "name": "Silage",
+  "icon": "photosynthesis:wrapped_grass_bale",
+  "category": "photosynthesis:animals",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "photosynthesis:plastic_wrap",
+      "text": "To make silage, you must first place a Grass Bale then right click it with plastic wrap. $(br2)Grass bale must be full durability."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "photosynthesis:silage_bale",
+      "text": "After wrapping a grass bale with plastic wrap. It takes 1 hour & 10 minutes or 84.000 ticks to ferment into silage."
+    }
+  ]
+}

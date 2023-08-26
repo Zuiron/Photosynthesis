@@ -16,7 +16,7 @@
     {
       "type": "patchouli:spotlight",
       "item": "photosynthesis:manure",
-      "text": "Cows drop Manure (x4) every minecraft day. $(br2) If given straw, Manure output is doubled (x8). $(br2)Manure is very useful for crops. Potentially gives an increase in yield of 300%."
+      "text": "Cows drop Manure (x4) every minecraft day. $(br2)If given straw, Manure output is doubled (x8). $(br2)Manure is very useful for crops. Potentially gives an increase in yield of 300%."
     }
   ]
 }
