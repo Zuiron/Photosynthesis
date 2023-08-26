@@ -1,0 +1,17 @@
+{
+  "name": "Keg",
+  "icon": "photosynthesis:keg",
+  "category": "photosynthesis:thirst",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "photosynthesis:keg",
+      "text": "If water is not your forte, craft yourself some mead or wine."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "photosynthesis:mug_mead",
+      "text": "Mead is a great way to quench your thirst and additionally grant you some nice effects!"
+    }
+  ]
+}

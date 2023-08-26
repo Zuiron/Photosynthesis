@@ -1,0 +1,16 @@
+{
+  "name": "Thirst",
+  "icon": "photosynthesis:measuring_cup_water",
+  "category": "photosynthesis:thirst",
+  "priority": true,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "We try not to make thirst an annoying mechanic. $(br)So you lose thirst fairly slowly. $(br)Also you can get thirst saturation from most berries."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Running makes you lose thirst more quickly. $(br2)Thirst can be disabled completely in the config."
+    }
+  ]
+}

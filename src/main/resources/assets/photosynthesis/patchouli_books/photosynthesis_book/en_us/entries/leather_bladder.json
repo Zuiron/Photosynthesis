@@ -1,0 +1,18 @@
+{
+  "name": "Leather Bladder",
+  "icon": "photosynthesis:leather_water_bladder",
+  "category": "photosynthesis:thirst",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "photosynthesis:leather_water_bladder",
+      "recipe2": "photosynthesis:leather_water_bladder_wolf_pelt",
+      "text": ""
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "photosynthesis:leather_water_bladder_clean",
+      "text": "Craft yourself a leather water bladder to fill thirst. $(br)Or eat any food containing water, like berries. $(br2)Right click near water to fill! $(br)After filling water, you need to clean the water, put dirty bladder in a furnace or campfire to clean! $(br)Now its safe to drink.$(br)"
+    }
+  ]
+}
