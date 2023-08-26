@@ -4,7 +4,8 @@
   "category": "photosynthesis:seasons",
   "pages": [
     {
-      "type": "patchouli:text",
+      "type": "patchouli:spotlight",
+      "item": "minecraft:bone_meal",
       "text": "When seasons is enabled, Bone meal is disabled for crops and grass."
     }
   ]

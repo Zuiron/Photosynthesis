@@ -12,6 +12,11 @@
     {
       "type": "patchouli:text",
       "text": "Cows require $(li)Water $(li)Grass $(li)Hay $(li)Straw(optional) $(li)TMR(optional) $(br2)If cows are missing water,grass and hay, they will eventually die. $(br)Drops Manure (x4). $(br)Manure drop is doubled (x8) if cows are given straw. $(br2)Milk production is increased with straw and TMR. $(br2)At max production, cows can be milked up to 4 times per minecraft day.$(br)"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "photosynthesis:manure",
+      "text": "Cows drop Manure (x4) every minecraft day. $(br2) If given straw, Manure output is doubled (x8). $(br2)Manure is very useful for crops. Potentially gives an increase in yield of 300%."
     }
   ]
 }

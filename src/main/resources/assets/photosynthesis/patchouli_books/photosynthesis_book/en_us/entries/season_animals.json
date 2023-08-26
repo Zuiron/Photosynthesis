@@ -11,7 +11,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Pigs: 6 season months to mature. $(br)Sheep: 1 season year to mature. $(br)Cows: 2 season years to mature. $(br)Chickens: 5 season months to mature. $(br)Horses: 2 season years to mature. $(br)Goats: 3 season years to mature."
+      "text": "$(li)Pigs: 6 season months. $(li)Sheep: 1 season year. $(li)Cows: 2 season years. $(li)Chickens: 5 season months. $(li)Horses: 2 season years. $(li)Goats: 3 season years."
     }
   ]
 }
