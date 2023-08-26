@@ -222,6 +222,7 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.DUMPLING,
                 ModItems.PANCAKE,
                 ModItems.BREAD_FORM,
+                ModItems.OVEN_TRAY,
                 ModItems.BACON,
                 ModItems.CHOCOLATE_CUPCAKE,
                 ModItems.CHICKEN_NUGGETS,

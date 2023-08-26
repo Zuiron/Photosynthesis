@@ -1240,6 +1240,9 @@ public class ModItems {
     public static final Item BREAD_FORM = registerItem("bread_form",
                 new Item(new FabricItemSettings()));
 
+    public static final Item OVEN_TRAY = registerItem("oven_tray",
+            new Item(new FabricItemSettings()));
+
     public static final Item PIZZA_STONE = registerItem("pizza_stone",
             new Item(new FabricItemSettings()));
 
