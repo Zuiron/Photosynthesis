@@ -947,6 +947,10 @@ public class ModItems {
 
     public static final Item HORSE_LEATHER = registerItem("horse_leather",
             new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item WOLF_PELT = registerItem("wolf_pelt",
+            new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
     // Food's ----------------------------------------------------------------------------------------------------------
 
     /*public static final Item CANOLA_OIL_BOTTLE = registerItem("canola_oil_bottle",

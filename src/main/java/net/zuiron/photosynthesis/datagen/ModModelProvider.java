@@ -165,6 +165,7 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.HORSE_BONES,
                 ModItems.HORSE_HAIR,
                 ModItems.HORSE_LEATHER,
+                ModItems.WOLF_PELT,
 
                 ModItems.FIRESTARTER,
 
