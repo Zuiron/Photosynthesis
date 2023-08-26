@@ -137,26 +137,32 @@ public abstract class ModPassiveEntity extends PathAwareEntity implements getCus
     @Override
     public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable NbtCompound entityNbt) {
 
-        this.mob_tick_born = this.getWorld().getTimeOfDay();
-        //Photosynthesis.LOGGER.info("Initializing entity with borntick: "+this.getWorld().getTimeOfDay());
+        EntityType<?> entityType = this.getType();
+        //run this code if any of these entities.
+        if(entityType.equals(EntityType.PIG) || entityType.equals(EntityType.COW) || entityType.equals(EntityType.SHEEP) ||
+                entityType.equals(EntityType.CHICKEN) || entityType.equals(EntityType.HORSE) || entityType.equals(EntityType.GOAT)) {
 
-        //hard mode? spawn as baby not mature if egg.
-        ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
-        if(config.spawnEggBaby && spawnReason == SpawnReason.SPAWN_EGG) {
-            this.setBreedingAge(-1000); //sets to baby?
-        }
+            this.mob_tick_born = this.getWorld().getTimeOfDay();
+            //Photosynthesis.LOGGER.info("Initializing entity with borntick: "+this.getWorld().getTimeOfDay());
 
-        //fixes entities from structures and other sources from dying because they are saved without these variables.
-        if(this.mod_Water == 0) {
-            this.mod_living_ticks = 0;
+            //hard mode? spawn as baby not mature if egg.
+            ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
+            if (config.spawnEggBaby && spawnReason == SpawnReason.SPAWN_EGG) {
+                this.setBreedingAge(-1000); //sets to baby?
+            }
 
-            this.mod_Water = mod_Water_max;
-            this.mod_Food = mod_Food_max;
+            //fixes entities from structures and other sources from dying because they are saved without these variables.
+            if (this.mod_Water == 0) {
+                this.mod_living_ticks = 0;
 
-            this.mod_Grass = mod_Grass_max / 3;
-            this.mod_Hay = mod_Hay_max / 3;
-            this.mod_Straw = mod_Straw_max / 3;
-            //Photosynthesis.LOGGER.info("Initializing entity without water,food,straw,grass,hay values.");
+                this.mod_Water = mod_Water_max;
+                this.mod_Food = mod_Food_max;
+
+                this.mod_Grass = mod_Grass_max / 3;
+                this.mod_Hay = mod_Hay_max / 3;
+                this.mod_Straw = mod_Straw_max / 3;
+                //Photosynthesis.LOGGER.info("Initializing entity without water,food,straw,grass,hay values.");
+            }
         }
 
         return super.initialize(world, difficulty, spawnReason, entityData, entityNbt);
