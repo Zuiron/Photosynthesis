@@ -251,6 +251,7 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.OAT_DOUGH,
                 ModItems.RYE_DOUGH,
                 ModItems.BARLEY_DOUGH,
+                ModItems.CORN_DOUGH,
 
 
 

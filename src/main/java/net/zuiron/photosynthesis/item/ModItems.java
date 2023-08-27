@@ -1290,6 +1290,9 @@ public class ModItems {
     public static final Item BARLEY_DOUGH = registerItem("barley_dough",
             new Item(new FabricItemSettings()));
 
+    public static final Item CORN_DOUGH = registerItem("corn_dough",
+            new Item(new FabricItemSettings()));
+
     public static final Item EMPTY_MUG = registerItem("mug",
             new Item(new FabricItemSettings()));
 
