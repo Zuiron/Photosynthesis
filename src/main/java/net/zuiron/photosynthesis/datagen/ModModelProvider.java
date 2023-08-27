@@ -249,6 +249,7 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.RYE_FLOUR,
                 ModItems.BARLEY_FLOUR,
                 ModItems.OAT_DOUGH,
+                ModItems.RYE_DOUGH,
 
 
 
