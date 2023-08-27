@@ -7,12 +7,12 @@
     },
     {
       "item": "photosynthesis:wheat_dough",
-      "count": 1
+      "count": 2
     }
   ],
   "output": {
     "item": "minecraft:bread",
-    "count": 1
+    "count": 2
   },
-  "cookingtime": 150
+  "cookingtime": 300
 }
