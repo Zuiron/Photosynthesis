@@ -1,12 +1,12 @@
 {
-  "type": "photosynthesis:skillet",
+  "type": "photosynthesis:woodfiredoven",
   "ingredients": [
     {
-      "item": "photosynthesis:butter",
+      "item": "photosynthesis:oven_tray",
       "count": 1
     },
     {
-      "item": "minecraft:mutton",
+      "item": "minecraft:chicken",
       "count": 1
     },
     {
@@ -15,7 +15,7 @@
     }
   ],
   "output": {
-    "item": "minecraft:cooked_mutton",
+    "item": "minecraft:cooked_chicken",
     "count": 1
   },
   "cookingtime": 100

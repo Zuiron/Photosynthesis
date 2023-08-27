@@ -1,8 +1,8 @@
 {
-  "type": "photosynthesis:skillet",
+  "type": "photosynthesis:woodfiredoven",
   "ingredients": [
     {
-      "item": "photosynthesis:butter",
+      "item": "photosynthesis:oven_tray",
       "count": 1
     },
     {
