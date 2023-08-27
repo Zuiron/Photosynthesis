@@ -1252,6 +1252,9 @@ public class ModItems {
     public static final Item RYE_FLOUR = registerItem("rye_flour",
             new Item(new FabricItemSettings()));
 
+    public static final Item BARLEY_FLOUR = registerItem("barley_flour",
+            new Item(new FabricItemSettings()));
+
 
 
 
