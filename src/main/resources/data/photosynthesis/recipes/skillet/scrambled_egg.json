@@ -8,6 +8,10 @@
     {
       "item": "photosynthesis:cracked_egg",
       "count": 2
+    },
+    {
+      "item": "photosynthesis:cut_chives",
+      "count": 1
     }
   ],
   "output": {

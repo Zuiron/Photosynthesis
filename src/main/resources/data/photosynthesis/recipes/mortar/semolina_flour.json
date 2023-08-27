@@ -1,0 +1,16 @@
+{
+  "type": "photosynthesis:mortar",
+  "ingredients": [
+    {
+      "item": "photosynthesis:pestle"
+    },
+    {
+      "item": "photosynthesis:wheat_flour"
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:semolina_flour",
+    "count": 1
+  },
+  "cookingtime": 40
+}
