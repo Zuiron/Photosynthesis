@@ -1,0 +1,22 @@
+{
+  "type": "photosynthesis:woodfiredoven",
+  "ingredients": [
+    {
+      "item": "photosynthesis:oven_tray",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:cow_brisket",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:salt",
+      "count": 1
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:cooked_cow_brisket",
+    "count": 1
+  },
+  "cookingtime": 100
+}

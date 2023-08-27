@@ -1,0 +1,16 @@
+{
+  "type": "photosynthesis:mortar",
+  "ingredients": [
+    {
+      "item": "photosynthesis:pestle"
+    },
+    {
+      "item": "photosynthesis:corn"
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:corn_flour",
+    "count": 3
+  },
+  "cookingtime": 40
+}

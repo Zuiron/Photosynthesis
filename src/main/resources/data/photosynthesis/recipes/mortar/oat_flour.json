@@ -1,0 +1,16 @@
+{
+  "type": "photosynthesis:mortar",
+  "ingredients": [
+    {
+      "item": "photosynthesis:pestle"
+    },
+    {
+      "item": "photosynthesis:oat"
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:oat_flour",
+    "count": 3
+  },
+  "cookingtime": 40
+}

@@ -1,0 +1,16 @@
+{
+  "type": "photosynthesis:mortar",
+  "ingredients": [
+    {
+      "item": "photosynthesis:pestle"
+    },
+    {
+      "item": "photosynthesis:barley"
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:barley_flour",
+    "count": 3
+  },
+  "cookingtime": 40
+}
