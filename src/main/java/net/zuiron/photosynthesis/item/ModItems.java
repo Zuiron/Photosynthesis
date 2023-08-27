@@ -240,6 +240,9 @@ public class ModItems {
     public static final Item MEASURING_CUP_MILK = registerItem("measuring_cup_milk",
             new Item(new FabricItemSettings().recipeRemainder(ModItems.MEASURING_CUP)));
 
+    public static final Item MEASURING_CUP_SKIMMED_MILK = registerItem("measuring_cup_skimmed_milk",
+            new Item(new FabricItemSettings().recipeRemainder(ModItems.MEASURING_CUP)));
+
     public static final Item MEASURING_CUP_MILK_CREAM = registerItem("measuring_cup_milk_cream",
             new Item(new FabricItemSettings().recipeRemainder(ModItems.MEASURING_CUP)));
 
