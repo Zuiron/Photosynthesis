@@ -1,0 +1,15 @@
+{
+  "name": "Chunk Loading",
+  "icon": "minecraft:beacon",
+  "category": "photosynthesis:seasons",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Since all crops, tree crops, berries and whatnot require randomTicks, it needs to be ticked to grow. Also animals require ticks to grow, eat, drop manure etc."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "So i strongly suggest you use a chunkloader of some sort. FTB Chunks is one good option which can simulates randomTicks. But for server owners: strongly suggest setting force_load_mode: \"always\" because if the player is offline randomTicks will not work on the crops thus crops will not grow at all."
+    }
+  ]
+}
