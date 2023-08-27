@@ -1,0 +1,13 @@
+{
+  "type": "photosynthesis:dryingrack",
+  "ingredients": [
+    {
+      "item": "minecraft:kelp"
+    }
+  ],
+  "output": {
+    "item": "minecraft:dried_kelp",
+    "count": 1
+  },
+  "cookingtime": 300
+}
