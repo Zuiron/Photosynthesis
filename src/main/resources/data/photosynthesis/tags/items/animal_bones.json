@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "photosynthesis:sheep_bones",
+    "photosynthesis:chicken_bones",
+    "photosynthesis:pig_bones",
+    "photosynthesis:horse_bones"
+  ]
+}
