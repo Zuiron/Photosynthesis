@@ -36,7 +36,7 @@ public class ThirstDataAPI {
 
     public static Map<String, ThirstDataAPI> thirstDataMap = new HashMap<>();
     static {
-        //IF a food item is NOT in this list. you will lose 1 Thirst, and 150 Saturation.
+        //IF a food item is NOT in this list. you will lose 1 Thirst, and 150 Saturation. //not true
         //Max Thirst: 10
         //Max Saturation: 600 - 60 per 1 ICON
 
