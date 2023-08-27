@@ -1,0 +1,17 @@
+{
+  "name": "Trees/Saplings",
+  "icon": "photosynthesis:appletree_sapling",
+  "category": "photosynthesis:seasons",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "photosynthesis:appletree_sapling",
+      "text": "When seasons is enabled, Saplings grows like crops. $(br2)Hover over any sapling to see when that specific sapling grows. $(br2)When saplings are mature, then it will grow into a tree."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:oak_sapling",
+      "text": "This also goes for vanilla saplings/trees."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Crops",
+  "icon": "minecraft:wheat_seeds",
+  "category": "photosynthesis:seasons",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "photosynthesis:tomato_seeds",
+      "text": "When seasons is enabled, Crops grow only in certain seasons. $(br2)Hover over any crop seed to see when that specific crop grows."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "photosynthesis:mustard_seeds",
+      "text": "Since bone meal is disabled in seasons (if enabled). There is another way to increase yield (by up to 300%) which is with manure and sulfur. $(br2)Check out the Crops category for more information. $(br)"
+    }
+  ]
+}

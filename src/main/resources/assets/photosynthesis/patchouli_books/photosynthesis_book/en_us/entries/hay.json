@@ -1,0 +1,17 @@
+{
+  "name": "Hay",
+  "icon": "photosynthesis:hay_bundle",
+  "category": "photosynthesis:crops",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "photosynthesis:grass_bundle",
+      "text": "First get grass bundle, now dry grass."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "photosynthesis:hayrack",
+      "text": "dry grass bundles in the hay rack to get hay bundles."
+    }
+  ]
+}

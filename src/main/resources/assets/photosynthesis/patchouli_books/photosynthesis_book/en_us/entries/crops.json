@@ -1,0 +1,27 @@
+{
+  "name": "Crops",
+  "icon": "minecraft:wheat_seeds",
+  "category": "photosynthesis:crops",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "photosynthesis:agave_seeds",
+      "text": "When seasons is enabled, Crops grow only in certain seasons. $(br2)Hover over any crop seed to see when that specific crop grows."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "photosynthesis:ginger_seeds",
+      "text": "Since bone meal is disabled in seasons (if enabled). There is another way to increase yield (by up to 300%) which is with manure and sulfur. $(br2)Check out the Crops category for more information. $(br)"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:pumpkin",
+      "text": "Pumpkin is changed somewhat (if seasons is enabled). $(br2)Now it will grow 4 pumpkins before withering/resetting to age0."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:melon",
+      "text": "Melon is changed somewhat (if seasons is enabled). $(br2)Now it will grow 4 melons before withering/resetting to age0."
+    }
+  ]
+}

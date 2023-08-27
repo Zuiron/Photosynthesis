@@ -1,0 +1,27 @@
+{
+  "name": "Fertilizer",
+  "icon": "photosynthesis:manure",
+  "category": "photosynthesis:crops",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "photosynthesis:manure",
+      "text": "Use on any crop to put manure on it. $(br2)This will increase yield by 100%. $(br2)To put a second layer of manure, you need to first apply sulfur dust. $(br2)If you have applied 2 Manure and 1 Sulfur Dust on a crop, yield is increased by 300%. $(br)"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "photosynthesis:sulfur_dust",
+      "text": "Use on any crop to put sulfur on it. $(br2)This will increase yield by 200%."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "photosynthesis:manure",
+      "text": "Manure drops from Cows and Pigs."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "photosynthesis:sulfur_ore",
+      "text": "Can be found anywhere underground in the deepslate layers."
+    }
+  ]
+}
