@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "photosynthesis:animal_bones"
+    }
+  ],
+  "result": {
+    "item": "minecraft:bone_meal",
+    "count": 3
+  }
+}
