@@ -1246,6 +1246,10 @@ public class ModItems {
     public static final Item SEMOLINA_FLOUR = registerItem("semolina_flour",
             new Item(new FabricItemSettings()));
 
+    public static final Item OAT_FLOUR = registerItem("oat_flour",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
 
 
 
