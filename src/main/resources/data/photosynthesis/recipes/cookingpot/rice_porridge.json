@@ -2,7 +2,7 @@
   "type": "photosynthesis:cookingpot",
   "ingredients": [
     {
-      "tag": "c:cookingpot_milkcontainers",
+      "item": "photosynthesis:measuring_cup_skimmed_milk",
       "count": 2
     },
     {

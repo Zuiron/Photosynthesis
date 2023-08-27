@@ -1,0 +1,14 @@
+{
+  "type": "photosynthesis:cookingpot",
+  "ingredients": [
+    {
+      "item": "photosynthesis:measuring_cup_water",
+      "count": 1
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:boiled_egg",
+    "count": 1
+  },
+  "cookingtime": 100
+}

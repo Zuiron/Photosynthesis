@@ -2,7 +2,7 @@
   "type": "photosynthesis:cookingpot",
   "ingredients": [
     {
-      "tag": "c:cookingpot_watercontainers",
+      "item": "photosynthesis:measuring_cup_water",
       "count": 2
     },
     {
