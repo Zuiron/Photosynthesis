@@ -41,13 +41,13 @@ public class ThirstDataAPI {
         //Max Saturation: 600 - 60 per 1 ICON
 
         //Minecraft
-        thirstDataMap.put("item.minecraft.cooked_beef",  new ThirstDataAPI(0, 0, 2, 180));
-        thirstDataMap.put("item.minecraft.cooked_porkchop",  new ThirstDataAPI(0, 0, 2, 180));
-        thirstDataMap.put("item.minecraft.cooked_mutton",  new ThirstDataAPI(0, 0, 2, 180));
-        thirstDataMap.put("item.minecraft.cooked_chicken",  new ThirstDataAPI(0, 0, 2, 180));
-        thirstDataMap.put("item.minecraft.cooked_rabbit",  new ThirstDataAPI(0, 0, 2, 180));
-        thirstDataMap.put("item.minecraft.cooked_cod",  new ThirstDataAPI(0, 0, 2, 180));
-        thirstDataMap.put("item.minecraft.cooked_salmon",  new ThirstDataAPI(0, 0, 2, 180));
+        thirstDataMap.put("item.minecraft.cooked_beef",  new ThirstDataAPI(0, 0, 0, 0));
+        thirstDataMap.put("item.minecraft.cooked_porkchop",  new ThirstDataAPI(0, 0, 0, 0));
+        thirstDataMap.put("item.minecraft.cooked_mutton",  new ThirstDataAPI(0, 0, 0, 0));
+        thirstDataMap.put("item.minecraft.cooked_chicken",  new ThirstDataAPI(0, 0, 0, 0));
+        thirstDataMap.put("item.minecraft.cooked_rabbit",  new ThirstDataAPI(0, 0, 0, 0));
+        thirstDataMap.put("item.minecraft.cooked_cod",  new ThirstDataAPI(0, 0, 0, 0));
+        thirstDataMap.put("item.minecraft.cooked_salmon",  new ThirstDataAPI(0, 0, 0, 0));
 
         thirstDataMap.put("item.minecraft.apple",  new ThirstDataAPI(0, 60, 0, 0));
         thirstDataMap.put("item.minecraft.golden_apple",  new ThirstDataAPI(0, 300, 0, 0));
@@ -57,11 +57,11 @@ public class ThirstDataAPI {
         thirstDataMap.put("item.minecraft.glow_berries",  new ThirstDataAPI(0, 60, 0, 0));
         thirstDataMap.put("item.minecraft.chorus_fruit",  new ThirstDataAPI(0, 60, 0, 0));
 
-        thirstDataMap.put("item.minecraft.beef",  new ThirstDataAPI(0, 0, 5, 540));
-        thirstDataMap.put("item.minecraft.porkchop",  new ThirstDataAPI(0, 0, 5, 540));
-        thirstDataMap.put("item.minecraft.mutton",  new ThirstDataAPI(0, 0, 5, 540));
-        thirstDataMap.put("item.minecraft.chicken",  new ThirstDataAPI(0, 0, 5, 540));
-        thirstDataMap.put("item.minecraft.rabbit",  new ThirstDataAPI(0, 0, 5, 540));
+        thirstDataMap.put("item.minecraft.beef",  new ThirstDataAPI(0, 0, 0, 0));
+        thirstDataMap.put("item.minecraft.porkchop",  new ThirstDataAPI(0, 0, 0, 0));
+        thirstDataMap.put("item.minecraft.mutton",  new ThirstDataAPI(0, 0, 0, 0));
+        thirstDataMap.put("item.minecraft.chicken",  new ThirstDataAPI(0, 0, 0, 0));
+        thirstDataMap.put("item.minecraft.rabbit",  new ThirstDataAPI(0, 0, 0, 0));
 
         thirstDataMap.put("item.minecraft.poisonous_potato",  new ThirstDataAPI(0, 0, 5, 540));
         thirstDataMap.put("item.minecraft.rotten_flesh",  new ThirstDataAPI(0, 0, 5, 540));
@@ -69,9 +69,9 @@ public class ThirstDataAPI {
 
         thirstDataMap.put("item.minecraft.honey_bottle",  new ThirstDataAPI(0, 120, 0, 0));
 
-        thirstDataMap.put("item.minecraft.bread",  new ThirstDataAPI(0, 0, 1, 120));
-        thirstDataMap.put("item.minecraft.cookie",  new ThirstDataAPI(0, 0, 1, 120));
-        thirstDataMap.put("item.minecraft.pumpkin_pie",  new ThirstDataAPI(0, 0, 1, 120));
+        thirstDataMap.put("item.minecraft.bread",  new ThirstDataAPI(0, 0, 0, 0));
+        thirstDataMap.put("item.minecraft.cookie",  new ThirstDataAPI(0, 0, 0, 0));
+        thirstDataMap.put("item.minecraft.pumpkin_pie",  new ThirstDataAPI(0, 0, 0, 0));
 
         thirstDataMap.put("item.minecraft.mushroom_stew",  new ThirstDataAPI(1, 60, 0, 0));
         thirstDataMap.put("item.minecraft.beetroot_soup",  new ThirstDataAPI(1, 60, 0, 0));
