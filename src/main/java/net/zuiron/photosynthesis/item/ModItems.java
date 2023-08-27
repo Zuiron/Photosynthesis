@@ -969,8 +969,7 @@ public class ModItems {
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item WHEAT_FLOUR = registerItem("wheat_flour",
-            new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+            new Item(new FabricItemSettings()));
 
     public static final Item CUT_CHIVES = registerItem("cut_chives",
             new Item(new FabricItemSettings()
@@ -1226,8 +1225,7 @@ public class ModItems {
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item CORN_FLOUR = registerItem("corn_flour",
-            new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+            new Item(new FabricItemSettings()));
 
     public static final Item FISH_SOUP = registerItem("fish_soup",
             new Item(new FabricItemSettings()
@@ -1246,8 +1244,7 @@ public class ModItems {
                     .food(new FoodComponent.Builder().hunger(6).saturationModifier(0.8f).build())));
 
     public static final Item SEMOLINA_FLOUR = registerItem("semolina_flour",
-            new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+            new Item(new FabricItemSettings()));
 
     public static final Item OAT_FLOUR = registerItem("oat_flour",
             new Item(new FabricItemSettings()
