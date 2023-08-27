@@ -9,7 +9,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "So i strongly suggest you use a chunkloader of some sort. FTB Chunks is one good option. But for server owners: strongly suggest setting force_load_mode: \"always\" because if the player is offline randomTicks will not work on the crops thus crops will not grow at all."
+      "text": "So i strongly suggest you use a chunkloader of some sort. FTB Chunks is one good option which can simulates randomTicks. But for server owners: strongly suggest setting force_load_mode: \"always\" because if the player is offline randomTicks will not work on the crops thus crops will not grow at all."
     }
   ]
 }
