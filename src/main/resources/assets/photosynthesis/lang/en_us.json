@@ -1237,6 +1237,9 @@
   "block.photosynthesis.egg_basket": "Egg Basket",
   "block.photosynthesis.manure_bucket": "Manure Bucket",
 
+  "item.photosynthesis.slot_lock_locked": "Locked",
+  "item.photosynthesis.slot_lock_unlocked": "Unlocked",
+
   "entity.minecraft.villager.livestocktrader": "Livestock Trader",
 
   "item.photosynthesis.plastic_wrap": "Plastic Wrap",
