@@ -1,0 +1,18 @@
+{
+  "name": "Heat",
+  "icon": "minecraft:campfire",
+  "category": "photosynthesis:food",
+  "priority": true,
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "minecraft:campfire",
+      "text": "Campfire is probably your easiest form of supplying heat."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "photosynthesis:wood_fired_stove",
+      "text": "These blocks can provide heat. $(li)Campfire $(li)Furnace $(li)Blast Furnace $(li)Smoker $(li)Wood Fired Oven $(li)Wood Fired Stove $(li)Create Blaze Burner"
+    }
+  ]
+}

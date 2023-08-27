@@ -1,0 +1,18 @@
+{
+  "name": "Automation",
+  "icon": "photosynthesis:slot_lock_locked",
+  "category": "photosynthesis:food",
+  "priority": true,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "photosynthesis:slot_lock_unlocked",
+      "text": "To ease with automation, you can lock some of the cooking blocks using a wrench. $(br2)Locking a block will make it not consume all of a stack inside it. $(br2)Additionally it will not allow input of items not already in the block."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "photosynthesis:wrench",
+      "text": "Use a wrench and right click a block to toggle lock state."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Cooking Pot",
+  "icon": "photosynthesis:cooking_pot",
+  "category": "photosynthesis:food",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "photosynthesis:cookingpot/cookingpot",
+      "text": "Cooking Pot needs heat in order to function."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Skillet",
+  "icon": "photosynthesis:skillet",
+  "category": "photosynthesis:food",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "photosynthesis:skillet/skillet",
+      "text": "Skillet needs heat in order to function."
+    }
+  ]
+}

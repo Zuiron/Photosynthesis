@@ -1,0 +1,17 @@
+{
+  "name": "Stove",
+  "icon": "photosynthesis:wood_fired_stove",
+  "category": "photosynthesis:food",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "photosynthesis:wood_fired_stove",
+      "text": "Stove provides heat to other blocks. $(br)Place blocks that require heat onto the stove."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:lever",
+      "text": "You can pause the burning of items in the stove by supplying a redstone signal, ex a lever."
+    }
+  ]
+}

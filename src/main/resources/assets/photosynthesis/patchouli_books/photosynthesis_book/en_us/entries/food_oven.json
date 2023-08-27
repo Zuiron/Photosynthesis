@@ -1,0 +1,17 @@
+{
+  "name": "Oven",
+  "icon": "photosynthesis:wood_fired_oven",
+  "category": "photosynthesis:food",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "photosynthesis:woodfiredoven/wood_fired_oven",
+      "text": "Oven needs heat in order to function. $(br)Place the oven to the right of a Stove."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "photosynthesis:woodfiredoven/wood_fired_oven",
+      "text": "The Oven also provide heat to blocks if heated itself."
+    }
+  ]
+}

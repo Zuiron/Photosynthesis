@@ -1,0 +1,16 @@
+{
+  "name": "Keg",
+  "icon": "photosynthesis:keg",
+  "category": "photosynthesis:food",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "photosynthesis:keg/keg",
+      "text": "Very much needed to get mead and wine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "When extracting fluid, Make sure you do if from the correct direction. $(br2)Input: Top, Left, Back $(br)Output: Front, Right, Bottom"
+    }
+  ]
+}

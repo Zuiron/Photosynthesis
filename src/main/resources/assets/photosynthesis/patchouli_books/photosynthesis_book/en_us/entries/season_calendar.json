@@ -1,0 +1,12 @@
+{
+  "name": "Seasons Calendar",
+  "icon": "photosynthesis:seasonscalendar",
+  "category": "photosynthesis:seasons",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "photosynthesis:seasonscalendar",
+      "text": "The seasons calendar will output a redstone signal based on how far into the season year its in. $(br2)Additionally it will also change texture based on the season."
+    }
+  ]
+}
