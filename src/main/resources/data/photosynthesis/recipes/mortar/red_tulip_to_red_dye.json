@@ -1,0 +1,16 @@
+{
+  "type": "photosynthesis:mortar",
+  "ingredients": [
+    {
+      "item": "photosynthesis:pestle"
+    },
+    {
+      "item": "minecraft:red_tulip"
+    }
+  ],
+  "output": {
+    "item": "minecraft:red_dye",
+    "count": 2
+  },
+  "cookingtime": 40
+}

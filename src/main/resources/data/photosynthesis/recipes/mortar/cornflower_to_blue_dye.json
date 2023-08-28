@@ -1,0 +1,16 @@
+{
+  "type": "photosynthesis:mortar",
+  "ingredients": [
+    {
+      "item": "photosynthesis:pestle"
+    },
+    {
+      "item": "minecraft:cornflower"
+    }
+  ],
+  "output": {
+    "item": "minecraft:blue_dye",
+    "count": 2
+  },
+  "cookingtime": 40
+}

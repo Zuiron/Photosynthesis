@@ -1,0 +1,16 @@
+{
+  "type": "photosynthesis:mortar",
+  "ingredients": [
+    {
+      "item": "photosynthesis:pestle"
+    },
+    {
+      "item": "minecraft:poppy"
+    }
+  ],
+  "output": {
+    "item": "minecraft:red_dye",
+    "count": 2
+  },
+  "cookingtime": 40
+}
