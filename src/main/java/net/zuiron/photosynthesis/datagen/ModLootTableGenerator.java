@@ -790,6 +790,8 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         listCrops.add(new CropEntry(ModBlocks.PAPAVER_SOMNIFERUM_CROP, ModItems.PAPAVER_SOMNIFERUM, ModItems.PAPAVER_SOMNIFERUM_SEEDS));
         listCrops.add(new CropEntry(ModBlocks.ERYTHROXYLUM_COCA_CROP, ModItems.ERYTHROXYLUM_COCA, ModItems.ERYTHROXYLUM_COCA_SEEDS));
 
+        listCrops.add(new CropEntry(ModBlocks.DANDELION_CROP, Items.DANDELION, ModItems.DANDELION_SEEDS));
+
 
         for (CropEntry entry : listCrops) {
             BlockStatePropertyLootCondition.Builder no_age_condition = BlockStatePropertyLootCondition

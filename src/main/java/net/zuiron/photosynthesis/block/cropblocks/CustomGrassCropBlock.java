@@ -24,7 +24,7 @@ public class CustomGrassCropBlock extends CropBlock {
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
         switch (seed) {
             case "rice_crop_anotherclass": if(world.getFluidState(pos.up(1)).isOf(Fluids.WATER)) { return true; }
-            default: return floor.isOf(Blocks.GRASS_BLOCK) || floor.isOf(Blocks.DIRT);
+            default: return floor.isOf(Blocks.GRASS_BLOCK) || floor.isOf(Blocks.DIRT) || floor.isOf(Blocks.FARMLAND);
         }
     }
 
@@ -54,6 +54,7 @@ public class CustomGrassCropBlock extends CropBlock {
 
         switch (seed) {
             case "grass_crop": return ModItems.GRASS_SEEDS;
+            case "dandelion_crop": return ModItems.DANDELION_SEEDS;
 
             default: return Items.AIR;
         }

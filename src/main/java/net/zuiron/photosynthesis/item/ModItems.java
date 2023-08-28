@@ -857,6 +857,7 @@ public class ModItems {
     public static final Item PORCINI_MUSHROOM_SPORES = registerSeedItem("porcini_mushroom_spores", ModBlocks.PORCINI_MUSHROOM_CROP);
     public static final Item CHANTERELLE_MUSHROOM_SPORES = registerSeedItem("chanterelle_mushroom_spores", ModBlocks.CHANTERELLE_MUSHROOM_CROP);
     public static final Item MOREL_MUSHROOM_SPORES = registerSeedItem("morel_mushroom_spores", ModBlocks.MOREL_MUSHROOM_CROP);
+    public static final Item DANDELION_SEEDS = registerSeedItem("dandelion_seeds", ModBlocks.DANDELION_CROP);
 
     // Meat's ----------------------------------------------------------------------------------------------------------
     public static final Item COW_BRISKET = registerItem("cow_brisket",

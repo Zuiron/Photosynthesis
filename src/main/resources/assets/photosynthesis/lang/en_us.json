@@ -1077,6 +1077,9 @@
   "item.photosynthesis.mustard_seeds": "Mustard Seeds",
   "item.photosynthesis.grass_seeds": "Grass Seeds",
 
+  "block.photosynthesis.dandelion_crop": "Dandelion",
+  "item.photosynthesis.dandelion_seeds": "Dandelion Seeds",
+
   "item.photosynthesis.tomatosoup": "Tomato Soup",
   "item.photosynthesis.beefstew": "Beefstew",
   "item.photosynthesis.mashedpotatoes": "Mashed Potatoes",

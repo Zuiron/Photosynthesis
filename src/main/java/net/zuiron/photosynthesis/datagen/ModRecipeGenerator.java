@@ -323,7 +323,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                     .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(kitchendecor.get(i))));
         }
 
-        int seedsCount = 16;
+        int seedsCount = 8;
         String strCategory = "seeds";
         VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.AGAVE_SEEDS, ModItems.AGAVE, strCategory, seedsCount);
         VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.AMARANTH_SEEDS, ModItems.AMARANTH, strCategory, seedsCount);
@@ -419,6 +419,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
         VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.WHITE_BUTTON_MUSHROOM_SPORES, ModItems.WHITE_BUTTON_MUSHROOM, strCategory, seedsCount);
 
         VanillaRecipeProvider.offerShapelessRecipe(exporter, Items.WHEAT_SEEDS, Items.WHEAT, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.DANDELION_SEEDS, Items.DANDELION, strCategory, seedsCount);
 
         /*final TagKey<Item> APPLETREE_LOGS_ITEMS = TagKey.of(RegistryKeys.ITEM, new Identifier("photosynthesis", "appletree_logs"));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.APPLETREE_PLANKS, 4)

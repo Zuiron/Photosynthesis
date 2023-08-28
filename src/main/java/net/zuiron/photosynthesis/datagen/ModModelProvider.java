@@ -253,6 +253,7 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.BARLEY_DOUGH,
                 ModItems.CORN_DOUGH,
                 ModItems.SEMOLINA_DOUGH,
+                ModItems.DANDELION_SEEDS
 
 
 

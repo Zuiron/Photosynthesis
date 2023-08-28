@@ -16,6 +16,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 import net.zuiron.photosynthesis.api.CropData;
@@ -58,6 +59,12 @@ public abstract class ModCropBlock extends PlantBlock
     @Inject(method = "appendProperties", at = @At("HEAD"), cancellable = true)
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder, CallbackInfo ci) {
         builder.add(MOD_FERTILIZED,MOD_PESTICIDED);
+    }
+
+    @Inject(method = "getAvailableMoisture", at = @At("HEAD"), cancellable = true)
+    private static void getAvailableMoisture(Block block, BlockView world, BlockPos pos, CallbackInfoReturnable<Float> cir) {
+        cir.setReturnValue(7.0f);
+        cir.cancel();
     }
 
     @Override

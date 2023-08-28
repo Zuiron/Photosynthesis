@@ -855,6 +855,8 @@ public class ModBlocks {
     public static final CropBlock PAPAVER_SOMNIFERUM_CROP = registerCropBlockSimple("papaver_somniferum_crop");
     public static final CropBlock ERYTHROXYLUM_COCA_CROP = registerCropBlockSimple("erythroxylum_coca_crop");
 
+    public static final CropBlock DANDELION_CROP = registerGrassCropBlockSimple("dandelion_crop");
+
 
     // TREE's ----------------------------------------------------------------------------------------------------------
     public static final Block APPLETREE_LOG = registerBlock("appletree_log",
