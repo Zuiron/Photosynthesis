@@ -1,0 +1,11 @@
+{
+  "name": "Water & Moisture",
+  "icon": "minecraft:water_bucket",
+  "category": "photosynthesis:crops",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Moisture is changed so its always hydrated. $(br2)Meaning placing water around your crops is no longer necessary!"
+    }
+  ]
+}
