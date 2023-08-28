@@ -93,8 +93,7 @@ public class CropData {
         cropDataMap.put("block.minecraft.pumpkin_stem",                 new CropData(new int[]{4, 7, 0, 0}, new int[]{0, 4, 7, 7}));    //plant summer, harvest autumn.
         cropDataMap.put("block.minecraft.sugar_cane",                   new CropData(new int[]{4, 7, 0, 0}, new int[]{0, 4, 7, 7}));    //plant summer, harvest autumn.
         cropDataMap.put("block.minecraft.cocoa",                        new CropData(new int[]{7, 0, 0, 1}, new int[]{1, 7, 7, 0}));    //plant spring, harvest summer.
-        //TODO need to make mixin for StemBlock. melon and pumpkin. or nah?
-        //TODO mixin for cocoaBlock. or nah?
+        cropDataMap.put("block.minecraft.torchflower_crop",             new CropData(new int[]{5, 2, 4, 7}, new int[]{7, 0, 2, 4}));    //plant autumn, harvest spring.
         //TODO GlowBerries? / cave vines. or nah?
 
         //TREE's, same for ALL trees                                    //maxAge Summer, Autumn, Winter, Spring ---- minAge Summer, Autumn, Winter, Spring
