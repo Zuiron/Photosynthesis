@@ -791,6 +791,17 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         listCrops.add(new CropEntry(ModBlocks.ERYTHROXYLUM_COCA_CROP, ModItems.ERYTHROXYLUM_COCA, ModItems.ERYTHROXYLUM_COCA_SEEDS));
 
         listCrops.add(new CropEntry(ModBlocks.DANDELION_CROP, Items.DANDELION, ModItems.DANDELION_SEEDS));
+        listCrops.add(new CropEntry(ModBlocks.POPPY_CROP, Items.POPPY, ModItems.POPPY_SEEDS));
+        listCrops.add(new CropEntry(ModBlocks.BLUE_ORCHID_CROP, Items.BLUE_ORCHID, ModItems.BLUE_ORCHID_SEEDS));
+        listCrops.add(new CropEntry(ModBlocks.ALLIUM_CROP, Items.ALLIUM, ModItems.ALLIUM_SEEDS));
+        listCrops.add(new CropEntry(ModBlocks.AZURE_BLUET_CROP, Items.AZURE_BLUET, ModItems.AZURE_BLUET_SEEDS));
+        listCrops.add(new CropEntry(ModBlocks.RED_TULIP_CROP, Items.RED_TULIP, ModItems.RED_TULIP_SEEDS));
+        listCrops.add(new CropEntry(ModBlocks.ORANGE_TULIP_CROP, Items.ORANGE_TULIP, ModItems.ORANGE_TULIP_SEEDS));
+        listCrops.add(new CropEntry(ModBlocks.WHITE_TULIP_CROP, Items.WHITE_TULIP, ModItems.WHITE_TULIP_SEEDS));
+        listCrops.add(new CropEntry(ModBlocks.PINK_TULIP_CROP, Items.PINK_TULIP, ModItems.PINK_TULIP_SEEDS));
+        listCrops.add(new CropEntry(ModBlocks.OXEYE_DAISY_CROP, Items.OXEYE_DAISY, ModItems.OXEYE_DAISY_SEEDS));
+        listCrops.add(new CropEntry(ModBlocks.CORNFLOWER_CROP, Items.CORNFLOWER, ModItems.CORNFLOWER_SEEDS));
+        listCrops.add(new CropEntry(ModBlocks.LILY_OF_THE_VALLEY_CROP, Items.LILY_OF_THE_VALLEY, ModItems.LILY_OF_THE_VALLEY_SEEDS));
 
 
         for (CropEntry entry : listCrops) {

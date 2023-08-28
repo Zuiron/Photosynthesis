@@ -1,0 +1,7 @@
+
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "photosynthesis:block/lily_of_the_valley_crop_stage0"
+  }
+}

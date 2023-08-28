@@ -1,0 +1,7 @@
+
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "photosynthesis:block/oxeye_daisy_crop_stage1"
+  }
+}

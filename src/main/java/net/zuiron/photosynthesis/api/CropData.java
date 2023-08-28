@@ -254,7 +254,17 @@ public class CropData {
 
         //Flowers
         cropDataMap.put("block.photosynthesis.dandelion_crop",              new CropData(new int[]{5, 2, 4, 7}, new int[]{7, 0, 2, 4}));    //plant autumn, harvest spring.
-
+        cropDataMap.put("block.photosynthesis.poppy_crop",                  new CropData(new int[]{5, 2, 4, 7}, new int[]{7, 0, 2, 4}));    //plant autumn, harvest spring.
+        cropDataMap.put("block.photosynthesis.blue_orchid_crop",            new CropData(new int[]{5, 2, 4, 7}, new int[]{7, 0, 2, 4}));    //plant autumn, harvest spring.
+        cropDataMap.put("block.photosynthesis.allium_crop",                 new CropData(new int[]{5, 2, 4, 7}, new int[]{7, 0, 2, 4}));    //plant autumn, harvest spring.
+        cropDataMap.put("block.photosynthesis.azure_bluet_crop",            new CropData(new int[]{5, 2, 4, 7}, new int[]{7, 0, 2, 4}));    //plant autumn, harvest spring.
+        cropDataMap.put("block.photosynthesis.red_tulip_crop",              new CropData(new int[]{5, 2, 4, 7}, new int[]{7, 0, 2, 4}));    //plant autumn, harvest spring.
+        cropDataMap.put("block.photosynthesis.orange_tulip_crop",           new CropData(new int[]{5, 2, 4, 7}, new int[]{7, 0, 2, 4}));    //plant autumn, harvest spring.
+        cropDataMap.put("block.photosynthesis.white_tulip_crop",            new CropData(new int[]{5, 2, 4, 7}, new int[]{7, 0, 2, 4}));    //plant autumn, harvest spring.
+        cropDataMap.put("block.photosynthesis.pink_tulip_crop",             new CropData(new int[]{5, 2, 4, 7}, new int[]{7, 0, 2, 4}));    //plant autumn, harvest spring.
+        cropDataMap.put("block.photosynthesis.oxeye_daisy_crop",            new CropData(new int[]{5, 2, 4, 7}, new int[]{7, 0, 2, 4}));    //plant autumn, harvest spring.
+        cropDataMap.put("block.photosynthesis.cornflower_crop",             new CropData(new int[]{5, 2, 4, 7}, new int[]{7, 0, 2, 4}));    //plant autumn, harvest spring.
+        cropDataMap.put("block.photosynthesis.lily_of_the_valley_crop",     new CropData(new int[]{5, 2, 4, 7}, new int[]{7, 0, 2, 4}));    //plant autumn, harvest spring.
 
         //Berries - where you want it to grow to max, use 7 not 3 as max, because 7 is identifier as "harvest season"
                                                                         //maxAge Summer, Autumn, Winter, Spring ---- minAge Summer, Autumn, Winter, Spring

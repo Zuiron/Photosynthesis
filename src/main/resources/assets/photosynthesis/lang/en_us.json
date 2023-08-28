@@ -1080,6 +1080,39 @@
   "block.photosynthesis.dandelion_crop": "Dandelion",
   "item.photosynthesis.dandelion_seeds": "Dandelion Seeds",
 
+  "block.photosynthesis.poppy_crop": "Poppy",
+  "item.photosynthesis.poppy_seeds": "Poppy Seeds",
+
+  "block.photosynthesis.blue_orchid_crop": "Blue Orchid",
+  "item.photosynthesis.blue_orchid_seeds": "Blue Orchid Seeds",
+
+  "block.photosynthesis.allium_crop": "Allium",
+  "item.photosynthesis.allium_seeds": "Allium Seeds",
+
+  "block.photosynthesis.azure_bluet_crop": "Azure Bluet",
+  "item.photosynthesis.azure_bluet_seeds": "Azure Bluet Seeds",
+
+  "block.photosynthesis.red_tulip_crop": "Red Tulip",
+  "item.photosynthesis.red_tulip_seeds": "Red Tulip Seeds",
+
+  "block.photosynthesis.orange_tulip_crop": "Orange Tulip",
+  "item.photosynthesis.orange_tulip_seeds": "Orange Tulip Seeds",
+
+  "block.photosynthesis.white_tulip_crop": "White Tulip",
+  "item.photosynthesis.white_tulip_seeds": "White Tulip Seeds",
+
+  "block.photosynthesis.pink_tulip_crop": "Pink Tulip",
+  "item.photosynthesis.pink_tulip_seeds": "Pink Tulip Seeds",
+
+  "block.photosynthesis.oxeye_daisy_crop": "Oxeye Daisy",
+  "item.photosynthesis.oxeye_daisy_seeds": "Oxeye Daisy Seeds",
+
+  "block.photosynthesis.cornflower_crop": "Cornflower",
+  "item.photosynthesis.cornflower_seeds": "Cornflower Seeds",
+
+  "block.photosynthesis.lily_of_the_valley_crop": "Lily Of The Valley",
+  "item.photosynthesis.lily_of_the_valley_seeds": "Lily Of The Valley Seeds",
+
   "item.photosynthesis.tomatosoup": "Tomato Soup",
   "item.photosynthesis.beefstew": "Beefstew",
   "item.photosynthesis.mashedpotatoes": "Mashed Potatoes",

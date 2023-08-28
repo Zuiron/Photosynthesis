@@ -1,0 +1,7 @@
+
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "photosynthesis:block/blue_orchid_crop_stage3"
+  }
+}

@@ -1,0 +1,7 @@
+
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "photosynthesis:block/white_tulip_crop_stage0"
+  }
+}

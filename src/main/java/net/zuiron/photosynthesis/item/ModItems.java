@@ -858,6 +858,17 @@ public class ModItems {
     public static final Item CHANTERELLE_MUSHROOM_SPORES = registerSeedItem("chanterelle_mushroom_spores", ModBlocks.CHANTERELLE_MUSHROOM_CROP);
     public static final Item MOREL_MUSHROOM_SPORES = registerSeedItem("morel_mushroom_spores", ModBlocks.MOREL_MUSHROOM_CROP);
     public static final Item DANDELION_SEEDS = registerSeedItem("dandelion_seeds", ModBlocks.DANDELION_CROP);
+    public static final Item POPPY_SEEDS = registerSeedItem("poppy_seeds", ModBlocks.POPPY_CROP);
+    public static final Item BLUE_ORCHID_SEEDS = registerSeedItem("blue_orchid_seeds", ModBlocks.BLUE_ORCHID_CROP);
+    public static final Item ALLIUM_SEEDS = registerSeedItem("allium_seeds", ModBlocks.ALLIUM_CROP);
+    public static final Item AZURE_BLUET_SEEDS = registerSeedItem("azure_bluet_seeds", ModBlocks.AZURE_BLUET_CROP);
+    public static final Item RED_TULIP_SEEDS = registerSeedItem("red_tulip_seeds", ModBlocks.RED_TULIP_CROP);
+    public static final Item ORANGE_TULIP_SEEDS = registerSeedItem("orange_tulip_seeds", ModBlocks.ORANGE_TULIP_CROP);
+    public static final Item WHITE_TULIP_SEEDS = registerSeedItem("white_tulip_seeds", ModBlocks.WHITE_TULIP_CROP);
+    public static final Item PINK_TULIP_SEEDS = registerSeedItem("pink_tulip_seeds", ModBlocks.PINK_TULIP_CROP);
+    public static final Item OXEYE_DAISY_SEEDS = registerSeedItem("oxeye_daisy_seeds", ModBlocks.OXEYE_DAISY_CROP);
+    public static final Item CORNFLOWER_SEEDS = registerSeedItem("cornflower_seeds", ModBlocks.CORNFLOWER_CROP);
+    public static final Item LILY_OF_THE_VALLEY_SEEDS = registerSeedItem("lily_of_the_valley_seeds", ModBlocks.LILY_OF_THE_VALLEY_CROP);
 
     // Meat's ----------------------------------------------------------------------------------------------------------
     public static final Item COW_BRISKET = registerItem("cow_brisket",

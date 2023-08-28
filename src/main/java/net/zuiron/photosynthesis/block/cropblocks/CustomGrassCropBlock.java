@@ -55,6 +55,17 @@ public class CustomGrassCropBlock extends CropBlock {
         switch (seed) {
             case "grass_crop": return ModItems.GRASS_SEEDS;
             case "dandelion_crop": return ModItems.DANDELION_SEEDS;
+            case "poppy_crop": return ModItems.POPPY_SEEDS;
+            case "blue_orchid_crop": return ModItems.BLUE_ORCHID_SEEDS;
+            case "allium_crop": return ModItems.ALLIUM_SEEDS;
+            case "azure_bluet_crop": return ModItems.AZURE_BLUET_SEEDS;
+            case "red_tulip_crop": return ModItems.RED_TULIP_SEEDS;
+            case "orange_tulip_crop": return ModItems.ORANGE_TULIP_SEEDS;
+            case "white_tulip_crop": return ModItems.WHITE_TULIP_SEEDS;
+            case "pink_tulip_crop": return ModItems.PINK_TULIP_SEEDS;
+            case "oxeye_daisy_crop": return ModItems.OXEYE_DAISY_SEEDS;
+            case "cornflower_crop": return ModItems.CORNFLOWER_SEEDS;
+            case "lily_of_the_valley_crop": return ModItems.LILY_OF_THE_VALLEY_SEEDS;
 
             default: return Items.AIR;
         }

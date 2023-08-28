@@ -253,7 +253,18 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.BARLEY_DOUGH,
                 ModItems.CORN_DOUGH,
                 ModItems.SEMOLINA_DOUGH,
-                ModItems.DANDELION_SEEDS
+                ModItems.DANDELION_SEEDS,
+                ModItems.POPPY_SEEDS,
+                ModItems.BLUE_ORCHID_SEEDS,
+                ModItems.ALLIUM_SEEDS,
+                ModItems.AZURE_BLUET_SEEDS,
+                ModItems.RED_TULIP_SEEDS,
+                ModItems.ORANGE_TULIP_SEEDS,
+                ModItems.WHITE_TULIP_SEEDS,
+                ModItems.PINK_TULIP_SEEDS,
+                ModItems.OXEYE_DAISY_SEEDS,
+                ModItems.CORNFLOWER_SEEDS,
+                ModItems.LILY_OF_THE_VALLEY_SEEDS
 
 
 

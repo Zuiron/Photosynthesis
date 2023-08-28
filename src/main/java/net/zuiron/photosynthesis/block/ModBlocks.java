@@ -856,6 +856,17 @@ public class ModBlocks {
     public static final CropBlock ERYTHROXYLUM_COCA_CROP = registerCropBlockSimple("erythroxylum_coca_crop");
 
     public static final CropBlock DANDELION_CROP = registerGrassCropBlockSimple("dandelion_crop");
+    public static final CropBlock POPPY_CROP = registerGrassCropBlockSimple("poppy_crop");
+    public static final CropBlock BLUE_ORCHID_CROP = registerGrassCropBlockSimple("blue_orchid_crop");
+    public static final CropBlock ALLIUM_CROP = registerGrassCropBlockSimple("allium_crop");
+    public static final CropBlock AZURE_BLUET_CROP = registerGrassCropBlockSimple("azure_bluet_crop");
+    public static final CropBlock RED_TULIP_CROP = registerGrassCropBlockSimple("red_tulip_crop");
+    public static final CropBlock ORANGE_TULIP_CROP = registerGrassCropBlockSimple("orange_tulip_crop");
+    public static final CropBlock WHITE_TULIP_CROP = registerGrassCropBlockSimple("white_tulip_crop");
+    public static final CropBlock PINK_TULIP_CROP = registerGrassCropBlockSimple("pink_tulip_crop");
+    public static final CropBlock OXEYE_DAISY_CROP = registerGrassCropBlockSimple("oxeye_daisy_crop");
+    public static final CropBlock CORNFLOWER_CROP = registerGrassCropBlockSimple("cornflower_crop");
+    public static final CropBlock LILY_OF_THE_VALLEY_CROP = registerGrassCropBlockSimple("lily_of_the_valley_crop");
 
 
     // TREE's ----------------------------------------------------------------------------------------------------------

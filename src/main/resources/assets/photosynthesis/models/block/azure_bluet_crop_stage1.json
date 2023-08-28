@@ -1,0 +1,7 @@
+
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "photosynthesis:block/azure_bluet_crop_stage1"
+  }
+}

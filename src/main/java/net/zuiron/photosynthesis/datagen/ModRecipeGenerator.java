@@ -419,7 +419,19 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
         VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.WHITE_BUTTON_MUSHROOM_SPORES, ModItems.WHITE_BUTTON_MUSHROOM, strCategory, seedsCount);
 
         VanillaRecipeProvider.offerShapelessRecipe(exporter, Items.WHEAT_SEEDS, Items.WHEAT, strCategory, seedsCount);
+
         VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.DANDELION_SEEDS, Items.DANDELION, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.POPPY_SEEDS, Items.POPPY, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.BLUE_ORCHID_SEEDS, Items.BLUE_ORCHID, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.ALLIUM_SEEDS, Items.ALLIUM, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.AZURE_BLUET_SEEDS, Items.AZURE_BLUET, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.RED_TULIP_SEEDS, Items.RED_TULIP, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.ORANGE_TULIP_SEEDS, Items.ORANGE_TULIP, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.WHITE_TULIP_SEEDS, Items.WHITE_TULIP, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.PINK_TULIP_SEEDS, Items.PINK_TULIP, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.OXEYE_DAISY_SEEDS, Items.OXEYE_DAISY, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.CORNFLOWER_SEEDS, Items.CORNFLOWER, strCategory, seedsCount);
+        VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.LILY_OF_THE_VALLEY_SEEDS, Items.LILY_OF_THE_VALLEY, strCategory, seedsCount);
 
         /*final TagKey<Item> APPLETREE_LOGS_ITEMS = TagKey.of(RegistryKeys.ITEM, new Identifier("photosynthesis", "appletree_logs"));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.APPLETREE_PLANKS, 4)
