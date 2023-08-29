@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.block.sapling.AzaleaSaplingGenerator;
 import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -40,7 +41,7 @@ public class ModBlocks {
 
     // FLOWERS ---------------------------------------------------------------------------------------------------------
     public static final Block FLORAMELISSIA = registerBlock("floramelissia",
-            new FlowerBlock(StatusEffect.byRawId(1), 1, FabricBlockSettings.copy(Blocks.POTTED_POPPY).nonOpaque().noCollision()));
+            new FlowerBlock(StatusEffects.SATURATION, 7, FabricBlockSettings.copy(Blocks.DANDELION)));
 
     public static final Block POTTED_FLORAMELISSIA = registerBlockWithoutBlockItem("potted_floramelissia",
             new FlowerPotBlock(ModBlocks.FLORAMELISSIA, FabricBlockSettings.copy(Blocks.POTTED_POPPY).nonOpaque()));
