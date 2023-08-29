@@ -56,7 +56,8 @@ public class PhotosynthesisClient implements ClientModInitializer {
 
         HudRenderCallback.EVENT.register(new ThirstHudOverlay());
         HudRenderCallback.EVENT.register(new SeasonsHudOverlay());
-        KeyInputHandler.register();
+        //DISABLE DRINKING KEY
+        //KeyInputHandler.register();
         ClientPlayConnectionEvents.JOIN.register(new ClientPlayConnectionJoin());
 
 
