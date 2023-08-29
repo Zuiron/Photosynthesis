@@ -1,0 +1,16 @@
+{
+  "type": "photosynthesis:mortar",
+  "ingredients": [
+    {
+      "item": "photosynthesis:pestle"
+    },
+    {
+      "item": "minecraft:grass"
+    }
+  ],
+  "output": {
+    "item": "minecraft:green_dye",
+    "count": 2
+  },
+  "cookingtime": 40
+}
