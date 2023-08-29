@@ -1,12 +1,15 @@
 package net.zuiron.photosynthesis.block.cropblocks;
 
 import net.minecraft.block.*;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemConvertible;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.property.Properties;
+import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
@@ -15,7 +18,9 @@ import net.minecraft.world.WorldView;
 import net.zuiron.photosynthesis.api.Seasons;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.item.ModItems;
+import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
 import java.util.Objects;
 
 public class CustomGrassCropBlock extends CropBlock {
@@ -113,5 +118,13 @@ public class CustomGrassCropBlock extends CropBlock {
         } else {
             super.randomTick(state, world, pos, random);
         }
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
+        if(Seasons.isSeasonsEnabled()) {
+            tooltip.add(Text.literal("Grass grows all year round, except in winter time."));
+        }
+        super.appendTooltip(stack, world, tooltip, options);
     }
 }
