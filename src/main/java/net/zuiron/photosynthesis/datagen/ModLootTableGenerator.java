@@ -265,6 +265,7 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.RED_GRAPETREE_SAPLING);
         addDrop(ModBlocks.KIWITREE_SAPLING);
         addDrop(ModBlocks.MANGOTREE_SAPLING);
+        addDrop(ModBlocks.AZALEA_SAPLING);
 
 
         //Planks

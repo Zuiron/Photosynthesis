@@ -107,6 +107,8 @@ public class CropData {
         cropDataMap.put("block.minecraft.acacia_sapling",               new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
         cropDataMap.put("block.minecraft.cherry_sapling",               new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));
         cropDataMap.put("block.minecraft.mangrove_propagule",           new CropData(new int[]{1, 2, 3, 7}, new int[]{0, 1, 2, 3}));
+        //Vanilla Modded Saplings
+        cropDataMap.put("block.photosynthesis.azalea_sapling",          new CropData(new int[]{1, 2, 3, 7}, new int[]{0, 1, 2, 3}));
 
         //Photosynthesis trees                                          //maxAge Summer, Autumn, Winter, Spring ---- minAge Summer, Autumn, Winter, Spring
         cropDataMap.put("block.photosynthesis.appletree_sapling",       new CropData(new int[]{1, 3, 6, 7}, new int[]{0, 1, 3, 6}));

@@ -3,6 +3,7 @@ package net.zuiron.photosynthesis.block;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
+import net.minecraft.block.sapling.AzaleaSaplingGenerator;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -2031,7 +2032,8 @@ public class ModBlocks {
 
 
 
-
+    public static final Block AZALEA_SAPLING = registerBlock("azalea_sapling",
+            new SaplingBlock(new AzaleaSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
 
 
 

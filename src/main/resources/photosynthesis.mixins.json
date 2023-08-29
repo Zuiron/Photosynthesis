@@ -30,7 +30,8 @@
     "Animals.ModSheepEntity",
     "ModItemAnimalDataTooltipMixin",
     "ModBeetrootsBlock",
-    "ModTorchflowerBlock"
+    "ModTorchflowerBlock",
+    "ModAzaleaBlock"
   ],
   "client": [
     "PhotosynthesisMixin"

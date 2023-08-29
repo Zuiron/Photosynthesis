@@ -367,7 +367,7 @@ public class PhotosynthesisClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.KIWITREE_SAPLING);
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.KIWITREE_BUSHCROP);
 
-
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.AZALEA_SAPLING);
 
 
         // BERRY BUSHES ------------------------------------------------------------------------------------------------
