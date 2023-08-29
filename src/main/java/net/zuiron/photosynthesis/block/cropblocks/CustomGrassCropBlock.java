@@ -66,6 +66,8 @@ public class CustomGrassCropBlock extends CropBlock {
             case "oxeye_daisy_crop": return ModItems.OXEYE_DAISY_SEEDS;
             case "cornflower_crop": return ModItems.CORNFLOWER_SEEDS;
             case "lily_of_the_valley_crop": return ModItems.LILY_OF_THE_VALLEY_SEEDS;
+            case "floramelissia_crop": return ModItems.FLORAMELISSIA_SEEDS;
+            case "wither_rose_crop": return ModItems.WITHER_ROSE_SEEDS;
 
             default: return Items.AIR;
         }

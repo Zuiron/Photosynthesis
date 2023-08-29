@@ -1115,6 +1115,12 @@
   "block.photosynthesis.lily_of_the_valley_crop": "Lily Of The Valley",
   "item.photosynthesis.lily_of_the_valley_seeds": "Lily Of The Valley Seeds",
 
+  "block.photosynthesis.floramelissia_crop": "Floramelissia",
+  "item.photosynthesis.floramelissia_seeds": "Floramelissia Seeds",
+
+  "block.photosynthesis.wither_rose_crop": "Wither Rose",
+  "item.photosynthesis.wither_rose_seeds": "Wither Rose Seeds",
+
   "item.photosynthesis.tomatosoup": "Tomato Soup",
   "item.photosynthesis.beefstew": "Beefstew",
   "item.photosynthesis.mashedpotatoes": "Mashed Potatoes",

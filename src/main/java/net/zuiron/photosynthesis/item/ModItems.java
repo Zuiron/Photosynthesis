@@ -869,6 +869,8 @@ public class ModItems {
     public static final Item OXEYE_DAISY_SEEDS = registerSeedItem("oxeye_daisy_seeds", ModBlocks.OXEYE_DAISY_CROP);
     public static final Item CORNFLOWER_SEEDS = registerSeedItem("cornflower_seeds", ModBlocks.CORNFLOWER_CROP);
     public static final Item LILY_OF_THE_VALLEY_SEEDS = registerSeedItem("lily_of_the_valley_seeds", ModBlocks.LILY_OF_THE_VALLEY_CROP);
+    public static final Item FLORAMELISSIA_SEEDS = registerSeedItem("floramelissia_seeds", ModBlocks.FLORAMELISSIA_CROP);
+    public static final Item WITHER_ROSE_SEEDS = registerSeedItem("wither_rose_seeds", ModBlocks.WITHER_ROSE_CROP);
 
     // Meat's ----------------------------------------------------------------------------------------------------------
     public static final Item COW_BRISKET = registerItem("cow_brisket",

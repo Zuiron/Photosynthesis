@@ -868,6 +868,8 @@ public class ModBlocks {
     public static final CropBlock OXEYE_DAISY_CROP = registerGrassCropBlockSimple("oxeye_daisy_crop");
     public static final CropBlock CORNFLOWER_CROP = registerGrassCropBlockSimple("cornflower_crop");
     public static final CropBlock LILY_OF_THE_VALLEY_CROP = registerGrassCropBlockSimple("lily_of_the_valley_crop");
+    public static final CropBlock FLORAMELISSIA_CROP = registerGrassCropBlockSimple("floramelissia_crop");
+    public static final CropBlock WITHER_ROSE_CROP = registerGrassCropBlockSimple("wither_rose_crop");
 
 
     // TREE's ----------------------------------------------------------------------------------------------------------

@@ -803,6 +803,8 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         listCrops.add(new CropEntry(ModBlocks.OXEYE_DAISY_CROP, Items.OXEYE_DAISY, ModItems.OXEYE_DAISY_SEEDS));
         listCrops.add(new CropEntry(ModBlocks.CORNFLOWER_CROP, Items.CORNFLOWER, ModItems.CORNFLOWER_SEEDS));
         listCrops.add(new CropEntry(ModBlocks.LILY_OF_THE_VALLEY_CROP, Items.LILY_OF_THE_VALLEY, ModItems.LILY_OF_THE_VALLEY_SEEDS));
+        listCrops.add(new CropEntry(ModBlocks.FLORAMELISSIA_CROP, ModBlocks.FLORAMELISSIA.asItem(), ModItems.FLORAMELISSIA_SEEDS));
+        listCrops.add(new CropEntry(ModBlocks.WITHER_ROSE_CROP, Items.WITHER_ROSE, ModItems.WITHER_ROSE_SEEDS));
 
 
         for (CropEntry entry : listCrops) {

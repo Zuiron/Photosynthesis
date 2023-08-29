@@ -264,7 +264,9 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.PINK_TULIP_SEEDS,
                 ModItems.OXEYE_DAISY_SEEDS,
                 ModItems.CORNFLOWER_SEEDS,
-                ModItems.LILY_OF_THE_VALLEY_SEEDS
+                ModItems.LILY_OF_THE_VALLEY_SEEDS,
+                ModItems.FLORAMELISSIA_SEEDS,
+                ModItems.WITHER_ROSE_SEEDS
 
 
 
