@@ -11,6 +11,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.property.Properties;
 import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
@@ -58,7 +59,19 @@ public class CustomGrassCropBlock extends CropBlock {
             Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D)
     };
 
+    private static final VoxelShape[] FLOWER_AGE_TO_SHAPE = new VoxelShape[]{
+            Block.createCuboidShape(5.0, 0.0, 5.0, 11.0, 5.0, 11.0),
+            Block.createCuboidShape(5.0, 0.0, 5.0, 11.0, 6.0, 11.0),
+            Block.createCuboidShape(5.0, 0.0, 5.0, 11.0, 6.0, 11.0),
+            Block.createCuboidShape(5.0, 0.0, 5.0, 11.0, 7.0, 11.0),
+            Block.createCuboidShape(5.0, 0.0, 5.0, 11.0, 7.0, 11.0),
+            Block.createCuboidShape(5.0, 0.0, 5.0, 11.0, 8.0, 11.0),
+            Block.createCuboidShape(5.0, 0.0, 5.0, 11.0, 8.0, 11.0),
+            Block.createCuboidShape(5.0, 0.0, 5.0, 11.0, 10.0, 11.0)
+    };
+
     //DOING THIS CAUSES issues with right click harvest. however. if we do not. icon is not present in WTHIT!
+    //Think this issue is fixed.
     @Override
     protected ItemConvertible getSeedsItem() {
 
@@ -91,7 +104,12 @@ public class CustomGrassCropBlock extends CropBlock {
     }
 
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return AGE_TO_SHAPE[(Integer)state.get(this.getAgeProperty())];
+        if(state.isOf(ModBlocks.GRASS_CROP)) {
+            return AGE_TO_SHAPE[(Integer) state.get(this.getAgeProperty())];
+        } else {
+            Vec3d vec3d = state.getModelOffset(world, pos);
+            return FLOWER_AGE_TO_SHAPE[(Integer) state.get(this.getAgeProperty())].offset(vec3d.x, vec3d.y, vec3d.z);
+        }
     }
 
     @Override
