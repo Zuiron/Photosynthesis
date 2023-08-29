@@ -106,10 +106,12 @@ public abstract class ModCowEntity extends AnimalEntity {
                     this.playSound(SoundEvents.ENTITY_SNIFFER_DROP_SEED, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
                     if (mod_Straw > (mod_Straw_max / 2)) {
                         //drop more
-                        this.dropStack(new ItemStack(ModItems.MANURE,8));
+                        if(this.isBaby()) { this.dropStack(new ItemStack(ModItems.MANURE,4)); }
+                        else { this.dropStack(new ItemStack(ModItems.MANURE,8)); }
                     } else {
                         //drop less
-                        this.dropStack(new ItemStack(ModItems.MANURE,4));
+                        if(this.isBaby()) { this.dropStack(new ItemStack(ModItems.MANURE,2)); }
+                        else { this.dropStack(new ItemStack(ModItems.MANURE,4)); }
                     }
                     this.emitGameEvent(GameEvent.ENTITY_PLACE);
                     this.mod_Manure = 0;
@@ -134,11 +136,13 @@ public abstract class ModCowEntity extends AnimalEntity {
     public void writeCustomDataToNbt(NbtCompound nbt) {
         super.writeCustomDataToNbt(nbt);
         nbt.putInt("photosynthesis_milk",this.mod_Milk);
+        nbt.putInt("photosynthesis_manure",this.mod_Manure);
     }
 
     public void readCustomDataFromNbt(NbtCompound nbt) {
         super.readCustomDataFromNbt(nbt);
         this.mod_Milk = nbt.getInt("photosynthesis_milk");
+        this.mod_Manure = nbt.getInt("photosynthesis_manure");
     }
 
     @Inject(method = "interactMob", at = @At("HEAD"), cancellable = true)
@@ -190,6 +194,7 @@ public abstract class ModCowEntity extends AnimalEntity {
                         string += "Straw: "+mod_Straw+"/"+mod_Straw_max+" \n";
                         string += "TMR: "+mod_Food+"/"+mod_Food_max+" \n";
                         string += "Milk: "+this.mod_Milk+"/"+mod_Milk_max+", Buckets: "+ photosynthesis$getAvailBucketsMilk()+" \n";
+                        string += "Manure: "+this.mod_Manure+"/"+this.mod_Manure_max+" \n";
                         string += "Productivity: "+ cowProductivity +"%";
                     //}
 

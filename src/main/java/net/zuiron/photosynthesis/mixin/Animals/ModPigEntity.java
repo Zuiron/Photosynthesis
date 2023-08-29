@@ -6,6 +6,7 @@ import net.minecraft.entity.passive.PigEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
@@ -16,6 +17,9 @@ import net.zuiron.photosynthesis.item.ModItems;
 import net.zuiron.photosynthesis.util.getCustomVarsPassiveEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(PigEntity.class)
 public abstract class ModPigEntity extends AnimalEntity {
@@ -25,6 +29,18 @@ public abstract class ModPigEntity extends AnimalEntity {
     protected final int mod_Manure_max = 24000; //drop every mc day.
     protected ModPigEntity(EntityType<? extends AnimalEntity> entityType, World world) {
         super(entityType, world);
+    }
+
+    @Inject(method = "writeCustomDataToNbt", at = @At("TAIL"), cancellable = true)
+    public void writeCustomDataToNbt(NbtCompound nbt, CallbackInfo ci) {
+        //super.writeCustomDataToNbt(nbt);
+        nbt.putInt("photosynthesis_manure",this.mod_Manure);
+    }
+
+    @Inject(method = "readCustomDataFromNbt", at = @At("TAIL"), cancellable = true)
+    public void readCustomDataFromNbt(NbtCompound nbt, CallbackInfo ci) {
+        //super.readCustomDataFromNbt(nbt);
+        this.mod_Manure = nbt.getInt("photosynthesis_manure");
     }
 
     @Override
@@ -60,10 +76,12 @@ public abstract class ModPigEntity extends AnimalEntity {
                 this.playSound(SoundEvents.ENTITY_SNIFFER_DROP_SEED, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
                 if (mod_Straw > (mod_Straw_max / 2)) {
                     //drop more
-                    this.dropStack(new ItemStack(ModItems.MANURE,6));
+                    if(this.isBaby()) { this.dropStack(new ItemStack(ModItems.MANURE,3)); }
+                    else { this.dropStack(new ItemStack(ModItems.MANURE,6)); }
                 } else {
                     //drop less
-                    this.dropStack(new ItemStack(ModItems.MANURE,3));
+                    if(this.isBaby()) { this.dropStack(new ItemStack(ModItems.MANURE,2)); }
+                    else { this.dropStack(new ItemStack(ModItems.MANURE,3)); }
                 }
                 this.emitGameEvent(GameEvent.ENTITY_PLACE);
                 this.mod_Manure = 0;
@@ -117,6 +135,7 @@ public abstract class ModPigEntity extends AnimalEntity {
                     string += "Water: "+mod_Water+"/"+mod_Water_max+" \n";
                     string += "Straw: "+mod_Straw+"/"+mod_Straw_max+" \n";
                     string += "Food: "+mod_Food+"/"+mod_Food_max+" \n";
+                    string += "Manure: "+this.mod_Manure+"/"+this.mod_Manure_max+" \n";
                     string += "Productivity: "+ PigProductivity +"%";
 
 
