@@ -5,13 +5,18 @@ import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldView;
 import net.zuiron.photosynthesis.api.Seasons;
+import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.item.ModItems;
+
+import java.util.Objects;
 
 public class CustomGrassCropBlock extends CropBlock {
     String seed;
@@ -82,5 +87,31 @@ public class CustomGrassCropBlock extends CropBlock {
 
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return AGE_TO_SHAPE[(Integer)state.get(this.getAgeProperty())];
+    }
+
+    @Override
+    public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+        if(state.isOf(ModBlocks.GRASS_CROP)) {
+            float f;
+            int i;
+            if (world.getBaseLightLevel(pos, 0) >= 9 &&
+                    (i = this.getAge(state)) < this.getMaxAge() &&
+                    random.nextInt(8) == 0) { //12.5% chance.
+
+                if (world.getBlockState(pos).contains(AGE)) { //check first in case it doesn't have age7 property.
+                    if(Seasons.isSeasonsEnabled()) {
+                        if(Objects.equals(Seasons.getSeasonString(Seasons.getCurrentSeason(world.getTimeOfDay())), "Winter")) {
+                            //world.setBlockState(pos, state.with(AGE, this.getAge(state) + 1), 2);
+                        } else {
+                            world.setBlockState(pos, state.with(AGE, this.getAge(state) + 1), 2);
+                        }
+                    } else {
+                        world.setBlockState(pos, state.with(AGE, this.getAge(state) + 1), 2);
+                    }
+                }
+            }
+        } else {
+            super.randomTick(state, world, pos, random);
+        }
     }
 }
