@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#B"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:rabbit_hide"
+    },
+    "B": {
+      "item": "photosynthesis:salt"
+    }
+  },
+  "result": {
+    "item": "photosynthesis:salted_rabbit_hide",
+    "count": 1
+  }
+}

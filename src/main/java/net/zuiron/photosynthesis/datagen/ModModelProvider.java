@@ -167,6 +167,13 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.HORSE_LEATHER,
                 ModItems.WOLF_PELT,
 
+                ModItems.RAW_LEATHER,
+                ModItems.SALTED_RAW_LEATHER,
+                ModItems.SALTED_PIG_SKIN,
+                ModItems.SALTED_WOLF_PELT,
+                ModItems.SALTED_HORSE_LEATHER,
+                ModItems.SALTED_RABBIT_HIDE,
+
                 ModItems.FIRESTARTER,
 
                 ModItems.BOILED_EGG,

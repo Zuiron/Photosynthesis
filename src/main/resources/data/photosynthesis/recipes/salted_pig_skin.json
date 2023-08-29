@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#B"
+  ],
+  "key": {
+    "#": {
+      "item": "photosynthesis:pig_skin"
+    },
+    "B": {
+      "item": "photosynthesis:salt"
+    }
+  },
+  "result": {
+    "item": "photosynthesis:salted_pig_skin",
+    "count": 1
+  }
+}

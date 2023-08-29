@@ -235,8 +235,8 @@ public class modifyLootTables {
                 poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(1f))
-                        .with(ItemEntry.builder(Items.LEATHER))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                        .with(ItemEntry.builder(ModItems.RAW_LEATHER))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(4.0f, 6.0f)).build());
                 tableBuilder.pool(poolBuilder.build());
 
                 poolBuilder = LootPool.builder()

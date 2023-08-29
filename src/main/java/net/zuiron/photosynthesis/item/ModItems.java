@@ -873,6 +873,26 @@ public class ModItems {
     public static final Item FLORAMELISSIA_SEEDS = registerSeedItem("floramelissia_seeds", ModBlocks.FLORAMELISSIA_CROP);
     public static final Item WITHER_ROSE_SEEDS = registerSeedItem("wither_rose_seeds", ModBlocks.WITHER_ROSE_CROP);
 
+    // Leathers
+    public static final Item RAW_LEATHER = registerItem("raw_leather",
+            new Item(new FabricItemSettings()));
+    public static final Item PIG_SKIN = registerItem("pig_skin",
+            new Item(new FabricItemSettings()));
+    public static final Item WOLF_PELT = registerItem("wolf_pelt",
+            new Item(new FabricItemSettings()));
+    public static final Item HORSE_LEATHER = registerItem("horse_leather",
+            new Item(new FabricItemSettings()));
+    public static final Item SALTED_PIG_SKIN = registerItem("salted_pig_skin",
+            new Item(new FabricItemSettings()));
+    public static final Item SALTED_WOLF_PELT = registerItem("salted_wolf_pelt",
+            new Item(new FabricItemSettings()));
+    public static final Item SALTED_RAW_LEATHER = registerItem("salted_raw_leather",
+            new Item(new FabricItemSettings()));
+    public static final Item SALTED_HORSE_LEATHER = registerItem("salted_horse_leather",
+            new Item(new FabricItemSettings()));
+    public static final Item SALTED_RABBIT_HIDE = registerItem("salted_rabbit_hide",
+            new Item(new FabricItemSettings()));
+
     // Meat's ----------------------------------------------------------------------------------------------------------
     public static final Item COW_BRISKET = registerItem("cow_brisket",
             new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
@@ -944,9 +964,6 @@ public class ModItems {
     public static final Item RAW_HAM = registerItem("raw_ham",
             new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
-    public static final Item PIG_SKIN = registerItem("pig_skin",
-            new Item(new FabricItemSettings()));
-
     public static final Item PIG_BONES = registerItem("pig_bones",
             new Item(new FabricItemSettings()));
 
@@ -963,11 +980,7 @@ public class ModItems {
     public static final Item HORSE_HAIR = registerItem("horse_hair",
             new Item(new FabricItemSettings()));
 
-    public static final Item HORSE_LEATHER = registerItem("horse_leather",
-            new Item(new FabricItemSettings()));
 
-    public static final Item WOLF_PELT = registerItem("wolf_pelt",
-            new Item(new FabricItemSettings()));
 
     // Food's ----------------------------------------------------------------------------------------------------------
 
