@@ -266,7 +266,8 @@ public class CropData {
         cropDataMap.put("block.photosynthesis.oxeye_daisy_crop",            new CropData(new int[]{5, 2, 4, 7}, new int[]{7, 0, 2, 4}));    //plant autumn, harvest spring.
         cropDataMap.put("block.photosynthesis.cornflower_crop",             new CropData(new int[]{5, 2, 4, 7}, new int[]{7, 0, 2, 4}));    //plant autumn, harvest spring.
         cropDataMap.put("block.photosynthesis.lily_of_the_valley_crop",     new CropData(new int[]{5, 2, 4, 7}, new int[]{7, 0, 2, 4}));    //plant autumn, harvest spring.
-
+        cropDataMap.put("block.photosynthesis.floramelissia_crop",          new CropData(new int[]{5, 2, 4, 7}, new int[]{7, 0, 2, 4}));    //plant autumn, harvest spring.
+        cropDataMap.put("block.photosynthesis.wither_rose_crop",            new CropData(new int[]{5, 2, 4, 7}, new int[]{7, 0, 2, 4}));    //plant autumn, harvest spring.
         //Berries - where you want it to grow to max, use 7 not 3 as max, because 7 is identifier as "harvest season"
                                                                         //maxAge Summer, Autumn, Winter, Spring ---- minAge Summer, Autumn, Winter, Spring
         cropDataMap.put("block.photosynthesis.blueberry_bush",          new CropData(new int[]{7, 0, 0, 2}, new int[]{2, 7, 7, 0}));    //plant spring, harvest summer.
