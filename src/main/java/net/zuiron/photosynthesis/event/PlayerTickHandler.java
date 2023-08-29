@@ -11,6 +11,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.config.ModConfig;
+import net.zuiron.photosynthesis.effect.ModEffects;
 import net.zuiron.photosynthesis.util.IEntityDataSaver;
 import net.zuiron.photosynthesis.util.ThirstData;
 
@@ -49,16 +50,18 @@ public class PlayerTickHandler implements ServerTickEvents.StartTick {
                 }
                 IEntityDataSaver dataPlayer = ((IEntityDataSaver) player);
 
-                //HURT the player
+                //HURT the player, apply dehydration effect.
                 if (new Random().nextFloat() <= 0.01f) {
                     if (ThirstData.getThirst(dataPlayer) <= 1) {
-                        player.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 500, 0));
+                        //player.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 500, 0));
                         player.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 500, 0));
+                        player.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE, 500, 0));
                     }
                     if (ThirstData.getThirst(dataPlayer) <= 0) {
-                        player.addStatusEffect(new StatusEffectInstance(StatusEffects.HUNGER, 500, 0));
-                        player.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE, 500, 0));
-                        player.damage(player.getDamageSources().starve(), 1);
+                        //player.addStatusEffect(new StatusEffectInstance(StatusEffects.HUNGER, 500, 0));
+                        //player.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE, 500, 0));
+                        //player.damage(player.getDamageSources().starve(), 1);
+                        player.addStatusEffect(new StatusEffectInstance(ModEffects.DEHYDRATED, 500, 0));
                     }
                 }
 

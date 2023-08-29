@@ -16,6 +16,7 @@ import net.minecraft.world.gen.treedecorator.TreeDecoratorType;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.block.entity.ModBlockEntities;
 import net.zuiron.photosynthesis.config.ModConfig;
+import net.zuiron.photosynthesis.effect.ModEffects;
 import net.zuiron.photosynthesis.event.OnPlayerEatEvent;
 import net.zuiron.photosynthesis.event.PlayerTickHandler;
 import net.zuiron.photosynthesis.event.ModUseItemCallback;
@@ -203,6 +204,8 @@ public class Photosynthesis implements ModInitializer {
 		modifyLootTables.registerModifyLootTables();
 
 		ModParticles.registerParticles();
+
+		ModEffects.registerEffects();
 
 		OnPlayerEatEvent.registerOnPlayerEatEvents(); //triggered after eaten something.
 
