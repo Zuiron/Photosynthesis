@@ -12,6 +12,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
+import net.zuiron.photosynthesis.effect.ModEffects;
 import net.zuiron.photosynthesis.item.advanced.WrenchItem;
 import net.zuiron.photosynthesis.mixin.ItemAccessor;
 
@@ -1314,10 +1315,21 @@ public class ModItems {
             new Item(new FabricItemSettings()));
 
     public static final Item MUG_MEAD = registerItem("mug_mead", //max 10 thirst - 600 tSat - damage is drink usage.
-            new ThirstItem(new FabricItemSettings().maxCount(1).maxDamage(6).recipeRemainder(ModItems.EMPTY_MUG),3, 240));
+            new ThirstItem(new FabricItemSettings()
+                    .maxCount(1)
+                    .maxDamage(6)
+                    .recipeRemainder(ModItems.EMPTY_MUG)
+                    .food(new FoodComponent.Builder()
+                            .hunger(4)
+                            .saturationModifier(1.0f)
+                            .alwaysEdible()
+                            .statusEffect(new StatusEffectInstance(ModEffects.MEAD, 100, 0),1.0f)
+                            .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 500,0),1.0f)
+                            .build())
+                    ,3, 240));
 
-    public static final Item MUG_WATER = registerItem("mug_water", //max 10 thirst - 600 tSat - damage is drink usage.
-            new ThirstItem(new FabricItemSettings().maxCount(1).maxDamage(6).recipeRemainder(ModItems.EMPTY_MUG),3, 120));
+    /*public static final Item MUG_WATER = registerItem("mug_water", //max 10 thirst - 600 tSat - damage is drink usage.
+            new ThirstItem(new FabricItemSettings().maxCount(1).maxDamage(6).recipeRemainder(ModItems.EMPTY_MUG),3, 120));*/
 
     public static final Item LEATHER_WATER_BLADDER = registerItem("leather_water_bladder",
             new FillableLeatherWaterBladder(new FabricItemSettings().maxCount(1).maxDamage(1)));

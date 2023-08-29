@@ -62,6 +62,7 @@ public class PlayerTickHandler implements ServerTickEvents.StartTick {
                         //player.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE, 500, 0));
                         //player.damage(player.getDamageSources().starve(), 1);
                         player.addStatusEffect(new StatusEffectInstance(ModEffects.DEHYDRATED, 500, 0));
+                        player.addStatusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 500, 0));
                     }
                 }
 

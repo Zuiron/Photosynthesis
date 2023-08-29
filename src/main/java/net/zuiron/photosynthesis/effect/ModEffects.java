@@ -12,6 +12,9 @@ public class ModEffects {
     public static final StatusEffect DEHYDRATED = registerStatusEffect("dehydrated",
             new DehydratedEffect(StatusEffectCategory.HARMFUL,0x36ebab));
 
+    public static final StatusEffect MEAD = registerStatusEffect("mead",
+            new MeadEffect(StatusEffectCategory.BENEFICIAL,0x36ebab));
+
     private static StatusEffect registerStatusEffect(String name, StatusEffect statusEffect) {
         return Registry.register(Registries.STATUS_EFFECT, new Identifier(Photosynthesis.MOD_ID, name), statusEffect);
     }

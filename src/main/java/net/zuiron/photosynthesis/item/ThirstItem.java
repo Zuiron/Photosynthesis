@@ -15,6 +15,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.UseAction;
 import net.minecraft.world.World;
+import net.zuiron.photosynthesis.effect.ModEffects;
 import net.zuiron.photosynthesis.util.IEntityDataSaver;
 import net.zuiron.photosynthesis.util.ThirstData;
 import org.jetbrains.annotations.Nullable;
@@ -60,6 +61,9 @@ public class ThirstItem extends Item {
             stack.damage(1, user, (e) -> {
                 Criteria.CONSUME_ITEM.trigger(serverPlayerEntity, stack);
             });
+            /*if(stack.isOf(ModItems.MUG_MEAD)) {
+                //user.addStatusEffect(new StatusEffectInstance(ModEffects.MEAD, 100, 0));
+            }*/
         }
         ItemStack recipeRemain = this.getRecipeRemainder(stack);
         return stack.isEmpty() ? new ItemStack(recipeRemain.getItem()) : stack;
