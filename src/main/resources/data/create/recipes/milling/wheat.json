@@ -1,0 +1,31 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "item": "minecraft:wheat"
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:air"
+    },
+    {
+      "item": "create:wheat_flour",
+      "count": 2,
+      "chance": 0.25
+    },
+    {
+      "item": "minecraft:wheat_seeds",
+      "chance": 0.25
+    }
+  ],
+  "processingTime": 150,
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ]
+}

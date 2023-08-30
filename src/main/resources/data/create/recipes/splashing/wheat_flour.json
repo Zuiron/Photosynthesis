@@ -1,0 +1,21 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "tag": "c:flour/wheat"
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:air"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "photosynthesis:wheat_flour"
+    },
+    {
+      "item": "photosynthesis:salt"
+    },
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "fluid": "minecraft:water",
+      "nbt": {},
+      "amount": 20250
+    }
+  ],
+  "results": [
+    {
+      "item": "photosynthesis:wheat_dough"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ]
+}
