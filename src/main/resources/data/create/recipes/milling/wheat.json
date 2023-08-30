@@ -2,7 +2,7 @@
   "type": "create:milling",
   "ingredients": [
     {
-      "item": "minecraft:wheat"
+      "item": "minecraft:air"
     }
   ],
   "results": [

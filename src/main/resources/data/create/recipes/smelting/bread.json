@@ -4,7 +4,7 @@
   "cookingtime": 200,
   "experience": 0.0,
   "ingredient": {
-    "item": "create:dough"
+    "item": "minecraft:air"
   },
   "result": "minecraft:air",
   "fabric:load_conditions": [

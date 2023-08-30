@@ -2,7 +2,7 @@
   "type": "create:splashing",
   "ingredients": [
     {
-      "tag": "c:flour/wheat"
+      "item": "minecraft:air"
     }
   ],
   "results": [
