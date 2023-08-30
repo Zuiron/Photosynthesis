@@ -45,7 +45,7 @@ public class ModItems {
             new Item(new FabricItemSettings()));
 
     public static final Item MANURE = registerItem("manure",
-            new Item(new FabricItemSettings()));
+            new TooltippedItem(new FabricItemSettings(),"Organic Fertilizer"));
 
     public static final Item RAW_SULFUR = registerItem("raw_sulfur",
             new Item(new FabricItemSettings()));
