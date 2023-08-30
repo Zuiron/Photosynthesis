@@ -1,0 +1,25 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "photosynthesis:measuring_cup"
+    },
+    {
+      "fluid": "photosynthesis:sunfloweroil",
+      "amount": 20250
+    }
+  ],
+  "results": [
+    {
+      "item": "photosynthesis:measuring_cup_sunfloweroil"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ]
+}
