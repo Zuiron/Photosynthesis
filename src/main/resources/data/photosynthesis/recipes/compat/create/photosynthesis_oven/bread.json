@@ -1,0 +1,26 @@
+{
+  "type": "photosynthesis:woodfiredoven",
+  "ingredients": [
+    {
+      "item": "photosynthesis:bread_form",
+      "count": 1
+    },
+    {
+      "item": "create:dough",
+      "count": 2
+    }
+  ],
+  "output": {
+    "item": "minecraft:bread",
+    "count": 2
+  },
+  "cookingtime": 300,
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ]
+}
