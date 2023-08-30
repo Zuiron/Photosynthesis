@@ -1,0 +1,27 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "photosynthesis:raw_salt"
+    }
+  ],
+  "results": [
+    {
+      "item": "photosynthesis:salt",
+      "count": 3
+    },
+    {
+      "item": "photosynthesis:salt",
+      "chance": 0.75
+    }
+  ],
+  "processingTime": 150,
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ]
+}

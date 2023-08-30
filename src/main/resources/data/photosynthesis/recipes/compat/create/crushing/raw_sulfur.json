@@ -1,0 +1,27 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "photosynthesis:raw_sulfur"
+    }
+  ],
+  "results": [
+    {
+      "item": "photosynthesis:sulfur_dust",
+      "count": 8
+    },
+    {
+      "item": "photosynthesis:sulfur_dust",
+      "chance": 0.75
+    }
+  ],
+  "processingTime": 150,
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ]
+}

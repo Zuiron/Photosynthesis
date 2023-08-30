@@ -1,0 +1,25 @@
+{
+  "type": "create:emptying",
+  "ingredients": [
+    {
+      "item": "photosynthesis:measuring_cup_milk_cream"
+    }
+  ],
+  "results": [
+    {
+      "item": "photosynthesis:measuring_cup"
+    },
+    {
+      "fluid": "photosynthesis:milkcream",
+      "amount": 20250
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ]
+}

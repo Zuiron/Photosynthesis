@@ -1,0 +1,25 @@
+{
+  "type": "create:emptying",
+  "ingredients": [
+    {
+      "item": "photosynthesis:measuring_cup_canolaoil"
+    }
+  ],
+  "results": [
+    {
+      "item": "photosynthesis:measuring_cup"
+    },
+    {
+      "fluid": "photosynthesis:canolaoil",
+      "amount": 20250
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ]
+}
