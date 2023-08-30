@@ -5,13 +5,13 @@
       "item": "photosynthesis:measuring_cup"
     },
     {
-      "fluidTag": "c:milk",
+      "fluid": "minecraft:water",
       "amount": 20250
     }
   ],
   "results": [
     {
-      "item": "photosynthesis:measuring_cup_milk"
+      "item": "photosynthesis:measuring_cup_water"
     }
   ],
   "fabric:load_conditions": [

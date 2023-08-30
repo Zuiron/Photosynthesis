@@ -1,17 +1,17 @@
 {
-  "type": "create:filling",
+  "type": "create:emptying",
   "ingredients": [
     {
-      "item": "photosynthesis:measuring_cup"
-    },
-    {
-      "fluidTag": "c:milk",
-      "amount": 20250
+      "item": "photosynthesis:measuring_cup_water"
     }
   ],
   "results": [
     {
-      "item": "photosynthesis:measuring_cup_milk"
+      "item": "photosynthesis:measuring_cup"
+    },
+    {
+      "fluid": "minecraft:water",
+      "amount": 20250
     }
   ],
   "fabric:load_conditions": [
