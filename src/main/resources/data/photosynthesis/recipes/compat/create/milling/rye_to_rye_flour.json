@@ -1,0 +1,23 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "item": "photosynthesis:rye"
+    }
+  ],
+  "results": [
+    {
+      "item": "photosynthesis:rye_flour",
+      "count": 3
+    }
+  ],
+  "processingTime": 50,
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "item": "photosynthesis:vanillabean"
+    }
+  ],
+  "results": [
+    {
+      "item": "photosynthesis:vanilla_powder",
+      "count": 1
+    }
+  ],
+  "processingTime": 50,
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ]
+}

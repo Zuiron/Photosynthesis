@@ -1,0 +1,23 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "item": "photosynthesis:wheat_flour"
+    }
+  ],
+  "results": [
+    {
+      "item": "photosynthesis:semolina_flour",
+      "count": 1
+    }
+  ],
+  "processingTime": 50,
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ]
+}
