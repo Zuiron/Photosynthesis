@@ -90,7 +90,7 @@ public abstract class ModCowEntity extends AnimalEntity {
             }
 
             //milk control.
-            if(!this.isBaby() && cowProductivity >= 25.0f) {
+            if(!this.isBaby() && cowProductivity >= 25.0f && this.mod_Milk < this.mod_Milk_max) {
                 this.mod_Milk++;
                 if(cowProductivity >= 50.0f) { this.mod_Milk++; }
                 if(cowProductivity >= 75.0f) { this.mod_Milk++; }

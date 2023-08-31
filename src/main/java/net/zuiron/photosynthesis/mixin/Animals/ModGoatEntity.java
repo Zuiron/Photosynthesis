@@ -60,7 +60,7 @@ public abstract class ModGoatEntity extends AnimalEntity {
         }
 
         //milk control.
-        if(!this.isBaby() && goatProductivity >= 50.0f) {
+        if(!this.isBaby() && goatProductivity >= 50.0f && this.mod_Milk < this.mod_Milk_max) {
             this.mod_Milk+=2;
             if(goatProductivity >= 100.0f) { this.mod_Milk += 2; }
         }
