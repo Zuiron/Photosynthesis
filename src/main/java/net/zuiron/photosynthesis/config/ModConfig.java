@@ -92,6 +92,10 @@ public class ModConfig implements ConfigData {
     @Comment("enable or disable natural SkeletonHorse spawning")
     public boolean doSkeletonHorseSpawn = false;
 
+    @ConfigEntry.Gui.Tooltip
+    @Comment("enable or disable natural EnderMan spawning")
+    public boolean doEnderManSpawn = false;
+
     //https://www.curseforge.com/minecraft/texture-packs/seasons-data-pack
 
     // CLIENT side-only SETTINGS

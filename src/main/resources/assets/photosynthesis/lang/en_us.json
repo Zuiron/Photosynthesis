@@ -58,6 +58,8 @@
   "text.autoconfig.photosynthesis.option.doSpiderSpawn": "Enable Natural Spider Spawn",
   "text.autoconfig.photosynthesis.option.doSkeletonHorseSpawn.@Tooltip": "When NO, Skeleton wont spawn naturally. \n (If on server, edit server config file manually, requires server restart)",
   "text.autoconfig.photosynthesis.option.doSkeletonHorseSpawn": "Enable Natural Skeleton Spawn",
+  "text.autoconfig.photosynthesis.option.doEnderManSpawn.@Tooltip": "When NO, Enderman wont spawn naturally. \n (If on server, edit server config file manually, requires server restart)",
+  "text.autoconfig.photosynthesis.option.doEnderManSpawn": "Enable Natural Enderman Spawn",
 
   "text.autoconfig.photosynthesis.option.seasonDisplayTimeline": "Show Season Timeline Indicator",
   "text.autoconfig.photosynthesis.option.seasonDisplayTimeline.@Tooltip": "Shows the season timeline indicator (top center of screen)",

@@ -61,7 +61,8 @@ public abstract class ModMobEntity extends LivingEntity {
                 type.equals(EntityType.HUSK) ||
                 type.equals(EntityType.WITCH) ||
                 type.equals(EntityType.SPIDER) ||
-                type.equals(EntityType.SKELETON_HORSE)) {
+                type.equals(EntityType.SKELETON_HORSE) ||
+                type.equals(EntityType.ENDERMAN)) {
             if(spawnReason == SpawnReason.CHUNK_GENERATION || spawnReason == SpawnReason.NATURAL) {
                 //Photosynthesis.LOGGER.info("Prevented " + type + " from spawning @" + pos + ", it's from chunkgen, or natural reasons!");
                 if(config.doCreeperSpawn && type.equals(EntityType.CREEPER)) { cir.setReturnValue(world.getBlockState(blockPos).allowsSpawning(world, blockPos, type)); }
@@ -73,6 +74,7 @@ public abstract class ModMobEntity extends LivingEntity {
                 else if(config.doWitchSpawn && type.equals(EntityType.WITCH)) { cir.setReturnValue(world.getBlockState(blockPos).allowsSpawning(world, blockPos, type)); }
                 else if(config.doSpiderSpawn && type.equals(EntityType.SPIDER)) { cir.setReturnValue(world.getBlockState(blockPos).allowsSpawning(world, blockPos, type)); }
                 else if(config.doSkeletonHorseSpawn && type.equals(EntityType.SKELETON_HORSE)) { cir.setReturnValue(world.getBlockState(blockPos).allowsSpawning(world, blockPos, type)); }
+                else if(config.doEnderManSpawn && type.equals(EntityType.ENDERMAN)) { cir.setReturnValue(world.getBlockState(blockPos).allowsSpawning(world, blockPos, type)); }
                 else { cir.setReturnValue(false); }
             } else {
                 //allow structure and spawnegg, spawners etc. but not natural or chunk gen.
