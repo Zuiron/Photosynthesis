@@ -202,7 +202,7 @@ public abstract class ModGoatEntity extends AnimalEntity {
         if(spawnReason == SpawnReason.SPAWN_EGG || spawnReason == SpawnReason.BREEDING) {
             cir.setReturnValue(true);
         } else {
-            Photosynthesis.LOGGER.info("Prevented " + entityType + " from spawning @" + pos + ", it's not from breeding, or spawn-egg!");
+            //Photosynthesis.LOGGER.info("Prevented " + entityType + " from spawning @" + pos + ", it's not from breeding, or spawn-egg!");
             if(config.doGoatSpawn && entityType.equals(EntityType.GOAT)) {
                 cir.setReturnValue(world.getBlockState(pos.down()).isIn(BlockTags.GOATS_SPAWNABLE_ON) && isLightLevelValidForNaturalSpawn(world, pos));
             }
