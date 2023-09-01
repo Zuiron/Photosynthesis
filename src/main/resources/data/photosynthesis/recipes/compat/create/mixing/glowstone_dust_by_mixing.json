@@ -2,16 +2,16 @@
   "type": "create:mixing",
   "ingredients": [
     {
-      "item": "photosynthesis:floramelissia"
+      "item": "minecraft:orange_tulip"
     },
     {
-      "item": "photosynthesis:lime"
+      "item": "photosynthesis:sunflower"
     },
     {
-      "item": "photosynthesis:porcini_mushroom"
+      "item": "photosynthesis:starfruit"
     },
     {
-      "item": "minecraft:warped_fungus"
+      "item": "minecraft:crimson_fungus"
     },
     {
       "fluid": "photosynthesis:mead",
@@ -21,7 +21,7 @@
   ],
   "results": [
     {
-      "item": "minecraft:ender_pearl"
+      "item": "minecraft:glowstone_dust"
     }
   ],
   "fabric:load_conditions": [
