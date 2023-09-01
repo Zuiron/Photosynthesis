@@ -54,10 +54,10 @@ public abstract class ModCocoaBlock extends HorizontalFacingBlock
 
                 if(currentCropAge < 2) {
                     if(currentCropAge >= minAge && currentCropAge < maxAge && seasonPercentage > 0.5f) { //0.5f = 50% "halfway thru season"
-                        Photosynthesis.LOGGER.info("Crop: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NewCropAge: "+(currentCropAge + 1)+", %:"+seasonPercentage);
+                        //Photosynthesis.LOGGER.info("Crop: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NewCropAge: "+(currentCropAge + 1)+", %:"+seasonPercentage);
                         world.setBlockState(pos, (BlockState)state.with(AGE, currentCropAge + 1), Block.NOTIFY_LISTENERS);
                     } else {
-                        Photosynthesis.LOGGER.info("Crop: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NO GROW"+", %:"+seasonPercentage);
+                        //Photosynthesis.LOGGER.info("Crop: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NO GROW"+", %:"+seasonPercentage);
                     }
                 }
 
