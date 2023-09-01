@@ -78,7 +78,7 @@ public class PlayerTickHandler implements ServerTickEvents.StartTick {
 
                     int Sat = ThirstData.removeThirstSaturation(dataPlayer, amount);
                     //player.sendMessage(Text.literal("Removed Thirst Saturation: " + Sat + " - amount: " + amount));
-                    Photosynthesis.LOGGER.info("Removed Thirst Saturation: " + Sat + " - amount: " + amount);
+                    //Photosynthesis.LOGGER.info("Removed Thirst Saturation: " + Sat + " - amount: " + amount);
                 }
             }
         }

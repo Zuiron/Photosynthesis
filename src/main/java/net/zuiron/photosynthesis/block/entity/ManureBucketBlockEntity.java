@@ -149,7 +149,7 @@ public class ManureBucketBlockEntity extends BlockEntity implements ExtendedScre
 
             ItemStack itemStack = scannedItemEntity.getStack();
             if(itemStack.isOf(ModItems.MANURE)) {
-                Photosynthesis.LOGGER.info(itemStack);
+                //Photosynthesis.LOGGER.info(itemStack);
                 //itemStack.decrement(1); //works.
 
                 int maxCount = entity.getStack(0).getMaxCount();
