@@ -4,6 +4,10 @@
     {
       "item": "photosynthesis:measuring_cup_water",
       "count": 1
+    },
+    {
+      "item": "minecraft:egg",
+      "count": 1
     }
   ],
   "output": {
