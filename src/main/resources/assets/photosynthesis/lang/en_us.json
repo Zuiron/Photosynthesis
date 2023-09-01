@@ -5,6 +5,8 @@
 
   "item.photosynthesis.wrench": "Wrench",
 
+  "message.photosynthesis.no_water_nearby": "No Water Nearby!",
+
   "text.autoconfig.photosynthesis.category.default": "Features",
   "text.autoconfig.photosynthesis.category.Client": "Client",
 
