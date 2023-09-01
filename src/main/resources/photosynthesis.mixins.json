@@ -31,7 +31,8 @@
     "ModItemAnimalDataTooltipMixin",
     "ModBeetrootsBlock",
     "ModTorchflowerBlock",
-    "ModAzaleaBlock"
+    "ModAzaleaBlock",
+    "ModFarmlandBlock"
   ],
   "client": [
     "PhotosynthesisMixin"
