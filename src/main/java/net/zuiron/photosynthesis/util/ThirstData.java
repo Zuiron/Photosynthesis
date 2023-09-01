@@ -28,7 +28,7 @@ public class ThirstData {
         NbtCompound nbt = player.getPersistentData(); //TODO something weird is going on here.
         int thirst_sat = nbt.getInt("thirst_sat");
 
-        Photosynthesis.LOGGER.info("thirst sat current: "+thirst_sat);
+        //Photosynthesis.LOGGER.info("thirst sat current: "+thirst_sat);
 
         if(thirst_sat + amount >= 600) {
             thirst_sat = 600;
@@ -36,7 +36,7 @@ public class ThirstData {
             thirst_sat += amount;
         }
 
-        Photosynthesis.LOGGER.info("thirst sat new: "+thirst_sat);
+        //Photosynthesis.LOGGER.info("thirst sat new: "+thirst_sat);
 
         nbt.putInt("thirst_sat", thirst_sat);
         syncThirstSat(thirst_sat, (ServerPlayerEntity) player);
