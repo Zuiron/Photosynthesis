@@ -21,6 +21,8 @@ import net.zuiron.photosynthesis.block.cropblocks.*;
 import net.zuiron.photosynthesis.block.custom.*;
 import net.zuiron.photosynthesis.block.decoration.*;
 import net.zuiron.photosynthesis.item.DamageableBlockItem;
+import net.zuiron.photosynthesis.util.ModConstants;
+import net.zuiron.photosynthesis.util.ModUtil;
 import net.zuiron.photosynthesis.world.feature.tree.*;
 
 import java.util.function.ToIntFunction;
@@ -2121,7 +2123,7 @@ public class ModBlocks {
 
     private static Block registerBaleBlock(String name, Block block) {
         Item item = Registry.register(Registries.ITEM, new Identifier(Photosynthesis.MOD_ID, name),
-                new DamageableBlockItem(block, new FabricItemSettings().maxCount(1).maxDamage(168000)));
+                new DamageableBlockItem(block, new FabricItemSettings().maxCount(1).maxDamage(ModConstants.BALES_DURABILITY)));
 
         return Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, name), block);
     }

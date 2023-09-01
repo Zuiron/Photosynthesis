@@ -18,13 +18,14 @@ import net.minecraft.world.World;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.block.custom.ModBaleBlock;
+import net.zuiron.photosynthesis.util.ModConstants;
 import net.zuiron.photosynthesis.util.getCustomVarsPassiveEntity;
 
 import java.util.List;
 import java.util.function.Predicate;
 
 public class BaleBlockEntity extends BlockEntity {
-    private int durability = 168000; //max 1000
+    private int durability = ModConstants.BALES_DURABILITY;
     private boolean durability_set = false;
     public BaleBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.BALE, pos, state);
@@ -66,7 +67,7 @@ public class BaleBlockEntity extends BlockEntity {
 
         if(blockState.getBlock() == ModBlocks.WRAPPED_GRASS_BALE) {
             if(baleBlockEntity.durability > 0) {
-                baleBlockEntity.durability = baleBlockEntity.durability - 2;
+                baleBlockEntity.durability = baleBlockEntity.durability - 72; //was 2, now 72 == 20 minutes. //8640 = 10 seconds
             } else {
                 //replace with silage bale.
                 world.setBlockState(blockPos, ModBlocks.SILAGE_BALE.getDefaultState(), 2);

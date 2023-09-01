@@ -32,6 +32,7 @@ import net.zuiron.photosynthesis.block.entity.KegBlockEntity;
 import net.zuiron.photosynthesis.block.entity.MixingBowlBlockEntity;
 import net.zuiron.photosynthesis.block.entity.ModBlockEntities;
 import net.zuiron.photosynthesis.item.ModItems;
+import net.zuiron.photosynthesis.util.ModConstants;
 import org.jetbrains.annotations.Nullable;
 
 public class ModBaleBlock extends BlockWithEntity implements BlockEntityProvider {
@@ -96,7 +97,7 @@ public class ModBaleBlock extends BlockWithEntity implements BlockEntityProvider
                 //NbtCompound nbtCompound = new NbtCompound();
                 //nbtCompound.putInt("Damage", 500);
                 //baleStack.setNbt(nbtCompound);
-                int actualDamage = 168000 - BaleBlockEntity.getDurability((BaleBlockEntity) blockEntity);
+                int actualDamage = ModConstants.BALES_DURABILITY - BaleBlockEntity.getDurability((BaleBlockEntity) blockEntity);
 
                 baleStack.setDamage(actualDamage);
                 itemStacks.add(baleStack);
@@ -131,8 +132,8 @@ public class ModBaleBlock extends BlockWithEntity implements BlockEntityProvider
 
     @Override
     public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
-        int actualDamage = (168000-itemStack.getDamage());
-        Photosynthesis.LOGGER.info("now: "+actualDamage);
+        int actualDamage = (ModConstants.BALES_DURABILITY-itemStack.getDamage());
+        //Photosynthesis.LOGGER.info("now: "+actualDamage);
 
         BlockEntity blockEntity = world.getBlockEntity(pos);
         if (blockEntity instanceof BaleBlockEntity) {
@@ -151,7 +152,7 @@ public class ModBaleBlock extends BlockWithEntity implements BlockEntityProvider
         assert blockEntity != null;
         int dmg = BaleBlockEntity.getDurability((BaleBlockEntity) blockEntity);
 
-        if (player.getStackInHand(hand).isOf(ModItems.PLASTIC_WRAP) && state.getBlock() == ModBlocks.GRASS_BALE && dmg == 168000) {
+        if (player.getStackInHand(hand).isOf(ModItems.PLASTIC_WRAP) && state.getBlock() == ModBlocks.GRASS_BALE && dmg == ModConstants.BALES_DURABILITY) {
             player.getStackInHand(hand).decrement(1);
             world.setBlockState(pos, ModBlocks.WRAPPED_GRASS_BALE.getDefaultState(), 2);
             world.playSound(null, pos, SoundEvents.BLOCK_WET_GRASS_PLACE, SoundCategory.BLOCKS, 1.0F, 1.0F);
