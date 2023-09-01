@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CS#",
+    "#  "
+  ],
+  "key": {
+    "C": {
+      "item": "minecraft:charcoal"
+    },
+    "S": {
+      "item": "photosynthesis:raw_sulfur"
+    },
+    "#": {
+      "item": "photosynthesis:raw_salt"
+    }
+  },
+  "result": {
+    "item": "minecraft:gunpowder",
+    "count": 2
+  }
+}
