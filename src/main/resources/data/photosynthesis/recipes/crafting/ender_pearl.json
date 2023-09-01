@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "R W",
+    " K "
+  ],
+  "key": {
+    "#": {
+      "item": "photosynthesis:floramelissia"
+    },
+    "R": {
+      "item": "photosynthesis:lime"
+    },
+    "W": {
+      "item": "photosynthesis:porcini_mushroom"
+    },
+    "K": {
+      "item": "photosynthesis:measuring_cup_mead"
+    }
+  },
+  "result": {
+    "item": "minecraft:ender_pearl",
+    "count": 1
+  }
+}

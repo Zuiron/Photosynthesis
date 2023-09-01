@@ -1,0 +1,32 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "photosynthesis:floramelissia"
+    },
+    {
+      "item": "photosynthesis:lime"
+    },
+    {
+      "item": "photosynthesis:porcini_mushroom"
+    },
+    {
+      "fluid": "photosynthesis:mead",
+      "nbt": {},
+      "amount": 20250
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:ender_pearl"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ]
+}
