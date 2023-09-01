@@ -1,22 +1,20 @@
 package net.zuiron.photosynthesis.mixin;
 
 import me.shedaniel.autoconfig.AutoConfig;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.passive.AnimalEntity;
-import net.minecraft.predicate.entity.EntityTypePredicate;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
+import net.minecraft.world.BlockRenderView;
 import net.minecraft.world.WorldAccess;
-import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.config.ModConfig;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-
-import java.util.Objects;
 
 @Mixin(AnimalEntity.class)
 public class ModAnimalEntitySpawnRestrictor {
@@ -30,21 +28,28 @@ public class ModAnimalEntitySpawnRestrictor {
                 type.equals(EntityType.COW) ||
                 type.equals(EntityType.SHEEP) ||
                 type.equals(EntityType.CHICKEN) ||
-                type.equals(EntityType.HORSE) ||
-                type.equals(EntityType.GOAT)) {
+                type.equals(EntityType.HORSE)
+        //        || type.equals(EntityType.GOAT) //GOAT spawn restriction is under ModGoatEntity
+        )
+        {
             if(spawnReason == SpawnReason.SPAWN_EGG || spawnReason == SpawnReason.BREEDING) {
-                cir.setReturnValue(true);
+                cir.setReturnValue(world.getBlockState(pos.down()).isIn(BlockTags.ANIMALS_SPAWNABLE_ON) && MODisLightLevelValidForNaturalSpawn(world, pos));
             } else {
                 //Photosynthesis.LOGGER.info("Prevented " + type + " from spawning @" + pos + ", it's not from breeding, or spawn-egg!");
-                if(config.doPigSpawn && type.equals(EntityType.PIG)) { cir.setReturnValue(true); }
-                else if(config.doCowSpawn && type.equals(EntityType.COW)) { cir.setReturnValue(true); }
-                else if(config.doSheepSpawn && type.equals(EntityType.SHEEP)) { cir.setReturnValue(true); }
-                else if(config.doChickenSpawn && type.equals(EntityType.CHICKEN)) { cir.setReturnValue(true); }
-                else if(config.doHorseSpawn && type.equals(EntityType.HORSE)) { cir.setReturnValue(true); }
-                else if(config.doGoatSpawn && type.equals(EntityType.GOAT)) { cir.setReturnValue(true); }
+                if(config.doPigSpawn && type.equals(EntityType.PIG)) { cir.setReturnValue(world.getBlockState(pos.down()).isIn(BlockTags.ANIMALS_SPAWNABLE_ON) && MODisLightLevelValidForNaturalSpawn(world, pos)); }
+                else if(config.doCowSpawn && type.equals(EntityType.COW)) { cir.setReturnValue(world.getBlockState(pos.down()).isIn(BlockTags.ANIMALS_SPAWNABLE_ON) && MODisLightLevelValidForNaturalSpawn(world, pos)); }
+                else if(config.doSheepSpawn && type.equals(EntityType.SHEEP)) { cir.setReturnValue(world.getBlockState(pos.down()).isIn(BlockTags.ANIMALS_SPAWNABLE_ON) && MODisLightLevelValidForNaturalSpawn(world, pos)); }
+                else if(config.doChickenSpawn && type.equals(EntityType.CHICKEN)) { cir.setReturnValue(world.getBlockState(pos.down()).isIn(BlockTags.ANIMALS_SPAWNABLE_ON) && MODisLightLevelValidForNaturalSpawn(world, pos)); }
+                else if(config.doHorseSpawn && type.equals(EntityType.HORSE)) { cir.setReturnValue(world.getBlockState(pos.down()).isIn(BlockTags.ANIMALS_SPAWNABLE_ON) && MODisLightLevelValidForNaturalSpawn(world, pos)); }
+                //else if(config.doGoatSpawn && type.equals(EntityType.GOAT)) { cir.setReturnValue(true); } //GOAT spawn restriction is under ModGoatEntity
                 else { cir.setReturnValue(false); }
             }
         }
 
+    }
+
+    @Unique
+    private static boolean MODisLightLevelValidForNaturalSpawn(BlockRenderView world, BlockPos pos) {
+        return world.getBaseLightLevel(pos, 0) > 8;
     }
 }

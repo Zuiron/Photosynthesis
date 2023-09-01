@@ -1,6 +1,8 @@
 package net.zuiron.photosynthesis.mixin.Animals;
 
+import me.shedaniel.autoconfig.AutoConfig;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.GoatEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -8,14 +10,18 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsage;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldAccess;
 import net.zuiron.photosynthesis.Photosynthesis;
+import net.zuiron.photosynthesis.config.ModConfig;
 import net.zuiron.photosynthesis.fluid.ModFluids;
 import net.zuiron.photosynthesis.util.getCustomVarsPassiveEntity;
 import org.spongepowered.asm.mixin.Mixin;
@@ -185,5 +191,23 @@ public abstract class ModGoatEntity extends AnimalEntity {
         }
 
         return productivity;
+    }
+
+    @Inject(method = "canSpawn", at = @At("HEAD"), cancellable = true)
+    private static void canSpawn(EntityType<? extends AnimalEntity> entityType, WorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random, CallbackInfoReturnable<Boolean> cir) {
+        //return world.getBlockState(pos.down()).isIn(BlockTags.GOATS_SPAWNABLE_ON) && isLightLevelValidForNaturalSpawn(world, pos);
+
+        ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
+
+        if(spawnReason == SpawnReason.SPAWN_EGG || spawnReason == SpawnReason.BREEDING) {
+            cir.setReturnValue(true);
+        } else {
+            Photosynthesis.LOGGER.info("Prevented " + entityType + " from spawning @" + pos + ", it's not from breeding, or spawn-egg!");
+            if(config.doGoatSpawn && entityType.equals(EntityType.GOAT)) {
+                cir.setReturnValue(world.getBlockState(pos.down()).isIn(BlockTags.GOATS_SPAWNABLE_ON) && isLightLevelValidForNaturalSpawn(world, pos));
+            }
+            else { cir.setReturnValue(false); }
+        }
+        cir.cancel(); //do not run vanilla code.
     }
 }

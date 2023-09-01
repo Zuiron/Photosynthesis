@@ -49,7 +49,7 @@ public abstract class ModMobEntity extends LivingEntity {
     @Inject(method = "canMobSpawn", at = @At("HEAD"), cancellable = true)
     private static void canMobSpawn(EntityType<? extends MobEntity> type, WorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random, CallbackInfoReturnable<Boolean> cir) {
         //vanilla code.
-        //BlockPos blockPos = pos.down();
+        BlockPos blockPos = pos.down();
         //return spawnReason == SpawnReason.SPAWNER || world.getBlockState(blockPos).allowsSpawning(world, blockPos, type);
         ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
         //Photosynthesis.LOGGER.info("trying spawning: "+type+" at: "+pos+", reason: "+spawnReason);
@@ -64,19 +64,18 @@ public abstract class ModMobEntity extends LivingEntity {
                 type.equals(EntityType.SKELETON_HORSE)) {
             if(spawnReason == SpawnReason.CHUNK_GENERATION || spawnReason == SpawnReason.NATURAL) {
                 //Photosynthesis.LOGGER.info("Prevented " + type + " from spawning @" + pos + ", it's from chunkgen, or natural reasons!");
-                if(config.doCreeperSpawn && type.equals(EntityType.CREEPER)) { cir.setReturnValue(true); }
-                else if(config.doZombieSpawn && type.equals(EntityType.ZOMBIE)) { cir.setReturnValue(true); }
-                else if(config.doZombieVillagerSpawn && type.equals(EntityType.ZOMBIE_VILLAGER)) { cir.setReturnValue(true); }
-                else if(config.doZombieHorseSpawn && type.equals(EntityType.ZOMBIE_HORSE)) { cir.setReturnValue(true); }
-                else if(config.doSkeletonSpawn && type.equals(EntityType.SKELETON)) { cir.setReturnValue(true); }
-                else if(config.doHuskSpawn && type.equals(EntityType.HUSK)) { cir.setReturnValue(true); }
-                else if(config.doWitchSpawn && type.equals(EntityType.WITCH)) { cir.setReturnValue(true); }
-                else if(config.doSpiderSpawn && type.equals(EntityType.SPIDER)) { cir.setReturnValue(true); }
-                else if(config.doSkeletonHorseSpawn && type.equals(EntityType.SKELETON_HORSE)) { cir.setReturnValue(true); }
+                if(config.doCreeperSpawn && type.equals(EntityType.CREEPER)) { cir.setReturnValue(world.getBlockState(blockPos).allowsSpawning(world, blockPos, type)); }
+                else if(config.doZombieSpawn && type.equals(EntityType.ZOMBIE)) { cir.setReturnValue(world.getBlockState(blockPos).allowsSpawning(world, blockPos, type)); }
+                else if(config.doZombieVillagerSpawn && type.equals(EntityType.ZOMBIE_VILLAGER)) { cir.setReturnValue(world.getBlockState(blockPos).allowsSpawning(world, blockPos, type)); }
+                else if(config.doZombieHorseSpawn && type.equals(EntityType.ZOMBIE_HORSE)) { cir.setReturnValue(world.getBlockState(blockPos).allowsSpawning(world, blockPos, type)); }
+                else if(config.doSkeletonSpawn && type.equals(EntityType.SKELETON)) { cir.setReturnValue(world.getBlockState(blockPos).allowsSpawning(world, blockPos, type)); }
+                else if(config.doHuskSpawn && type.equals(EntityType.HUSK)) { cir.setReturnValue(world.getBlockState(blockPos).allowsSpawning(world, blockPos, type)); }
+                else if(config.doWitchSpawn && type.equals(EntityType.WITCH)) { cir.setReturnValue(world.getBlockState(blockPos).allowsSpawning(world, blockPos, type)); }
+                else if(config.doSpiderSpawn && type.equals(EntityType.SPIDER)) { cir.setReturnValue(world.getBlockState(blockPos).allowsSpawning(world, blockPos, type)); }
+                else if(config.doSkeletonHorseSpawn && type.equals(EntityType.SKELETON_HORSE)) { cir.setReturnValue(world.getBlockState(blockPos).allowsSpawning(world, blockPos, type)); }
                 else { cir.setReturnValue(false); }
             } else {
                 //allow structure and spawnegg, spawners etc. but not natural or chunk gen.
-                BlockPos blockPos = pos.down();
                 cir.setReturnValue(spawnReason == SpawnReason.SPAWNER || world.getBlockState(blockPos).allowsSpawning(world, blockPos, type));
             }
         }
