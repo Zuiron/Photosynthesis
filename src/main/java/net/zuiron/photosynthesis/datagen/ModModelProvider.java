@@ -74,6 +74,8 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.GARDEN_GRUBBER_IRON,
                 ModItems.GARDEN_GRUBBER_DIAMOND,
 
+                ModItems.CHEESE_SLICER,
+
                 ModItems.CUTTING_KNIFE_FLINT,
                 ModItems.CUTTING_KNIFE_IRON,
                 ModItems.CUTTING_KNIFE_DIAMOND,
@@ -183,7 +185,7 @@ public class ModModelProvider extends FabricModelProvider {
 
                 ModItems.BBQ_SKEWERS,
                 ModItems.MINCED_BEEF,
-                ModItems.YELLOW_CHEESE,
+                //ModItems.YELLOW_CHEESE,
                 ModItems.ENGLISH_BREAKFAST,
                 ModItems.MEATBALLS,
                 ModItems.MINCED_PORK,
@@ -220,7 +222,22 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.POWDERED_SUGAR,
                 ModItems.GELATIN_SHEET,
                 ModItems.VANILLA_POWDER,
-                ModItems.PIZZA,
+                ModItems.MESOPHILIC_CULTURE,
+                ModItems.RENNET,
+
+                ModItems.GOAT_CHEESE,
+                ModItems.SOFT_GOAT_CHEESE,
+                ModItems.GOAT_CHEESE_SLICE,
+
+                ModItems.CHEDDAR_CHEESE,
+                ModItems.SOFT_CHEDDAR_CHEESE,
+                ModItems.CHEDDAR_CHEESE_SLICE,
+
+                ModItems.MOZZARELLA_CHEESE,
+                ModItems.SOFT_MOZZARELLA_CHEESE,
+                ModItems.MOZZARELLA_CHEESE_DICES,
+
+                //ModItems.PIZZA,
                 ModItems.PANCAKES,
                 ModItems.PIE,
                 ModItems.CHICKEN_THIGH,

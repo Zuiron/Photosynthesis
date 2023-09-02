@@ -1,0 +1,14 @@
+{
+  "type": "photosynthesis:cookingpot",
+  "ingredients": [
+    {
+      "item": "photosynthesis:measuring_cup_milk",
+      "count": 4
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:rennet",
+    "count": 1
+  },
+  "cookingtime": 200
+}

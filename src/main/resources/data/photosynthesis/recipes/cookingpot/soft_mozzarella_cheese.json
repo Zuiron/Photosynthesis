@@ -1,0 +1,18 @@
+{
+  "type": "photosynthesis:cookingpot",
+  "ingredients": [
+    {
+      "item": "photosynthesis:measuring_cup_milk",
+      "count": 4
+    },
+    {
+      "item": "photosynthesis:rennet",
+      "count": 1
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:soft_mozzarella_cheese",
+    "count": 2
+  },
+  "cookingtime": 400
+}

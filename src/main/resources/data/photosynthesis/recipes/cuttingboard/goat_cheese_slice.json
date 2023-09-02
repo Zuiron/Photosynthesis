@@ -1,0 +1,16 @@
+{
+  "type": "photosynthesis:cutting_board",
+  "ingredients": [
+    {
+      "item": "photosynthesis:cheese_slicer"
+    },
+    {
+      "item": "photosynthesis:goat_cheese"
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:goat_cheese_slice",
+    "count": 16
+  },
+  "cookingtime": 60
+}

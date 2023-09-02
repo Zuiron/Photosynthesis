@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#ST"
+  ],
+  "key": {
+    "#": {
+      "item": "photosynthesis:bread_slice"
+    },
+    "S": {
+      "item": "photosynthesis:butter"
+    },
+    "T": {
+      "item": "photosynthesis:cheddar_cheese_slice"
+    }
+  },
+  "result": {
+    "item": "photosynthesis:cheese_bread_slice",
+    "count": 1
+  }
+}

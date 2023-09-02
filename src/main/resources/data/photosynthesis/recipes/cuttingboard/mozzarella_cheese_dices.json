@@ -5,12 +5,12 @@
       "tag": "c:cutting_board_cutting_knifes"
     },
     {
-      "item": "minecraft:bread"
+      "item": "photosynthesis:mozzarella_cheese"
     }
   ],
   "output": {
-    "item": "photosynthesis:bread_slice",
+    "item": "photosynthesis:mozzarella_cheese_dices",
     "count": 16
   },
-  "cookingtime": 30
+  "cookingtime": 60
 }

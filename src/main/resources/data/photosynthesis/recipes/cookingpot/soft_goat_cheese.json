@@ -1,0 +1,14 @@
+{
+  "type": "photosynthesis:cookingpot",
+  "ingredients": [
+    {
+      "item": "photosynthesis:measuring_cup_goatmilk",
+      "count": 4
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:soft_goat_cheese",
+    "count": 2
+  },
+  "cookingtime": 400
+}

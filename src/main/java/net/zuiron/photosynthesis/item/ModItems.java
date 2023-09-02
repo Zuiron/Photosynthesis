@@ -169,6 +169,9 @@ public class ModItems {
             new ShovelItem(ToolMaterials.DIAMOND, 0, -0.0F, new FabricItemSettings()));
 
 
+    public static final Item CHEESE_SLICER = registerItem("cheese_slicer",
+            new SwordItem(ToolMaterials.IRON, 0, 0.0F, new FabricItemSettings()));
+
     public static final Item CUTTING_KNIFE_FLINT = registerItem("cutting_knife_flint",
             new SwordItem(ToolMaterials.WOOD, 2, 3.4F, new FabricItemSettings()));
     public static final Item CUTTING_KNIFE_IRON = registerItem("cutting_knife_iron",
@@ -1102,6 +1105,43 @@ public class ModItems {
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
+    public static final Item MESOPHILIC_CULTURE = registerItem("mesophilic_culture",
+            new Item(new FabricItemSettings()));
+
+    public static final Item RENNET = registerItem("rennet",
+            new Item(new FabricItemSettings()));
+
+    public static final Item SOFT_GOAT_CHEESE = registerItem("soft_goat_cheese",
+            new Item(new FabricItemSettings()));
+
+    public static final Item GOAT_CHEESE = registerItem("goat_cheese",
+            new Item(new FabricItemSettings()));
+
+    public static final Item GOAT_CHEESE_SLICE = registerItem("goat_cheese_slice",
+            new Item(new FabricItemSettings()));
+
+    public static final Item SOFT_CHEDDAR_CHEESE = registerItem("soft_cheddar_cheese",
+            new Item(new FabricItemSettings()));
+
+    public static final Item CHEDDAR_CHEESE = registerItem("cheddar_cheese",
+            new Item(new FabricItemSettings()));
+
+    public static final Item CHEDDAR_CHEESE_SLICE = registerItem("cheddar_cheese_slice",
+            new Item(new FabricItemSettings()));
+
+    public static final Item SOFT_MOZZARELLA_CHEESE = registerItem("soft_mozzarella_cheese",
+            new Item(new FabricItemSettings()));
+
+    public static final Item MOZZARELLA_CHEESE = registerItem("mozzarella_cheese",
+            new Item(new FabricItemSettings()));
+
+    public static final Item MOZZARELLA_CHEESE_DICES = registerItem("mozzarella_cheese_dices",
+            new Item(new FabricItemSettings()));
+
+
+
+
+
     public static final Item BUTTER = registerItem("butter",
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
@@ -1150,9 +1190,9 @@ public class ModItems {
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
-    public static final Item YELLOW_CHEESE = registerItem("yellow_cheese",
+    /*public static final Item YELLOW_CHEESE = registerItem("yellow_cheese",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));*/
 
     public static final Item ENGLISH_BREAKFAST = registerItem("english_breakfast",
             new Item(new FabricItemSettings()
@@ -1174,9 +1214,9 @@ public class ModItems {
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
-    public static final Item PIZZA = registerItem("pizza",
+    /*public static final Item PIZZA = registerItem("pizza",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));*/
 
     public static final Item PANCAKES = registerItem("pancakes",
             new Item(new FabricItemSettings()
