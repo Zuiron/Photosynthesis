@@ -1,0 +1,38 @@
+{
+  "type": "photosynthesis:woodfiredoven",
+  "ingredients": [
+    {
+      "item": "photosynthesis:pizza_stone",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:wheat_dough",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:pepperoni_slice",
+      "count": 8
+    },
+    {
+      "item": "photosynthesis:oregano",
+      "count": 4
+    },
+    {
+      "item": "photosynthesis:basil",
+      "count": 4
+    },
+    {
+      "item": "photosynthesis:mozzarella_cheese_dices",
+      "count": 8
+    },
+    {
+      "item": "photosynthesis:measuring_cup_pizza_sauce",
+      "count": 1
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:pizza_pepperoni",
+    "count": 1
+  },
+  "cookingtime": 200
+}

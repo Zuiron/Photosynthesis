@@ -192,6 +192,13 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.PUMPKIN_SOUP,
                 ModItems.WAFFLE,
 
+                ModItems.PEPPERONI_SAUSAGE,
+                ModItems.PEPPERONI_SLICE,
+
+                ModItems.PIZZA_CHEESE,
+                ModItems.PIZZA_HAM,
+                ModItems.PIZZA_PEPPERONI,
+
                 ModItems.CUT_KIWI,
                 ModItems.CUT_WHITE_BUTTON_MUSHROOM,
                 ModItems.CUT_PORCINI_MUSHROOM,

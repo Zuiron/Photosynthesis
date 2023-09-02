@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "B#G",
+    "RXW",
+    "K  "
+  ],
+  "key": {
+    "#": {
+      "item": "photosynthesis:pig_trimmings"
+    },
+    "R": {
+      "item": "photosynthesis:cow_trimmings"
+    },
+    "W": {
+      "item": "photosynthesis:salt"
+    },
+    "B": {
+      "item": "photosynthesis:red_bellpepper"
+    },
+    "G": {
+      "item": "photosynthesis:garlic"
+    },
+    "K": {
+      "item": "minecraft:sugar"
+    },
+    "X": {
+      "item": "photosynthesis:dried_black_pepper"
+    }
+  },
+  "result": {
+    "item": "photosynthesis:pepperoni_sausage",
+    "count": 1
+  }
+}

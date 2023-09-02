@@ -1218,6 +1218,26 @@ public class ModItems {
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));*/
 
+    public static final Item PEPPERONI_SAUSAGE = registerItem("pepperoni_sausage",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item PEPPERONI_SLICE = registerItem("pepperoni_slice",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item PIZZA_CHEESE = registerItem("pizza_cheese",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(15).saturationModifier(1.5f).build())));
+
+    public static final Item PIZZA_PEPPERONI = registerItem("pizza_pepperoni",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(20).saturationModifier(3.0f).build())));
+
+    public static final Item PIZZA_HAM = registerItem("pizza_ham",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(20).saturationModifier(3.0f).build())));
+
     public static final Item PANCAKES = registerItem("pancakes",
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));

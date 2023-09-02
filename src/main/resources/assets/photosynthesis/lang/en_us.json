@@ -1369,6 +1369,14 @@
   "item.photosynthesis.omelette": "Omelette",
   "item.photosynthesis.garlic_bread_slice": "Garlic bread slice",
   "item.photosynthesis.dumpling": "Dumpling",
+
+  "item.photosynthesis.pepperoni_sausage": "Pepperoni Sausage",
+  "item.photosynthesis.pepperoni_slice": "Pepperoni Slice",
+
+  "item.photosynthesis.pizza_cheese": "Pizza Cheese",
+  "item.photosynthesis.pizza_pepperoni": "Pizza Pepperoni",
+  "item.photosynthesis.pizza_ham": "Pizza Ham",
+
   "item.photosynthesis.pancake": "Pancake",
   "item.photosynthesis.bread_form": "Bread Form",
   "item.photosynthesis.baguette_form": "Baguette Form",

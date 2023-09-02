@@ -38,6 +38,7 @@ import net.zuiron.photosynthesis.block.custom.CookingPotBlock;
 import net.zuiron.photosynthesis.block.custom.DryingNetBlock;
 import net.zuiron.photosynthesis.block.custom.WoodFiredOvenBlock;
 import net.zuiron.photosynthesis.block.custom.WoodFiredStoveBlock;
+import net.zuiron.photosynthesis.item.ModItems;
 import net.zuiron.photosynthesis.networking.ModMessages;
 import net.zuiron.photosynthesis.recipe.CookingPotRecipe;
 import net.zuiron.photosynthesis.recipe.WoodFiredOvenRecipe;
@@ -286,8 +287,19 @@ public class WoodFiredOvenBlockEntity extends BlockEntity implements ExtendedScr
             if(entity.getStack(0).getItem() instanceof PotionItem) {
                 entity.setStack(8, new ItemStack(Items.GLASS_BOTTLE, 1));
             } else {
-                //entity.setStack(8, entity.getStack(0).getRecipeRemainder());
-                entity.setStack(8, new ItemStack(entity.getStack(0).getRecipeRemainder().getItem(), (Integer) recipe.get().getCounts().get(0)));
+                //recipe remainder measuring cups only.
+                int remainderCount = 0;
+
+                for (int slot = 1; slot <= 6; slot++) {
+                    ItemStack stackInSlot = entity.getStack(slot);
+                    if (!stackInSlot.isEmpty() && stackInSlot.getRecipeRemainder() != ItemStack.EMPTY && entity.getStack(slot).getRecipeRemainder().isOf(ModItems.MEASURING_CUP)) {
+                        remainderCount += (Integer) recipe.get().getCounts().get(slot);
+                    }
+                }
+
+                if (remainderCount >= 1) {
+                    entity.setStack(8, new ItemStack(ModItems.MEASURING_CUP.asItem(), remainderCount));
+                }
             }
 
             //entity.removeStack(0, (Integer) recipe.get().getCounts().get(0));   //DO NOT REMOVE THIS FROM OVEN, ITS A TOOL SLOT
