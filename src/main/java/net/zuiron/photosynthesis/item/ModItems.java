@@ -201,7 +201,7 @@ public class ModItems {
             new DebugItem(new FabricItemSettings().maxCount(1)));
 
     public static final Item PESTLE = registerItem("pestle",
-            new DamageableItem(new FabricItemSettings().maxCount(1).maxDamage(45)));
+            new DamageableItem(new FabricItemSettings().maxCount(1).maxDamage(250)));
 
     /*public static final Item PLATE = registerItem("plate",
             new Item(new FabricItemSettings()));*/

@@ -224,7 +224,7 @@ public class CuttingBoardBlockEntity extends BlockEntity implements ExtendedScre
                 }
             }
 
-            entity.getStack(0).damage(10, Random.create(0), null); //remove durability from cutting knife.
+            entity.getStack(0).damage(1, Random.create(0), null); //remove durability from cutting knife.
 
             entity.resetProgress();
         }
