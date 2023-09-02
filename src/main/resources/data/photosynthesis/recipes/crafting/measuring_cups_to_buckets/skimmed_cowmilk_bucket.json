@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#W#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "photosynthesis:measuring_cup_skimmed_milk"
+    },
+    "W": {
+      "item": "minecraft:bucket"
+    }
+  },
+  "result": {
+    "item": "photosynthesis:skimmedmilk_bucket",
+    "count": 1
+  }
+}
