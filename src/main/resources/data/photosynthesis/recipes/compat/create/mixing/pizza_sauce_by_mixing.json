@@ -1,0 +1,33 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "photosynthesis:basil"
+    },
+    {
+      "fluid": "photosynthesis:tomatosauce",
+      "nbt": {},
+      "amount": 40500
+    },
+    {
+      "fluid": "photosynthesis:oliveoil",
+      "nbt": {},
+      "amount": 20250
+    }
+  ],
+  "results": [
+    {
+      "fluid": "photosynthesis:pizzasauce",
+      "nbt": {},
+      "amount": 60750
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ]
+}

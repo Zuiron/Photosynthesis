@@ -1,0 +1,30 @@
+{
+  "type": "photosynthesis:mixingbowl",
+  "ingredients": [
+    {
+      "item": "photosynthesis:whisk",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:measuring_cup",
+      "count": 3
+    },
+    {
+      "item": "photosynthesis:measuring_cup_tomato_sauce",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:measuring_cup_oliveoil",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:basil",
+      "count": 1
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:measuring_cup_pizza_sauce",
+    "count": 3
+  },
+  "cookingtime": 400
+}

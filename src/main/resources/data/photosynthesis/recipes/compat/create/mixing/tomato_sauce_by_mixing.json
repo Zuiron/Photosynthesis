@@ -1,0 +1,29 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "photosynthesis:tomato"
+    },
+    {
+      "item": "photosynthesis:tomato"
+    },
+    {
+      "item": "photosynthesis:salt"
+    }
+  ],
+  "results": [
+    {
+      "fluid": "photosynthesis:tomatosauce",
+      "nbt": {},
+      "amount": 20250
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ]
+}

@@ -6,6 +6,7 @@ import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
 import net.minecraft.item.Item;
+import net.zuiron.photosynthesis.fluid.ModFluids;
 import net.zuiron.photosynthesis.item.ModItems;
 
 public class ModModelProvider extends FabricModelProvider {
@@ -241,7 +242,7 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.SUSHI_ROLL2,
                 ModItems.SUSHI_ROLL,
                 ModItems.SALMON_SUSHI,
-                ModItems.PIZZA_SAUCE,
+                //ModItems.PIZZA_SAUCE,
                 ModItems.OAT_BREAD,
                 ModItems.RYE_BREAD,
                 ModItems.TACO_SHELL,
@@ -277,7 +278,9 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.FISH_ROE,
                 ModItems.SMOKED_FISH_ROE,
                 ModItems.KAVIAR,
-                ModItems.WHEAT_BREAD_SLICE_WITH_SCRAMBLED_EGG_AND_KAVIAR
+                ModItems.WHEAT_BREAD_SLICE_WITH_SCRAMBLED_EGG_AND_KAVIAR,
+                ModFluids.PIZZASAUCE_BUCKET,
+                ModFluids.TOMATOSAUCE_BUCKET
 
 
 

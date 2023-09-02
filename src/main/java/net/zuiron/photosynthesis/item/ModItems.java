@@ -268,6 +268,12 @@ public class ModItems {
     public static final Item MEASURING_CUP_MEAD = registerItem("measuring_cup_mead",
             new Item(new FabricItemSettings().recipeRemainder(ModItems.MEASURING_CUP)));
 
+    public static final Item MEASURING_CUP_TOMATO_SAUCE = registerItem("measuring_cup_tomato_sauce",
+            new Item(new FabricItemSettings().recipeRemainder(ModItems.MEASURING_CUP)));
+
+    public static final Item MEASURING_CUP_PIZZA_SAUCE = registerItem("measuring_cup_pizza_sauce",
+            new Item(new FabricItemSettings().recipeRemainder(ModItems.MEASURING_CUP)));
+
     /*
     LATEX_BUCKET = Registry.register(Registries.ITEM, new Identifier(Photosynthesis.MOD_ID, "latex_bucket"),
                 new BucketItem(ModFluids.STILL_LATEX, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1)));
@@ -1257,9 +1263,9 @@ public class ModItems {
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(6).saturationModifier(0.8f).build())));
 
-    public static final Item PIZZA_SAUCE = registerItem("pizza_sauce",
+    /*public static final Item PIZZA_SAUCE = registerItem("pizza_sauce",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));*/
 
     public static final Item OAT_BREAD = registerItem("oat_bread",
             new Item(new FabricItemSettings()

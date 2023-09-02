@@ -17,6 +17,16 @@ import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.item.ModItemGroup;
 
 public class ModFluids {
+    public static FlowableFluid STILL_TOMATOSAUCE;
+    public static FlowableFluid FLOWING_TOMATOSAUCE;
+    public static Block TOMATOSAUCE_BLOCK;
+    public static Item TOMATOSAUCE_BUCKET;
+
+    public static FlowableFluid STILL_PIZZASAUCE;
+    public static FlowableFluid FLOWING_PIZZASAUCE;
+    public static Block PIZZASAUCE_BLOCK;
+    public static Item PIZZASAUCE_BUCKET;
+
     public static FlowableFluid STILL_LATEX;
     public static FlowableFluid FLOWING_LATEX;
     public static Block LATEX_BLOCK;
@@ -83,6 +93,26 @@ public class ModFluids {
     public static Item SKIMMEDGOATMILK_BUCKET;
 
     public static void register() {
+        //TOMATO SAUCE
+        STILL_TOMATOSAUCE = Registry.register(Registries.FLUID,
+                new Identifier(Photosynthesis.MOD_ID, "tomatosauce"), new TomatoSauceFluid.Still());
+        FLOWING_TOMATOSAUCE = Registry.register(Registries.FLUID,
+                new Identifier(Photosynthesis.MOD_ID, "flowing_tomatosauce"), new TomatoSauceFluid.Flowing());
+        TOMATOSAUCE_BLOCK = Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, "tomatosauce_block"),
+                new FluidBlock(ModFluids.STILL_TOMATOSAUCE, FabricBlockSettings.copyOf(Blocks.WATER)){ });
+        TOMATOSAUCE_BUCKET = Registry.register(Registries.ITEM, new Identifier(Photosynthesis.MOD_ID, "tomatosauce_bucket"),
+                new BucketItem(ModFluids.STILL_TOMATOSAUCE, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1)));
+
+        //PIZZA SAUCE
+        STILL_PIZZASAUCE = Registry.register(Registries.FLUID,
+                new Identifier(Photosynthesis.MOD_ID, "pizzasauce"), new PizzaSauceFluid.Still());
+        FLOWING_PIZZASAUCE = Registry.register(Registries.FLUID,
+                new Identifier(Photosynthesis.MOD_ID, "flowing_pizzasauce"), new PizzaSauceFluid.Flowing());
+        PIZZASAUCE_BLOCK = Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, "pizzasauce_block"),
+                new FluidBlock(ModFluids.STILL_PIZZASAUCE, FabricBlockSettings.copyOf(Blocks.WATER)){ });
+        PIZZASAUCE_BUCKET = Registry.register(Registries.ITEM, new Identifier(Photosynthesis.MOD_ID, "pizzasauce_bucket"),
+                new BucketItem(ModFluids.STILL_PIZZASAUCE, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1)));
+
         //LATEX
         STILL_LATEX = Registry.register(Registries.FLUID,
                 new Identifier(Photosynthesis.MOD_ID, "latex"), new LatexFluid.Still());

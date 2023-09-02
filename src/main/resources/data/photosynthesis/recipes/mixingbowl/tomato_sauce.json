@@ -1,0 +1,26 @@
+{
+  "type": "photosynthesis:mixingbowl",
+  "ingredients": [
+    {
+      "item": "photosynthesis:whisk",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:measuring_cup",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:tomato",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:salt",
+      "count": 1
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:measuring_cup_tomato_sauce",
+    "count": 1
+  },
+  "cookingtime": 400
+}

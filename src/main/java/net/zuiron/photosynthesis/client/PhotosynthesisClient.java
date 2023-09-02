@@ -464,6 +464,28 @@ public class PhotosynthesisClient implements ClientModInitializer {
         BlockEntityRendererFactories.register(ModBlockEntities.EGGBASKET, EggBasketBlockEntityRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.MANUREBUCKET, ManureBucketBlockEntityRenderer::new);
 
+        //TOMATO SAUCE
+        FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_TOMATOSAUCE, ModFluids.FLOWING_TOMATOSAUCE,
+                new SimpleFluidRenderHandler(
+                        new Identifier("photosynthesis:block/tomatosauce_still"), //minecraft:block/water_still
+                        new Identifier("photosynthesis:block/tomatosauce_flow"), //minecraft:block/water_flow
+                        0xFFFFFFFF
+                )); //0xA1E038D0
+
+        BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),
+                ModFluids.STILL_TOMATOSAUCE, ModFluids.FLOWING_TOMATOSAUCE);
+
+        //PIZZA SAUCE
+        FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_PIZZASAUCE, ModFluids.FLOWING_PIZZASAUCE,
+                new SimpleFluidRenderHandler(
+                        new Identifier("photosynthesis:block/pizzasauce_still"), //minecraft:block/water_still
+                        new Identifier("photosynthesis:block/pizzasauce_flow"), //minecraft:block/water_flow
+                        0xFFFFFFFF
+                )); //0xA1E038D0
+
+        BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),
+                ModFluids.STILL_PIZZASAUCE, ModFluids.FLOWING_PIZZASAUCE);
+
         //LATEX
         FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_LATEX, ModFluids.FLOWING_LATEX,
                 new SimpleFluidRenderHandler(
