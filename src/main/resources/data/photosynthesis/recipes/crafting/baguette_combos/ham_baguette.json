@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#ST",
+    "XE "
+  ],
+  "key": {
+    "#": {
+      "item": "photosynthesis:baguette"
+    },
+    "S": {
+      "item": "photosynthesis:butter"
+    },
+    "T": {
+      "item": "photosynthesis:ham_slice"
+    },
+    "X": {
+      "item": "photosynthesis:cheddar_cheese_slice"
+    },
+    "E": {
+      "item": "photosynthesis:lettuce"
+    }
+  },
+  "result": {
+    "item": "photosynthesis:ham_baguette",
+    "count": 1
+  }
+}

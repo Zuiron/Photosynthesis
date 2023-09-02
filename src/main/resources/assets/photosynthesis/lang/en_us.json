@@ -1283,6 +1283,8 @@
   "item.photosynthesis.mozzarella_cheese": "Mozzarella Cheese",
   "item.photosynthesis.mozzarella_cheese_dices": "Mozzarella Cheese Dices",
 
+  "item.photosynthesis.ham_strips": "Ham Strips",
+  "item.photosynthesis.ham_slice": "Ham Slice",
 
   "item.photosynthesis.bark_acacia": "Acacia Bark",
   "item.photosynthesis.bark_birch": "Birch Bark",
@@ -1369,6 +1371,7 @@
   "item.photosynthesis.dumpling": "Dumpling",
   "item.photosynthesis.pancake": "Pancake",
   "item.photosynthesis.bread_form": "Bread Form",
+  "item.photosynthesis.baguette_form": "Baguette Form",
   "item.photosynthesis.oven_tray": "Oven Tray",
   "item.photosynthesis.pizza_stone": "Pizza Stone",
   "item.photosynthesis.bacon": "Bacon",

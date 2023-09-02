@@ -1283,6 +1283,14 @@ public class ModItems {
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
+    public static final Item HAM_STRIPS = registerItem("ham_strips",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item HAM_SLICE = registerItem("ham_slice",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
     public static final Item EGG_SANDWICH = registerItem("egg_sandwich",
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(6).saturationModifier(0.8f).build())));
@@ -1370,6 +1378,9 @@ public class ModItems {
 
     public static final Item BREAD_FORM = registerItem("bread_form",
                 new Item(new FabricItemSettings()));
+
+    public static final Item BAGUETTE_FORM = registerItem("baguette_form",
+            new Item(new FabricItemSettings()));
 
     public static final Item OVEN_TRAY = registerItem("oven_tray",
             new Item(new FabricItemSettings()));

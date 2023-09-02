@@ -1,0 +1,18 @@
+{
+  "type": "photosynthesis:woodfiredoven",
+  "ingredients": [
+    {
+      "item": "photosynthesis:baguette_form",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:wheat_dough",
+      "count": 3
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:baguette",
+    "count": 3
+  },
+  "cookingtime": 300
+}

@@ -1,0 +1,16 @@
+{
+  "type": "photosynthesis:cutting_board",
+  "ingredients": [
+    {
+      "tag": "c:cutting_board_cutting_knifes"
+    },
+    {
+      "item": "photosynthesis:ham_slice"
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:ham_strips",
+    "count": 4
+  },
+  "cookingtime": 30
+}
