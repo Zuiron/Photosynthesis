@@ -1,0 +1,6 @@
+{
+  "parent": "photosynthesis:block/blockmodels/measuring_cup",
+  "textures": {
+    "2": "photosynthesis:block/goat_milk_cream_still_proper"
+  }
+}

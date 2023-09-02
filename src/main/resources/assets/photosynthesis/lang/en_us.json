@@ -277,14 +277,17 @@
   "block.photosynthesis.goatmilk": "Goat Milk",
   "block.photosynthesis.goatmilk_block": "Goat Milk",
   "item.photosynthesis.goatmilk_bucket": "Goat Milk Bucket",
+  "item.photosynthesis.measuring_cup_goatmilk": "Goat Milk Measuring Cup",
 
   "block.photosynthesis.goatmilkcream": "Goat Milk Cream",
   "block.photosynthesis.goatmilkcream_block": "Goat Milk Cream",
   "item.photosynthesis.goatmilkcream_bucket": "Goat Milk Cream Bucket",
+  "item.photosynthesis.measuring_cup_goatmilk_cream": "Goat Milk Cream Measuring Cup",
 
   "block.photosynthesis.skimmedgoatmilk": "Skimmed Goat Milk",
   "block.photosynthesis.skimmedgoatmilk_block": "Skimmed Goat Milk",
   "item.photosynthesis.skimmedgoatmilk_bucket": "Skimmed Goat Milk Bucket",
+  "item.photosynthesis.measuring_cup_skimmed_goatmilk": "Skimmed Goat Milk Measuring Cup",
 
   "photosynthesis.tooltip.liquid.amount.with.capacity": "%s / %s mB",
   "photosynthesis.tooltip.liquid.amount": "%s mB",

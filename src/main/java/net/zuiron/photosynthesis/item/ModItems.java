@@ -247,6 +247,15 @@ public class ModItems {
     public static final Item MEASURING_CUP_MILK_CREAM = registerItem("measuring_cup_milk_cream",
             new Item(new FabricItemSettings().recipeRemainder(ModItems.MEASURING_CUP)));
 
+    public static final Item MEASURING_CUP_GOATMILK = registerItem("measuring_cup_goatmilk",
+            new Item(new FabricItemSettings().recipeRemainder(ModItems.MEASURING_CUP)));
+
+    public static final Item MEASURING_CUP_SKIMMED_GOATMILK = registerItem("measuring_cup_skimmed_goatmilk",
+            new Item(new FabricItemSettings().recipeRemainder(ModItems.MEASURING_CUP)));
+
+    public static final Item MEASURING_CUP_GOATMILK_CREAM = registerItem("measuring_cup_goatmilk_cream",
+            new Item(new FabricItemSettings().recipeRemainder(ModItems.MEASURING_CUP)));
+
     public static final Item MEASURING_CUP_CANOLAOIL = registerItem("measuring_cup_canolaoil",
             new Item(new FabricItemSettings().recipeRemainder(ModItems.MEASURING_CUP)));
 
