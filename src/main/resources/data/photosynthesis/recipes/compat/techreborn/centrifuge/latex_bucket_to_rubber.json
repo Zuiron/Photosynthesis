@@ -1,0 +1,29 @@
+{
+  "type": "techreborn:centrifuge",
+  "power": 5,
+  "time": 1300,
+  "ingredients": [
+    {
+      "item": "photosynthesis:latex_bucket",
+      "count": 1
+    }
+  ],
+  "results": [
+    {
+      "item": "techreborn:rubber",
+      "count": 16
+    },
+    {
+      "item": "minecraft:bucket",
+      "count": 1
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "techreborn"
+      ]
+    }
+  ]
+}
