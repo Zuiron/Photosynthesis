@@ -1377,7 +1377,11 @@
   "item.photosynthesis.rye_dough": "Rye Dough",
   "item.photosynthesis.barley_dough": "Barley Dough",
   "item.photosynthesis.corn_dough": "Corn Dough",
-  "item.photosynthesis.semolina_dough": "Semolina Dough"
+  "item.photosynthesis.semolina_dough": "Semolina Dough",
+  "item.photosynthesis.fish_roe": "Fish Roe",
+  "item.photosynthesis.smoked_fish_roe": "Smoked Fish Roe",
+  "item.photosynthesis.kaviar": "Kaviar",
+  "item.photosynthesis.wheat_bread_slice_with_scrambled_egg_and_kaviar": "Wheat Bread Slice With Scrambled Eggs and Kaviar"
 
 
 

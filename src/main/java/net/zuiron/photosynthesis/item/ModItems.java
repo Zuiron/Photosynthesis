@@ -992,6 +992,22 @@ public class ModItems {
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));*/
 
+    public static final Item FISH_ROE = registerItem("fish_roe",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item SMOKED_FISH_ROE = registerItem("smoked_fish_roe",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item KAVIAR = registerItem("kaviar",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item WHEAT_BREAD_SLICE_WITH_SCRAMBLED_EGG_AND_KAVIAR = registerItem("wheat_bread_slice_with_scrambled_egg_and_kaviar",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(20).saturationModifier(2.0f).build())));
+
     public static final Item CINNAMON_POWDER = registerItem("cinnamon_powder",
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));

@@ -44,6 +44,9 @@ public class modifyLootTables {
     private static final Identifier COMMON_WOLF_LOOT_TABLE_ID = new Identifier("minecraft", "entities/wolf");
 
 
+    private static final Identifier COD_LTID = new Identifier("minecraft", "entities/cod");
+    private static final Identifier SALMON_LTID = new Identifier("minecraft", "entities/salmon");
+
     public static void registerModifyLootTables() {
         LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
             // Let's only modify built-in loot tables and leave data pack loot tables untouched by checking the source.
@@ -54,6 +57,15 @@ public class modifyLootTables {
                         .conditionally(RandomChanceLootCondition.builder(1f)) // Drops 100% of the time
                         .with(ItemEntry.builder(ModItems.WOLF_PELT))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 3.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+
+            if(source.isBuiltin() && COD_LTID.equals(id) || SALMON_LTID.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(1f)) // Drops 100% of the time
+                        .with(ItemEntry.builder(ModItems.FISH_ROE))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 3.0f)).build());
                 tableBuilder.pool(poolBuilder.build());
             }
 

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#ST",
+    "E  "
+  ],
+  "key": {
+    "#": {
+      "item": "photosynthesis:bread_slice"
+    },
+    "S": {
+      "item": "photosynthesis:butter"
+    },
+    "T": {
+      "item": "photosynthesis:kaviar"
+    },
+    "E": {
+      "item": "photosynthesis:scrambled_egg"
+    }
+  },
+  "result": {
+    "item": "photosynthesis:wheat_bread_slice_with_scrambled_egg_and_kaviar",
+    "count": 1
+  }
+}

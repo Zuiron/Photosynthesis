@@ -273,7 +273,11 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.CORNFLOWER_SEEDS,
                 ModItems.LILY_OF_THE_VALLEY_SEEDS,
                 ModItems.FLORAMELISSIA_SEEDS,
-                ModItems.WITHER_ROSE_SEEDS
+                ModItems.WITHER_ROSE_SEEDS,
+                ModItems.FISH_ROE,
+                ModItems.SMOKED_FISH_ROE,
+                ModItems.KAVIAR,
+                ModItems.WHEAT_BREAD_SLICE_WITH_SCRAMBLED_EGG_AND_KAVIAR
 
 
 

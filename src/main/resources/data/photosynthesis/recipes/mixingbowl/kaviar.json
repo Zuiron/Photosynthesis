@@ -1,0 +1,30 @@
+{
+  "type": "photosynthesis:mixingbowl",
+  "ingredients": [
+    {
+      "item": "photosynthesis:whisk",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:smoked_fish_roe",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:salt",
+      "count": 1
+    },
+    {
+      "item": "minecraft:sugar",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:measuring_cup_canolaoil",
+      "count": 1
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:kaviar",
+    "count": 5
+  },
+  "cookingtime": 400
+}
