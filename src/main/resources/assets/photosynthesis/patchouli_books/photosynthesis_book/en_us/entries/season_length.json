@@ -10,7 +10,7 @@
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:clock",
-      "text": "By default, Days per Season is set to 18, which means 72 days per season year. $(br2)In REAL TIME, this equals to exactly 24hours"
+      "text": "If Days Per Season is set to 18, which means 72 days per season year. $(br2)In REAL TIME, this equals to exactly 24hours"
     }
   ]
 }

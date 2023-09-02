@@ -1,0 +1,17 @@
+{
+  "type": "patchouli:shaped_book_recipe",
+  "pattern": [
+    "###",
+    "#B#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "tag": "c:seeds"
+    },
+    "B": {
+      "item": "minecraft:book"
+    }
+  },
+  "book": "photosynthesis:photosynthesis_book"
+}
