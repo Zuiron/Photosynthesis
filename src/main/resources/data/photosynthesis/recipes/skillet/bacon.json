@@ -7,12 +7,12 @@
     },
     {
       "item": "photosynthesis:raw_bacon",
-      "count": 1
+      "count": 6
     }
   ],
   "output": {
     "item": "photosynthesis:bacon",
-    "count": 1
+    "count": 6
   },
   "cookingtime": 120
 }

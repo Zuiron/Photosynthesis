@@ -1168,23 +1168,31 @@ public class ModItems {
 
     public static final Item MASHEDPOTATOES = registerItem("mashedpotatoes",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+                    .food(new FoodComponent.Builder().hunger(8).saturationModifier(0.4f).build())));
 
     public static final Item ASPARAGUSBACONDISH = registerItem("asparagusbacondish",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+                    .food(new FoodComponent.Builder().hunger(10).saturationModifier(0.9f).build())));
 
     public static final Item RICE_PORRIDGE = registerItem("rice_porridge",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(8).saturationModifier(0.4f).build())));
+
+    public static final Item FRIED_RICE = registerItem("fried_rice",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(12).saturationModifier(1.4f).build())));
+
+    public static final Item COOKED_RICE = registerItem("cooked_rice",
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(4).saturationModifier(0.4f).build())));
 
     public static final Item SALAD = registerItem("salad",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+                    .food(new FoodComponent.Builder().hunger(12).saturationModifier(1.5f).build())));
 
     public static final Item BBQ_SKEWERS = registerItem("barbeque_skewers",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+                    .food(new FoodComponent.Builder().hunger(12).saturationModifier(1.0f).build())));
 
     public static final Item MINCED_BEEF = registerItem("minced_beef",
             new Item(new FabricItemSettings()
@@ -1196,7 +1204,7 @@ public class ModItems {
 
     public static final Item ENGLISH_BREAKFAST = registerItem("english_breakfast",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+                    .food(new FoodComponent.Builder().hunger(14).saturationModifier(1.1f).build())));
 
     public static final Item MEATBALLS = registerItem("meatballs",
             new Item(new FabricItemSettings()
@@ -1208,7 +1216,7 @@ public class ModItems {
 
     public static final Item PUMPKIN_SOUP = registerItem("pumpkin_soup",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+                    .food(new FoodComponent.Builder().hunger(10).saturationModifier(0.5f).build())));
 
     public static final Item WAFFLE = registerItem("waffle",
             new Item(new FabricItemSettings()

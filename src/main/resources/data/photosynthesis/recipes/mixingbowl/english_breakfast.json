@@ -1,0 +1,42 @@
+{
+  "type": "photosynthesis:mixingbowl",
+  "ingredients": [
+    {
+      "item": "photosynthesis:whisk",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:bacon",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:scrambled_egg",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:ham_slice",
+      "count": 4
+    },
+    {
+      "item": "photosynthesis:bean",
+      "count": 4
+    },
+    {
+      "item": "photosynthesis:salt",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:dried_black_pepper",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:bread_slice",
+      "count": 2
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:english_breakfast",
+    "count": 6
+  },
+  "cookingtime": 400
+}

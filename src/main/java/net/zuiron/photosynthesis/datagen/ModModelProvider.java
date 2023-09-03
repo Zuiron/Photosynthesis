@@ -184,6 +184,8 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.RICE_PANICLE,
 
                 ModItems.BBQ_SKEWERS,
+                ModItems.FRIED_RICE,
+                ModItems.COOKED_RICE,
                 ModItems.MINCED_BEEF,
                 //ModItems.YELLOW_CHEESE,
                 ModItems.ENGLISH_BREAKFAST,

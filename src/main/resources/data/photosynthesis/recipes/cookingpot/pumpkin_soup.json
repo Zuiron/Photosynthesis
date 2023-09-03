@@ -6,11 +6,11 @@
       "count": 2
     },
     {
-      "item": "photosynthesis:rice",
-      "count": 4
+      "item": "minecraft:pumpkin",
+      "count": 1
     },
     {
-      "item": "photosynthesis:cinnamon_powder",
+      "item": "photosynthesis:garlic",
       "count": 1
     },
     {
@@ -18,16 +18,12 @@
       "count": 1
     },
     {
-      "item": "minecraft:sugar",
-      "count": 2
-    },
-    {
       "item": "minecraft:bowl",
       "count": 4
     }
   ],
   "output": {
-    "item": "photosynthesis:rice_porridge",
+    "item": "photosynthesis:pumpkin_soup",
     "count": 4
   },
   "cookingtime": 200

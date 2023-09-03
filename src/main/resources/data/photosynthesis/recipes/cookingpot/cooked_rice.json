@@ -2,7 +2,7 @@
   "type": "photosynthesis:cookingpot",
   "ingredients": [
     {
-      "item": "photosynthesis:measuring_cup_skimmed_milk",
+      "item": "photosynthesis:measuring_cup_water",
       "count": 2
     },
     {
@@ -10,16 +10,8 @@
       "count": 4
     },
     {
-      "item": "photosynthesis:cinnamon_powder",
-      "count": 1
-    },
-    {
       "item": "photosynthesis:salt",
       "count": 1
-    },
-    {
-      "item": "minecraft:sugar",
-      "count": 2
     },
     {
       "item": "minecraft:bowl",
@@ -27,7 +19,7 @@
     }
   ],
   "output": {
-    "item": "photosynthesis:rice_porridge",
+    "item": "photosynthesis:cooked_rice",
     "count": 4
   },
   "cookingtime": 200

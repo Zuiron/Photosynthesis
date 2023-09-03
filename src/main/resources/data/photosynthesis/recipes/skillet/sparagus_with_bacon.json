@@ -1,0 +1,26 @@
+{
+  "type": "photosynthesis:skillet",
+  "ingredients": [
+    {
+      "item": "photosynthesis:butter",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:asparagus",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:bacon",
+      "count": 2
+    },
+    {
+      "item": "minecraft:bowl",
+      "count": 4
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:asparagusbacondish",
+    "count": 4
+  },
+  "cookingtime": 120
+}

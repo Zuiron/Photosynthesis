@@ -1,0 +1,38 @@
+{
+  "type": "photosynthesis:mixingbowl",
+  "ingredients": [
+    {
+      "item": "photosynthesis:whisk",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:lettuce",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:cabbage",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:cucumber",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:red_bellpepper",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:corn",
+      "count": 1
+    },
+    {
+      "item": "minecraft:bowl",
+      "count": 6
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:salad",
+    "count": 6
+  },
+  "cookingtime": 400
+}

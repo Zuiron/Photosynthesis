@@ -1,0 +1,38 @@
+{
+  "type": "photosynthesis:skillet",
+  "ingredients": [
+    {
+      "item": "photosynthesis:measuring_cup_sunfloweroil",
+      "count": 1
+    },
+    {
+      "item": "minecraft:beef",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:chili",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:red_bellpepper",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:corn",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:dried_black_pepper",
+      "count": 2
+    },
+    {
+      "item": "minecraft:stick",
+      "count": 6
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:barbeque_skewers",
+    "count": 6
+  },
+  "cookingtime": 120
+}

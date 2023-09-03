@@ -1,0 +1,30 @@
+{
+  "type": "photosynthesis:skillet",
+  "ingredients": [
+    {
+      "item": "photosynthesis:measuring_cup_canolaoil",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:salt",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:ham_strips",
+      "count": 1
+    },
+    {
+      "item": "minecraft:carrot",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:cooked_rice",
+      "count": 4
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:fried_rice",
+    "count": 4
+  },
+  "cookingtime": 120
+}
