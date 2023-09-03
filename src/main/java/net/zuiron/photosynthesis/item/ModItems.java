@@ -1218,9 +1218,9 @@ public class ModItems {
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(10).saturationModifier(0.5f).build())));
 
-    public static final Item WAFFLE = registerItem("waffle",
+    /*public static final Item WAFFLE = registerItem("waffle",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));*/
 
     /*public static final Item PIZZA = registerItem("pizza",
             new Item(new FabricItemSettings()
@@ -1246,21 +1246,21 @@ public class ModItems {
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(20).saturationModifier(3.0f).build())));
 
-    public static final Item PANCAKES = registerItem("pancakes",
+    /*public static final Item PANCAKES = registerItem("pancakes",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+                    .food(new FoodComponent.Builder().hunger(12).saturationModifier(0.4f).build())));*/
 
-    public static final Item PIE = registerItem("pie",
+    public static final Item PIE_RASPBERRY = registerItem("pie_raspberry",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+                    .food(new FoodComponent.Builder().hunger(12).saturationModifier(0.4f).build())));
 
     public static final Item CHICKEN_THIGH = registerItem("chicken_thigh",
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
-    public static final Item BAKED_SQUASH = registerItem("baked_squash",
+    public static final Item BAKED_ZUCCHINI = registerItem("baked_zucchini",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+                    .food(new FoodComponent.Builder().hunger(10).saturationModifier(0.2f).build())));
 
     public static final Item BAGUETTE = registerItem("baguette",
             new Item(new FabricItemSettings()
@@ -1268,7 +1268,7 @@ public class ModItems {
 
     public static final Item OMELETTE = registerItem("omelette",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+                    .food(new FoodComponent.Builder().hunger(10).saturationModifier(0.5f).build())));
 
     public static final Item GARLIC_BREAD_SLICE = registerItem("garlic_bread_slice",
             new Item(new FabricItemSettings()
@@ -1280,7 +1280,7 @@ public class ModItems {
 
     public static final Item PANCAKE = registerItem("pancake",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+                    .food(new FoodComponent.Builder().hunger(12).saturationModifier(0.4f).build())));
 
     public static final Item BACON = registerItem("bacon",
             new Item(new FabricItemSettings()

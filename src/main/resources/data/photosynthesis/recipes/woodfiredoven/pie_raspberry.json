@@ -1,0 +1,34 @@
+{
+  "type": "photosynthesis:woodfiredoven",
+  "ingredients": [
+    {
+      "item": "photosynthesis:oven_tray",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:wheat_dough",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:raspberries",
+      "count": 4
+    },
+    {
+      "item": "minecraft:sugar",
+      "count": 2
+    },
+    {
+      "item": "minecraft:egg",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:butter",
+      "count": 1
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:pie_raspberry",
+    "count": 1
+  },
+  "cookingtime": 300
+}

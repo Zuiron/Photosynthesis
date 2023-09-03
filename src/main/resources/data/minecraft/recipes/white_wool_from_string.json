@@ -1,19 +1,20 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "building",
-  "pattern": [
-    "###",
-    "###",
-    "###"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:string"
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:oak_log"
     }
-  },
+  ],
   "result": {
-    "item": "minecraft:white_wool",
+    "item": "minecraft:cobblestone",
     "count": 1
   },
-  "show_notification": true
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "mod_that_does_not_exist_hehe"
+      ]
+    }
+  ]
 }

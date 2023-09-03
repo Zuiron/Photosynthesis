@@ -192,7 +192,7 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.MEATBALLS,
                 ModItems.MINCED_PORK,
                 ModItems.PUMPKIN_SOUP,
-                ModItems.WAFFLE,
+                //ModItems.WAFFLE,
 
                 ModItems.PEPPERONI_SAUSAGE,
                 ModItems.PEPPERONI_SLICE,
@@ -247,10 +247,10 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.MOZZARELLA_CHEESE_DICES,
 
                 //ModItems.PIZZA,
-                ModItems.PANCAKES,
-                ModItems.PIE,
+                //ModItems.PANCAKES,
+                ModItems.PIE_RASPBERRY,
                 ModItems.CHICKEN_THIGH,
-                ModItems.BAKED_SQUASH,
+                ModItems.BAKED_ZUCCHINI,
                 ModItems.BAGUETTE,
                 ModItems.OMELETTE,
                 ModItems.GARLIC_BREAD_SLICE,

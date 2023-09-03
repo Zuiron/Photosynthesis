@@ -1,0 +1,30 @@
+{
+  "type": "photosynthesis:skillet",
+  "ingredients": [
+    {
+      "item": "photosynthesis:butter",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:cracked_egg",
+      "count": 3
+    },
+    {
+      "item": "photosynthesis:salt",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:dried_black_pepper",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:cut_chives",
+      "count": 1
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:omelette",
+    "count": 3
+  },
+  "cookingtime": 100
+}

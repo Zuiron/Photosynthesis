@@ -1,0 +1,34 @@
+{
+  "type": "photosynthesis:skillet",
+  "ingredients": [
+    {
+      "item": "photosynthesis:measuring_cup_skimmed_milk",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:wheat_flour",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:butter",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:vanilla_powder",
+      "count": 2
+    },
+    {
+      "item": "minecraft:sugar",
+      "count": 1
+    },
+    {
+      "item": "minecraft:egg",
+      "count": 1
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:pancake",
+    "count": 5
+  },
+  "cookingtime": 100
+}

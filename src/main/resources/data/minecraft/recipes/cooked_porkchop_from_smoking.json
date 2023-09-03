@@ -1,6 +1,20 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [],
-  "key": {},
-  "result": {}
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:oak_log"
+    }
+  ],
+  "result": {
+    "item": "minecraft:cobblestone",
+    "count": 1
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "mod_that_does_not_exist_hehe"
+      ]
+    }
+  ]
 }
