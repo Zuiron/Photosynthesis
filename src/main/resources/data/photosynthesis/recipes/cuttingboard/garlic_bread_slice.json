@@ -1,0 +1,16 @@
+{
+  "type": "photosynthesis:cutting_board",
+  "ingredients": [
+    {
+      "tag": "c:cutting_board_cutting_knifes"
+    },
+    {
+      "item": "photosynthesis:garlic_bread"
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:garlic_bread_slice",
+    "count": 16
+  },
+  "cookingtime": 30
+}

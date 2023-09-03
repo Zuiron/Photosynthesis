@@ -6,24 +6,24 @@
       "count": 1
     },
     {
-      "item": "photosynthesis:butter",
-      "count": 2
-    },
-    {
-      "item": "minecraft:sugar",
+      "item": "photosynthesis:measuring_cup_water",
       "count": 1
     },
     {
-      "item": "photosynthesis:wheat_flour",
-      "count": 3
+      "item": "photosynthesis:rye_flour",
+      "count": 1
     },
     {
-      "item": "photosynthesis:vanilla_powder",
-      "count": 2
+      "item": "photosynthesis:salt",
+      "count": 1
+    },
+    {
+      "item": "minecraft:egg",
+      "count": 1
     }
   ],
   "output": {
-    "item": "photosynthesis:cookie_dough",
+    "item": "photosynthesis:rye_dough",
     "count": 1
   },
   "cookingtime": 400

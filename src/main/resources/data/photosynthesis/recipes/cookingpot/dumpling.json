@@ -1,0 +1,38 @@
+{
+  "type": "photosynthesis:cookingpot",
+  "ingredients": [
+    {
+      "item": "photosynthesis:measuring_cup_water",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:wheat_dough",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:minced_pork",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:salt",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:leek",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:ginger",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:dried_black_pepper",
+      "count": 1
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:dumpling",
+    "count": 20
+  },
+  "cookingtime": 200
+}

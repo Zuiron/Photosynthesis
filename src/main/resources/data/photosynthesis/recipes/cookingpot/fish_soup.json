@@ -1,0 +1,38 @@
+{
+  "type": "photosynthesis:cookingpot",
+  "ingredients": [
+    {
+      "item": "photosynthesis:measuring_cup_water",
+      "count": 2
+    },
+    {
+      "item": "minecraft:bowl",
+      "count": 4
+    },
+    {
+      "item": "minecraft:cod",
+      "count": 2
+    },
+    {
+      "item": "minecraft:carrot",
+      "count": 3
+    },
+    {
+      "item": "photosynthesis:celery",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:lemon",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:squash",
+      "count": 1
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:fish_soup",
+    "count": 4
+  },
+  "cookingtime": 100
+}

@@ -1,0 +1,34 @@
+{
+  "type": "photosynthesis:mixingbowl",
+  "ingredients": [
+    {
+      "item": "photosynthesis:whisk",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:bread_slice",
+      "count": 8
+    },
+    {
+      "item": "photosynthesis:fried_egg",
+      "count": 4
+    },
+    {
+      "item": "photosynthesis:bacon",
+      "count": 4
+    },
+    {
+      "item": "photosynthesis:cheddar_cheese_slice",
+      "count": 4
+    },
+    {
+      "item": "photosynthesis:butter",
+      "count": 2
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:egg_sandwich",
+    "count": 4
+  },
+  "cookingtime": 400
+}

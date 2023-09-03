@@ -1,0 +1,16 @@
+{
+  "type": "photosynthesis:cutting_board",
+  "ingredients": [
+    {
+      "tag": "c:cutting_board_cutting_knifes"
+    },
+    {
+      "item": "photosynthesis:sheep_trimmings"
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:minced_sheep",
+    "count": 1
+  },
+  "cookingtime": 40
+}

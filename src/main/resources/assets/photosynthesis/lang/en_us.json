@@ -1150,6 +1150,16 @@
   "item.photosynthesis.english_breakfast": "English Breakfast",
   "item.photosynthesis.meatballs": "Meatballs",
   "item.photosynthesis.minced_pork": "Minced Pork",
+
+  "item.photosynthesis.minced_sheep": "Minced Sheep",
+  "item.photosynthesis.minced_chicken": "Minced Chicken",
+
+
+  "item.photosynthesis.fried_minced_pork": "Fried Minced Pork",
+  "item.photosynthesis.fried_minced_beef": "Fried Minced Beef",
+  "item.photosynthesis.fried_minced_chicken": "Fried Minced Chicken",
+  "item.photosynthesis.fried_minced_sheep": "Fried Minced Sheep",
+
   "item.photosynthesis.pumpkin_soup": "Pumpkin Soup",
   "item.photosynthesis.waffle": "Waffle",
   "item.photosynthesis.wheat_dough": "Wheat Dough",
@@ -1390,7 +1400,7 @@
   "item.photosynthesis.chicken_nuggets": "Chicken Nuggets",
   "item.photosynthesis.grilled_salmon": "Grilled Salmon",
   "item.photosynthesis.grilled_cod": "Grilled Cod",
-  "item.photosynthesis.califlower_soup": "Califlower Soup",
+  "item.photosynthesis.cauliflower_soup": "Cauliflower Soup",
   "item.photosynthesis.ham": "Ham",
   "item.photosynthesis.egg_sandwich": "Egg Sandwich",
   "item.photosynthesis.taco": "Taco",
@@ -1415,7 +1425,7 @@
   "item.photosynthesis.rye_dough": "Rye Dough",
   "item.photosynthesis.barley_dough": "Barley Dough",
   "item.photosynthesis.corn_dough": "Corn Dough",
-  "item.photosynthesis.semolina_dough": "Semolina Dough",
+  "item.photosynthesis.semolina_dough": "Semolina Pasta Dough",
   "item.photosynthesis.fish_roe": "Fish Roe",
   "item.photosynthesis.smoked_fish_roe": "Smoked Fish Roe",
   "item.photosynthesis.kaviar": "Kaviar",

@@ -1,0 +1,18 @@
+{
+  "type": "photosynthesis:cookingpot",
+  "ingredients": [
+    {
+      "item": "photosynthesis:measuring_cup_canolaoil",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:raw_chicken_nuggets",
+      "count": 16
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:chicken_nuggets",
+    "count": 16
+  },
+  "cookingtime": 100
+}

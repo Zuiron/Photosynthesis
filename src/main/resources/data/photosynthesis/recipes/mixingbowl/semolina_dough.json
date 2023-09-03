@@ -1,0 +1,34 @@
+{
+  "type": "photosynthesis:mixingbowl",
+  "ingredients": [
+    {
+      "item": "photosynthesis:whisk",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:measuring_cup_water",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:wheat_flour",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:semolina_flour",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:salt",
+      "count": 1
+    },
+    {
+      "item": "minecraft:egg",
+      "count": 1
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:semolina_dough",
+    "count": 1
+  },
+  "cookingtime": 400
+}

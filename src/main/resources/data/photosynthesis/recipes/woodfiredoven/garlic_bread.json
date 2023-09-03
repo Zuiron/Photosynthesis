@@ -1,0 +1,30 @@
+{
+  "type": "photosynthesis:woodfiredoven",
+  "ingredients": [
+    {
+      "item": "photosynthesis:bread_form",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:wheat_dough",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:garlic",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:butter",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:parsley",
+      "count": 1
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:garlic_bread",
+    "count": 2
+  },
+  "cookingtime": 300
+}

@@ -1112,31 +1112,31 @@ public class ModItems {
             new Item(new FabricItemSettings()));
 
     public static final Item SOFT_GOAT_CHEESE = registerItem("soft_goat_cheese",
-            new Item(new FabricItemSettings()));
+            new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item GOAT_CHEESE = registerItem("goat_cheese",
-            new Item(new FabricItemSettings()));
+            new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item GOAT_CHEESE_SLICE = registerItem("goat_cheese_slice",
-            new Item(new FabricItemSettings()));
+            new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item SOFT_CHEDDAR_CHEESE = registerItem("soft_cheddar_cheese",
-            new Item(new FabricItemSettings()));
+            new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item CHEDDAR_CHEESE = registerItem("cheddar_cheese",
-            new Item(new FabricItemSettings()));
+            new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item CHEDDAR_CHEESE_SLICE = registerItem("cheddar_cheese_slice",
-            new Item(new FabricItemSettings()));
+            new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item SOFT_MOZZARELLA_CHEESE = registerItem("soft_mozzarella_cheese",
-            new Item(new FabricItemSettings()));
+            new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item MOZZARELLA_CHEESE = registerItem("mozzarella_cheese",
-            new Item(new FabricItemSettings()));
+            new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item MOZZARELLA_CHEESE_DICES = registerItem("mozzarella_cheese_dices",
-            new Item(new FabricItemSettings()));
+            new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
 
 
@@ -1194,7 +1194,38 @@ public class ModItems {
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(12).saturationModifier(1.0f).build())));
 
+
+
+    public static final Item MINCED_PORK = registerItem("minced_pork",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
     public static final Item MINCED_BEEF = registerItem("minced_beef",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item MINCED_CHICKEN = registerItem("minced_chicken",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item MINCED_SHEEP = registerItem("minced_sheep",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+
+    public static final Item FRIED_MINCED_PORK = registerItem("fried_minced_pork",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item FRIED_MINCED_BEEF = registerItem("fried_minced_beef",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item FRIED_MINCED_CHICKEN = registerItem("fried_minced_chicken",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item FRIED_MINCED_SHEEP = registerItem("fried_minced_sheep",
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
@@ -1207,10 +1238,6 @@ public class ModItems {
                     .food(new FoodComponent.Builder().hunger(14).saturationModifier(1.1f).build())));
 
     public static final Item MEATBALLS = registerItem("meatballs",
-            new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
-
-    public static final Item MINCED_PORK = registerItem("minced_pork",
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
@@ -1276,7 +1303,7 @@ public class ModItems {
 
     public static final Item DUMPLING = registerItem("dumpling",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+                    .food(new FoodComponent.Builder().hunger(6).saturationModifier(1.0f).build())));
 
     public static final Item PANCAKE = registerItem("pancake",
             new Item(new FabricItemSettings()
@@ -1288,11 +1315,11 @@ public class ModItems {
 
     public static final Item CHOCOLATE_CUPCAKE = registerItem("chocolate_cupcake",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+                    .food(new FoodComponent.Builder().hunger(4).saturationModifier(0.3f).build())));
 
     public static final Item CHICKEN_NUGGETS = registerItem("chicken_nuggets",
          new Item(new FabricItemSettings()
-                 .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+                 .food(new FoodComponent.Builder().hunger(4).saturationModifier(0.1f).build())));
 
 
     public static final Item GRILLED_SALMON = registerItem("grilled_salmon",
@@ -1303,7 +1330,7 @@ public class ModItems {
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(6).saturationModifier(0.8f).build())));
 
-    public static final Item CALIFLOWER_SOUP = registerItem("califlower_soup",
+    public static final Item CAULIFLOWER_SOUP = registerItem("cauliflower_soup",
             new Item(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(6).saturationModifier(0.8f).build())));
 
@@ -1321,23 +1348,23 @@ public class ModItems {
 
     public static final Item EGG_SANDWICH = registerItem("egg_sandwich",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(6).saturationModifier(0.8f).build())));
+                    .food(new FoodComponent.Builder().hunger(18).saturationModifier(0.8f).build())));
 
     public static final Item TACO = registerItem("taco",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(6).saturationModifier(0.8f).build())));
+                    .food(new FoodComponent.Builder().hunger(20).saturationModifier(0.8f).build())));
 
-    public static final Item SUSHI_ROLL2 = registerItem("sushi_roll2",
+    /*public static final Item SUSHI_ROLL2 = registerItem("sushi_roll2",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(6).saturationModifier(0.8f).build())));
+                    .food(new FoodComponent.Builder().hunger(6).saturationModifier(0.8f).build())));*/
 
-    public static final Item SUSHI_ROLL = registerItem("sushi_roll",
+    /*public static final Item SUSHI_ROLL = registerItem("sushi_roll",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(6).saturationModifier(0.8f).build())));
+                    .food(new FoodComponent.Builder().hunger(6).saturationModifier(0.8f).build())));*/
 
     public static final Item SALMON_SUSHI = registerItem("salmon_sushi",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(6).saturationModifier(0.8f).build())));
+                    .food(new FoodComponent.Builder().hunger(8).saturationModifier(0.8f).build())));
 
     /*public static final Item PIZZA_SAUCE = registerItem("pizza_sauce",
             new Item(new FabricItemSettings()
@@ -1364,7 +1391,7 @@ public class ModItems {
 
     public static final Item FISH_SOUP = registerItem("fish_soup",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(6).saturationModifier(0.8f).build())));
+                    .food(new FoodComponent.Builder().hunger(14).saturationModifier(0.8f).build())));
 
     public static final Item GARLIC_BREAD = registerItem("garlic_bread",
             new Item(new FabricItemSettings()

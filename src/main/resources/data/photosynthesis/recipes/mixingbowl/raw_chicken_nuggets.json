@@ -1,0 +1,30 @@
+{
+  "type": "photosynthesis:mixingbowl",
+  "ingredients": [
+    {
+      "item": "photosynthesis:whisk",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:minced_chicken",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:bread_slice",
+      "count": 4
+    },
+    {
+      "item": "photosynthesis:salt",
+      "count": 3
+    },
+    {
+      "item": "photosynthesis:butter",
+      "count": 1
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:raw_chicken_nuggets",
+    "count": 16
+  },
+  "cookingtime": 400
+}

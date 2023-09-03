@@ -1,0 +1,18 @@
+{
+  "type": "photosynthesis:woodfiredoven",
+  "ingredients": [
+    {
+      "item": "photosynthesis:oven_tray",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:chocolate_cookie_dough",
+      "count": 1
+    }
+  ],
+  "output": {
+    "item": "minecraft:cookie",
+    "count": 8
+  },
+  "cookingtime": 300
+}

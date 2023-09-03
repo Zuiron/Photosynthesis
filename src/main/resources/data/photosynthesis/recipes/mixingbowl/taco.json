@@ -1,0 +1,46 @@
+{
+  "type": "photosynthesis:mixingbowl",
+  "ingredients": [
+    {
+      "item": "photosynthesis:whisk",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:taco_shell",
+      "count": 6
+    },
+    {
+      "item": "photosynthesis:fried_minced_beef",
+      "count": 3
+    },
+    {
+      "item": "photosynthesis:tomato",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:lettuce",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:jalapeno",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:chili",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:cheddar_cheese_slice",
+      "count": 6
+    },
+    {
+      "item": "photosynthesis:corn",
+      "count": 1
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:taco",
+    "count": 6
+  },
+  "cookingtime": 400
+}

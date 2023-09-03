@@ -1,0 +1,38 @@
+{
+  "type": "photosynthesis:cookingpot",
+  "ingredients": [
+    {
+      "item": "photosynthesis:measuring_cup_water",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:measuring_cup_milk_cream",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:cauliflower",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:salt",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:dried_black_pepper",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:butter",
+      "count": 1
+    },
+    {
+      "item": "minecraft:bowl",
+      "count": 4
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:cauliflower_soup",
+    "count": 4
+  },
+  "cookingtime": 100
+}

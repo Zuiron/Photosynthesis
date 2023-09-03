@@ -1,0 +1,18 @@
+{
+  "type": "photosynthesis:woodfiredoven",
+  "ingredients": [
+    {
+      "item": "photosynthesis:bread_form",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:oat_dough",
+      "count": 2
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:oat_bread",
+    "count": 2
+  },
+  "cookingtime": 300
+}

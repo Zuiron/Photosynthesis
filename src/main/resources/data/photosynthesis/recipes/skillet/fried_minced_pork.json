@@ -1,0 +1,26 @@
+{
+  "type": "photosynthesis:skillet",
+  "ingredients": [
+    {
+      "item": "photosynthesis:measuring_cup_canolaoil",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:minced_pork",
+      "count": 4
+    },
+    {
+      "item": "photosynthesis:salt",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:dried_black_pepper",
+      "count": 1
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:fried_minced_pork",
+    "count": 4
+  },
+  "cookingtime": 100
+}

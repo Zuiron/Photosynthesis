@@ -1,0 +1,38 @@
+{
+  "type": "photosynthesis:woodfiredoven",
+  "ingredients": [
+    {
+      "item": "photosynthesis:oven_tray",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:wheat_dough",
+      "count": 1
+    },
+    {
+      "item": "minecraft:cocoa_beans",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:butter",
+      "count": 1
+    },
+    {
+      "item": "minecraft:sugar",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:vanilla_powder",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:cracked_egg",
+      "count": 2
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:chocolate_cupcake",
+    "count": 6
+  },
+  "cookingtime": 300
+}
