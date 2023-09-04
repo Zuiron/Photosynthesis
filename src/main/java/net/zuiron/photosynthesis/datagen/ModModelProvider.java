@@ -177,7 +177,7 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.SALTED_HORSE_LEATHER,
                 ModItems.SALTED_RABBIT_HIDE,
 
-                ModItems.FIRESTARTER,
+                //ModItems.FIRESTARTER,
 
                 ModItems.BOILED_EGG,
                 ModItems.WHEAT_DOUGH,

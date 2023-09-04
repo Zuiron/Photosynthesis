@@ -197,8 +197,9 @@ public class ModItems {
 
     public static final Item MORTAR = registerItem("mortar",
             new Item(new FabricItemSettings()));*/
-   public static final Item FIRESTARTER = registerItem("firestarter",
-           new DamageableItem(new FabricItemSettings().maxCount(1).maxDamage(4)));
+
+   /*public static final Item FIRESTARTER = registerItem("firestarter",
+           new DamageableItem(new FabricItemSettings().maxCount(1).maxDamage(4)));*/
 
     public static final Item DEBUG_ITEM = registerItem("debug_item",
             new DebugItem(new FabricItemSettings().maxCount(1)));
