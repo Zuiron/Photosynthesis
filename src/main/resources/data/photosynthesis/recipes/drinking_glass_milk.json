@@ -2,11 +2,14 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
+      "item": "photosynthesis:drinking_glass"
+    },
+    {
       "item": "photosynthesis:milk_bucket"
     }
   ],
   "result": {
-    "item": "minecraft:milk_bucket",
+    "item": "photosynthesis:drinking_glass_milk",
     "count": 1
   }
 }

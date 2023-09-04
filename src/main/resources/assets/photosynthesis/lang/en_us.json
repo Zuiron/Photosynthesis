@@ -1437,5 +1437,8 @@
   "block.photosynthesis.pizzasauce_block": "Pizza Sauce",
 
   "item.photosynthesis.drinkingwater_bucket": "Drinking Water Bucket",
-  "block.photosynthesis.drinkingwater_block": "Drinking Water"
+  "block.photosynthesis.drinkingwater_block": "Drinking Water",
+
+  "item.photosynthesis.drinking_glass": "Drinking Glass",
+  "item.photosynthesis.drinking_glass_milk": "Drinking Glass Milk"
 }

@@ -1,0 +1,7 @@
+{
+  "parent": "photosynthesis:block/blockmodels/measuring_cup",
+  "textures": {
+    "0": "photosynthesis:block/measuring_cup_glass_no_lines",
+    "2": "photosynthesis:block/jar_liquid"
+  }
+}

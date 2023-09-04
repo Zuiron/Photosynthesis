@@ -58,6 +58,11 @@ public class ThirstItem extends Item {
             if (stack.isFood()) {
                 this.applyFoodEffects(stack, world, user);
             }
+            if(stack.isOf(ModItems.DRINKING_GLASS_MILK)) {
+                if (!world.isClient) {
+                    user.clearStatusEffects();
+                }
+            }
             stack.damage(1, user, (e) -> {
                 Criteria.CONSUME_ITEM.trigger(serverPlayerEntity, stack);
             });
@@ -96,6 +101,11 @@ public class ThirstItem extends Item {
 
         int remain = stack.getMaxDamage() - stack.getDamage();
         tooltip.add(Text.literal("Uses: "+remain+"/"+stack.getMaxDamage()));
+
+        if(stack.isOf(ModItems.DRINKING_GLASS_MILK)) {
+            tooltip.add(Text.literal("Clears all status effects!"));
+        }
+
         super.appendTooltip(stack, world, tooltip, context);
     }
 

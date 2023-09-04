@@ -1,0 +1,25 @@
+{
+  "type": "create:emptying",
+  "ingredients": [
+    {
+      "item": "photosynthesis:drinking_glass_milk"
+    }
+  ],
+  "results": [
+    {
+      "item": "photosynthesis:drinking_glass"
+    },
+    {
+      "fluid": "photosynthesis:milk",
+      "amount": 20250
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ]
+}

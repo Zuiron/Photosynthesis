@@ -1472,13 +1472,23 @@ public class ModItems {
                     .maxDamage(6)
                     .recipeRemainder(ModItems.EMPTY_MUG)
                     .food(new FoodComponent.Builder()
-                            .hunger(4)
+                            .hunger(20)
                             .saturationModifier(1.0f)
                             .alwaysEdible()
                             .statusEffect(new StatusEffectInstance(ModEffects.MEAD, 100, 0),1.0f)
                             .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 500,0),1.0f)
                             .build())
-                    ,3, 240));
+                    ,4, 240));
+
+    public static final Item DRINKING_GLASS = registerItem("drinking_glass",
+            new Item(new FabricItemSettings()));
+
+    public static final Item DRINKING_GLASS_MILK = registerItem("drinking_glass_milk", //max 10 thirst - 600 tSat - damage is drink usage.
+            new ThirstItem(new FabricItemSettings()
+                    .maxCount(1)
+                    .maxDamage(6)
+                    .recipeRemainder(ModItems.DRINKING_GLASS)
+                    ,6, 600));
 
     /*public static final Item MUG_WATER = registerItem("mug_water", //max 10 thirst - 600 tSat - damage is drink usage.
             new ThirstItem(new FabricItemSettings().maxCount(1).maxDamage(6).recipeRemainder(ModItems.EMPTY_MUG),3, 120));*/
