@@ -13,6 +13,7 @@ import net.minecraft.util.Identifier;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.effect.ModEffects;
+import net.zuiron.photosynthesis.item.advanced.StackableStewItem;
 import net.zuiron.photosynthesis.item.advanced.WrenchItem;
 import net.zuiron.photosynthesis.mixin.ItemAccessor;
 
@@ -1160,35 +1161,35 @@ public class ModItems {
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
     public static final Item TOMATOSOUP = registerItem("tomatosoup",
-            new Item(new FabricItemSettings()
+            new StackableStewItem(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(5).saturationModifier(0.4f).build())));
 
     public static final Item BEEFSTEW = registerItem("beefstew",
-            new Item(new FabricItemSettings()
+            new StackableStewItem(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(9).saturationModifier(0.9f).build())));
 
     public static final Item MASHEDPOTATOES = registerItem("mashedpotatoes",
-            new Item(new FabricItemSettings()
+            new StackableStewItem(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(8).saturationModifier(0.4f).build())));
 
     public static final Item ASPARAGUSBACONDISH = registerItem("asparagusbacondish",
-            new Item(new FabricItemSettings()
+            new StackableStewItem(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(10).saturationModifier(0.9f).build())));
 
     public static final Item RICE_PORRIDGE = registerItem("rice_porridge",
-            new Item(new FabricItemSettings()
+            new StackableStewItem(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(8).saturationModifier(0.4f).build())));
 
     public static final Item FRIED_RICE = registerItem("fried_rice",
-            new Item(new FabricItemSettings()
+            new StackableStewItem(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(12).saturationModifier(1.4f).build())));
 
     public static final Item COOKED_RICE = registerItem("cooked_rice",
-            new Item(new FabricItemSettings()
+            new StackableStewItem(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(4).saturationModifier(0.4f).build())));
 
     public static final Item SALAD = registerItem("salad",
-            new Item(new FabricItemSettings()
+            new StackableStewItem(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(12).saturationModifier(1.5f).build())));
 
     public static final Item BBQ_SKEWERS = registerItem("barbeque_skewers",
@@ -1332,7 +1333,7 @@ public class ModItems {
                     .food(new FoodComponent.Builder().hunger(6).saturationModifier(0.8f).build())));
 
     public static final Item CAULIFLOWER_SOUP = registerItem("cauliflower_soup",
-            new Item(new FabricItemSettings()
+            new StackableStewItem(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(6).saturationModifier(0.8f).build())));
 
     public static final Item HAM = registerItem("ham",
@@ -1391,7 +1392,7 @@ public class ModItems {
             new Item(new FabricItemSettings()));
 
     public static final Item FISH_SOUP = registerItem("fish_soup",
-            new Item(new FabricItemSettings()
+            new StackableStewItem(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(14).saturationModifier(0.8f).build())));
 
     public static final Item GARLIC_BREAD = registerItem("garlic_bread",
