@@ -1,0 +1,17 @@
+{
+  "name": "Cinnamon",
+  "icon": "photosynthesis:cinnamon_sapling",
+  "category": "photosynthesis:trees",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "photosynthesis:cinnamon_raw",
+      "text": "To get cinnamon use a bark peeler, when stripping (with bark peeler) it drops raw cinnamon bark."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "photosynthesis:cinnamon_sapling",
+      "text": " "
+    }
+  ]
+}

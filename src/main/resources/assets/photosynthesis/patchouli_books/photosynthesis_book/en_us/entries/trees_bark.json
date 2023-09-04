@@ -1,0 +1,17 @@
+{
+  "name": "Bark",
+  "icon": "photosynthesis:bark_oak",
+  "category": "photosynthesis:trees",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "photosynthesis:bark_peeler_spud",
+      "text": "To get bark use a bark peeler, when stripping it also drops bark."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "photosynthesis:bark_birch",
+      "text": " "
+    }
+  ]
+}

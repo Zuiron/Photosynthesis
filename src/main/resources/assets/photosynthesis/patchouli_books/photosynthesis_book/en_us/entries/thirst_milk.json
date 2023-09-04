@@ -1,0 +1,12 @@
+{
+  "name": "Drinking Glass",
+  "icon": "photosynthesis:drinking_glass",
+  "category": "photosynthesis:thirst",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "photosynthesis:drinking_glass_milk",
+      "text": "Milk is very healthy! It also removes all status effects."
+    }
+  ]
+}
