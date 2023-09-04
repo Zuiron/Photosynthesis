@@ -22,7 +22,7 @@ public class ModConfig implements ConfigData {
 
     @ConfigEntry.Gui.Tooltip
     @Comment("Days per season")
-    public int daysPerSeason = 18;
+    public int daysPerSeason = 4;
 
 
     @ConfigEntry.Gui.PrefixText
@@ -58,43 +58,43 @@ public class ModConfig implements ConfigData {
     @ConfigEntry.Gui.PrefixText
     @ConfigEntry.Gui.Tooltip
     @Comment("enable or disable natural Creeper spawning")
-    public boolean doCreeperSpawn = false;
+    public boolean doCreeperSpawn = true;
 
     @ConfigEntry.Gui.Tooltip
     @Comment("enable or disable natural Zombie spawning")
-    public boolean doZombieSpawn = false;
+    public boolean doZombieSpawn = true;
 
     @ConfigEntry.Gui.Tooltip
     @Comment("enable or disable natural ZombieVillager spawning")
-    public boolean doZombieVillagerSpawn = false;
+    public boolean doZombieVillagerSpawn = true;
 
     @ConfigEntry.Gui.Tooltip
     @Comment("enable or disable natural ZombieVillager spawning")
-    public boolean doZombieHorseSpawn = false;
+    public boolean doZombieHorseSpawn = true;
 
     @ConfigEntry.Gui.Tooltip
     @Comment("enable or disable natural Skeleton spawning")
-    public boolean doSkeletonSpawn = false;
+    public boolean doSkeletonSpawn = true;
 
     @ConfigEntry.Gui.Tooltip
     @Comment("enable or disable natural Husk spawning")
-    public boolean doHuskSpawn = false;
+    public boolean doHuskSpawn = true;
 
     @ConfigEntry.Gui.Tooltip
     @Comment("enable or disable natural Witch spawning")
-    public boolean doWitchSpawn = false;
+    public boolean doWitchSpawn = true;
 
     @ConfigEntry.Gui.Tooltip
     @Comment("enable or disable natural Husk spawning")
-    public boolean doSpiderSpawn = false;
+    public boolean doSpiderSpawn = true;
 
     @ConfigEntry.Gui.Tooltip
     @Comment("enable or disable natural SkeletonHorse spawning")
-    public boolean doSkeletonHorseSpawn = false;
+    public boolean doSkeletonHorseSpawn = true;
 
     @ConfigEntry.Gui.Tooltip
     @Comment("enable or disable natural EnderMan spawning")
-    public boolean doEnderManSpawn = false;
+    public boolean doEnderManSpawn = true;
 
     //https://www.curseforge.com/minecraft/texture-packs/seasons-data-pack
 
