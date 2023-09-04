@@ -57,6 +57,7 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.SEASONSCALENDAR);
         addDrop(ModBlocks.EGGBASKET);
         addDrop(ModBlocks.MANUREBUCKET);
+        addDrop(ModBlocks.GRAVITYPRESS);
 
         //kitchen counters
         /*addDrop(ModBlocks.KITCHENCOUNTER_BIG_POLISHED_ANDESITE_OAK);
