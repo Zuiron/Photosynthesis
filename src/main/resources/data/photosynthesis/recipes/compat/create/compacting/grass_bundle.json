@@ -1,0 +1,33 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "item": "minecraft:grass"
+    },
+    {
+      "item": "minecraft:grass"
+    },
+    {
+      "item": "minecraft:grass"
+    },
+    {
+      "item": "minecraft:grass"
+    },
+    {
+      "item": "photosynthesis:grass_twine_dry"
+    }
+  ],
+  "results": [
+    {
+      "item": "photosynthesis:grass_bundle"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "item": "photosynthesis:straw_bundle"
+    },
+    {
+      "item": "photosynthesis:straw_bundle"
+    },
+    {
+      "item": "photosynthesis:straw_bundle"
+    },
+    {
+      "item": "photosynthesis:straw_bundle"
+    },
+    {
+      "item": "photosynthesis:grass_twine_dry"
+    }
+  ],
+  "results": [
+    {
+      "item": "photosynthesis:grass_bale"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ]
+}

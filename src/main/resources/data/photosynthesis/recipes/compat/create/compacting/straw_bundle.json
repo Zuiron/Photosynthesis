@@ -1,0 +1,45 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "item": "minecraft:straw_piece"
+    },
+    {
+      "item": "minecraft:straw_piece"
+    },
+    {
+      "item": "minecraft:straw_piece"
+    },
+    {
+      "item": "minecraft:straw_piece"
+    },
+    {
+      "item": "minecraft:straw_piece"
+    },
+    {
+      "item": "minecraft:straw_piece"
+    },
+    {
+      "item": "minecraft:straw_piece"
+    },
+    {
+      "item": "minecraft:straw_piece"
+    },
+    {
+      "item": "photosynthesis:grass_twine_dry"
+    }
+  ],
+  "results": [
+    {
+      "item": "photosynthesis:straw_bundle"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ]
+}
