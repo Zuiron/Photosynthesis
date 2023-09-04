@@ -1516,7 +1516,7 @@ public class ModItems {
     }
 
     private static Item registerItem(String name, Item item){
-        Photosynthesis.LOGGER.info("Registering item with name: " + name);
+        //Photosynthesis.LOGGER.info("Registering item with name: " + name);
         return Registry.register(Registries.ITEM, new Identifier(Photosynthesis.MOD_ID, name), item);
     }
 

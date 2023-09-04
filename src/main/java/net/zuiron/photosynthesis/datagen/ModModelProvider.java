@@ -317,7 +317,8 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.KAVIAR,
                 ModItems.WHEAT_BREAD_SLICE_WITH_SCRAMBLED_EGG_AND_KAVIAR,
                 ModFluids.PIZZASAUCE_BUCKET,
-                ModFluids.TOMATOSAUCE_BUCKET
+                ModFluids.TOMATOSAUCE_BUCKET,
+                ModFluids.DRINKINGWATER_BUCKET
 
 
 

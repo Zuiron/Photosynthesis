@@ -17,6 +17,11 @@ import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.item.ModItemGroup;
 
 public class ModFluids {
+    public static FlowableFluid STILL_DRINKINGWATER;
+    public static FlowableFluid FLOWING_DRINKINGWATER;
+    public static Block DRINKINGWATER_BLOCK;
+    public static Item DRINKINGWATER_BUCKET;
+
     public static FlowableFluid STILL_TOMATOSAUCE;
     public static FlowableFluid FLOWING_TOMATOSAUCE;
     public static Block TOMATOSAUCE_BLOCK;
@@ -93,6 +98,16 @@ public class ModFluids {
     public static Item SKIMMEDGOATMILK_BUCKET;
 
     public static void register() {
+        //TOMATO SAUCE
+        STILL_DRINKINGWATER = Registry.register(Registries.FLUID,
+                new Identifier(Photosynthesis.MOD_ID, "drinkingwater"), new DrinkingWaterFluid.Still());
+        FLOWING_DRINKINGWATER = Registry.register(Registries.FLUID,
+                new Identifier(Photosynthesis.MOD_ID, "flowing_drinkingwater"), new DrinkingWaterFluid.Flowing());
+        DRINKINGWATER_BLOCK = Registry.register(Registries.BLOCK, new Identifier(Photosynthesis.MOD_ID, "drinkingwater_block"),
+                new FluidBlock(ModFluids.STILL_DRINKINGWATER, FabricBlockSettings.copyOf(Blocks.WATER)){ });
+        DRINKINGWATER_BUCKET = Registry.register(Registries.ITEM, new Identifier(Photosynthesis.MOD_ID, "drinkingwater_bucket"),
+                new BucketItem(ModFluids.STILL_DRINKINGWATER, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1)));
+
         //TOMATO SAUCE
         STILL_TOMATOSAUCE = Registry.register(Registries.FLUID,
                 new Identifier(Photosynthesis.MOD_ID, "tomatosauce"), new TomatoSauceFluid.Still());

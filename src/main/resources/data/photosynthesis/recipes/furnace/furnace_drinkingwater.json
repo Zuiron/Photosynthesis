@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "minecraft:water_bucket"
+  },
+  "result": "photosynthesis:drinkingwater_bucket",
+  "experience": 0.1,
+  "cookingtime": 900
+}
