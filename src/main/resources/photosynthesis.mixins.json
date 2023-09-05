@@ -32,7 +32,8 @@
     "ModBeetrootsBlock",
     "ModTorchflowerBlock",
     "ModAzaleaBlock",
-    "ModFarmlandBlock"
+    "ModFarmlandBlock",
+    "season_weather.ModBiomeWeather"
   ],
   "client": [
     "PhotosynthesisMixin"
