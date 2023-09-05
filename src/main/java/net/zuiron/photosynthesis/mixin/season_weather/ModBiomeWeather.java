@@ -1,7 +1,9 @@
 package net.zuiron.photosynthesis.mixin.season_weather;
 
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
+import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.api.Seasons;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -25,11 +27,23 @@ public abstract class ModBiomeWeather {
 
     @Inject(method = "getPrecipitation", at = @At("HEAD"), cancellable = true)
     public void getPrecipitation(BlockPos pos, CallbackInfoReturnable<Biome.Precipitation> cir) {
-        if (!this.hasPrecipitation()) {
-            cir.setReturnValue(Biome.Precipitation.NONE);
-        }
+        if(Seasons.isSeasonsEnabled()) {
+            if (!this.hasPrecipitation()) {
+                cir.setReturnValue(Biome.Precipitation.NONE);
+            }
 
-        //oh yeah, this works. we just need a way to set this based on seasons. right now this is vanilla code.
-        cir.setReturnValue(this.isCold(pos) ? Biome.Precipitation.SNOW : Biome.Precipitation.RAIN);
+            assert MinecraftClient.getInstance().world != null;
+            MinecraftClient minecraftClient = MinecraftClient.getInstance();
+            long time = minecraftClient.world.getTimeOfDay();
+            int season = Seasons.getCurrentSeason(time);
+            String seasonString = Seasons.getSeasonString(season);
+
+            if (seasonString.equals("Winter")) {
+                cir.setReturnValue(Biome.Precipitation.SNOW);
+            } else {
+                cir.setReturnValue(Biome.Precipitation.RAIN);
+            }
+            cir.cancel();
+        }
     }
 }
