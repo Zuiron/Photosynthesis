@@ -10,6 +10,7 @@ import net.minecraft.world.WorldView;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.api.CropData;
 import net.zuiron.photosynthesis.api.Seasons;
+import net.zuiron.photosynthesis.util.ModConstants;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Mutable;
@@ -53,7 +54,7 @@ public abstract class ModCocoaBlock extends HorizontalFacingBlock
                 int currentCropAge = state.get(AGE);
 
                 if(currentCropAge < 2) {
-                    if(currentCropAge >= minAge && currentCropAge < maxAge && seasonPercentage > 0.5f) { //0.5f = 50% "halfway thru season"
+                    if(currentCropAge >= minAge && currentCropAge < maxAge && seasonPercentage > ModConstants.GROWATABOVEPCT) { //0.5f = 50% "halfway thru season"
                         //Photosynthesis.LOGGER.info("Crop: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NewCropAge: "+(currentCropAge + 1)+", %:"+seasonPercentage);
                         world.setBlockState(pos, (BlockState)state.with(AGE, currentCropAge + 1), Block.NOTIFY_LISTENERS);
                     } else {

@@ -14,6 +14,7 @@ import net.minecraft.world.WorldView;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.api.CropData;
 import net.zuiron.photosynthesis.api.Seasons;
+import net.zuiron.photosynthesis.util.ModConstants;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -94,7 +95,7 @@ public abstract class ModSaplingBlock extends PlantBlock
                     this.generate(world, pos, state, random, ci);
                 }
 
-                if(currentCropAge >= minAge && currentCropAge < maxAge && seasonPercentage > 0.5f && world.getLightLevel(pos.up()) >= 9) { //0.5f = 50% "halfway thru season"
+                if(currentCropAge >= minAge && currentCropAge < maxAge && seasonPercentage > ModConstants.GROWATABOVEPCT && world.getLightLevel(pos.up()) >= 9) { //0.5f = 50% "halfway thru season"
                     //Photosynthesis.LOGGER.info("Sapling: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NewCropAge: "+(this.getAge(state) + 1)+", %:"+seasonPercentage);
                     world.setBlockState(pos, this.withAge(this.getAge(state) + 1), 2);
                 } else {

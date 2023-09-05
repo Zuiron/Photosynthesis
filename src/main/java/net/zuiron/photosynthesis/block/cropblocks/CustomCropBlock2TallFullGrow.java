@@ -18,6 +18,7 @@ import net.minecraft.world.WorldView;
 import net.zuiron.photosynthesis.api.CropData;
 import net.zuiron.photosynthesis.api.Seasons;
 import net.zuiron.photosynthesis.item.ModItems;
+import net.zuiron.photosynthesis.util.ModConstants;
 
 public class CustomCropBlock2TallFullGrow extends CropBlock implements Waterloggable {
     String seed;
@@ -110,7 +111,7 @@ public class CustomCropBlock2TallFullGrow extends CropBlock implements Waterlogg
                 float seasonPercentage = Seasons.getSeasonPercentage(world.getTimeOfDay());
                 int currentCropAge = this.getAge(state);
 
-                if(currentCropAge >= minAge && currentCropAge < maxAge && seasonPercentage > 0.5f) { //0.5f = 50% "halfway thru season"
+                if(currentCropAge >= minAge && currentCropAge < maxAge && seasonPercentage > ModConstants.GROWATABOVEPCT) { //0.5f = 50% "halfway thru season"
                     //Photosynthesis.LOGGER.info("CropWL: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NewCropAge: "+(this.getAge(state) + 1)+", %:"+seasonPercentage);
                     if(currentCropAge < LOWER_HALF_MAX_AGE && !world.getBlockState(pos.up()).isOf(this)) {
                         world.setBlockState(pos, this.withAge(currentCropAge + 1), Block.NOTIFY_LISTENERS);

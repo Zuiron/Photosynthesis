@@ -12,6 +12,7 @@ import net.minecraft.world.event.GameEvent;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.api.CropData;
 import net.zuiron.photosynthesis.api.Seasons;
+import net.zuiron.photosynthesis.util.ModConstants;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -47,7 +48,7 @@ public abstract class ModSweetBerryBushBlock {
                 float seasonPercentage = Seasons.getSeasonPercentage(world.getTimeOfDay());
                 int currentCropAge = (Integer)state.get(AGE); //MAX is 3.
 
-                if(currentCropAge >= minAge && currentCropAge < maxAge && seasonPercentage > 0.5f) { //0.5f = 50% "halfway thru season"
+                if(currentCropAge >= minAge && currentCropAge < maxAge && seasonPercentage > ModConstants.GROWATABOVEPCT) { //0.5f = 50% "halfway thru season"
                     if (currentCropAge < 3 && random.nextInt(5) == 0 && world.getBaseLightLevel(pos.up(), 0) >= 9) {
                         //Photosynthesis.LOGGER.info("BushCrop/Berry: " + state.getBlock().getTranslationKey() + ", minAge:" + minAge + ", maxAge:" + maxAge + ", CurrentCropAge: " + currentCropAge + ", NewCropAge: " + (currentCropAge + 1) + ", %:" + seasonPercentage);
                         BlockState blockState = (BlockState) state.with(AGE, currentCropAge + 1);

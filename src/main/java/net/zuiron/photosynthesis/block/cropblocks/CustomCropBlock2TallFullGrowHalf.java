@@ -23,6 +23,7 @@ import net.zuiron.photosynthesis.api.CropData;
 import net.zuiron.photosynthesis.api.Seasons;
 import net.zuiron.photosynthesis.item.ModItems;
 import net.zuiron.photosynthesis.state.property.ModProperties;
+import net.zuiron.photosynthesis.util.ModConstants;
 
 import java.util.Objects;
 
@@ -130,7 +131,7 @@ public class CustomCropBlock2TallFullGrowHalf extends CropBlock implements Water
                 float seasonPercentage = Seasons.getSeasonPercentage(world.getTimeOfDay());
                 int currentCropAge = this.getAge(state);
 
-                if(currentCropAge >= minAge && currentCropAge < maxAge && seasonPercentage > 0.5f) { //0.5f = 50% "halfway thru season"
+                if(currentCropAge >= minAge && currentCropAge < maxAge && seasonPercentage > ModConstants.GROWATABOVEPCT) { //0.5f = 50% "halfway thru season"
                     //Photosynthesis.LOGGER.info("CropWL: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NewCropAge: "+(this.getAge(state) + 1)+", %:"+seasonPercentage);
                     if(currentCropAge < 7 && state.get(HALF) == DoubleBlockHalf.LOWER) {
                         //world.setBlockState(pos, this.withAge(currentCropAge + 1).with(HALF, DoubleBlockHalf.LOWER), Block.NOTIFY_LISTENERS);

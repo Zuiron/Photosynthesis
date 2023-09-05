@@ -24,6 +24,7 @@ import net.zuiron.photosynthesis.api.Seasons;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.item.ModItems;
 import net.zuiron.photosynthesis.state.property.ModProperties;
+import net.zuiron.photosynthesis.util.ModConstants;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -150,7 +151,7 @@ public abstract class ModCropBlock extends PlantBlock
                 float temperature = biome.getTemperature();
                 Photosynthesis.LOGGER.info("current temperature: "+temperature);*/
 
-                if(currentCropAge >= minAge && currentCropAge < maxAge && seasonPercentage > 0.5f) { //0.5f = 50% "halfway thru season"
+                if(currentCropAge >= minAge && currentCropAge < maxAge && seasonPercentage > ModConstants.GROWATABOVEPCT) { //0.5f = 50% "halfway thru season"
                     //Photosynthesis.LOGGER.info("Crop: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NewCropAge: "+(this.getAge(state) + 1)+", %:"+seasonPercentage);
                     //world.setBlockState(pos, this.withAge(this.getAge(state) + 1), 2);
                     world.setBlockState(pos, state.with(AGE, this.getAge(state) + 1), 2);

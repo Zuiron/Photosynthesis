@@ -13,6 +13,7 @@ import net.minecraft.world.WorldView;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.api.CropData;
 import net.zuiron.photosynthesis.api.Seasons;
+import net.zuiron.photosynthesis.util.ModConstants;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -87,7 +88,7 @@ public abstract class ModStemBlock extends PlantBlock
                     world.setBlockState(pos, state, Block.NOTIFY_LISTENERS);
                 }
 
-                if(currentCropAge >= 7 && seasonPercentage > 0.7f && this.getGourdsSpawned(state) < 4) {
+                if(currentCropAge >= 7 && seasonPercentage > ModConstants.GROWATABOVEPCT && this.getGourdsSpawned(state) < 4) {
                     //gourd matures ON crop. / replaces crop.
                     //world.setBlockState(pos, this.gourdBlock.getDefaultState());
 
@@ -108,7 +109,7 @@ public abstract class ModStemBlock extends PlantBlock
 
                 }
 
-                if(currentCropAge >= minAge && currentCropAge < maxAge && seasonPercentage > 0.5f) { //0.5f = 50% "halfway thru season"
+                if(currentCropAge >= minAge && currentCropAge < maxAge && seasonPercentage > ModConstants.GROWATABOVEPCT) { //0.5f = 50% "halfway thru season"
                     //Photosynthesis.LOGGER.info("Crop: "+state.getBlock().getTranslationKey()+", minAge:"+minAge+", maxAge:"+maxAge+", CurrentCropAge: "+currentCropAge+", NewCropAge: "+(currentCropAge + 1)+", %:"+seasonPercentage);
                     state = (BlockState) state.with(AGE, currentCropAge + 1);
                     world.setBlockState(pos, state, Block.NOTIFY_LISTENERS);
