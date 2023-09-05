@@ -170,7 +170,7 @@ public abstract class ModSaplingBlock extends PlantBlock
                 world.setBlockState(pos, (BlockState)state.cycle(STAGE), Block.NO_REDRAW);
             } else {
                 this.generator.generate(world, world.getChunkManager().getChunkGenerator(), pos, state, random);
-                Photosynthesis.LOGGER.info("Generating Tree!");
+                //Photosynthesis.LOGGER.info("Generating Tree!");
             }
             ci.cancel(); //do not run vanilla code
         }
