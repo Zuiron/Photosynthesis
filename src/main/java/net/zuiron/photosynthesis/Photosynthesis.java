@@ -20,6 +20,7 @@ import net.zuiron.photosynthesis.effect.ModEffects;
 import net.zuiron.photosynthesis.event.OnPlayerEatEvent;
 import net.zuiron.photosynthesis.event.PlayerTickHandler;
 import net.zuiron.photosynthesis.event.ModUseItemCallback;
+import net.zuiron.photosynthesis.event.SeasonTickHandler;
 import net.zuiron.photosynthesis.fluid.ModFluids;
 import net.zuiron.photosynthesis.item.ModItemGroup;
 import net.zuiron.photosynthesis.item.ModItems;
@@ -214,6 +215,7 @@ public class Photosynthesis implements ModInitializer {
 		ModWorldGen.generateModWorldGen(); //last
 
 		ServerTickEvents.START_SERVER_TICK.register(new PlayerTickHandler());
+		ServerTickEvents.START_SERVER_TICK.register(new SeasonTickHandler());
 
 		LOGGER.info("Hello Fabric world!");
 	}

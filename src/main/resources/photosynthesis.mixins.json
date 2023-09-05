@@ -33,7 +33,9 @@
     "ModTorchflowerBlock",
     "ModAzaleaBlock",
     "ModFarmlandBlock",
-    "season_weather.ModBiomeWeather"
+    "season_weather.ModBiomeWeather",
+    "season_weather.ModSnowBlock",
+    "season_weather.ModIceBlock"
   ],
   "client": [
     "PhotosynthesisMixin"

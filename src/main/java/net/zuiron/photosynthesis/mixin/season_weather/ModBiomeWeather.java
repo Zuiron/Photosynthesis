@@ -1,10 +1,9 @@
 package net.zuiron.photosynthesis.mixin.season_weather;
 
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
-import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.api.Seasons;
+import net.zuiron.photosynthesis.event.SeasonTickHandler;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -32,16 +31,41 @@ public abstract class ModBiomeWeather {
                 cir.setReturnValue(Biome.Precipitation.NONE);
             }
 
-            assert MinecraftClient.getInstance().world != null;
+            /*assert MinecraftClient.getInstance().world != null;
             MinecraftClient minecraftClient = MinecraftClient.getInstance();
             long time = minecraftClient.world.getTimeOfDay();
             int season = Seasons.getCurrentSeason(time);
-            String seasonString = Seasons.getSeasonString(season);
+            String seasonString = Seasons.getSeasonString(season);*/
 
-            if (seasonString.equals("Winter")) {
+            //if (seasonString.equals("Winter")) {
+            if (SeasonTickHandler.cSeason.equals("Winter")) {
                 cir.setReturnValue(Biome.Precipitation.SNOW);
             } else {
                 cir.setReturnValue(Biome.Precipitation.RAIN);
+            }
+            cir.cancel();
+        }
+    }
+
+    @Inject(method = "doesNotSnow", at = @At("HEAD"), cancellable = true)
+    public void doesNotSnow(BlockPos pos, CallbackInfoReturnable<Boolean> cir) {
+        //return this.getTemperature(pos) >= 0.15f;
+
+        //TODO fix snowblock and iceblock meltable before turning this on.
+        boolean enableSnow = true;
+
+        if(Seasons.isSeasonsEnabled() && enableSnow) {
+            /*assert MinecraftClient.getInstance().world != null;
+            MinecraftClient minecraftClient = MinecraftClient.getInstance();
+            long time = minecraftClient.world.getTimeOfDay();
+            int season = Seasons.getCurrentSeason(time);
+            String seasonString = Seasons.getSeasonString(season);*/
+
+            //if (seasonString.equals("Winter")) {
+            if (SeasonTickHandler.cSeason.equals("Winter")) {
+                cir.setReturnValue(false);
+            } else {
+                cir.setReturnValue(true);
             }
             cir.cancel();
         }
