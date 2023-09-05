@@ -1,5 +1,6 @@
 package net.zuiron.photosynthesis.mixin.season_weather;
 
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
 import net.zuiron.photosynthesis.api.Seasons;
@@ -31,14 +32,14 @@ public abstract class ModBiomeWeather {
                 cir.setReturnValue(Biome.Precipitation.NONE);
             }
 
-            /*assert MinecraftClient.getInstance().world != null;
+            assert MinecraftClient.getInstance().world != null;
             MinecraftClient minecraftClient = MinecraftClient.getInstance();
             long time = minecraftClient.world.getTimeOfDay();
             int season = Seasons.getCurrentSeason(time);
-            String seasonString = Seasons.getSeasonString(season);*/
+            String seasonString = Seasons.getSeasonString(season);
 
-            //if (seasonString.equals("Winter")) {
-            if (SeasonTickHandler.cSeason.equals("Winter")) {
+            if (seasonString.equals("Winter")) {
+            //if (SeasonTickHandler.cSeason.equals("Winter")) {
                 cir.setReturnValue(Biome.Precipitation.SNOW);
             } else {
                 cir.setReturnValue(Biome.Precipitation.RAIN);
