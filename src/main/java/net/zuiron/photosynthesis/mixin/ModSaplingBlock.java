@@ -24,13 +24,18 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class ModSaplingBlock extends PlantBlock
         implements Fertilizable {
 
+    @Final
     @Shadow public static final IntProperty STAGE = Properties.STAGE;
     @Mutable
     @Final
     @Shadow
     private final SaplingGenerator generator;
 
+    @Shadow public abstract void generate(ServerWorld world, BlockPos pos, BlockState state, Random random);
+
+    @Unique
     private final int MAX_AGE = 7;
+    @Unique
     private static final IntProperty AGE = Properties.AGE_7;
 
 
@@ -41,22 +46,27 @@ public abstract class ModSaplingBlock extends PlantBlock
         this.setDefaultState((BlockState)((BlockState)this.stateManager.getDefaultState()).with(this.getAgeProperty(), 0));
     }
 
+    @Unique
     protected IntProperty getAgeProperty() {
         return AGE;
     }
 
+    @Unique
     public int getMaxAge() {
         return this.MAX_AGE;
     }
 
+    @Unique
     public int getAge(BlockState state) {
         return state.get(this.getAgeProperty());
     }
 
+    @Unique
     public BlockState withAge(int age) {
         return (BlockState)this.getDefaultState().with(this.getAgeProperty(), age);
     }
 
+    @Unique
     public final boolean isMature(BlockState blockState) {
         return this.getAge(blockState) >= this.getMaxAge();
     }
@@ -92,7 +102,8 @@ public abstract class ModSaplingBlock extends PlantBlock
                 //if sapling is MAXAGE attempt to generate.
                 if (this.getAge(state) >= this.getMaxAge()) {
                     //Photosynthesis.LOGGER.info("Sapling is mature, attempt generate now!");
-                    this.generate(world, pos, state, random, ci);
+                    //this.generate(world, pos, state, random, ci);
+                    this.generate(world,pos,state,random);
                 }
 
                 if(currentCropAge >= minAge && currentCropAge < maxAge && seasonPercentage > ModConstants.GROWATABOVEPCT && world.getLightLevel(pos.up()) >= 9) { //0.5f = 50% "halfway thru season"
@@ -116,6 +127,7 @@ public abstract class ModSaplingBlock extends PlantBlock
         //ci.cancel();
     }
 
+    @Unique
     public void applyGrowth(World world, BlockPos pos, BlockState state) {
         int j;
         int i = this.getAge(state) + this.getGrowthAmount(world);
@@ -125,6 +137,7 @@ public abstract class ModSaplingBlock extends PlantBlock
         world.setBlockState(pos, this.withAge(i), Block.NOTIFY_LISTENERS);
     }
 
+    @Unique
     protected int getGrowthAmount(World world) {
         return MathHelper.nextInt(world.random, 1, 1);
     }
@@ -150,14 +163,15 @@ public abstract class ModSaplingBlock extends PlantBlock
     @Inject(method = "generate", at = @At("HEAD"), cancellable = true)
     public void generate(ServerWorld world, BlockPos pos, BlockState state, Random random, CallbackInfo ci) {
         if(Seasons.isSeasonsEnabled()) {
-            this.generator.generate(world, world.getChunkManager().getChunkGenerator(), pos, state, random);
+            //this.generator.generate(world, world.getChunkManager().getChunkGenerator(), pos, state, random);
             //Photosynthesis.LOGGER.info("Generating Tree!");
-        /*if (state.get(STAGE) == 0) {
-            world.setBlockState(pos, (BlockState)state.cycle(STAGE), Block.NO_REDRAW);
-        } else {
-            this.generator.generate(world, world.getChunkManager().getChunkGenerator(), pos, state, random);
-            Photosynthesis.LOGGER.info("Generating Tree!");
-        }*/
+
+            if (state.get(STAGE) == 0) {
+                world.setBlockState(pos, (BlockState)state.cycle(STAGE), Block.NO_REDRAW);
+            } else {
+                this.generator.generate(world, world.getChunkManager().getChunkGenerator(), pos, state, random);
+                Photosynthesis.LOGGER.info("Generating Tree!");
+            }
             ci.cancel(); //do not run vanilla code
         }
     }
