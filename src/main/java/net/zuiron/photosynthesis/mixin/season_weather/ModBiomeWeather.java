@@ -1,5 +1,7 @@
 package net.zuiron.photosynthesis.mixin.season_weather;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
@@ -25,6 +27,7 @@ public abstract class ModBiomeWeather {
     @Shadow public abstract boolean hasPrecipitation();
     @Shadow public abstract boolean isCold(BlockPos pos);
 
+    @Environment(EnvType.CLIENT)
     @Inject(method = "getPrecipitation", at = @At("HEAD"), cancellable = true)
     public void getPrecipitation(BlockPos pos, CallbackInfoReturnable<Biome.Precipitation> cir) {
         if(Seasons.isSeasonsEnabled()) {
