@@ -3,6 +3,7 @@ package net.zuiron.photosynthesis.client;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
+import net.fabricmc.fabric.api.client.particle.v1.FabricSpriteProvider;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
@@ -13,6 +14,7 @@ import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.client.color.world.FoliageColors;
 import net.minecraft.client.color.world.GrassColors;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
+import net.minecraft.client.particle.SpriteProvider;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.minecraft.text.Text;
@@ -27,6 +29,7 @@ import net.zuiron.photosynthesis.fluid.ModFluids;
 import net.zuiron.photosynthesis.networking.ModMessages;
 import net.zuiron.photosynthesis.particle.BoilingBubblesParticles;
 import net.zuiron.photosynthesis.particle.ModParticles;
+import net.zuiron.photosynthesis.particle.OrangeLeavesParticle;
 import net.zuiron.photosynthesis.screen.*;
 import net.fabricmc.fabric.api.resource.*;
 
@@ -643,6 +646,8 @@ public class PhotosynthesisClient implements ClientModInitializer {
 
         //particles
         ParticleFactoryRegistry.getInstance().register(ModParticles.BOILING_BUBBLES_PARTICLES, BoilingBubblesParticles.Factory::new);
+        //this.registerFactory(ParticleTypes.CHERRY_LEAVES, (SpriteProvider spriteProvider) -> (parameters, world, x, y, z, velocityX, velocityY, velocityZ) -> new CherryLeavesParticle(world, x, y, z, spriteProvider));
+        ParticleFactoryRegistry.getInstance().register(ModParticles.ORANGE_FALLING_LEAVES, (FabricSpriteProvider spriteProvider) -> (parameters, world, x, y, z, velocityX, velocityY, velocityZ) -> new OrangeLeavesParticle(world, x, y, z, spriteProvider));
 
         //colors
         //this is for LEAVES

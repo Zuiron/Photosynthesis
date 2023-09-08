@@ -13,6 +13,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.api.Seasons;
+import net.zuiron.photosynthesis.particle.ModParticles;
 import net.zuiron.photosynthesis.state.property.ModProperties;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -66,7 +67,7 @@ public abstract class ModLeavesBlock extends Block {
      */
     @Inject(at = @At("HEAD"), method = "randomDisplayTick", cancellable = true)
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random, CallbackInfo ci) {
-        if(Seasons.isSeasonsEnabled()) {
+        if(Seasons.isSeasonsEnabled() && !state.isOf(Blocks.CHERRY_LEAVES)) {
             super.randomDisplayTick(state, world, pos, random);
             if (random.nextInt(10) != 0) {
                 return;
@@ -79,7 +80,7 @@ public abstract class ModLeavesBlock extends Block {
 
             int season = Seasons.getCurrentSeason(world.getTimeOfDay());
             if (season == 1) {
-                ParticleUtil.spawnParticle(world, pos, random, ParticleTypes.CHERRY_LEAVES);
+                ParticleUtil.spawnParticle(world, pos, random, ModParticles.ORANGE_FALLING_LEAVES);
             }
         }
     }
