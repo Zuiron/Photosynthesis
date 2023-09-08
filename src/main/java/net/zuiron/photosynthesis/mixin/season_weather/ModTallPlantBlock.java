@@ -1,12 +1,15 @@
 package net.zuiron.photosynthesis.mixin.season_weather;
 
 import net.minecraft.block.*;
+import net.minecraft.block.enums.DoubleBlockHalf;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
+import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
+import net.minecraft.world.LightType;
 import net.zuiron.photosynthesis.api.Seasons;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -18,6 +21,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class ModTallPlantBlock extends PlantBlock {
     @Unique
     private static final BooleanProperty SNOWY = Properties.SNOWY;
+    private static final EnumProperty<DoubleBlockHalf> HALF = Properties.DOUBLE_BLOCK_HALF;
     public ModTallPlantBlock(Settings settings) {
         super(settings);
     }
@@ -33,7 +37,16 @@ public abstract class ModTallPlantBlock extends PlantBlock {
             int season = Seasons.getCurrentSeason(world.getTimeOfDay());
             if(state.contains(SNOWY)) {
                 if (season == 2) {
-                    world.setBlockState(pos, state.with(SNOWY, true));
+                    int light = world.getLightLevel(LightType.BLOCK, pos);
+                    if(state.contains(HALF) && state.get(HALF) == DoubleBlockHalf.UPPER) {
+                        light = world.getLightLevel(LightType.BLOCK, pos.down());
+                    }
+
+                    if(light < 12) {
+                        world.setBlockState(pos, state.with(SNOWY, true));
+                    } else {
+                        world.setBlockState(pos, state.with(SNOWY, false));
+                    }
                 } else {
                     world.setBlockState(pos, state.with(SNOWY, false));
                 }

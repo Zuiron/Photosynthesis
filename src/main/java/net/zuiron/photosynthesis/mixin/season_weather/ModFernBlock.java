@@ -7,6 +7,7 @@ import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
+import net.minecraft.world.LightType;
 import net.zuiron.photosynthesis.api.Seasons;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -29,7 +30,11 @@ public abstract class ModFernBlock extends PlantBlock {
         if(Seasons.isSeasonsEnabled()) {
             int season = Seasons.getCurrentSeason(world.getTimeOfDay());
             if(season == 2) {
-                world.setBlockState(pos, state.with(SNOWY, true));
+                if(world.getLightLevel(LightType.BLOCK, pos) < 12) {
+                    world.setBlockState(pos, state.with(SNOWY, true));
+                } else {
+                    world.setBlockState(pos, state.with(SNOWY, false));
+                }
             } else {
                 world.setBlockState(pos, state.with(SNOWY, false));
             }

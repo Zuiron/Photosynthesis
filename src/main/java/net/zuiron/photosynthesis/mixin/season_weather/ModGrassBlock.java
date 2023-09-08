@@ -7,6 +7,7 @@ import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
+import net.minecraft.world.LightType;
 import net.zuiron.photosynthesis.api.Seasons;
 import net.zuiron.photosynthesis.state.property.ModProperties;
 import org.spongepowered.asm.mixin.Mixin;
@@ -28,9 +29,13 @@ public abstract class ModGrassBlock extends SpreadableBlock {
             //in winter, only set season to 2 if block is above y60
             if(season == 2) {
                 if(pos.getY() >= 60) {
-                    world.setBlockState(pos, state.with(SEASON, season));
+                    if(world.getLightLevel(LightType.BLOCK, pos.up()) < 12) {
+                        world.setBlockState(pos, state.with(SEASON, season));
+                    } else {
+                        world.setBlockState(pos, state.with(SEASON, 1));
+                    }
                 } else {
-                    world.setBlockState(pos, state.with(SEASON, season-1));
+                    world.setBlockState(pos, state.with(SEASON, 1));
                 }
             } else {
                 world.setBlockState(pos, state.with(SEASON, season));
