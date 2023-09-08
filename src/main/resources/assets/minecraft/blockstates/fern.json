@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "snowy=false": {
+      "model": "minecraft:block/fern"
+    },
+    "snowy=true": {
+      "model": "minecraft:block/fern_snowy"
+    }
+  }
+}
