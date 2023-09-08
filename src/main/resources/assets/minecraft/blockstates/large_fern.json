@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "half=lower,snowy=false": {
+      "model": "minecraft:block/large_fern_bottom"
+    },
+    "half=upper,snowy=false": {
+      "model": "minecraft:block/large_fern_top"
+    },
+    "half=lower,snowy=true": {
+      "model": "minecraft:block/large_fern_bottom_snowy"
+    },
+    "half=upper,snowy=true": {
+      "model": "minecraft:block/large_fern_top_snowy"
+    }
+  }
+}
