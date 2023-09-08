@@ -25,7 +25,16 @@ public abstract class ModGrassBlock extends SpreadableBlock {
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         if(Seasons.isSeasonsEnabled() && this == Blocks.GRASS_BLOCK && state.contains(Properties.SNOWY) && !state.get(Properties.SNOWY)) {
             int season = Seasons.getCurrentSeason(world.getTimeOfDay());
-            world.setBlockState(pos, state.with(SEASON, season));
+            //in winter, only set season to 2 if block is above y60
+            if(season == 2) {
+                if(pos.getY() >= 60) {
+                    world.setBlockState(pos, state.with(SEASON, season));
+                } else {
+                    world.setBlockState(pos, state.with(SEASON, season-1));
+                }
+            } else {
+                world.setBlockState(pos, state.with(SEASON, season));
+            }
         }
         super.randomTick(state, world, pos, random);
     }
