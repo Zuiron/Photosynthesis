@@ -1,28 +1,19 @@
 {
   "variants": {
-    "snowy=false,season=0": {
+    "season=0": {
       "model": "minecraft:block/oak_leaves"
     },
-    "snowy=false,season=1": {
-      "model": "minecraft:block/oak_leaves"
+    "season=1": {
+      "model": "minecraft:block/oak_leaves_autumn"
     },
     "snowy=false,season=2": {
       "model": "minecraft:block/oak_leaves_winter"
     },
-    "snowy=false,season=3": {
-      "model": "minecraft:block/oak_leaves"
-    },
-    "snowy=true,season=0": {
-      "model": "minecraft:block/oak_leaves"
-    },
-    "snowy=true,season=1": {
-      "model": "minecraft:block/oak_leaves"
-    },
     "snowy=true,season=2": {
       "model": "minecraft:block/oak_leaves_winter_snowy"
     },
-    "snowy=true,season=3": {
-      "model": "minecraft:block/oak_leaves"
+    "season=3": {
+      "model": "minecraft:block/oak_leaves_spring"
     }
   }
 }

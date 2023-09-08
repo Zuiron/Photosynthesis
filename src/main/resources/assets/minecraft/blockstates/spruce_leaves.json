@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "snowy=false,season=0": {
+      "model": "minecraft:block/spruce_leaves"
+    },
+    "snowy=false,season=1": {
+      "model": "minecraft:block/spruce_leaves"
+    },
+    "snowy=false,season=2": {
+      "model": "minecraft:block/spruce_leaves_winter"
+    },
+    "snowy=false,season=3": {
+      "model": "minecraft:block/spruce_leaves"
+    },
+    "snowy=true,season=0": {
+      "model": "minecraft:block/spruce_leaves"
+    },
+    "snowy=true,season=1": {
+      "model": "minecraft:block/spruce_leaves"
+    },
+    "snowy=true,season=2": {
+      "model": "minecraft:block/spruce_leaves_winter_snowy"
+    },
+    "snowy=true,season=3": {
+      "model": "minecraft:block/spruce_leaves"
+    }
+  }
+}

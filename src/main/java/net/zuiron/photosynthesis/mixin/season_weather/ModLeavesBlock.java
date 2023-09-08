@@ -40,8 +40,6 @@ public abstract class ModLeavesBlock extends Block {
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random, CallbackInfo ci) {
         if(Seasons.isSeasonsEnabled()) {
             int season = Seasons.getCurrentSeason(world.getTimeOfDay());
-            //world.setBlockState(pos, state.with(SEASON, season));
-
             if(season == 2 && world.getBlockState(pos.up()).isOf(Blocks.SNOW) || world.getBlockState(pos.up()).isOf(Blocks.AIR)) {
                 world.setBlockState(pos, state.with(SNOWY, true).with(SEASON,season));
             } else {
