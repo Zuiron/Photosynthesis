@@ -80,7 +80,11 @@ public abstract class ModLeavesBlock extends Block {
 
             int season = Seasons.getCurrentSeason(world.getTimeOfDay());
             if (season == 1) {
-                ParticleUtil.spawnParticle(world, pos, random, ModParticles.ORANGE_FALLING_LEAVES);
+                if(state.isOf(Blocks.ACACIA_LEAVES)) {
+                    ParticleUtil.spawnParticle(world, pos, random, ModParticles.YELLOW_FALLING_LEAVES);
+                } else {
+                    ParticleUtil.spawnParticle(world, pos, random, ModParticles.ORANGE_FALLING_LEAVES);
+                }
             }
         }
     }

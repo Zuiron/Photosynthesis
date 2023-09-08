@@ -30,6 +30,7 @@ import net.zuiron.photosynthesis.networking.ModMessages;
 import net.zuiron.photosynthesis.particle.BoilingBubblesParticles;
 import net.zuiron.photosynthesis.particle.ModParticles;
 import net.zuiron.photosynthesis.particle.OrangeLeavesParticle;
+import net.zuiron.photosynthesis.particle.YellowLeavesParticle;
 import net.zuiron.photosynthesis.screen.*;
 import net.fabricmc.fabric.api.resource.*;
 
@@ -646,8 +647,8 @@ public class PhotosynthesisClient implements ClientModInitializer {
 
         //particles
         ParticleFactoryRegistry.getInstance().register(ModParticles.BOILING_BUBBLES_PARTICLES, BoilingBubblesParticles.Factory::new);
-        //this.registerFactory(ParticleTypes.CHERRY_LEAVES, (SpriteProvider spriteProvider) -> (parameters, world, x, y, z, velocityX, velocityY, velocityZ) -> new CherryLeavesParticle(world, x, y, z, spriteProvider));
         ParticleFactoryRegistry.getInstance().register(ModParticles.ORANGE_FALLING_LEAVES, (FabricSpriteProvider spriteProvider) -> (parameters, world, x, y, z, velocityX, velocityY, velocityZ) -> new OrangeLeavesParticle(world, x, y, z, spriteProvider));
+        ParticleFactoryRegistry.getInstance().register(ModParticles.YELLOW_FALLING_LEAVES, (FabricSpriteProvider spriteProvider) -> (parameters, world, x, y, z, velocityX, velocityY, velocityZ) -> new YellowLeavesParticle(world, x, y, z, spriteProvider));
 
         //colors
         //this is for LEAVES
