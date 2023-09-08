@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "season=0": {
+      "model": "minecraft:block/acacia_leaves"
+    },
+    "season=1": {
+      "model": "minecraft:block/acacia_leaves_autumn"
+    },
+    "snowy=false,season=2": {
+      "model": "minecraft:block/acacia_leaves_winter"
+    },
+    "snowy=true,season=2": {
+      "model": "minecraft:block/acacia_leaves_winter_snowy"
+    },
+    "season=3": {
+      "model": "minecraft:block/acacia_leaves_spring"
+    }
+  }
+}

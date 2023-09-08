@@ -39,7 +39,8 @@
     "season_weather.ModGrassBlock",
     "season_weather.ModLeavesBlock",
     "season_weather.ModFernBlock",
-    "season_weather.ModTallPlantBlock"
+    "season_weather.ModTallPlantBlock",
+    "season_weather.ModCherryLeavesBlock"
   ],
   "client": [
     "PhotosynthesisMixin"
