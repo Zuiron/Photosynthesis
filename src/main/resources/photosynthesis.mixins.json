@@ -35,7 +35,8 @@
     "ModFarmlandBlock",
     "season_weather.ModBiomeWeather",
     "season_weather.ModSnowBlock",
-    "season_weather.ModIceBlock"
+    "season_weather.ModIceBlock",
+    "season_weather.ModGrassBlock"
   ],
   "client": [
     "PhotosynthesisMixin"
