@@ -1,21 +1,71 @@
 {
   "variants": {
-    "snowy=false,season=0": {
-      "model": "minecraft:block/grass_block"
+    "snowy=false,season=0": [
+      {
+        "model": "minecraft:block/grass_block"
+      },
+      {
+        "model": "minecraft:block/grass_block",
+        "y": 90
+      },
+      {
+        "model": "minecraft:block/grass_block",
+        "y": 180
+      },
+      {
+        "model": "minecraft:block/grass_block",
+        "y": 270
+      }
+    ],
+    "snowy=false,season=1": [
+      {
+        "model": "minecraft:block/grass_block"
+      },
+      {
+        "model": "minecraft:block/grass_block",
+        "y": 90
+      },
+      {
+        "model": "minecraft:block/grass_block",
+        "y": 180
+      },
+      {
+        "model": "minecraft:block/grass_block",
+        "y": 270
+      }
+    ],
+    "snowy=false,season=2": [
+      {
+        "model": "minecraft:block/grass_block_winter"
+      }
+    ],
+    "snowy=false,season=3": [
+      {
+        "model": "minecraft:block/grass_block"
+      },
+      {
+        "model": "minecraft:block/grass_block",
+        "y": 90
+      },
+      {
+        "model": "minecraft:block/grass_block",
+        "y": 180
+      },
+      {
+        "model": "minecraft:block/grass_block",
+        "y": 270
+      }
+    ],
+    "snowy=true,season=0": {
+      "model": "minecraft:block/grass_block_snow"
     },
-    "snowy=false,season=1": {
-      "model": "minecraft:block/grass_block",
-      "y": 90
+    "snowy=true,season=1": {
+      "model": "minecraft:block/grass_block_snow"
     },
-    "snowy=false,season=2": {
-      "model": "minecraft:block/grass_block_winter",
-      "y": 180
+    "snowy=true,season=2": {
+      "model": "minecraft:block/grass_block_snow"
     },
-    "snowy=false,season=3": {
-      "model": "minecraft:block/grass_block",
-      "y": 270
-    },
-    "snowy=true": {
+    "snowy=true,season=3": {
       "model": "minecraft:block/grass_block_snow"
     }
   }
