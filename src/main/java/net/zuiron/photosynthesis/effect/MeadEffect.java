@@ -14,10 +14,8 @@ public class MeadEffect extends StatusEffect {
 
     @Override
     public void applyUpdateEffect(LivingEntity entity, int amplifier) {
-        if (entity.getHealth() < entity.getMaxHealth()) {
-            if(new Random().nextFloat() <= 0.05f) {
-                entity.heal(1.0f);
-            }
+        if (!entity.getWorld().isClient) {
+            ((PlayerEntity)entity).getHungerManager().add(amplifier + 1, 1.0f);
         }
 
         super.applyUpdateEffect(entity, amplifier);

@@ -1472,11 +1472,11 @@ public class ModItems {
                     .maxDamage(6)
                     .recipeRemainder(ModItems.EMPTY_MUG)
                     .food(new FoodComponent.Builder()
-                            .hunger(20)
-                            .saturationModifier(1.0f)
                             .alwaysEdible()
-                            .statusEffect(new StatusEffectInstance(ModEffects.MEAD, 100, 0),1.0f)
-                            .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 500,0),1.0f)
+                            //.statusEffect(new StatusEffectInstance(StatusEffects.SATURATION, 12000, 0),1.0f)
+                            //.statusEffect(new StatusEffectInstance(ModEffects.QUENCHED, 24000, 0),1.0f)
+                            .statusEffect(new StatusEffectInstance(ModEffects.MEAD, 12000, 0),1.0f)
+                            //.statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 500,0),1.0f)
                             .build())
                     ,4, 240));
 
@@ -1485,6 +1485,10 @@ public class ModItems {
 
     public static final Item DRINKING_GLASS_MILK = registerItem("drinking_glass_milk", //max 10 thirst - 600 tSat - damage is drink usage.
             new ThirstItem(new FabricItemSettings()
+                    /*.food(new FoodComponent.Builder()
+                                    .alwaysEdible()
+                                    .statusEffect(new StatusEffectInstance(ModEffects.QUENCHED, 12000, 0),1.0f)
+                                    .build())*/
                     .maxCount(1)
                     .maxDamage(6)
                     .recipeRemainder(ModItems.DRINKING_GLASS)
@@ -1501,7 +1505,14 @@ public class ModItems {
                     .maxCount(1).maxDamage(1).recipeRemainder(ModItems.LEATHER_WATER_BLADDER),1, 0));
 
     public static final Item LEATHER_WATER_BLADDER_CLEAN = registerItem("leather_water_bladder_clean", //max 10 thirst - 600 tSat - damage is drink usage.
-            new ThirstItem(new FabricItemSettings().maxCount(1).maxDamage(6).recipeRemainder(ModItems.LEATHER_WATER_BLADDER),2, 120));
+            new ThirstItem(new FabricItemSettings()
+                    .food(new FoodComponent.Builder()
+                            .alwaysEdible()
+                            .statusEffect(new StatusEffectInstance(ModEffects.QUENCHED, 12000, 0),1.0f)
+                            .build())
+                    .maxCount(1)
+                    .maxDamage(6)
+                    .recipeRemainder(ModItems.LEATHER_WATER_BLADDER),2, 120));
 
     // END OF ModItems -------------------------------------------------------------------------------------------------
     private static Item registerBerryItem(String name, SweetBerryBushBlock alias, FabricItemSettings settings) {

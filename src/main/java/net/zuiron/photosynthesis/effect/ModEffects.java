@@ -10,10 +10,13 @@ import net.zuiron.photosynthesis.Photosynthesis;
 public class ModEffects {
 
     public static final StatusEffect DEHYDRATED = registerStatusEffect("dehydrated",
-            new DehydratedEffect(StatusEffectCategory.HARMFUL,0x36ebab));
+            new DehydratedEffect(StatusEffectCategory.HARMFUL,0xff6333));
 
     public static final StatusEffect MEAD = registerStatusEffect("mead",
-            new MeadEffect(StatusEffectCategory.BENEFICIAL,0x36ebab));
+            new MeadEffect(StatusEffectCategory.BENEFICIAL,0x685e2e));
+
+    public static final StatusEffect QUENCHED = registerStatusEffect("quenched",
+            new QuenchedEffect(StatusEffectCategory.BENEFICIAL,0x1f90f0));
 
     private static StatusEffect registerStatusEffect(String name, StatusEffect statusEffect) {
         return Registry.register(Registries.STATUS_EFFECT, new Identifier(Photosynthesis.MOD_ID, name), statusEffect);
