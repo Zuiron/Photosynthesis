@@ -43,7 +43,7 @@ public abstract class ModTallPlantBlock extends PlantBlock {
                         light = world.getLightLevel(LightType.BLOCK, pos.down());
                     }
 
-                    if(light < 12) {
+                    if(light < 8) {
                         if(pos.getY() >= 60) {
                             world.setBlockState(pos, state.with(SNOWY, true));
                         } else {
