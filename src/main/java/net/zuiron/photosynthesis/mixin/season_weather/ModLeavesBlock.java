@@ -32,7 +32,13 @@ public abstract class ModLeavesBlock extends Block {
     private static final BooleanProperty SNOWY = Properties.SNOWY;
     public ModLeavesBlock(Settings settings) {
         super(settings);
-        this.setDefaultState((BlockState)((BlockState)this.stateManager.getDefaultState()).with(SNOWY, false));
+    }
+
+    @Inject(method = "<init>", at = @At("RETURN"))
+    private void onConstructorReturn(Settings settings, CallbackInfo info) {
+        if(this.asBlock().getDefaultState().contains(SNOWY)) {
+            this.setDefaultState(this.stateManager.getDefaultState().with(SNOWY, false));
+        }
     }
 
     @Inject(at = @At("HEAD"), method = "hasRandomTicks", cancellable = true)

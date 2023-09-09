@@ -24,7 +24,13 @@ public abstract class ModTallPlantBlock extends PlantBlock {
     private static final EnumProperty<DoubleBlockHalf> HALF = Properties.DOUBLE_BLOCK_HALF;
     public ModTallPlantBlock(Settings settings) {
         super(settings);
-        this.setDefaultState((BlockState)((BlockState)this.stateManager.getDefaultState()).with(SNOWY, false));
+    }
+
+    @Inject(method = "<init>", at = @At("RETURN"))
+    private void onConstructorReturn(Settings settings, CallbackInfo info) {
+        if(this.asBlock().getDefaultState().contains(SNOWY)) {
+            this.setDefaultState(this.stateManager.getDefaultState().with(SNOWY, false));
+        }
     }
 
     @Override

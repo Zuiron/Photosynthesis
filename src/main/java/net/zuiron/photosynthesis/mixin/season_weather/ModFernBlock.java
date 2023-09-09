@@ -11,15 +11,26 @@ import net.minecraft.world.LightType;
 import net.zuiron.photosynthesis.api.Seasons;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(FernBlock.class)
 public abstract class ModFernBlock extends PlantBlock {
     @Unique
     private static final BooleanProperty SNOWY = Properties.SNOWY;
+
     public ModFernBlock(Settings settings) {
         super(settings);
-        this.setDefaultState((BlockState)((BlockState)this.stateManager.getDefaultState()).with(SNOWY, false));
     }
+
+    @Inject(method = "<init>", at = @At("RETURN"))
+    private void onConstructorReturn(Settings settings, CallbackInfo info) {
+        if(this.asBlock().getDefaultState().contains(SNOWY)) {
+            this.setDefaultState(this.stateManager.getDefaultState().with(SNOWY, false));
+        }
+    }
+
 
     @Override
     public boolean hasRandomTicks(BlockState state) {
