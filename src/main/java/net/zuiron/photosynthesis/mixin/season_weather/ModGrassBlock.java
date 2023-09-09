@@ -29,7 +29,7 @@ public abstract class ModGrassBlock extends SpreadableBlock {
             //in winter, only set season to 2 if block is above y60
             if(season == 2) {
                 if(pos.getY() >= 60) {
-                    if(world.getLightLevel(LightType.BLOCK, pos.up()) < 12) {
+                    if(world.getLightLevel(LightType.BLOCK, pos.up()) < 8) { //12, too high, try 8.
                         world.setBlockState(pos, state.with(SEASON, season));
                     } else {
                         world.setBlockState(pos, state.with(SEASON, 1));
