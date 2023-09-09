@@ -53,7 +53,11 @@ public abstract class ModLeavesBlock extends Block {
             if(season == 2 && world.getBlockState(pos.up()).isOf(Blocks.SNOW) || world.getBlockState(pos.up()).isOf(Blocks.AIR)) {
                 if(pos.getY() >= 60) {
                     if(world.getLightLevel(LightType.BLOCK, pos) < 8) { //12, too high, try 8.
-                        world.setBlockState(pos, state.with(SNOWY, true).with(SEASON, season));
+                        if(world.getBiomeAccess().getBiome(pos).value().hasPrecipitation()) {
+                            world.setBlockState(pos, state.with(SNOWY, true).with(SEASON, season));
+                        } else {
+                            world.setBlockState(pos, state.with(SNOWY, false).with(SEASON, 3));
+                        }
                     } else {
                         world.setBlockState(pos, state.with(SNOWY, false).with(SEASON, season));
                     }

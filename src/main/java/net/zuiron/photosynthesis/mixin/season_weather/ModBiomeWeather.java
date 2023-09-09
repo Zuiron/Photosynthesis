@@ -41,7 +41,6 @@ public abstract class ModBiomeWeather {
                 String seasonString = Seasons.getSeasonString(season);
 
                 if (seasonString.equals("Winter")) {
-                    //if (SeasonTickHandler.cSeason.equals("Winter")) {
                     cir.setReturnValue(Biome.Precipitation.SNOW);
                 } else {
                     cir.setReturnValue(Biome.Precipitation.RAIN);
