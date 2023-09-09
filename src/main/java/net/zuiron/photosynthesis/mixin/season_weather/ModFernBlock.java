@@ -18,6 +18,7 @@ public abstract class ModFernBlock extends PlantBlock {
     private static final BooleanProperty SNOWY = Properties.SNOWY;
     public ModFernBlock(Settings settings) {
         super(settings);
+        this.setDefaultState((BlockState)((BlockState)this.stateManager.getDefaultState()).with(SNOWY, false));
     }
 
     @Override
