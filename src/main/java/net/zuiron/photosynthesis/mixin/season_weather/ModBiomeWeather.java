@@ -45,6 +45,11 @@ public abstract class ModBiomeWeather {
                 } else {
                     cir.setReturnValue(Biome.Precipitation.RAIN);
                 }
+            } else {
+                if (!this.hasPrecipitation()) {
+                    cir.setReturnValue(Biome.Precipitation.NONE);
+                }
+                cir.setReturnValue(this.isCold(pos) ? Biome.Precipitation.SNOW : Biome.Precipitation.RAIN);
             }
             if (!this.hasPrecipitation()) {
                 cir.setReturnValue(Biome.Precipitation.NONE);
