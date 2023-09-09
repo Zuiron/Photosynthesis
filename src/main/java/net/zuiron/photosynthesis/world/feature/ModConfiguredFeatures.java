@@ -9,7 +9,11 @@ import net.minecraft.structure.rule.BlockMatchRuleTest;
 import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.structure.rule.TagMatchRuleTest;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.collection.DataPool;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
+import net.minecraft.util.math.intprovider.IntProvider;
+import net.minecraft.util.math.intprovider.UniformIntProvider;
+import net.minecraft.util.math.intprovider.WeightedListIntProvider;
 import net.minecraft.world.gen.ProbabilityConfig;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
@@ -18,6 +22,7 @@ import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.treedecorator.LeavesVineTreeDecorator;
 import net.minecraft.world.gen.treedecorator.TrunkVineTreeDecorator;
 import net.minecraft.world.gen.trunk.BendingTrunkPlacer;
+import net.minecraft.world.gen.trunk.CherryTrunkPlacer;
 import net.minecraft.world.gen.trunk.LargeOakTrunkPlacer;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 import net.zuiron.photosynthesis.Photosynthesis;
@@ -770,14 +775,51 @@ public class ModConfiguredFeatures {
 
 
 
+        /*
 
+        return new TreeFeatureConfig.Builder(
+        BlockStateProvider.of(Blocks.CHERRY_LOG),
+        new CherryTrunkPlacer(7, 1, 0, new WeightedListIntProvider(DataPool.builder().add(ConstantIntProvider.create(1), 1)
+        .add(ConstantIntProvider.create(2), 1)
+        .add(ConstantIntProvider.create(3), 1).build()),
+        UniformIntProvider.create(2, 4), UniformIntProvider.create(-4, -3), UniformIntProvider.create(-1, 0)),
+        BlockStateProvider.of(Blocks.CHERRY_LEAVES),
+        new CherryFoliagePlacer(ConstantIntProvider.create(4), ConstantIntProvider.create(0), ConstantIntProvider.create(5),
+         0.25f, 0.5f, 0.16666667f, 0.33333334f), new TwoLayersFeatureSize(1, 0, 2)).ignoreVines();
 
-        register(context, CHERRYTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+         */
+
+        /*register(context, CHERRYTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(ModBlocks.CHERRYTREE_LOG),
+                new CherryTrunkPlacer(7, 1, 0,
+                        new WeightedListIntProvider(DataPool.builder().add(ConstantIntProvider.create(1), 1)
+                        .add(ConstantIntProvider.create(2), 1)
+                        .add(ConstantIntProvider.create(3), 1).build()),
+                        UniformIntProvider.create(2, 4), UniformIntProvider.create(-4, -3), UniformIntProvider.create(-1, 0)),
+                BlockStateProvider.of(ModBlocks.CHERRYTREE_LEAVES),
+                new CherryFoliagePlacer(ConstantIntProvider.create(4), ConstantIntProvider.create(0), ConstantIntProvider.create(5),
+                        0.25f, 0.5f, 0.16666667f,
+                        0.33333334f), new TwoLayersFeatureSize(1, 0, 2))
+                .decorators(Collections.singletonList(CherryTreeDecorator.INSTANCE)).ignoreVines().build());*/
+
+        /*register(context, CHERRYTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.CHERRYTREE_LOG),
                 new StraightTrunkPlacer(4, 1, 1), //3,4,2
                 BlockStateProvider.of(ModBlocks.CHERRYTREE_LEAVES),
                 new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 2),//3
-                new TwoLayersFeatureSize(1, 0, 2)).decorators(Collections.singletonList(CherryTreeDecorator.INSTANCE)).build());
+                new TwoLayersFeatureSize(1, 0, 2)).decorators(Collections.singletonList(CherryTreeDecorator.INSTANCE)).build());*/
+
+        //this makes leaves persistent. not good.
+        register(context, CHERRYTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(ModBlocks.CHERRYTREE_LOG),
+                new CherryTrunkPlacer(7, 1, 0,
+                        UniformIntProvider.create(1, 3),
+                        UniformIntProvider.create(2, 4), UniformIntProvider.create(-4, -3), UniformIntProvider.create(-1, 0)),
+                BlockStateProvider.of(ModBlocks.CHERRYTREE_LEAVES),
+                new CherryFoliagePlacer(ConstantIntProvider.create(4), ConstantIntProvider.create(0), ConstantIntProvider.create(5),
+                        0.25f, 0.5f, 0.16666667f,
+                        0.33333334f), new TwoLayersFeatureSize(1, 0, 2))
+                .decorators(Collections.singletonList(CherryTreeDecorator.INSTANCE)).ignoreVines().build());
 
         register(context, CHERRYTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.CHERRYTREE_CHECKED_KEY),

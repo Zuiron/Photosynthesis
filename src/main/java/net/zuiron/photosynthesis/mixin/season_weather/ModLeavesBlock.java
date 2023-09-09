@@ -30,14 +30,27 @@ public abstract class ModLeavesBlock extends Block {
     private static final IntProperty SEASON = ModProperties.SEASON;
     @Unique
     private static final BooleanProperty SNOWY = Properties.SNOWY;
+
+    @Unique
+    private static final IntProperty DISTANCE = Properties.DISTANCE_1_7;
+    @Unique
+    private static final BooleanProperty PERSISTENT = Properties.PERSISTENT;
+    @Unique
+    private static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
+
     public ModLeavesBlock(Settings settings) {
         super(settings);
     }
 
-    @Inject(method = "<init>", at = @At("RETURN"))
+    @Inject(method = "<init>", at = @At("TAIL"))
     private void onConstructorReturn(Settings settings, CallbackInfo info) {
         if(this.asBlock().getDefaultState().contains(SNOWY)) {
-            this.setDefaultState(this.stateManager.getDefaultState().with(SNOWY, false));
+            //this.setDefaultState(this.stateManager.getDefaultState().with(SNOWY, false));
+            this.setDefaultState((BlockState)((BlockState)((BlockState)((BlockState)this.stateManager.getDefaultState())
+                    .with(DISTANCE, 7))
+                    .with(PERSISTENT, false))
+                    .with(WATERLOGGED, false)
+                    .with(SNOWY, false));
         }
     }
 
@@ -56,7 +69,7 @@ public abstract class ModLeavesBlock extends Block {
                         if(world.getBiomeAccess().getBiome(pos).value().hasPrecipitation()) {
                             world.setBlockState(pos, state.with(SNOWY, true).with(SEASON, season));
                         } else {
-                            world.setBlockState(pos, state.with(SNOWY, false).with(SEASON, 3));
+                            world.setBlockState(pos, state.with(SNOWY, false).with(SEASON, 0));
                         }
                     } else {
                         world.setBlockState(pos, state.with(SNOWY, false).with(SEASON, season));
