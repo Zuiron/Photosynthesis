@@ -1,0 +1,27 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "item": "photosynthesis:sugarbeet"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": "minecraft:sugar"
+    },
+    {
+      "chance": 0.1,
+      "item": "minecraft:sugar"
+    }
+  ],
+  "processingTime": 50,
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ]
+}

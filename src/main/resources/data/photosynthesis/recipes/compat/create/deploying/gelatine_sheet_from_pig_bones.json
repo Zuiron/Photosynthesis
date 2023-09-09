@@ -1,0 +1,25 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "photosynthesis:pig_bones"
+    },
+    {
+      "tag": "c:cutting_board_cutting_knifes"
+    }
+  ],
+  "results": [
+    {
+      "item": "photosynthesis:gelatin_sheet",
+      "count": 4
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ]
+}

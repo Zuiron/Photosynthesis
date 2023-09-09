@@ -1,0 +1,25 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "photosynthesis:mozzarella_cheese"
+    },
+    {
+      "tag": "c:cutting_board_cutting_knifes"
+    }
+  ],
+  "results": [
+    {
+      "item": "photosynthesis:mozzarella_cheese_dices",
+      "count": 16
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ]
+}

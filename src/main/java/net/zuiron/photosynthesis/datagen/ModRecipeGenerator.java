@@ -323,7 +323,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                     .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(kitchendecor.get(i))));
         }
 
-        int seedsCount = 8;
+        int seedsCount = 4;
         String strCategory = "seeds";
         VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.AGAVE_SEEDS, ModItems.AGAVE, strCategory, seedsCount);
         VanillaRecipeProvider.offerShapelessRecipe(exporter, ModItems.AMARANTH_SEEDS, ModItems.AMARANTH, strCategory, seedsCount);
