@@ -2,6 +2,28 @@
   "replace": false,
   "values": [
     "photosynthesis:salt_ore",
-    "photosynthesis:sulfur_ore"
+    "photosynthesis:sulfur_ore",
+    "photosynthesis:manure_bucket",
+    "photosynthesis:egg_basket",
+    "photosynthesis:shelf",
+    "photosynthesis:toolrack",
+    "photosynthesis:watertrough",
+    "photosynthesis:feedingtrough",
+    "photosynthesis:plate",
+    "photosynthesis:maple_extractor",
+    "photosynthesis:latex_extractor",
+    "photosynthesis:gravity_press",
+    "photosynthesis:mortar",
+    "photosynthesis:hayrack",
+    "photosynthesis:dryingrack",
+    "photosynthesis:dryingnet",
+    "photosynthesis:cutting_board",
+    "photosynthesis:wood_fired_oven",
+    "photosynthesis:wood_fired_stove",
+    "photosynthesis:cooking_pot",
+    "photosynthesis:fluid_press",
+    "photosynthesis:mixing_bowl",
+    "photosynthesis:skillet",
+    "photosynthesis:seasonscalendar"
   ]
 }
