@@ -10,6 +10,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.api.Seasons;
+import net.zuiron.photosynthesis.particle.ModParticles;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -37,6 +38,8 @@ public abstract class ModCherryLeavesBlock extends LeavesBlock {
 
             int season = Seasons.getCurrentSeason(world.getTimeOfDay());
             if (season == 1 && doParticleSpawn) {
+                ParticleUtil.spawnParticle(world, pos, random, ModParticles.YELLOW_FALLING_LEAVES);
+            } else if(season == 3 && doParticleSpawn) {
                 ParticleUtil.spawnParticle(world, pos, random, ParticleTypes.CHERRY_LEAVES);
             }
             ci.cancel();
