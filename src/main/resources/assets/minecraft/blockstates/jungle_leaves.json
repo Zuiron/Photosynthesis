@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "season=0": {
+      "model": "minecraft:block/jungle_leaves"
+    },
+    "season=1": {
+      "model": "minecraft:block/jungle_leaves"
+    },
+    "snowy=false,season=2": {
+      "model": "minecraft:block/jungle_leaves_winter"
+    },
+    "snowy=true,season=2": {
+      "model": "minecraft:block/jungle_leaves_winter_snowy"
+    },
+    "season=3": {
+      "model": "minecraft:block/jungle_leaves_spring"
+    }
+  }
+}

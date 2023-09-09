@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:block/leaves_with_overlay_no_tint",
+  "textures": {
+    "particle": "minecraft:block/snow",
+    "all": "minecraft:block/jungle_leaves_winter",
+    "overlay_top": "photosynthesis:block/transparent",
+    "overlay_bottom": "photosynthesis:block/transparent",
+    "overlay_side": "photosynthesis:block/transparent"
+  }
+}
