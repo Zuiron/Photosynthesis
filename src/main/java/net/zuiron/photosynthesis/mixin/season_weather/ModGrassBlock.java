@@ -8,6 +8,7 @@ import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.LightType;
+import net.minecraft.world.biome.Biome;
 import net.zuiron.photosynthesis.api.Seasons;
 import net.zuiron.photosynthesis.state.property.ModProperties;
 import org.spongepowered.asm.mixin.Mixin;
@@ -30,7 +31,11 @@ public abstract class ModGrassBlock extends SpreadableBlock {
             if(season == 2) {
                 if(pos.getY() >= 60) {
                     if(world.getLightLevel(LightType.BLOCK, pos.up()) < 8) { //12, too high, try 8.
-                        world.setBlockState(pos, state.with(SEASON, season));
+                        if(world.getBiomeAccess().getBiome(pos).value().hasPrecipitation()) { //works
+                            world.setBlockState(pos, state.with(SEASON, season));
+                        } else {
+                            world.setBlockState(pos, state.with(SEASON, 1));
+                        }
                     } else {
                         world.setBlockState(pos, state.with(SEASON, 1));
                     }

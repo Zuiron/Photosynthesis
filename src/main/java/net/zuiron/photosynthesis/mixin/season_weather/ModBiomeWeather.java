@@ -32,11 +32,6 @@ public abstract class ModBiomeWeather {
     @Inject(method = "getPrecipitation", at = @At("HEAD"), cancellable = true)
     public void getPrecipitation(BlockPos pos, CallbackInfoReturnable<Biome.Precipitation> cir) {
         if(Seasons.isSeasonsEnabled()) {
-            if (!this.hasPrecipitation()) {
-                cir.setReturnValue(Biome.Precipitation.NONE);
-            }
-
-
             World world = MinecraftClient.getInstance().world;
             if(world != null) {
                 long time = world.getTimeOfDay();
@@ -51,6 +46,9 @@ public abstract class ModBiomeWeather {
                 } else {
                     cir.setReturnValue(Biome.Precipitation.RAIN);
                 }
+            }
+            if (!this.hasPrecipitation()) {
+                cir.setReturnValue(Biome.Precipitation.NONE);
             }
             cir.cancel();
         }
@@ -74,6 +72,9 @@ public abstract class ModBiomeWeather {
             if (SeasonTickHandler.cSeason.equals("Winter")) {
                 cir.setReturnValue(false);
             } else {
+                cir.setReturnValue(true);
+            }
+            if (!this.hasPrecipitation()) {
                 cir.setReturnValue(true);
             }
             cir.cancel();
