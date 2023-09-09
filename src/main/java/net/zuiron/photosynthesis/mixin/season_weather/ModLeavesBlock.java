@@ -100,12 +100,16 @@ public abstract class ModLeavesBlock extends Block {
 
             int season = Seasons.getCurrentSeason(world.getTimeOfDay());
             if (season == 1) {
-                if(state.isOf(Blocks.ACACIA_LEAVES) || state.isOf(Blocks.BIRCH_LEAVES)) {
+                if(state.isOf(Blocks.ACACIA_LEAVES) || state.isOf(Blocks.BIRCH_LEAVES) || state.isOf(ModBlocks.CHERRYTREE_LEAVES)) {
                     ParticleUtil.spawnParticle(world, pos, random, ModParticles.YELLOW_FALLING_LEAVES);
                 } else if(state.isOf(Blocks.OAK_LEAVES) || state.isOf(Blocks.DARK_OAK_LEAVES) || state.isOf(ModBlocks.MAPLETREE_LEAVES)) {
                     ParticleUtil.spawnParticle(world, pos, random, ModParticles.ORANGE_FALLING_LEAVES);
                 } else {
                     ParticleUtil.spawnParticle(world, pos, random, ModParticles.GREEN_FALLING_LEAVES);
+                }
+            } else if (season == 3) {
+                if(state.isOf(ModBlocks.CHERRYTREE_LEAVES)) {
+                    ParticleUtil.spawnParticle(world, pos, random, ParticleTypes.CHERRY_LEAVES);
                 }
             }
         }

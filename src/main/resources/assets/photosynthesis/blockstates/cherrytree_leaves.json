@@ -1,12 +1,19 @@
 {
   "variants": {
-    "": [
-      { "model": "photosynthesis:block/cherrytree_leaves", "weight": 2000 },
-      { "model": "photosynthesis:block/cherrytree_leaves", "x": 90, "weight": 1000 },
-      { "model": "photosynthesis:block/cherrytree_leaves_1", "weight": 800 },
-      { "model": "photosynthesis:block/cherrytree_leaves_1", "x": 90, "weight": 200 },
-      { "model": "photosynthesis:block/cherrytree_leaves_2", "weight": 600 },
-      { "model": "photosynthesis:block/cherrytree_leaves_2", "x": 90, "weight": 100 }
-    ]
+    "season=0": {
+      "model": "photosynthesis:block/season_leaves/cherry_leaves_summer"
+    },
+    "season=1": {
+      "model": "photosynthesis:block/season_leaves/cherry_leaves_autumn"
+    },
+    "snowy=false,season=2": {
+      "model": "photosynthesis:block/season_leaves/cherry_leaves_winter"
+    },
+    "snowy=true,season=2": {
+      "model": "photosynthesis:block/season_leaves/cherry_leaves_winter_snowy"
+    },
+    "season=3": {
+      "model": "photosynthesis:block/season_leaves/cherry_leaves_spring"
+    }
   }
 }
