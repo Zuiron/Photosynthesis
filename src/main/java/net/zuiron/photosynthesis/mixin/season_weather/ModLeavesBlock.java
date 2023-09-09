@@ -13,6 +13,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.api.Seasons;
+import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.particle.ModParticles;
 import net.zuiron.photosynthesis.state.property.ModProperties;
 import org.spongepowered.asm.mixin.Mixin;
@@ -43,9 +44,13 @@ public abstract class ModLeavesBlock extends Block {
         if(Seasons.isSeasonsEnabled()) {
             int season = Seasons.getCurrentSeason(world.getTimeOfDay());
             if(season == 2 && world.getBlockState(pos.up()).isOf(Blocks.SNOW) || world.getBlockState(pos.up()).isOf(Blocks.AIR)) {
-                world.setBlockState(pos, state.with(SNOWY, true).with(SEASON,season));
+                if(pos.getY() >= 60) {
+                    world.setBlockState(pos, state.with(SNOWY, true).with(SEASON, season));
+                } else {
+                    world.setBlockState(pos, state.with(SNOWY, false).with(SEASON, season));
+                }
             } else {
-                world.setBlockState(pos, state.with(SNOWY, false).with(SEASON,season));
+                world.setBlockState(pos, state.with(SNOWY, false).with(SEASON, season));
             }
             if(season != 2) {
                 world.setBlockState(pos, state.with(SNOWY, false).with(SEASON,season));
@@ -80,10 +85,12 @@ public abstract class ModLeavesBlock extends Block {
 
             int season = Seasons.getCurrentSeason(world.getTimeOfDay());
             if (season == 1) {
-                if(state.isOf(Blocks.ACACIA_LEAVES)) {
+                if(state.isOf(Blocks.ACACIA_LEAVES) || state.isOf(Blocks.BIRCH_LEAVES)) {
                     ParticleUtil.spawnParticle(world, pos, random, ModParticles.YELLOW_FALLING_LEAVES);
-                } else {
+                } else if(state.isOf(Blocks.OAK_LEAVES) || state.isOf(Blocks.DARK_OAK_LEAVES) || state.isOf(ModBlocks.MAPLETREE_LEAVES)) {
                     ParticleUtil.spawnParticle(world, pos, random, ModParticles.ORANGE_FALLING_LEAVES);
+                } else {
+                    ParticleUtil.spawnParticle(world, pos, random, ModParticles.GREEN_FALLING_LEAVES);
                 }
             }
         }

@@ -31,7 +31,11 @@ public abstract class ModFernBlock extends PlantBlock {
             int season = Seasons.getCurrentSeason(world.getTimeOfDay());
             if(season == 2) {
                 if(world.getLightLevel(LightType.BLOCK, pos) < 12) {
-                    world.setBlockState(pos, state.with(SNOWY, true));
+                    if(pos.getY() >= 60) {
+                        world.setBlockState(pos, state.with(SNOWY, true));
+                    } else {
+                        world.setBlockState(pos, state.with(SNOWY, false));
+                    }
                 } else {
                     world.setBlockState(pos, state.with(SNOWY, false));
                 }
