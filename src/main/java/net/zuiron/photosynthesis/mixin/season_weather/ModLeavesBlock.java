@@ -11,6 +11,7 @@ import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
+import net.minecraft.world.LightType;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.api.Seasons;
 import net.zuiron.photosynthesis.block.ModBlocks;
@@ -45,7 +46,11 @@ public abstract class ModLeavesBlock extends Block {
             int season = Seasons.getCurrentSeason(world.getTimeOfDay());
             if(season == 2 && world.getBlockState(pos.up()).isOf(Blocks.SNOW) || world.getBlockState(pos.up()).isOf(Blocks.AIR)) {
                 if(pos.getY() >= 60) {
-                    world.setBlockState(pos, state.with(SNOWY, true).with(SEASON, season));
+                    if(world.getLightLevel(LightType.BLOCK, pos) < 8) { //12, too high, try 8.
+                        world.setBlockState(pos, state.with(SNOWY, true).with(SEASON, season));
+                    } else {
+                        world.setBlockState(pos, state.with(SNOWY, false).with(SEASON, season));
+                    }
                 } else {
                     world.setBlockState(pos, state.with(SNOWY, false).with(SEASON, season));
                 }
