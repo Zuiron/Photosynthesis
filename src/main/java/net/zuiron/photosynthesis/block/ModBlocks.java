@@ -73,6 +73,12 @@ public class ModBlocks {
     public static final Block STRAW_BALE = registerBaleBlock("straw_bale",
             new ModStrawBaleBlock(FabricBlockSettings.copyOf(Blocks.HAY_BLOCK)));
 
+    public static final Block STRAW_STAIRS = registerBaleBlock("straw_stairs",
+            new StairsBlock(Blocks.HAY_BLOCK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.HAY_BLOCK)));
+
+    public static final Block STRAW_SLAB = registerBaleBlock("straw_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.HAY_BLOCK)));
+
     // "Machines"
     public static final Block SKILLET = registerBlock("skillet",
             new SkilletBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)

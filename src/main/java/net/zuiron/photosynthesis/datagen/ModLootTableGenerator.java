@@ -33,6 +33,9 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
+        //Stairs,Slabs
+        addDrop(ModBlocks.STRAW_STAIRS);
+        addDrop(ModBlocks.STRAW_SLAB, slabDrops(ModBlocks.STRAW_SLAB));
         //machines
         addDrop(ModBlocks.SKILLET);
         addDrop(ModBlocks.MIXING_BOWL);
