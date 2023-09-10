@@ -69,6 +69,7 @@ public class CustomCropBlock2TallFullGrowHalf extends CropBlock implements Water
         switch (seed) {
             case "corn_crop": return ModItems.CORN_SEEDS;
             case "tomato_crop": return ModItems.TOMATO_SEEDS;
+            case "sunflower_crop": return ModItems.SUNFLOWER_SEEDS;
             default: return Items.AIR;
         }
     }
