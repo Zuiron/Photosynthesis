@@ -29,7 +29,7 @@ public abstract class ModTallPlantBlock extends PlantBlock {
     @Inject(method = "<init>", at = @At("RETURN"))
     private void onConstructorReturn(Settings settings, CallbackInfo info) {
         if(this.asBlock().getDefaultState().contains(SNOWY)) {
-            this.setDefaultState(this.stateManager.getDefaultState().with(SNOWY, false));
+            this.setDefaultState(this.stateManager.getDefaultState().with(SNOWY, false).with(HALF, DoubleBlockHalf.LOWER));
         }
     }
 
