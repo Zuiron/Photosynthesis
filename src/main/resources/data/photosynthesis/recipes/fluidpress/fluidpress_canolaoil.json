@@ -3,12 +3,12 @@
   "ingredients": [
     {
       "item": "photosynthesis:canola_seeds",
-      "count": 8
+      "count": 1
     }
   ],
   "output": {
     "fluid": "photosynthesis:canolaoil",
-    "amount": 4050
+    "amount": 8100
   },
   "cookingtime": 100
 }

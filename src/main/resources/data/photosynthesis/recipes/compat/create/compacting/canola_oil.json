@@ -1,0 +1,22 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "item": "photosynthesis:canola_seeds"
+    }
+  ],
+  "results": [
+    {
+      "amount": 8100,
+      "fluid": "photosynthesis:canolaoil"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "item": "photosynthesis:olive"
+    }
+  ],
+  "results": [
+    {
+      "amount": 8100,
+      "fluid": "photosynthesis:oliveoil"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ]
+}
