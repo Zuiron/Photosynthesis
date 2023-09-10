@@ -817,7 +817,7 @@ public class ModBlocks {
     public static final CropBlock BRUSSELS_SPROUTS_CROP = registerCropBlockSimple("brussels_sprouts_crop");
     public static final CropBlock CASSAVA_CROP = registerCropBlockSimple("cassava_crop");
     public static final CropBlock EGGPLANT_CROP = registerCropBlockSimple("eggplant_crop");
-    public static final CropBlock SUNFLOWER_CROP = registerCropBlockSimple("sunflower_crop");
+    public static final CropBlock SUNFLOWER_CROP = registerCropBlockSimple2TallFullGrowHalf("sunflower_crop");
     public static final CropBlock JICAMA_CROP = registerCropBlockSimple("jicama_crop");
     public static final CropBlock KALE_CROP = registerCropBlockSimple("kale_crop");
     public static final CropBlock KOHLRABI_CROP = registerCropBlockSimple("kohlrabi_crop");

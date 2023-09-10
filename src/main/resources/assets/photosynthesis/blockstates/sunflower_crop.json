@@ -1,28 +1,52 @@
 {
   "variants": {
-    "age=0": {
-      "model": "photosynthesis:block/sunflower_crop_stage0"
+    "age=0,half=lower": {
+      "model": "photosynthesis:block/sunflower_crop_stage0_lower"
     },
-    "age=1": {
-      "model": "photosynthesis:block/sunflower_crop_stage1"
+    "age=1,half=lower": {
+      "model": "photosynthesis:block/sunflower_crop_stage1_lower"
     },
-    "age=2": {
-      "model": "photosynthesis:block/sunflower_crop_stage2"
+    "age=2,half=lower": {
+      "model": "photosynthesis:block/sunflower_crop_stage2_lower"
     },
-    "age=3": {
-      "model": "photosynthesis:block/sunflower_crop_stage3"
+    "age=3,half=lower": {
+      "model": "photosynthesis:block/sunflower_crop_stage3_lower"
     },
-    "age=4": {
-      "model": "photosynthesis:block/sunflower_crop_stage4"
+    "age=4,half=lower": {
+      "model": "photosynthesis:block/sunflower_crop_stage4_lower"
     },
-    "age=5": {
-      "model": "photosynthesis:block/sunflower_crop_stage5"
+    "age=5,half=lower": {
+      "model": "photosynthesis:block/sunflower_crop_stage5_lower"
     },
-    "age=6": {
-      "model": "photosynthesis:block/sunflower_crop_stage6"
+    "age=6,half=lower": {
+      "model": "photosynthesis:block/sunflower_crop_stage6_lower"
     },
-    "age=7": {
-      "model": "photosynthesis:block/sunflower_crop_stage7"
+    "age=7,half=lower": {
+      "model": "photosynthesis:block/sunflower_crop_stage7_lower"
+    },
+    "age=0,half=upper": {
+      "model": "photosynthesis:block/sunflower_crop_stage0_top"
+    },
+    "age=1,half=upper": {
+      "model": "photosynthesis:block/sunflower_crop_stage1_top"
+    },
+    "age=2,half=upper": {
+      "model": "photosynthesis:block/sunflower_crop_stage2_top"
+    },
+    "age=3,half=upper": {
+      "model": "photosynthesis:block/sunflower_crop_stage3_top"
+    },
+    "age=4,half=upper": {
+      "model": "photosynthesis:block/sunflower_crop_stage4_top"
+    },
+    "age=5,half=upper": {
+      "model": "photosynthesis:block/sunflower_crop_stage5_top"
+    },
+    "age=6,half=upper": {
+      "model": "photosynthesis:block/sunflower_crop_stage6_top"
+    },
+    "age=7,half=upper": {
+      "model": "photosynthesis:block/sunflower_crop_stage7_top"
     }
   }
 }
