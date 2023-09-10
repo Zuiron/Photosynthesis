@@ -1,0 +1,9 @@
+{
+  "parent": "photosynthesis:block/blockmodels/slab_fluffy",
+  "textures": {
+    "bottom": "photosynthesis:block/straw_bale_top",
+    "side": "photosynthesis:block/straw_clean",
+    "top": "photosynthesis:block/straw_clean",
+    "fluff": "photosynthesis:block/straw_fluff"
+  }
+}
