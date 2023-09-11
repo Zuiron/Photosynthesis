@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:block/leaves_with_overlay_no_tint",
+  "textures": {
+    "particle": "photosynthesis:block/pinenuttree_leaves",
+    "all": "photosynthesis:block/pinenuttree_leaves",
+    "overlay_top": "photosynthesis:block/transparent",
+    "overlay_bottom": "photosynthesis:block/transparent",
+    "overlay_side": "photosynthesis:block/transparent"
+  }
+}
