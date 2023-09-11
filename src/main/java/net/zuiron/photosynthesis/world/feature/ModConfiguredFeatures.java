@@ -1295,12 +1295,31 @@ public class ModConfiguredFeatures {
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.VANILLABEANTREE_CHECKED_KEY),
                         spawnChance)), placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.VANILLABEANTREE_CHECKED_KEY)));
 
-        register(context, PINENUTTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+        /*
+          ConfiguredFeatures.register(featureRegisterable, SPRUCE, Feature.TREE,
+          new TreeFeatureConfig.Builder(BlockStateProvider.of(Blocks.SPRUCE_LOG),
+          new StraightTrunkPlacer(5, 2, 1), BlockStateProvider.of(Blocks.SPRUCE_LEAVES),
+          new SpruceFoliagePlacer(UniformIntProvider.create(2, 3), UniformIntProvider.create(0, 2), UniformIntProvider.create(1, 2)),
+          new TwoLayersFeatureSize(2, 0, 2)).ignoreVines().build());
+
+
+         */
+
+        /*register(context, PINENUTTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.PINENUTTREE_LOG),
                 new StraightTrunkPlacer(4, 1, 1), //3,4,2
                 BlockStateProvider.of(ModBlocks.PINENUTTREE_LEAVES),
                 new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 2),//3
-                new TwoLayersFeatureSize(1, 0, 2)).decorators(Collections.singletonList(PinenutTreeDecorator.INSTANCE)).build());
+                new TwoLayersFeatureSize(1, 0, 2)).decorators(Collections.singletonList(PinenutTreeDecorator.INSTANCE)).build());*/
+
+        register(context, PINENUTTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(ModBlocks.PINENUTTREE_LOG),
+                new StraightTrunkPlacer(12, 4, 2), //baseHeight, firstRandomHeight, secondRandomHeight
+                BlockStateProvider.of(ModBlocks.PINENUTTREE_LEAVES),
+                //radius, offset, trunkHeight
+                new SpruceFoliagePlacer(UniformIntProvider.create(4, 5), UniformIntProvider.create(2, 3), UniformIntProvider.create(4, 6)),
+                //limit, int lowerSize, int upperSize, OptionalInt minClippedHeight
+                new TwoLayersFeatureSize(4, 3, 3)).decorators(Collections.singletonList(PinenutTreeDecorator.INSTANCE)).ignoreVines().build());
 
         register(context, PINENUTTREE_SPAWN_KEY, Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(placedFeatureRegistryEntryLookup.getOrThrow(ModPlacedFeatures.PINENUTTREE_CHECKED_KEY),
