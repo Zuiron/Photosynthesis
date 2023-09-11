@@ -24,6 +24,13 @@
                 "west":  { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay_side", "cullface": "west" },
                 "east":  { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay_side", "cullface": "east" }
             }
+        },
+        {
+            "from": [0, 16, 0],
+            "to": [16, 16, 16],
+            "faces": {
+                "down": {"uv": [0, 0, 16, 16], "texture": "#overlay_top", "cullface": "down"}
+            }
         }
     ]
 }
