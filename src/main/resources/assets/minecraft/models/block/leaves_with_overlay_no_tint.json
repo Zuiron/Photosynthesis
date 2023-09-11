@@ -28,6 +28,7 @@
         {
             "from": [0, 13, 0],
             "to": [16, 13, 16],
+            "ambientocclusion": false,
             "shade": false,
             "faces": {
                 "down": {"uv": [0, 0, 16, 16], "texture": "#overlay_top", "cullface": "down"}
