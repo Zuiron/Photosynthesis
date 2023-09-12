@@ -812,7 +812,7 @@ public class ModConfiguredFeatures {
         //this makes leaves persistent. not good.
         register(context, CHERRYTREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.CHERRYTREE_LOG),
-                new CherryTrunkPlacer(7, 1, 0,
+                new CherryTrunkPlacer(8, 1, 0,
                         UniformIntProvider.create(1, 3),
                         UniformIntProvider.create(2, 4), UniformIntProvider.create(-4, -3), UniformIntProvider.create(-1, 0)),
                 BlockStateProvider.of(ModBlocks.CHERRYTREE_LEAVES),
