@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.IceBlock;
+import net.minecraft.registry.tag.BiomeTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
@@ -31,7 +32,9 @@ public abstract class ModIceBlock extends Block {
             String seasonString = Seasons.getSeasonString(season);
 
             if (!seasonString.equals("Winter")) {
-                this.melt(state, world, pos);
+                if(!world.getBiome(pos).isIn(BiomeTags.POLAR_BEARS_SPAWN_ON_ALTERNATE_BLOCKS)) {
+                    this.melt(state, world, pos);
+                }
             }
         }
     }
