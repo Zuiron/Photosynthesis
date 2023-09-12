@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "minecraft:cherry_bees_005",
+    "features": [
+      {
+        "chance": 0.2,
+        "feature": "minecraft:cherry_bees_005"
+      },
+      {
+        "chance": 0.1,
+        "feature": "photosynthesis:cherrytree_checked"
+      }
+    ]
+  }
+}
