@@ -1,9 +1,6 @@
 package net.zuiron.photosynthesis.block.bushtreecrops;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.ShapeContext;
-import net.minecraft.block.SweetBerryBushBlock;
+import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -51,7 +48,7 @@ public class CherrytreeBushCrop extends SweetBerryBushBlock {
 
     @Override
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-        if(world.getBlockState(pos.up(2)).isOf(ModBlocks.CHERRYTREE_LEAVES) && !world.getBlockState(pos.up(2)).get(Properties.PERSISTENT)) {
+        if(world.getBlockState(pos.up(2)).isOf(ModBlocks.CHERRYTREE_LEAVES) || world.getBlockState(pos.up(2)).isOf(Blocks.CHERRY_LEAVES) && !world.getBlockState(pos.up(2)).get(Properties.PERSISTENT)) {
             return true;
         } else { return false; }
     }
