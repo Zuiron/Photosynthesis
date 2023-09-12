@@ -47,13 +47,14 @@ public class PhotosynthesisClient implements ClientModInitializer {
                     ResourcePackActivationType.NORMAL);
         });*/
 
-        FabricLoader.getInstance().getModContainer(Photosynthesis.MOD_ID).ifPresent(modContainer -> {
+        //Temporary disabled.
+        /*FabricLoader.getInstance().getModContainer(Photosynthesis.MOD_ID).ifPresent(modContainer -> {
             ResourceManagerHelper.registerBuiltinResourcePack(new Identifier(Photosynthesis.MOD_ID,
                             "photosynthesis32xhd"),
                     modContainer,
                     Text.of("Photosynthesis 32x HD"),
                     ResourcePackActivationType.NORMAL);
-        });
+        });*/
 
         HudRenderCallback.EVENT.register(new ThirstHudOverlay());
         HudRenderCallback.EVENT.register(new SeasonsHudOverlay());
