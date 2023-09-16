@@ -14,8 +14,8 @@ But that's not all - Photosynthesis also introduces new tools like skillets, coo
 
 Whether you're a seasoned farmer or just starting out, Photosynthesis offers a fresh and exciting gameplay experience with endless possibilities. Download today and discover a whole new world of farming and cooking in Minecraft!
 
-> **Warning**
-> This project is still in heavy development! You are free to compile yourself and try it out, but keep in mind that there will be missing blockmodels, textures, features etc... **This mod is not in a playable state!**
+> **DOWNLOAD**
+> https://modrinth.com/mod/photosynthesis
 
 # Changed Animal Behavior
 A single Cow can at max productivity produces 4 buckets of milk per mc day. Also you get Cows Milk instead of regular milk (Minecraft Milk).
