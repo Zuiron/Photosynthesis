@@ -1,0 +1,38 @@
+{
+  "type": "photosynthesis:cookingpot",
+  "ingredients": [
+    {
+      "item": "photosynthesis:measuring_cup_water",
+      "count": 1
+    },
+    {
+      "item": "minecraft:bowl",
+      "count": 4
+    },
+    {
+      "item": "photosynthesis:chickpea",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:onion",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:lemon",
+      "count": 1
+    },
+    {
+      "item": "minecraft:carrot",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:celery",
+      "count": 1
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:chickpea_soup",
+    "count": 4
+  },
+  "cookingtime": 100
+}

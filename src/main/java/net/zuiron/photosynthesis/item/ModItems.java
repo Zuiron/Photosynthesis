@@ -1405,7 +1405,7 @@ public class ModItems {
 
     public static final Item HAM_BAGUETTE = registerItem("ham_baguette",
             new Item(new FabricItemSettings()
-                    .food(new FoodComponent.Builder().hunger(6).saturationModifier(0.8f).build())));
+                    .food(new FoodComponent.Builder().hunger(14).saturationModifier(0.8f).build())));
 
     public static final Item SEMOLINA_FLOUR = registerItem("semolina_flour",
             new Item(new FabricItemSettings()));
@@ -1420,15 +1420,45 @@ public class ModItems {
             new Item(new FabricItemSettings()));
 
 
+    public static final Item CHICKPEA_SOUP = registerItem("chickpea_soup",
+            new StackableStewItem(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(12).saturationModifier(0.8f).build())));
 
+    public static final Item LENTIL_SOUP = registerItem("lentil_soup",
+            new StackableStewItem(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(12).saturationModifier(0.8f).build())));
 
+    public static final Item FRUIT_SALAD = registerItem("fruit_salad",
+            new StackableStewItem(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(12).saturationModifier(0.8f).build())));
 
+    public static final Item BERRY_SALAD = registerItem("berry_salad",
+            new StackableStewItem(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(12).saturationModifier(0.8f).build())));
 
+    public static final Item NUT_MIXTURE = registerItem("nut_mixture",
+            new StackableStewItem(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(12).saturationModifier(0.8f).build())));
 
+    public static final Item QUINOA_PORRIDGE = registerItem("quinoa_porridge",
+            new StackableStewItem(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(12).saturationModifier(0.8f).build())));
 
+    public static final Item RUTABAGA_KOHLRABI_MASH = registerItem("rutabaga_kohlrabi_mash",
+            new StackableStewItem(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(12).saturationModifier(0.8f).build())));
 
+    public static final Item SWEET_POTATO_AND_CHICKEN_POT = registerItem("sweet_potato_and_chicken_pot",
+            new StackableStewItem(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(12).saturationModifier(0.8f).build())));
 
+    public static final Item BURGER_BUN = registerItem("burger_bun",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
 
+    public static final Item CHEESE_BURGER = registerItem("cheese_burger",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(20).saturationModifier(0.8f).build())));
 
 
 

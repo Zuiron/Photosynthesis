@@ -1,0 +1,38 @@
+{
+  "type": "photosynthesis:mixingbowl",
+  "ingredients": [
+    {
+      "item": "photosynthesis:whisk",
+      "count": 1
+    },
+    {
+      "item": "minecraft:bowl",
+      "count": 4
+    },
+    {
+      "item": "photosynthesis:peanut",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:almond",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:cashew",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:hazelnut",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:pecan",
+      "count": 2
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:nut_mixture",
+    "count": 4
+  },
+  "cookingtime": 400
+}

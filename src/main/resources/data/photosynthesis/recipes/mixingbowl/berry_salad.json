@@ -1,0 +1,38 @@
+{
+  "type": "photosynthesis:mixingbowl",
+  "ingredients": [
+    {
+      "item": "photosynthesis:whisk",
+      "count": 1
+    },
+    {
+      "item": "minecraft:bowl",
+      "count": 4
+    },
+    {
+      "item": "photosynthesis:strawberry",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:blueberries",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:gooseberry",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:huckleberries",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:raspberries",
+      "count": 1
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:berry_salad",
+    "count": 4
+  },
+  "cookingtime": 400
+}

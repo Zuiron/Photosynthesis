@@ -1,0 +1,38 @@
+{
+  "type": "photosynthesis:cookingpot",
+  "ingredients": [
+    {
+      "item": "photosynthesis:measuring_cup_water",
+      "count": 1
+    },
+    {
+      "item": "minecraft:bowl",
+      "count": 4
+    },
+    {
+      "item": "photosynthesis:lentil",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:onion",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:tomato",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:lemon",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:ginger",
+      "count": 2
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:lentil_soup",
+    "count": 4
+  },
+  "cookingtime": 100
+}

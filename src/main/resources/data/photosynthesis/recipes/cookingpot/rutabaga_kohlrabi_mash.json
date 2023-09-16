@@ -1,0 +1,38 @@
+{
+  "type": "photosynthesis:cookingpot",
+  "ingredients": [
+    {
+      "item": "photosynthesis:measuring_cup_water",
+      "count": 1
+    },
+    {
+      "item": "minecraft:bowl",
+      "count": 4
+    },
+    {
+      "item": "photosynthesis:rutabaga",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:kohlrabi",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:measuring_cup_milk",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:butter",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:salt",
+      "count": 1
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:rutabaga_kohlrabi_mash",
+    "count": 4
+  },
+  "cookingtime": 100
+}

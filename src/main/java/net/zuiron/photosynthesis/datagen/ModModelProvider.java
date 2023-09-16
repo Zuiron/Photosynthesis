@@ -293,6 +293,18 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.OAT_FLOUR,
                 ModItems.RYE_FLOUR,
                 ModItems.BARLEY_FLOUR,
+
+                ModItems.CHICKPEA_SOUP,
+                ModItems.LENTIL_SOUP,
+                ModItems.FRUIT_SALAD,
+                ModItems.BERRY_SALAD,
+                ModItems.NUT_MIXTURE,
+                ModItems.QUINOA_PORRIDGE,
+                ModItems.RUTABAGA_KOHLRABI_MASH,
+                ModItems.SWEET_POTATO_AND_CHICKEN_POT,
+                ModItems.BURGER_BUN,
+                ModItems.CHEESE_BURGER,
+
                 ModItems.OAT_DOUGH,
                 ModItems.RYE_DOUGH,
                 ModItems.BARLEY_DOUGH,

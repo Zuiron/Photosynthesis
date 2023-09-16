@@ -1,0 +1,34 @@
+{
+  "type": "photosynthesis:cookingpot",
+  "ingredients": [
+    {
+      "item": "photosynthesis:measuring_cup_water",
+      "count": 1
+    },
+    {
+      "item": "minecraft:bowl",
+      "count": 4
+    },
+    {
+      "item": "photosynthesis:quinoa",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:salt",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:butter",
+      "count": 1
+    },
+    {
+      "item": "minecraft:sugar",
+      "count": 1
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:quinoa_porridge",
+    "count": 4
+  },
+  "cookingtime": 100
+}

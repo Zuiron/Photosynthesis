@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "photosynthesis:burger_bun"
+    },
+    {
+      "item": "photosynthesis:fried_minced_beef"
+    },
+    {
+      "item": "photosynthesis:tomato"
+    },
+    {
+      "item": "photosynthesis:lettuce"
+    },
+    {
+      "item": "photosynthesis:cheddar_cheese_slice"
+    }
+  ],
+  "result": {
+    "item": "photosynthesis:cheese_burger",
+    "count": 1
+  }
+}
