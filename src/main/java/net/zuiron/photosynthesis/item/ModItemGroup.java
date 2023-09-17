@@ -11,6 +11,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
+import net.zuiron.photosynthesis.fluid.ModFluids;
 
 public class ModItemGroup {
     public static ItemGroup PHOTOSYNTHESIS = Registry.register(Registries.ITEM_GROUP, new Identifier(Photosynthesis.MOD_ID, "photosynthesis"),
@@ -1014,6 +1015,23 @@ public class ModItemGroup {
                         entries.add(ModBlocks.KIWITREE_LEAVES);
                         entries.add(ModBlocks.KIWITREE_SAPLING);
                         entries.add(ModBlocks.AZALEA_SAPLING);
+
+                        entries.add(ModFluids.DRINKINGWATER_BUCKET);
+                        entries.add(ModFluids.TOMATOSAUCE_BUCKET);
+                        entries.add(ModFluids.PIZZASAUCE_BUCKET);
+                        entries.add(ModFluids.LATEX_BUCKET);
+                        entries.add(ModFluids.MAPLE_BUCKET);
+                        entries.add(ModFluids.MAPLESYRUP_BUCKET);
+                        entries.add(ModFluids.CANOLAOIL_BUCKET);
+                        entries.add(ModFluids.SUNFLOWEROIL_BUCKET);
+                        entries.add(ModFluids.MEAD_BUCKET);
+                        entries.add(ModFluids.MILK_BUCKET);
+                        entries.add(ModFluids.MILKCREAM_BUCKET);
+                        entries.add(ModFluids.SKIMMEDMILK_BUCKET);
+                        entries.add(ModFluids.OLIVEOIL_BUCKET);
+                        entries.add(ModFluids.GOATMILK_BUCKET);
+                        entries.add(ModFluids.GOATMILKCREAM_BUCKET);
+                        entries.add(ModFluids.SKIMMEDGOATMILK_BUCKET);
                     }).build());
     public static void registerItemGroup() {
         //example add to ingredients group tab.
