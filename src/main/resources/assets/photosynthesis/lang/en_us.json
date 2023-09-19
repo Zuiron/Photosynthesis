@@ -1455,5 +1455,8 @@
   "block.photosynthesis.drinkingwater_block": "Drinking Water",
 
   "item.photosynthesis.drinking_glass": "Drinking Glass",
-  "item.photosynthesis.drinking_glass_milk": "Drinking Glass Milk"
+  "item.photosynthesis.drinking_glass_milk": "Drinking Glass Milk",
+
+  "item.photosynthesis.boar_spawn_egg": "Boar",
+  "entity.photosynthesis.boar": "Boar"
 }

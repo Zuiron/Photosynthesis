@@ -1,17 +1,25 @@
 package net.zuiron.photosynthesis.util;
 
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.VillagerProfession;
 import net.zuiron.photosynthesis.block.ModBlocks;
+import net.zuiron.photosynthesis.entity.ModEntities;
+import net.zuiron.photosynthesis.entity.custom.BoarEntity;
 import net.zuiron.photosynthesis.item.ModItems;
 import net.zuiron.photosynthesis.villager.ModVillagers;
 
 public class ModRegistries {
     public static void registerModStuffs() {
         registerCustomTrades();
+        registerAttributes();
+    }
+
+    private static void registerAttributes() {
+        FabricDefaultAttributeRegistry.register(ModEntities.BOAR, BoarEntity.createBoarAttributes());
     }
 
     private static void registerCustomTrades() {

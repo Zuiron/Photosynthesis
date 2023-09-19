@@ -26,9 +26,9 @@ public class boar extends EntityModel<Entity> {
 	public static TexturedModelData getTexturedModelData() {
 		ModelData modelData = new ModelData();
 		ModelPartData modelPartData = modelData.getRoot();
-		ModelPartData boar = modelPartData.addChild("boar", ModelPartBuilder.create(), ModelTransform.pivot(-3.0F, 24.0F, 0.0F));
+		ModelPartData boar = modelPartData.addChild("boar", ModelPartBuilder.create(), ModelTransform.of(0.0F, 24.0F, 0.0F, 0.0F, -1.5708F, 0.0F));
 
-		ModelPartData body = boar.addChild("body", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
+		ModelPartData body = boar.addChild("body", ModelPartBuilder.create(), ModelTransform.pivot(-3.0F, 0.0F, 0.0F));
 
 		ModelPartData torso = body.addChild("torso", ModelPartBuilder.create().uv(0, 14).cuboid(-4.0F, -12.0F, -3.5F, 7.0F, 10.0F, 7.0F, new Dilation(0.0F))
 		.uv(26, 0).cuboid(-4.0F, -13.0F, -2.5F, 7.0F, 1.0F, 5.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, -3.5F, 0.0F));
@@ -53,9 +53,9 @@ public class boar extends EntityModel<Entity> {
 
 		ModelPartData cube_r7 = head.addChild("cube_r7", ModelPartBuilder.create().uv(0, 18).cuboid(-0.5F, -1.0F, -0.5F, 1.0F, 2.0F, 1.0F, new Dilation(0.0F)), ModelTransform.of(-5.5616F, 0.3386F, 1.4837F, -0.48F, 0.0F, -0.4363F));
 
-		ModelPartData tail = torso.addChild("tail", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
+		ModelPartData tail = torso.addChild("tail", ModelPartBuilder.create(), ModelTransform.pivot(13.6544F, -7.0208F, 0.0F));
 
-		ModelPartData cube_r8 = tail.addChild("cube_r8", ModelPartBuilder.create().uv(32, 6).cuboid(-0.6F, -4.0F, 0.0F, 5.0F, 7.0F, 0.0F, new Dilation(0.0F)), ModelTransform.of(12.2F, -5.7F, 0.0F, 0.0F, 0.0F, -0.48F));
+		ModelPartData cube_r8 = tail.addChild("cube_r8", ModelPartBuilder.create().uv(32, 6).cuboid(-0.6F, -4.0F, 0.0F, 5.0F, 7.0F, 0.0F, new Dilation(0.0F)), ModelTransform.of(-1.4544F, 1.3208F, 0.0F, 0.0F, 0.0F, -0.48F));
 
 		ModelPartData left_front_leg = body.addChild("left_front_leg", ModelPartBuilder.create().uv(20, 38).cuboid(-1.0F, 0.0F, -1.0F, 2.0F, 6.0F, 2.0F, new Dilation(0.0F)), ModelTransform.pivot(-2.0F, -6.0F, -2.0F));
 

@@ -1032,6 +1032,8 @@ public class ModItemGroup {
                         entries.add(ModFluids.GOATMILK_BUCKET);
                         entries.add(ModFluids.GOATMILKCREAM_BUCKET);
                         entries.add(ModFluids.SKIMMEDGOATMILK_BUCKET);
+
+                        entries.add(ModItems.BOAR_SPAWN_EGG);
                     }).build());
     public static void registerItemGroup() {
         //example add to ingredients group tab.

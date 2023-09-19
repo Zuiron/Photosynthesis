@@ -8,6 +8,8 @@ import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.color.world.BiomeColors;
@@ -23,6 +25,10 @@ import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.block.entity.ModBlockEntities;
 import net.zuiron.photosynthesis.block.entity.client.*;
+import net.zuiron.photosynthesis.entity.ModEntities;
+import net.zuiron.photosynthesis.entity.client.BoarModel;
+import net.zuiron.photosynthesis.entity.client.BoarRenderer;
+import net.zuiron.photosynthesis.entity.layer.ModModelLayers;
 import net.zuiron.photosynthesis.event.ClientPlayConnectionJoin;
 import net.zuiron.photosynthesis.event.KeyInputHandler;
 import net.zuiron.photosynthesis.fluid.ModFluids;
@@ -661,5 +667,9 @@ public class PhotosynthesisClient implements ClientModInitializer {
                 : GrassColors.getDefaultColor(), ModBlocks.GRASS_CROP);
 
         //ColorProviderRegistry.ITEM.register((stack, tintIndex) -> FoliageColors.getDefaultColor(), ModBlocks.GRASS_CROP);
+
+        //Entities
+        EntityModelLayerRegistry.registerModelLayer(ModModelLayers.BOAR, BoarModel::getTexturedModelData);
+        EntityRendererRegistry.register(ModEntities.BOAR, BoarRenderer::new);
     }
 }

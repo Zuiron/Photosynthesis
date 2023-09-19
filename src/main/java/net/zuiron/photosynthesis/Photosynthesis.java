@@ -17,6 +17,7 @@ import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.block.entity.ModBlockEntities;
 import net.zuiron.photosynthesis.config.ModConfig;
 import net.zuiron.photosynthesis.effect.ModEffects;
+import net.zuiron.photosynthesis.entity.ModEntities;
 import net.zuiron.photosynthesis.event.OnPlayerEatEvent;
 import net.zuiron.photosynthesis.event.PlayerTickHandler;
 import net.zuiron.photosynthesis.event.ModUseItemCallback;
@@ -213,6 +214,8 @@ public class Photosynthesis implements ModInitializer {
 		ModUseItemCallback.registerModUseItemCallback();
 
 		ModWorldGen.generateModWorldGen(); //last
+
+		ModEntities.registerModEntities();
 
 		ServerTickEvents.START_SERVER_TICK.register(new PlayerTickHandler());
 		ServerTickEvents.START_SERVER_TICK.register(new SeasonTickHandler());

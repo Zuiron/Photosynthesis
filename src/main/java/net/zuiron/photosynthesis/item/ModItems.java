@@ -13,6 +13,7 @@ import net.minecraft.util.Identifier;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.effect.ModEffects;
+import net.zuiron.photosynthesis.entity.ModEntities;
 import net.zuiron.photosynthesis.item.advanced.StackableStewItem;
 import net.zuiron.photosynthesis.item.advanced.WrenchItem;
 import net.zuiron.photosynthesis.mixin.ItemAccessor;
@@ -1543,6 +1544,14 @@ public class ModItems {
                     .maxCount(1)
                     .maxDamage(6)
                     .recipeRemainder(ModItems.LEATHER_WATER_BLADDER),2, 120));
+
+
+
+    //Entity spawn eggs
+    public static final Item BOAR_SPAWN_EGG = registerItem("boar_spawn_egg",
+            new SpawnEggItem(ModEntities.BOAR, 0x2a1e17, 0x5b4933, new FabricItemSettings()));
+
+
 
     // END OF ModItems -------------------------------------------------------------------------------------------------
     private static Item registerBerryItem(String name, SweetBerryBushBlock alias, FabricItemSettings settings) {
