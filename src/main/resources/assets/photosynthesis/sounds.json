@@ -16,7 +16,10 @@
   },
   "entity_boar_ambient": {
     "sounds": [
-      "photosynthesis:entity_boar_ambient"
+      "photosynthesis:entity_boar_ambient_1",
+      "photosynthesis:entity_boar_ambient_2",
+      "photosynthesis:entity_boar_ambient_3",
+      "photosynthesis:entity_boar_ambient_4"
     ]
   },
   "entity_boar_death": {
