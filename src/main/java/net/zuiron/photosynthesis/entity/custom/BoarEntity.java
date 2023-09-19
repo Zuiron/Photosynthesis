@@ -6,6 +6,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
@@ -14,9 +15,11 @@ import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.entity.ModEntities;
 import net.zuiron.photosynthesis.entity.ai.BoarAttackGoal;
+import net.zuiron.photosynthesis.sound.ModSoundEvents;
 import org.jetbrains.annotations.Nullable;
 
 public class BoarEntity extends AnimalEntity {
@@ -109,5 +112,23 @@ public class BoarEntity extends AnimalEntity {
 
     public boolean isAttacking() {
         return this.dataTracker.get(ATTACKING);
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return ModSoundEvents.BOAR_AMBIENT_SOUND_EVENT;
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getDeathSound() {
+        return ModSoundEvents.BOAR_DEATH_SOUND_EVENT;
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getHurtSound(DamageSource source) {
+        return ModSoundEvents.BOAR_HURT_SOUND_EVENT;
     }
 }

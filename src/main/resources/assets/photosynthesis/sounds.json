@@ -13,6 +13,21 @@
     "sounds": [
       "photosynthesis:mortar"
     ]
+  },
+  "entity_boar_ambient": {
+    "sounds": [
+      "photosynthesis:entity_boar_ambient"
+    ]
+  },
+  "entity_boar_death": {
+    "sounds": [
+      "photosynthesis:entity_boar_death"
+    ]
+  },
+  "entity_boar_hurt": {
+    "sounds": [
+      "photosynthesis:entity_boar_hurt"
+    ]
   }
 }
 
