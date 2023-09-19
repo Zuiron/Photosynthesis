@@ -8,5 +8,6 @@ public class ModWorldGen {
         ModTreeGeneration.generateTrees();
         ModDecorationGeneration.generateDecorations();
         ModCropGeneration.generateCrops();
+        ModEntitySpawns.addSpawns();
     }
 }
