@@ -11,8 +11,8 @@ import net.zuiron.photosynthesis.entity.ModEntities;
 
 public class ModEntitySpawns {
     public static void addSpawns() {
-        BiomeModifications.addSpawn(BiomeSelectors.includeByKey(BiomeKeys.JUNGLE, BiomeKeys.FOREST),
-                SpawnGroup.CREATURE, ModEntities.BOAR, 100, 1, 3);
+        BiomeModifications.addSpawn(BiomeSelectors.includeByKey(BiomeKeys.JUNGLE, BiomeKeys.FOREST, BiomeKeys.WOODED_BADLANDS, BiomeKeys.DARK_FOREST),
+                SpawnGroup.CREATURE, ModEntities.BOAR, 200, 1, 3);
 
         SpawnRestriction.register(ModEntities.BOAR, SpawnRestriction.Location.ON_GROUND,
                 Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, AnimalEntity::isValidNaturalSpawn);
