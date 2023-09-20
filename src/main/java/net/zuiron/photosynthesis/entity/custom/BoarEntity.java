@@ -50,7 +50,7 @@ public class BoarEntity extends AnimalEntity {
         this.goalSelector.add(4, new LookAroundGoal(this));
 
         //ANGRY BOAR! :D
-        this.targetSelector.add(4, new ActiveTargetGoal<PlayerEntity>((MobEntity)this, PlayerEntity.class, true, true));
+        this.targetSelector.add(4, new ActiveTargetGoal<PlayerEntity>((MobEntity)this, PlayerEntity.class, true));
         this.targetSelector.add(1, new RevengeGoal(this));
     }
 

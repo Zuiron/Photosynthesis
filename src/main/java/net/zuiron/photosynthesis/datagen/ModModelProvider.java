@@ -38,6 +38,7 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.FORESTY_BUNDLE,
                 ModItems.PLASTIC_WRAP,
                 ModItems.TMR,
+                ModItems.BOAR_TUSK,
                 ModItems.GRASS_BUNDLE,
                 ModItems.HAY_BUNDLE,
                 ModItems.STRAW_BUNDLE,

@@ -46,6 +46,9 @@ public class ModItems {
     public static final Item TMR = registerItem("tmr",
             new Item(new FabricItemSettings()));
 
+    public static final Item BOAR_TUSK = registerItem("boar_tusk",
+            new Item(new FabricItemSettings()));
+
     public static final Item MANURE = registerItem("manure",
             new TooltippedItem(new FabricItemSettings(),"Organic Fertilizer"));
 

@@ -1458,5 +1458,6 @@
   "item.photosynthesis.drinking_glass_milk": "Drinking Glass Milk",
 
   "item.photosynthesis.boar_spawn_egg": "Boar",
-  "entity.photosynthesis.boar": "Boar"
+  "entity.photosynthesis.boar": "Boar",
+  "item.photosynthesis.boar_tusk": "Boar Tusk"
 }
