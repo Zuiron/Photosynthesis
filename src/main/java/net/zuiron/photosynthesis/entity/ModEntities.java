@@ -14,7 +14,7 @@ public class ModEntities {
     public static final EntityType<BoarEntity> BOAR = Registry.register(Registries.ENTITY_TYPE,
             new Identifier(Photosynthesis.MOD_ID, "boar"),
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, BoarEntity::new)
-                    .dimensions(EntityDimensions.fixed(1.0f, 1.0f)).build());
+                    .dimensions(EntityDimensions.fixed(0.8f, 1.1f)).build());
 
     public static void registerModEntities() {
         Photosynthesis.LOGGER.info("Registering Mod Entities for " + Photosynthesis.MOD_ID);

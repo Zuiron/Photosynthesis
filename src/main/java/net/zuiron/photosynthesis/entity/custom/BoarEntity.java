@@ -42,7 +42,7 @@ public class BoarEntity extends AnimalEntity {
     @Override
     protected void initGoals() {
         this.goalSelector.add(0, new SwimGoal(this));
-        this.goalSelector.add(1, new BoarAttackGoal(this, 1.3D, true));
+        this.goalSelector.add(1, new BoarAttackGoal(this, 1.1D, true));
 
         this.goalSelector.add(1, new FollowParentGoal(this, 1.1D));
         this.goalSelector.add(2, new WanderAroundFarGoal(this, 1.0D));
@@ -50,7 +50,7 @@ public class BoarEntity extends AnimalEntity {
         this.goalSelector.add(4, new LookAroundGoal(this));
 
         //ANGRY BOAR! :D
-        this.targetSelector.add(0, new ActiveTargetGoal<PlayerEntity>((MobEntity)this, PlayerEntity.class, true));
+        this.targetSelector.add(4, new ActiveTargetGoal<PlayerEntity>((MobEntity)this, PlayerEntity.class, true, true));
         this.targetSelector.add(1, new RevengeGoal(this));
     }
 

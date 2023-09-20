@@ -8,8 +8,8 @@ import net.zuiron.photosynthesis.entity.custom.BoarEntity;
 
 public class BoarAttackGoal extends MeleeAttackGoal {
     private final BoarEntity entity;
-    private int attackDelay = 5;
-    private int ticksUntilNextAttack = 15;
+    private int attackDelay = 10; //5
+    private int ticksUntilNextAttack = 40; //15
     private boolean shouldCountTillNextAttack = false;
 
     public BoarAttackGoal(PathAwareEntity mob, double speed, boolean pauseWhenMobIdle) {
@@ -20,8 +20,8 @@ public class BoarAttackGoal extends MeleeAttackGoal {
     @Override
     public void start() {
         super.start();
-        attackDelay = 5;
-        ticksUntilNextAttack = 15;
+        attackDelay = 10;
+        ticksUntilNextAttack = 40;
     }
 
     @Override
