@@ -61,14 +61,14 @@ public class ModDecorationGeneration {
             RegistryKey<Biome> biomeKey = context.getBiomeKey();
             String biomeId = biomeKey.getValue().toString();
             float temperature = context.getBiome().getTemperature();
-            return context.hasTag(BiomeTags.IS_OVERWORLD) || biomeId.equals("terra:overworld/overworld/beach") || context.hasTag(BiomeTags.IS_BEACH);
+            return context.hasTag(BiomeTags.IS_OVERWORLD) && biomeId.equals("terra:overworld/overworld/beach") || context.hasTag(BiomeTags.IS_BEACH);
         }, GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.DECO_BEACHGRASS_PLACED_KEY);
 
         BiomeModifications.addFeature(context -> {
             RegistryKey<Biome> biomeKey = context.getBiomeKey();
             String biomeId = biomeKey.getValue().toString();
             float temperature = context.getBiome().getTemperature();
-            return context.hasTag(BiomeTags.IS_OVERWORLD) || biomeId.equals("terra:overworld/overworld/beach") || context.hasTag(BiomeTags.IS_BEACH);
+            return context.hasTag(BiomeTags.IS_OVERWORLD) && biomeId.equals("terra:overworld/overworld/beach") || context.hasTag(BiomeTags.IS_BEACH);
         }, GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.DECO_TALL_BEACHGRASS_PLACED_KEY);
 
     }
