@@ -40,6 +40,7 @@ public class modifyLootTables {
     private static final Identifier COMMON_SHEEP_LOOT_TABLE_ID = new Identifier("minecraft", "entities/sheep");
     private static final Identifier COMMON_CHICKEN_LOOT_TABLE_ID = new Identifier("minecraft", "entities/chicken");
     private static final Identifier COMMON_PIG_LOOT_TABLE_ID = new Identifier("minecraft", "entities/pig");
+    private static final Identifier COMMON_BOAR_LOOT_TABLE_ID = new Identifier("photosynthesis", "entities/boar");
     private static final Identifier COMMON_HORSE_LOOT_TABLE_ID = new Identifier("minecraft", "entities/horse");
     private static final Identifier COMMON_WOLF_LOOT_TABLE_ID = new Identifier("minecraft", "entities/wolf");
 
@@ -98,7 +99,7 @@ public class modifyLootTables {
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 3.0f)).build());
                 tableBuilder.pool(poolBuilder.build());
             }
-            if(source.isBuiltin() && COMMON_PIG_LOOT_TABLE_ID.equals(id)) {
+            if(source.isBuiltin() && COMMON_PIG_LOOT_TABLE_ID.equals(id) || COMMON_BOAR_LOOT_TABLE_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(1f)) // Drops 100% of the time
