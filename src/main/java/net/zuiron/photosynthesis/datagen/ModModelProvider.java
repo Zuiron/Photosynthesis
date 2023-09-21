@@ -29,6 +29,8 @@ public class ModModelProvider extends FabricModelProvider {
         //Spawn Eggs
         itemModelGenerator.register(ModItems.BOAR_SPAWN_EGG,
                 new Model(Optional.of(new Identifier("item/template_spawn_egg")), Optional.empty()));
+        itemModelGenerator.register(ModItems.ALLIGATOR_SPAWN_EGG,
+                new Model(Optional.of(new Identifier("item/template_spawn_egg")), Optional.empty()));
 
         //itemModelGenerator.register(ModItems.CACTUS_FRUIT, );
         Item[] simple_items = {

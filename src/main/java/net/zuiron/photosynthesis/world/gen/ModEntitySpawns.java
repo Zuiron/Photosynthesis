@@ -9,6 +9,7 @@ import net.minecraft.registry.tag.BiomeTags;
 import net.minecraft.world.Heightmap;
 import net.minecraft.world.biome.BiomeKeys;
 import net.zuiron.photosynthesis.entity.ModEntities;
+import net.zuiron.photosynthesis.entity.custom.AlligatorEntity;
 import net.zuiron.photosynthesis.entity.custom.BoarEntity;
 
 public class ModEntitySpawns {
@@ -24,5 +25,13 @@ public class ModEntitySpawns {
 
         SpawnRestriction.register(ModEntities.BOAR, SpawnRestriction.Location.ON_GROUND,
                 Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, BoarEntity::isValidSpawn); //AnimalEntity::isValidNaturalSpawn
+
+
+
+        BiomeModifications.addSpawn(BiomeSelectors.tag(BiomeTags.RUINED_PORTAL_SWAMP_HAS_STRUCTURE), //BiomeKeys.SWAMP, BiomeKeys.MANGROVE_SWAMP
+                SpawnGroup.CREATURE, ModEntities.ALLIGATOR, 200, 1, 1);
+
+        SpawnRestriction.register(ModEntities.ALLIGATOR, SpawnRestriction.Location.NO_RESTRICTIONS,
+                Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, AlligatorEntity::isValidSpawn);
     }
 }

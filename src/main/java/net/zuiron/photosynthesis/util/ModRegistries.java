@@ -8,6 +8,7 @@ import net.minecraft.village.TradeOffer;
 import net.minecraft.village.VillagerProfession;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.entity.ModEntities;
+import net.zuiron.photosynthesis.entity.custom.AlligatorEntity;
 import net.zuiron.photosynthesis.entity.custom.BoarEntity;
 import net.zuiron.photosynthesis.item.ModItems;
 import net.zuiron.photosynthesis.villager.ModVillagers;
@@ -20,6 +21,7 @@ public class ModRegistries {
 
     private static void registerAttributes() {
         FabricDefaultAttributeRegistry.register(ModEntities.BOAR, BoarEntity.createBoarAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.ALLIGATOR, AlligatorEntity.createAlligatorAttributes());
     }
 
     private static void registerCustomTrades() {

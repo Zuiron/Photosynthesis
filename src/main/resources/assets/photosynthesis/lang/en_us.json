@@ -1457,7 +1457,10 @@
   "item.photosynthesis.drinking_glass": "Drinking Glass",
   "item.photosynthesis.drinking_glass_milk": "Drinking Glass Milk",
 
-  "item.photosynthesis.boar_spawn_egg": "Boar",
+  "item.photosynthesis.boar_spawn_egg": "Boar Spawn Egg",
   "entity.photosynthesis.boar": "Boar",
-  "item.photosynthesis.boar_tusk": "Boar Tusk"
+  "item.photosynthesis.boar_tusk": "Boar Tusk",
+
+  "item.photosynthesis.alligator_spawn_egg": "Alligator Spawn Egg",
+  "entity.photosynthesis.alligator": "Alligator"
 }

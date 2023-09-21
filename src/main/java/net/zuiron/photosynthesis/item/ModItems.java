@@ -1554,6 +1554,9 @@ public class ModItems {
     public static final Item BOAR_SPAWN_EGG = registerItem("boar_spawn_egg",
             new SpawnEggItem(ModEntities.BOAR, 0x2a1e17, 0x5b4933, new FabricItemSettings()));
 
+    public static final Item ALLIGATOR_SPAWN_EGG = registerItem("alligator_spawn_egg",
+            new SpawnEggItem(ModEntities.ALLIGATOR, 0x0c3315, 0x1b3b22, new FabricItemSettings()));
+
 
 
     // END OF ModItems -------------------------------------------------------------------------------------------------

@@ -1035,6 +1035,8 @@ public class ModItemGroup {
 
                         entries.add(ModItems.BOAR_SPAWN_EGG);
                         entries.add(ModItems.BOAR_TUSK);
+
+                        entries.add(ModItems.ALLIGATOR_SPAWN_EGG);
                     }).build());
     public static void registerItemGroup() {
         //example add to ingredients group tab.

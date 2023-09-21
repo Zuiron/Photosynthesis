@@ -26,6 +26,8 @@ import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.block.entity.ModBlockEntities;
 import net.zuiron.photosynthesis.block.entity.client.*;
 import net.zuiron.photosynthesis.entity.ModEntities;
+import net.zuiron.photosynthesis.entity.client.AlligatorModel;
+import net.zuiron.photosynthesis.entity.client.AlligatorRenderer;
 import net.zuiron.photosynthesis.entity.client.BoarModel;
 import net.zuiron.photosynthesis.entity.client.BoarRenderer;
 import net.zuiron.photosynthesis.entity.layer.ModModelLayers;
@@ -671,5 +673,8 @@ public class PhotosynthesisClient implements ClientModInitializer {
         //Entities
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.BOAR, BoarModel::getTexturedModelData);
         EntityRendererRegistry.register(ModEntities.BOAR, BoarRenderer::new);
+
+        EntityModelLayerRegistry.registerModelLayer(ModModelLayers.ALLIGATOR, AlligatorModel::getTexturedModelData);
+        EntityRendererRegistry.register(ModEntities.ALLIGATOR, AlligatorRenderer::new);
     }
 }
