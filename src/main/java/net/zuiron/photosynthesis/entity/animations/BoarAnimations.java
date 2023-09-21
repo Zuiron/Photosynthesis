@@ -5,7 +5,7 @@ import net.minecraft.client.render.entity.animation.AnimationHelper;
 import net.minecraft.client.render.entity.animation.Keyframe;
 import net.minecraft.client.render.entity.animation.Transformation;
 
-public class ModAnimations {
+public class BoarAnimations {
 
     public static final Animation BOAR_WALK = Animation.Builder.create(0.9167666f).looping()
             .addBoneAnimation("torso",

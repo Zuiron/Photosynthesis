@@ -5,7 +5,7 @@ import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.SinglePartEntityModel;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.math.MathHelper;
-import net.zuiron.photosynthesis.entity.animations.ModAnimations;
+import net.zuiron.photosynthesis.entity.animations.BoarAnimations;
 import net.zuiron.photosynthesis.entity.custom.BoarEntity;
 
 // Made with Blockbench 4.8.3
@@ -67,9 +67,9 @@ public class BoarModel<T extends BoarEntity> extends SinglePartEntityModel<T> {
         this.getPart().traverse().forEach(ModelPart::resetTransform);
         this.setHeadAngles(entity, netHeadYaw, headPitch, ageInTicks);
 
-        this.animateMovement(ModAnimations.BOAR_WALK, limbSwing, limbSwingAmount, 2f, 2.5f);
-        this.updateAnimation(entity.idleAnimationState, ModAnimations.BOAR_IDLE, ageInTicks, 1f);
-        this.updateAnimation(entity.attackAnimationState, ModAnimations.BOAR_ATTACK, ageInTicks, 1f);
+        this.animateMovement(BoarAnimations.BOAR_WALK, limbSwing, limbSwingAmount, 2f, 2.5f);
+        this.updateAnimation(entity.idleAnimationState, BoarAnimations.BOAR_IDLE, ageInTicks, 1f);
+        this.updateAnimation(entity.attackAnimationState, BoarAnimations.BOAR_ATTACK, ageInTicks, 1f);
     }
     private void setHeadAngles(BoarEntity entity, float headYaw, float headPitch, float animationProgress) {
         headYaw = MathHelper.clamp(headYaw, -30.0F, 30.0F);
