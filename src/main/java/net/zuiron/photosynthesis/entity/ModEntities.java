@@ -20,7 +20,7 @@ public class ModEntities {
     public static final EntityType<AlligatorEntity> ALLIGATOR = Registry.register(Registries.ENTITY_TYPE,
             new Identifier(Photosynthesis.MOD_ID, "alligator"),
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, AlligatorEntity::new)
-                    .dimensions(EntityDimensions.fixed(1.0f, 1.0f)).build());
+                    .dimensions(EntityDimensions.fixed(1.5f, 1.1f)).build());
 
     public static void registerModEntities() {
         Photosynthesis.LOGGER.info("Registering Mod Entities for " + Photosynthesis.MOD_ID);

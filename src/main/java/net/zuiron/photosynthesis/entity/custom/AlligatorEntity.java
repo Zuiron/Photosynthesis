@@ -1,10 +1,10 @@
 package net.zuiron.photosynthesis.entity.custom;
 
-import net.minecraft.entity.AnimationState;
-import net.minecraft.entity.EntityPose;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.SpawnReason;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.*;
+import net.minecraft.entity.ai.control.AquaticMoveControl;
 import net.minecraft.entity.ai.goal.*;
+import net.minecraft.entity.ai.pathing.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
@@ -13,13 +13,18 @@ import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.AnimalEntity;
+import net.minecraft.entity.passive.FrogEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.zuiron.photosynthesis.entity.ModEntities;
@@ -35,25 +40,33 @@ public class AlligatorEntity extends AnimalEntity {
 
     public final AnimationState attackAnimationState = new AnimationState();
     public int attackAnimationTimeout = 0;
+
+    public final AnimationState idlingInWaterAnimationState = new AnimationState();
     public AlligatorEntity(EntityType<? extends AnimalEntity> entityType, World world) {
         super(entityType, world);
+        this.setPathfindingPenalty(PathNodeType.WATER, 0.0f);
+        this.setPathfindingPenalty(PathNodeType.TRAPDOOR, -1.0f);
+        this.moveControl = new AquaticMoveControl(this, 85, 10, 1.2f, 1.0f, true);
+        this.setStepHeight(1.5f);
     }
 
     @Override
     protected void initGoals() {
         this.goalSelector.add(0, new SwimGoal(this));
-        this.goalSelector.add(1, new AlligatorAttackGoal(this, 1.0D, true));
+        this.goalSelector.add(3, new AlligatorAttackGoal(this, 1.2D, true));
 
         this.goalSelector.add(1, new FollowParentGoal(this, 1.0D));
+        this.goalSelector.add(2, new SwimAroundGoal(this, 1.0, 10));
         this.goalSelector.add(2, new WanderAroundFarGoal(this, 1.0D));
-        //this.goalSelector.add(3, new LookAtEntityGoal(this, PlayerEntity.class, 4.0F));
-        this.goalSelector.add(4, new LookAroundGoal(this));
+        //this.goalSelector.add(4, new LookAroundGoal(this));
 
         this.targetSelector.add(4, new ActiveTargetGoal<PlayerEntity>((MobEntity)this, PlayerEntity.class, true));
-        this.targetSelector.add(1, new RevengeGoal(this));
+        this.targetSelector.add(3, new RevengeGoal(this));
     }
 
     private void setupAnimationStates() {
+        this.idlingInWaterAnimationState.setRunning(this.isInsideWaterOrBubbleColumn() && !this.limbAnimator.isLimbMoving(), this.age);
+
         if (this.idleAnimationTimeout <= 0) {
             this.idleAnimationTimeout = this.random.nextInt(40) + 80;
             this.idleAnimationState.start(this.age);
@@ -85,18 +98,38 @@ public class AlligatorEntity extends AnimalEntity {
     }
 
     @Override
-    public void tick() {
-        super.tick();
+    public boolean canBreatheInWater() {
+        return true;
+    }
 
+    @Override
+    public boolean isPushedByFluids() {
+        return false;
+    }
+
+    @Override
+    public void travel(Vec3d movementInput) {
+        if (this.isLogicalSideForUpdatingMovement() && this.isTouchingWater()) {
+            this.updateVelocity(this.getMovementSpeed(), movementInput);
+            this.move(MovementType.SELF, this.getVelocity());
+            this.setVelocity(this.getVelocity().multiply(0.6));
+        } else {
+            super.travel(movementInput);
+        }
+    }
+
+    @Override
+    public void tick() {
         if (this.getWorld().isClient()) {
             this.setupAnimationStates();
         }
+        super.tick();
     }
 
     public static DefaultAttributeContainer.Builder createAlligatorAttributes() {
         return MobEntity.createMobAttributes()
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 24)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.2)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 3)
                 .add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 1.0)
                 .add(EntityAttributes.GENERIC_ATTACK_KNOCKBACK, 3);
@@ -140,8 +173,64 @@ public class AlligatorEntity extends AnimalEntity {
         return ModSoundEvents.BOAR_HURT_SOUND_EVENT;
     }
 
+    @Override
+    protected void playStepSound(BlockPos pos, BlockState state) {
+        this.playSound(SoundEvents.ENTITY_FROG_STEP, 0.15f, 1.0f);
+    }
+
     public static boolean isValidSpawn(EntityType<? extends AnimalEntity> type, WorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random) {
         //return world.getBlockState(pos.down()).isIn(BlockTags.ANIMALS_SPAWNABLE_ON) && AnimalEntity.isLightLevelValidForNaturalSpawn(world, pos);
-        return world.getBlockState(pos.down()).isIn(BlockTags.ANIMALS_SPAWNABLE_ON);
+        return world.getBlockState(pos.down()).isIn(BlockTags.FROGS_SPAWNABLE_ON);
+    }
+
+    @Override
+    protected EntityNavigation createNavigation(World world) {
+        return new AlligatorEntity.AlligatorSwimNavigation(this, world);
+    }
+
+    static class AlligatorSwimNavigation
+            extends AmphibiousSwimNavigation {
+        AlligatorSwimNavigation(AlligatorEntity alligator, World world) {
+            super(alligator, world);
+        }
+
+        @Override
+        public boolean canJumpToNext(PathNodeType nodeType) {
+            return nodeType != PathNodeType.WATER_BORDER && super.canJumpToNext(nodeType);
+        }
+
+        @Override
+        protected PathNodeNavigator createPathNodeNavigator(int range) {
+            this.nodeMaker = new AlligatorSwimPathNodeMaker(true);
+            this.nodeMaker.setCanEnterOpenDoors(true);
+            return new PathNodeNavigator(this.nodeMaker, range);
+        }
+    }
+
+    static class AlligatorSwimPathNodeMaker
+            extends AmphibiousPathNodeMaker {
+        private final BlockPos.Mutable pos = new BlockPos.Mutable();
+
+        public AlligatorSwimPathNodeMaker(boolean bl) {
+            super(bl);
+        }
+
+        @Override
+        public PathNode getStart() {
+            if (!this.entity.isTouchingWater()) {
+                return super.getStart();
+            }
+            return this.getStart(new BlockPos(MathHelper.floor(this.entity.getBoundingBox().minX), MathHelper.floor(this.entity.getBoundingBox().minY), MathHelper.floor(this.entity.getBoundingBox().minZ)));
+        }
+
+        @Override
+        public PathNodeType getDefaultNodeType(BlockView world, int x, int y, int z) {
+            this.pos.set(x, y - 1, z);
+            BlockState blockState = world.getBlockState(this.pos);
+            if (blockState.isIn(BlockTags.FROG_PREFER_JUMP_TO)) {
+                return PathNodeType.OPEN;
+            }
+            return super.getDefaultNodeType(world, x, y, z);
+        }
     }
 }

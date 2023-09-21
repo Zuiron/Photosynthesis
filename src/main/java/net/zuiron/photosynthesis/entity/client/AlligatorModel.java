@@ -2,8 +2,11 @@ package net.zuiron.photosynthesis.entity.client;
 
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
+import net.minecraft.client.render.entity.animation.FrogAnimations;
 import net.minecraft.client.render.entity.model.SinglePartEntityModel;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.passive.FrogEntity;
 import net.zuiron.photosynthesis.entity.animations.AlligatorAnimations;
 import net.zuiron.photosynthesis.entity.custom.AlligatorEntity;
 
@@ -110,9 +113,21 @@ public class AlligatorModel<T extends AlligatorEntity> extends SinglePartEntityM
     public void setAngles(AlligatorEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         this.getPart().traverse().forEach(ModelPart::resetTransform);
 
-        this.animateMovement(AlligatorAnimations.ALLIGATOR_WALK, limbSwing, limbSwingAmount, 2.5f, 3.5f);
+        //this.animateMovement(AlligatorAnimations.ALLIGATOR_WALK, limbSwing, limbSwingAmount, 2.5f, 3.5f);
         this.updateAnimation(entity.idleAnimationState, AlligatorAnimations.ALLIGATOR_IDLE, ageInTicks, 1f);
         this.updateAnimation(entity.attackAnimationState, AlligatorAnimations.ALLIGATOR_ATTACK, ageInTicks, 1f);
+
+        //hmmmm
+        if (((Entity)entity).isInsideWaterOrBubbleColumn()) {
+            //swimming animation...
+            //this.animateMovement(FrogAnimations.SWIMMING, limbSwing, limbSwingAmount, 1.0f, 2.5f);
+            this.animateMovement(AlligatorAnimations.ALLIGATOR_WALK, limbSwing, limbSwingAmount, 3.5f, 3.5f);
+        } else {
+            //walking animation...
+            //this.animateMovement(FrogAnimations.WALKING, limbSwing, limbSwingAmount, 1.5f, 2.5f);
+            this.animateMovement(AlligatorAnimations.ALLIGATOR_WALK, limbSwing, limbSwingAmount, 2.5f, 3.5f);
+        }
+        //this.updateAnimation(((AlligatorEntity)entity).idlingInWaterAnimationState, FrogAnimations.IDLING_IN_WATER, ageInTicks);
     }
     @Override
     public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, float red, float green, float blue, float alpha) {
