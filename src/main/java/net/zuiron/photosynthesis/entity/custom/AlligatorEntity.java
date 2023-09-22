@@ -57,9 +57,9 @@ public class AlligatorEntity extends AnimalEntity {
         this.goalSelector.add(0, new AlligatorAttackGoal(this, 1.2D, true));
 
         this.goalSelector.add(1, new FollowParentGoal(this, 1.0D));
-        this.goalSelector.add(2, new SwimAroundFarGoal(this, 1.0D, 5));
-        this.goalSelector.add(2, new WanderAroundFarGoal(this, 1.0D, 10));
-        //this.goalSelector.add(4, new LookAroundGoal(this));
+        this.goalSelector.add(2, new SwimAroundFarGoal(this, 1.0D, 2));
+        this.goalSelector.add(2, new WanderAroundFarGoal(this, 1.0D, 30));
+        this.goalSelector.add(1, new BreatheAirGoal(this));
 
         this.targetSelector.add(1, new ActiveTargetGoal<PlayerEntity>((MobEntity)this, PlayerEntity.class, true));
         this.targetSelector.add(0, new RevengeGoal(this));
@@ -124,6 +124,12 @@ public class AlligatorEntity extends AnimalEntity {
         if (this.getWorld().isClient()) {
             this.setupAnimationStates();
         }
+
+        //fixes so alligator can walk out of water.
+        if (this.horizontalCollision && this.isInsideWaterOrBubbleColumn()) {
+            this.setVelocity(this.getVelocity().add(0D,0.1D,0D));
+        }
+
         super.tick();
     }
 
