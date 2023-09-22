@@ -3,7 +3,10 @@ package net.zuiron.photosynthesis.entity.ai;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.entity.mob.PathAwareEntity;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Hand;
+import net.minecraft.world.World;
 import net.zuiron.photosynthesis.entity.custom.AlligatorEntity;
 
 public class AlligatorAttackGoal extends MeleeAttackGoal {
@@ -65,6 +68,7 @@ public class AlligatorAttackGoal extends MeleeAttackGoal {
         this.resetAttackCooldown();
         this.mob.swingHand(Hand.MAIN_HAND);
         this.mob.tryAttack(pEnemy);
+        this.mob.getWorld().playSound(null, this.mob.getBlockPos(), SoundEvents.ENTITY_HOGLIN_ATTACK, SoundCategory.HOSTILE, 1.0F, 1.0F);
     }
 
     @Override
