@@ -29,6 +29,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.zuiron.photosynthesis.entity.ModEntities;
 import net.zuiron.photosynthesis.entity.ai.AlligatorAttackGoal;
+import net.zuiron.photosynthesis.entity.ai.SwimAroundFarGoal;
 import net.zuiron.photosynthesis.sound.ModSoundEvents;
 import org.jetbrains.annotations.Nullable;
 
@@ -46,22 +47,22 @@ public class AlligatorEntity extends AnimalEntity {
         super(entityType, world);
         this.setPathfindingPenalty(PathNodeType.WATER, 0.0f);
         this.setPathfindingPenalty(PathNodeType.TRAPDOOR, -1.0f);
-        this.moveControl = new AquaticMoveControl(this, 85, 10, 1.2f, 1.0f, true);
+        this.moveControl = new AquaticMoveControl(this, 85, 6, 1.2f, 1.0f, true);
         this.setStepHeight(1.5f);
     }
 
     @Override
     protected void initGoals() {
-        this.goalSelector.add(0, new SwimGoal(this));
-        this.goalSelector.add(3, new AlligatorAttackGoal(this, 1.2D, true));
+        //this.goalSelector.add(0, new SwimGoal(this));
+        this.goalSelector.add(0, new AlligatorAttackGoal(this, 1.2D, true));
 
         this.goalSelector.add(1, new FollowParentGoal(this, 1.0D));
-        this.goalSelector.add(2, new SwimAroundGoal(this, 1.0, 10));
+        this.goalSelector.add(2, new SwimAroundFarGoal(this, 1.0D, 5));
         this.goalSelector.add(2, new WanderAroundFarGoal(this, 1.0D));
         //this.goalSelector.add(4, new LookAroundGoal(this));
 
-        this.targetSelector.add(4, new ActiveTargetGoal<PlayerEntity>((MobEntity)this, PlayerEntity.class, true));
-        this.targetSelector.add(3, new RevengeGoal(this));
+        this.targetSelector.add(1, new ActiveTargetGoal<PlayerEntity>((MobEntity)this, PlayerEntity.class, true));
+        this.targetSelector.add(0, new RevengeGoal(this));
     }
 
     private void setupAnimationStates() {
