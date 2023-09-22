@@ -29,7 +29,9 @@ public class ModEntitySpawns {
 
 
         BiomeModifications.addSpawn(BiomeSelectors.tag(BiomeTags.RUINED_PORTAL_SWAMP_HAS_STRUCTURE), //BiomeKeys.SWAMP, BiomeKeys.MANGROVE_SWAMP
-                SpawnGroup.CREATURE, ModEntities.ALLIGATOR, 200, 1, 1);
+                SpawnGroup.CREATURE, ModEntities.ALLIGATOR, 350, 1, 1);
+        BiomeModifications.addSpawn(BiomeSelectors.tag(BiomeTags.IS_RIVER),
+                SpawnGroup.CREATURE, ModEntities.ALLIGATOR, 110, 1, 1);
 
         SpawnRestriction.register(ModEntities.ALLIGATOR, SpawnRestriction.Location.NO_RESTRICTIONS,
                 Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, AlligatorEntity::isValidSpawn);

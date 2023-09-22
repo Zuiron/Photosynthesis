@@ -13,7 +13,7 @@ import net.zuiron.photosynthesis.sound.ModSoundEvents;
 public class AlligatorAttackGoal extends MeleeAttackGoal {
     private final AlligatorEntity entity;
     private int attackDelay = 6; //5
-    private int ticksUntilNextAttack = 42; //15
+    private int ticksUntilNextAttack = 56; //14
     private boolean shouldCountTillNextAttack = false;
 
     public AlligatorAttackGoal(PathAwareEntity mob, double speed, boolean pauseWhenMobIdle) {
@@ -25,7 +25,7 @@ public class AlligatorAttackGoal extends MeleeAttackGoal {
     public void start() {
         super.start();
         attackDelay = 6;
-        ticksUntilNextAttack = 42;
+        ticksUntilNextAttack = 56;
     }
 
     @Override
