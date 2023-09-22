@@ -46,7 +46,7 @@ public class AlligatorEntity extends AnimalEntity {
     public AlligatorEntity(EntityType<? extends AnimalEntity> entityType, World world) {
         super(entityType, world);
         this.setPathfindingPenalty(PathNodeType.WATER, 0.0f);
-        this.setPathfindingPenalty(PathNodeType.TRAPDOOR, -1.0f);
+        this.setPathfindingPenalty(PathNodeType.WATER_BORDER, 0.0f);
         this.moveControl = new AquaticMoveControl(this, 85, 6, 1.2f, 1.0f, true);
         this.setStepHeight(1.5f);
     }
@@ -58,7 +58,7 @@ public class AlligatorEntity extends AnimalEntity {
 
         this.goalSelector.add(1, new FollowParentGoal(this, 1.0D));
         this.goalSelector.add(2, new SwimAroundFarGoal(this, 1.0D, 5));
-        this.goalSelector.add(2, new WanderAroundFarGoal(this, 1.0D));
+        this.goalSelector.add(2, new WanderAroundFarGoal(this, 1.0D, 10));
         //this.goalSelector.add(4, new LookAroundGoal(this));
 
         this.targetSelector.add(1, new ActiveTargetGoal<PlayerEntity>((MobEntity)this, PlayerEntity.class, true));
@@ -129,11 +129,13 @@ public class AlligatorEntity extends AnimalEntity {
 
     public static DefaultAttributeContainer.Builder createAlligatorAttributes() {
         return MobEntity.createMobAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 24)
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 36)
+                .add(EntityAttributes.GENERIC_ARMOR, 10)
+                .add(EntityAttributes.GENERIC_ARMOR_TOUGHNESS, 5)
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 3)
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 12)
                 .add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 1.0)
-                .add(EntityAttributes.GENERIC_ATTACK_KNOCKBACK, 3);
+                .add(EntityAttributes.GENERIC_ATTACK_KNOCKBACK, 2);
     }
 
     @Nullable
@@ -183,6 +185,8 @@ public class AlligatorEntity extends AnimalEntity {
         //return world.getBlockState(pos.down()).isIn(BlockTags.ANIMALS_SPAWNABLE_ON) && AnimalEntity.isLightLevelValidForNaturalSpawn(world, pos);
         return world.getBlockState(pos.down()).isIn(BlockTags.FROGS_SPAWNABLE_ON);
     }
+
+
 
     @Override
     protected EntityNavigation createNavigation(World world) {
