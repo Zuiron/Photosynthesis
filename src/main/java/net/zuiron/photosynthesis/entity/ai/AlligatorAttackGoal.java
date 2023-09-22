@@ -8,6 +8,7 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.entity.custom.AlligatorEntity;
+import net.zuiron.photosynthesis.sound.ModSoundEvents;
 
 public class AlligatorAttackGoal extends MeleeAttackGoal {
     private final AlligatorEntity entity;
@@ -68,7 +69,7 @@ public class AlligatorAttackGoal extends MeleeAttackGoal {
         this.resetAttackCooldown();
         this.mob.swingHand(Hand.MAIN_HAND);
         this.mob.tryAttack(pEnemy);
-        this.mob.getWorld().playSound(null, this.mob.getBlockPos(), SoundEvents.ENTITY_HOGLIN_ATTACK, SoundCategory.HOSTILE, 1.0F, 1.0F);
+        this.mob.getWorld().playSound(null, this.mob.getBlockPos(), ModSoundEvents.ALLIGATOR_ATTACK_SOUND_EVENT, SoundCategory.HOSTILE, 1.0F, 0.8f + this.mob.getWorld().random.nextFloat() * 0.2f);
     }
 
     @Override

@@ -42,7 +42,7 @@ public class AlligatorEntity extends AnimalEntity {
     public final AnimationState attackAnimationState = new AnimationState();
     public int attackAnimationTimeout = 0;
 
-    public final AnimationState idlingInWaterAnimationState = new AnimationState();
+    //public final AnimationState idlingInWaterAnimationState = new AnimationState();
     public AlligatorEntity(EntityType<? extends AnimalEntity> entityType, World world) {
         super(entityType, world);
         this.setPathfindingPenalty(PathNodeType.WATER, 0.0f);
@@ -57,18 +57,18 @@ public class AlligatorEntity extends AnimalEntity {
         this.goalSelector.add(0, new AlligatorAttackGoal(this, 1.2D, true));
 
         this.goalSelector.add(1, new FollowParentGoal(this, 1.0D));
-        this.goalSelector.add(2, new SwimAroundFarGoal(this, 1.0D, 2));
+        //this.goalSelector.add(2, new SwimAroundFarGoal(this, 0.7D, 2));
         this.goalSelector.add(2, new WanderAroundFarGoal(this, 1.0D, 30));
-        this.goalSelector.add(1, new BreatheAirGoal(this));
+        //this.goalSelector.add(1, new BreatheAirGoal(this));
 
         this.targetSelector.add(1, new ActiveTargetGoal<PlayerEntity>((MobEntity)this, PlayerEntity.class, true));
         this.targetSelector.add(0, new RevengeGoal(this));
     }
 
     private void setupAnimationStates() {
-        this.idlingInWaterAnimationState.setRunning(this.isInsideWaterOrBubbleColumn() && !this.limbAnimator.isLimbMoving(), this.age);
+        //this.idlingInWaterAnimationState.setRunning(this.isInsideWaterOrBubbleColumn() && !this.limbAnimator.isLimbMoving(), this.age);
 
-        if (this.idleAnimationTimeout <= 0) {
+        if (this.idleAnimationTimeout <= 0 && !this.isInsideWaterOrBubbleColumn()) {
             this.idleAnimationTimeout = this.random.nextInt(40) + 80;
             this.idleAnimationState.start(this.age);
         } else {
@@ -135,11 +135,11 @@ public class AlligatorEntity extends AnimalEntity {
 
     public static DefaultAttributeContainer.Builder createAlligatorAttributes() {
         return MobEntity.createMobAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 36)
-                .add(EntityAttributes.GENERIC_ARMOR, 10)
-                .add(EntityAttributes.GENERIC_ARMOR_TOUGHNESS, 5)
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 50)
+                .add(EntityAttributes.GENERIC_ARMOR, 15)
+                .add(EntityAttributes.GENERIC_ARMOR_TOUGHNESS, 10)
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 12)
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 20)
                 .add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 1.0)
                 .add(EntityAttributes.GENERIC_ATTACK_KNOCKBACK, 2);
     }
@@ -167,19 +167,19 @@ public class AlligatorEntity extends AnimalEntity {
     @Nullable
     @Override
     protected SoundEvent getAmbientSound() {
-        return ModSoundEvents.BOAR_AMBIENT_SOUND_EVENT;
+        return ModSoundEvents.ALLIGATOR_AMBIENT_SOUND_EVENT;
     }
 
     @Nullable
     @Override
     protected SoundEvent getDeathSound() {
-        return ModSoundEvents.BOAR_DEATH_SOUND_EVENT;
+        return ModSoundEvents.ALLIGATOR_HURT_SOUND_EVENT;
     }
 
     @Nullable
     @Override
     protected SoundEvent getHurtSound(DamageSource source) {
-        return ModSoundEvents.BOAR_HURT_SOUND_EVENT;
+        return ModSoundEvents.ALLIGATOR_HURT_SOUND_EVENT;
     }
 
     @Override

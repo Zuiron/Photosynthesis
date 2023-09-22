@@ -14,6 +14,6 @@ public class SwimAroundFarGoal extends WanderAroundGoal {
     @Override
     @Nullable
     protected Vec3d getWanderTarget() {
-        return LookTargetUtil.find(this.mob, 20, 7);
+        return LookTargetUtil.find(this.mob, 16, 7);
     }
 }

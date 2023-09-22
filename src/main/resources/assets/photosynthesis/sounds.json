@@ -31,6 +31,33 @@
     "sounds": [
       "photosynthesis:entity_boar_hurt"
     ]
+  },
+  "entity_alligator_ambient": {
+    "sounds": [
+      "photosynthesis:alligator_growl_1",
+      "photosynthesis:alligator_growl_2",
+      "photosynthesis:alligator_growl_3",
+      "photosynthesis:alligator_growl_4",
+      "photosynthesis:alligator_growl_5",
+      "photosynthesis:alligator_growl_6",
+      "photosynthesis:alligator_hiss_1",
+      "photosynthesis:alligator_hiss_2",
+      "photosynthesis:alligator_hiss_3",
+      "photosynthesis:alligator_hiss_4",
+      "photosynthesis:alligator_hiss_5"
+    ]
+  },
+  "entity_alligator_attack": {
+    "sounds": [
+      "photosynthesis:alligator_attack_1",
+      "photosynthesis:alligator_attack_2"
+    ]
+  },
+  "entity_alligator_hurt": {
+    "sounds": [
+      "photosynthesis:alligator_growl_2",
+      "photosynthesis:alligator_hiss_5"
+    ]
   }
 }
 

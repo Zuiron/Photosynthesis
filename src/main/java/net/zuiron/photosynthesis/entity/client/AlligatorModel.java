@@ -127,7 +127,7 @@ public class AlligatorModel<T extends AlligatorEntity> extends SinglePartEntityM
             this.animateMovement(AlligatorAnimations.ALLIGATOR_WALK, limbSwing, limbSwingAmount, 2.5f, 3.5f);
             this.updateAnimation(entity.idleAnimationState, AlligatorAnimations.ALLIGATOR_IDLE, ageInTicks, 1f);
         }
-        this.updateAnimation(((AlligatorEntity)entity).idlingInWaterAnimationState, AlligatorAnimations.ALLIGATOR_SWIM, ageInTicks);
+        //this.updateAnimation(((AlligatorEntity)entity).idlingInWaterAnimationState, AlligatorAnimations.ALLIGATOR_SWIM, ageInTicks);
     }
     @Override
     public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, float red, float green, float blue, float alpha) {
