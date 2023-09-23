@@ -1,5 +1,6 @@
 package net.zuiron.photosynthesis.util;
 
+import me.shedaniel.autoconfig.AutoConfig;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
@@ -9,12 +10,21 @@ import net.minecraft.util.Util;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.block.ModBlocks;
+import net.zuiron.photosynthesis.config.ModConfig;
 
 import java.util.Map;
 import java.util.Objects;
 
 public class ModUtil {
 
+    public static Boolean canAnimalsDieByHunger() {
+        ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
+        return config.animalsDieByHunger;
+    }
+    public static Boolean canAnimalsDieByThirst() {
+        ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
+        return config.animalsDieByThirst;
+    }
     public static Boolean doesBlockBelowHaveCreateHeatAndWhichLevelAsString(BlockState blockState, String str) {
         for (Map.Entry<Property<?>, Comparable<?>> entry : blockState.getEntries().entrySet()) {
             if(Objects.equals(getCreateBlazePropertyString(entry), str)) {

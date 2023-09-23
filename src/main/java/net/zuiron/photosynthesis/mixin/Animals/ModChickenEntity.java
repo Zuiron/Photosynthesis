@@ -4,11 +4,8 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.ChickenEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemUsage;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
@@ -17,7 +14,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
-import net.zuiron.photosynthesis.fluid.ModFluids;
+import net.zuiron.photosynthesis.util.ModUtil;
 import net.zuiron.photosynthesis.util.getCustomVarsPassiveEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -121,9 +118,9 @@ public abstract class ModChickenEntity extends AnimalEntity {
         }
 
         //damage missing water or food.
-        if(mod_Water <= 0) {
+        if(mod_Water <= 0 && ModUtil.canAnimalsDieByThirst()) {
             this.damage(this.getDamageSources().dryOut(), 2);
-        } else if (mod_Food <= 0) {
+        } else if (mod_Food <= 0 && ModUtil.canAnimalsDieByHunger()) {
             this.damage(this.getDamageSources().starve(), 1);
         }
 

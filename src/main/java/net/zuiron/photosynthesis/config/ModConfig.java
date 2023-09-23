@@ -24,6 +24,14 @@ public class ModConfig implements ConfigData {
     @Comment("Days per season")
     public int daysPerSeason = 4;
 
+    @ConfigEntry.Gui.Tooltip
+    @Comment("Animals die by hunger")
+    public boolean animalsDieByHunger = true;
+
+    @ConfigEntry.Gui.Tooltip
+    @Comment("Animals die by thirst")
+    public boolean animalsDieByThirst = true;
+
 
     @ConfigEntry.Gui.PrefixText
     @ConfigEntry.Gui.Tooltip

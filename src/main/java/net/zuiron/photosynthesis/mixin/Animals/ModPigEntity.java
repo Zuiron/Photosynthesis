@@ -14,6 +14,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
 import net.zuiron.photosynthesis.item.ModItems;
+import net.zuiron.photosynthesis.util.ModUtil;
 import net.zuiron.photosynthesis.util.getCustomVarsPassiveEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -89,9 +90,9 @@ public abstract class ModPigEntity extends AnimalEntity {
         }
 
         //damage missing water or food.
-        if(mod_Water <= 0) {
+        if(mod_Water <= 0 && ModUtil.canAnimalsDieByThirst()) {
             this.damage(this.getDamageSources().dryOut(), 2);
-        } else if (mod_Food <= 0) {
+        } else if (mod_Food <= 0 && ModUtil.canAnimalsDieByHunger()) {
             this.damage(this.getDamageSources().starve(), 1);
         }
 

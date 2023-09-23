@@ -16,6 +16,9 @@ public class ConfigSync {
         buffer.writeBoolean(serverConfig.thirst);
         buffer.writeBoolean(serverConfig.seasons);
 
+        buffer.writeBoolean(serverConfig.animalsDieByHunger);
+        buffer.writeBoolean(serverConfig.animalsDieByThirst);
+
         buffer.writeBoolean(serverConfig.spawnEggBaby);
 
         buffer.writeBoolean(serverConfig.doPigSpawn);

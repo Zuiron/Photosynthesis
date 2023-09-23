@@ -22,6 +22,9 @@ public class ConfigSyncS2CPacket {
         boolean thirstEnabled = buf.readBoolean();
         boolean seasonsEnabled = buf.readBoolean();
 
+        boolean animalsDieByHunger = buf.readBoolean();
+        boolean animalsDieByThirst = buf.readBoolean();
+
         boolean spawnEggBaby = buf.readBoolean();
 
         boolean doPigSpawn = buf.readBoolean();
@@ -48,6 +51,9 @@ public class ConfigSyncS2CPacket {
         config.daysPerSeason = daysPerSeason;
         config.thirst = thirstEnabled;
         config.seasons = seasonsEnabled;
+
+        config.animalsDieByHunger = animalsDieByHunger;
+        config.animalsDieByThirst = animalsDieByThirst;
 
         config.spawnEggBaby = spawnEggBaby;
 

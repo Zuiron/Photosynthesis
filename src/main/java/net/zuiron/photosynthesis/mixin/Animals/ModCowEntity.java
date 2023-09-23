@@ -18,6 +18,7 @@ import net.minecraft.world.event.GameEvent;
 import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.fluid.ModFluids;
 import net.zuiron.photosynthesis.item.ModItems;
+import net.zuiron.photosynthesis.util.ModUtil;
 import net.zuiron.photosynthesis.util.getCustomVarsPassiveEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -119,9 +120,9 @@ public abstract class ModCowEntity extends AnimalEntity {
             }
 
             //damage missing water or food.
-            if(mod_Water <= 0) {
+            if(mod_Water <= 0 && ModUtil.canAnimalsDieByThirst()) {
                 this.damage(this.getDamageSources().dryOut(), 2);
-            } else if (mod_Food <= 0) {
+            } else if (mod_Food <= 0 && ModUtil.canAnimalsDieByHunger()) {
                 if (mod_Grass <= 0 || mod_Hay <= 0) {
                     this.damage(this.getDamageSources().starve(), 1);
                 }
