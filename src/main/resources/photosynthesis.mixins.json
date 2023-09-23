@@ -33,6 +33,7 @@
     "ModTorchflowerBlock",
     "ModAzaleaBlock",
     "ModFarmlandBlock",
+    "ModDrownedEntity",
     "season_weather.ModBiomeWeather",
     "season_weather.ModSnowBlock",
     "season_weather.ModIceBlock",

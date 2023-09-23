@@ -35,6 +35,7 @@ public class ConfigSync {
         buffer.writeBoolean(serverConfig.doSpiderSpawn);
         buffer.writeBoolean(serverConfig.doSkeletonHorseSpawn);
         buffer.writeBoolean(serverConfig.doEnderManSpawn);
+        buffer.writeBoolean(serverConfig.doDrownedSpawn);
 
         ServerPlayNetworking.send(player, ModMessages.CONFIG_SYNC_ID, buffer);
     }

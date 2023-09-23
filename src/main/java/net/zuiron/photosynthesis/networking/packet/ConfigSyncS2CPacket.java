@@ -41,6 +41,7 @@ public class ConfigSyncS2CPacket {
         boolean doSpiderSpawn = buf.readBoolean();
         boolean doSkeletonHorseSpawn = buf.readBoolean();
         boolean doEnderManSpawn = buf.readBoolean();
+        boolean doDrownedSpawn = buf.readBoolean();
 
         //set config.
         ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
@@ -67,6 +68,7 @@ public class ConfigSyncS2CPacket {
         config.doSpiderSpawn = doSpiderSpawn;
         config.doSkeletonHorseSpawn = doSkeletonHorseSpawn;
         config.doEnderManSpawn = doEnderManSpawn;
+        config.doDrownedSpawn = doDrownedSpawn;
 
         //actually set config.
         AutoConfig.getConfigHolder(ModConfig.class).setConfig(config);

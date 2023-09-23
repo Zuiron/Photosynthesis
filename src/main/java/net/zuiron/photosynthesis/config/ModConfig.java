@@ -96,6 +96,10 @@ public class ModConfig implements ConfigData {
     @Comment("enable or disable natural EnderMan spawning")
     public boolean doEnderManSpawn = true;
 
+    @ConfigEntry.Gui.Tooltip
+    @Comment("enable or disable natural Drowned spawning")
+    public boolean doDrownedSpawn = true;
+
     //https://www.curseforge.com/minecraft/texture-packs/seasons-data-pack
 
     // CLIENT side-only SETTINGS
