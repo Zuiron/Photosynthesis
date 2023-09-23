@@ -22,12 +22,10 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Util;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
-import net.minecraft.world.LocalDifficulty;
-import net.minecraft.world.ServerWorldAccess;
-import net.minecraft.world.World;
-import net.minecraft.world.WorldAccess;
+import net.minecraft.world.*;
 import net.zuiron.photosynthesis.entity.ModEntities;
 import net.zuiron.photosynthesis.entity.ai.AlligatorAttackGoal;
 import net.zuiron.photosynthesis.entity.variant.AlligatorVariant;
@@ -48,16 +46,77 @@ public class AlligatorEntity extends AnimalEntity {
         super(entityType, world);
         this.setPathfindingPenalty(PathNodeType.WATER, 0.0f);
         this.setPathfindingPenalty(PathNodeType.WATER_BORDER, 0.0f);
-        this.moveControl = new AquaticMoveControl(this, 85, 6, 1.2f, 1.0f, true);
+        this.moveControl = new AquaticMoveControl(this, 85, 10, 1.2f, 1.0f, true);
         this.setStepHeight(1.5f);
     }
 
     @Override
+    protected EntityNavigation createNavigation(World world) {
+        return new AlligatorEntity.AlligatorSwimNavigation(this, world);
+    }
+
+    static class AlligatorSwimNavigation
+            extends AmphibiousSwimNavigation {
+        AlligatorSwimNavigation(AlligatorEntity alligator, World world) {
+            super(alligator, world);
+        }
+
+        @Override
+        public boolean canJumpToNext(PathNodeType nodeType) {
+            return nodeType != PathNodeType.WATER_BORDER && super.canJumpToNext(nodeType);
+        }
+
+        @Override
+        protected PathNodeNavigator createPathNodeNavigator(int range) {
+            this.nodeMaker = new AlligatorEntity.AlligatorSwimPathNodeMaker(true);
+            this.nodeMaker.setCanEnterOpenDoors(true);
+            return new PathNodeNavigator(this.nodeMaker, range);
+        }
+    }
+
+    static class AlligatorSwimPathNodeMaker
+            extends AmphibiousPathNodeMaker {
+        private final BlockPos.Mutable pos = new BlockPos.Mutable();
+
+        public AlligatorSwimPathNodeMaker(boolean bl) {
+            super(bl);
+        }
+
+        @Override
+        public PathNode getStart() {
+            if (!this.entity.isTouchingWater()) {
+                return super.getStart();
+            }
+            return this.getStart(new BlockPos(MathHelper.floor(this.entity.getBoundingBox().minX), MathHelper.floor(this.entity.getBoundingBox().minY), MathHelper.floor(this.entity.getBoundingBox().minZ)));
+        }
+
+        @Override
+        public PathNodeType getDefaultNodeType(BlockView world, int x, int y, int z) {
+            this.pos.set(x, y - 1, z);
+            BlockState blockState = world.getBlockState(this.pos);
+            if (blockState.isIn(BlockTags.FROG_PREFER_JUMP_TO)) {
+                return PathNodeType.OPEN;
+            }
+            return super.getDefaultNodeType(world, x, y, z);
+        }
+    }
+
+    @Override
+    protected SoundEvent getSplashSound() {
+        return SoundEvents.ENTITY_DOLPHIN_SPLASH;
+    }
+
+    @Override
+    protected SoundEvent getSwimSound() {
+        return SoundEvents.ENTITY_DOLPHIN_SWIM;
+    }
+
+    @Override
     protected void initGoals() {
-        this.goalSelector.add(0, new AlligatorAttackGoal(this, 1.2D, true));
+        this.goalSelector.add(0, new AlligatorAttackGoal(this, 1.3D, true));
         this.goalSelector.add(1, new FollowParentGoal(this, 1.0D));
-        this.goalSelector.add(2, new WanderAroundFarGoal(this, 1.0D, 30));
-        this.targetSelector.add(1, new ActiveTargetGoal<PlayerEntity>((MobEntity)this, PlayerEntity.class, true));
+        this.goalSelector.add(4, new WanderAroundFarGoal(this, 1.0D, 30));
+        this.targetSelector.add(0, new ActiveTargetGoal<PlayerEntity>((MobEntity)this, PlayerEntity.class, true));
         this.targetSelector.add(0, new RevengeGoal(this));
     }
 
@@ -104,10 +163,13 @@ public class AlligatorEntity extends AnimalEntity {
 
     @Override
     public void travel(Vec3d movementInput) {
-        if (this.isLogicalSideForUpdatingMovement() && this.isTouchingWater()) {
+        if (this.canMoveVoluntarily() && this.isTouchingWater()) {
             this.updateVelocity(this.getMovementSpeed(), movementInput);
             this.move(MovementType.SELF, this.getVelocity());
-            this.setVelocity(this.getVelocity().multiply(0.6));
+            this.setVelocity(this.getVelocity().multiply(0.7));
+            if (this.getTarget() == null) {
+                this.setVelocity(this.getVelocity().add(0.0, -0.005, 0.0));
+            }
         } else {
             super.travel(movementInput);
         }

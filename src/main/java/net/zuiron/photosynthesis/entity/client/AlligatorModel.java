@@ -121,7 +121,7 @@ public class AlligatorModel<T extends AlligatorEntity> extends SinglePartEntityM
         if (((Entity)entity).isInsideWaterOrBubbleColumn()) {
             //swimming animation...
             this.animateMovement(AlligatorAnimations.ALLIGATOR_SWIM, limbSwing, limbSwingAmount, 1.5f, 3.5f);
-            this.updateAnimation(entity.idleAnimationState, AlligatorAnimations.ALLIGATOR_SWIM, ageInTicks, 1f);
+            this.updateAnimation(entity.idleAnimationState, AlligatorAnimations.ALLIGATOR_SWIM_IDLE, ageInTicks, 1f);
         } else {
             //walking animation...
             this.animateMovement(AlligatorAnimations.ALLIGATOR_WALK, limbSwing, limbSwingAmount, 2.5f, 3.5f);
