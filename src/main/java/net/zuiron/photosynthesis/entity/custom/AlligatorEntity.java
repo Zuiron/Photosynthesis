@@ -1,6 +1,7 @@
 package net.zuiron.photosynthesis.entity.custom;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.control.AquaticMoveControl;
 import net.minecraft.entity.ai.goal.*;
@@ -113,11 +114,11 @@ public class AlligatorEntity extends AnimalEntity {
 
     @Override
     protected void initGoals() {
-        this.goalSelector.add(0, new AlligatorAttackGoal(this, 1.3D, true));
+        this.goalSelector.add(1, new AlligatorAttackGoal(this, 1.3D, true));
         this.goalSelector.add(1, new FollowParentGoal(this, 1.0D));
-        this.goalSelector.add(4, new WanderAroundFarGoal(this, 1.0D, 30));
-        this.targetSelector.add(0, new ActiveTargetGoal<PlayerEntity>((MobEntity)this, PlayerEntity.class, true));
-        this.targetSelector.add(0, new RevengeGoal(this));
+        this.goalSelector.add(2, new WanderAroundFarGoal(this, 1.0D, 40));
+        this.targetSelector.add(4, new ActiveTargetGoal<PlayerEntity>((MobEntity)this, PlayerEntity.class, true));
+        this.targetSelector.add(1, new RevengeGoal(this));
     }
 
     private void setupAnimationStates() {
@@ -191,11 +192,11 @@ public class AlligatorEntity extends AnimalEntity {
 
     public static DefaultAttributeContainer.Builder createAlligatorAttributes() {
         return MobEntity.createMobAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 50)
-                .add(EntityAttributes.GENERIC_ARMOR, 15)
-                .add(EntityAttributes.GENERIC_ARMOR_TOUGHNESS, 10)
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 40)
+                .add(EntityAttributes.GENERIC_ARMOR, 12)
+                .add(EntityAttributes.GENERIC_ARMOR_TOUGHNESS, 8)
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 20)
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 9)
                 .add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 1.0)
                 .add(EntityAttributes.GENERIC_ATTACK_KNOCKBACK, 2);
     }
@@ -245,7 +246,7 @@ public class AlligatorEntity extends AnimalEntity {
     }
 
     public static boolean isValidSpawn(EntityType<? extends AnimalEntity> type, WorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random) {
-        return world.getBlockState(pos.down()).isIn(BlockTags.FROGS_SPAWNABLE_ON);
+        return world.getBlockState(pos.down()).isIn(BlockTags.FROGS_SPAWNABLE_ON) || world.getBlockState(pos.down()).isOf(Blocks.WATER);
     }
 
 

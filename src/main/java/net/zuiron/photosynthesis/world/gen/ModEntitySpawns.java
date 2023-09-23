@@ -29,7 +29,7 @@ public class ModEntitySpawns {
 
 
         BiomeModifications.addSpawn(BiomeSelectors.tag(BiomeTags.RUINED_PORTAL_SWAMP_HAS_STRUCTURE), //BiomeKeys.SWAMP, BiomeKeys.MANGROVE_SWAMP
-                SpawnGroup.CREATURE, ModEntities.ALLIGATOR, 350, 1, 1);
+                SpawnGroup.CREATURE, ModEntities.ALLIGATOR, 700, 1, 1);
         BiomeModifications.addSpawn(BiomeSelectors.tag(BiomeTags.IS_RIVER),
                 SpawnGroup.CREATURE, ModEntities.ALLIGATOR, 110, 1, 1);
 
