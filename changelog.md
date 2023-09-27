@@ -1,0 +1,27 @@
+Changelog
+
+Photosynthesis 1.20.1-0.0.19
+- new mob, alligator.
+- drowned (zombie) spawn controller.
+- Configurable if animals should die by thirst or hunger.
+- fixed marshmallows recipe cooking time.
+
+Photosynthesis 1.20.1-0.0.18
+- New mob, Boar. (it is aggressive)
+- fixed: beach grass should now only spawn in beach biomes.
+
+Photosynthesis 1.20.1-0.0.17
+- Added items to creative tab.
+- New foods
+    - chickpea_soup
+    - lentil_soup
+    - fruit_salad
+    - berry_salad
+    - nut_mixture
+    - quinoa_porridge
+    - rutabaga_kohlrabi_mash
+    - sweet_potato_and_chicken_pot
+    - burger_bun
+    - cheese_burger
+- small stone to cobblestone recipe
+- fixed pumpkin soup, now drops empty bowl on consume.
