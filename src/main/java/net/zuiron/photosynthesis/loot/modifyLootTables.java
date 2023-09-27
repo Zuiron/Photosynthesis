@@ -43,6 +43,7 @@ public class modifyLootTables {
     private static final Identifier COMMON_BOAR_LOOT_TABLE_ID = new Identifier("photosynthesis", "entities/boar");
     private static final Identifier COMMON_HORSE_LOOT_TABLE_ID = new Identifier("minecraft", "entities/horse");
     private static final Identifier COMMON_WOLF_LOOT_TABLE_ID = new Identifier("minecraft", "entities/wolf");
+    private static final Identifier COMMON_ALLIGATOR_LOOT_TABLE_ID = new Identifier("photosynthesis", "entities/alligator");
 
 
     private static final Identifier COD_LTID = new Identifier("minecraft", "entities/cod");
@@ -97,6 +98,28 @@ public class modifyLootTables {
                         .conditionally(RandomChanceLootCondition.builder(1f))
                         .with(ItemEntry.builder(ModItems.HORSE_LEATHER))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 3.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && COMMON_ALLIGATOR_LOOT_TABLE_ID.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.4f)) // Drops 40% of the time
+                        .with(ItemEntry.builder(ModItems.ALLIGATOR_TOOTH))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 5.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+
+                poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(1.0f))
+                        .with(ItemEntry.builder(ModItems.ALLIGATOR_LEATHER))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(3.0f, 6.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+
+                poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(1.0f))
+                        .with(ItemEntry.builder(ModItems.ALLIGATOR_MEAT))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(6.0f, 8.0f)).build());
                 tableBuilder.pool(poolBuilder.build());
             }
             if(source.isBuiltin() && COMMON_BOAR_LOOT_TABLE_ID.equals(id)) {
