@@ -1,0 +1,30 @@
+{
+  "type": "photosynthesis:skillet",
+  "ingredients": [
+    {
+      "item": "photosynthesis:measuring_cup_canolaoil",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:raw_alligator_meat",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:garlic",
+      "count": 1
+    },
+    {
+      "item": "minecraft:egg",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:mustard",
+      "count": 2
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:fried_alligator",
+    "count": 2
+  },
+  "cookingtime": 100
+}

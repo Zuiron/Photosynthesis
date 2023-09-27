@@ -1471,5 +1471,14 @@
   "item.photosynthesis.boar_tusk": "Boar Tusk",
 
   "item.photosynthesis.alligator_spawn_egg": "Alligator Spawn Egg",
-  "entity.photosynthesis.alligator": "Alligator"
+  "entity.photosynthesis.alligator": "Alligator",
+
+  "item.photosynthesis.alligator_gumbo": "Alligator Gumbo",
+  "item.photosynthesis.alligator_leather": "Alligator Leather",
+  "item.photosynthesis.salted_alligator_leather": "Salted Alligator Leather",
+  "item.photosynthesis.raw_alligator_meat": "Raw Alligator Meat",
+  "item.photosynthesis.cooked_alligator_meat": "Cooked Alligator Meat",
+  "item.photosynthesis.fried_alligator": "Crispy Cajun Fried Alligator",
+  "item.photosynthesis.smoked_alligator_jerky": "Smoked Alligator Jerky",
+  "item.photosynthesis.alligator_tooth": "Alligator Tooth"
 }

@@ -1,10 +1,19 @@
 Changelog
 
 Photosynthesis 1.20.1-0.0.19
-- new mob, alligator.
-- drowned (zombie) spawn controller.
-- Configurable if animals should die by thirst or hunger.
-- fixed marshmallows recipe cooking time.
+- New mob, Alligator. (it is aggressive)
+    - Alligator Gumbo
+    - Alligator Leather
+    - Salted Alligator Leather
+    - Raw Alligator Meat
+    - Cooked Alligator Meat
+    - Crispy Cajun Fried Alligator
+    - Smoked Alligator Jerky
+    - Alligator Tooth
+- Configurable drowned (zombie) spawn controller.
+- Configurable if animals should die by thirst.
+- Configurable if animals should die by hunger.
+- Fixed marshmallows recipe cooking time.
 
 Photosynthesis 1.20.1-0.0.18
 - New mob, Boar. (it is aggressive)

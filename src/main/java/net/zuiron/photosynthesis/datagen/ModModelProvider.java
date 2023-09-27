@@ -341,6 +341,20 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.WHEAT_BREAD_SLICE_WITH_SCRAMBLED_EGG_AND_KAVIAR,
                 ModFluids.PIZZASAUCE_BUCKET,
                 ModFluids.TOMATOSAUCE_BUCKET,
+
+                //alligator
+
+                ModItems.ALLIGATOR_GUMBO,
+                ModItems.ALLIGATOR_LEATHER,
+                ModItems.SALTED_ALLIGATOR_LEATHER,
+                ModItems.ALLIGATOR_MEAT,
+                ModItems.COOKED_ALLIGATOR_MEAT,
+                ModItems.FRIED_ALLIGATOR,
+                ModItems.SMOKED_ALLIGATOR_JERKY,
+                ModItems.ALLIGATOR_TOOTH,
+
+
+
                 ModFluids.DRINKINGWATER_BUCKET
 
 

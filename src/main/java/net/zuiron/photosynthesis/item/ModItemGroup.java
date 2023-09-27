@@ -495,6 +495,15 @@ public class ModItemGroup {
                         entries.add(ModItems.LEATHER_WATER_BLADDER_DIRTY);
                         entries.add(ModItems.LEATHER_WATER_BLADDER_CLEAN);
 
+                        entries.add(ModItems.ALLIGATOR_GUMBO);
+                        entries.add(ModItems.ALLIGATOR_LEATHER);
+                        entries.add(ModItems.SALTED_ALLIGATOR_LEATHER);
+                        entries.add(ModItems.ALLIGATOR_MEAT);
+                        entries.add(ModItems.COOKED_ALLIGATOR_MEAT);
+                        entries.add(ModItems.FRIED_ALLIGATOR);
+                        entries.add(ModItems.SMOKED_ALLIGATOR_JERKY);
+                        entries.add(ModItems.ALLIGATOR_TOOTH);
+
                         //blocks
                         entries.add(ModBlocks.TALL_BEACHGRASS);
                         entries.add(ModBlocks.BEACHGRASS);

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#B"
+  ],
+  "key": {
+    "#": {
+      "item": "photosynthesis:alligator_leather"
+    },
+    "B": {
+      "item": "photosynthesis:salt"
+    }
+  },
+  "result": {
+    "item": "photosynthesis:salted_alligator_leather",
+    "count": 1
+  }
+}

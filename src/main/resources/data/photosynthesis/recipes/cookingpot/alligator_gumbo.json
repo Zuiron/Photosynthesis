@@ -1,0 +1,38 @@
+{
+  "type": "photosynthesis:cookingpot",
+  "ingredients": [
+    {
+      "item": "photosynthesis:measuring_cup_water",
+      "count": 2
+    },
+    {
+      "item": "minecraft:bowl",
+      "count": 4
+    },
+    {
+      "item": "photosynthesis:cooked_alligator_meat",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:garlic",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:rice",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:onion",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:okra",
+      "count": 2
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:alligator_gumbo",
+    "count": 4
+  },
+  "cookingtime": 150
+}

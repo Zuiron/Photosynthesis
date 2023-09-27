@@ -49,6 +49,9 @@ public class ModItems {
     public static final Item BOAR_TUSK = registerItem("boar_tusk",
             new Item(new FabricItemSettings()));
 
+    public static final Item ALLIGATOR_TOOTH = registerItem("alligator_tooth",
+            new Item(new FabricItemSettings()));
+
     public static final Item MANURE = registerItem("manure",
             new TooltippedItem(new FabricItemSettings(),"Organic Fertilizer"));
 
@@ -906,6 +909,10 @@ public class ModItems {
             new Item(new FabricItemSettings()));
     public static final Item HORSE_LEATHER = registerItem("horse_leather",
             new Item(new FabricItemSettings()));
+    public static final Item ALLIGATOR_LEATHER = registerItem("alligator_leather",
+            new Item(new FabricItemSettings()));
+    public static final Item SALTED_ALLIGATOR_LEATHER = registerItem("salted_alligator_leather",
+            new Item(new FabricItemSettings()));
     public static final Item SALTED_PIG_SKIN = registerItem("salted_pig_skin",
             new Item(new FabricItemSettings()));
     public static final Item SALTED_WOLF_PELT = registerItem("salted_wolf_pelt",
@@ -918,6 +925,18 @@ public class ModItems {
             new Item(new FabricItemSettings()));
 
     // Meat's ----------------------------------------------------------------------------------------------------------
+    public static final Item ALLIGATOR_MEAT = registerItem("raw_alligator_meat",
+            new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item COOKED_ALLIGATOR_MEAT = registerItem("cooked_alligator_meat",
+            new Item(new FabricItemSettings().food(FoodComponents.COOKED_BEEF)));
+
+    public static final Item FRIED_ALLIGATOR = registerItem("fried_alligator",
+            new Item(new FabricItemSettings().food(FoodComponents.COOKED_BEEF)));
+
+    public static final Item SMOKED_ALLIGATOR_JERKY = registerItem("smoked_alligator_jerky",
+            new Item(new FabricItemSettings().food(FoodComponents.COOKED_BEEF)));
+
     public static final Item COW_BRISKET = registerItem("cow_brisket",
             new Item(new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
     public static final Item COOKED_COW_BRISKET = registerItem("cooked_cow_brisket",
@@ -1169,6 +1188,10 @@ public class ModItems {
                     .food(new FoodComponent.Builder().hunger(5).saturationModifier(0.4f).build())));
 
     public static final Item BEEFSTEW = registerItem("beefstew",
+            new StackableStewItem(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(9).saturationModifier(0.9f).build())));
+
+    public static final Item ALLIGATOR_GUMBO = registerItem("alligator_gumbo",
             new StackableStewItem(new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(9).saturationModifier(0.9f).build())));
 
