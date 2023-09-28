@@ -76,15 +76,22 @@ public class Seasons {
         float minValue = -1.0f;
         float maxValue = 2.0f;
 
-        // Define the corresponding Celsius temperature range
-        float minCelsius = -14.0f;  // Set the minimum temperature to -14.0°C when input is -1.0
-        float maxCelsius = 38.0f;   // Set the maximum temperature to 38.0°C when input is 2.0
+        // Define the corresponding Celsius temperature ranges
+        float minCelsiusBelowZero = -20.0f; // Temperature range for values at or below 0.0
+        float maxCelsiusBelowZero = 0.0f;
 
-        // Perform linear interpolation
-        float celsius = minCelsius + (maxCelsius - minCelsius) * (temp - minValue) / (maxValue - minValue);
+        float minCelsiusAboveZero = 9.0f;   // Temperature range for values above 0.0
+        float maxCelsiusAboveZero = 34.0f;
 
-        // Ensure the result does not exceed the maximum temperature (38.0°C)
-        celsius = Math.min(maxCelsius, celsius);
+        // Perform linear interpolation based on the input value
+        float celsius;
+        if (temp <= 0.0f) {
+            // For values at or below 0.0, use the below-zero temperature range
+            celsius = minCelsiusBelowZero + (maxCelsiusBelowZero - minCelsiusBelowZero) * (temp - minValue) / (0.0f - minValue);
+        } else {
+            // For values above 0.0, use the above-zero temperature range
+            celsius = minCelsiusAboveZero + (maxCelsiusAboveZero - minCelsiusAboveZero) * (temp - 0.0f) / (maxValue - 0.0f);
+        }
 
         return celsius;
     }
