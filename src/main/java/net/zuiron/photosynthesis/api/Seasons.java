@@ -3,6 +3,8 @@ package net.zuiron.photosynthesis.api;
 import me.shedaniel.autoconfig.AutoConfig;
 import net.zuiron.photosynthesis.config.ModConfig;
 
+import java.text.DecimalFormat;
+
 public class Seasons {
     static ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
 
@@ -66,5 +68,24 @@ public class Seasons {
     // Calculate the percentage of the current season that has elapsed
     public static float getSeasonPercentage(long time) {
         return ((float) (getDay(time) % config.daysPerSeason)) / config.daysPerSeason;
+    }
+
+    //temperature
+    public static float convertTemp(float temp) {
+        // Define the range of your input values
+        float minValue = -1.0f;
+        float maxValue = 2.0f;
+
+        // Define the corresponding Celsius temperature range
+        float minCelsius = -14.0f;  // Set the minimum temperature to -14.0°C when input is -1.0
+        float maxCelsius = 38.0f;   // Set the maximum temperature to 38.0°C when input is 2.0
+
+        // Perform linear interpolation
+        float celsius = minCelsius + (maxCelsius - minCelsius) * (temp - minValue) / (maxValue - minValue);
+
+        // Ensure the result does not exceed the maximum temperature (38.0°C)
+        celsius = Math.min(maxCelsius, celsius);
+
+        return celsius;
     }
 }

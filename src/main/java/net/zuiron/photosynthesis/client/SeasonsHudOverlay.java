@@ -15,6 +15,8 @@ import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.api.Seasons;
 import net.zuiron.photosynthesis.config.ModConfig;
 
+import java.text.DecimalFormat;
+
 public class SeasonsHudOverlay implements HudRenderCallback {
     private static final Identifier CALENDAR = new Identifier(Photosynthesis.MOD_ID,
             "textures/seasons/seasons_calendar.png");
@@ -148,10 +150,12 @@ public class SeasonsHudOverlay implements HudRenderCallback {
             if(config.seasonDisplayInfo) {
                 int y_text_1 = 100;
                 int y_text_2 = 110;
+                int y_text_3 = 120;
 
                 if(!config.seasonDisplayIcon) {
                     y_text_1 = y_text_1-90;
                     y_text_2 = y_text_2-90;
+                    y_text_3 = y_text_3-90;
                 }
 
                 float textScale = config.seasonDisplayInfoScale;
@@ -170,6 +174,19 @@ public class SeasonsHudOverlay implements HudRenderCallback {
                 context.getMatrices().push();
                 context.getMatrices().scale(textScale, textScale, 1.0f);
                 context.drawTextWithShadow(textRenderer, text_season_2, 10+textXOffset, y_text_2+textYOffset, 0xFFFFFF);
+                context.getMatrices().pop();
+
+                float temperature = world.getBiome(client.player.getBlockPos()).value().getTemperature();
+                float ctemp = Seasons.convertTemp(temperature);
+
+                DecimalFormat decimalFormat = new DecimalFormat("#.#");
+                String ctempround = decimalFormat.format(ctemp);
+
+                String text_season_3 = String.format("Temperature: %s°C", ctempround);
+                text_season_3.formatted(Formatting.BOLD);
+                context.getMatrices().push();
+                context.getMatrices().scale(textScale, textScale, 1.0f);
+                context.drawTextWithShadow(textRenderer, text_season_3, 10+textXOffset, y_text_3+textYOffset, 0xFFFFFF);
                 context.getMatrices().pop();
             }
         }
