@@ -176,6 +176,8 @@ public class SeasonsHudOverlay implements HudRenderCallback {
                 context.drawTextWithShadow(textRenderer, text_season_2, 10+textXOffset, y_text_2+textYOffset, 0xFFFFFF);
                 context.getMatrices().pop();
 
+                //temperature
+                /*
                 float temperature = world.getBiome(client.player.getBlockPos()).value().getTemperature();
                 float ctemp = Seasons.convertTemp(temperature);
 
@@ -188,6 +190,7 @@ public class SeasonsHudOverlay implements HudRenderCallback {
                 context.getMatrices().scale(textScale, textScale, 1.0f);
                 context.drawTextWithShadow(textRenderer, text_season_3, 10+textXOffset, y_text_3+textYOffset, 0xFFFFFF);
                 context.getMatrices().pop();
+                */
             }
         }
     }
