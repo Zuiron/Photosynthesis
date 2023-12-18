@@ -1,5 +1,6 @@
 package net.zuiron.photosynthesis.entity.custom;
 
+import me.shedaniel.autoconfig.AutoConfig;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.*;
@@ -27,6 +28,8 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.*;
+import net.zuiron.photosynthesis.Photosynthesis;
+import net.zuiron.photosynthesis.config.ModConfig;
 import net.zuiron.photosynthesis.entity.ModEntities;
 import net.zuiron.photosynthesis.entity.ai.AlligatorAttackGoal;
 import net.zuiron.photosynthesis.entity.variant.AlligatorVariant;
@@ -286,5 +289,18 @@ public class AlligatorEntity extends AnimalEntity {
     public void writeCustomDataToNbt(NbtCompound nbt) {
         super.writeCustomDataToNbt(nbt);
         nbt.putInt("Variant", this.getTypeVariant());
+    }
+
+    @Override
+    public boolean canSpawn(WorldAccess world, SpawnReason spawnReason) {
+        ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
+
+        if(config.doAlligatorSpawn) {
+            return super.canSpawn(world, spawnReason);
+        }
+        else {
+            //Photosynthesis.LOGGER.info("prevented ALLIGATOR from spawning");
+            return false;
+        }
     }
 }

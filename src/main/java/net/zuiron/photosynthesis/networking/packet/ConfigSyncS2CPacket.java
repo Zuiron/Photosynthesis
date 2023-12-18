@@ -46,6 +46,9 @@ public class ConfigSyncS2CPacket {
         boolean doEnderManSpawn = buf.readBoolean();
         boolean doDrownedSpawn = buf.readBoolean();
 
+        boolean doBoarSpawn = buf.readBoolean();
+        boolean doAlligatorSpawn = buf.readBoolean();
+
         //set config.
         ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
         config.daysPerSeason = daysPerSeason;
@@ -75,6 +78,9 @@ public class ConfigSyncS2CPacket {
         config.doSkeletonHorseSpawn = doSkeletonHorseSpawn;
         config.doEnderManSpawn = doEnderManSpawn;
         config.doDrownedSpawn = doDrownedSpawn;
+
+        config.doBoarSpawn = doBoarSpawn;
+        config.doAlligatorSpawn = doAlligatorSpawn;
 
         //actually set config.
         AutoConfig.getConfigHolder(ModConfig.class).setConfig(config);

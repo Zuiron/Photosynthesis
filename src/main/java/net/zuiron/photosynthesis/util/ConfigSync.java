@@ -40,6 +40,9 @@ public class ConfigSync {
         buffer.writeBoolean(serverConfig.doEnderManSpawn);
         buffer.writeBoolean(serverConfig.doDrownedSpawn);
 
+        buffer.writeBoolean(serverConfig.doBoarSpawn);
+        buffer.writeBoolean(serverConfig.doAlligatorSpawn);
+
         ServerPlayNetworking.send(player, ModMessages.CONFIG_SYNC_ID, buffer);
     }
 }

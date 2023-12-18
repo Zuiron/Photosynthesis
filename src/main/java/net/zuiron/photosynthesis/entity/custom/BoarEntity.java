@@ -1,5 +1,6 @@
 package net.zuiron.photosynthesis.entity.custom;
 
+import me.shedaniel.autoconfig.AutoConfig;
 import net.minecraft.entity.AnimationState;
 import net.minecraft.entity.EntityPose;
 import net.minecraft.entity.EntityType;
@@ -22,6 +23,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
+import net.minecraft.world.WorldView;
+import net.zuiron.photosynthesis.Photosynthesis;
+import net.zuiron.photosynthesis.config.ModConfig;
 import net.zuiron.photosynthesis.entity.ModEntities;
 import net.zuiron.photosynthesis.entity.ai.BoarAttackGoal;
 import net.zuiron.photosynthesis.sound.ModSoundEvents;
@@ -144,5 +148,18 @@ public class BoarEntity extends AnimalEntity {
     public static boolean isValidSpawn(EntityType<? extends AnimalEntity> type, WorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random) {
         //return world.getBlockState(pos.down()).isIn(BlockTags.ANIMALS_SPAWNABLE_ON) && AnimalEntity.isLightLevelValidForNaturalSpawn(world, pos);
         return world.getBlockState(pos.down()).isIn(BlockTags.ANIMALS_SPAWNABLE_ON);
+    }
+
+    @Override
+    public boolean canSpawn(WorldAccess world, SpawnReason spawnReason) {
+        ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
+
+        if(config.doBoarSpawn) {
+            return super.canSpawn(world, spawnReason);
+        }
+        else {
+            //Photosynthesis.LOGGER.info("prevented BOAR from spawning");
+            return false;
+        }
     }
 }

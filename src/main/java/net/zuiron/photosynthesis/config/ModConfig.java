@@ -108,6 +108,15 @@ public class ModConfig implements ConfigData {
     @Comment("enable or disable natural Drowned spawning")
     public boolean doDrownedSpawn = true;
 
+    @ConfigEntry.Gui.PrefixText
+    @ConfigEntry.Gui.Tooltip
+    @Comment("enable or disable natural Boar spawning")
+    public boolean doBoarSpawn = true;
+
+    @ConfigEntry.Gui.Tooltip
+    @Comment("enable or disable natural Alligator spawning")
+    public boolean doAlligatorSpawn = true;
+
     //https://www.curseforge.com/minecraft/texture-packs/seasons-data-pack
 
     // CLIENT side-only SETTINGS

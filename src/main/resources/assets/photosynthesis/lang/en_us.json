@@ -70,6 +70,13 @@
   "text.autoconfig.photosynthesis.option.doDrownedSpawn.@Tooltip": "When NO, Drowned wont spawn naturally. \n (If on server, edit server config file manually, requires server restart)",
   "text.autoconfig.photosynthesis.option.doDrownedSpawn": "Enable Natural Drowned Spawn",
 
+  "text.autoconfig.photosynthesis.option.doBoarSpawn.@PrefixText": "Modded Mob Spawning",
+  "text.autoconfig.photosynthesis.option.doBoarSpawn.@Tooltip": "When NO, Boar wont spawn naturally. \n (If on server, edit server config file manually, requires server restart)",
+  "text.autoconfig.photosynthesis.option.doBoarSpawn": "Enable Natural Boar Spawn",
+
+  "text.autoconfig.photosynthesis.option.doAlligatorSpawn.@Tooltip": "When NO, Alligator wont spawn naturally. \n (If on server, edit server config file manually, requires server restart)",
+  "text.autoconfig.photosynthesis.option.doAlligatorSpawn": "Enable Natural Alligator Spawn",
+
   "text.autoconfig.photosynthesis.option.seasonDisplayTimeline": "Show Season Timeline Indicator",
   "text.autoconfig.photosynthesis.option.seasonDisplayTimeline.@Tooltip": "Shows the season timeline indicator (top center of screen)",
   "text.autoconfig.photosynthesis.option.seasonTimelineTextScale": "Season Timeline Text Scale",
