@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "photosynthesis:blueberry_bush",
+    "photosynthesis:blackberry_bush",
+    "photosynthesis:raspberry_bush",
+    "photosynthesis:cloudberry_bush",
+    "photosynthesis:wild_strawberry_bush",
+    "photosynthesis:lingonberry_bush",
+    "photosynthesis:cranberry_bush",
+    "photosynthesis:huckleberry_bush",
+    "photosynthesis:juniperberry_bush",
+    "photosynthesis:mulberry_bush"
+  ]
+}
