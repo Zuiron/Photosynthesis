@@ -35,6 +35,7 @@ import net.zuiron.photosynthesis.api.Seasons;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.block.custom.DryingNetBlock;
 import net.zuiron.photosynthesis.block.custom.MapleExtractorBlock;
+import net.zuiron.photosynthesis.block.custom.SkilletBlock;
 import net.zuiron.photosynthesis.fluid.ModFluids;
 import net.zuiron.photosynthesis.networking.ModMessages;
 import net.zuiron.photosynthesis.screen.MapleExtractorScreenHandler;
@@ -203,6 +204,17 @@ public class MapleExtractorBlockEntity extends BlockEntity implements ExtendedSc
         if(hasRecipe(entity) && canHarvestMaple(world, blockPos, entity)) {
             entity.progress++;
             markDirty(world, blockPos, state);
+
+            //block pouring animation enabler. if progress is between 40-60. pouring is true. (20ticks, 1sec)
+            Boolean currentState = world.getBlockState(blockPos).get(MapleExtractorBlock.POURING); //get current state.
+            if(entity.progress >= 40 && !currentState) {
+                state = (BlockState)state.with(MapleExtractorBlock.POURING, true); world.setBlockState(blockPos, state, 3);
+                markDirty(world, blockPos, state);
+            } else if (entity.progress <= 39 && currentState) {
+                state = (BlockState)state.with(MapleExtractorBlock.POURING, false); world.setBlockState(blockPos, state, 3);
+                markDirty(world, blockPos, state);
+            }
+
             if(entity.progress >= entity.maxProgress) {
                 craftItem(entity);
             }

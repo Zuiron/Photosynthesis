@@ -8,8 +8,10 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.state.StateManager;
+import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.Properties;
+import net.minecraft.state.property.Property;
 import net.minecraft.util.*;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
@@ -25,9 +27,11 @@ import org.jetbrains.annotations.Nullable;
 
 public class MapleExtractorBlock extends BlockWithEntity implements BlockEntityProvider {
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
+    public static BooleanProperty POURING;
 
     public MapleExtractorBlock(Settings settings) {
         super(settings);
+        this.setDefaultState(this.stateManager.getDefaultState().with(POURING, false));
     }
 
     private static VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 16, 16);
@@ -75,7 +79,9 @@ public class MapleExtractorBlock extends BlockWithEntity implements BlockEntityP
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(FACING);
+        //builder.add(FACING);
+        builder.add(new Property[]{FACING, POURING});
+        super.appendProperties(builder);
     }
 
     /* BLOCK ENTITY */
@@ -121,5 +127,9 @@ public class MapleExtractorBlock extends BlockWithEntity implements BlockEntityP
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
         return checkType(type, ModBlockEntities.MAPLE_EXTRACTOR, MapleExtractorBlockEntity::tick);
+    }
+
+    static {
+        POURING = BooleanProperty.of("pouring");
     }
 }
