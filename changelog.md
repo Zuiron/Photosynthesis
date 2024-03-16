@@ -1,4 +1,13 @@
-Changelog
+# Changelog
+
+Photosynthesis 1.20.1-0.0.21 (In Development)
+- Maple Extractor block animation added.
+
+Photosynthesis 1.20.1-0.0.20
+- Configurable Custom Mob Spawn Controller in Config.
+    - Enable or Disable Boars.
+    - Enable or Disable Alligators.
+- Berry bushes are now tagged.
 
 Photosynthesis 1.20.1-0.0.19
 - New mob, Alligator. (it is aggressive)
