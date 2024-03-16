@@ -1,18 +1,33 @@
 {
   "variants": {
-    "facing=north": {
+    "facing=north,pouring=false": {
       "model": "photosynthesis:block/maple_extractor"
     },
-    "facing=south": {
+    "facing=south,pouring=false": {
       "model": "photosynthesis:block/maple_extractor",
       "y": 180
     },
-    "facing=west": {
+    "facing=west,pouring=false": {
       "model": "photosynthesis:block/maple_extractor",
       "y": 270
     },
-    "facing=east": {
+    "facing=east,pouring=false": {
       "model": "photosynthesis:block/maple_extractor",
+      "y": 90
+    },
+    "facing=north,pouring=true": {
+      "model": "photosynthesis:block/maple_extractor_pouring"
+    },
+    "facing=south,pouring=true": {
+      "model": "photosynthesis:block/maple_extractor_pouring",
+      "y": 180
+    },
+    "facing=west,pouring=true": {
+      "model": "photosynthesis:block/maple_extractor_pouring",
+      "y": 270
+    },
+    "facing=east,pouring=true": {
+      "model": "photosynthesis:block/maple_extractor_pouring",
       "y": 90
     }
   }
