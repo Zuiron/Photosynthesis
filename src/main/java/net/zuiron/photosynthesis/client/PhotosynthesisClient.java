@@ -64,6 +64,15 @@ public class PhotosynthesisClient implements ClientModInitializer {
                     ResourcePackActivationType.NORMAL);
         });*/
 
+        // Optional Resource Pack - Fancy Seasons Visuals
+        FabricLoader.getInstance().getModContainer(Photosynthesis.MOD_ID).ifPresent(modContainer -> {
+            ResourceManagerHelper.registerBuiltinResourcePack(new Identifier(Photosynthesis.MOD_ID,
+                            "fancyseasonsvisuals"),
+                    modContainer,
+                    Text.of("Fancy Season Visuals"),
+                    ResourcePackActivationType.NORMAL);
+        });
+
         HudRenderCallback.EVENT.register(new ThirstHudOverlay());
         HudRenderCallback.EVENT.register(new SeasonsHudOverlay());
         //DISABLE DRINKING KEY
