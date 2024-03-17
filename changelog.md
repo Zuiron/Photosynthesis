@@ -2,6 +2,7 @@
 
 Photosynthesis 1.20.1-0.0.21 (In Development)
 - Maple Extractor block animation added.
+- Fancy season visuals - builtin resource pack **(require FANCY graphics)**
 
 Photosynthesis 1.20.1-0.0.20
 - Configurable Custom Mob Spawn Controller in Config.

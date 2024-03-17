@@ -1,0 +1,38 @@
+{   "parent": "block/block",
+    "textures": {
+        "particle": "#all"
+    },
+    "elements": [
+        {   "from": [ 0, 0, 0 ],
+            "to": [ 16, 16, 16 ],
+            "faces": {
+                "down":  { "uv": [ 0, 0, 16, 16 ], "texture": "#all", "cullface": "down" },
+                "up":    { "uv": [ 0, 0, 16, 16 ], "texture": "#all", "cullface": "up" },
+                "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#all", "cullface": "north" },
+                "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#all", "cullface": "south" },
+                "west":  { "uv": [ 0, 0, 16, 16 ], "texture": "#all", "cullface": "west" },
+                "east":  { "uv": [ 0, 0, 16, 16 ], "texture": "#all", "cullface": "east" }
+            }
+        },
+        {   "from": [ 0, 0, 0 ],
+            "to": [ 16, 16, 16 ],
+            "faces": {
+                "down":  { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay_bottom", "cullface": "down" },
+                "up":    { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay_top", "cullface": "up" },
+                "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay_side", "cullface": "north" },
+                "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay_side", "cullface": "south" },
+                "west":  { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay_side", "cullface": "west" },
+                "east":  { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay_side", "cullface": "east" }
+            }
+        },
+        {
+            "from": [0, 13, 0],
+            "to": [16, 13, 16],
+            "ambientocclusion": false,
+            "shade": false,
+            "faces": {
+                "down": {"uv": [0, 0, 16, 16], "texture": "#overlay_top", "cullface": "down"}
+            }
+        }
+    ]
+}

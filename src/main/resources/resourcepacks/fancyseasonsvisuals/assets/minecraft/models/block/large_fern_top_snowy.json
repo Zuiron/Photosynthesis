@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/tinted_cross_with_overlay",
+  "textures": {
+    "cross": "minecraft:block/large_fern_top",
+    "overlay": "minecraft:block/large_fern_top_snowy"
+  }
+}
