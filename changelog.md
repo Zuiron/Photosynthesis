@@ -1,6 +1,6 @@
 # Changelog
 
-Photosynthesis 1.20.1-0.0.21 (In Development)
+Photosynthesis 1.20.1-0.0.21
 - Maple Extractor block animation added.
 - Fancy season visuals - builtin resource pack **(require FANCY graphics)**
 
