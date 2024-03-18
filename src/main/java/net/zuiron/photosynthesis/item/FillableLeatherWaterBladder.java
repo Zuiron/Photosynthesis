@@ -38,7 +38,7 @@ public class FillableLeatherWaterBladder extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(Text.literal("Right click near water to fill.").formatted(Formatting.ITALIC, Formatting.YELLOW));
+        tooltip.add(Text.translatable("text.photosynthesis.tooltip.leather_water_bladder").formatted(Formatting.ITALIC, Formatting.YELLOW));
     }
     @Override
     public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {

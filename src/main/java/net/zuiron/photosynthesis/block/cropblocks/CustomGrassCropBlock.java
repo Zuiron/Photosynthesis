@@ -141,7 +141,7 @@ public class CustomGrassCropBlock extends CropBlock {
     @Override
     public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
         if(Seasons.isSeasonsEnabled() && stack.isOf(ModItems.GRASS_SEEDS)) {
-            tooltip.add(Text.literal("Grass grows all year round, except in winter time."));
+            tooltip.add(Text.translatable("text.photosynthesis.tooltip.grass_seasons"));
         }
         super.appendTooltip(stack, world, tooltip, options);
     }

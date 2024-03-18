@@ -33,7 +33,7 @@ public abstract class AbstractMachineBlock extends BlockWithEntity {
             if (player.getStackInHand(hand).isOf(ModItems.WRENCH)) {
                 boolean slot_lock = !state.get(SLOT_LOCKED); //toggle
                 world.setBlockState(pos, state.with(SLOT_LOCKED, slot_lock), 2);
-                player.sendMessage(Text.literal("Slot Lock: " + slot_lock));
+                player.sendMessage(Text.literal(Text.translatable("text.photosynthesis.tooltip.slot_lock").getString() + slot_lock));
 
                 return ActionResult.SUCCESS;
             }

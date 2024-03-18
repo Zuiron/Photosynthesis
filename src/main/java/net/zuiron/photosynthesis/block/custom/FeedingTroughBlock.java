@@ -108,7 +108,7 @@ public class FeedingTroughBlock extends BlockWithEntity implements BlockEntityPr
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
-        tooltip.add(Text.literal("Provides feed for animals in a 10x10x10 radius."));
+        tooltip.add(Text.translatable("text.photosynthesis.tooltip.feeding_trough"));
         super.appendTooltip(stack, world, tooltip, options);
     }
 }

@@ -8,6 +8,7 @@ import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.render.GameRenderer;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
@@ -72,6 +73,8 @@ public class SeasonsHudOverlay implements HudRenderCallback {
             int daysRemaining = Seasons.getRemainingDaysOfCurrentSeason(time);
             float seasonPercentage = Seasons.getSeasonPercentage(time);
             String getSeasonName = Seasons.getSeasonString(current_season);
+            getSeasonName = String.valueOf(Text.translatable("text.photosynthesis.seasons."+getSeasonName.toLowerCase()).getString());
+            //String text = String.format(String.valueOf(Text.translatable("text.photosynthesis.seasons.center_display").getString()), getSeasonName, daysRemaining - 1);
 
             //--------------------------------------------------------------------------------------------------------------
             //------------- SEASONS BAR
@@ -129,7 +132,7 @@ public class SeasonsHudOverlay implements HudRenderCallback {
                         5, 11);
 
                 // Get the text to display
-                String text = String.format("%s (%d days remaining)", getSeasonName, daysRemaining - 1);
+                String text = String.format(String.valueOf(Text.translatable("text.photosynthesis.seasons.center_display").getString()), getSeasonName, daysRemaining - 1);
 
                 float seasonTimelineTextScale = config.seasonTimelineTextScale;
 
@@ -162,14 +165,17 @@ public class SeasonsHudOverlay implements HudRenderCallback {
                 int textXOffset = config.seasonDisplayInfoXOffset;
                 int textYOffset = config.seasonDisplayInfoYOffset;
 
-                String text_season_1 = String.format("Day: %d/%d, Year: %d", dayOfYear + 1, daysPerYear, getYear);
+                //String text = String.format(String.valueOf(Text.translatable("text.photosynthesis.seasons.center_display").getString()), getSeasonName, daysRemaining - 1);
+                //String text_season_1 = String.format("Day: %d/%d, Year: %d", dayOfYear + 1, daysPerYear, getYear);
+                String text_season_1 = String.format(String.valueOf(Text.translatable("text.photosynthesis.seasons.left_display_1").getString()), dayOfYear + 1, daysPerYear, getYear);
                 text_season_1.formatted(Formatting.BOLD);
                 context.getMatrices().push();
                 context.getMatrices().scale(textScale, textScale, 1.0f);
                 context.drawTextWithShadow(textRenderer, text_season_1, 10+textXOffset, y_text_1+textYOffset, 0xFFFFFF);
                 context.getMatrices().pop();
 
-                String text_season_2 = String.format("%s - Day: %d/%d", getSeasonName, dayInSeason + 1, daysPerSeasonMod);
+                //String text_season_2 = String.format("%s - Day: %d/%d", getSeasonName, dayInSeason + 1, daysPerSeasonMod);
+                String text_season_2 = String.format(String.valueOf(Text.translatable("text.photosynthesis.seasons.left_display_2").getString()), getSeasonName, dayInSeason + 1, daysPerSeasonMod);
                 text_season_2.formatted(Formatting.BOLD);
                 context.getMatrices().push();
                 context.getMatrices().scale(textScale, textScale, 1.0f);

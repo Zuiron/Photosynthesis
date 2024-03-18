@@ -179,8 +179,8 @@ public class SeasonsCalendarBlock extends BlockWithEntity implements BlockEntity
     @Override
     public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
         super.appendTooltip(stack, world, tooltip, options);
-        tooltip.add(Text.literal("Activate Season redstone indicator with wrench."));
-        tooltip.add(Text.literal("When activated, Emits a signal based on day of year"));
+        tooltip.add(Text.translatable("text.photosynthesis.tooltip.seasons_calendar_1"));
+        tooltip.add(Text.translatable("text.photosynthesis.tooltip.seasons_calendar_2"));
     }
 
     //WallMountedBlock -------------------------------------------------------------------------------------------------

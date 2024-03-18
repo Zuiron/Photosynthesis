@@ -100,10 +100,10 @@ public class ThirstItem extends Item {
         }
 
         int remain = stack.getMaxDamage() - stack.getDamage();
-        tooltip.add(Text.literal("Uses: "+remain+"/"+stack.getMaxDamage()));
+        tooltip.add(Text.literal( Text.translatable("text.photosynthesis.tooltip.item_uses").getString()+remain+"/"+stack.getMaxDamage()));
 
         if(stack.isOf(ModItems.DRINKING_GLASS_MILK)) {
-            tooltip.add(Text.literal("Clears all status effects!"));
+            tooltip.add(Text.translatable("text.photosynthesis.tooltip.glass_of_milk"));
         }
 
         super.appendTooltip(stack, world, tooltip, context);

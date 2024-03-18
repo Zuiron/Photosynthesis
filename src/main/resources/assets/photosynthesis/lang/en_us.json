@@ -1,6 +1,66 @@
 {
   "itemGroup.photosynthesis.photosynthesis": "Photosynthesis",
 
+  "text.photosynthesis.tooltip.plant_season": "Plant: ",
+  "text.photosynthesis.tooltip.harvest_season": "Harvest: ",
+
+  "text.photosynthesis.seasons.spring": "Spring",
+  "text.photosynthesis.seasons.summer": "Summer",
+  "text.photosynthesis.seasons.autumn": "Autumn",
+  "text.photosynthesis.seasons.winter": "Winter",
+
+  "text.photosynthesis.seasons.center_display": "%s (%d days remaining)",
+  "text.photosynthesis.seasons.left_display_1": "Day: %d/%d, Year: %d",
+  "text.photosynthesis.seasons.left_display_2": "%s - Day: %d/%d",
+
+  "text.photosynthesis.tooltip.manurebucket": "Picks up manure on the ground 10x10x10 radius.",
+  "text.photosynthesis.tooltip.eggbasket": "Picks up eggs on the ground 10x10x10 radius.",
+
+  "text.photosynthesis.tooltip.organic_fertilizer": "Organic Fertilizer",
+  "text.photosynthesis.tooltip.organic_pesticide": "Organic Pesticide",
+  "text.photosynthesis.tooltip.plastic_wrap": "Use on Grass Bale's to wrap them. Turns into Silage (over time).",
+
+  "text.photosynthesis.tooltip.maple_extractor": "Extract's Maple Sap straight from the tree.",
+  "text.photosynthesis.tooltip.latex_extractor": "For all your rubber needs.",
+
+  "text.photosynthesis.tooltip.provides_heat": "Provides Heat",
+  "text.photosynthesis.tooltip.wood_fired_stove": "Supply redstone signal to Pause burn.",
+  "text.photosynthesis.tooltip.wood_fired_oven": "Stove Addon, Place on the right side of a Stove.",
+
+  "text.photosynthesis.tooltip.water_trough": "Provides water for animals in a 10x10x10 radius.",
+  "text.photosynthesis.tooltip.feeding_trough": "Provides feed for animals in a 10x10x10 radius.",
+
+  "text.photosynthesis.tooltip.leather_water_bladder": "Right click near water to fill.",
+
+  "text.photosynthesis.tooltip.seasons_calendar_1": "Activate Season redstone indicator with wrench.",
+  "text.photosynthesis.tooltip.seasons_calendar_2": "When activated, Emits a signal based on day of year",
+
+  "text.photosynthesis.tooltip.wrench": "Changes machine behavior",
+
+  "text.photosynthesis.tooltip.bale_1": "Bale: ",
+  "text.photosynthesis.tooltip.bale_2": "Fermenting Silage: ",
+
+  "text.photosynthesis.tooltip.slot_lock": "Slot Lock: ",
+
+  "text.photosynthesis.tooltip.item_uses": "Uses: ",
+  "text.photosynthesis.tooltip.glass_of_milk": "Clears all status effects!",
+
+  "text.photosynthesis.tooltip.animal_pig1": "Requires: Water, Food, Straw (Optional)",
+  "text.photosynthesis.tooltip.animal_pig2": "Feed: Wheat, Barley, Corn, Soybean, Canola, Potato, Sugarbeet.",
+  "text.photosynthesis.tooltip.animal_chicken1": "Requires: Water, Food, Straw (Optional)",
+  "text.photosynthesis.tooltip.animal_chicken2": "Feed: Wheat, Barley.",
+  "text.photosynthesis.tooltip.animal_goat1": "Requires: Water, Grass, Food.",
+  "text.photosynthesis.tooltip.animal_goat2": "Feed: Saplings, Leaves.",
+  "text.photosynthesis.tooltip.animal_cow1": "Requires: Water, Grass, Hay. Food/TMR & Straw (Optional)",
+  "text.photosynthesis.tooltip.animal_cow2": "Feed: TMR - Total Mixed Ration. (Optional)",
+  "text.photosynthesis.tooltip.animal_sheep1": "Requires: Water, Grass.",
+  "text.photosynthesis.tooltip.animal_horse1": "Requires: Water, Hay, Food, Straw (Optional)",
+  "text.photosynthesis.tooltip.animal_horse2": "Feed: Oat.",
+
+  "text.photosynthesis.tooltip.grass_seasons": "Grass grows all year round, except in winter time.",
+
+
+
   "block.minecraft.empty": "Empty",
 
   "item.photosynthesis.wrench": "Wrench",

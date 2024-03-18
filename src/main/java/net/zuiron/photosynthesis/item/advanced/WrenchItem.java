@@ -39,6 +39,6 @@ public class WrenchItem extends Item {
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         super.appendTooltip(stack, world, tooltip, context);
-        tooltip.add(Text.literal("Changes machine behavior"));
+        tooltip.add(Text.translatable("text.photosynthesis.tooltip.wrench"));
     }
 }

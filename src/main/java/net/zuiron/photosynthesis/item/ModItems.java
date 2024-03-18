@@ -41,7 +41,7 @@ public class ModItems {
             new Item(new FabricItemSettings()));
 
     public static final Item PLASTIC_WRAP = registerItem("plastic_wrap",
-            new TooltippedItem(new FabricItemSettings(), "Use on Grass Bale's to wrap them. Turns into Silage (over time)."));
+            new TooltippedItem(new FabricItemSettings(), "text.photosynthesis.tooltip.plastic_wrap"));
 
     public static final Item TMR = registerItem("tmr",
             new Item(new FabricItemSettings()));
@@ -53,12 +53,12 @@ public class ModItems {
             new Item(new FabricItemSettings()));
 
     public static final Item MANURE = registerItem("manure",
-            new TooltippedItem(new FabricItemSettings(),"Organic Fertilizer"));
+            new TooltippedItem(new FabricItemSettings(),"text.photosynthesis.tooltip.organic_fertilizer"));
 
     public static final Item RAW_SULFUR = registerItem("raw_sulfur",
             new Item(new FabricItemSettings()));
     public static final Item SULFUR_DUST = registerItem("sulfur_dust",
-            new TooltippedItem(new FabricItemSettings(), "Organic Pesticide"));
+            new TooltippedItem(new FabricItemSettings(), "text.photosynthesis.tooltip.organic_pesticide"));
 
     public static final Item GRASS_BUNDLE = registerItem("grass_bundle",
             new Item(new FabricItemSettings()));

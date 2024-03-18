@@ -143,8 +143,10 @@ public class WoodFiredStoveBlock extends BlockWithEntity implements BlockEntityP
     public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
         super.appendTooltip(stack, world, tooltip, options);
 
-        tooltip.add(Text.literal("Provides ").append(Text.literal("Heat")).styled(style -> style.withColor(TextColor.fromRgb(0xc91111))));
-        tooltip.add(Text.literal("Supply redstone signal to Pause burn."));
+        //tooltip.add(Text.literal("Provides Heat").styled(style -> style.withColor(TextColor.fromRgb(0xc91111))));
+        //tooltip.add(Text.literal("Supply redstone signal to Pause burn."));
+        tooltip.add(Text.translatable("text.photosynthesis.tooltip.provides_heat").styled(style -> style.withColor(TextColor.fromRgb(0xc91111))));
+        tooltip.add(Text.translatable("text.photosynthesis.tooltip.wood_fired_stove"));
     }
 
     @Override

@@ -108,7 +108,7 @@ public class ManureBucketBlock extends BlockWithEntity implements BlockEntityPro
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
-        tooltip.add(Text.literal("Picks up manure on the ground 10x10x10 radius."));
+        tooltip.add(Text.translatable("text.photosynthesis.tooltip.manurebucket"));
         super.appendTooltip(stack, world, tooltip, options);
     }
 }

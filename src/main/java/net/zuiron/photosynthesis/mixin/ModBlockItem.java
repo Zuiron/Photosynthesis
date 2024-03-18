@@ -28,14 +28,15 @@ public abstract class ModBlockItem {
         CropData cropData = CropData.getCropDataFor(getBlockStrKey);
 
         if(cropData != null && Seasons.isSeasonsEnabled()) {
-            String getHarvestSeason = cropData.getHarvestSeasonStr();
-            String getPlantSeason = cropData.getPlantSeasonStr();
+            String getHarvestSeason = "text.photosynthesis.seasons."+cropData.getHarvestSeasonStr().toLowerCase();
+            String getPlantSeason = "text.photosynthesis.seasons."+cropData.getPlantSeasonStr().toLowerCase();
 
             TextColor getHarvestSeasonTextColor = cropData.getHarvestSeasonTextColor();
             TextColor getPlantSeasonTextColor = cropData.getPlantSeasonTextColor();
 
-            tooltip.add(Text.literal("Plant: ").append(Text.literal(getPlantSeason).styled(style -> style.withColor(getPlantSeasonTextColor))));
-            tooltip.add(Text.literal("Harvest: ").append(Text.literal(getHarvestSeason).styled(style -> style.withColor(getHarvestSeasonTextColor))));
+            //translateable
+            tooltip.add(Text.translatable("text.photosynthesis.tooltip.plant_season").append(Text.translatable(getPlantSeason).styled(style -> style.withColor(getPlantSeasonTextColor))));
+            tooltip.add(Text.translatable("text.photosynthesis.tooltip.harvest_season").append(Text.translatable(getHarvestSeason).styled(style -> style.withColor(getHarvestSeasonTextColor))));
         }
     }
 }

@@ -30,13 +30,15 @@ public class DamageableBlockItem extends BlockItem {
             int remain = stack.getMaxDamage() - stack.getDamage();
             double pct = ((double) remain / stack.getMaxDamage()) * 100.0;
             int pctInt = (int) Math.round(pct);
-            tooltip.add(Text.literal("Bale: " + pctInt + "%"));
+            //tooltip.add(Text.literal("Bale: " + pctInt + "%"));
+            tooltip.add(Text.literal(Text.translatable("text.photosynthesis.tooltip.bale_1").getString() + pctInt + "%"));
 
         } else if (stack.isOf(ModBlocks.WRAPPED_GRASS_BALE.asItem())) {
             int remain = stack.getMaxDamage() - stack.getDamage();
             double pct = ((double) stack.getDamage() / stack.getMaxDamage()) * 100.0;
             int pctInt = (int) Math.round(pct);
-            tooltip.add(Text.literal("Fermenting Silage: " + pctInt + "%"));
+            //tooltip.add(Text.literal("Fermenting Silage: " + pctInt + "%"));
+            tooltip.add(Text.literal(Text.translatable("text.photosynthesis.tooltip.bale_2").getString() + pctInt + "%"));
         }
 
         super.appendTooltip(stack, world, tooltip, context);
