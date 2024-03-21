@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "photosynthesis:block/blockmodels/roof_block",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "photosynthesis:block/blockmodels/roof_block",
+      "y": 0
+    },
+    "facing=west": {
+      "model": "photosynthesis:block/blockmodels/roof_block",
+      "y": 90
+    },
+    "facing=east": {
+      "model": "photosynthesis:block/blockmodels/roof_block",
+      "y": 270
+    }
+  }
+}
