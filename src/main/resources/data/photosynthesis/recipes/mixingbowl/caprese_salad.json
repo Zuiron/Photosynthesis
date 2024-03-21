@@ -1,0 +1,38 @@
+{
+  "type": "photosynthesis:mixingbowl",
+  "ingredients": [
+    {
+      "item": "photosynthesis:whisk",
+      "count": 1
+    },
+    {
+      "item": "minecraft:bowl",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:measuring_cup_oliveoil",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:salt",
+      "count": 1
+    },
+    {
+      "item": "photosynthesis:tomato",
+      "count": 2
+    },
+    {
+      "item": "photosynthesis:basil",
+      "count": 4
+    },
+    {
+      "item": "photosynthesis:mozzarella_cheese",
+      "count": 1
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:caprese_salad",
+    "count": 1
+  },
+  "cookingtime": 400
+}

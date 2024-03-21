@@ -1,0 +1,16 @@
+{
+  "type": "photosynthesis:mortar",
+  "ingredients": [
+    {
+      "item": "photosynthesis:pestle"
+    },
+    {
+      "item": "minecraft:cocoa_beans"
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:cocoa_powder",
+    "count": 2
+  },
+  "cookingtime": 30
+}

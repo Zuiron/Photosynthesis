@@ -1488,6 +1488,37 @@ public class ModItems {
                     .food(new FoodComponent.Builder().hunger(20).saturationModifier(0.8f).build())));
 
 
+    // new items
+
+    public static final Item CAPRESE_SALAD = registerItem("caprese_salad",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(10).saturationModifier(0.6f).build())));
+
+    public static final Item GROUND_PEPPER = registerItem("ground_pepper",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item SALTED_SUNFLOWER_SEEDS = registerItem("salted_sunflower_seeds",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(3).saturationModifier(0.4f).build())));
+    public static final Item SALTED_PUMPKIN_SEEDS = registerItem("salted_pumpkin_seeds",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(3).saturationModifier(0.4f).build())));
+
+    public static final Item COCOA_POWDER = registerItem("cocoa_powder",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).build())));
+
+    public static final Item BACON_BITS = registerItem("bacon_bits",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(4).saturationModifier(0.6f).build())));
+
+    public static final Item RAISIN = registerItem("raisin",
+            new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(2).saturationModifier(0.2f).build())));
+
+    // new items end
+
 
 
     public static final Item BREAD_FORM = registerItem("bread_form",

@@ -316,6 +316,14 @@ public class ModModelProvider extends FabricModelProvider {
                 ModItems.BURGER_BUN,
                 ModItems.CHEESE_BURGER,
 
+                ModItems.CAPRESE_SALAD,
+                ModItems.GROUND_PEPPER,
+                ModItems.SALTED_SUNFLOWER_SEEDS,
+                ModItems.SALTED_PUMPKIN_SEEDS,
+                ModItems.COCOA_POWDER,
+                ModItems.BACON_BITS,
+                ModItems.RAISIN,
+
                 ModItems.OAT_DOUGH,
                 ModItems.RYE_DOUGH,
                 ModItems.BARLEY_DOUGH,

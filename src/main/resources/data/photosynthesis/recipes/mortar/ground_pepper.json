@@ -1,0 +1,16 @@
+{
+  "type": "photosynthesis:mortar",
+  "ingredients": [
+    {
+      "item": "photosynthesis:pestle"
+    },
+    {
+      "item": "photosynthesis:dried_black_pepper"
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:ground_pepper",
+    "count": 2
+  },
+  "cookingtime": 30
+}

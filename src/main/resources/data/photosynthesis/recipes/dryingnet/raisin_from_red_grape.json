@@ -1,0 +1,13 @@
+{
+  "type": "photosynthesis:dryingnet",
+  "ingredients": [
+    {
+      "item": "photosynthesis:red_grape"
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:raisin",
+    "count": 1
+  },
+  "cookingtime": 30
+}

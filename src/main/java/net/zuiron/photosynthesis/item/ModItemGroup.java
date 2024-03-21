@@ -477,6 +477,15 @@ public class ModItemGroup {
                         entries.add(ModItems.SWEET_POTATO_AND_CHICKEN_POT);
                         entries.add(ModItems.BURGER_BUN);
                         entries.add(ModItems.CHEESE_BURGER);
+
+                        entries.add(ModItems.CAPRESE_SALAD);
+                        entries.add(ModItems.GROUND_PEPPER);
+                        entries.add(ModItems.SALTED_SUNFLOWER_SEEDS);
+                        entries.add(ModItems.SALTED_PUMPKIN_SEEDS);
+                        entries.add(ModItems.COCOA_POWDER);
+                        entries.add(ModItems.BACON_BITS);
+                        entries.add(ModItems.RAISIN);
+
                         entries.add(ModItems.BREAD_FORM);
                         entries.add(ModItems.BAGUETTE_FORM);
                         entries.add(ModItems.OVEN_TRAY);
