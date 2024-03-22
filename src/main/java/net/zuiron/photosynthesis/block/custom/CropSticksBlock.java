@@ -5,15 +5,23 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
+import net.minecraft.item.BoneMealItem;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
+import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.state.property.Property;
 import net.minecraft.text.Text;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
@@ -24,8 +32,10 @@ import net.minecraft.world.WorldView;
 import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.block.entity.EggBasketBlockEntity;
 import net.zuiron.photosynthesis.block.entity.ModBlockEntities;
+import net.zuiron.photosynthesis.item.ModItems;
 import net.zuiron.photosynthesis.state.property.ModProperties;
 import org.jetbrains.annotations.Nullable;
+import org.spongepowered.asm.mixin.Unique;
 
 import java.util.List;
 
@@ -38,12 +48,48 @@ public class CropSticksBlock extends BlockWithEntity implements BlockEntityProvi
         super(settings);
 
         setDefaultState(this.stateManager.getDefaultState()
-                .with(Properties.WATERLOGGED, false));
+                .with(Properties.WATERLOGGED, false)
+                .with(MOD_FERTILIZED, 0)
+                .with(MOD_PESTICIDED,0)
+        );
     }
+
+    @Unique
+    private static final IntProperty MOD_FERTILIZED = ModProperties.MOD_FERTILIZED;
+
+    @Unique
+    private static final IntProperty MOD_PESTICIDED = ModProperties.MOD_PESTICIDED;
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(new Property[]{Properties.WATERLOGGED}).add(ModProperties.MOD_FERTILIZED).add(ModProperties.MOD_PESTICIDED);
+    }
+
+    @Override
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+        if(state.contains(ModProperties.MOD_PESTICIDED) && state.contains(ModProperties.MOD_FERTILIZED)) {
+            //Is item fertilizer
+            if (player.getStackInHand(hand).isOf(ModItems.MANURE)) {
+                if (state.get(MOD_FERTILIZED) < 2) {
+                    world.setBlockState(pos, state.with(MOD_FERTILIZED, state.get(MOD_FERTILIZED) + 1), 2);
+                    player.getStackInHand(hand).decrement(1);
+                    BoneMealItem.createParticles(world, pos, 20);
+                    world.playSoundAtBlockCenter(pos, SoundEvents.ITEM_BONE_MEAL_USE, SoundCategory.BLOCKS, 1.0f, 1.0f, false);
+                    return ActionResult.SUCCESS;
+                }
+            }
+            //Or is it pesticide
+            else if (player.getStackInHand(hand).isOf(ModItems.SULFUR_DUST)) {
+                if (state.get(MOD_PESTICIDED) < 1) {
+                    world.setBlockState(pos, state.with(MOD_PESTICIDED, 1), 2);
+                    player.getStackInHand(hand).decrement(1);
+                    BoneMealItem.createParticles(world, pos, 20);
+                    world.playSoundAtBlockCenter(pos, SoundEvents.ITEM_BONE_MEAL_USE, SoundCategory.BLOCKS, 1.0f, 1.0f, false);
+                    return ActionResult.SUCCESS;
+                }
+            }
+        }
+        return super.onUse(state, world, pos, player, hand, hit);
     }
 
     @Override

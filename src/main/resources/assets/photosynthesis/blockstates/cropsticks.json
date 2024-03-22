@@ -1,7 +1,22 @@
 {
   "variants": {
-    "": {
+    "mod_fertilized=0,mod_pesticided=0": {
       "model": "photosynthesis:block/blockmodels/cropsticks"
+    },
+    "mod_fertilized=1,mod_pesticided=0": {
+      "model": "photosynthesis:block/blockmodels/cropsticks_fert1_pest0"
+    },
+    "mod_fertilized=0,mod_pesticided=1": {
+      "model": "photosynthesis:block/blockmodels/cropsticks_fert0_pest1"
+    },
+    "mod_fertilized=1,mod_pesticided=1": {
+      "model": "photosynthesis:block/blockmodels/cropsticks_fert1_pest1"
+    },
+    "mod_fertilized=2,mod_pesticided=1": {
+      "model": "photosynthesis:block/blockmodels/cropsticks_fert2_pest1"
+    },
+    "mod_fertilized=2,mod_pesticided=0": {
+      "model": "photosynthesis:block/blockmodels/cropsticks_fert2_pest0"
     }
   }
 }
