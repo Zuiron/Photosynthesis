@@ -59,7 +59,8 @@
 
   "text.photosynthesis.tooltip.grass_seasons": "Grass grows all year round, except in winter time.",
 
-
+  "block.photosynthesis.cropsticks": "Cropsticks",
+  "text.photosynthesis.tooltip.cropsticks": "Crossbreed or spread your crops using cropsticks.",
 
   "block.minecraft.empty": "Empty",
 
