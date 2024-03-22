@@ -82,6 +82,9 @@ public class ModBlocks {
     /*public static final Block ROOF_BLOCK = registerBlock("roof_block",
             new StairsBlock(Blocks.BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.BRICKS)));*/
 
+    public static final Block CROPSTICKS = registerBlock("cropsticks",
+            new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).nonOpaque()));
+
     // "Machines"
     public static final Block SKILLET = registerBlock("skillet",
             new SkilletBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
