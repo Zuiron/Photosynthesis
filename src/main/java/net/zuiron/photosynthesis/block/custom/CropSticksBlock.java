@@ -29,8 +29,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
-import net.zuiron.photosynthesis.block.ModBlocks;
-import net.zuiron.photosynthesis.block.entity.EggBasketBlockEntity;
+import net.zuiron.photosynthesis.block.entity.CropSticksBlockEntity;
 import net.zuiron.photosynthesis.block.entity.ModBlockEntities;
 import net.zuiron.photosynthesis.item.ModItems;
 import net.zuiron.photosynthesis.state.property.ModProperties;
@@ -145,11 +144,11 @@ public class CropSticksBlock extends BlockWithEntity implements BlockEntityProvi
         return null;
     }
 
-    /*@Nullable
+    @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return checkType(type, ModBlockEntities.EGGBASKET, EggBasketBlockEntity::tick);
-    }*/
+        return checkType(type, ModBlockEntities.CROPSTICKS, CropSticksBlockEntity::tick);
+    }
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
