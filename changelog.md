@@ -2,6 +2,14 @@
 
 Photosynthesis 1.20.1-0.0.22
 - Added missing translations
+- Waila/WTHIT plugins
+  - you can now see fertilizer and pesticide on cropsticks and crops.
+  - 
+- Crop Breeding with cropsticks, spread and mutations
+- Crop world gen disabled. to get new crops use breeding/mutations
+- 9 New food items
+  - test
+- Updated texture for cranberries
 
 Photosynthesis 1.20.1-0.0.21
 - Maple Extractor block animation added.

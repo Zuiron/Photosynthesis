@@ -9,16 +9,16 @@ import net.minecraft.block.BlockState;
 import net.minecraft.text.Text;
 import net.zuiron.photosynthesis.block.custom.CropSticksBlock;
 
-public enum CropSticksComponent implements IBlockComponentProvider {
+public enum FertPestComponent implements IBlockComponentProvider {
     INSTANCE;
 
     @Override
     public void appendBody(ITooltip tooltip, IBlockAccessor accessor, IPluginConfig config) {
         BlockState state = accessor.getBlockState();
         
-        Text text = Text.translatable("text.photosynthesis.tooltip.waila.organic_fertilizer").append(state.get(CropSticksBlock.MOD_FERTILIZED).toString());
+        Text text = Text.translatable("text.photosynthesis.tooltip.waila.organic_fertilizer").append(state.get(CropSticksBlock.MOD_FERTILIZED).toString()+"/2");
         tooltip.addLine(text);
-        Text text2 = Text.translatable("text.photosynthesis.tooltip.waila.organic_pesticide").append(state.get(CropSticksBlock.MOD_PESTICIDED).toString());
+        Text text2 = Text.translatable("text.photosynthesis.tooltip.waila.organic_pesticide").append(state.get(CropSticksBlock.MOD_PESTICIDED).toString()+"/1");
         tooltip.addLine(text2);
     }
 }
