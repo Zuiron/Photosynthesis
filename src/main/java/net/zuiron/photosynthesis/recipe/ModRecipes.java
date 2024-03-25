@@ -88,5 +88,11 @@ public class ModRecipes {
                 WoodFiredOvenRecipe.Serializer.INSTANCE);
         Registry.register(Registries.RECIPE_TYPE, new Identifier(Photosynthesis.MOD_ID, WoodFiredOvenRecipe.Type.ID),
                 WoodFiredOvenRecipe.Type.INSTANCE);
+
+        //CropSticks
+        Registry.register(Registries.RECIPE_SERIALIZER, new Identifier(Photosynthesis.MOD_ID, CropSticksRecipe.Serializer.ID),
+                CropSticksRecipe.Serializer.INSTANCE);
+        Registry.register(Registries.RECIPE_TYPE, new Identifier(Photosynthesis.MOD_ID, CropSticksRecipe.Type.ID),
+                CropSticksRecipe.Type.INSTANCE);
     }
 }
