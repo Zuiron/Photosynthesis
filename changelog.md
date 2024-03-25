@@ -1,14 +1,21 @@
 # Changelog
 
 Photosynthesis 1.20.1-0.0.22
-- Added missing translations
+- Added missing translations.
 - Waila/WTHIT plugins
   - you can now see fertilizer and pesticide on cropsticks and crops.
-  - 
-- Crop Breeding with cropsticks, spread and mutations
-- Crop world gen disabled. to get new crops use breeding/mutations
-- 9 New food items
-  - test
+  - Growth for berries and tree crops.
+- Crop Breeding with cropsticks, spread and mutations.
+- Crop world gen disabled. 
+  - To get new crops use breeding/mutations.
+- 7 New items
+  - Caprese Salad
+  - Ground Pepper
+  - Salted Sunflower Seeds
+  - Salted Pumpkin Seeds
+  - Cocoa Powder
+  - Bacon Bits
+  - Raisin
 - Updated texture for cranberries
 
 Photosynthesis 1.20.1-0.0.21

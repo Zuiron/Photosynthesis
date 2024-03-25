@@ -4,16 +4,9 @@ import mcp.mobius.waila.api.IBlockAccessor;
 import mcp.mobius.waila.api.IBlockComponentProvider;
 import mcp.mobius.waila.api.IPluginConfig;
 import mcp.mobius.waila.api.ITooltip;
-import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.CropBlock;
 import net.minecraft.block.SweetBerryBushBlock;
-import net.minecraft.state.property.Properties;
 import net.minecraft.text.Text;
-import net.zuiron.photosynthesis.block.custom.CropSticksBlock;
-import net.zuiron.photosynthesis.mixin.ModSweetBerryBushBlock;
-
-import java.util.List;
 
 public enum BerryTreeGrowthComponent implements IBlockComponentProvider {
     INSTANCE;
