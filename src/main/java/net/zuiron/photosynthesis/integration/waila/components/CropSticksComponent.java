@@ -6,11 +6,8 @@ import mcp.mobius.waila.api.IPluginConfig;
 
 import mcp.mobius.waila.api.ITooltip;
 import net.minecraft.block.BlockState;
-import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.zuiron.photosynthesis.block.custom.CropSticksBlock;
-
-import java.util.List;
 
 public enum CropSticksComponent implements IBlockComponentProvider {
     INSTANCE;
@@ -21,5 +18,7 @@ public enum CropSticksComponent implements IBlockComponentProvider {
         
         Text text = Text.translatable("text.photosynthesis.tooltip.waila.organic_fertilizer").append(state.get(CropSticksBlock.MOD_FERTILIZED).toString());
         tooltip.addLine(text);
+        Text text2 = Text.translatable("text.photosynthesis.tooltip.waila.organic_pesticide").append(state.get(CropSticksBlock.MOD_PESTICIDED).toString());
+        tooltip.addLine(text2);
     }
 }
