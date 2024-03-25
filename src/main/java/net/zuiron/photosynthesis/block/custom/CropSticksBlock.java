@@ -54,10 +54,10 @@ public class CropSticksBlock extends BlockWithEntity implements BlockEntityProvi
     }
 
     @Unique
-    private static final IntProperty MOD_FERTILIZED = ModProperties.MOD_FERTILIZED;
+    public static final IntProperty MOD_FERTILIZED = ModProperties.MOD_FERTILIZED;
 
     @Unique
-    private static final IntProperty MOD_PESTICIDED = ModProperties.MOD_PESTICIDED;
+    public static final IntProperty MOD_PESTICIDED = ModProperties.MOD_PESTICIDED;
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {

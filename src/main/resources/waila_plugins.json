@@ -1,0 +1,6 @@
+{
+  "photosynthesis:WailaPlugin": {
+    "initializer": "net.zuiron.photosynthesis.integration.waila.WailaPlugin",
+    "side": "*"
+  }
+}
