@@ -1,14 +1,22 @@
 package net.zuiron.photosynthesis.block.entity;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.PlantBlock;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.inventory.SimpleInventory;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.BoneMealItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.particle.DustParticleEffect;
 import net.minecraft.screen.PropertyDelegate;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.Photosynthesis;
+import net.zuiron.photosynthesis.block.custom.SeasonsCalendarBlock;
 import net.zuiron.photosynthesis.recipe.CookingPotRecipe;
 import net.zuiron.photosynthesis.recipe.CropSticksRecipe;
 
@@ -116,8 +124,16 @@ public class CropSticksBlockEntity extends BlockEntity {
 
         ItemStack output = recipe.get().getOutputStack().getItem().getDefaultStack();
 
+        //get plantblockstate from itemstack
+        PlantBlock block = ((PlantBlock) ((BlockItem) output.getItem()).getBlock());
+        BlockState state = block.getDefaultState();
+
+        //replace cropsticks with result.
+        entity.world.setBlockState(entity.pos, state);
+
         Photosynthesis.LOGGER.info("crafted item complete! output should be: "+output);
 
+        //reset.
         entity.resetProgress();
         entity.resetSelection();
     }
