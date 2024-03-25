@@ -7,7 +7,7 @@ public class ModWorldGen {
         ModBerryBushGeneration.generateBerryBushes();
         ModTreeGeneration.generateTrees();
         ModDecorationGeneration.generateDecorations();
-        ModCropGeneration.generateCrops();
+        //ModCropGeneration.generateCrops();
         ModEntitySpawns.addSpawns();
     }
 }
