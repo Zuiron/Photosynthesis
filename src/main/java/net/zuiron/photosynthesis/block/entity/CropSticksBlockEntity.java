@@ -103,7 +103,7 @@ public class CropSticksBlockEntity extends BlockEntity {
         ItemStack[] seeds = {seed_n, seed_s, seed_e, seed_w};
 
         inventory.setStack(0, seeds[entity.selected_1]);
-        inventory.setStack(1, seeds[entity.selected_1]);
+        inventory.setStack(1, seeds[entity.selected_2]);
         inventory.setStack(2, entity.world.getBlockState(entity.pos.down()).getBlock().asItem().getDefaultStack());
 
         Optional<CropSticksRecipe> recipe = entity.getWorld().getRecipeManager()
@@ -149,7 +149,7 @@ public class CropSticksBlockEntity extends BlockEntity {
             }
 
             //random selection - if not selected...
-            if(entity.selected_1 == -1 && entity.selected_2 == -1) {
+            if(entity.selected_1 == -1 || entity.selected_2 == -1) {
                 int randomIndex = random.nextInt(seeds.length);
 
                 if (i == 2) {
@@ -184,6 +184,7 @@ public class CropSticksBlockEntity extends BlockEntity {
                     inventory.setStack(i, rando_seed);
                 }
             } else {
+                Photosynthesis.LOGGER.info(entity.selected_1+" , "+entity.selected_2);
                 if(i == 0) {
                     inventory.setStack(i, seeds[entity.selected_1]);
                 } else if (i == 1) {
