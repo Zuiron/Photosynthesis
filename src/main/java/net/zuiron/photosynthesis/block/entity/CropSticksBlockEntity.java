@@ -71,6 +71,9 @@ public class CropSticksBlockEntity extends BlockEntity {
 
     private void resetProgress() {
         this.progress = 0;
+    }
+
+    private void resetSelection() {
         this.selected_1 = -1;
         this.selected_2 = -1;
     }
@@ -82,12 +85,14 @@ public class CropSticksBlockEntity extends BlockEntity {
         if(hasRecipe(entity)) {
             entity.progress++;
             Photosynthesis.LOGGER.info("found match in recipes! Working...");
+            Photosynthesis.LOGGER.info("progress: "+entity.progress+"/"+entity.maxProgress);
 
             if(entity.progress >= entity.maxProgress) {
                 craftItem(entity);
             }
         } else {
             entity.resetProgress();
+            entity.resetSelection();
         }
     }
 
@@ -114,6 +119,7 @@ public class CropSticksBlockEntity extends BlockEntity {
         Photosynthesis.LOGGER.info("crafted item complete! output should be: "+output);
 
         entity.resetProgress();
+        entity.resetSelection();
     }
 
     private static boolean hasRecipe(CropSticksBlockEntity entity) {
@@ -139,12 +145,14 @@ public class CropSticksBlockEntity extends BlockEntity {
                 ItemStack selected_seed = seeds[entity.selected_1];
                 if(selected_seed.isEmpty()) {
                     entity.selected_1 = -1;
+                    entity.resetProgress();
                 }
             }
             if(entity.selected_2 != -1) {
                 ItemStack selected_seed = seeds[entity.selected_2];
                 if(selected_seed.isEmpty()) {
                     entity.selected_2 = -1;
+                    entity.resetProgress();
                 }
             }
 
