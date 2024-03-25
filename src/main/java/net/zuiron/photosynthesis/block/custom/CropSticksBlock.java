@@ -141,7 +141,7 @@ public class CropSticksBlock extends BlockWithEntity implements BlockEntityProvi
     @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return null;
+        return new CropSticksBlockEntity(pos, state);
     }
 
     @Nullable
