@@ -35,11 +35,7 @@ public class CropSticksRecipe implements Recipe<SimpleInventory> {
 
         return recipeItems.get(0).test(inventory.getStack(0))
                 && recipeItems.get(1).test(inventory.getStack(1))
-                && recipeItems.get(2).test(inventory.getStack(2))
-                && recipeItems.get(3).test(inventory.getStack(3))
-                && recipeItems.get(4).test(inventory.getStack(4))
-                && recipeItems.get(5).test(inventory.getStack(5))
-                && recipeItems.get(6).test(inventory.getStack(6));
+                && recipeItems.get(2).test(inventory.getStack(2));
     }
 
     @Override
