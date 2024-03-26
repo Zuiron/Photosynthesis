@@ -12,6 +12,8 @@ import me.shedaniel.rei.api.common.entry.EntryIngredient;
 import me.shedaniel.rei.api.common.util.EntryStacks;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
@@ -53,17 +55,25 @@ public class CropsticksRecipeCategory implements DisplayCategory<CropsticksRecip
         List<EntryIngredient> ingredientEntries = display.getIngredientEntries();
         if (ingredientEntries != null) {
             //seed1
-            widgets.add(Widgets.createSlot(new Point(bgBounds.x + 29, bgBounds.y + 6))
-                    .entries(ingredientEntries.get(0)).markInput().disableBackground());
+            /*widgets.add(Widgets.createSlot(new Point(bgBounds.x + 29, bgBounds.y + 6))
+                    .entries(ingredientEntries.get(0)).markInput().disableBackground());*/
             //seed2
-            widgets.add(Widgets.createSlot(new Point(bgBounds.x + 75, bgBounds.y + 6))
-                    .entries(ingredientEntries.get(1)).markInput().disableBackground());
+            /*widgets.add(Widgets.createSlot(new Point(bgBounds.x + 75, bgBounds.y + 6))
+                    .entries(ingredientEntries.get(1)).markInput().disableBackground());*/
             //farmland
-            widgets.add(Widgets.createSlot(new Point(bgBounds.x + 52, bgBounds.y + 25))
-                    .entries(ingredientEntries.get(2)).markInput().disableBackground());
+            /*widgets.add(Widgets.createSlot(new Point(bgBounds.x + 52, bgBounds.y + 25))
+                    .entries(ingredientEntries.get(2)).markInput().disableBackground());*/
             //below farmland
-            /*widgets.add(Widgets.createSlot(new Point(bgBounds.x + 51, bgBounds.y + 43))
+            /*widgets.add(Widgets.createSlot(new Point(bgBounds.x + 52, bgBounds.y + 44))
                     .entries(ingredientEntries.get(3)).markInput().disableBackground());*/
+
+            int[] posX = {29, 75, 52, 52};
+            int[] posY = { 6,  6, 25, 44};
+
+            for (int i = 0; i < ingredientEntries.size(); i++) {
+                widgets.add(Widgets.createSlot(new Point(bgBounds.x + posX[i], bgBounds.y + posY[i]))
+                        .entries(ingredientEntries.get(i)).markInput().disableBackground());
+            }
         }
 
         //OUTPUT
