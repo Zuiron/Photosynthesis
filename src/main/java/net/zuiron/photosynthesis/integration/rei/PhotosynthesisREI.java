@@ -20,6 +20,8 @@ import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.fluid.ModFluids;
 import net.zuiron.photosynthesis.integration.rei.cookingpot.CookingPotRecipeCategory;
 import net.zuiron.photosynthesis.integration.rei.cookingpot.CookingPotRecipeDisplay;
+import net.zuiron.photosynthesis.integration.rei.cropsticks.CropsticksRecipeCategory;
+import net.zuiron.photosynthesis.integration.rei.cropsticks.CropsticksRecipeDisplay;
 import net.zuiron.photosynthesis.integration.rei.cutting_board.CuttingBoardRecipeCategory;
 import net.zuiron.photosynthesis.integration.rei.cutting_board.CuttingBoardRecipeDisplay;
 import net.zuiron.photosynthesis.integration.rei.dryingnet.DryingNetRecipeCategory;
@@ -63,6 +65,8 @@ public class PhotosynthesisREI implements REIClientPlugin {
     public static final CategoryIdentifier<DryingRackRecipeDisplay> DRYINGRACK = CategoryIdentifier.of(Photosynthesis.MOD_ID, "dryingrack");
     public static final CategoryIdentifier<HayRackRecipeDisplay> HAYRACK = CategoryIdentifier.of(Photosynthesis.MOD_ID, "hayrack");
     public static final CategoryIdentifier<WoodFiredOvenRecipeDisplay> WOOD_FIRED_OVEN = CategoryIdentifier.of(Photosynthesis.MOD_ID, "woodfiredoven");
+
+    public static final CategoryIdentifier<CropsticksRecipeDisplay> CROPSTICKS = CategoryIdentifier.of(Photosynthesis.MOD_ID, "cropsticks");
 
     public static Rectangle centeredIntoRecipeBase(Point origin, int width, int height) {
         return centeredInto(new Rectangle(origin.x, origin.y, 150, 66), width, height);
@@ -125,6 +129,10 @@ public class PhotosynthesisREI implements REIClientPlugin {
         registry.add(
                 new WoodFiredOvenRecipeCategory());
         registry.addWorkstations(WOOD_FIRED_OVEN, EntryStacks.of(ModBlocks.WOOD_FIRED_OVEN));
+
+        registry.add(
+                new CropsticksRecipeCategory());
+        registry.addWorkstations(CROPSTICKS, EntryStacks.of(ModBlocks.CROPSTICKS));
     }
 
     @Override
@@ -154,6 +162,8 @@ public class PhotosynthesisREI implements REIClientPlugin {
         registry.registerRecipeFiller(HayRackRecipe.class, HayRackRecipe.Type.INSTANCE, HayRackRecipeDisplay::new);
 
         registry.registerRecipeFiller(WoodFiredOvenRecipe.class, WoodFiredOvenRecipe.Type.INSTANCE, WoodFiredOvenRecipeDisplay::new);
+
+        registry.registerRecipeFiller(CropSticksRecipe.class, CropSticksRecipe.Type.INSTANCE, CropsticksRecipeDisplay::new);
 
         registerDescriptions(registry);
     }
