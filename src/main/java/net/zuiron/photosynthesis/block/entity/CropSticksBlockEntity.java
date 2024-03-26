@@ -7,6 +7,7 @@ import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.BoneMealItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.particle.DustParticleEffect;
 import net.minecraft.screen.PropertyDelegate;
@@ -16,13 +17,17 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.Photosynthesis;
+import net.zuiron.photosynthesis.block.custom.CropSticksBlock;
 import net.zuiron.photosynthesis.block.custom.SeasonsCalendarBlock;
 import net.zuiron.photosynthesis.recipe.CookingPotRecipe;
 import net.zuiron.photosynthesis.recipe.CropSticksRecipe;
 import net.zuiron.photosynthesis.state.property.ModProperties;
 
 import java.util.Optional;
+import java.util.Properties;
 import java.util.Random;
+
+import static net.zuiron.photosynthesis.util.ModUtil.checkSuccess;
 
 public class CropSticksBlockEntity extends BlockEntity {
     protected final PropertyDelegate propertyDelegate;
@@ -139,15 +144,28 @@ public class CropSticksBlockEntity extends BlockEntity {
 
         //check if success based on recipe % chance of success. roll dice. if FAIL, if we are in water, seagrass, otherwise grass.
         float chance = recipe.get().getChancePercentage();
+        boolean isSuccess = checkSuccess(chance);
 
-        //replace cropsticks with result.
-        entity.world.setBlockState(entity.pos, state);
+        if(isSuccess) {
+            //replace cropsticks with result.
+            entity.world.setBlockState(entity.pos, state);
+            Photosynthesis.LOGGER.info("crafted item complete! output should be: "+output+", chance was: "+chance);
+        } else {
+            //spawn seaweed or grass based on what its placed on. if neither, just reset progress...
+            if(entity.world.getBlockState(entity.pos).get(CropSticksBlock.WATERLOGGED)) {
+                PlantBlock block_water_weed = ((PlantBlock) ((BlockItem) Items.SEAGRASS).getBlock());
+                entity.world.setBlockState(entity.pos, block_water_weed.getDefaultState());
+                Photosynthesis.LOGGER.info("crafted item FAILED! output could have been: "+output+", chance was: "+chance);
+            } else {
+                PlantBlock block_land_weed = ((PlantBlock) ((BlockItem) Items.GRASS).getBlock());
+                entity.world.setBlockState(entity.pos, block_land_weed.getDefaultState());
+                Photosynthesis.LOGGER.info("crafted item FAILED! output could have been: "+output+", chance was: "+chance);
+            }
+        }
 
-        Photosynthesis.LOGGER.info("crafted item complete! output should be: "+output+", chance: "+chance);
-
-        //reset.
-        entity.resetProgress();
-        entity.resetSelection();
+        //reset. not needed...
+        //entity.resetProgress();
+        //entity.resetSelection();
     }
 
     private static boolean hasRecipe(CropSticksBlockEntity entity) {

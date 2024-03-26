@@ -14,5 +14,6 @@
   "output": {
     "item": "minecraft:carrot"
   },
-  "cookingtime": 300
+  "cookingtime": 300,
+  "chance": 50.0
 }

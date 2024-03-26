@@ -17,5 +17,6 @@
   "output": {
     "item": "photosynthesis:wither_rose_seeds"
   },
-  "cookingtime": 300
+  "cookingtime": 300,
+  "chance": 10.0
 }

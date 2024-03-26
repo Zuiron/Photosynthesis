@@ -14,9 +14,21 @@ import net.zuiron.photosynthesis.config.ModConfig;
 
 import java.util.Map;
 import java.util.Objects;
+import java.util.Random;
 
 public class ModUtil {
 
+    public static boolean checkSuccess(double chance) {
+        // Generate a random number between 0 and 100 to represent the chance of success
+        double randomNumber = new Random().nextDouble() * 100;
+
+        // Check if the random number falls within the chance range
+        if (randomNumber <= chance) {
+            return true;  // Success
+        } else {
+            return false;  // Failure
+        }
+    }
     public static Boolean canAnimalsDieByHunger() {
         ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
         return config.animalsDieByHunger;
