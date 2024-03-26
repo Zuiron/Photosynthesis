@@ -74,7 +74,7 @@ public class CropsticksRecipeCategory implements DisplayCategory<CropsticksRecip
         int cookTime = display.getCookTime();
         int cookTimeSeconds = cookTime / 20;
 
-        Arrow cookArrow = Widgets.createArrow(new Point(bgBounds.x + 100, bgBounds.y + 12))
+        Arrow cookArrow = Widgets.createArrow(new Point(bgBounds.x + 100, bgBounds.y + 14))
                 .animationDurationTicks(cookTime);
         widgets.add(cookArrow);
         widgets.add(Widgets.createLabel(new Point(
