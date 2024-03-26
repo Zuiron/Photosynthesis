@@ -1,6 +1,8 @@
 package net.zuiron.photosynthesis.block.entity;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.CropBlock;
 import net.minecraft.block.PlantBlock;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.inventory.SimpleInventory;
@@ -178,6 +180,40 @@ public class CropSticksBlockEntity extends BlockEntity {
             ItemStack seed_s = entity.world.getBlockState(entity.pos.south()).getBlock().asItem().getDefaultStack();    //selected - 1
             ItemStack seed_e = entity.world.getBlockState(entity.pos.east()).getBlock().asItem().getDefaultStack();     //selected - 2
             ItemStack seed_w = entity.world.getBlockState(entity.pos.west()).getBlock().asItem().getDefaultStack();     //selected - 3
+
+            //if its crop, make sure its age max otherwise set to air.
+            if(!seed_n.isEmpty()) {
+                BlockState state_n = entity.world.getBlockState(entity.pos.north());
+                if(state_n.contains(CropBlock.AGE)) {
+                    if(state_n.get(CropBlock.AGE) < 7) {
+                        seed_n = Blocks.AIR.asItem().getDefaultStack();
+                    }
+                }
+            }
+            if(!seed_s.isEmpty()) {
+                BlockState state_s = entity.world.getBlockState(entity.pos.south());
+                if(state_s.contains(CropBlock.AGE)) {
+                    if(state_s.get(CropBlock.AGE) < 7) {
+                        seed_s = Blocks.AIR.asItem().getDefaultStack();
+                    }
+                }
+            }
+            if(!seed_e.isEmpty()) {
+                BlockState state_e = entity.world.getBlockState(entity.pos.east());
+                if(state_e.contains(CropBlock.AGE)) {
+                    if(state_e.get(CropBlock.AGE) < 7) {
+                        seed_e = Blocks.AIR.asItem().getDefaultStack();
+                    }
+                }
+            }
+            if(!seed_w.isEmpty()) {
+                BlockState state_w = entity.world.getBlockState(entity.pos.west());
+                if(state_w.contains(CropBlock.AGE)) {
+                    if(state_w.get(CropBlock.AGE) < 7) {
+                        seed_w = Blocks.AIR.asItem().getDefaultStack();
+                    }
+                }
+            }
 
             //if all is empty. return false.
             if(seed_n.isEmpty() && seed_s.isEmpty() && seed_e.isEmpty() && seed_w.isEmpty()) {

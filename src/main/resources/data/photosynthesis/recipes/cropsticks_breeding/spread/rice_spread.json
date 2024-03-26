@@ -1,0 +1,19 @@
+{
+  "type": "photosynthesis:cropsticks",
+  "ingredients": [
+    {
+      "item": "photosynthesis:rice_seeds"
+    },
+    {
+      "item": "photosynthesis:rice_seeds"
+    },
+    {
+      "item": "minecraft:dirt"
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:rice_seeds"
+  },
+  "cookingtime": 300,
+  "chance": 50.0
+}
