@@ -1,5 +1,6 @@
 package net.zuiron.photosynthesis.block.custom;
 
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
@@ -11,6 +12,10 @@ import net.minecraft.fluid.Fluids;
 import net.minecraft.item.BoneMealItem;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.registry.tag.TagKey;
+import net.minecraft.registry.tag.TagManagerLoader;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
@@ -21,6 +26,7 @@ import net.minecraft.state.property.Property;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -32,6 +38,7 @@ import net.minecraft.world.WorldView;
 import net.zuiron.photosynthesis.block.entity.CropSticksBlockEntity;
 import net.zuiron.photosynthesis.block.entity.ModBlockEntities;
 import net.zuiron.photosynthesis.item.ModItems;
+import net.zuiron.photosynthesis.registry.tag.ModTags;
 import net.zuiron.photosynthesis.state.property.ModProperties;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Unique;
@@ -124,7 +131,8 @@ public class CropSticksBlock extends BlockWithEntity implements BlockEntityProvi
 
         //check if blocks above is air.
         if(world.getBlockState(pos.up()).isOf(Blocks.AIR)) {
-            if(world.getBlockState(pos.down()).isOf(Blocks.FARMLAND)) {
+            //check for tag!
+            if(world.getBlockState(pos.down()).isIn(ModTags.Blocks.CROPSTICKS_PLACEABLE)) {
                 return true;
             } else if (world.getBlockState(pos).isOf(Blocks.WATER) && world.getBlockState(pos.down()).isOf(Blocks.DIRT)) {
                 return true;

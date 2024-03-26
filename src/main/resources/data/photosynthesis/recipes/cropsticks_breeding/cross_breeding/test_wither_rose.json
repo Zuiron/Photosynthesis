@@ -1,0 +1,21 @@
+{
+  "type": "photosynthesis:cropsticks",
+  "ingredients": [
+    {
+      "item": "minecraft:beetroot_seeds"
+    },
+    {
+      "item": "photosynthesis:cotton_seeds"
+    },
+    {
+      "item": "minecraft:grass_block"
+    },
+    {
+      "item": "minecraft:nether_wart_block"
+    }
+  ],
+  "output": {
+    "item": "photosynthesis:wither_rose_seeds"
+  },
+  "cookingtime": 300
+}
