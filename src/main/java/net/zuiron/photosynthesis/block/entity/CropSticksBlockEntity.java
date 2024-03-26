@@ -19,6 +19,7 @@ import net.zuiron.photosynthesis.Photosynthesis;
 import net.zuiron.photosynthesis.block.custom.SeasonsCalendarBlock;
 import net.zuiron.photosynthesis.recipe.CookingPotRecipe;
 import net.zuiron.photosynthesis.recipe.CropSticksRecipe;
+import net.zuiron.photosynthesis.state.property.ModProperties;
 
 import java.util.Optional;
 import java.util.Random;
@@ -128,10 +129,21 @@ public class CropSticksBlockEntity extends BlockEntity {
         PlantBlock block = ((PlantBlock) ((BlockItem) output.getItem()).getBlock());
         BlockState state = block.getDefaultState();
 
+        //IF crop planted contains pesticide and fertilizer, apply from cropsticks.
+        if(state.contains(ModProperties.MOD_FERTILIZED)) {
+            state = state.with(ModProperties.MOD_FERTILIZED, entity.world.getBlockState(entity.pos).get(ModProperties.MOD_FERTILIZED));
+        }
+        if(state.contains(ModProperties.MOD_PESTICIDED)) {
+            state = state.with(ModProperties.MOD_PESTICIDED, entity.world.getBlockState(entity.pos).get(ModProperties.MOD_PESTICIDED));
+        }
+
+        //check if success based on recipe % chance of success. roll dice. if FAIL, if we are in water, seagrass, otherwise grass.
+        float chance = recipe.get().getChancePercentage();
+
         //replace cropsticks with result.
         entity.world.setBlockState(entity.pos, state);
 
-        Photosynthesis.LOGGER.info("crafted item complete! output should be: "+output);
+        Photosynthesis.LOGGER.info("crafted item complete! output should be: "+output+", chance: "+chance);
 
         //reset.
         entity.resetProgress();

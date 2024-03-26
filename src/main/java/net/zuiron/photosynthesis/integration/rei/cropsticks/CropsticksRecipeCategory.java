@@ -83,6 +83,7 @@ public class CropsticksRecipeCategory implements DisplayCategory<CropsticksRecip
 
         int cookTime = display.getCookTime();
         int cookTimeSeconds = cookTime / 20;
+        float chance = display.getChance();
 
         Arrow cookArrow = Widgets.createArrow(new Point(bgBounds.x + 100, bgBounds.y + 14))
                 .animationDurationTicks(cookTime);
@@ -93,7 +94,12 @@ public class CropsticksRecipeCategory implements DisplayCategory<CropsticksRecip
                 .noShadow().centered().tooltip(Text.literal("Seconds ("+cookTime+" t)"))
                 .color(Formatting.DARK_GRAY.getColorValue(), Formatting.GRAY.getColorValue()));
 
-
+        //chance display
+        widgets.add(Widgets.createLabel(new Point(
+                                bgBounds.x + 73, bgBounds.y + 28),
+                        Text.literal(chance + " %"))
+                .noShadow().leftAligned().tooltip(Text.literal("Chance of mutation"))
+                .color(Formatting.DARK_GRAY.getColorValue(), Formatting.GRAY.getColorValue()));
 
         return widgets;
     }

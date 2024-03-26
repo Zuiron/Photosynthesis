@@ -21,12 +21,15 @@ public class CropsticksRecipeDisplay extends BasicDisplay {
     private final EntryIngredient containerOutput;
     private final int cookTime;
 
+    private final float chance;
+
     public CropsticksRecipeDisplay(CropSticksRecipe recipe) {
         super(EntryIngredients.ofIngredients(recipe.getIngredients()), Collections.singletonList(EntryIngredients.of(recipe.getOutputStack())),
                 Optional.ofNullable(recipe.getId()));
         containerOutput = EntryIngredients.of(recipe.getOutputStack());
         cookTime = recipe.getCookTime();
         //cookTime = 200;
+        chance = recipe.getChancePercentage();
     }
 
     @Override
@@ -53,4 +56,6 @@ public class CropsticksRecipeDisplay extends BasicDisplay {
     public int getCookTime() {
         return cookTime;
     }
+
+    public float getChance() { return chance; }
 }

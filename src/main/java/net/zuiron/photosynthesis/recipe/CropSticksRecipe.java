@@ -19,12 +19,15 @@ public class CropSticksRecipe implements Recipe<SimpleInventory> {
 
     private final int cookingTime;
 
+    private final float chance;
 
-    public CropSticksRecipe(Identifier id, ItemStack output, DefaultedList<Ingredient> recipeItems, int cookingTime) {
+
+    public CropSticksRecipe(Identifier id, ItemStack output, DefaultedList<Ingredient> recipeItems, int cookingTime, float chance) {
         this.id = id;
         this.output = output;
         this.recipeItems = recipeItems;
         this.cookingTime = cookingTime;
+        this.chance = chance;
     }
 
     @Override
@@ -81,6 +84,10 @@ public class CropSticksRecipe implements Recipe<SimpleInventory> {
         return Type.INSTANCE;
     }
 
+    public float getChancePercentage() {
+        return chance;
+    }
+
     public static class Type implements RecipeType<CropSticksRecipe> {
         private Type() { }
         public static final Type INSTANCE = new Type();
@@ -96,7 +103,12 @@ public class CropSticksRecipe implements Recipe<SimpleInventory> {
         public CropSticksRecipe read(Identifier id, JsonObject json) {
             ItemStack output = ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "output"));
 
+            float chance = 100.0f;
+
             int CookTime = JsonHelper.getInt(json, "cookingtime");
+            if(JsonHelper.hasElement(json, "chance")) {
+                chance = JsonHelper.getFloat(json, "chance");
+            }
 
             JsonArray ingredients = JsonHelper.getArray(json, "ingredients");
             DefaultedList<Ingredient> inputs = DefaultedList.ofSize(7, Ingredient.EMPTY); //size: max number of possible input ingredients.
@@ -108,7 +120,7 @@ public class CropSticksRecipe implements Recipe<SimpleInventory> {
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
             }
 
-            return new CropSticksRecipe(id, output, inputs, CookTime);
+            return new CropSticksRecipe(id, output, inputs, CookTime, chance);
         }
 
         @Override
@@ -122,8 +134,9 @@ public class CropSticksRecipe implements Recipe<SimpleInventory> {
             ItemStack output = buf.readItemStack();
 
             int cookingTime = buf.readInt();
+            float chance = buf.readFloat();
 
-            return new CropSticksRecipe(id, output, inputs, cookingTime);
+            return new CropSticksRecipe(id, output, inputs, cookingTime, chance);
         }
 
         @Override
@@ -135,6 +148,7 @@ public class CropSticksRecipe implements Recipe<SimpleInventory> {
             buf.writeItemStack(recipe.getOutputStack());
 
             buf.writeInt(recipe.getCookTime());
+            buf.writeFloat(recipe.getChancePercentage());
         }
     }
 }
