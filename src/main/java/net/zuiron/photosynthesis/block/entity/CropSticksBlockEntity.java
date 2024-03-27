@@ -19,6 +19,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import net.zuiron.photosynthesis.Photosynthesis;
+import net.zuiron.photosynthesis.block.ModBlocks;
 import net.zuiron.photosynthesis.block.custom.CropSticksBlock;
 import net.zuiron.photosynthesis.block.custom.SeasonsCalendarBlock;
 import net.zuiron.photosynthesis.recipe.CookingPotRecipe;
@@ -35,7 +36,6 @@ public class CropSticksBlockEntity extends BlockEntity {
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
     private int maxProgress = 100; //5sec
-
     private int selected_1 = -1;
     private int selected_2 = -1;
     public CropSticksBlockEntity(BlockPos pos, BlockState state) {
@@ -100,8 +100,8 @@ public class CropSticksBlockEntity extends BlockEntity {
         }
         if(hasRecipe(entity)) {
             entity.progress++;
-            Photosynthesis.LOGGER.info("found match in recipes! Working...");
-            Photosynthesis.LOGGER.info("progress: "+entity.progress+"/"+entity.maxProgress);
+            //Photosynthesis.LOGGER.info("found match in recipes! Working...");
+            //Photosynthesis.LOGGER.info("progress: "+entity.progress+"/"+entity.maxProgress);
 
             if(entity.progress >= entity.maxProgress) {
                 craftItem(entity);
@@ -113,9 +113,9 @@ public class CropSticksBlockEntity extends BlockEntity {
     }
 
     private static void craftItem(CropSticksBlockEntity entity) {
-        Photosynthesis.LOGGER.info("crafting item!");
+        //Photosynthesis.LOGGER.info("crafting item!");
 
-        SimpleInventory inventory = new SimpleInventory(3);
+        SimpleInventory inventory = new SimpleInventory(4);
 
         ItemStack seed_n = entity.world.getBlockState(entity.pos.north()).getBlock().asItem().getDefaultStack();    //selected - 0
         ItemStack seed_s = entity.world.getBlockState(entity.pos.south()).getBlock().asItem().getDefaultStack();    //selected - 1
@@ -130,13 +130,20 @@ public class CropSticksBlockEntity extends BlockEntity {
         Optional<CropSticksRecipe> recipe = entity.getWorld().getRecipeManager()
                 .getFirstMatch(CropSticksRecipe.Type.INSTANCE, inventory, entity.getWorld());
 
+        //IF no recipe is found, check with modifier block
+        if(recipe.isEmpty()) {
+            inventory.setStack(3, entity.world.getBlockState(entity.pos.down(2)).getBlock().asItem().getDefaultStack());
+            recipe = entity.getWorld().getRecipeManager()
+                    .getFirstMatch(CropSticksRecipe.Type.INSTANCE, inventory, entity.getWorld());
+        }
+
         ItemStack output = recipe.get().getOutputStack().getItem().getDefaultStack();
 
         //get plantblockstate from itemstack
         PlantBlock block = ((PlantBlock) ((BlockItem) output.getItem()).getBlock());
         BlockState state = block.getDefaultState();
 
-        //IF crop planted contains pesticide and fertilizer, apply from cropsticks.
+        //IF cropsticks contains pesticide and fertilizer, apply from cropsticks.
         if(state.contains(ModProperties.MOD_FERTILIZED)) {
             state = state.with(ModProperties.MOD_FERTILIZED, entity.world.getBlockState(entity.pos).get(ModProperties.MOD_FERTILIZED));
         }
@@ -146,22 +153,29 @@ public class CropSticksBlockEntity extends BlockEntity {
 
         //check if success based on recipe % chance of success. roll dice. if FAIL, if we are in water, seagrass, otherwise grass.
         float chance = recipe.get().getChancePercentage();
+
+        //increase chance if pesticide or fertilizer is applied.
+        int fertilizer_amount = entity.world.getBlockState(entity.pos).get(ModProperties.MOD_FERTILIZED);
+        int pesticide_amount = entity.world.getBlockState(entity.pos).get(ModProperties.MOD_PESTICIDED);
+        int total_applications = fertilizer_amount + pesticide_amount;
+        chance += (10.0f * total_applications);
+
         boolean isSuccess = checkSuccess(chance);
 
         if(isSuccess) {
             //replace cropsticks with result.
             entity.world.setBlockState(entity.pos, state);
-            Photosynthesis.LOGGER.info("crafted item complete! output should be: "+output+", chance was: "+chance);
-        } else {
-            //spawn seaweed or grass based on what its placed on. if neither, just reset progress...
+            Photosynthesis.LOGGER.info("CropSticks SUCCESS! output should be: "+output+", chance was: "+chance+", @POS: "+entity.pos);
+        } else { //chance roll FAILED. spawn "weeds"
+            //spawn seaweed or grass based on what its placed on.
             if(entity.world.getBlockState(entity.pos).get(CropSticksBlock.WATERLOGGED)) {
                 PlantBlock block_water_weed = ((PlantBlock) ((BlockItem) Items.SEAGRASS).getBlock());
                 entity.world.setBlockState(entity.pos, block_water_weed.getDefaultState());
-                Photosynthesis.LOGGER.info("crafted item FAILED! output could have been: "+output+", chance was: "+chance);
+                Photosynthesis.LOGGER.info("CropSticks FAILED! output could have been: "+output+", chance was: "+chance+", @POS: "+entity.pos);
             } else {
                 PlantBlock block_land_weed = ((PlantBlock) ((BlockItem) Items.GRASS).getBlock());
                 entity.world.setBlockState(entity.pos, block_land_weed.getDefaultState());
-                Photosynthesis.LOGGER.info("crafted item FAILED! output could have been: "+output+", chance was: "+chance);
+                Photosynthesis.LOGGER.info("CropSticks FAILED! output could have been: "+output+", chance was: "+chance+", @POS: "+entity.pos);
             }
         }
 
@@ -171,7 +185,7 @@ public class CropSticksBlockEntity extends BlockEntity {
     }
 
     private static boolean hasRecipe(CropSticksBlockEntity entity) {
-        int checkSize = 3;
+        int checkSize = 4;
         SimpleInventory inventory = new SimpleInventory(checkSize);
         for (int i = 0; i < checkSize; i++) {
             Random random = new Random();
@@ -185,7 +199,7 @@ public class CropSticksBlockEntity extends BlockEntity {
             if(!seed_n.isEmpty()) {
                 BlockState state_n = entity.world.getBlockState(entity.pos.north());
                 if(state_n.contains(CropBlock.AGE)) {
-                    if(state_n.get(CropBlock.AGE) < 7) {
+                    if(state_n.get(CropBlock.AGE) < 7 && !state_n.isOf(ModBlocks.RICE_CROP)) {
                         seed_n = Blocks.AIR.asItem().getDefaultStack();
                     }
                 }
@@ -193,7 +207,7 @@ public class CropSticksBlockEntity extends BlockEntity {
             if(!seed_s.isEmpty()) {
                 BlockState state_s = entity.world.getBlockState(entity.pos.south());
                 if(state_s.contains(CropBlock.AGE)) {
-                    if(state_s.get(CropBlock.AGE) < 7) {
+                    if(state_s.get(CropBlock.AGE) < 7 && !state_s.isOf(ModBlocks.RICE_CROP)) {
                         seed_s = Blocks.AIR.asItem().getDefaultStack();
                     }
                 }
@@ -201,7 +215,7 @@ public class CropSticksBlockEntity extends BlockEntity {
             if(!seed_e.isEmpty()) {
                 BlockState state_e = entity.world.getBlockState(entity.pos.east());
                 if(state_e.contains(CropBlock.AGE)) {
-                    if(state_e.get(CropBlock.AGE) < 7) {
+                    if(state_e.get(CropBlock.AGE) < 7 && !state_e.isOf(ModBlocks.RICE_CROP)) {
                         seed_e = Blocks.AIR.asItem().getDefaultStack();
                     }
                 }
@@ -209,7 +223,7 @@ public class CropSticksBlockEntity extends BlockEntity {
             if(!seed_w.isEmpty()) {
                 BlockState state_w = entity.world.getBlockState(entity.pos.west());
                 if(state_w.contains(CropBlock.AGE)) {
-                    if(state_w.get(CropBlock.AGE) < 7) {
+                    if(state_w.get(CropBlock.AGE) < 7 && !state_w.isOf(ModBlocks.RICE_CROP)) {
                         seed_w = Blocks.AIR.asItem().getDefaultStack();
                     }
                 }
@@ -244,7 +258,8 @@ public class CropSticksBlockEntity extends BlockEntity {
 
                 if (i == 2) {
                     inventory.setStack(i, entity.world.getBlockState(entity.pos.down()).getBlock().asItem().getDefaultStack());
-                } else {
+                }
+                else {
                     ItemStack rando_seed = seeds[randomIndex];
 
                     //save selection.
@@ -274,18 +289,20 @@ public class CropSticksBlockEntity extends BlockEntity {
                     inventory.setStack(i, rando_seed);
                 }
             } else {
-                Photosynthesis.LOGGER.info(entity.selected_1+" , "+entity.selected_2);
+                //Photosynthesis.LOGGER.info(entity.selected_1+" , "+entity.selected_2);
                 if(i == 0) {
                     inventory.setStack(i, seeds[entity.selected_1]);
                 } else if (i == 1) {
                     inventory.setStack(i, seeds[entity.selected_2]);
-                } else {
+                } else if (i == 2) {
                     inventory.setStack(i, entity.world.getBlockState(entity.pos.down()).getBlock().asItem().getDefaultStack());
+                } else { // i = 3
+                    inventory.setStack(i, entity.world.getBlockState(entity.pos.down(2)).getBlock().asItem().getDefaultStack());
                 }
             }
         }
 
-        Photosynthesis.LOGGER.info(inventory);
+        //Photosynthesis.LOGGER.info(inventory);
 
         Optional<CropSticksRecipe> match = entity.getWorld().getRecipeManager()
                 .getFirstMatch(CropSticksRecipe.Type.INSTANCE, inventory, entity.getWorld());
@@ -296,7 +313,15 @@ public class CropSticksBlockEntity extends BlockEntity {
             return true;
         }
         else {
-            return false;
+            //if no match, check without modifier block checker!
+            inventory.removeStack(3); //remove modifier block.
+
+            Optional<CropSticksRecipe> match2 = entity.getWorld().getRecipeManager()
+                    .getFirstMatch(CropSticksRecipe.Type.INSTANCE, inventory, entity.getWorld());
+
+            entity.maxProgress = match2.map(CropSticksRecipe::getCookTime).orElse(100);
+
+            return match2.isPresent();
         }
     }
 }

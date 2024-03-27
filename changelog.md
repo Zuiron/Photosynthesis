@@ -6,6 +6,9 @@ Photosynthesis 1.20.1-0.0.22
   - you can now see fertilizer and pesticide on cropsticks and crops.
   - Growth for berries and tree crops.
 - Crop Breeding with cropsticks, spread and mutations.
+  - increase chance with pesticide (sulfur) and fertilizer (manure)
+  - some mutations require modifier block below "farmland" block.
+  - if diceroll fails, you will get "weeds" grass or seagrass.
 - Crop world gen disabled. 
   - To get new crops use breeding/mutations.
 - 7 New items
