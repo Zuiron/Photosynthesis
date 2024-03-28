@@ -10,7 +10,7 @@ import net.zuiron.photosynthesis.world.feature.ModPlacedFeatures;
 
 public class ModCropGeneration {
     public static void generateCrops() {
-        BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.5 && context.getBiome().getTemperature() <= 2.0
+        /*BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.5 && context.getBiome().getTemperature() <= 2.0
                         && !BiomeKeys.PLAINS.equals(context.getBiomeKey()) && context.hasTag(BiomeTags.IS_OVERWORLD) && !context.hasTag(BiomeTags.IS_BEACH),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.TOMATO_CROP_PLACED_KEY);
 
@@ -125,6 +125,7 @@ public class ModCropGeneration {
         BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.5 && context.getBiome().getTemperature() <= 2.0
                         && !BiomeKeys.PLAINS.equals(context.getBiomeKey()) && context.hasTag(BiomeTags.IS_OVERWORLD) && !context.hasTag(BiomeTags.IS_BEACH),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.RICE_CROP_PLACED_KEY);
+         */
 
         BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.5 && context.getBiome().getTemperature() <= 2.0
                         && !BiomeKeys.PLAINS.equals(context.getBiomeKey()) && context.hasTag(BiomeTags.IS_OVERWORLD) && !context.hasTag(BiomeTags.IS_BEACH),
@@ -142,6 +143,7 @@ public class ModCropGeneration {
                         && !BiomeKeys.PLAINS.equals(context.getBiomeKey()) && context.hasTag(BiomeTags.IS_OVERWORLD) && !context.hasTag(BiomeTags.IS_BEACH),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.MOREL_MUSHROOM_CROP_PLACED_KEY);
 
+        /*
         BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.5 && context.getBiome().getTemperature() <= 2.0
                         && !BiomeKeys.PLAINS.equals(context.getBiomeKey()) && context.hasTag(BiomeTags.IS_OVERWORLD) && !context.hasTag(BiomeTags.IS_BEACH),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.SOYBEAN_CROP_PLACED_KEY);
@@ -333,7 +335,7 @@ public class ModCropGeneration {
         BiomeModifications.addFeature(context -> context.getBiome().getTemperature() >= 0.5 && context.getBiome().getTemperature() <= 2.0
                         && !BiomeKeys.PLAINS.equals(context.getBiomeKey()) && context.hasTag(BiomeTags.IS_OVERWORLD) && !context.hasTag(BiomeTags.IS_BEACH),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.ERYTHROXYLUM_COCA_CROP_PLACED_KEY);
-
+*/
 
 
 
