@@ -1,16 +1,13 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "#B"
-  ],
-  "key": {
-    "#": {
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
       "item": "photosynthesis:wolf_pelt"
     },
-    "B": {
+    {
       "item": "photosynthesis:salt"
     }
-  },
+  ],
   "result": {
     "item": "photosynthesis:salted_wolf_pelt",
     "count": 1

@@ -1,16 +1,13 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "#C"
-  ],
-  "key": {
-    "#": {
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
       "item": "photosynthesis:cookie_dough"
     },
-    "C": {
+    {
       "item": "minecraft:cocoa_beans"
     }
-  },
+  ],
   "result": {
     "item": "photosynthesis:chocolate_cookie_dough",
     "count": 1
