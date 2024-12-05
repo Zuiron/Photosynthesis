@@ -1,7 +1,13 @@
 # Changelog
+
+
+Photosynthesis 1.20.1-0.0.25
+- fixed waila bug (fert and pest not existing in other mod's crop's).
+- fixed crash when bonemealing or right clicking other mods crops with different AGE states.
+
 Photosynthesis 1.20.1-0.0.24
 - Added recipe for cropsticks.
-- 
+
 Photosynthesis 1.20.1-0.0.23
 - Fixed compatability issues with Journey Map, HUD is now working again.
 

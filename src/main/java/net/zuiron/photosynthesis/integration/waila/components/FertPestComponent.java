@@ -15,6 +15,9 @@ public enum FertPestComponent implements IBlockComponentProvider {
     @Override
     public void appendBody(ITooltip tooltip, IBlockAccessor accessor, IPluginConfig config) {
         BlockState state = accessor.getBlockState();
+
+        //do nothing if these states doesn't exist.
+        if(!state.contains(CropSticksBlock.MOD_FERTILIZED) || !state.contains(CropSticksBlock.MOD_PESTICIDED) ) return;
         
         Text text = Text.translatable("text.photosynthesis.tooltip.waila.organic_fertilizer").append(state.get(CropSticksBlock.MOD_FERTILIZED).toString()+"/2");
         tooltip.addLine(text);

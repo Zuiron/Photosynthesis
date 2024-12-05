@@ -70,6 +70,7 @@ public abstract class ModCropBlock extends PlantBlock
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+        if(!state.contains(AGE)) return ActionResult.PASS;
         //if MATURE, disallow any interactions.
         if(state.contains(AGE) && state.get(Properties.AGE_7) < 7 && state.contains(ModProperties.MOD_PESTICIDED) && state.contains(ModProperties.MOD_FERTILIZED)) {
             if (player.getStackInHand(hand).isOf(ModItems.MANURE)) {
