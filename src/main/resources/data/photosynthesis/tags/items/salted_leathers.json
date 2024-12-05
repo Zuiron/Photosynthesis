@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "photosynthesis:salted_raw_leather",
+    "photosynthesis:salted_horse_leather",
+    "photosynthesis:salted_alligator_leather",
+    "photosynthesis:salted_pig_skin",
+    "photosynthesis:salted_wolf_pelt",
+    "photosynthesis:salted_rabbit_hide"
+  ]
+}

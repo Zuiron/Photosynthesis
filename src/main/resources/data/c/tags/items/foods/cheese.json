@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "photosynthesis:goat_cheese",
+    "photosynthesis:soft_goat_cheese",
+    "photosynthesis:cheddar_cheese",
+    "photosynthesis:soft_cheddar_cheese",
+    "photosynthesis:mozzarella_cheese",
+    "photosynthesis:soft_mozzarella_cheese",
+    "photosynthesis:pizza_cheese"
+  ]
+}

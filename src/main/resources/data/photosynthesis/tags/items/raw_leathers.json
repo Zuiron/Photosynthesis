@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "photosynthesis:raw_leather",
+    "photosynthesis:horse_leather",
+    "photosynthesis:alligator_leather",
+    "photosynthesis:pig_skin",
+    "photosynthesis:wolf_pelt",
+    "minecraft:rabbit_hide"
+  ]
+}

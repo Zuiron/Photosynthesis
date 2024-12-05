@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "photosynthesis:wheat_dough",
+    "photosynthesis:rye_dough",
+    "photosynthesis:barley_dough",
+    "photosynthesis:oat_dough",
+    "photosynthesis:corn_dough"
+  ]
+}

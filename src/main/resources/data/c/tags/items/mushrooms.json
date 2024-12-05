@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "photosynthesis:white_button_mushroom",
+    "photosynthesis:porcini_mushroom",
+    "photosynthesis:chanterelle_mushroom",
+    "photosynthesis:morel_mushroom"
+  ]
+}

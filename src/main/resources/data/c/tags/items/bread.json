@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:bread",
+    "photosynthesis:rye_bread",
+    "photosynthesis:oat_bread"
+  ]
+}
