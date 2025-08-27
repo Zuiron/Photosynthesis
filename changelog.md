@@ -1,5 +1,8 @@
 # Changelog
 
+Photosynthesis 1.20.1-0.0.26
+- Updated fabric api, gradle and other dependencies
+- newest fabric version should now work.
 
 Photosynthesis 1.20.1-0.0.25
 - fixed waila bug (fert and pest not existing in other mod's crop's).
